@@ -1,0 +1,196 @@
+<configs>
+    <append xpath="/recipes">
+		<recipe name="meleeIvDemonKatana" count="1" tooltip="ttScrapMetalIron" always_unlocked="true" tags="salvageScrap"> <wildcard_forge_category /> </recipe>
+	</append>
+
+    <append xpath="/recipes">
+		<!-- 爆裂 -->
+		<recipe name="modDemonKatanaSpellScrollPluralMerge203" count="1" craft_time="10" craft_area="workbench">
+			<ingredient name="modDemonKatanaSpellScrollFire" count="1"/>
+			<ingredient name="modDemonKatanaSpellScrollFrost" count="1"/>
+		</recipe>
+		<!-- 流焰 -->
+		<recipe name="modDemonKatanaSpellScrollPluralMerge205" count="1" craft_time="10" craft_area="workbench">
+			<ingredient name="modDemonKatanaSpellScrollFire" count="1"/>
+			<ingredient name="modDemonKatanaSpellScrollElectric" count="1"/>
+		</recipe>
+		<!-- 磁爆 -->
+		<recipe name="modDemonKatanaSpellScrollPluralMerge206" count="1" craft_time="10" craft_area="workbench">
+			<ingredient name="modDemonKatanaSpellScrollFrost" count="1"/>
+			<ingredient name="modDemonKatanaSpellScrollElectric" count="1"/>
+		</recipe>
+		<!-- 毒霧 -->
+		<recipe name="modDemonKatanaSpellScrollPluralMerge209" count="1" craft_time="10" craft_area="workbench">
+			<ingredient name="modDemonKatanaSpellScrollFire" count="1"/>
+			<ingredient name="modDemonKatanaSpellScrollPoison" count="1"/>
+		</recipe>
+		<!-- 刺骨 -->
+		<recipe name="modDemonKatanaSpellScrollPluralMerge210" count="1" craft_time="10" craft_area="workbench">
+			<ingredient name="modDemonKatanaSpellScrollFrost" count="1"/>
+			<ingredient name="modDemonKatanaSpellScrollPoison" count="1"/>
+		</recipe>
+		<!-- 腐化 -->
+		<recipe name="modDemonKatanaSpellScrollPluralMerge212" count="1" craft_time="10" craft_area="workbench">
+			<ingredient name="modDemonKatanaSpellScrollElectric" count="1"/>
+			<ingredient name="modDemonKatanaSpellScrollPoison" count="1"/>
+		</recipe>
+		<!-- 焰噬 -->
+		<recipe name="modDemonKatanaSpellScrollPluralMerge217" count="1" craft_time="10" craft_area="workbench">
+			<ingredient name="modDemonKatanaSpellScrollFire" count="3"/>
+			<ingredient name="modDemonKatanaSpellScrollWind" count="3"/>
+		</recipe>
+		<!-- 凍傷 -->
+		<recipe name="modDemonKatanaSpellScrollPluralMerge218" count="1" craft_time="10" craft_area="workbench">
+			<ingredient name="modDemonKatanaSpellScrollFrost" count="3"/>
+			<ingredient name="modDemonKatanaSpellScrollWind" count="3"/>
+		</recipe>
+		<!-- 颶風 -->
+		<recipe name="modDemonKatanaSpellScrollPluralMerge220" count="1" craft_time="10" craft_area="workbench">
+			<ingredient name="modDemonKatanaSpellScrollElectric" count="3"/>
+			<ingredient name="modDemonKatanaSpellScrollWind" count="3"/>
+		</recipe>
+		<!-- 白骨 -->
+		<recipe name="modDemonKatanaSpellScrollPluralMerge224" count="1" craft_time="10" craft_area="workbench">
+			<ingredient name="modDemonKatanaSpellScrollPoison" count="3"/>
+			<ingredient name="modDemonKatanaSpellScrollWind" count="3"/>
+		</recipe>
+
+
+		<!-- 陰火 -->
+		<recipe name="modDemonKatanaSpellScrollPluralMerge307" count="1" craft_time="10" craft_area="workbench">
+			<ingredient name="modDemonKatanaSpellScrollFire" count="5"/>
+			<ingredient name="modDemonKatanaSpellScrollFrost" count="5"/>
+			<ingredient name="modDemonKatanaSpellScrollElectric" count="5"/>
+		</recipe>
+		<!-- 冰雹 -->
+		<recipe name="modDemonKatanaSpellScrollPluralMerge311" count="1" craft_time="10" craft_area="workbench">
+			<ingredient name="modDemonKatanaSpellScrollFire" count="5"/>
+			<ingredient name="modDemonKatanaSpellScrollFrost" count="5"/>
+			<ingredient name="modDemonKatanaSpellScrollPoison" count="5"/>
+		</recipe>
+		<!-- 奔流 -->
+		<recipe name="modDemonKatanaSpellScrollPluralMerge313" count="1" craft_time="10" craft_area="workbench">
+			<ingredient name="modDemonKatanaSpellScrollFire" count="5"/>
+			<ingredient name="modDemonKatanaSpellScrollElectric" count="5"/>
+			<ingredient name="modDemonKatanaSpellScrollPoison" count="5"/>
+		</recipe>
+		<!-- 疫病 -->
+		<recipe name="modDemonKatanaSpellScrollPluralMerge314" count="1" craft_time="10" craft_area="workbench">
+			<ingredient name="modDemonKatanaSpellScrollFrost" count="5"/>
+			<ingredient name="modDemonKatanaSpellScrollElectric" count="5"/>
+			<ingredient name="modDemonKatanaSpellScrollPoison" count="5"/>
+		</recipe>
+		<!-- 旋渦 -->
+		<recipe name="modDemonKatanaSpellScrollPluralMerge319" count="1" craft_time="10" craft_area="workbench">
+			<ingredient name="modDemonKatanaSpellScrollFire" count="5"/>
+			<ingredient name="modDemonKatanaSpellScrollFrost" count="5"/>
+			<ingredient name="modDemonKatanaSpellScrollWind" count="5"/>
+		</recipe>
+		<!-- 炎盾 -->
+		<recipe name="modDemonKatanaSpellScrollPluralMerge321" count="1" craft_time="10" craft_area="workbench">
+			<ingredient name="modDemonKatanaSpellScrollFire" count="5"/>
+			<ingredient name="modDemonKatanaSpellScrollElectric" count="5"/>
+			<ingredient name="modDemonKatanaSpellScrollWind" count="5"/>
+		</recipe>
+		<!-- 三界 -->
+		<recipe name="modDemonKatanaSpellScrollPluralMerge322" count="1" craft_time="10" craft_area="workbench">
+			<ingredient name="modDemonKatanaSpellScrollFrost" count="5"/>
+			<ingredient name="modDemonKatanaSpellScrollElectric" count="5"/>
+			<ingredient name="modDemonKatanaSpellScrollWind" count="5"/>
+		</recipe>
+		<!-- 強斬 -->
+		<recipe name="modDemonKatanaSpellScrollPluralMerge325" count="1" craft_time="10" craft_area="workbench">
+			<ingredient name="modDemonKatanaSpellScrollFire" count="5"/>
+			<ingredient name="modDemonKatanaSpellScrollPoison" count="5"/>
+			<ingredient name="modDemonKatanaSpellScrollWind" count="5"/>
+		</recipe>
+		<!-- 吸血 -->
+		<recipe name="modDemonKatanaSpellScrollPluralMerge326" count="1" craft_time="10" craft_area="workbench">
+			<ingredient name="modDemonKatanaSpellScrollFrost" count="5"/>
+			<ingredient name="modDemonKatanaSpellScrollPoison" count="5"/>
+			<ingredient name="modDemonKatanaSpellScrollWind" count="5"/>
+		</recipe>
+		<!-- 滅魂 -->
+		<recipe name="modDemonKatanaSpellScrollPluralMerge328" count="1" craft_time="10" craft_area="workbench">
+			<ingredient name="modDemonKatanaSpellScrollElectric" count="5"/>
+			<ingredient name="modDemonKatanaSpellScrollPoison" count="5"/>
+			<ingredient name="modDemonKatanaSpellScrollWind" count="5"/>
+		</recipe>
+		<!-- 日輪 -->
+		<recipe name="modDemonKatanaSpellScrollPluralMerge329" count="1" craft_time="10" craft_area="workbench">
+			<ingredient name="modDemonKatanaSpellScrollEidolon" count="5"/>
+			<ingredient name="modDemonKatanaSpellScrollFire" count="5"/>
+			<ingredient name="modDemonKatanaSpellScrollElectric" count="5"/>
+		</recipe>
+		<!-- 月蝕 -->
+		<recipe name="modDemonKatanaSpellScrollPluralMerge330" count="1" craft_time="10" craft_area="workbench">
+			<ingredient name="modDemonKatanaSpellScrollEidolon" count="5"/>
+			<ingredient name="modDemonKatanaSpellScrollFrost" count="5"/>
+			<ingredient name="modDemonKatanaSpellScrollElectric" count="5"/>
+		</recipe>
+		<!-- 咒縛 -->
+		<recipe name="modDemonKatanaSpellScrollPluralMerge331" count="1" craft_time="10" craft_area="workbench">
+			<ingredient name="modDemonKatanaSpellScrollEidolon" count="5"/>
+			<ingredient name="modDemonKatanaSpellScrollFrost" count="5"/>
+			<ingredient name="modDemonKatanaSpellScrollPoison" count="5"/>
+		</recipe>
+
+		<!-- 地獄業火 -->
+		<recipe name="modDemonKatanaSpellScrollPluralMerge415" count="1" craft_time="10" craft_area="workbench">
+			<ingredient name="modDemonKatanaSpellScrollFire" count="7"/>
+			<ingredient name="modDemonKatanaSpellScrollFrost" count="7"/>
+			<ingredient name="modDemonKatanaSpellScrollElectric" count="7"/>
+			<ingredient name="modDemonKatanaSpellScrollPoison" count="7"/>
+		</recipe>
+		<!-- 冰川碎裂 -->
+		<recipe name="modDemonKatanaSpellScrollPluralMerge423" count="1" craft_time="10" craft_area="workbench">
+			<ingredient name="modDemonKatanaSpellScrollFire" count="7"/>
+			<ingredient name="modDemonKatanaSpellScrollFrost" count="7"/>
+			<ingredient name="modDemonKatanaSpellScrollElectric" count="7"/>
+			<ingredient name="modDemonKatanaSpellScrollWind" count="7"/>
+		</recipe>
+		<!-- 極限電能 -->
+		<recipe name="modDemonKatanaSpellScrollPluralMerge427" count="1" craft_time="10" craft_area="workbench">
+			<ingredient name="modDemonKatanaSpellScrollFire" count="7"/>
+			<ingredient name="modDemonKatanaSpellScrollFrost" count="7"/>
+			<ingredient name="modDemonKatanaSpellScrollPoison" count="7"/>
+			<ingredient name="modDemonKatanaSpellScrollWind" count="7"/>
+		</recipe>
+		<!-- 漫天毒雨 -->
+		<recipe name="modDemonKatanaSpellScrollPluralMerge429" count="1" craft_time="10" craft_area="workbench">
+			<ingredient name="modDemonKatanaSpellScrollFire" count="7"/>
+			<ingredient name="modDemonKatanaSpellScrollElectric" count="7"/>
+			<ingredient name="modDemonKatanaSpellScrollPoison" count="7"/>
+			<ingredient name="modDemonKatanaSpellScrollWind" count="7"/>
+		</recipe>
+		<!-- 飛刃風暴 -->
+		<recipe name="modDemonKatanaSpellScrollPluralMerge430" count="1" craft_time="10" craft_area="workbench">
+			<ingredient name="modDemonKatanaSpellScrollFrost" count="7"/>
+			<ingredient name="modDemonKatanaSpellScrollElectric" count="7"/>
+			<ingredient name="modDemonKatanaSpellScrollPoison" count="7"/>
+			<ingredient name="modDemonKatanaSpellScrollWind" count="7"/>
+		</recipe>
+		<!-- 天之四靈 -->
+		<recipe name="modDemonKatanaSpellScrollPluralMerge531" count="1" craft_time="10" craft_area="workbench">
+			<ingredient name="modDemonKatanaSpellScrollFire" count="9"/>
+			<ingredient name="modDemonKatanaSpellScrollFrost" count="9"/>
+			<ingredient name="modDemonKatanaSpellScrollElectric" count="9"/>
+			<ingredient name="modDemonKatanaSpellScrollPoison" count="9"/>
+			<ingredient name="modDemonKatanaSpellScrollWind" count="9"/>
+		</recipe>
+		<!-- 刀雨 -->
+		<recipe name="modDemonKatanaSpellScrollPluralMerge532" count="1" craft_time="10" craft_area="workbench">
+			<ingredient name="modDemonKatanaSpellScrollEidolon" count="9"/>
+			<ingredient name="modDemonKatanaSpellScrollFire" count="9"/>
+			<ingredient name="modDemonKatanaSpellScrollElectric" count="9"/>
+			<ingredient name="modDemonKatanaSpellScrollPoison" count="9"/>
+			<ingredient name="modDemonKatanaSpellScrollWind" count="9"/>
+		</recipe>
+
+		<!-- 星光 -->
+		<recipe name="modDemonKatanaSpellScrollStarlight" count="1" craft_time="10" craft_area="workbench">
+			<ingredient name="modDemonKatanaSpellScrollEidolon" count="1"/>
+			<ingredient name="modDemonKatanaSpellScrollFire" count="2"/>
+		</recipe>
+	</append>
+</configs>

@@ -1,0 +1,270 @@
+<config>
+	<append xpath="/item_modifiers">
+		<item_modifier name="modIvElementRequiredTemplate" type="attachment">
+			<property name="CreativeMode" value="None"/>
+			<property name="Stacknumber" value="1"/>
+			<property name="HoldType" value="45"/>
+			<property name="Meshfile" value="#Other/Items?Misc/sackPrefab.prefab"/>
+			<property name="DropMeshfile" value="#Other/Items?Misc/sack_droppedPrefab.prefab"/>
+			<property name="Group" value="Mods"/>
+			<item_property_overrides name="*">
+				<property name="Material" value="Mmetal"/>
+			</item_property_overrides>
+		</item_modifier>
+		<!-- 垃圾砲, 極地彈倉 (large amount of ammo)
+		彈匣量增加
+		耐久值消耗降低
+		實體攻擊力降低
+		-->
+		<item_modifier name="modIvElementLargeAmountOfAmmo" installable_tags="turretRanged" modifier_tags="magazine" blocked_tags="noMods" type="attachment">
+			<property name="Extends" value="modIvElementRequiredTemplate"/>
+			<property name="CustomIcon" value="modIvElementLargeAmountOfAmmo"/>
+			<property name="EconomicValue" value="1000"/>
+			<property name="DescriptionKey" value="modIvElementLargeAmountOfAmmoDesc"/>
+			<effect_group tiered="false">
+				<passive_effect name="MagazineSize" operation="perc_add" value="8,10"/>
+				<passive_effect name="DegradationPerUse" operation="perc_add" value="-.2"/>
+				<passive_effect name="EntityDamage" operation="perc_add" value="-0.05,-0.1"/>
+			</effect_group>
+		</item_modifier>
+		<!-- 垃圾砲, 極速掃蕩 (fast shooting)
+		射擊速度提升
+		耐久值消耗降低
+		裝填速度降低
+		-->
+		<item_modifier name="modIvElementFastShooting" installable_tags="turretRanged" modifier_tags="magazine" blocked_tags="noMods" type="attachment">
+			<property name="Extends" value="modIvElementRequiredTemplate"/>
+			<property name="CustomIcon" value="modIvElementFastShooting"/>
+			<property name="EconomicValue" value="1000"/>
+			<property name="DescriptionKey" value="modIvElementFastShootingDesc"/>
+			<effect_group tiered="false">
+				<passive_effect name="RoundsPerMinute" operation="perc_add" value="0.2,1"/>
+				<passive_effect name="DegradationPerUse" operation="perc_add" value="-.15"/>
+				<passive_effect name="ReloadSpeedMultiplier" operation="perc_add" value="-.3"/>
+			</effect_group>
+		</item_modifier>
+		<!-- 散彈槍, 橫掃千軍 (total Annihilation)
+		實體穿透數增加
+		有效射擊範圍提升
+		彈匣量增加
+		實體攻擊力降低
+		-->
+		<item_modifier name="modIvElementTotalAnnihilation" installable_tags="shotgun" modifier_tags="damagePower" blocked_tags="noMods" type="attachment">
+			<property name="Extends" value="modIvElementRequiredTemplate"/>
+			<property name="CustomIcon" value="modIvElementTotalAnnihilation"/>
+			<property name="EconomicValue" value="1000"/>
+			<property name="DescriptionKey" value="modIvElementTotalAnnihilationDesc"/>
+			<effect_group tiered="false">
+				<passive_effect name="EntityPenetrationCount" operation="perc_add" value="2"/>
+				<passive_effect name="DamageFalloffRange" operation="perc_add" value="1"/>
+				<passive_effect name="MagazineSize" operation="perc_add" value="1,2"/>
+				<passive_effect name="EntityDamage" operation="perc_add" value="-0.05,-0.1"/>
+			</effect_group>
+		</item_modifier>
+		<!-- 手槍, 特工科技 (agent technology)
+		有效射擊範圍提升
+		最大射程範圍提升
+		準心集中速度提升
+		瞄準精度提升
+		裝填速度降低
+		-->
+		<item_modifier name="modIvElementAgentTechnology" installable_tags="pistol" modifier_tags="magazine,barrelAttachment" blocked_tags="noMods,noSilencer,shotgun" type="attachment">
+			<property name="Extends" value="modIvElementRequiredTemplate"/>
+			<property name="CustomIcon" value="modIvElementAgentTechnology"/>
+			<property name="EconomicValue" value="1000"/>
+			<property name="DescriptionKey" value="modIvElementAgentTechnologyDesc"/>
+			<item_property_overrides name="*">
+				<property name="Sound_start" value="pistol_s_fire"/>
+				<property name="Sound_end" value=""/>
+				<property name="Sound_loop" value="pistol_s_fire"/>
+			</item_property_overrides>
+			
+			<item_property_overrides name="gunHandgunT0PipePistol">
+				<property name="Sound_start" value="pistol_s_fire"/>
+				<property name="Sound_loop" value="pistol_s_fire"/>
+			</item_property_overrides>
+			
+			<item_property_overrides name="gunHandgunT1Pistol">
+				<property name="Sound_start" value="pistol_s_fire"/>
+			</item_property_overrides>
+			
+			<item_property_overrides name="gunHandgunT3SMG5">
+				<property name="Sound_start" value="smg_s_fire"/>
+				<property name="Sound_end" value="silencefiller"/>
+				<property name="Sound_loop" value="smg_s_fire"/>
+			</item_property_overrides>
+			
+			<item_property_overrides name="gunHandgunT2Magnum44">
+				<property name="Sound_start" value="pump_shotgun_s_fire"/>
+			</item_property_overrides>
+			
+			<item_property_overrides name="gunHandgunT3DesertVulture">
+				<property name="Sound_start" value="pump_shotgun_s_fire"/>
+				<property name="Sound_loop" value="pump_shotgun_s_fire"/>
+			</item_property_overrides>
+			
+			<item_property_overrides name="gunShotgunT1DoubleBarrel">
+				<property name="Sound_start" value="pump_shotgun_s_fire"/>
+			</item_property_overrides>
+			
+			<item_property_overrides name="gunShotgunT2PumpShotgun">
+				<property name="Sound_start" value="pump_shotgun_s_fire"/>
+			</item_property_overrides>
+			
+			<item_property_overrides name="gunShotgunT3AutoShotgun">
+				<property name="Sound_start" value="pump_shotgun_s_fire"/>
+				<property name="Sound_loop" value="pump_shotgun_s_fire"/>
+			</item_property_overrides>
+			
+			<item_property_overrides name="gunRifleT1HuntingRifle">
+				<property name="Sound_start" value="hunting_rifle_s_fire"/>
+			</item_property_overrides>
+			
+			<item_property_overrides name="gunRifleT2LeverActionRifle">
+				<property name="Sound_start" value="sniperrifle_s_fire"/>
+				<property name="Sound_loop" value="sniperrifle_s_fire"/>
+			</item_property_overrides>
+			
+			<item_property_overrides name="gunRifleT3SniperRifle">
+				<property name="Sound_start" value="sniperrifle_s_fire"/>
+				<property name="Sound_loop" value="sniperrifle_s_fire"/>
+			</item_property_overrides>
+			
+			<item_property_overrides name="gunMGT1AK47">
+				<property name="Sound_start" value="ak47_s_fire"/>
+				<property name="Sound_end" value="silencefiller"/>
+				<property name="Sound_loop" value="ak47_s_fire"/>
+			</item_property_overrides>
+			
+			<item_property_overrides name="gunMGT2TacticalAR">
+				<property name="Sound_start" value="ak47_s_fire"/>
+				<property name="Sound_end" value="silencefiller"/>
+				<property name="Sound_loop" value="ak47_s_fire"/>
+			</item_property_overrides>
+			
+			<item_property_overrides name="gunMGT3M60">
+				<property name="Sound_start" value="m60_s_fire"/>
+				<property name="Sound_end" value="silencefiller"/>
+				<property name="Sound_loop" value="m60_s_fire"/>
+			</item_property_overrides>
+			
+			<effect_group tiered="false">
+				<passive_effect name="DamageFalloffRange" operation="perc_add" value="1"/>
+				<passive_effect name="MaxRange" operation="perc_add" value="1"/>
+				<passive_effect name="WeaponHandling" operation="perc_add" value=".5"/>
+				<passive_effect name="SpreadMultiplierAiming" operation="perc_add" value="-.5"/>
+				<passive_effect name="ReloadSpeedMultiplier" operation="perc_add" value="-0.1,-.3"/>
+			</effect_group>
+		</item_modifier>
+		<!-- 弓類, 叢林殺手 (jungle killer)
+		投射物速度提升
+		射擊精準度提升
+		裝填速度提升
+		噪音降低
+		耐久值消耗增加
+		-->
+		<item_modifier name="modIvElementJungleKiller" installable_tags="bow,crossbow" modifier_tags="velocity,accuracy" blocked_tags="noMods" type="attachment">
+			<property name="Extends" value="modIvElementRequiredTemplate"/>
+			<property name="CustomIcon" value="modIvElementJungleKiller"/>
+			<property name="EconomicValue" value="1000"/>
+			<property name="DescriptionKey" value="modIvElementJungleKillerDesc"/>
+			<effect_group tiered="false">
+				<passive_effect name="ProjectileVelocity" operation="perc_add" value="0.2,0.5"/>
+				<passive_effect name="SpreadMultiplierAiming" operation="perc_add" value="-0.5"/>
+				<passive_effect name="SpreadMultiplierHip" operation="perc_add" value="-0.5"/>
+				<passive_effect name="ReloadSpeedMultiplier" operation="perc_add" value="0.3,0.5"/>
+				<passive_effect name="NoiseMultiplier" operation="perc_add" value="-0.1,-0.5"/>
+				<passive_effect name="DegradationPerUse" operation="perc_add" value="0.1,0.2"/>
+			</effect_group>
+		</item_modifier>
+
+		<!-- 近戰工具, 瘋狂輸出 (crazy output)
+		針對石頭、鐵、泥土等材質增加傷害
+		攻擊速度提升
+		實體傷害降低
+		-->
+		<item_modifier name="modIvElementCrazyOutput" installable_tags="melee" modifier_tags="powerTools" blocked_tags="noMods,motorTool,knife,machete" type="attachment">
+			<property name="Extends" value="modIvElementRequiredTemplate"/>
+			<property name="CustomIcon" value="modIvElementCrazyOutput"/>
+			<property name="EconomicValue" value="1000"/>
+			<property name="DescriptionKey" value="modIvElementCrazyOutputDesc"/>
+			<effect_group tiered="false">
+				<passive_effect name="DamageModifier" operation="perc_add" value="0.5" tags="stone"/>
+				<passive_effect name="DamageModifier" operation="perc_add" value="0.5" tags="metal"/>
+				<passive_effect name="DamageModifier" operation="perc_add" value="0.5" tags="earth"/>
+				<passive_effect name="AttacksPerMinute" operation="perc_add" value="0.3,0.5"/>
+				<passive_effect name="EntityDamage" operation="perc_add" value="-0.1,-0.2"/>
+			</effect_group>
+		</item_modifier>
+		<!-- 近戰工具, 年年豐收 (harvest year after year)
+		針對肉、電子零件、礦物木材等材質增加收獲量
+		攻擊速度降低
+		-->
+		<item_modifier name="modIvElementHarvestYearAfterYear" installable_tags="melee" modifier_tags="powerTools" blocked_tags="noMods,motorTool" type="attachment">
+			<property name="Extends" value="modIvElementRequiredTemplate"/>
+			<property name="CustomIcon" value="modIvElementHarvestYearAfterYear"/>
+			<property name="EconomicValue" value="1000"/>
+			<property name="DescriptionKey" value="modIvElementHarvestYearAfterYearDesc"/>
+			<effect_group tiered="false">
+				<passive_effect name="HarvestCount" operation="perc_add" value="1,2" tags="butcherHarvest"/>
+				<passive_effect name="HarvestCount" operation="perc_add" value="1,2" tags="salvageHarvest"/>
+				<passive_effect name="HarvestCount" operation="perc_add" value="1,2" tags="oreWoodHarvest"/>
+				<passive_effect name="AttacksPerMinute" operation="perc_add" value="-0.05,-0.1"/>
+			</effect_group>
+		</item_modifier>
+		<!-- 近戰工具, 經驗老道 (seasoned)
+		經驗值量提升
+		攻擊速度提升
+		製作物品速度提升
+		方塊傷害降低
+		-->
+		<item_modifier name="modIvElementSeasoned" installable_tags="melee" modifier_tags="powerTools" blocked_tags="noMods,motorTool" type="attachment">
+			<property name="Extends" value="modIvElementRequiredTemplate"/>
+			<property name="CustomIcon" value="modIvElementSeasoned"/>
+			<property name="EconomicValue" value="1000"/>
+			<property name="DescriptionKey" value="modIvElementSeasonedDesc"/>
+			<effect_group tiered="false">
+				<passive_effect name="PlayerExpGain" operation="perc_add" value="0.3,1"/>
+				<passive_effect name="AttacksPerMinute" operation="perc_add" value="0.1,0.2"/>
+				<passive_effect name="CraftingTime" operation="perc_add" value="-0.3,-0.5"/>
+				<passive_effect name="BlockDamage" operation="perc_add" value="-0.3,-0.5"/>
+			</effect_group>
+		</item_modifier>
+		<!-- 近戰刀具, 大切八塊 (cut into eight)
+		擊中目標必定導致瘸腿
+		攻擊速度提升
+		耐力消耗降低
+		斷肢率提升
+		耐久值消耗增加
+		-->
+		<item_modifier name="modIvElementCutIntoEight" installable_tags="knife,machete,IVdemonKatana" modifier_tags="powerTools" blocked_tags="noMods" type="attachment">
+			<property name="Extends" value="modIvElementRequiredTemplate"/>
+			<property name="CustomIcon" value="modIvElementCutIntoEight"/>
+			<property name="EconomicValue" value="1000"/>
+			<property name="DescriptionKey" value="modIvElementCutIntoEightDesc"/>
+			<effect_group tiered="false">
+				<triggered_effect trigger="onSelfDamagedOther" action="AddBuff" target="other" buff="buffInjuryCrippled01"/>
+				<passive_effect name="AttacksPerMinute" operation="perc_add" value="0.1,0.5"/>
+				<passive_effect name="StaminaLoss" operation="perc_add" value="-0.1,-0.5" tags="primary,secondary"/>
+				<passive_effect name="DismemberChance" operation="perc_add" value="0.1,0.5"/>
+				<passive_effect name="DegradationPerUse" operation="perc_add" value="0.05,0.1"/>
+			</effect_group>
+		</item_modifier>
+		<!-- 電動工具, 別擋路 (get out of the way)
+		彈匣量提升
+		射擊速度提升
+		經驗值量降低
+		-->
+		<item_modifier name="modIvElementGetOutOfTheWay" installable_tags="motorTool" modifier_tags="powerTools" blocked_tags="noMods" type="attachment">
+			<property name="Extends" value="modIvElementRequiredTemplate"/>
+			<property name="CustomIcon" value="modIvElementGetOutOfTheWay"/>
+			<property name="EconomicValue" value="1000"/>
+			<property name="DescriptionKey" value="modIvElementGetOutOfTheWayDesc"/>
+			<effect_group tiered="false">
+				<passive_effect name="MagazineSize" operation="perc_add" value="1,3"/>
+				<passive_effect name="RoundsPerMinute" operation="perc_add" value="0.2,0.5"/>
+				<passive_effect name="PlayerExpGain" operation="perc_add" value="-0.1,-0.5"/>
+			</effect_group>
+		</item_modifier>
+	</append>
+</config>

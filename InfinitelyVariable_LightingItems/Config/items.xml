@@ -1,0 +1,300 @@
+<config>
+	<append xpath="/items">
+		<item name="thrownLightingball_white">
+			<property name="HoldType" value="40"/>
+			<property name="Meshfile" value="#@modfolder:Resources/lightingitems?LightingItems_hand"/>
+			<property name="DropMeshfile" value="#@modfolder:Resources/lightingitems?LightingItems_white"/>
+			<property name="CustomIcon" value="lightingitems_white"/>
+			<property name="DescriptionKey" value="thrownLightingball_whiteDesc"/>
+			<property name="DropScale" value="2"/>
+			<property name="Material" value="MDynamite"/>
+			<property name="Weight" value="0"/>
+			<property name="Stacknumber" value="30000"/>
+			<property name="EconomicValue" value="100"/>
+			<property name="SellableToTrader" value="true"/>
+			<property name="Group" value="Ammo/Weapons,Ammo"/>
+			<property class="Action0">
+				<property name="Class" value="ThrowAway"/>
+				<property name="Delay" value="0.5"/>
+				<property name="Throw_strength_default" value="8"/>
+				<property name="Throw_strength_max" value="200"/>
+				<property name="Max_strain_time" value="1"/>
+				<property name="Sound_start" value="swoosh"/>
+			</property>
+			<property name="ThrowableDecoy" value="true"/>
+			<property name="DistractionTags" value="zombie,requires_contact"/>
+			<effect_group name="decoy" tiered="false">
+				<passive_effect name="DistractionRadius" operation="base_set" value="15"/>
+				<passive_effect name="DistractionLifetime" operation="base_set" value="1"/>
+				<passive_effect name="DistractionStrength" operation="base_set" value="100"/>
+			</effect_group>
+		</item>
+		<item name="thrownLightingball_yellow">
+			<property name="HoldType" value="40"/>
+			<property name="Meshfile" value="#@modfolder:Resources/lightingitems?LightingItems_hand"/>
+			<property name="DropMeshfile" value="#@modfolder:Resources/lightingitems?LightingItems_yellow"/>
+			<property name="CustomIcon" value="lightingitems_yellow"/>
+			<property name="DescriptionKey" value="thrownLightingball_whiteDesc"/>
+			<property name="DropScale" value="2"/>
+			<property name="Material" value="MDynamite"/>
+			<property name="Weight" value="0"/>
+			<property name="Stacknumber" value="30000"/>
+			<property name="EconomicValue" value="100"/>
+			<property name="SellableToTrader" value="true"/>
+			<property name="Group" value="Ammo/Weapons,Ammo"/>
+			<property class="Action0">
+				<property name="Class" value="ThrowAway"/>
+				<property name="Delay" value="0.5"/>
+				<property name="Throw_strength_default" value="8"/>
+				<property name="Throw_strength_max" value="200"/>
+				<property name="Max_strain_time" value="1"/>
+				<property name="Sound_start" value="swoosh"/>
+			</property>
+			<property name="ThrowableDecoy" value="true"/>
+			<property name="DistractionTags" value="zombie,requires_contact"/>
+			<effect_group name="decoy" tiered="false">
+				<passive_effect name="DistractionRadius" operation="base_set" value="15"/>
+				<passive_effect name="DistractionLifetime" operation="base_set" value="1"/>
+				<passive_effect name="DistractionStrength" operation="base_set" value="100"/>
+			</effect_group>
+		</item>
+		<item name="thrownLightingball_blue">
+			<property name="HoldType" value="40"/>
+			<property name="Meshfile" value="#@modfolder:Resources/lightingitems?LightingItems_hand"/>
+			<property name="DropMeshfile" value="#@modfolder:Resources/lightingitems?LightingItems_blue"/>
+			<property name="CustomIcon" value="lightingitems_blue"/>
+			<property name="DescriptionKey" value="thrownLightingball_whiteDesc"/>
+			<property name="DropScale" value="2"/>
+			<property name="Material" value="MDynamite"/>
+			<property name="Weight" value="0"/>
+			<property name="Stacknumber" value="30000"/>
+			<property name="EconomicValue" value="100"/>
+			<property name="SellableToTrader" value="true"/>
+			<property name="Group" value="Ammo/Weapons,Ammo"/>
+			<property class="Action0">
+				<property name="Class" value="ThrowAway"/>
+				<property name="Delay" value="0.5"/>
+				<property name="Throw_strength_default" value="8"/>
+				<property name="Throw_strength_max" value="200"/>
+				<property name="Max_strain_time" value="1"/>
+				<property name="Sound_start" value="swoosh"/>
+			</property>
+			<property name="ThrowableDecoy" value="true"/>
+			<property name="DistractionTags" value="zombie,requires_contact"/>
+			<effect_group name="decoy" tiered="false">
+				<passive_effect name="DistractionRadius" operation="base_set" value="15"/>
+				<passive_effect name="DistractionLifetime" operation="base_set" value="1"/>
+				<passive_effect name="DistractionStrength" operation="base_set" value="100"/>
+			</effect_group>
+		</item>
+		<item name="thrownLightingball_green">
+			<property name="HoldType" value="40"/>
+			<property name="Meshfile" value="#@modfolder:Resources/lightingitems?LightingItems_hand"/>
+			<property name="DropMeshfile" value="#@modfolder:Resources/lightingitems?LightingItems_green"/>
+			<property name="CustomIcon" value="lightingitems_green"/>
+			<property name="DescriptionKey" value="thrownLightingball_whiteDesc"/>
+			<property name="DropScale" value="2"/>
+			<property name="Material" value="MDynamite"/>
+			<property name="Weight" value="0"/>
+			<property name="Stacknumber" value="30000"/>
+			<property name="EconomicValue" value="100"/>
+			<property name="SellableToTrader" value="true"/>
+			<property name="Group" value="Ammo/Weapons,Ammo"/>
+			<property class="Action0">
+				<property name="Class" value="ThrowAway"/>
+				<property name="Delay" value="0.5"/>
+				<property name="Throw_strength_default" value="8"/>
+				<property name="Throw_strength_max" value="200"/>
+				<property name="Max_strain_time" value="1"/>
+				<property name="Sound_start" value="swoosh"/>
+			</property>
+			<property name="ThrowableDecoy" value="true"/>
+			<property name="DistractionTags" value="zombie,requires_contact"/>
+			<effect_group name="decoy" tiered="false">
+				<passive_effect name="DistractionRadius" operation="base_set" value="15"/>
+				<passive_effect name="DistractionLifetime" operation="base_set" value="1"/>
+				<passive_effect name="DistractionStrength" operation="base_set" value="100"/>
+			</effect_group>
+		</item>
+		<item name="thrownLightingball_red">
+			<property name="HoldType" value="40"/>
+			<property name="Meshfile" value="#@modfolder:Resources/lightingitems?LightingItems_hand"/>
+			<property name="DropMeshfile" value="#@modfolder:Resources/lightingitems?LightingItems_red"/>
+			<property name="CustomIcon" value="lightingitems_red"/>
+			<property name="DescriptionKey" value="thrownLightingball_whiteDesc"/>
+			<property name="DropScale" value="2"/>
+			<property name="Material" value="MDynamite"/>
+			<property name="Weight" value="0"/>
+			<property name="Stacknumber" value="30000"/>
+			<property name="EconomicValue" value="100"/>
+			<property name="SellableToTrader" value="true"/>
+			<property name="Group" value="Ammo/Weapons,Ammo"/>
+			<property class="Action0">
+				<property name="Class" value="ThrowAway"/>
+				<property name="Delay" value="0.5"/>
+				<property name="Throw_strength_default" value="8"/>
+				<property name="Throw_strength_max" value="200"/>
+				<property name="Max_strain_time" value="1"/>
+				<property name="Sound_start" value="swoosh"/>
+			</property>
+			<property name="ThrowableDecoy" value="true"/>
+			<property name="DistractionTags" value="zombie,requires_contact"/>
+			<effect_group name="decoy" tiered="false">
+				<passive_effect name="DistractionRadius" operation="base_set" value="15"/>
+				<passive_effect name="DistractionLifetime" operation="base_set" value="1"/>
+				<passive_effect name="DistractionStrength" operation="base_set" value="100"/>
+			</effect_group>
+		</item>
+
+		<item name="thrownLightingball_white_sticky">
+			<property name="HoldType" value="40"/>
+			<property name="Meshfile" value="#@modfolder:Resources/lightingitems?LightingItems_hand"/>
+			<property name="DropMeshfile" value="#@modfolder:Resources/lightingitems?LightingItems_white"/>
+			<property name="CustomIcon" value="lightingitems_white_sticky"/>
+			<property name="DescriptionKey" value="thrownLightingball_white_stickyDesc"/>
+			<property name="DropScale" value="2"/>
+			<property name="Material" value="MDynamite"/>
+			<property name="Weight" value="0"/>
+			<property name="Stacknumber" value="30000"/>
+			<property name="EconomicValue" value="100"/>
+			<property name="SellableToTrader" value="true"/>
+			<property name="Group" value="Ammo/Weapons,Ammo"/>
+			<property name="StickPercent" value="1"/>
+			<property class="Action0">
+				<property name="Class" value="ThrowAway"/>
+				<property name="Delay" value="0.5"/>
+				<property name="Throw_strength_default" value="8"/>
+				<property name="Throw_strength_max" value="200"/>
+				<property name="Max_strain_time" value="1"/>
+				<property name="Sound_start" value="swoosh"/>
+			</property>
+			<property name="ThrowableDecoy" value="true"/>
+			<property name="DistractionTags" value="zombie,requires_contact"/>
+			<effect_group name="decoy" tiered="false">
+				<passive_effect name="DistractionRadius" operation="base_set" value="15"/>
+				<passive_effect name="DistractionLifetime" operation="base_set" value="1"/>
+				<passive_effect name="DistractionStrength" operation="base_set" value="100"/>
+			</effect_group>
+		</item>
+		<item name="thrownLightingball_yellow_sticky">
+			<property name="HoldType" value="40"/>
+			<property name="Meshfile" value="#@modfolder:Resources/lightingitems?LightingItems_hand"/>
+			<property name="DropMeshfile" value="#@modfolder:Resources/lightingitems?LightingItems_yellow"/>
+			<property name="CustomIcon" value="lightingitems_yellow_sticky"/>
+			<property name="DescriptionKey" value="thrownLightingball_white_stickyDesc"/>
+			<property name="DropScale" value="2"/>
+			<property name="Material" value="MDynamite"/>
+			<property name="Weight" value="0"/>
+			<property name="Stacknumber" value="30000"/>
+			<property name="EconomicValue" value="100"/>
+			<property name="SellableToTrader" value="true"/>
+			<property name="Group" value="Ammo/Weapons,Ammo"/>
+			<property name="StickPercent" value="1"/>
+			<property class="Action0">
+				<property name="Class" value="ThrowAway"/>
+				<property name="Delay" value="0.5"/>
+				<property name="Throw_strength_default" value="8"/>
+				<property name="Throw_strength_max" value="200"/>
+				<property name="Max_strain_time" value="1"/>
+				<property name="Sound_start" value="swoosh"/>
+			</property>
+			<property name="ThrowableDecoy" value="true"/>
+			<property name="DistractionTags" value="zombie,requires_contact"/>
+			<effect_group name="decoy" tiered="false">
+				<passive_effect name="DistractionRadius" operation="base_set" value="15"/>
+				<passive_effect name="DistractionLifetime" operation="base_set" value="1"/>
+				<passive_effect name="DistractionStrength" operation="base_set" value="100"/>
+			</effect_group>
+		</item>
+		<item name="thrownLightingball_blue_sticky">
+			<property name="HoldType" value="40"/>
+			<property name="Meshfile" value="#@modfolder:Resources/lightingitems?LightingItems_hand"/>
+			<property name="DropMeshfile" value="#@modfolder:Resources/lightingitems?LightingItems_blue"/>
+			<property name="CustomIcon" value="lightingitems_blue_sticky"/>
+			<property name="DescriptionKey" value="thrownLightingball_white_stickyDesc"/>
+			<property name="DropScale" value="2"/>
+			<property name="Material" value="MDynamite"/>
+			<property name="Weight" value="0"/>
+			<property name="Stacknumber" value="30000"/>
+			<property name="EconomicValue" value="100"/>
+			<property name="SellableToTrader" value="true"/>
+			<property name="Group" value="Ammo/Weapons,Ammo"/>
+			<property name="StickPercent" value="1"/>
+			<property class="Action0">
+				<property name="Class" value="ThrowAway"/>
+				<property name="Delay" value="0.5"/>
+				<property name="Throw_strength_default" value="8"/>
+				<property name="Throw_strength_max" value="200"/>
+				<property name="Max_strain_time" value="1"/>
+				<property name="Sound_start" value="swoosh"/>
+			</property>
+			<property name="ThrowableDecoy" value="true"/>
+			<property name="DistractionTags" value="zombie,requires_contact"/>
+			<effect_group name="decoy" tiered="false">
+				<passive_effect name="DistractionRadius" operation="base_set" value="15"/>
+				<passive_effect name="DistractionLifetime" operation="base_set" value="1"/>
+				<passive_effect name="DistractionStrength" operation="base_set" value="100"/>
+			</effect_group>
+		</item>
+		<item name="thrownLightingball_green_sticky">
+			<property name="HoldType" value="40"/>
+			<property name="Meshfile" value="#@modfolder:Resources/lightingitems?LightingItems_hand"/>
+			<property name="DropMeshfile" value="#@modfolder:Resources/lightingitems?LightingItems_green"/>
+			<property name="CustomIcon" value="lightingitems_green_sticky"/>
+			<property name="DescriptionKey" value="thrownLightingball_white_stickyDesc"/>
+			<property name="DropScale" value="2"/>
+			<property name="Material" value="MDynamite"/>
+			<property name="Weight" value="0"/>
+			<property name="Stacknumber" value="30000"/>
+			<property name="EconomicValue" value="100"/>
+			<property name="SellableToTrader" value="true"/>
+			<property name="Group" value="Ammo/Weapons,Ammo"/>
+			<property name="StickPercent" value="1"/>
+			<property class="Action0">
+				<property name="Class" value="ThrowAway"/>
+				<property name="Delay" value="0.5"/>
+				<property name="Throw_strength_default" value="8"/>
+				<property name="Throw_strength_max" value="200"/>
+				<property name="Max_strain_time" value="1"/>
+				<property name="Sound_start" value="swoosh"/>
+			</property>
+			<property name="ThrowableDecoy" value="true"/>
+			<property name="DistractionTags" value="zombie,requires_contact"/>
+			<effect_group name="decoy" tiered="false">
+				<passive_effect name="DistractionRadius" operation="base_set" value="15"/>
+				<passive_effect name="DistractionLifetime" operation="base_set" value="1"/>
+				<passive_effect name="DistractionStrength" operation="base_set" value="100"/>
+			</effect_group>
+		</item>
+		<item name="thrownLightingball_red_sticky">
+			<property name="HoldType" value="40"/>
+			<property name="Meshfile" value="#@modfolder:Resources/lightingitems?LightingItems_hand"/>
+			<property name="DropMeshfile" value="#@modfolder:Resources/lightingitems?LightingItems_red"/>
+			<property name="CustomIcon" value="lightingitems_red_sticky"/>
+			<property name="DescriptionKey" value="thrownLightingball_white_stickyDesc"/>
+			<property name="DropScale" value="2"/>
+			<property name="Material" value="MDynamite"/>
+			<property name="Weight" value="0"/>
+			<property name="Stacknumber" value="30000"/>
+			<property name="EconomicValue" value="100"/>
+			<property name="SellableToTrader" value="true"/>
+			<property name="Group" value="Ammo/Weapons,Ammo"/>
+			<property name="StickPercent" value="1"/>
+			<property class="Action0">
+				<property name="Class" value="ThrowAway"/>
+				<property name="Delay" value="0.5"/>
+				<property name="Throw_strength_default" value="8"/>
+				<property name="Throw_strength_max" value="200"/>
+				<property name="Max_strain_time" value="1"/>
+				<property name="Sound_start" value="swoosh"/>
+			</property>
+			<property name="ThrowableDecoy" value="true"/>
+			<property name="DistractionTags" value="zombie,requires_contact"/>
+			<effect_group name="decoy" tiered="false">
+				<passive_effect name="DistractionRadius" operation="base_set" value="15"/>
+				<passive_effect name="DistractionLifetime" operation="base_set" value="1"/>
+				<passive_effect name="DistractionStrength" operation="base_set" value="100"/>
+			</effect_group>
+		</item>
+	</append>
+</config>

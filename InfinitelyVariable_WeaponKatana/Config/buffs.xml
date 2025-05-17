@@ -1,0 +1,1704 @@
+<configs>
+	<!-- 針對殭屍產生的效果 -->
+	<!--
+	元素殭屍模組使用的
+	Tags:
+			火焰型	ezFire
+			冰霜型	ezFrost
+			電擊型	ezElectric
+			劇毒型	ezToxic
+			蝕魂型	ezSoul
+	-->
+	<append xpath="/buffs">
+		<!-- 基礎屬性傷害
+		燃燒 30 燃燒會擴散
+		冰凍 10 附加降低移動速度, 攻擊速度
+		電擊 12 附加降低移動速度
+		劇毒 32 附加降低跑步速度
+		風切 11 附加第一次命中時跌倒
+		-->
+		<!-- 燃燒 (01) -->
+		<buff name="buffIvSpellScrollFire">
+			<damage_type value="heat"/>
+			<stack_type value="duration"/>
+			<duration value="8"/>
+			<effect_group>
+				<requirement name="EntityTagCompare" target="self" tags="ezFrost"/>
+				<passive_effect name="HealthChangeOT" operation="base_subtract" value="7.5"/>
+			</effect_group>
+			<effect_group>
+				<passive_effect name="HealthChangeOT" operation="base_subtract" value="3.75,4"/>
+				<triggered_effect trigger="onSelfDied" action="RemoveBuff" buff="buffIvSpellScrollFire"/>
+				<triggered_effect trigger="onSelfEnteredGame" action="RemoveBuff" buff="buffIvSpellScrollFire"/>
+
+				<triggered_effect trigger="onSelfBuffStart" action="AttachParticleEffectToEntity" particle="#@modfolder:Resources/demonkatana?spellsFire01" parent_transform="Hips"/>
+				<triggered_effect trigger="onSelfEnteredGame" action="AttachParticleEffectToEntity" particle="#@modfolder:Resources/demonkatana?spellsFire01" parent_transform="Hips"/>
+				<triggered_effect trigger="onSelfBuffRemove" action="RemoveParticleEffectFromEntity" particle="spellsFire01"/>
+				<triggered_effect trigger="onSelfDied" action="RemoveParticleEffectFromEntity" particle="spellsFire01"/>
+
+				<triggered_effect trigger="onSelfBuffUpdate" action="AddBuff" target="selfAOE" range="1.1" target_tags="zombie,animal" buff="buffIvSpellScrollFireDiffusion"/>
+			</effect_group>
+		</buff>
+		<buff name="buffIvSpellScrollFireDiffusion">
+			<damage_type value="heat"/>
+			<stack_type value="replace"/>
+			<duration value="4"/>
+			<effect_group>
+				<requirement name="EntityTagCompare" target="self" tags="ezFrost"/>
+				<passive_effect name="HealthChangeOT" operation="base_subtract" value="4"/>
+			</effect_group>
+			<effect_group>
+				<passive_effect name="HealthChangeOT" operation="base_subtract" value="2,3"/>
+				<triggered_effect trigger="onSelfDied" action="RemoveBuff" buff="buffIvSpellScrollFireDiffusion"/>
+				<triggered_effect trigger="onSelfEnteredGame" action="RemoveBuff" buff="buffIvSpellScrollFireDiffusion"/>
+
+				<triggered_effect trigger="onSelfBuffStart" action="AttachParticleEffectToEntity" particle="#@modfolder:Resources/demonkatana?spellsFire01" parent_transform="Hips"/>
+				<triggered_effect trigger="onSelfEnteredGame" action="AttachParticleEffectToEntity" particle="#@modfolder:Resources/demonkatana?spellsFire01" parent_transform="Hips"/>
+				<triggered_effect trigger="onSelfBuffRemove" action="RemoveParticleEffectFromEntity" particle="spellsFire01"/>
+				<triggered_effect trigger="onSelfDied" action="RemoveParticleEffectFromEntity" particle="spellsFire01"/>
+
+				<triggered_effect trigger="onSelfBuffUpdate" action="AddBuff" target="selfAOE" range="1.1" target_tags="zombie,animal" buff="buffIvSpellScrollFireDiffusion"/>
+			</effect_group>
+		</buff>
+		<!-- 冰凍 (02) -->
+		<buff name="buffIvSpellScrollFrost">
+			<damage_type value="cold"/>
+			<stack_type value="duration"/>
+			<duration value="6"/>
+			<effect_group>
+				<requirement name="EntityTagCompare" target="self" tags="ezFire"/>
+				<passive_effect name="HealthChangeOT" operation="base_subtract" value="3.3"/>
+			</effect_group>
+			<effect_group>
+				<passive_effect name="HealthChangeOT" operation="base_subtract" value="1.66,2"/>
+				<passive_effect name="WalkSpeed" operation="perc_subtract" value="0.5"/>
+				<passive_effect name="RunSpeed" operation="perc_subtract" value="0.5"/>
+				<passive_effect name="Mobility" operation="perc_subtract" value="0.5" tags="falling,climbing,swimming"/>
+				<passive_effect name="AttacksPerMinute" operation="perc_subtract" value="0.5"/>
+
+				<triggered_effect trigger="onSelfDied" action="RemoveBuff" buff="buffIvSpellScrollFrost"/>
+				<triggered_effect trigger="onSelfEnteredGame" action="RemoveBuff" buff="buffIvSpellScrollFrost"/>
+
+				<triggered_effect trigger="onSelfBuffStart" action="AttachParticleEffectToEntity" particle="#@modfolder:Resources/demonkatana?spellsIce01" parent_transform="Hips"/>
+				<triggered_effect trigger="onSelfEnteredGame" action="AttachParticleEffectToEntity" particle="#@modfolder:Resources/demonkatana?spellsIce01" parent_transform="Hips"/>
+				<triggered_effect trigger="onSelfBuffRemove" action="RemoveParticleEffectFromEntity" particle="spellsIce01"/>
+				<triggered_effect trigger="onSelfDied" action="RemoveParticleEffectFromEntity" particle="spellsIce01"/>
+			</effect_group>
+		</buff>
+		<!-- 電擊 (04) -->
+		<buff name="buffIvSpellScrollElectric">
+			<damage_type value="electrical"/>
+			<stack_type value="duration"/>
+			<duration value="5"/>
+			<effect_group>
+				<requirement name="EntityTagCompare" target="self" tags="ezToxic"/>
+				<passive_effect name="HealthChangeOT" operation="base_subtract" value="4.8"/>
+			</effect_group>
+			<effect_group>
+				<passive_effect name="HealthChangeOT" operation="base_subtract" value="2.4,3"/>
+				<passive_effect name="WalkSpeed" operation="perc_subtract" value="0.9"/>
+				<passive_effect name="RunSpeed" operation="perc_subtract" value="0.9"/>
+				<passive_effect name="Mobility" operation="perc_subtract" value="0.9" tags="falling,climbing,swimming"/>
+
+				<triggered_effect trigger="onSelfDied" action="RemoveBuff" buff="buffIvSpellScrollElectric"/>
+				<triggered_effect trigger="onSelfEnteredGame" action="RemoveBuff" buff="buffIvSpellScrollElectric"/>
+				<triggered_effect trigger="onSelfBuffStart" action="AttachParticleEffectToEntity" particle="#@modfolder:Resources/demonkatana?spellsElectric01" parent_transform="Hips"/>
+				<triggered_effect trigger="onSelfEnteredGame" action="AttachParticleEffectToEntity" particle="#@modfolder:Resources/demonkatana?spellsElectric01" parent_transform="Hips"/>
+				<triggered_effect trigger="onSelfBuffRemove" action="RemoveParticleEffectFromEntity" particle="spellsElectric01"/>
+				<triggered_effect trigger="onSelfDied" action="RemoveParticleEffectFromEntity" particle="spellsElectric01"/>
+			</effect_group>
+		</buff>
+		<!-- 劇毒 (08) -->
+		<buff name="buffIvSpellScrollPoison">
+			<damage_type value="toxic"/>
+			<stack_type value="duration"/>
+			<duration value="10"/>
+			<effect_group>
+				<requirement name="EntityTagCompare" target="self" tags="ezElectric"/>
+				<passive_effect name="HealthChangeOT" operation="base_subtract" value="6.4"/>
+			</effect_group>
+			<effect_group>
+				<passive_effect name="HealthChangeOT" operation="base_subtract" value="3.2,4"/>
+				<passive_effect name="RunSpeed" operation="perc_subtract" value="0.5"/>
+
+				<triggered_effect trigger="onSelfDied" action="RemoveBuff" buff="buffIvSpellScrollPoison"/>
+				<triggered_effect trigger="onSelfEnteredGame" action="RemoveBuff" buff="buffIvSpellScrollPoison"/>
+				<triggered_effect trigger="onSelfBuffStart" action="AttachParticleEffectToEntity" particle="#@modfolder:Resources/demonkatana?spellsPoison01" parent_transform="Hips"/>
+				<triggered_effect trigger="onSelfEnteredGame" action="AttachParticleEffectToEntity" particle="#@modfolder:Resources/demonkatana?spellsPoison01" parent_transform="Hips"/>
+				<triggered_effect trigger="onSelfBuffRemove" action="RemoveParticleEffectFromEntity" particle="spellsPoison01"/>
+				<triggered_effect trigger="onSelfDied" action="RemoveParticleEffectFromEntity" particle="spellsPoison01"/>
+			</effect_group>
+		</buff>
+		<!-- 風切 (16) -->
+		<buff name="buffIvSpellScrollWind">
+			<damage_type value="KnockDown"/>
+			<stack_type value="replace"/>
+			<duration value="2"/>
+			<effect_group>
+				<passive_effect name="HealthChangeOT" operation="base_subtract" value="5.5,6"/>
+				<triggered_effect trigger="onSelfBuffStart" action="Ragdoll" duration="0.1"/>
+
+				<triggered_effect trigger="onSelfDied" action="RemoveBuff" buff="buffIvSpellScrollWind"/>
+				<triggered_effect trigger="onSelfEnteredGame" action="RemoveBuff" buff="buffIvSpellScrollWind"/>
+				<triggered_effect trigger="onSelfBuffStart" action="AttachParticleEffectToEntity" particle="#@modfolder:Resources/demonkatana?spellsWind01"/>
+				<triggered_effect trigger="onSelfEnteredGame" action="AttachParticleEffectToEntity" particle="#@modfolder:Resources/demonkatana?spellsWind01"/>
+				<triggered_effect trigger="onSelfBuffStack" action="AttachParticleEffectToEntity" particle="#@modfolder:Resources/demonkatana?spellsWind01"/>
+				<triggered_effect trigger="onSelfBuffRemove" action="RemoveParticleEffectFromEntity" particle="spellsWind01"/>
+				<triggered_effect trigger="onSelfDied" action="RemoveParticleEffectFromEntity" particle="spellsWind01"/>
+			</effect_group>
+		</buff>
+
+		<!-- 二合屬
+		爆裂 40 附加有機率性跌倒
+		流焰 32 附加範圍性傷害
+		磁爆 22 附加範圍性傷害, 降低移動速度, 有機率性跌倒
+		毒霧 62 附加範圍性傷害,降低跑步速度
+		刺骨 42 附加降低移動速度,攻擊速度
+		腐化 44 附加降低移動速度
+		焰噬 41 當目標為輻射型殭屍時,持續三分鐘消除殭屍的回血作用.另外狀態結束後有10%機率即死
+		凍傷 40 附加效果結束後範圍性降低移動速度,攻擊速度
+		颶風 23 附加有機率性跌倒, 效果結束後降低移動速度
+		白骨 43 附加降低跑步速度, 效果結束後有5%機率即死目標
+		-->
+		<!-- 爆裂 (03) -->
+		<buff name="buffIvSpellScroll203">
+			<damage_type value="KnockDown"/>
+			<stack_type value="duration"/>
+			<duration value="3"/>
+			<effect_group>
+				<requirement name="EntityTagCompare" target="self" tags="ezSoul"/>
+				<passive_effect name="HealthChangeOT" operation="base_subtract" value="26.6"/>
+			</effect_group>
+			<effect_group>
+				<triggered_effect trigger="onSelfBuffUpdate" action="Ragdoll" duration="0.1">
+					<requirement name="RandomRoll" seed_type="Random" min_max="0,100" operation="LTE" value="10"/>
+				</triggered_effect>
+				<passive_effect name="HealthChangeOT" operation="base_subtract" value="13.33,14"/>
+
+				<triggered_effect trigger="onSelfDied" action="RemoveBuff" buff="buffIvSpellScroll203"/>
+				<triggered_effect trigger="onSelfEnteredGame" action="RemoveBuff" buff="buffIvSpellScroll203"/>
+				<triggered_effect trigger="onSelfBuffStart" action="AttachParticleEffectToEntity" particle="#@modfolder:Resources/demonkatana?spells203" parent_transform="Hips"/>
+				<triggered_effect trigger="onSelfEnteredGame" action="AttachParticleEffectToEntity" particle="#@modfolder:Resources/demonkatana?spells203" parent_transform="Hips"/>
+				<triggered_effect trigger="onSelfBuffRemove" action="RemoveParticleEffectFromEntity" particle="spells203"/>
+				<triggered_effect trigger="onSelfDied" action="RemoveParticleEffectFromEntity" particle="spells203"/>
+			</effect_group>
+		</buff>
+		<!-- 流焰 (05) -->
+		<buff name="buffIvSpellScroll205">
+			<damage_type value="heat"/>
+			<stack_type value="duration"/>
+			<duration value="2.6"/>
+			<effect_group>
+				<requirement name="EntityTagCompare" target="self" tags="ezFrost"/>
+				<passive_effect name="HealthChangeOT" operation="base_subtract" value="25.6"/>
+			</effect_group>
+			<effect_group>
+				<passive_effect name="HealthChangeOT" operation="base_subtract" value="12.8,13"/>
+
+				<triggered_effect trigger="onSelfDied" action="RemoveBuff" buff="buffIvSpellScroll205"/>
+				<triggered_effect trigger="onSelfEnteredGame" action="RemoveBuff" buff="buffIvSpellScroll205"/>
+				<triggered_effect trigger="onSelfBuffStart" action="AttachParticleEffectToEntity" particle="#@modfolder:Resources/demonkatana?spells205"/>
+				<triggered_effect trigger="onSelfEnteredGame" action="AttachParticleEffectToEntity" particle="#@modfolder:Resources/demonkatana?spells205"/>
+				<triggered_effect trigger="onSelfBuffRemove" action="RemoveParticleEffectFromEntity" particle="spells205"/>
+				<triggered_effect trigger="onSelfDied" action="RemoveParticleEffectFromEntity" particle="spells205"/>
+
+				<triggered_effect trigger="onSelfBuffUpdate" action="AddBuff" target="selfAOE" range="1.1" target_tags="zombie,animal" buff="buffIvSpellScroll205Count"/>
+			</effect_group>
+		</buff>
+		<buff name="buffIvSpellScroll205Count">
+			<damage_type value="heat"/>
+			<stack_type value="replace"/>
+			<duration value="3"/>
+			<effect_group>
+				<requirement name="EntityTagCompare" target="self" tags="ezFrost"/>
+				<passive_effect name="HealthChangeOT" operation="base_subtract" value="24"/>
+			</effect_group>
+			<effect_group>
+				<passive_effect name="HealthChangeOT" operation="base_subtract" value="16,17"/>
+				<triggered_effect trigger="onSelfBuffStart" action="AttachParticleEffectToEntity" particle="#@modfolder:Resources/demonkatana?spellsFire01" parent_transform="Hips"/>
+				<triggered_effect trigger="onSelfEnteredGame" action="AttachParticleEffectToEntity" particle="#@modfolder:Resources/demonkatana?spellsFire01" parent_transform="Hips"/>
+				<triggered_effect trigger="onSelfBuffRemove" action="RemoveParticleEffectFromEntity" particle="spellsFire01"/>
+				<triggered_effect trigger="onSelfDied" action="RemoveParticleEffectFromEntity" particle="spellsFire01"/>
+			</effect_group>
+		</buff>
+		<!-- 磁爆 (06) -->
+		<buff name="buffIvSpellScroll206">
+			<damage_type value="electrical"/>
+			<stack_type value="duration"/>
+			<duration value="3"/>
+			<effect_group>
+				<requirement name="EntityTagCompare" target="self" tags="ezToxic,ezSoul"/>
+				<passive_effect name="HealthChangeOT" operation="base_subtract" value="14.6"/>
+			</effect_group>
+			<effect_group>
+				<triggered_effect trigger="onSelfBuffUpdate" action="Ragdoll" duration="0.1">
+					<requirement name="RandomRoll" seed_type="Random" min_max="0,100" operation="LTE" value="30"/>
+				</triggered_effect>
+				<passive_effect name="HealthChangeOT" operation="base_subtract" value="7.33,8"/>
+				<passive_effect name="WalkSpeed" operation="perc_subtract" value="0.7"/>
+				<passive_effect name="RunSpeed" operation="perc_subtract" value="0.7"/>
+				<passive_effect name="Mobility" operation="perc_subtract" value="0.7" tags="falling,climbing,swimming"/>
+
+				<triggered_effect trigger="onSelfDied" action="RemoveBuff" buff="buffIvSpellScroll206"/>
+				<triggered_effect trigger="onSelfEnteredGame" action="RemoveBuff" buff="buffIvSpellScroll206"/>
+				<triggered_effect trigger="onSelfBuffStart" action="AttachParticleEffectToEntity" particle="#@modfolder:Resources/demonkatana?spells206"/>
+				<triggered_effect trigger="onSelfEnteredGame" action="AttachParticleEffectToEntity" particle="#@modfolder:Resources/demonkatana?spells206"/>
+				<triggered_effect trigger="onSelfBuffRemove" action="RemoveParticleEffectFromEntity" particle="spells206"/>
+				<triggered_effect trigger="onSelfDied" action="RemoveParticleEffectFromEntity" particle="spells206"/>
+
+				<triggered_effect trigger="onSelfBuffUpdate" action="AddBuff" target="selfAOE" range="1.1" target_tags="zombie,animal" buff="buffIvSpellScroll206Count"/>
+			</effect_group>
+		</buff>
+		<buff name="buffIvSpellScroll206Count">
+			<damage_type value="electrical"/>
+			<stack_type value="replace"/>
+			<duration value="3"/>
+			<effect_group>
+				<requirement name="EntityTagCompare" target="self" tags="ezToxic,ezSoul"/>
+				<passive_effect name="HealthChangeOT" operation="base_subtract" value="33"/>
+			</effect_group>
+			<effect_group>
+				<triggered_effect trigger="onSelfBuffUpdate" action="Ragdoll" duration="0.1">
+					<requirement name="RandomRoll" seed_type="Random" min_max="0,100" operation="LTE" value="30"/>
+				</triggered_effect>
+				<passive_effect name="HealthChangeOT" operation="base_subtract" value="22,23"/>
+				<passive_effect name="WalkSpeed" operation="perc_subtract" value="0.7"/>
+				<passive_effect name="RunSpeed" operation="perc_subtract" value="0.7"/>
+				<passive_effect name="Mobility" operation="perc_subtract" value="0.7" tags="falling,climbing,swimming"/>
+
+				<triggered_effect trigger="onSelfBuffStart" action="AttachParticleEffectToEntity" particle="#@modfolder:Resources/demonkatana?spellsElectric01" parent_transform="Hips"/>
+				<triggered_effect trigger="onSelfEnteredGame" action="AttachParticleEffectToEntity" particle="#@modfolder:Resources/demonkatana?spellsElectric01" parent_transform="Hips"/>
+				<triggered_effect trigger="onSelfBuffRemove" action="RemoveParticleEffectFromEntity" particle="spellsElectric01"/>
+				<triggered_effect trigger="onSelfDied" action="RemoveParticleEffectFromEntity" particle="spellsElectric01"/>
+			</effect_group>
+		</buff>
+		<!-- 毒霧 (09) -->
+		<buff name="buffIvSpellScroll209">
+			<damage_type value="toxic"/>
+			<stack_type value="duration"/>
+			<duration value="5"/>
+			<effect_group>
+				<requirement name="EntityTagCompare" target="self" tags="ezElectric"/>
+				<passive_effect name="HealthChangeOT" operation="base_subtract" value="24.8"/>
+			</effect_group>
+			<effect_group>
+				<passive_effect name="HealthChangeOT" operation="base_subtract" value="12.4,13"/>
+				<passive_effect name="RunSpeed" operation="perc_subtract" value="0.6"/>
+
+				<triggered_effect trigger="onSelfDied" action="RemoveBuff" buff="buffIvSpellScroll209"/>
+				<triggered_effect trigger="onSelfEnteredGame" action="RemoveBuff" buff="buffIvSpellScroll209"/>
+				<triggered_effect trigger="onSelfBuffStart" action="AttachParticleEffectToEntity" particle="#@modfolder:Resources/demonkatana?spells209"/>
+				<triggered_effect trigger="onSelfEnteredGame" action="AttachParticleEffectToEntity" particle="#@modfolder:Resources/demonkatana?spells209"/>
+				<triggered_effect trigger="onSelfBuffRemove" action="RemoveParticleEffectFromEntity" particle="spells209"/>
+				<triggered_effect trigger="onSelfDied" action="RemoveParticleEffectFromEntity" particle="spells209"/>
+
+				<triggered_effect trigger="onSelfBuffUpdate" action="AddBuff" target="selfAOE" range="2.5" target_tags="zombie,animal" buff="buffIvSpellScroll209Count"/>
+			</effect_group>
+		</buff>
+		<buff name="buffIvSpellScroll209Count">
+			<damage_type value="toxic"/>
+			<stack_type value="replace"/>
+			<duration value="5"/>
+			<effect_group>
+				<requirement name="EntityTagCompare" target="self" tags="ezElectric"/>
+				<passive_effect name="HealthChangeOT" operation="base_subtract" value="15"/>
+			</effect_group>
+			<effect_group>
+				<passive_effect name="HealthChangeOT" operation="base_subtract" value="10,11"/>
+				<passive_effect name="RunSpeed" operation="perc_subtract" value="0.5"/>
+
+				<triggered_effect trigger="onSelfDied" action="RemoveBuff" buff="buffIvSpellScroll209Count"/>
+				<triggered_effect trigger="onSelfEnteredGame" action="RemoveBuff" buff="buffIvSpellScroll209Count"/>
+				<triggered_effect trigger="onSelfBuffStart" action="AttachParticleEffectToEntity" particle="#@modfolder:Resources/demonkatana?spellsPoisonEffect01"/>
+				<triggered_effect trigger="onSelfEnteredGame" action="AttachParticleEffectToEntity" particle="#@modfolder:Resources/demonkatana?spellsPoisonEffect01"/>
+				<triggered_effect trigger="onSelfBuffRemove" action="RemoveParticleEffectFromEntity" particle="spellsPoisonEffect01"/>
+				<triggered_effect trigger="onSelfDied" action="RemoveParticleEffectFromEntity" particle="spellsPoisonEffect01"/>
+			</effect_group>
+		</buff>
+		<!-- 刺骨 (10) -->
+		<buff name="buffIvSpellScroll210">
+			<damage_type value="cold"/>
+			<stack_type value="duration"/>
+			<duration value="3"/>
+			<effect_group>
+				<requirement name="EntityTagCompare" target="self" tags="ezFire"/>
+				<passive_effect name="HealthChangeOT" operation="base_subtract" value="28"/>
+			</effect_group>
+			<effect_group>
+				<passive_effect name="HealthChangeOT" operation="base_subtract" value="14,16"/>
+				<passive_effect name="WalkSpeed" operation="perc_subtract" value="0.7"/>
+				<passive_effect name="RunSpeed" operation="perc_subtract" value="0.7"/>
+				<passive_effect name="Mobility" operation="perc_subtract" value="0.7" tags="falling,climbing,swimming"/>
+				<passive_effect name="AttacksPerMinute" operation="perc_subtract" value="0.7"/>
+
+				<triggered_effect trigger="onSelfDied" action="RemoveBuff" buff="buffIvSpellScroll210"/>
+				<triggered_effect trigger="onSelfEnteredGame" action="RemoveBuff" buff="buffIvSpellScroll210"/>
+
+				<triggered_effect trigger="onSelfBuffStart" action="AttachParticleEffectToEntity" particle="#@modfolder:Resources/demonkatana?spells210"/>
+				<triggered_effect trigger="onSelfEnteredGame" action="AttachParticleEffectToEntity" particle="#@modfolder:Resources/demonkatana?spells210"/>
+				<triggered_effect trigger="onSelfBuffRemove" action="RemoveParticleEffectFromEntity" particle="spells210"/>
+				<triggered_effect trigger="onSelfDied" action="RemoveParticleEffectFromEntity" particle="spells210"/>
+			</effect_group>
+		</buff>
+		<!-- 腐化 (12) -->
+		<buff name="buffIvSpellScroll212">
+			<damage_type value="electrical"/>
+			<stack_type value="duration"/>
+			<duration value="3"/>
+			<effect_group>
+				<requirement name="EntityTagCompare" target="self" tags="ezElectric,ezToxic,ezSoul"/>
+				<passive_effect name="HealthChangeOT" operation="base_subtract" value="29.2"/>
+			</effect_group>
+			<effect_group>
+				<passive_effect name="HealthChangeOT" operation="base_subtract" value="14.66,15"/>
+				<passive_effect name="WalkSpeed" operation="perc_subtract" value="0.9"/>
+				<passive_effect name="RunSpeed" operation="perc_subtract" value="0.9"/>
+				<passive_effect name="Mobility" operation="perc_subtract" value="0.9" tags="falling,climbing,swimming"/>
+				<passive_effect name="PhysicalDamageResist" operation="perc_subtract" value="0.04"/>
+				
+				<triggered_effect trigger="onSelfDied" action="RemoveBuff" buff="buffIvSpellScroll212"/>
+				<triggered_effect trigger="onSelfEnteredGame" action="RemoveBuff" buff="buffIvSpellScroll212"/>
+				<triggered_effect trigger="onSelfBuffStart" action="AttachParticleEffectToEntity" particle="#@modfolder:Resources/demonkatana?spells212"/>
+				<triggered_effect trigger="onSelfEnteredGame" action="AttachParticleEffectToEntity" particle="#@modfolder:Resources/demonkatana?spells212"/>
+				<triggered_effect trigger="onSelfBuffRemove" action="RemoveParticleEffectFromEntity" particle="spells212"/>
+				<triggered_effect trigger="onSelfDied" action="RemoveParticleEffectFromEntity" particle="spells212"/>
+			</effect_group>
+		</buff>
+		<!-- 焰噬 (17) -->
+		<buff name="buffIvSpellScroll217">
+			<damage_type value="heat"/>
+			<stack_type value="replace"/>
+			<duration value="2.5"/>
+			<effect_group>
+				<requirement name="EntityTagCompare" target="self" tags="ezFrost,ezSoul"/>
+				<passive_effect name="HealthChangeOT" operation="base_subtract" value="56,26" duration="0,1.3"/>
+			</effect_group>
+			<effect_group>
+				<passive_effect name="HealthChangeOT" operation="base_subtract" value="28,13" duration="0,1.3"/>
+
+				<triggered_effect trigger="onSelfDied" action="RemoveBuff" buff="buffIvSpellScroll217"/>
+				<triggered_effect trigger="onSelfEnteredGame" action="RemoveBuff" buff="buffIvSpellScroll217"/>
+				<triggered_effect trigger="onSelfBuffStart" action="AttachParticleEffectToEntity" particle="#@modfolder:Resources/demonkatana?spells217"/>
+				<triggered_effect trigger="onSelfEnteredGame" action="AttachParticleEffectToEntity" particle="#@modfolder:Resources/demonkatana?spells217"/>
+				<triggered_effect trigger="onSelfBuffRemove" action="RemoveParticleEffectFromEntity" particle="spells217"/>
+				<triggered_effect trigger="onSelfDied" action="RemoveParticleEffectFromEntity" particle="spells217"/>
+
+				<triggered_effect trigger="onSelfBuffFinish" action="AddBuff" target="self" buff="buffIvSpellScroll217_InstantDeath">
+					<requirement name="RandomRoll" seed_type="Random" min_max="0,100" operation="LTE" value="10"/>
+				</triggered_effect>
+			</effect_group>
+			<effect_group>
+				<requirement name="EntityTagCompare" target="self" tags="radiated"/>
+				<triggered_effect trigger="onSelfBuffStart" action="AddBuff" target="self" buff="buffRadiatedRegenBlock"/>
+			</effect_group>
+		</buff>
+		<buff name="buffIvSpellScroll217_InstantDeath">
+			<effect_group>
+				<passive_effect name="HealthChangeOT" operation="base_subtract" value="99999999"/>
+				<triggered_effect trigger="onSelfDied" action="RemoveBuff" buff="buffIvSpellScroll217_InstantDeath"/>
+				<triggered_effect trigger="onSelfEnteredGame" action="RemoveBuff" buff="buffIvSpellScroll217_InstantDeath"/>
+			</effect_group>
+		</buff>
+		<!-- 凍傷 (18) -->
+		<buff name="buffIvSpellScroll218">
+			<damage_type value="cold"/>
+			<stack_type value="replace"/>
+			<duration value="4"/>
+			<effect_group>
+				<requirement name="EntityTagCompare" target="self" tags="ezFire"/>
+				<passive_effect name="HealthChangeOT" operation="base_subtract" value="20"/>
+			</effect_group>
+			<effect_group>
+				<passive_effect name="HealthChangeOT" operation="base_subtract" value="10,12"/>
+				<passive_effect name="WalkSpeed" operation="perc_subtract" value="0.8"/>
+				<passive_effect name="RunSpeed" operation="perc_subtract" value="0.8"/>
+				<passive_effect name="Mobility" operation="perc_subtract" value="0.8" tags="falling,climbing,swimming"/>
+				<passive_effect name="AttacksPerMinute" operation="perc_subtract" value="0.8"/>
+
+				<triggered_effect trigger="onSelfDied" action="RemoveBuff" buff="buffIvSpellScroll218"/>
+				<triggered_effect trigger="onSelfEnteredGame" action="RemoveBuff" buff="buffIvSpellScroll218"/>
+				<triggered_effect trigger="onSelfBuffStart" action="AttachParticleEffectToEntity" particle="#@modfolder:Resources/demonkatana?spells218"/>
+				<triggered_effect trigger="onSelfEnteredGame" action="AttachParticleEffectToEntity" particle="#@modfolder:Resources/demonkatana?spells218"/>
+				<triggered_effect trigger="onSelfBuffRemove" action="RemoveParticleEffectFromEntity" particle="spells218"/>
+				<triggered_effect trigger="onSelfDied" action="RemoveParticleEffectFromEntity" particle="spells218"/>
+
+				<triggered_effect trigger="onSelfBuffFinish" action="AddBuff" target="positionAOE" range="2.5" target_tags="zombie,animal" buff="buffIvSpellScroll218Count"/>
+			</effect_group>
+		</buff>
+		<buff name="buffIvSpellScroll218Count">
+			<damage_type value="cold"/>
+			<stack_type value="replace"/>
+			<duration value="3"/>
+			<effect_group>
+				<requirement name="EntityTagCompare" target="self" tags="ezFire"/>
+				<passive_effect name="HealthChangeOT" operation="base_subtract" value="15"/>
+			</effect_group>
+			<effect_group>
+				<passive_effect name="HealthChangeOT" operation="base_subtract" value="10,11"/>
+				<passive_effect name="WalkSpeed" operation="perc_subtract" value="0.8"/>
+				<passive_effect name="RunSpeed" operation="perc_subtract" value="0.8"/>
+				<passive_effect name="Mobility" operation="perc_subtract" value="0.8" tags="falling,climbing,swimming"/>
+				<passive_effect name="AttacksPerMinute" operation="perc_subtract" value="0.8"/>
+
+				<triggered_effect trigger="onSelfDied" action="RemoveBuff" buff="buffIvSpellScroll218Count"/>
+				<triggered_effect trigger="onSelfEnteredGame" action="RemoveBuff" buff="buffIvSpellScroll218Count"/>
+				<triggered_effect trigger="onSelfBuffStart" action="AttachParticleEffectToEntity" particle="#@modfolder:Resources/demonkatana?spellsFreezeEffect01"/>
+				<triggered_effect trigger="onSelfEnteredGame" action="AttachParticleEffectToEntity" particle="#@modfolder:Resources/demonkatana?spellsFreezeEffect01"/>
+				<triggered_effect trigger="onSelfBuffRemove" action="RemoveParticleEffectFromEntity" particle="spellsFreezeEffect01"/>
+				<triggered_effect trigger="onSelfDied" action="RemoveParticleEffectFromEntity" particle="spellsFreezeEffect01"/>
+			</effect_group>
+		</buff>
+		<!-- 颶風 (20) -->
+		<buff name="buffIvSpellScroll220">
+			<damage_type value="KnockDown"/>
+			<stack_type value="duration"/>
+			<duration value="3"/>
+			<effect_group>
+				<requirement name="EntityTagCompare" target="self" tags="ezToxic"/>
+				<passive_effect name="HealthChangeOT" operation="base_subtract" value="15.2"/>
+			</effect_group>
+			<effect_group>
+				<passive_effect name="HealthChangeOT" operation="base_subtract" value="7.66,8"/>
+				<triggered_effect trigger="onSelfBuffUpdate" action="Ragdoll" duration="0.1">
+					<requirement name="RandomRoll" seed_type="Random" min_max="0,100" operation="LTE" value="30"/>
+				</triggered_effect>
+
+				<triggered_effect trigger="onSelfDied" action="RemoveBuff" buff="buffIvSpellScroll220"/>
+				<triggered_effect trigger="onSelfEnteredGame" action="RemoveBuff" buff="buffIvSpellScroll220"/>
+				<triggered_effect trigger="onSelfBuffStart" action="AttachParticleEffectToEntity" particle="#@modfolder:Resources/demonkatana?spells220"/>
+				<triggered_effect trigger="onSelfEnteredGame" action="AttachParticleEffectToEntity" particle="#@modfolder:Resources/demonkatana?spells220"/>
+				<triggered_effect trigger="onSelfBuffRemove" action="RemoveParticleEffectFromEntity" particle="spells220"/>
+				<triggered_effect trigger="onSelfDied" action="RemoveParticleEffectFromEntity" particle="spells220"/>
+
+				<triggered_effect trigger="onSelfBuffFinish" action="AddBuff" target="self" buff="buffIvSpellScroll220Count"/>
+			</effect_group>
+		</buff>
+		<buff name="buffIvSpellScroll220Count">
+			<stack_type value="replace"/>
+			<duration value="3"/>
+			<effect_group>
+				<passive_effect name="WalkSpeed" operation="perc_subtract" value="0.9"/>
+				<passive_effect name="RunSpeed" operation="perc_subtract" value="0.9"/>
+				<passive_effect name="Mobility" operation="perc_subtract" value="0.9" tags="falling,climbing,swimming"/>
+
+				<triggered_effect trigger="onSelfBuffStart" action="AttachParticleEffectToEntity" particle="#@modfolder:Resources/demonkatana?spellsElectric01" parent_transform="Hips"/>
+				<triggered_effect trigger="onSelfEnteredGame" action="AttachParticleEffectToEntity" particle="#@modfolder:Resources/demonkatana?spellsElectric01" parent_transform="Hips"/>
+				<triggered_effect trigger="onSelfBuffRemove" action="RemoveParticleEffectFromEntity" particle="spellsElectric01"/>
+				<triggered_effect trigger="onSelfDied" action="RemoveParticleEffectFromEntity" particle="spellsElectric01"/>
+			</effect_group>
+		</buff>
+		<!-- 白骨 (24) -->
+		<buff name="buffIvSpellScroll224">
+			<damage_type value="toxic"/>
+			<stack_type value="duration"/>
+			<duration value="5"/>
+			<effect_group>
+				<requirement name="EntityTagCompare" target="self" tags="ezElectric"/>
+				<passive_effect name="HealthChangeOT" operation="base_subtract" value="17.2"/>
+			</effect_group>
+			<effect_group>
+				<passive_effect name="HealthChangeOT" operation="base_subtract" value="8.6,9"/>
+				<passive_effect name="RunSpeed" operation="perc_subtract" value="0.7"/>
+
+				<triggered_effect trigger="onSelfDied" action="RemoveBuff" buff="buffIvSpellScroll224"/>
+				<triggered_effect trigger="onSelfEnteredGame" action="RemoveBuff" buff="buffIvSpellScroll224"/>
+				<triggered_effect trigger="onSelfBuffStart" action="AttachParticleEffectToEntity" particle="#@modfolder:Resources/demonkatana?spells224"/>
+				<triggered_effect trigger="onSelfEnteredGame" action="AttachParticleEffectToEntity" particle="#@modfolder:Resources/demonkatana?spells224"/>
+				<triggered_effect trigger="onSelfBuffRemove" action="RemoveParticleEffectFromEntity" particle="spells224"/>
+				<triggered_effect trigger="onSelfDied" action="RemoveParticleEffectFromEntity" particle="spells224"/>
+
+				<triggered_effect trigger="onSelfBuffFinish" action="AddBuff" target="self" buff="buffIvSpellScroll224_InstantDeath">
+					<requirement name="RandomRoll" seed_type="Random" min_max="0,100" operation="LTE" value="5"/>
+				</triggered_effect>
+			</effect_group>
+		</buff>
+		<buff name="buffIvSpellScroll224_InstantDeath">
+			<damage_type value="toxic"/>
+			<effect_group>
+				<passive_effect name="HealthChangeOT" operation="base_subtract" value="99999999"/>
+				<triggered_effect trigger="onSelfDied" action="RemoveBuff" buff="buffIvSpellScroll224_InstantDeath"/>
+				<triggered_effect trigger="onSelfEnteredGame" action="RemoveBuff" buff="buffIvSpellScroll224_InstantDeath"/>
+			</effect_group>
+		</buff>
+
+		<!-- 三合屬
+		陰火 90		燃燒會擴散
+		冰雹 60		附加降低移動速度,攻擊速度
+		奔流 72		附加降低移動速度
+		疫病 96		附加降低跑步速度, 可傳染附近的殭屍
+		旋渦 33		附加有機率性使目標跌倒
+		炎盾 0		附加降低自己跑步速度, 降低自己被傷害量, 增加耐低溫抗性, 持續扣自己水份
+		三界 74		附加降低移動速度, 得到BUFF可以增加傷害和攻擊速度,但有負面影響
+		強斬 110	附加持續流血不停止
+		吸血 0		發動技能持續扣飽食度, BUFF中攻擊目標可恢復自己血量
+		滅魂 200	目標被標記後,強力一擊可使標記目標大量失血(半徑15格)
+		-->
+		<!-- 陰火 (07) 燃燒強化版 -->
+		<buff name="buffIvSpellScroll307">
+			<damage_type value="heat"/>
+			<stack_type value="replace"/>
+			<duration value="4"/>
+			<effect_group>
+				<requirement name="EntityTagCompare" target="self" tags="ezFrost,ezSoul"/>
+				<passive_effect name="HealthChangeOT" operation="base_subtract" value="45"/>
+			</effect_group>
+			<effect_group>
+				<passive_effect name="HealthChangeOT" operation="base_subtract" value="22.5,23"/>
+
+				<triggered_effect trigger="onSelfDied" action="RemoveBuff" buff="buffIvSpellScroll307"/>
+				<triggered_effect trigger="onSelfEnteredGame" action="RemoveBuff" buff="buffIvSpellScroll307"/>
+				<triggered_effect trigger="onSelfBuffStart" action="AttachParticleEffectToEntity" particle="#@modfolder:Resources/demonkatana?spells307"/>
+				<triggered_effect trigger="onSelfEnteredGame" action="AttachParticleEffectToEntity" particle="#@modfolder:Resources/demonkatana?spells307"/>
+				<triggered_effect trigger="onSelfBuffRemove" action="RemoveParticleEffectFromEntity" particle="spells307"/>
+				<triggered_effect trigger="onSelfDied" action="RemoveParticleEffectFromEntity" particle="spells307"/>
+
+				<triggered_effect trigger="onSelfBuffUpdate" action="AddBuff" target="selfAOE" range="2" target_tags="zombie,animal" buff="buffIvSpellScroll307Diffusion"/>
+			</effect_group>
+		</buff>
+		<buff name="buffIvSpellScroll307Diffusion">
+			<damage_type value="heat"/>
+			<stack_type value="replace"/>
+			<duration value="2"/>
+			<effect_group>
+				<requirement name="EntityTagCompare" target="self" tags="ezFrost,ezSoul"/>
+				<passive_effect name="HealthChangeOT" operation="base_subtract" value="20"/>
+			</effect_group>
+			<effect_group>
+				<passive_effect name="HealthChangeOT" operation="base_subtract" value="10,11"/>
+
+				<triggered_effect trigger="onSelfDied" action="RemoveBuff" buff="buffIvSpellScroll307Diffusion"/>
+				<triggered_effect trigger="onSelfEnteredGame" action="RemoveBuff" buff="buffIvSpellScroll307Diffusion"/>
+				<triggered_effect trigger="onSelfBuffStart" action="AttachParticleEffectToEntity" particle="#@modfolder:Resources/demonkatana?spellsFire01" parent_transform="Hips"/>
+				<triggered_effect trigger="onSelfEnteredGame" action="AttachParticleEffectToEntity" particle="#@modfolder:Resources/demonkatana?spellsFire01" parent_transform="Hips"/>
+				<triggered_effect trigger="onSelfBuffRemove" action="RemoveParticleEffectFromEntity" particle="spellsFire01"/>
+				<triggered_effect trigger="onSelfDied" action="RemoveParticleEffectFromEntity" particle="spellsFire01"/>
+
+				<triggered_effect trigger="onSelfBuffUpdate" action="AddBuff" target="selfAOE" range="2" target_tags="zombie,animal" buff="buffIvSpellScroll307Diffusion"/>
+			</effect_group>
+		</buff>
+		<!-- 冰雹 (11) 冰凍強化版 -->
+		<buff name="buffIvSpellScroll311">
+			<damage_type value="cold"/>
+			<stack_type value="replace"/>
+			<duration value="5"/>
+			<effect_group>
+				<requirement name="EntityTagCompare" target="self" tags="ezFire"/>
+				<passive_effect name="HealthChangeOT" operation="base_subtract" value="24"/>
+			</effect_group>
+			<effect_group>
+				<passive_effect name="HealthChangeOT" operation="base_subtract" value="12,13"/>
+				<passive_effect name="WalkSpeed" operation="perc_subtract" value="0.9"/>
+				<passive_effect name="RunSpeed" operation="perc_subtract" value="0.9"/>
+				<passive_effect name="Mobility" operation="perc_subtract" value="0.9" tags="falling,climbing,swimming"/>
+				<passive_effect name="AttacksPerMinute" operation="perc_subtract" value="0.9"/>
+
+				<triggered_effect trigger="onSelfDied" action="RemoveBuff" buff="buffIvSpellScroll311"/>
+				<triggered_effect trigger="onSelfEnteredGame" action="RemoveBuff" buff="buffIvSpellScroll311"/>
+				<triggered_effect trigger="onSelfBuffStart" action="AttachParticleEffectToEntity" particle="#@modfolder:Resources/demonkatana?spells311"/>
+				<triggered_effect trigger="onSelfEnteredGame" action="AttachParticleEffectToEntity" particle="#@modfolder:Resources/demonkatana?spells311"/>
+				<triggered_effect trigger="onSelfBuffRemove" action="RemoveParticleEffectFromEntity" particle="spells311"/>
+				<triggered_effect trigger="onSelfDied" action="RemoveParticleEffectFromEntity" particle="spells311"/>
+			</effect_group>
+		</buff>
+		<!-- 奔流 (13) 電擊強化版 -->
+		<buff name="buffIvSpellScroll313">
+			<damage_type value="electrical"/>
+			<stack_type value="replace"/>
+			<duration value="5"/>
+			<effect_group>
+				<requirement name="EntityTagCompare" target="self" tags="ezToxic"/>
+				<passive_effect name="HealthChangeOT" operation="base_subtract" value="28.8"/>
+			</effect_group>
+			<effect_group>
+				<passive_effect name="HealthChangeOT" operation="base_subtract" value="14.4,15"/>
+				<passive_effect name="WalkSpeed" operation="perc_subtract" value="0.9"/>
+				<passive_effect name="RunSpeed" operation="perc_subtract" value="0.9"/>
+				<passive_effect name="Mobility" operation="perc_subtract" value="0.9" tags="falling,climbing,swimming"/>
+
+				<triggered_effect trigger="onSelfDied" action="RemoveBuff" buff="buffIvSpellScroll313"/>
+				<triggered_effect trigger="onSelfEnteredGame" action="RemoveBuff" buff="buffIvSpellScroll313"/>
+				<triggered_effect trigger="onSelfBuffStart" action="AttachParticleEffectToEntity" particle="#@modfolder:Resources/demonkatana?spells313"/>
+				<triggered_effect trigger="onSelfEnteredGame" action="AttachParticleEffectToEntity" particle="#@modfolder:Resources/demonkatana?spells313"/>
+				<triggered_effect trigger="onSelfBuffRemove" action="RemoveParticleEffectFromEntity" particle="spells313"/>
+				<triggered_effect trigger="onSelfDied" action="RemoveParticleEffectFromEntity" particle="spells313"/>
+			</effect_group>
+		</buff>
+		<!-- 疫病 (14) 劇毒強化版 -->
+		<buff name="buffIvSpellScroll314">
+			<damage_type value="toxic"/>
+			<stack_type value="replace"/>
+			<duration value="2.8"/>
+			<effect_group>
+				<passive_effect name="HealthChangeOT" operation="base_subtract" value="5"/>
+				
+				<triggered_effect trigger="onSelfDied" action="RemoveBuff" buff="buffIvSpellScroll314"/>
+				<triggered_effect trigger="onSelfEnteredGame" action="RemoveBuff" buff="buffIvSpellScroll314"/>
+				<triggered_effect trigger="onSelfBuffStart" action="AttachParticleEffectToEntity" particle="#@modfolder:Resources/demonkatana?spells314"/>
+				<triggered_effect trigger="onSelfEnteredGame" action="AttachParticleEffectToEntity" particle="#@modfolder:Resources/demonkatana?spells314"/>
+				<triggered_effect trigger="onSelfBuffRemove" action="RemoveParticleEffectFromEntity" particle="spells314"/>
+				<triggered_effect trigger="onSelfDied" action="RemoveParticleEffectFromEntity" particle="spells314"/>
+
+				<triggered_effect trigger="onSelfBuffFinish" action="AddBuff" target="self" buff="buffIvSpellScroll314_1"/>
+			</effect_group>
+		</buff>
+		<buff name="buffIvSpellScroll314_1">
+			<damage_type value="toxic"/>
+			<stack_type value="replace"/>
+			<duration value="10"/>
+			<effect_group>
+				<requirement name="EntityTagCompare" target="self" tags="ezElectric"/>
+				<passive_effect name="HealthChangeOT" operation="base_subtract" value="38.4"/>
+			</effect_group>
+			<effect_group>
+				<passive_effect name="HealthChangeOT" operation="base_subtract" value="19.2,21"/>
+				<passive_effect name="RunSpeed" operation="perc_subtract" value="0.9"/>
+
+				<triggered_effect trigger="onSelfDied" action="RemoveBuff" buff="buffIvSpellScroll314_1"/>
+				<triggered_effect trigger="onSelfEnteredGame" action="RemoveBuff" buff="buffIvSpellScroll314_1"/>
+				<triggered_effect trigger="onSelfBuffStart" action="AttachParticleEffectToEntity" particle="#@modfolder:Resources/demonkatana?spells314_1"/>
+				<triggered_effect trigger="onSelfEnteredGame" action="AttachParticleEffectToEntity" particle="#@modfolder:Resources/demonkatana?spells314_1"/>
+				<triggered_effect trigger="onSelfBuffRemove" action="RemoveParticleEffectFromEntity" particle="spells314_1"/>
+				<triggered_effect trigger="onSelfDied" action="RemoveParticleEffectFromEntity" particle="spells314_1"/>
+
+				<triggered_effect trigger="onSelfBuffUpdate" action="AddBuff" target="selfAOE" range="1.1" target_tags="zombie,animal" buff="buffIvSpellScroll314_1"/>
+			</effect_group>
+		</buff>
+		<!-- 旋渦 (19) 風切強化版 -->
+		<buff name="buffIvSpellScroll319">
+			<damage_type value="KnockDown"/>
+			<stack_type value="replace"/>
+			<duration value="5"/>
+			<effect_group>
+				<triggered_effect trigger="onSelfBuffStart" action="Ragdoll" duration="0.1">
+					<requirement name="RandomRoll" seed_type="Random" min_max="0,100" operation="LTE" value="50"/>
+				</triggered_effect>
+				<triggered_effect trigger="onSelfBuffUpdate" action="Ragdoll" duration="0.1">
+					<requirement name="RandomRoll" seed_type="Random" min_max="0,100" operation="LTE" value="50"/>
+				</triggered_effect>
+				<passive_effect name="HealthChangeOT" operation="base_subtract" value="6.6,7"/>
+
+				<triggered_effect trigger="onSelfDied" action="RemoveBuff" buff="buffIvSpellScroll319"/>
+				<triggered_effect trigger="onSelfEnteredGame" action="RemoveBuff" buff="buffIvSpellScroll319"/>
+				<triggered_effect trigger="onSelfBuffStart" action="AttachParticleEffectToEntity" particle="#@modfolder:Resources/demonkatana?spells319"/>
+				<triggered_effect trigger="onSelfEnteredGame" action="AttachParticleEffectToEntity" particle="#@modfolder:Resources/demonkatana?spells319"/>
+				<triggered_effect trigger="onSelfBuffRemove" action="RemoveParticleEffectFromEntity" particle="spells319"/>
+				<triggered_effect trigger="onSelfDied" action="RemoveParticleEffectFromEntity" particle="spells319"/>
+			</effect_group>
+		</buff>
+		<!-- 三界 (22) -->
+		<buff name="buffIvSpellScroll322">
+			<damage_type value="Suffocation"/>
+			<stack_type value="replace"/>
+			<duration value="5"/>
+			<effect_group>
+				<requirement name="EntityTagCompare" target="self" tags="ezFrost,ezElectric,ezToxic"/>
+				<passive_effect name="HealthChangeOT" operation="base_subtract" value="29.6"/>
+			</effect_group>
+			<effect_group>
+				<passive_effect name="HealthChangeOT" operation="base_subtract" value="14.8,15"/>
+				<passive_effect name="WalkSpeed" operation="perc_subtract" value="0.9"/>
+				<passive_effect name="RunSpeed" operation="perc_subtract" value="0.9"/>
+				<passive_effect name="Mobility" operation="perc_subtract" value="0.9" tags="falling,climbing,swimming"/>
+
+				<triggered_effect trigger="onSelfDied" action="RemoveBuff" buff="buffIvSpellScroll322"/>
+				<triggered_effect trigger="onSelfEnteredGame" action="RemoveBuff" buff="buffIvSpellScroll322"/>
+				<triggered_effect trigger="onSelfBuffStart" action="AttachParticleEffectToEntity" particle="#@modfolder:Resources/demonkatana?spells322"/>
+				<triggered_effect trigger="onSelfEnteredGame" action="AttachParticleEffectToEntity" particle="#@modfolder:Resources/demonkatana?spells322"/>
+				<triggered_effect trigger="onSelfBuffRemove" action="RemoveParticleEffectFromEntity" particle="spells322"/>
+				<triggered_effect trigger="onSelfDied" action="RemoveParticleEffectFromEntity" particle="spells322"/>
+
+				<triggered_effect trigger="onSelfBuffFinish" action="AddBuff" target="self" buff="buffIvSpellScroll322_1">
+					<requirement name="RandomRoll" seed_type="Random" min_max="0,100" operation="LTE" value="30"/>
+				</triggered_effect>
+			</effect_group>
+		</buff>
+		<buff name="buffIvSpellScroll322_1">
+			<stack_type value="replace"/>
+			<duration value="1"/>
+			<effect_group>
+				<triggered_effect trigger="onSelfBuffStart" action="AddBuff" target="selfAOE" range="3" target_tags="player" buff="buffIvSpellScroll322ChaosEcho"/>
+
+				<triggered_effect trigger="onSelfDied" action="RemoveBuff" buff="buffIvSpellScroll322_1"/>
+				<triggered_effect trigger="onSelfEnteredGame" action="RemoveBuff" buff="buffIvSpellScroll322_1"/>
+				<triggered_effect trigger="onSelfBuffStart" action="AttachParticleEffectToEntity" particle="#@modfolder:Resources/demonkatana?spells322_1"/>
+				<triggered_effect trigger="onSelfEnteredGame" action="AttachParticleEffectToEntity" particle="#@modfolder:Resources/demonkatana?spells322_1"/>
+				<triggered_effect trigger="onSelfBuffRemove" action="RemoveParticleEffectFromEntity" particle="spells322_1"/>
+				<triggered_effect trigger="onSelfDied" action="RemoveParticleEffectFromEntity" particle="spells322_1"/>
+			</effect_group>
+		</buff>
+		<!-- 強斬 (25) -->
+		<buff name="buffIvSpellScroll325">
+			<damage_type value="BloodLoss"/>
+			<stack_type value="replace"/>
+			<duration value="1.1"/>
+			<effect_group>
+				<requirement name="EntityTagCompare" target="self" tags="ezSoul"/>
+				<passive_effect name="HealthChangeOT" operation="base_subtract" value="0,220" duration="0,1"/>
+			</effect_group>
+			<effect_group>
+				<passive_effect name="HealthChangeOT" operation="base_subtract" value="0,110" duration="0,1"/>
+
+				<triggered_effect trigger="onSelfDied" action="RemoveBuff" buff="buffIvSpellScroll325"/>
+				<triggered_effect trigger="onSelfEnteredGame" action="RemoveBuff" buff="buffIvSpellScroll325"/>
+				<triggered_effect trigger="onSelfBuffStart" action="AttachParticleEffectToEntity" particle="#@modfolder:Resources/demonkatana?spells325"/>
+				<triggered_effect trigger="onSelfEnteredGame" action="AttachParticleEffectToEntity" particle="#@modfolder:Resources/demonkatana?spells325"/>
+				<triggered_effect trigger="onSelfBuffRemove" action="RemoveParticleEffectFromEntity" particle="spells325"/>
+				<triggered_effect trigger="onSelfDied" action="RemoveParticleEffectFromEntity" particle="spells325"/>
+
+				<triggered_effect trigger="onSelfBuffFinish" action="AddBuff" target="self" buff="buffIvSpellScroll325Burst"/>
+			</effect_group>
+		</buff>
+		<buff name="buffIvSpellScroll325Burst">
+			<damage_type value="BloodLoss"/>
+			<stack_type value="replace"/>
+			<duration value="0"/>
+			<effect_group>
+				<requirement name="EntityTagCompare" target="self" tags="ezSoul"/>
+				<passive_effect name="HealthChangeOT" operation="base_subtract" value="10"/>
+			</effect_group>
+			<effect_group>
+				<passive_effect name="HealthChangeOT" operation="base_subtract" value="3,10"/>
+
+				<triggered_effect trigger="onSelfDied" action="RemoveBuff" buff="buffIvSpellScroll325Burst"/>
+				<triggered_effect trigger="onSelfEnteredGame" action="RemoveBuff" buff="buffIvSpellScroll325Burst"/>
+				<triggered_effect trigger="onSelfBuffStart" action="AttachParticleEffectToEntity" particle="#@modfolder:Resources/demonkatana?spells325_1"/>
+				<triggered_effect trigger="onSelfEnteredGame" action="AttachParticleEffectToEntity" particle="#@modfolder:Resources/demonkatana?spells325_1"/>
+				<triggered_effect trigger="onSelfBuffRemove" action="RemoveParticleEffectFromEntity" particle="spells325_1"/>
+				<triggered_effect trigger="onSelfDied" action="RemoveParticleEffectFromEntity" particle="spells325_1"/>
+			</effect_group>
+		</buff>
+		<!-- 滅魂 (28) -->
+		<buff name="buffIvSpellScroll328">
+			<stack_type value="replace"/>
+			<duration value="60"/>
+			<effect_group>
+				<!-- 普通攻擊觸發 -->
+				<passive_effect name="WalkSpeed" operation="perc_subtract" value="0.7"/>
+				<passive_effect name="RunSpeed" operation="perc_subtract" value="0.7"/>
+				<passive_effect name="Mobility" operation="perc_subtract" value="0.7" tags="falling,climbing,swimming"/>
+
+				<triggered_effect trigger="onSelfDied" action="RemoveBuff" buff="buffIvSpellScroll328"/>
+				<triggered_effect trigger="onSelfEnteredGame" action="RemoveBuff" buff="buffIvSpellScroll328"/>
+				<triggered_effect trigger="onSelfBuffStart" action="AttachParticleEffectToEntity" particle="#@modfolder:Resources/demonkatana?spells328" parent_transform="Hips"/>
+				<triggered_effect trigger="onSelfEnteredGame" action="AttachParticleEffectToEntity" particle="#@modfolder:Resources/demonkatana?spells328" parent_transform="Hips"/>
+				<triggered_effect trigger="onSelfBuffRemove" action="RemoveParticleEffectFromEntity" particle="spells328"/>
+				<triggered_effect trigger="onSelfDied" action="RemoveParticleEffectFromEntity" particle="spells328"/>
+			</effect_group>
+		</buff>
+		<buff name="buffIvSpellScroll328Burst">
+			<damage_type value="BloodLoss"/>
+			<stack_type value="replace"/>
+			<duration value="2"/>
+			<effect_group>
+				<requirement name="HasBuff" buff="buffIvSpellScroll328"/>
+				<requirement name="EntityTagCompare" target="self" tags="ezSoul"/>
+				<passive_effect name="HealthChangeOT" operation="base_subtract" value="200,400" duration="1,2"/>
+			</effect_group>
+			<effect_group>
+				<!-- 強力攻擊觸發 -->
+				<requirement name="HasBuff" buff="buffIvSpellScroll328"/>
+
+				<triggered_effect trigger="onSelfBuffStart" action="Ragdoll" duration="0.1"/>
+				<passive_effect name="HealthChangeOT" operation="base_subtract" value="100,200" duration="1,2"/>
+
+				<triggered_effect trigger="onSelfDied" action="RemoveBuff" buff="buffIvSpellScroll328Burst"/>
+				<triggered_effect trigger="onSelfEnteredGame" action="RemoveBuff" buff="buffIvSpellScroll328Burst"/>
+				<triggered_effect trigger="onSelfBuffStart" action="AttachParticleEffectToEntity" particle="#@modfolder:Resources/demonkatana?spells328_1" parent_transform="Hips"/>
+				<triggered_effect trigger="onSelfEnteredGame" action="AttachParticleEffectToEntity" particle="#@modfolder:Resources/demonkatana?spells328_1" parent_transform="Hips"/>
+				<triggered_effect trigger="onSelfBuffRemove" action="RemoveParticleEffectFromEntity" particle="spells328_1"/>
+				<triggered_effect trigger="onSelfDied" action="RemoveParticleEffectFromEntity" particle="spells328_1"/>
+			</effect_group>
+		</buff>
+		<!-- 日輪 (329) -->
+		<buff name="buffIvSpellScroll329" name_key="buffIvSpellScroll329Name" description_key="buffIvSpellScroll329Desc" icon="ui_game_symbol_katana_sunwheel" icon_color="0,255,0" icon_blink="true">
+			<effect_group>
+				<triggered_effect trigger="onSelfItemDeactivate" action="RemoveBuff" buff="buffIvSpellScroll329"/>
+				<triggered_effect trigger="onSelfEnteredGame" action="RemoveBuff" buff="buffIvSpellScroll329"/>
+				<triggered_effect trigger="onSelfDied" action="RemoveBuff" buff="buffIvSpellScroll329"/>
+			</effect_group>
+
+			<effect_group>
+				<passive_effect name="StaminaMax" operation="perc_subtract" value=".3"/>
+				
+				<triggered_effect trigger="onSelfBuffStart" action="AttachParticleEffectToEntity" particle="#@modfolder:Resources/demonkatana?spells329" local_rotation="90,0,0"/>
+				<triggered_effect trigger="onSelfEnteredGame" action="AttachParticleEffectToEntity" particle="#@modfolder:Resources/demonkatana?spells329" local_rotation="90,0,0"/>
+				<triggered_effect trigger="onSelfBuffRemove" action="RemoveParticleEffectFromEntity" particle="spells329"/>
+				<triggered_effect trigger="onSelfDied" action="RemoveParticleEffectFromEntity" particle="spells329"/>
+
+				<triggered_effect trigger="onSelfBuffUpdate" action="AddBuff" target="selfAOE" range="5" target_tags="zombie,animal" buff="buffIvSpellScroll329Debuff"/>
+			</effect_group>
+		</buff>
+		<buff name="buffIvSpellScroll329Debuff">
+			<stack_type value="replace"/>
+			<duration value="2"/>
+			<effect_group>
+				<passive_effect name="EntityDamage" operation="perc_subtract" value=".5"/>
+				
+				<triggered_effect trigger="onSelfDied" action="RemoveBuff" buff="buffIvSpellScroll329Debuff"/>
+				<triggered_effect trigger="onSelfEnteredGame" action="RemoveBuff" buff="buffIvSpellScroll329Debuff"/>
+
+				<triggered_effect trigger="onSelfBuffStart" action="AttachParticleEffectToEntity" particle="#@modfolder:Resources/demonkatana?spells329_1" parent_transform="Hips"/>
+				<triggered_effect trigger="onSelfEnteredGame" action="AttachParticleEffectToEntity" particle="#@modfolder:Resources/demonkatana?spells329_1" parent_transform="Hips"/>
+				<triggered_effect trigger="onSelfBuffRemove" action="RemoveParticleEffectFromEntity" particle="spells329_1"/>
+				<triggered_effect trigger="onSelfDied" action="RemoveParticleEffectFromEntity" particle="spells329_1"/>
+			</effect_group>
+		</buff>
+		<!-- 月蝕 (330) -->
+		<buff name="buffIvSpellScroll330" name_key="buffIvSpellScroll330Name" description_key="buffIvSpellScroll330Desc" icon="ui_game_symbol_katana_lunar_eclipse" icon_color="0,255,0" icon_blink="true">
+			<effect_group>
+				<triggered_effect trigger="onSelfItemDeactivate" action="RemoveBuff" buff="buffIvSpellScroll330"/>
+				<triggered_effect trigger="onSelfEnteredGame" action="RemoveBuff" buff="buffIvSpellScroll330"/>
+				<triggered_effect trigger="onSelfDied" action="RemoveBuff" buff="buffIvSpellScroll330"/>
+			</effect_group>
+
+			<effect_group>
+				<passive_effect name="StaminaMax" operation="perc_subtract" value=".3"/>
+				
+				<triggered_effect trigger="onSelfBuffStart" action="AttachParticleEffectToEntity" particle="#@modfolder:Resources/demonkatana?spells330" local_rotation="90,0,0"/>
+				<triggered_effect trigger="onSelfEnteredGame" action="AttachParticleEffectToEntity" particle="#@modfolder:Resources/demonkatana?spells330" local_rotation="90,0,0"/>
+				<triggered_effect trigger="onSelfBuffRemove" action="RemoveParticleEffectFromEntity" particle="spells330"/>
+				<triggered_effect trigger="onSelfDied" action="RemoveParticleEffectFromEntity" particle="spells330"/>
+
+				<triggered_effect trigger="onSelfBuffUpdate" action="AddBuff" target="selfAOE" range="5" target_tags="zombie,animal" buff="buffIvSpellScroll330Debuff"/>
+			</effect_group>
+		</buff>
+		<buff name="buffIvSpellScroll330Debuff">
+			<stack_type value="replace"/>
+			<duration value="2"/>
+			<effect_group>
+				<passive_effect name="BlockDamage" operation="perc_subtract" value=".5"/>
+				
+				<triggered_effect trigger="onSelfDied" action="RemoveBuff" buff="buffIvSpellScroll330Debuff"/>
+				<triggered_effect trigger="onSelfEnteredGame" action="RemoveBuff" buff="buffIvSpellScroll330Debuff"/>
+
+				<triggered_effect trigger="onSelfBuffStart" action="AttachParticleEffectToEntity" particle="#@modfolder:Resources/demonkatana?spells330_1" parent_transform="Hips"/>
+				<triggered_effect trigger="onSelfEnteredGame" action="AttachParticleEffectToEntity" particle="#@modfolder:Resources/demonkatana?spells330_1" parent_transform="Hips"/>
+				<triggered_effect trigger="onSelfBuffRemove" action="RemoveParticleEffectFromEntity" particle="spells330_1"/>
+				<triggered_effect trigger="onSelfDied" action="RemoveParticleEffectFromEntity" particle="spells330_1"/>
+			</effect_group>
+		</buff>
+		<!-- 咒縛 (331) -->
+		<buff name="buffIvSpellScroll331" name_key="buffIvSpellScroll331Name" description_key="buffIvSpellScroll331Desc" icon="ui_game_symbol_katana_curse_tie_up" icon_color="0,255,0" icon_blink="true">
+			<effect_group>
+				<triggered_effect trigger="onSelfItemDeactivate" action="RemoveBuff" buff="buffIvSpellScroll331"/>
+				<triggered_effect trigger="onSelfEnteredGame" action="RemoveBuff" buff="buffIvSpellScroll331"/>
+				<triggered_effect trigger="onSelfDied" action="RemoveBuff" buff="buffIvSpellScroll331"/>
+			</effect_group>
+
+			<effect_group>
+				<passive_effect name="RunSpeed" operation="perc_subtract" value="0.7"/>
+				<passive_effect name="WalkSpeed" operation="perc_subtract" value="0.7"/>
+				<passive_effect name="Mobility" operation="perc_subtract" value="0.7" tags="falling,climbing,swimming"/>
+
+				<triggered_effect trigger="onSelfBuffStart" action="AttachParticleEffectToEntity" particle="#@modfolder:Resources/demonkatana?spells331" local_rotation="90,0,0"/>
+				<triggered_effect trigger="onSelfEnteredGame" action="AttachParticleEffectToEntity" particle="#@modfolder:Resources/demonkatana?spells331" local_rotation="90,0,0"/>
+				<triggered_effect trigger="onSelfBuffRemove" action="RemoveParticleEffectFromEntity" particle="spells331"/>
+				<triggered_effect trigger="onSelfDied" action="RemoveParticleEffectFromEntity" particle="spells331"/>
+
+				<triggered_effect trigger="onSelfBuffUpdate" action="AddBuff" target="selfAOE" range="5" target_tags="zombie,animal" buff="buffIvSpellScroll331Debuff"/>
+			</effect_group>
+		</buff>
+		<buff name="buffIvSpellScroll331Debuff">
+			<damage_type value="electrical"/>
+			<stack_type value="replace"/>
+			<duration value="2"/>
+			<update_rate value="0.1"/>
+			<effect_group>
+				<passive_effect name="WalkSpeed" operation="perc_subtract" value="0.99"/>
+				<passive_effect name="RunSpeed" operation="perc_subtract" value="0.99"/>
+				<passive_effect name="JumpStrength" operation="base_set" value="0"/>
+				<passive_effect name="Mobility" operation="perc_subtract" value="0.99" tags="jumping,falling,climbing,swimming"/>
+				<passive_effect name="HealthLoss" operation="perc_add" value="1"/>
+
+				<triggered_effect trigger="onSelfDied" action="RemoveBuff" buff="buffIvSpellScroll331Debuff"/>
+				<triggered_effect trigger="onSelfEnteredGame" action="RemoveBuff" buff="buffIvSpellScroll331Debuff"/>
+
+				<triggered_effect trigger="onSelfBuffStart" action="AttachParticleEffectToEntity" particle="#@modfolder:Resources/demonkatana?spells331_1"/>
+				<triggered_effect trigger="onSelfEnteredGame" action="AttachParticleEffectToEntity" particle="#@modfolder:Resources/demonkatana?spells331_1"/>
+				<triggered_effect trigger="onSelfBuffRemove" action="RemoveParticleEffectFromEntity" particle="spells331_1"/>
+				<triggered_effect trigger="onSelfDied" action="RemoveParticleEffectFromEntity" particle="spells331_1"/>
+			</effect_group>
+		</buff>
+
+		<!-- 四合屬
+		範圍一律半徑5格
+		
+		地獄業火 250	燃燒目標, 與其他燃燒效果不衝突, 效果可排隊執行
+		冰川碎裂 150	緩速目標(包括攻擊速度), 與其他冰凍效果不衝突, 效果可排隊執行
+		極限電能 200	緩速目標, 與其他電擊效果不衝突, 效果可排隊執行
+		漫天毒雨 250	目標失血, 與其他劇毒效果不衝突, 效果可排隊執行
+		飛刃風暴 100	目標跌倒, 效果可排隊執行(跌倒狀態無法排隊)
+		-->
+		<!-- 地獄業火 (15) -->
+		<buff name="buffIvSpellScroll415">
+			<damage_type value="heat"/>
+			<stack_type value="replace"/>
+			<duration value="5"/>
+			<effect_group>
+				<passive_effect name="WalkSpeed" operation="perc_subtract" value="0.99"/>
+				<passive_effect name="RunSpeed" operation="perc_subtract" value="0.99"/>
+				<passive_effect name="Mobility" operation="perc_subtract" value="0.99" tags="falling,climbing,swimming"/>
+
+				<triggered_effect trigger="onSelfBuffStart" action="AddBuff" target="selfAOE" range="5" target_tags="zombie,animal" buff="buffIvSpellScroll415Burst"/>
+				<triggered_effect trigger="onSelfBuffUpdate" action="AddBuff" target="selfAOE" range="5" target_tags="zombie,animal" buff="buffIvSpellScroll415Burst"/>
+
+				<triggered_effect trigger="onSelfDied" action="RemoveBuff" buff="buffIvSpellScroll415"/>
+				<triggered_effect trigger="onSelfEnteredGame" action="RemoveBuff" buff="buffIvSpellScroll415"/>
+				<triggered_effect trigger="onSelfBuffStart" action="AttachParticleEffectToEntity" particle="#@modfolder:Resources/demonkatana?spells415"/>
+				<triggered_effect trigger="onSelfEnteredGame" action="AttachParticleEffectToEntity" particle="#@modfolder:Resources/demonkatana?spells415"/>
+				<triggered_effect trigger="onSelfBuffRemove" action="RemoveParticleEffectFromEntity" particle="spells415"/>
+				<triggered_effect trigger="onSelfDied" action="RemoveParticleEffectFromEntity" particle="spells415"/>
+
+				<triggered_effect trigger="onSelfBuffFinish" action="AddBuff" target="self" buff="buffIvSpellScroll415DamageTarget"/>
+			</effect_group>
+		</buff>
+		<buff name="buffIvSpellScroll415Burst">
+			<damage_type value="heat"/>
+			<stack_type value="effect"/>
+			<duration value="1.2"/>
+			<effect_group>
+				<requirement name="EntityTagCompare" target="self" tags="ezFrost"/>
+				<passive_effect name="HealthChangeOT" operation="base_subtract" value="100"/>
+			</effect_group>
+			<effect_group>
+				<passive_effect name="HealthChangeOT" operation="base_subtract" value="50,0" duration="0,1"/>
+				<triggered_effect trigger="onSelfDied" action="RemoveBuff" buff="buffIvSpellScroll415Burst"/>
+				<triggered_effect trigger="onSelfEnteredGame" action="RemoveBuff" buff="buffIvSpellScroll415Burst"/>
+
+				<triggered_effect trigger="onSelfBuffStart" action="AttachParticleEffectToEntity" particle="#@modfolder:Resources/demonkatana?spells415_1"/>
+				<triggered_effect trigger="onSelfEnteredGame" action="AttachParticleEffectToEntity" particle="#@modfolder:Resources/demonkatana?spells415_1"/>
+				<triggered_effect trigger="onSelfBuffRemove" action="RemoveParticleEffectFromEntity" particle="spells415_1"/>
+				<triggered_effect trigger="onSelfDied" action="RemoveParticleEffectFromEntity" particle="spells415_1"/>
+			</effect_group>
+		</buff>
+		<buff name="buffIvSpellScroll415DamageTarget">
+			<damage_type value="heat"/>
+			<stack_type value="replace"/>
+			<duration value="1"/>
+			<effect_group>
+				<requirement name="EntityTagCompare" target="self" tags="ezFrost"/>
+				<passive_effect name="HealthChangeOT" operation="base_subtract" value="500"/>
+			</effect_group>
+			<effect_group>
+				<passive_effect name="HealthChangeOT" operation="base_subtract" value="250,300"/>
+				<triggered_effect trigger="onSelfDied" action="RemoveBuff" buff="buffIvSpellScroll415DamageTarget"/>
+				<triggered_effect trigger="onSelfEnteredGame" action="RemoveBuff" buff="buffIvSpellScroll415DamageTarget"/>
+			</effect_group>
+		</buff>
+		<!-- 冰川碎裂 (23) -->
+		<buff name="buffIvSpellScroll423">
+			<damage_type value="cold"/>
+			<stack_type value="replace"/>
+			<duration value="5"/>
+			<effect_group>
+				<passive_effect name="WalkSpeed" operation="perc_subtract" value="0.99"/>
+				<passive_effect name="RunSpeed" operation="perc_subtract" value="0.99"/>
+				<passive_effect name="Mobility" operation="perc_subtract" value="0.99" tags="falling,climbing,swimming"/>
+				<passive_effect name="AttacksPerMinute" operation="perc_subtract" value="0.99"/>
+
+				<triggered_effect trigger="onSelfBuffStart" action="AddBuff" target="selfAOE" range="5" target_tags="zombie,animal" buff="buffIvSpellScroll423Burst"/>
+				<triggered_effect trigger="onSelfBuffUpdate" action="AddBuff" target="selfAOE" range="5" target_tags="zombie,animal" buff="buffIvSpellScroll423Burst"/>
+
+				<triggered_effect trigger="onSelfDied" action="RemoveBuff" buff="buffIvSpellScroll423"/>
+				<triggered_effect trigger="onSelfEnteredGame" action="RemoveBuff" buff="buffIvSpellScroll423"/>
+				<triggered_effect trigger="onSelfBuffStart" action="AttachParticleEffectToEntity" particle="#@modfolder:Resources/demonkatana?spells423"/>
+				<triggered_effect trigger="onSelfEnteredGame" action="AttachParticleEffectToEntity" particle="#@modfolder:Resources/demonkatana?spells423"/>
+				<triggered_effect trigger="onSelfBuffRemove" action="RemoveParticleEffectFromEntity" particle="spells423"/>
+				<triggered_effect trigger="onSelfDied" action="RemoveParticleEffectFromEntity" particle="spells423"/>
+
+				<triggered_effect trigger="onSelfBuffFinish" action="AddBuff" target="self" buff="buffIvSpellScroll423DamageTarget"/>
+			</effect_group>
+		</buff>
+		<buff name="buffIvSpellScroll423Burst">
+			<damage_type value="cold"/>
+			<stack_type value="effect"/>
+			<duration value="1.2"/>
+			<effect_group>
+				<requirement name="EntityTagCompare" target="self" tags="ezFire"/>
+				<passive_effect name="HealthChangeOT" operation="base_subtract" value="60"/>
+			</effect_group>
+			<effect_group>
+				<passive_effect name="WalkSpeed" operation="perc_subtract" value="0.99"/>
+				<passive_effect name="RunSpeed" operation="perc_subtract" value="0.99"/>
+				<passive_effect name="Mobility" operation="perc_subtract" value="0.99" tags="falling,climbing,swimming"/>
+				<passive_effect name="AttacksPerMinute" operation="perc_subtract" value="0.99"/>
+
+				<passive_effect name="HealthChangeOT" operation="base_subtract" value="30,0" duration="0,1"/>
+
+				<triggered_effect trigger="onSelfDied" action="RemoveBuff" buff="buffIvSpellScroll423Burst"/>
+				<triggered_effect trigger="onSelfEnteredGame" action="RemoveBuff" buff="buffIvSpellScroll423Burst"/>
+				<triggered_effect trigger="onSelfBuffStart" action="AttachParticleEffectToEntity" particle="#@modfolder:Resources/demonkatana?spells423_1"/>
+				<triggered_effect trigger="onSelfEnteredGame" action="AttachParticleEffectToEntity" particle="#@modfolder:Resources/demonkatana?spells423_1"/>
+				<triggered_effect trigger="onSelfBuffRemove" action="RemoveParticleEffectFromEntity" particle="spells423_1"/>
+				<triggered_effect trigger="onSelfDied" action="RemoveParticleEffectFromEntity" particle="spells423_1"/>
+			</effect_group>
+		</buff>
+		<buff name="buffIvSpellScroll423DamageTarget">
+			<damage_type value="cold"/>
+			<stack_type value="replace"/>
+			<duration value="1"/>
+			<effect_group>
+				<requirement name="EntityTagCompare" target="self" tags="ezFire"/>
+				<passive_effect name="HealthChangeOT" operation="base_subtract" value="300"/>
+			</effect_group>
+			<effect_group>
+				<passive_effect name="HealthChangeOT" operation="base_subtract" value="150,200"/>
+				<triggered_effect trigger="onSelfDied" action="RemoveBuff" buff="buffIvSpellScroll423DamageTarget"/>
+				<triggered_effect trigger="onSelfEnteredGame" action="RemoveBuff" buff="buffIvSpellScroll423DamageTarget"/>
+			</effect_group>
+		</buff>
+		<!-- 極限電能 (27) -->
+		<buff name="buffIvSpellScroll427">
+			<damage_type value="electrical"/>
+			<stack_type value="replace"/>
+			<duration value="5"/>
+			<effect_group>
+				<passive_effect name="WalkSpeed" operation="perc_subtract" value="0.99"/>
+				<passive_effect name="RunSpeed" operation="perc_subtract" value="0.99"/>
+				<passive_effect name="Mobility" operation="perc_subtract" value="0.99" tags="falling,climbing,swimming"/>
+
+				<triggered_effect trigger="onSelfBuffStart" action="AddBuff" target="selfAOE" range="5" target_tags="zombie,animal" buff="buffIvSpellScroll427Burst"/>
+				<triggered_effect trigger="onSelfBuffUpdate" action="AddBuff" target="selfAOE" range="5" target_tags="zombie,animal" buff="buffIvSpellScroll427Burst"/>
+
+				<triggered_effect trigger="onSelfDied" action="RemoveBuff" buff="buffIvSpellScroll427"/>
+				<triggered_effect trigger="onSelfEnteredGame" action="RemoveBuff" buff="buffIvSpellScroll427"/>
+				<triggered_effect trigger="onSelfBuffStart" action="AttachParticleEffectToEntity" particle="#@modfolder:Resources/demonkatana?spells427"/>
+				<triggered_effect trigger="onSelfEnteredGame" action="AttachParticleEffectToEntity" particle="#@modfolder:Resources/demonkatana?spells427"/>
+				<triggered_effect trigger="onSelfBuffRemove" action="RemoveParticleEffectFromEntity" particle="spells427"/>
+				<triggered_effect trigger="onSelfDied" action="RemoveParticleEffectFromEntity" particle="spells427"/>
+
+				<triggered_effect trigger="onSelfBuffFinish" action="AddBuff" target="self" buff="buffIvSpellScroll427DamageTarget"/>
+			</effect_group>
+		</buff>
+		<buff name="buffIvSpellScroll427Burst">
+			<damage_type value="electrical"/>
+			<stack_type value="effect"/>
+			<duration value="1.2"/>
+			<effect_group>
+				<requirement name="EntityTagCompare" target="self" tags="ezToxic"/>
+				<passive_effect name="HealthChangeOT" operation="base_subtract" value="80"/>
+			</effect_group>
+			<effect_group>
+				<passive_effect name="WalkSpeed" operation="perc_subtract" value="0.7"/>
+				<passive_effect name="RunSpeed" operation="perc_subtract" value="0.7"/>
+				<passive_effect name="Mobility" operation="perc_subtract" value="0.7" tags="falling,climbing,swimming"/>
+				<passive_effect name="HealthChangeOT" operation="base_subtract" value="40,0" duration="0,1"/>
+
+				<triggered_effect trigger="onSelfDied" action="RemoveBuff" buff="buffIvSpellScroll427Burst"/>
+				<triggered_effect trigger="onSelfEnteredGame" action="RemoveBuff" buff="buffIvSpellScroll427Burst"/>
+				<triggered_effect trigger="onSelfBuffStart" action="AttachParticleEffectToEntity" particle="#@modfolder:Resources/demonkatana?spellsElectric01" parent_transform="Hips"/>
+				<triggered_effect trigger="onSelfEnteredGame" action="AttachParticleEffectToEntity" particle="#@modfolder:Resources/demonkatana?spellsElectric01" parent_transform="Hips"/>
+				<triggered_effect trigger="onSelfBuffRemove" action="RemoveParticleEffectFromEntity" particle="spellsElectric01"/>
+				<triggered_effect trigger="onSelfDied" action="RemoveParticleEffectFromEntity" particle="spellsElectric01"/>
+			</effect_group>
+		</buff>
+		<buff name="buffIvSpellScroll427DamageTarget">
+			<damage_type value="electrical"/>
+			<stack_type value="replace"/>
+			<duration value="1"/>
+			<effect_group>
+				<requirement name="EntityTagCompare" target="self" tags="ezToxic"/>
+				<passive_effect name="HealthChangeOT" operation="base_subtract" value="400"/>
+			</effect_group>
+			<effect_group>
+				<passive_effect name="HealthChangeOT" operation="base_subtract" value="200,250"/>
+				<triggered_effect trigger="onSelfDied" action="RemoveBuff" buff="buffIvSpellScroll427DamageTarget"/>
+				<triggered_effect trigger="onSelfEnteredGame" action="RemoveBuff" buff="buffIvSpellScroll427DamageTarget"/>
+			</effect_group>
+		</buff>
+		<!-- 漫天毒雨 (29) -->
+		<buff name="buffIvSpellScroll429">
+			<damage_type value="toxic"/>
+			<stack_type value="replace"/>
+			<duration value="10"/>
+			<effect_group>
+				<passive_effect name="WalkSpeed" operation="perc_subtract" value="0.99"/>
+				<passive_effect name="RunSpeed" operation="perc_subtract" value="0.99"/>
+				<passive_effect name="Mobility" operation="perc_subtract" value="0.99" tags="falling,climbing,swimming"/>
+
+				<triggered_effect trigger="onSelfBuffStart" action="AddBuff" target="selfAOE" range="5" target_tags="zombie,animal" buff="buffIvSpellScroll429Burst"/>
+				<triggered_effect trigger="onSelfBuffUpdate" action="AddBuff" target="selfAOE" range="5" target_tags="zombie,animal" buff="buffIvSpellScroll429Burst"/>
+
+				<triggered_effect trigger="onSelfDied" action="RemoveBuff" buff="buffIvSpellScroll429"/>
+				<triggered_effect trigger="onSelfEnteredGame" action="RemoveBuff" buff="buffIvSpellScroll429"/>
+				<triggered_effect trigger="onSelfBuffStart" action="AttachParticleEffectToEntity" particle="#@modfolder:Resources/demonkatana?spells429"/>
+				<triggered_effect trigger="onSelfEnteredGame" action="AttachParticleEffectToEntity" particle="#@modfolder:Resources/demonkatana?spells429"/>
+				<triggered_effect trigger="onSelfBuffRemove" action="RemoveParticleEffectFromEntity" particle="spells429"/>
+				<triggered_effect trigger="onSelfDied" action="RemoveParticleEffectFromEntity" particle="spells429"/>
+
+				<triggered_effect trigger="onSelfBuffFinish" action="AddBuff" target="self" buff="buffIvSpellScroll429DamageTarget"/>
+			</effect_group>
+		</buff>
+		<buff name="buffIvSpellScroll429Burst">
+			<damage_type value="toxic"/>
+			<stack_type value="effect"/>
+			<duration value="1.2"/>
+			<effect_group>
+				<requirement name="EntityTagCompare" target="self" tags="ezElectric"/>
+				<passive_effect name="HealthChangeOT" operation="base_subtract" value="50"/>
+			</effect_group>
+			<effect_group>
+				<passive_effect name="HealthChangeOT" operation="base_subtract" value="25"/>
+				<passive_effect name="RunSpeed" operation="perc_subtract" value="0.9"/>
+				
+				<triggered_effect trigger="onSelfDied" action="RemoveBuff" buff="buffIvSpellScroll429Burst"/>
+				<triggered_effect trigger="onSelfEnteredGame" action="RemoveBuff" buff="buffIvSpellScroll429Burst"/>
+
+				<triggered_effect trigger="onSelfBuffStart" action="AttachParticleEffectToEntity" particle="#@modfolder:Resources/demonkatana?spellsPoison01" parent_transform="Hips"/>
+				<triggered_effect trigger="onSelfEnteredGame" action="AttachParticleEffectToEntity" particle="#@modfolder:Resources/demonkatana?spellsPoison01" parent_transform="Hips"/>
+				<triggered_effect trigger="onSelfBuffRemove" action="RemoveParticleEffectFromEntity" particle="spellsPoison01"/>
+				<triggered_effect trigger="onSelfDied" action="RemoveParticleEffectFromEntity" particle="spellsPoison01"/>
+			</effect_group>
+		</buff>
+		<buff name="buffIvSpellScroll429DamageTarget">
+			<damage_type value="toxic"/>
+			<stack_type value="replace"/>
+			<duration value="1"/>
+			<effect_group>
+				<requirement name="EntityTagCompare" target="self" tags="ezElectric"/>
+				<passive_effect name="HealthChangeOT" operation="base_subtract" value="500"/>
+			</effect_group>
+			<effect_group>
+				<passive_effect name="HealthChangeOT" operation="base_subtract" value="250,300"/>
+				<triggered_effect trigger="onSelfDied" action="RemoveBuff" buff="buffIvSpellScroll429DamageTarget"/>
+				<triggered_effect trigger="onSelfEnteredGame" action="RemoveBuff" buff="buffIvSpellScroll429DamageTarget"/>
+			</effect_group>
+		</buff>
+		<!-- 飛刃風暴 (30) -->
+		<buff name="buffIvSpellScroll430">
+			<damage_type value="KnockDown"/>
+			<stack_type value="replace"/>
+			<duration value="5"/>
+			<effect_group>
+				<passive_effect name="WalkSpeed" operation="perc_subtract" value="0.99"/>
+				<passive_effect name="RunSpeed" operation="perc_subtract" value="0.99"/>
+				<passive_effect name="Mobility" operation="perc_subtract" value="0.99" tags="falling,climbing,swimming"/>
+
+				<triggered_effect trigger="onSelfBuffStart" action="AddBuff" target="selfAOE" range="5" target_tags="zombie,animal" buff="buffIvSpellScroll430Burst"/>
+				<triggered_effect trigger="onSelfBuffUpdate" action="AddBuff" target="selfAOE" range="5" target_tags="zombie,animal" buff="buffIvSpellScroll430Burst"/>
+
+				<triggered_effect trigger="onSelfDied" action="RemoveBuff" buff="buffIvSpellScroll430"/>
+				<triggered_effect trigger="onSelfEnteredGame" action="RemoveBuff" buff="buffIvSpellScroll430"/>
+				<triggered_effect trigger="onSelfBuffStart" action="AttachParticleEffectToEntity" particle="#@modfolder:Resources/demonkatana?spells430"/>
+				<triggered_effect trigger="onSelfEnteredGame" action="AttachParticleEffectToEntity" particle="#@modfolder:Resources/demonkatana?spells430"/>
+				<triggered_effect trigger="onSelfBuffRemove" action="RemoveParticleEffectFromEntity" particle="spells430"/>
+				<triggered_effect trigger="onSelfDied" action="RemoveParticleEffectFromEntity" particle="spells430"/>
+
+				<triggered_effect trigger="onSelfBuffFinish" action="AddBuff" target="self" buff="buffIvSpellScroll430DamageTarget"/>
+			</effect_group>
+		</buff>
+		<buff name="buffIvSpellScroll430Burst">
+			<damage_type value="KnockDown"/>
+			<stack_type value="effect"/>
+			<duration value="1"/>
+			<effect_group>
+				<triggered_effect trigger="onSelfBuffStart" action="Ragdoll" duration="0.3"/>
+				<passive_effect name="HealthChangeOT" operation="base_subtract" value="20"/>
+
+				<triggered_effect trigger="onSelfDied" action="RemoveBuff" buff="buffIvSpellScroll430Burst"/>
+				<triggered_effect trigger="onSelfEnteredGame" action="RemoveBuff" buff="buffIvSpellScroll430Burst"/>
+			</effect_group>
+		</buff>
+		<buff name="buffIvSpellScroll430DamageTarget">
+			<damage_type value="KnockDown"/>
+			<stack_type value="replace"/>
+			<duration value="1"/>
+			<effect_group>
+				<passive_effect name="HealthChangeOT" operation="base_subtract" value="100,150"/>
+				<triggered_effect trigger="onSelfDied" action="RemoveBuff" buff="buffIvSpellScroll430DamageTarget"/>
+				<triggered_effect trigger="onSelfEnteredGame" action="RemoveBuff" buff="buffIvSpellScroll430DamageTarget"/>
+			</effect_group>
+		</buff>
+
+		<!-- 五合屬
+		天之四靈 500	分子填子(普通攻擊)
+		         800	毀滅(強力攻擊)
+		刀雨 50
+		-->
+		<!-- 天之四靈 (31) -->
+		<buff name="buffIvSpellScroll531" name_key="buffIvSpellScroll531Name" description_key="buffIvSpellScroll531Desc" icon="ui_game_symbol_katana_four_spirits_of_heaven" icon_color="0,255,0" icon_blink="true">
+			<effect_group>
+				<triggered_effect trigger="onSelfDied" action="RemoveBuff" buff="buffIvSpellScroll531"/>
+				<triggered_effect trigger="onSelfEnteredGame" action="RemoveBuff" buff="buffIvSpellScroll531"/>
+
+				<passive_effect name="WaterChangeOT" operation="base_subtract" value="0.5"/>
+				<passive_effect name="FoodChangeOT" operation="base_subtract" value="0.5"/>
+
+				<triggered_effect trigger="onSelfBuffStart" action="AttachParticleEffectToEntity" particle="#@modfolder:Resources/demonkatana?spells531" local_rotation="90,0,0"/>
+				<triggered_effect trigger="onSelfEnteredGame" action="AttachParticleEffectToEntity" particle="#@modfolder:Resources/demonkatana?spells531" local_rotation="90,0,0"/>
+				<triggered_effect trigger="onSelfBuffRemove" action="RemoveParticleEffectFromEntity" particle="spells531"/>
+				<triggered_effect trigger="onSelfDied" action="RemoveParticleEffectFromEntity" particle="spells531"/>
+
+				<triggered_effect trigger="onSelfBuffStart" action="AddBuff" target="self" buff="buffIvSpellScroll531_1_Charg"/>
+				<triggered_effect trigger="onSelfBuffStart" action="AddBuff" target="self" buff="buffIvSpellScroll531_2_Charg"/>
+			</effect_group>
+		</buff>
+		<buff name="buffIvSpellScroll531_1">
+			<damage_type value="Crushing"/>
+			<stack_type value="replace"/>
+			<duration value="2"/><!-- 時間固定不可變 -->
+			<effect_group>
+				<requirement name="EntityTagCompare" target="self" tags="ezSoul"/>
+				<passive_effect name="HealthChangeOT" operation="base_subtract" value="1000"/>
+			</effect_group>
+			<effect_group>
+				<passive_effect name="HealthChangeOT" operation="base_subtract" value="100,100,100,100,100" duration="0,0.5,1,1.5,2"/>
+
+				<triggered_effect trigger="onSelfDied" action="RemoveBuff" buff="buffIvSpellScroll531_1"/>
+				<triggered_effect trigger="onSelfEnteredGame" action="RemoveBuff" buff="buffIvSpellScroll531_1"/>
+				<triggered_effect trigger="onSelfBuffStart" action="AttachParticleEffectToEntity" particle="#@modfolder:Resources/demonkatana?spells531_1"/>
+				<triggered_effect trigger="onSelfEnteredGame" action="AttachParticleEffectToEntity" particle="#@modfolder:Resources/demonkatana?spells531_1"/>
+				<triggered_effect trigger="onSelfBuffRemove" action="RemoveParticleEffectFromEntity" particle="spells531_1"/>
+				<triggered_effect trigger="onSelfDied" action="RemoveParticleEffectFromEntity" particle="spells531_1"/>
+			</effect_group>
+		</buff>
+		<buff name="buffIvSpellScroll531_2">
+			<damage_type value="Bashing"/>
+			<stack_type value="replace"/>
+			<duration value="2.3"/><!-- 時間固定不可變 -->
+			<effect_group>
+				<requirement name="EntityTagCompare" target="self" tags="ezSoul"/>
+				<passive_effect name="HealthChangeOT" operation="base_subtract" value="1600"/>
+			</effect_group>
+			<effect_group>
+				<triggered_effect trigger="onSelfBuffFinish" action="AddBuff" target="self" buff="buffIvSpellScroll531_FallDown">
+					<requirement name="RandomRoll" seed_type="Random" min_max="0,100" operation="LTE" value="50"/>
+				</triggered_effect>
+
+				<passive_effect name="HealthChangeOT" operation="base_subtract" value="200,200,200,200" duration="0.55,0.8,1.05,1.27"/>
+
+				<triggered_effect trigger="onSelfDied" action="RemoveBuff" buff="buffIvSpellScroll531_2"/>
+				<triggered_effect trigger="onSelfEnteredGame" action="RemoveBuff" buff="buffIvSpellScroll531_2"/>
+				<triggered_effect trigger="onSelfBuffStart" action="AttachParticleEffectToEntity" particle="#@modfolder:Resources/demonkatana?spells531_2"/>
+				<triggered_effect trigger="onSelfEnteredGame" action="AttachParticleEffectToEntity" particle="#@modfolder:Resources/demonkatana?spells531_2"/>
+				<triggered_effect trigger="onSelfBuffRemove" action="RemoveParticleEffectFromEntity" particle="spells531_2"/>
+				<triggered_effect trigger="onSelfDied" action="RemoveParticleEffectFromEntity" particle="spells531_2"/>
+
+				<triggered_effect trigger="onSelfBuffStart" action="AddBuff" target="selfAOE" range="8" target_tags="zombie,animal" buff="buffIvSpellScroll531_3">
+					<requirement name="HasBuff" buff="buffIvSpellScroll531_1"/>
+				</triggered_effect>
+			</effect_group>
+		</buff>
+		<buff name="buffIvSpellScroll531_3">
+			<damage_type value="Corrosive"/>
+			<stack_type value="replace"/>
+			<duration value="1"/><!-- 時間固定不可變 -->
+			<effect_group>
+				<requirement name="EntityTagCompare" target="self" tags="ezSoul"/>
+				<passive_effect name="HealthChangeOT" operation="base_subtract" value="500"/>
+			</effect_group>
+			<effect_group>
+
+				<passive_effect name="HealthChangeOT" operation="base_subtract" value="300,350"/>
+
+				<triggered_effect trigger="onSelfDied" action="RemoveBuff" buff="buffIvSpellScroll531_3"/>
+				<triggered_effect trigger="onSelfEnteredGame" action="RemoveBuff" buff="buffIvSpellScroll531_3"/>
+				<triggered_effect trigger="onSelfBuffStart" action="AttachParticleEffectToEntity" particle="#@modfolder:Resources/demonkatana?spells531_3"/>
+				<triggered_effect trigger="onSelfEnteredGame" action="AttachParticleEffectToEntity" particle="#@modfolder:Resources/demonkatana?spells531_3"/>
+				<triggered_effect trigger="onSelfBuffRemove" action="RemoveParticleEffectFromEntity" particle="spells531_3"/>
+				<triggered_effect trigger="onSelfDied" action="RemoveParticleEffectFromEntity" particle="spells531_3"/>
+
+				<triggered_effect trigger="onSelfBuffFinish" action="AddBuff" target="self" buff="buffIvSpellScrollFire"/>
+			</effect_group>
+		</buff>
+		<buff name="buffIvSpellScroll531_FallDown">
+			<damage_type value="KnockDown"/>
+			<duration value="0.1"/>
+			<effect_group>
+				<triggered_effect trigger="onSelfBuffStart" action="Ragdoll" duration="0.1"/>
+				<triggered_effect trigger="onSelfDied" action="RemoveBuff" buff="buffIvSpellScroll531_FallDown"/>
+				<triggered_effect trigger="onSelfEnteredGame" action="RemoveBuff" buff="buffIvSpellScroll531_FallDown"/>
+			</effect_group>
+		</buff>
+		<!-- 刀雨 -->
+		<buff name="buffIvSpellScroll532" name_key="buffIvSpellScroll532Name" description_key="buffIvSpellScroll532Desc" icon="ui_game_symbol_katana_rain" icon_color="0,255,0" icon_blink="true">
+			<effect_group>
+				<triggered_effect trigger="onSelfBuffStart" action="AddBuff" buff="buffIvSpellScroll532_Charg"/>
+
+				<triggered_effect trigger="onSelfDied" action="RemoveBuff" buff="buffIvSpellScroll532"/>
+				<triggered_effect trigger="onSelfEnteredGame" action="RemoveBuff" buff="buffIvSpellScroll532"/>
+
+				<triggered_effect trigger="onSelfBuffStart" action="AttachParticleEffectToEntity" particle="#@modfolder:Resources/demonkatana?spells532" local_rotation="90,0,0"/>
+				<triggered_effect trigger="onSelfEnteredGame" action="AttachParticleEffectToEntity" particle="#@modfolder:Resources/demonkatana?spells532" local_rotation="90,0,0"/>
+				<triggered_effect trigger="onSelfBuffRemove" action="RemoveParticleEffectFromEntity" particle="spells532"/>
+				<triggered_effect trigger="onSelfDied" action="RemoveParticleEffectFromEntity" particle="spells532"/>
+
+				<triggered_effect trigger="onSelfBuffUpdate" action="AddBuff" target="selfAOE" range="5" target_tags="zombie,animal" buff="buffIvSpellScroll532_AutoHit"/>
+			</effect_group>
+		</buff>
+		<buff name="buffIvSpellScroll532_AutoHit">
+			<damage_type value="Slashing"/>
+			<stack_type value="replace"/>
+			<duration value="2"/>
+			<effect_group>
+				<passive_effect name="HealthChangeOT" operation="base_subtract" value="30,40"/>
+
+				<triggered_effect trigger="onSelfDied" action="RemoveBuff" buff="buffIvSpellScroll532_AutoHit"/>
+				<triggered_effect trigger="onSelfEnteredGame" action="RemoveBuff" buff="buffIvSpellScroll532_AutoHit"/>
+
+				<triggered_effect trigger="onSelfBuffStart" action="AttachParticleEffectToEntity" particle="#@modfolder:Resources/demonkatana?spells532_1"/>
+				<triggered_effect trigger="onSelfEnteredGame" action="AttachParticleEffectToEntity" particle="#@modfolder:Resources/demonkatana?spells532_1"/>
+				<triggered_effect trigger="onSelfBuffRemove" action="RemoveParticleEffectFromEntity" particle="spells532_1"/>
+				<triggered_effect trigger="onSelfDied" action="RemoveParticleEffectFromEntity" particle="spells532_1"/>
+			</effect_group>
+		</buff>
+		<buff name="buffIvSpellScroll532_PowerHit">
+			<damage_type value="Slashing"/>
+			<stack_type value="replace"/>
+			<duration value="1"/><!-- 時間固定不可改 -->
+			<effect_group>
+				<passive_effect name="HealthChangeOT" operation="base_subtract" value="100,150"/>
+
+				<triggered_effect trigger="onSelfDied" action="RemoveBuff" buff="buffIvSpellScroll532_PowerHit"/>
+				<triggered_effect trigger="onSelfEnteredGame" action="RemoveBuff" buff="buffIvSpellScroll532_PowerHit"/>
+
+				<triggered_effect trigger="onSelfBuffStart" action="AttachParticleEffectToEntity" particle="#@modfolder:Resources/demonkatana?spells532_2"/>
+				<triggered_effect trigger="onSelfEnteredGame" action="AttachParticleEffectToEntity" particle="#@modfolder:Resources/demonkatana?spells532_2"/>
+				<triggered_effect trigger="onSelfBuffRemove" action="RemoveParticleEffectFromEntity" particle="spells532_2"/>
+				<triggered_effect trigger="onSelfDied" action="RemoveParticleEffectFromEntity" particle="spells532_2"/>
+			</effect_group>
+		</buff>
+	</append>
+
+	<!-- 針對自己產生的效果 -->
+	<append xpath="/buffs">
+		<!-- 炎盾 (21) -->
+		<buff name="buffIvSpellScroll321" name_key="buffIvSpellScroll321Name" description_key="buffIvSpellScroll321Desc" icon="ui_game_symbol_katana_shield" icon_color="0,255,0" icon_blink="true">
+			<effect_group>
+				<triggered_effect trigger="onSelfItemDeactivate" action="RemoveBuff" buff="buffIvSpellScroll321"/>
+				<triggered_effect trigger="onSelfEnteredGame" action="RemoveBuff" buff="buffIvSpellScroll321"/>
+				<triggered_effect trigger="onSelfDied" action="RemoveBuff" buff="buffIvSpellScroll321"/>
+			</effect_group>
+			<effect_group>
+				<passive_effect name="RunSpeed" operation="perc_subtract" value="0.5"/>
+				<passive_effect name="WaterChangeOT" operation="base_subtract" value="0.5"/>
+				<passive_effect name="HealthLoss" operation="perc_subtract" value="0.3"/>
+				<passive_effect name="HypothermalResist" operation="base_add" value="30"/>
+
+				<triggered_effect trigger="onSelfBuffUpdate" action="AddBuff" target="selfAOE" range="2" target_tags="zombie,animal" buff="buffIvSpellScroll321FireAttack"/>
+				
+				<triggered_effect trigger="onSelfBuffStart" action="AttachParticleEffectToEntity" particle="#@modfolder:Resources/demonkatana?spells321" local_rotation="90,0,0"/>
+				<triggered_effect trigger="onSelfEnteredGame" action="AttachParticleEffectToEntity" particle="#@modfolder:Resources/demonkatana?spells321" local_rotation="90,0,0"/>
+				<triggered_effect trigger="onSelfBuffRemove" action="RemoveParticleEffectFromEntity" particle="spells321"/>
+				<triggered_effect trigger="onSelfDied" action="RemoveParticleEffectFromEntity" particle="spells321"/>
+			</effect_group>
+		</buff>
+		<buff name="buffIvSpellScroll321FireAttack">
+			<damage_type value="Heat"/>
+			<stack_type value="replace"/>
+			<duration value="3"/>
+			<effect_group>
+				<requirement name="EntityTagCompare" target="self" tags="ezFrost"/>
+				<passive_effect name="HealthChangeOT" operation="base_subtract" value="30"/>
+			</effect_group>
+			<effect_group>
+				<passive_effect name="HealthChangeOT" operation="base_subtract" value="15,20"/>
+				<triggered_effect trigger="onSelfDied" action="RemoveBuff" buff="buffIvSpellScroll321FireAttack"/>
+				<triggered_effect trigger="onSelfEnteredGame" action="RemoveBuff" buff="buffIvSpellScroll321FireAttack"/>
+
+				<triggered_effect trigger="onSelfBuffStart" action="AttachParticleEffectToEntity" particle="#@modfolder:Resources/demonkatana?spellsFire01" local_offset="0,0.5,0"/>
+				<triggered_effect trigger="onSelfEnteredGame" action="AttachParticleEffectToEntity" particle="#@modfolder:Resources/demonkatana?spellsFire01" local_offset="0,0.5,0"/>
+				<triggered_effect trigger="onSelfBuffRemove" action="RemoveParticleEffectFromEntity" particle="spellsFire01"/>
+				<triggered_effect trigger="onSelfDied" action="RemoveParticleEffectFromEntity" particle="spellsFire01"/>
+			</effect_group>
+		</buff>
+		<!-- 混沌回音 -->
+		<buff name="buffIvSpellScroll322ChaosEcho" name_key="buffIvSpellScroll322ChaosEchoName" description_key="buffIvSpellScroll322ChaosEchoDesc" icon="ui_game_symbol_katana_chaos_echo" icon_color="0,255,0" icon_blink="true">
+			<stack_type value="duration"/>
+			<duration value="30"/>
+			<effect_group>
+				<passive_effect name="NoiseMultiplier" operation="perc_add" value="0.8"/>
+				<passive_effect name="StaminaLoss" operation="perc_add" value="0.03"/>
+				<passive_effect name="EntityDamage" operation="perc_add" value="0.5"/>
+				<passive_effect name="BlockDamage" operation="perc_add" value="0.5"/>
+				<passive_effect name="AttacksPerMinute" operation="perc_add" value="0.3"/>
+				
+				<triggered_effect trigger="onSelfDied" action="RemoveBuff" buff="buffIvSpellScroll322ChaosEcho"/>
+				<triggered_effect trigger="onSelfEnteredGame" action="RemoveBuff" buff="buffIvSpellScroll322ChaosEcho"/>
+			</effect_group>
+		</buff>
+		<!-- 吸血 (26) -->
+		<buff name="buffIvSpellScroll326" name_key="buffIvSpellScroll326Name" description_key="buffIvSpellScroll326Desc" icon="ui_game_symbol_katana_bite" icon_color="0,255,0" icon_blink="true">
+			<effect_group>
+				<triggered_effect trigger="onSelfItemDeactivate" action="RemoveBuff" buff="buffIvSpellScroll326"/>
+				<triggered_effect trigger="onSelfEnteredGame" action="RemoveBuff" buff="buffIvSpellScroll326"/>
+				<triggered_effect trigger="onSelfDied" action="RemoveBuff" buff="buffIvSpellScroll326"/>
+			</effect_group>
+			<effect_group>
+				<passive_effect name="FoodChangeOT" operation="base_subtract" value="0.5"/>
+				
+				<triggered_effect trigger="onSelfDied" action="RemoveBuff" buff="buffIvSpellScroll326"/>
+				<triggered_effect trigger="onSelfEnteredGame" action="RemoveBuff" buff="buffIvSpellScroll326"/>
+				<triggered_effect trigger="onSelfBuffStart" action="AttachParticleEffectToEntity" particle="#@modfolder:Resources/demonkatana?spells326" local_rotation="90,0,0"/>
+				<triggered_effect trigger="onSelfEnteredGame" action="AttachParticleEffectToEntity" particle="#@modfolder:Resources/demonkatana?spells326" local_rotation="90,0,0"/>
+				<triggered_effect trigger="onSelfBuffRemove" action="RemoveParticleEffectFromEntity" particle="spells326"/>
+				<triggered_effect trigger="onSelfDied" action="RemoveParticleEffectFromEntity" particle="spells326"/>
+			</effect_group>
+		</buff>
+		<buff name="buffIvSpellScroll326_Hit">
+			<stack_type value="duration"/>
+			<duration value="1"/>
+			<effect_group>
+				<passive_effect name="HealthChangeOT" operation="base_add" value="1,3"/>
+				<triggered_effect trigger="onSelfDied" action="RemoveBuff" buff="buffIvSpellScroll326_Hit"/>
+				<triggered_effect trigger="onSelfEnteredGame" action="RemoveBuff" buff="buffIvSpellScroll326_Hit"/>
+			</effect_group>
+		</buff>
+		<!-- 夜靈 (32) -->
+		<buff name="buffIvSpellScrollEidolon">
+			<effect_group>
+				<triggered_effect trigger="onSelfBuffStart" action="ModifyScreenEffect" effect_name="NightVision" intensity="0.8" fade=".5"/>
+				<triggered_effect trigger="onSelfBuffRemove" action="ModifyScreenEffect" effect_name="NightVision" intensity="0" fade="0"/>
+				<triggered_effect trigger="onSelfDied" action="ModifyScreenEffect" effect_name="NightVision" intensity="0" fade="0"/>
+
+				<triggered_effect trigger="onSelfItemDeactivate" action="RemoveBuff" buff="buffIvSpellScrollEidolon"/>
+				<triggered_effect trigger="onSelfDied" action="RemoveBuff" buff="buffIvSpellScrollEidolon"/>
+				<triggered_effect trigger="onSelfEnteredGame" action="RemoveBuff" buff="buffIvSpellScrollEidolon"/>
+
+				<triggered_effect trigger="onSelfBuffStart" action="AttachParticleEffectToEntity" particle="#@modfolder:Resources/demonkatana?spellsEidolon" local_rotation="0,0,90" parent_transform="Head"/>
+				<triggered_effect trigger="onSelfEnteredGame" action="AttachParticleEffectToEntity" particle="#@modfolder:Resources/demonkatana?spellsEidolon" local_rotation="0,0,90" parent_transform="Head"/>
+				<triggered_effect trigger="onSelfBuffRemove" action="RemoveParticleEffectFromEntity" particle="spellsEidolon"/>
+				<triggered_effect trigger="onSelfDied" action="RemoveParticleEffectFromEntity" particle="spellsEidolon"/>
+			</effect_group>
+		</buff>
+	</append>
+
+	<!-- 幻術的開關 -->
+	<append xpath="/buffs">
+		<buff name="buffIvSpellScroll217_Charg" name_key="buffIvSpellScroll217_ChargName" description_key="buffIvSpellScroll_ChargStatusDesc" icon="ui_game_symbol_katana_skill02" icon_color="99,99,255" icon_blink="true">
+			<stack_type value="replace"/>
+			<update_rate value="0.1"/>
+			<display_value value="spell217Charg"/>
+			<display_value_key value="{0:0.#}"/>
+			<effect_group>
+				<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="spell217Charg" operation="set" value="0"/>
+				<triggered_effect trigger="onSelfBuffStack" action="ModifyCVar" cvar="spell217Charg" operation="set" value="0"/>
+				<triggered_effect trigger="onSelfBuffUpdate" action="ModifyCVar" cvar="spell217Charg" operation="add" value="0.1">
+					<requirement name="CVarCompare" cvar="spell217Charg" operation="LT" value="2.5"/>
+				</triggered_effect>
+			</effect_group>
+		</buff>
+		<buff name="buffIvSpellScroll218_Charg" name_key="buffIvSpellScroll218_ChargName" description_key="buffIvSpellScroll_ChargStatusDesc" icon="ui_game_symbol_katana_skill02" icon_color="99,99,255" icon_blink="true">
+			<stack_type value="replace"/>
+			<update_rate value="0.1"/>
+			<display_value value="spell218Charg"/>
+			<display_value_key value="{0:0.#}"/>
+			<effect_group>
+				<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="spell218Charg" operation="set" value="0"/>
+				<triggered_effect trigger="onSelfBuffStack" action="ModifyCVar" cvar="spell218Charg" operation="set" value="0"/>
+				<triggered_effect trigger="onSelfBuffUpdate" action="ModifyCVar" cvar="spell218Charg" operation="add" value="0.1">
+					<requirement name="CVarCompare" cvar="spell218Charg" operation="LT" value="4"/>
+				</triggered_effect>
+			</effect_group>
+		</buff>
+		<buff name="buffIvSpellScroll307_Charg" name_key="buffIvSpellScroll307_ChargName" description_key="buffIvSpellScroll_ChargStatusDesc" icon="ui_game_symbol_katana_skill02" icon_color="99,99,255" icon_blink="true">
+			<stack_type value="replace"/>
+			<update_rate value="0.1"/>
+			<display_value value="spell307Charg"/>
+			<display_value_key value="{0:0.#}"/>
+			<effect_group>
+				<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="spell307Charg" operation="set" value="0"/>
+				<triggered_effect trigger="onSelfBuffStack" action="ModifyCVar" cvar="spell307Charg" operation="set" value="0"/>
+				<triggered_effect trigger="onSelfBuffUpdate" action="ModifyCVar" cvar="spell307Charg" operation="add" value="0.1">
+					<requirement name="CVarCompare" cvar="spell307Charg" operation="LT" value="4"/>
+				</triggered_effect>
+			</effect_group>
+		</buff>
+		<buff name="buffIvSpellScroll311_Charg" name_key="buffIvSpellScroll311_ChargName" description_key="buffIvSpellScroll_ChargStatusDesc" icon="ui_game_symbol_katana_skill02" icon_color="99,99,255" icon_blink="true">
+			<stack_type value="replace"/>
+			<update_rate value="0.1"/>
+			<display_value value="spell311Charg"/>
+			<display_value_key value="{0:0.#}"/>
+			<effect_group>
+				<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="spell311Charg" operation="set" value="0"/>
+				<triggered_effect trigger="onSelfBuffStack" action="ModifyCVar" cvar="spell311Charg" operation="set" value="0"/>
+				<triggered_effect trigger="onSelfBuffUpdate" action="ModifyCVar" cvar="spell311Charg" operation="add" value="0.1">
+					<requirement name="CVarCompare" cvar="spell311Charg" operation="LT" value="5"/>
+				</triggered_effect>
+			</effect_group>
+		</buff>
+		<buff name="buffIvSpellScroll313_Charg" name_key="buffIvSpellScroll313_ChargName" description_key="buffIvSpellScroll_ChargStatusDesc" icon="ui_game_symbol_katana_skill02" icon_color="99,99,255" icon_blink="true">
+			<stack_type value="replace"/>
+			<update_rate value="0.1"/>
+			<display_value value="spell313Charg"/>
+			<display_value_key value="{0:0.#}"/>
+			<effect_group>
+				<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="spell313Charg" operation="set" value="0"/>
+				<triggered_effect trigger="onSelfBuffStack" action="ModifyCVar" cvar="spell313Charg" operation="set" value="0"/>
+				<triggered_effect trigger="onSelfBuffUpdate" action="ModifyCVar" cvar="spell313Charg" operation="add" value="0.1">
+					<requirement name="CVarCompare" cvar="spell313Charg" operation="LT" value="5"/>
+				</triggered_effect>
+			</effect_group>
+		</buff>
+		<buff name="buffIvSpellScroll314_Charg" name_key="buffIvSpellScroll314_ChargName" description_key="buffIvSpellScroll_ChargStatusDesc" icon="ui_game_symbol_katana_skill02" icon_color="99,99,255" icon_blink="true">
+			<stack_type value="replace"/>
+			<update_rate value="0.1"/>
+			<display_value value="spell314Charg"/>
+			<display_value_key value="{0:0.#}"/>
+			<effect_group>
+				<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="spell314Charg" operation="set" value="0"/>
+				<triggered_effect trigger="onSelfBuffStack" action="ModifyCVar" cvar="spell314Charg" operation="set" value="0"/>
+				<triggered_effect trigger="onSelfBuffUpdate" action="ModifyCVar" cvar="spell314Charg" operation="add" value="0.1">
+					<requirement name="CVarCompare" cvar="spell314Charg" operation="LT" value="2.8"/>
+				</triggered_effect>
+			</effect_group>
+		</buff>
+		<buff name="buffIvSpellScroll319_Charg" name_key="buffIvSpellScroll319_ChargName" description_key="buffIvSpellScroll_ChargStatusDesc" icon="ui_game_symbol_katana_skill02" icon_color="99,99,255" icon_blink="true">
+			<stack_type value="replace"/>
+			<update_rate value="0.1"/>
+			<display_value value="spell319Charg"/>
+			<display_value_key value="{0:0.#}"/>
+			<effect_group>
+				<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="spell319Charg" operation="set" value="0"/>
+				<triggered_effect trigger="onSelfBuffStack" action="ModifyCVar" cvar="spell319Charg" operation="set" value="0"/>
+				<triggered_effect trigger="onSelfBuffUpdate" action="ModifyCVar" cvar="spell319Charg" operation="add" value="0.1">
+					<requirement name="CVarCompare" cvar="spell319Charg" operation="LT" value="5"/>
+				</triggered_effect>
+			</effect_group>
+		</buff>
+		<buff name="buffIvSpellScroll322_Charg" name_key="buffIvSpellScroll322_ChargName" description_key="buffIvSpellScroll_ChargStatusDesc" icon="ui_game_symbol_katana_skill02" icon_color="99,99,255" icon_blink="true">
+			<stack_type value="replace"/>
+			<update_rate value="0.1"/>
+			<display_value value="spell322Charg"/>
+			<display_value_key value="{0:0.#}"/>
+			<effect_group>
+				<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="spell322Charg" operation="set" value="0"/>
+				<triggered_effect trigger="onSelfBuffStack" action="ModifyCVar" cvar="spell322Charg" operation="set" value="0"/>
+				<triggered_effect trigger="onSelfBuffUpdate" action="ModifyCVar" cvar="spell322Charg" operation="add" value="0.1">
+					<requirement name="CVarCompare" cvar="spell322Charg" operation="LT" value="5"/>
+				</triggered_effect>
+			</effect_group>
+		</buff>
+		<buff name="buffIvSpellScroll325_Charg" name_key="buffIvSpellScroll325_ChargName" description_key="buffIvSpellScroll_ChargStatusDesc" icon="ui_game_symbol_katana_skill02" icon_color="99,99,255" icon_blink="true">
+			<stack_type value="replace"/>
+			<update_rate value="0.1"/>
+			<display_value value="spell325Charg"/>
+			<display_value_key value="{0:0.#}"/>
+			<effect_group>
+				<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="spell325Charg" operation="set" value="0"/>
+				<triggered_effect trigger="onSelfBuffStack" action="ModifyCVar" cvar="spell325Charg" operation="set" value="0"/>
+				<triggered_effect trigger="onSelfBuffUpdate" action="ModifyCVar" cvar="spell325Charg" operation="add" value="0.1">
+					<requirement name="CVarCompare" cvar="spell325Charg" operation="LT" value="1.1"/>
+				</triggered_effect>
+			</effect_group>
+		</buff>
+		<buff name="buffIvSpellScroll328Burst_Charg" name_key="buffIvSpellScroll328Burst_ChargName" description_key="buffIvSpellScroll_ChargStatusDesc" icon="ui_game_symbol_katana_skill02" icon_color="99,99,255" icon_blink="true">
+			<stack_type value="replace"/>
+			<update_rate value="0.1"/>
+			<display_value value="spell328BurstCharg"/>
+			<display_value_key value="{0:0.#}"/>
+			<effect_group>
+				<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="spell328BurstCharg" operation="set" value="0"/>
+				<triggered_effect trigger="onSelfBuffStack" action="ModifyCVar" cvar="spell328BurstCharg" operation="set" value="0"/>
+				<triggered_effect trigger="onSelfBuffUpdate" action="ModifyCVar" cvar="spell328BurstCharg" operation="add" value="0.1">
+					<requirement name="CVarCompare" cvar="spell328BurstCharg" operation="LT" value="2"/>
+				</triggered_effect>
+			</effect_group>
+		</buff>
+		<buff name="buffIvSpellScroll415_Charg" name_key="buffIvSpellScroll415_ChargName" description_key="buffIvSpellScroll_ChargStatusDesc" icon="ui_game_symbol_katana_skill02" icon_color="99,99,255" icon_blink="true">
+			<stack_type value="replace"/>
+			<update_rate value="0.1"/>
+			<display_value value="spell415Charg"/>
+			<display_value_key value="{0:0.#}"/>
+			<effect_group>
+				<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="spell415Charg" operation="set" value="0"/>
+				<triggered_effect trigger="onSelfBuffStack" action="ModifyCVar" cvar="spell415Charg" operation="set" value="0"/>
+				<triggered_effect trigger="onSelfBuffUpdate" action="ModifyCVar" cvar="spell415Charg" operation="add" value="0.1">
+					<requirement name="CVarCompare" cvar="spell415Charg" operation="LT" value="5"/>
+				</triggered_effect>
+			</effect_group>
+		</buff>
+		<buff name="buffIvSpellScroll423_Charg" name_key="buffIvSpellScroll423_ChargName" description_key="buffIvSpellScroll_ChargStatusDesc" icon="ui_game_symbol_katana_skill02" icon_color="99,99,255" icon_blink="true">
+			<stack_type value="replace"/>
+			<update_rate value="0.1"/>
+			<display_value value="spell423Charg"/>
+			<display_value_key value="{0:0.#}"/>
+			<effect_group>
+				<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="spell423Charg" operation="set" value="0"/>
+				<triggered_effect trigger="onSelfBuffStack" action="ModifyCVar" cvar="spell423Charg" operation="set" value="0"/>
+				<triggered_effect trigger="onSelfBuffUpdate" action="ModifyCVar" cvar="spell423Charg" operation="add" value="0.1">
+					<requirement name="CVarCompare" cvar="spell423Charg" operation="LT" value="5"/>
+				</triggered_effect>
+			</effect_group>
+		</buff>
+		<buff name="buffIvSpellScroll427_Charg" name_key="buffIvSpellScroll427_ChargName" description_key="buffIvSpellScroll_ChargStatusDesc" icon="ui_game_symbol_katana_skill02" icon_color="99,99,255" icon_blink="true">
+			<stack_type value="replace"/>
+			<update_rate value="0.1"/>
+			<display_value value="spell427Charg"/>
+			<display_value_key value="{0:0.#}"/>
+			<effect_group>
+				<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="spell427Charg" operation="set" value="0"/>
+				<triggered_effect trigger="onSelfBuffStack" action="ModifyCVar" cvar="spell427Charg" operation="set" value="0"/>
+				<triggered_effect trigger="onSelfBuffUpdate" action="ModifyCVar" cvar="spell427Charg" operation="add" value="0.1">
+					<requirement name="CVarCompare" cvar="spell427Charg" operation="LT" value="5"/>
+				</triggered_effect>
+			</effect_group>
+		</buff>
+		<buff name="buffIvSpellScroll429_Charg" name_key="buffIvSpellScroll429_ChargName" description_key="buffIvSpellScroll_ChargStatusDesc" icon="ui_game_symbol_katana_skill02" icon_color="99,99,255" icon_blink="true">
+			<stack_type value="replace"/>
+			<update_rate value="0.1"/>
+			<display_value value="spell429Charg"/>
+			<display_value_key value="{0:0.#}"/>
+			<effect_group>
+				<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="spell429Charg" operation="set" value="0"/>
+				<triggered_effect trigger="onSelfBuffStack" action="ModifyCVar" cvar="spell429Charg" operation="set" value="0"/>
+				<triggered_effect trigger="onSelfBuffUpdate" action="ModifyCVar" cvar="spell429Charg" operation="add" value="0.1">
+					<requirement name="CVarCompare" cvar="spell429Charg" operation="LT" value="10"/>
+				</triggered_effect>
+			</effect_group>
+		</buff>
+		<buff name="buffIvSpellScroll430_Charg" name_key="buffIvSpellScroll430_ChargName" description_key="buffIvSpellScroll_ChargStatusDesc" icon="ui_game_symbol_katana_skill02" icon_color="99,99,255" icon_blink="true">
+			<stack_type value="replace"/>
+			<update_rate value="0.1"/>
+			<display_value value="spell430Charg"/>
+			<display_value_key value="{0:0.#}"/>
+			<effect_group>
+				<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="spell430Charg" operation="set" value="0"/>
+				<triggered_effect trigger="onSelfBuffStack" action="ModifyCVar" cvar="spell430Charg" operation="set" value="0"/>
+				<triggered_effect trigger="onSelfBuffUpdate" action="ModifyCVar" cvar="spell430Charg" operation="add" value="0.1">
+					<requirement name="CVarCompare" cvar="spell430Charg" operation="LT" value="5"/>
+				</triggered_effect>
+			</effect_group>
+		</buff>
+		<buff name="buffIvSpellScroll531_1_Charg" name_key="buffIvSpellScroll531_1_ChargName" description_key="buffIvSpellScroll_ChargStatusDesc" icon="ui_game_symbol_katana_skill01" icon_color="153,153,255" icon_blink="true">
+			<stack_type value="replace"/>
+			<update_rate value="0.1"/>
+			<display_value value="spell53101Charg"/>
+			<display_value_key value="{0:0.#}"/>
+			<effect_group>
+				<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="spell53101Charg" operation="set" value="0"/>
+				<triggered_effect trigger="onSelfBuffStack" action="ModifyCVar" cvar="spell53101Charg" operation="set" value="0"/>
+				<triggered_effect trigger="onSelfBuffUpdate" action="ModifyCVar" cvar="spell53101Charg" operation="add" value="0.1">
+					<requirement name="CVarCompare" cvar="spell53101Charg" operation="LT" value="2"/>
+				</triggered_effect>
+			</effect_group>
+		</buff>
+		<buff name="buffIvSpellScroll531_2_Charg" name_key="buffIvSpellScroll531_2_ChargName" description_key="buffIvSpellScroll_ChargStatusDesc" icon="ui_game_symbol_katana_skill02" icon_color="99,99,255" icon_blink="true">
+			<stack_type value="replace"/>
+			<update_rate value="0.1"/>
+			<display_value value="spell53102Charg"/>
+			<display_value_key value="{0:0.#}"/>
+			<effect_group>
+				<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="spell53102Charg" operation="set" value="0"/>
+				<triggered_effect trigger="onSelfBuffStack" action="ModifyCVar" cvar="spell53102Charg" operation="set" value="0"/>
+				<triggered_effect trigger="onSelfBuffUpdate" action="ModifyCVar" cvar="spell53102Charg" operation="add" value="0.1">
+					<requirement name="CVarCompare" cvar="spell53102Charg" operation="LT" value="2.3"/>
+				</triggered_effect>
+			</effect_group>
+		</buff>
+		<buff name="buffIvSpellScroll532_Charg" name_key="buffIvSpellScroll532_ChargName" description_key="buffIvSpellScroll_ChargStatusDesc" icon="ui_game_symbol_katana_skill02" icon_color="99,99,255" icon_blink="true">
+			<stack_type value="replace"/>
+			<update_rate value="0.1"/>
+			<display_value value="spell532Charg"/>
+			<display_value_key value="{0:0.#}"/>
+			<effect_group>
+				<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="spell532Charg" operation="set" value="0"/>
+				<triggered_effect trigger="onSelfBuffStack" action="ModifyCVar" cvar="spell532Charg" operation="set" value="0"/>
+				<triggered_effect trigger="onSelfBuffUpdate" action="ModifyCVar" cvar="spell532Charg" operation="add" value="0.1">
+					<requirement name="CVarCompare" cvar="spell532Charg" operation="LT" value="1"/>
+				</triggered_effect>
+			</effect_group>
+		</buff>
+
+	</append>
+</configs>

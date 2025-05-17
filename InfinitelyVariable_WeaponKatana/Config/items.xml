@@ -1,0 +1,91 @@
+<config>
+	<append xpath="/items">
+		<item name="meleeIvDemonKatana">
+			<property name="Tags" value="melee,grunting,light,weapon,meleeWeapon,canHaveCosmetic,perkFlurryOfBlows,perkDeepCuts,IVdemonKatana"/>
+			<property name="CustomIcon" value="WeaponIvDemonKatana"/>
+			<property name="DescriptionKey" value="meleeIvDemonKatanaDesc"/>
+			<property name="DisplayType" value="meleeKnife"/>
+			<property name="Group" value="Ammo/Weapons,Melee Weapons"/>
+			<property name="Meshfile" value="#@modfolder:Resources/demonkatana?weaponKatana"/>
+			<property name="DropMeshfile" value="#@modfolder:Resources/demonkatana?weaponKatanaGround"/>
+			<property name="HoldType" value="65"/>
+			<property name="Material" value="Mmetal"/>
+			<property name="RepairTools" value="resourceRepairKit"/>
+			<property name="DegradationBreaksAfter" value="true"/>
+			<property name="SoundDestroy" value="metaldestroy"/>
+			<property name="RepairExpMultiplier" value="5.5"/>
+			<property name="EconomicBundleSize" value="1"/>
+			<property name="EconomicValue" value="2200"/>
+			<property name="ShowQuality" value="true"/>
+		
+			<property class="Action0"><!-- 一般攻擊 -->
+				<property name="Class" value="DynamicMelee"/>
+				<property name="Damage_type" value="Slashing"/>
+				<property name="Sound_start" value="machete_swinglight"/>
+				<property name="Sphere" value=".15"/>
+				<property name="ToolCategory.Butcher" value="0" param1="5"/>
+				<property name="UseGrazingHits" value="true"/>
+				<property name="GrazeStart" value=".25"/>
+				<property name="GrazeEnd" value=".32"/>
+				<property name="SwingDegrees" value="65"/>
+				<property name="SwingAngle" value="180"/>
+				<property class="HitSounds">
+					<property name="Override0" value="organic" param1="metalhollowhitorganic"/>
+				</property>
+				<property class="GrazeSounds">
+					<property name="Override0" value="organic" param1="metalgrazeorganic"/>
+				</property>
+			</property>
+		
+			<property class="Action1"><!-- 強力攻擊 -->
+				<property name="Class" value="DynamicMelee"/>
+				<property name="Sound_start" value="machete_swingheavy"/>
+				<property name="Sphere" value=".15"/>
+				<property name="ToolCategory.Butcher" value="0" param1="5"/>
+				<property name="UsePowerAttackAnimation" value="true"/>
+				<property name="UseGrazingHits" value="true"/>
+				<property name="IsHorizontalSwing" value="true"/>
+				<property name="GrazeStart" value=".25"/>
+				<property name="GrazeEnd" value=".32"/>
+				<property name="SwingDegrees" value="120"/>
+				<property name="SwingAngle" value="90"/>
+				<property class="HitSounds">
+					<property name="Override0" value="organic" param1="metalhollowhitorganic"/>
+				</property>
+				<property class="GrazeSounds">
+					<property name="Override0" value="organic" param1="metalgrazeorganic"/>
+				</property>
+			</property>
+		
+			<effect_group name="meleeIvDemonKatana">
+				<passive_effect name="EntityDamage" operation="base_set" value="23" tags="perkDeepCuts"/>
+				<passive_effect name="BlockDamage" operation="base_set" value="21.6" tags="perkDeepCuts"/>
+				<passive_effect name="AttacksPerMinute" operation="base_set" value="53.5" tags="perkDeepCuts,perkFlurryOfBlows"/>
+				<passive_effect name="StaminaLoss" operation="base_set" value="21.5" tags="primary"/>
+				<passive_effect name="DegradationMax" operation="base_set" value="200,700" tier="1,6" tags="perkDeepCuts"/>
+				<passive_effect name="DegradationPerUse" operation="base_set" value="1" tags="perkDeepCuts"/>
+				<passive_effect name="MaxRange" operation="base_set" value="2.5" tags="perkDeepCuts"/>
+				<passive_effect name="BlockRange" operation="base_set" value="3.5" tags="perkDeepCuts"/>
+				<passive_effect name="ModSlots" operation="base_set" value="1,2,3,4,5,6" tier="1,2,3,4,5,6"/>
+				<passive_effect name="EntityDamage" operation="perc_add" value="-.25,.2" tags="perkDeepCuts"/>
+				<passive_effect name="BlockDamage" operation="perc_add" value="-.25,.2" tags="perkDeepCuts"/>
+				<passive_effect name="DegradationMax" operation="perc_add" value="-.15,.15"/>
+				<passive_effect name="DamageModifier" operation="perc_add" value="-.5" tags="earth"/>
+				<passive_effect name="DamageModifier" operation="perc_add" value="-.5" tags="stone"/>
+				<passive_effect name="DamageModifier" operation="perc_add" value="-.5" tags="metal"/>
+				<passive_effect name="HarvestCount" operation="base_set" value="1" tags="butcherHarvest"/>
+			</effect_group>
+			<effect_group name="Power Attack">
+				<passive_effect name="EntityDamage" operation="perc_add" value="0.8" tags="secondary,perkDeepCuts"/>
+				<passive_effect name="StaminaLoss" operation="base_set" value="36.5" tags="secondary"/>
+			</effect_group>
+			<effect_group name="sneak damage bonus">
+				<requirement name="CVarCompare" cvar="_crouching" operation="Equals" value="1"/>
+				<requirement name="CVarCompare" cvar="_notAlerted" operation="GT" value="0" target="other"/>
+					<passive_effect name="EntityDamage" operation="perc_add" value="6" tags="perkDeepCuts"/>
+					<passive_effect name="DamageBonus" operation="base_add" value="6"/>
+					<display_value name="dEntityDamageSneak" value="6"/>
+			</effect_group>
+		</item>
+	</append>
+</config>

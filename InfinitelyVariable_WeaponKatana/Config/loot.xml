@@ -1,0 +1,56 @@
+<configs>
+	<append xpath="/lootcontainers/lootgroup[@name='groupWeaponsT1_Melee']">
+		<item name="meleeIvDemonKatana"/>
+	</append>
+	<append xpath="/lootcontainers/lootgroup[@name='groupWeaponsT2_Melee']">
+		<item name="meleeIvDemonKatana"/>
+	</append>
+	<append xpath="/lootcontainers/lootgroup[@name='groupGrills']">
+		<item name="meleeIvDemonKatana" loot_prob_template="medLow"/>
+	</append>
+	<append xpath="/lootcontainers/lootgroup[@name='groupQuestWeaponsMeleeT1']">
+		<item name="meleeIvDemonKatana"/>
+	</append>
+	<append xpath="/lootcontainers/lootgroup[@name='groupQuestWeaponsMeleeT2']">
+		<item name="meleeIvDemonKatana"/>
+	</append>
+	<append xpath="/lootcontainers/lootgroup[@name='groupSinks03']">
+		<item name="meleeIvDemonKatana" loot_prob_template="medLow"/>
+	</append>
+	<append xpath="/lootcontainers/lootgroup[@name='groupToilet02']">
+		<item name="meleeIvDemonKatana" loot_prob_template="medLow"/>
+	</append>
+	<append xpath="/lootcontainers/lootgroup[@name='twitch_tier1melee']">
+		<item name="meleeIvDemonKatana"/>
+	</append>
+	<append xpath="/lootcontainers/lootgroup[@name='twitch_tier2melee']">
+		<item name="meleeIvDemonKatana"/>
+	</append>
+	<append xpath="/lootcontainers/lootgroup[@name='modMeleeT1']">
+		<item name="modDemonKatanaSpellScrollTyrantSwordOfDestruction" prob=".1"/>
+		<item name="modDemonKatanaSpellScrollEidolon" loot_prob_template="low"/>
+		<item name="modDemonKatanaSpellScrollFire" loot_prob_template="low"/>
+		<item name="modDemonKatanaSpellScrollFrost" loot_prob_template="low"/>
+		<item name="modDemonKatanaSpellScrollElectric" loot_prob_template="low"/>
+		<item name="modDemonKatanaSpellScrollPoison" loot_prob_template="low"/>
+		<item name="modDemonKatanaSpellScrollWind" loot_prob_template="low"/>
+	</append>
+	<append xpath="/lootcontainers/lootgroup[@name='modMeleeT2']">
+		<item name="modDemonKatanaSpellScrollTyrantSwordOfDestruction" prob=".15"/>
+		<item name="modDemonKatanaSpellScrollEidolon" loot_prob_template="medLow"/>
+		<item name="modDemonKatanaSpellScrollFire" loot_prob_template="medLow"/>
+		<item name="modDemonKatanaSpellScrollFrost" loot_prob_template="medLow"/>
+		<item name="modDemonKatanaSpellScrollElectric" loot_prob_template="medLow"/>
+		<item name="modDemonKatanaSpellScrollPoison" loot_prob_template="medLow"/>
+		<item name="modDemonKatanaSpellScrollWind" loot_prob_template="medLow"/>
+	</append>
+	<append xpath="/lootcontainers/lootgroup[@name='modMeleeT3']">
+		<item name="modDemonKatanaSpellScrollTyrantSwordOfDestruction" prob=".2"/>
+		<item name="modDemonKatanaSpellScrollEidolon" loot_prob_template="med"/>
+		<item name="modDemonKatanaSpellScrollFire" loot_prob_template="med"/>
+		<item name="modDemonKatanaSpellScrollFrost" loot_prob_template="med"/>
+		<item name="modDemonKatanaSpellScrollElectric" loot_prob_template="med"/>
+		<item name="modDemonKatanaSpellScrollPoison" loot_prob_template="med"/>
+		<item name="modDemonKatanaSpellScrollWind" loot_prob_template="med"/>
+	</append>
+</configs>

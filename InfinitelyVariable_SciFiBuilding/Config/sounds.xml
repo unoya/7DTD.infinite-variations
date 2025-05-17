@@ -1,0 +1,58 @@
+<config>
+	<append xpath="/Sounds">
+		<SoundDataNode name="open_scifi_door_01"> <AudioSource name="Sounds/AudioSource_VO"/>
+			<AudioClip ClipName="#@modfolder:Resources/scifi_building?scifi_door01_open"/>
+			<LocalCrouchVolumeScale value="0.5"/>
+			<CrouchNoiseScale value="1"/>
+			<NoiseScale value="1"/>
+			<MaxVoices value="10"/>
+			<MaxVoicesPerEntity value="10"/>
+			<MaxRepeatRate value="0.001"/>
+		</SoundDataNode>
+		<SoundDataNode name="close_scifi_door_01"> <AudioSource name="Sounds/AudioSource_VO"/>
+			<AudioClip ClipName="#@modfolder:Resources/scifi_building?scifi_door01_close"/>
+			<LocalCrouchVolumeScale value="0.5"/>
+			<CrouchNoiseScale value="1"/>
+			<NoiseScale value="1"/>
+			<MaxVoices value="10"/>
+			<MaxVoicesPerEntity value="10"/>
+			<MaxRepeatRate value="0.001"/>
+		</SoundDataNode>
+		<SoundDataNode name="open_scifi_door_02"> <AudioSource name="Sounds/AudioSource_VO"/>
+			<AudioClip ClipName="#@modfolder:Resources/scifi_building?scifi_door02_open"/>
+			<LocalCrouchVolumeScale value="0.5"/>
+			<CrouchNoiseScale value="1"/>
+			<NoiseScale value="1"/>
+			<MaxVoices value="10"/>
+			<MaxVoicesPerEntity value="10"/>
+			<MaxRepeatRate value="0.001"/>
+		</SoundDataNode>
+		<SoundDataNode name="close_scifi_door_02"> <AudioSource name="Sounds/AudioSource_VO"/>
+			<AudioClip ClipName="#@modfolder:Resources/scifi_building?scifi_door02_close"/>
+			<LocalCrouchVolumeScale value="0.5"/>
+			<CrouchNoiseScale value="1"/>
+			<NoiseScale value="1"/>
+			<MaxVoices value="10"/>
+			<MaxVoicesPerEntity value="10"/>
+			<MaxRepeatRate value="0.001"/>
+		</SoundDataNode>
+		<SoundDataNode name="scifi_bridge"> <AudioSource name="Sounds/AudioSource_VO"/>
+			<AudioClip ClipName="#@modfolder:Resources/scifi_building?scifi_bridge"/>
+			<LocalCrouchVolumeScale value="0.5"/>
+			<CrouchNoiseScale value="1"/>
+			<NoiseScale value="1"/>
+			<MaxVoices value="10"/>
+			<MaxVoicesPerEntity value="10"/>
+			<MaxRepeatRate value="0.001"/>
+		</SoundDataNode>
+		<SoundDataNode name="scifi_stairs"> <AudioSource name="Sounds/AudioSource_VO"/>
+			<AudioClip ClipName="#@modfolder:Resources/scifi_building?scifi_stairs"/>
+			<LocalCrouchVolumeScale value="0.5"/>
+			<CrouchNoiseScale value="1"/>
+			<NoiseScale value="1"/>
+			<MaxVoices value="10"/>
+			<MaxVoicesPerEntity value="10"/>
+			<MaxRepeatRate value="0.001"/>
+		</SoundDataNode>
+	</append>
+</config>
