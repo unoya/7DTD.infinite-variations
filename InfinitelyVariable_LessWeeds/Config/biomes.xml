@@ -1,6 +1,0 @@
-<configs>
-	<set xpath="worldgeneration/biomes/biome[contains(@name, '')]/subbiome[contains(@prob, '')]/decorations/decoration[contains(@blockname, 'GrassDiagonal')]/@prob">.01</set>
-	<set xpath="worldgeneration/biomes/biome[contains(@name, '')]/decorations/decoration[contains(@blockname, 'GrassDiagonal')]/@prob">.01</set>
-	<set xpath="worldgeneration/biomes/biome[contains(@name, '')]/subbiome[contains(@prob, '')]/decorations/decoration[contains(@blockname, 'ShortGrass')]/@prob">.01</set>
-	<set xpath="worldgeneration/biomes/biome[contains(@name, '')]/decorations/decoration[contains(@blockname, 'ShortGrass')]/@prob">.01</set>
-</configs>

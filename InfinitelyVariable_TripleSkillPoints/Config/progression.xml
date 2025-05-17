@@ -1,3 +1,0 @@
-<configs>
-	<set xpath="/progression/level[@exp_to_level='10000']/@skill_points_per_level">3</set>
-</configs>

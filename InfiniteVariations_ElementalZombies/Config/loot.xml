@@ -1,0 +1,23 @@
+<config>
+	<append xpath="/lootcontainers/lootgroup[@name='groupZpackReg']">
+		<item name="drinkIvRemoveFirePotion" count="0,1" loot_prob_template="veryLow"/>
+		<item name="drinkIvRemoveShockPotion" count="0,1" loot_prob_template="veryLow"/>
+		<item name="drinkIvRemovePoisonPotion" count="0,1" loot_prob_template="veryLow"/>
+		<item name="drinkIvRemoveFrostPotion" count="0,1" loot_prob_template="veryLow"/>
+		<item name="drinkIvRemoveDeathDeclarePotion" count="0,1" loot_prob_template="veryLow"/>
+	</append>
+	<append xpath="/lootcontainers/lootgroup[@name='groupZpackStrong']">
+		<item name="drinkIvRemoveFirePotion" count="0,2" loot_prob_template="low"/>
+		<item name="drinkIvRemoveShockPotion" count="0,2" loot_prob_template="low"/>
+		<item name="drinkIvRemovePoisonPotion" count="0,2" loot_prob_template="low"/>
+		<item name="drinkIvRemoveFrostPotion" count="0,2" loot_prob_template="low"/>
+		<item name="drinkIvRemoveDeathDeclarePotion" count="0,2" loot_prob_template="low"/>
+	</append>
+	<append xpath="/lootcontainers/lootgroup[@name='groupZpackBoss']">
+		<item name="drinkIvRemoveFirePotion" count="0,3" loot_prob_template="medLow"/>
+		<item name="drinkIvRemoveShockPotion" count="0,3" loot_prob_template="medLow"/>
+		<item name="drinkIvRemovePoisonPotion" count="0,3" loot_prob_template="medLow"/>
+		<item name="drinkIvRemoveFrostPotion" count="0,3" loot_prob_template="medLow"/>
+		<item name="drinkIvRemoveDeathDeclarePotion" count="0,3" loot_prob_template="medLow"/>
+	</append>
+</config>

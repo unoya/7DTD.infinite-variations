@@ -1,0 +1,71 @@
+<configs>
+	<!-- 堅靭(attFortitude)技能裡的獵人(perkTheHuntsman)有加成效果 -->
+	<!-- 公鹿 -->
+	<append xpath="/entity_classes/entity_class[@name='animalStag']">
+			<drop event="Harvest" name="resourceShatteredSoulEssence" tag="butcherHarvest" count="1"/>
+	</append>
+	<!-- 母鹿 -->
+	<append xpath="/entity_classes/entity_class[@name='animalDoe']">
+			<drop event="Harvest" name="resourceShatteredSoulEssence" tag="butcherHarvest" count="1"/>
+	</append>
+	<!-- 兔子 -->
+	<append xpath="/entity_classes/entity_class[@name='animalRabbit']">
+			<drop event="Harvest" name="resourceShatteredSoulEssence" tag="butcherHarvest" count="1"/>
+	</append>
+	<!-- 雞 -->
+	<append xpath="/entity_classes/entity_class[@name='animalChicken']">
+			<drop event="Harvest" name="resourceShatteredSoulEssence" tag="butcherHarvest" count="1"/>
+	</append>
+	<!-- 熊 -->
+	<append xpath="/entity_classes/entity_class[@name='animalBear']">
+			<drop event="Harvest" name="resourceShatteredSoulEssence" tag="butcherHarvest" count="4"/>
+	</append>
+	<!-- 殭屍熊 -->
+	<append xpath="/entity_classes/entity_class[@name='animalZombieBear']">
+			<drop event="Harvest" name="resourceShatteredSoulEssence" tag="butcherHarvest" count="4"/>
+	</append>
+	<!-- 野狼 -->
+	<append xpath="/entity_classes/entity_class[@name='animalWolf']">
+			<drop event="Harvest" name="resourceShatteredSoulEssence" tag="butcherHarvest" count="1"/>
+	</append>
+	<!-- 恐狼	-->
+	<append xpath="/entity_classes/entity_class[@name='animalDireWolf']">
+			<drop event="Harvest" name="resourceShatteredSoulEssence" tag="butcherHarvest" count="1"/>
+	</append>
+	<!-- twitch的殺人雞 -->
+	<append xpath="/entity_classes/entity_class[@name='animalChickenHostile']">
+			<drop event="Harvest" name="resourceShatteredSoulEssence" tag="butcherHarvest" count="6"/>
+	</append>
+	<!-- 土狼 -->
+	<append xpath="/entity_classes/entity_class[@name='animalCoyote']">
+			<drop event="Harvest" name="resourceShatteredSoulEssence" tag="butcherHarvest" count="1"/>
+	</append>
+	<!-- 山獅 -->
+	<append xpath="/entity_classes/entity_class[@name='animalMountainLion']">
+			<drop event="Harvest" name="resourceShatteredSoulEssence" tag="butcherHarvest" count="3"/>
+	</append>
+	<!-- 殭屍禿鷲	-->
+	<append xpath="/entity_classes/entity_class[@name='animalZombieVulture']">
+			<drop event="Harvest" name="resourceShatteredSoulEssence" tag="butcherHarvest" count="1"/>
+	</append>
+	<!-- 輻射的殭屍禿鷲	-->
+	<append xpath="/entity_classes/entity_class[@name='animalZombieVultureRadiated']">
+			<drop event="Harvest" name="resourceShatteredSoulEssence" tag="butcherHarvest" count="2"/>
+	</append>
+	<!-- 殭屍狗 -->
+	<append xpath="/entity_classes/entity_class[@name='animalZombieDog']">
+			<drop event="Harvest" name="resourceShatteredSoulEssence" tag="butcherHarvest" count="1"/>
+	</append>
+	<!-- 蛇 -->
+	<append xpath="/entity_classes/entity_class[@name='animalSnake']">
+			<drop event="Harvest" name="resourceShatteredSoulEssence" tag="butcherHarvest" count="1"/>
+	</append>
+	<!-- 公豬 -->
+	<append xpath="/entity_classes/entity_class[@name='animalBoar']">
+			<drop event="Harvest" name="resourceShatteredSoulEssence" tag="butcherHarvest" count="4"/>
+	</append>
+	<!-- 公豬王 -->
+	<append xpath="/entity_classes/entity_class[@name='animalBossGrace']">
+			<drop event="Harvest" name="resourceShatteredSoulEssence" tag="butcherHarvest" count="10"/>
+	</append>
+</configs>

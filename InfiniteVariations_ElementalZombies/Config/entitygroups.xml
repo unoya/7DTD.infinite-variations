@@ -1,0 +1,3776 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<config>
+<!--
+	A21版開始指令碼使用有變動, 必須使用如下的例子:
+	例如:在ZombiesAll群組插入幾個新的實體殭屍, 並且設定他們每個出現的機率
+    <csv xpath="/entitygroups/entitygroup[@name='ZombiesAll']/text()" delim="\n" op="add" >
+        zombieFatHawaiian01, .3
+        zombieFatHawaiian02, .3
+        zombieBiker, .2
+        zombieBikerFeral, .2
+        zombieBikerRadiated, .2
+        zombieJoe, .1
+    </csv>
+	
+	例如:在ZombiesAll群組裡, 找到zombieJoe實體殭屍該行, 並將它移除
+	<csv xpath="/entitygroups/entitygroup[@name='ZombiesAll']/text()" delim="\n" op="remove" >zombieJoe</csv>
+	
+	例如:在ZombiesAll群組裡, 找到開頭是zombieBiker的實體殭屍, 都將他們移除 (例如zombieBiker, zombieBikerFeral, zombieBikerRadiated)
+	<csv xpath="/entitygroups/entitygroup[@name='ZombiesAll']/text()" delim="\n" op="remove" >zombieBiker*</csv>
+-->
+
+	<csv xpath="/entitygroups/entitygroup[@name='ZombiesNight']/text()" delim="\n" op="add">
+		IvElementFireBoe, 0.15
+		IvElementElectricBoe, 0.15
+		IvElementToxicBoe, 0.15
+		IvElementFrostBoe, 0.15
+		IvElementSoulBoe, 0.15
+		IvElementFireJoe, 0.15
+		IvElementElectricJoe, 0.15
+		IvElementToxicJoe, 0.15
+		IvElementFrostJoe, 0.15
+		IvElementSoulJoe, 0.15
+		IvElementFireSteve, 0.15
+		IvElementElectricSteve, 0.15
+		IvElementToxicSteve, 0.15
+		IvElementFrostSteve, 0.15
+		IvElementSoulSteve, 0.15
+		IvElementFireTomClark, 0.15
+		IvElementElectricTomClark, 0.15
+		IvElementToxicTomClark, 0.15
+		IvElementFrostTomClark, 0.15
+		IvElementSoulTomClark, 0.15
+		IvElementFireMoe, 0.15
+		IvElementElectricMoe, 0.15
+		IvElementToxicMoe, 0.15
+		IvElementFrostMoe, 0.15
+		IvElementSoulMoe, 0.15
+		IvElementFireYo, 0.15
+		IvElementElectricYo, 0.15
+		IvElementToxicYo, 0.15
+		IvElementFrostYo, 0.15
+		IvElementSoulYo, 0.15
+		IvElementFireBusinessMan, 0.15
+		IvElementElectricBusinessMan, 0.15
+		IvElementToxicBusinessMan, 0.15
+		IvElementFrostBusinessMan, 0.15
+		IvElementSoulBusinessMan, 0.15
+		IvElementFireArlene, 0.15
+		IvElementElectricArlene, 0.15
+		IvElementToxicArlene, 0.15
+		IvElementFrostArlene, 0.15
+		IvElementSoulArlene, 0.15
+		IvElementFireDarlene, 0.15
+		IvElementElectricDarlene, 0.15
+		IvElementToxicDarlene, 0.15
+		IvElementFrostDarlene, 0.15
+		IvElementSoulDarlene, 0.15
+		IvElementFireMarlene, 0.15
+		IvElementElectricMarlene, 0.15
+		IvElementToxicMarlene, 0.15
+		IvElementFrostMarlene, 0.15
+		IvElementSoulMarlene, 0.15
+		IvElementFireNurse, 0.15
+		IvElementElectricNurse, 0.15
+		IvElementToxicNurse, 0.15
+		IvElementFrostNurse, 0.15
+		IvElementSoulNurse, 0.15
+		IvElementFireFatHawaiian, 0.15
+		IvElementElectricFatHawaiian, 0.15
+		IvElementToxicFatHawaiian, 0.15
+		IvElementFrostFatHawaiian, 0.15
+		IvElementSoulFatHawaiian, 0.15
+	</csv>
+
+	<csv xpath="/entitygroups/entitygroup[@name='ZombiesForestDowntown']/text()" delim="\n" op="add">
+		IvElementFireBoe, 0.05
+		IvElementElectricBoe, 0.05
+		IvElementToxicBoe, 0.05
+		IvElementFrostBoe, 0.05
+		IvElementSoulBoe, 0.05
+		IvElementFireJoe, 0.05
+		IvElementElectricJoe, 0.05
+		IvElementToxicJoe, 0.05
+		IvElementFrostJoe, 0.05
+		IvElementSoulJoe, 0.05
+		IvElementFireSteve, 0.05
+		IvElementElectricSteve, 0.05
+		IvElementToxicSteve, 0.05
+		IvElementFrostSteve, 0.05
+		IvElementSoulSteve, 0.05
+		IvElementFireTomClark, 0.05
+		IvElementElectricTomClark, 0.05
+		IvElementToxicTomClark, 0.05
+		IvElementFrostTomClark, 0.05
+		IvElementSoulTomClark, 0.05
+		IvElementFireMoe, 0.05
+		IvElementElectricMoe, 0.05
+		IvElementToxicMoe, 0.05
+		IvElementFrostMoe, 0.05
+		IvElementSoulMoe, 0.05
+		IvElementFireYo, 0.05
+		IvElementElectricYo, 0.05
+		IvElementToxicYo, 0.05
+		IvElementFrostYo, 0.05
+		IvElementSoulYo, 0.05
+		IvElementFireBusinessMan, 0.05
+		IvElementElectricBusinessMan, 0.05
+		IvElementToxicBusinessMan, 0.05
+		IvElementFrostBusinessMan, 0.05
+		IvElementSoulBusinessMan, 0.05
+		IvElementFireArlene, 0.05
+		IvElementElectricArlene, 0.05
+		IvElementToxicArlene, 0.05
+		IvElementFrostArlene, 0.05
+		IvElementSoulArlene, 0.05
+		IvElementFireDarlene, 0.05
+		IvElementElectricDarlene, 0.05
+		IvElementToxicDarlene, 0.05
+		IvElementFrostDarlene, 0.05
+		IvElementSoulDarlene, 0.05
+		IvElementFireMarlene, 0.05
+		IvElementElectricMarlene, 0.05
+		IvElementToxicMarlene, 0.05
+		IvElementFrostMarlene, 0.05
+		IvElementSoulMarlene, 0.05
+		IvElementFireNurse, 0.05
+		IvElementElectricNurse, 0.05
+		IvElementToxicNurse, 0.05
+		IvElementFrostNurse, 0.05
+		IvElementSoulNurse, 0.05
+		IvElementFirePartyGirl, 0.05
+		IvElementElectricPartyGirl, 0.05
+		IvElementToxicPartyGirl, 0.05
+		IvElementFrostPartyGirl, 0.05
+		IvElementSoulPartyGirl, 0.05
+		IvElementFireFatHawaiian, 0.05
+		IvElementElectricFatHawaiian, 0.05
+		IvElementToxicFatHawaiian, 0.05
+		IvElementFrostFatHawaiian, 0.05
+		IvElementSoulFatHawaiian, 0.05
+		IvElementFireSoldier, 0.05
+		IvElementElectricSoldier, 0.05
+		IvElementToxicSoldier, 0.05
+		IvElementFrostSoldier, 0.05
+		IvElementSoulSoldier, 0.05
+	</csv>
+
+	<csv xpath="/entitygroups/entitygroup[@name='ZombiesForestDowntownNight']/text()" delim="\n" op="add">
+		IvElementFireBoe, 0.1
+		IvElementElectricBoe, 0.1
+		IvElementToxicBoe, 0.1
+		IvElementFrostBoe, 0.1
+		IvElementSoulBoe, 0.1
+		IvElementFireJoe, 0.1
+		IvElementElectricJoe, 0.1
+		IvElementToxicJoe, 0.1
+		IvElementFrostJoe, 0.1
+		IvElementSoulJoe, 0.1
+		IvElementFireSteve, 0.1
+		IvElementElectricSteve, 0.1
+		IvElementToxicSteve, 0.1
+		IvElementFrostSteve, 0.1
+		IvElementSoulSteve, 0.1
+		IvElementFireTomClark, 0.1
+		IvElementElectricTomClark, 0.1
+		IvElementToxicTomClark, 0.1
+		IvElementFrostTomClark, 0.1
+		IvElementSoulTomClark, 0.1
+		IvElementFireMoe, 0.1
+		IvElementElectricMoe, 0.1
+		IvElementToxicMoe, 0.1
+		IvElementFrostMoe, 0.1
+		IvElementSoulMoe, 0.1
+		IvElementFireYo, 0.1
+		IvElementElectricYo, 0.1
+		IvElementToxicYo, 0.1
+		IvElementFrostYo, 0.1
+		IvElementSoulYo, 0.1
+		IvElementFireBusinessMan, 0.1
+		IvElementElectricBusinessMan, 0.1
+		IvElementToxicBusinessMan, 0.1
+		IvElementFrostBusinessMan, 0.1
+		IvElementSoulBusinessMan, 0.1
+		IvElementFireArlene, 0.1
+		IvElementElectricArlene, 0.1
+		IvElementToxicArlene, 0.1
+		IvElementFrostArlene, 0.1
+		IvElementSoulArlene, 0.1
+		IvElementFireDarlene, 0.1
+		IvElementElectricDarlene, 0.1
+		IvElementToxicDarlene, 0.1
+		IvElementFrostDarlene, 0.1
+		IvElementSoulDarlene, 0.1
+		IvElementFireMarlene, 0.1
+		IvElementElectricMarlene, 0.1
+		IvElementToxicMarlene, 0.1
+		IvElementFrostMarlene, 0.1
+		IvElementSoulMarlene, 0.1
+		IvElementFireNurse, 0.1
+		IvElementElectricNurse, 0.1
+		IvElementToxicNurse, 0.1
+		IvElementFrostNurse, 0.1
+		IvElementSoulNurse, 0.1
+		IvElementFirePartyGirl, 0.1
+		IvElementElectricPartyGirl, 0.1
+		IvElementToxicPartyGirl, 0.1
+		IvElementFrostPartyGirl, 0.1
+		IvElementSoulPartyGirl, 0.1
+		IvElementFireFatHawaiian, 0.1
+		IvElementElectricFatHawaiian, 0.1
+		IvElementToxicFatHawaiian, 0.1
+		IvElementFrostFatHawaiian, 0.1
+		IvElementSoulFatHawaiian, 0.1
+		IvElementFireSoldier, 0.1
+		IvElementElectricSoldier, 0.1
+		IvElementToxicSoldier, 0.1
+		IvElementFrostSoldier, 0.1
+		IvElementSoulSoldier, 0.1
+	</csv>
+
+	<csv xpath="/entitygroups/entitygroup[@name='ZombiesDowntown']/text()" delim="\n" op="add">
+		IvElementFireBoe, 0.2
+		IvElementElectricBoe, 0.2
+		IvElementToxicBoe, 0.2
+		IvElementFrostBoe, 0.2
+		IvElementSoulBoe, 0.2
+		IvElementFireJoe, 0.2
+		IvElementElectricJoe, 0.2
+		IvElementToxicJoe, 0.2
+		IvElementFrostJoe, 0.2
+		IvElementSoulJoe, 0.2
+		IvElementFireSteve, 0.2
+		IvElementElectricSteve, 0.2
+		IvElementToxicSteve, 0.2
+		IvElementFrostSteve, 0.2
+		IvElementSoulSteve, 0.2
+		IvElementFireTomClark, 0.2
+		IvElementElectricTomClark, 0.2
+		IvElementToxicTomClark, 0.2
+		IvElementFrostTomClark, 0.2
+		IvElementSoulTomClark, 0.2
+		IvElementFireMoe, 0.2
+		IvElementElectricMoe, 0.2
+		IvElementToxicMoe, 0.2
+		IvElementFrostMoe, 0.2
+		IvElementSoulMoe, 0.2
+		IvElementFireYo, 0.2
+		IvElementElectricYo, 0.2
+		IvElementToxicYo, 0.2
+		IvElementFrostYo, 0.2
+		IvElementSoulYo, 0.2
+		IvElementFireBusinessMan, 0.2
+		IvElementElectricBusinessMan, 0.2
+		IvElementToxicBusinessMan, 0.2
+		IvElementFrostBusinessMan, 0.2
+		IvElementSoulBusinessMan, 0.2
+		IvElementFireArlene, 0.2
+		IvElementElectricArlene, 0.2
+		IvElementToxicArlene, 0.2
+		IvElementFrostArlene, 0.2
+		IvElementSoulArlene, 0.2
+		IvElementFireDarlene, 0.2
+		IvElementElectricDarlene, 0.2
+		IvElementToxicDarlene, 0.2
+		IvElementFrostDarlene, 0.2
+		IvElementSoulDarlene, 0.2
+		IvElementFireMarlene, 0.2
+		IvElementElectricMarlene, 0.2
+		IvElementToxicMarlene, 0.2
+		IvElementFrostMarlene, 0.2
+		IvElementSoulMarlene, 0.2
+		IvElementFireNurse, 0.2
+		IvElementElectricNurse, 0.2
+		IvElementToxicNurse, 0.2
+		IvElementFrostNurse, 0.2
+		IvElementSoulNurse, 0.2
+		IvElementFirePartyGirl, 0.2
+		IvElementElectricPartyGirl, 0.2
+		IvElementToxicPartyGirl, 0.2
+		IvElementFrostPartyGirl, 0.2
+		IvElementSoulPartyGirl, 0.2
+		IvElementFireFatHawaiian, 0.2
+		IvElementElectricFatHawaiian, 0.2
+		IvElementToxicFatHawaiian, 0.2
+		IvElementFrostFatHawaiian, 0.2
+		IvElementSoulFatHawaiian, 0.2
+		IvElementFireSoldier, 0.2
+		IvElementElectricSoldier, 0.2
+		IvElementToxicSoldier, 0.2
+		IvElementFrostSoldier, 0.2
+		IvElementSoulSoldier, 0.2
+		IvElementFireWight, 0.2
+		IvElementElectricWight, 0.2
+		IvElementToxicWight, 0.2
+		IvElementFrostWight, 0.2
+		IvElementSoulWight, 0.2
+		IvElementFireDemolitionRare, 0.01
+		IvElementElectricDemolitionRare, 0.01
+		IvElementToxicDemolitionRare, 0.01
+		IvElementFrostDemolitionRare, 0.01
+		IvElementSoulDemolitionRare, 0.01
+	</csv>
+	<csv xpath="/entitygroups/entitygroup[@name='ZombiesWasteland']/text()" delim="\n" op="add">
+		IvElementFireBoe, 0.2
+		IvElementElectricBoe, 0.2
+		IvElementToxicBoe, 0.2
+		IvElementFrostBoe, 0.2
+		IvElementSoulBoe, 0.2
+		IvElementFireJoe, 0.2
+		IvElementElectricJoe, 0.2
+		IvElementToxicJoe, 0.2
+		IvElementFrostJoe, 0.2
+		IvElementSoulJoe, 0.2
+		IvElementFireSteve, 0.2
+		IvElementElectricSteve, 0.2
+		IvElementToxicSteve, 0.2
+		IvElementFrostSteve, 0.2
+		IvElementSoulSteve, 0.2
+		IvElementFireTomClark, 0.2
+		IvElementElectricTomClark, 0.2
+		IvElementToxicTomClark, 0.2
+		IvElementFrostTomClark, 0.2
+		IvElementSoulTomClark, 0.2
+		IvElementFireMoe, 0.2
+		IvElementElectricMoe, 0.2
+		IvElementToxicMoe, 0.2
+		IvElementFrostMoe, 0.2
+		IvElementSoulMoe, 0.2
+		IvElementFireYo, 0.2
+		IvElementElectricYo, 0.2
+		IvElementToxicYo, 0.2
+		IvElementFrostYo, 0.2
+		IvElementSoulYo, 0.2
+		IvElementFireBusinessMan, 0.2
+		IvElementElectricBusinessMan, 0.2
+		IvElementToxicBusinessMan, 0.2
+		IvElementFrostBusinessMan, 0.2
+		IvElementSoulBusinessMan, 0.2
+		IvElementFireArlene, 0.2
+		IvElementElectricArlene, 0.2
+		IvElementToxicArlene, 0.2
+		IvElementFrostArlene, 0.2
+		IvElementSoulArlene, 0.2
+		IvElementFireDarlene, 0.2
+		IvElementElectricDarlene, 0.2
+		IvElementToxicDarlene, 0.2
+		IvElementFrostDarlene, 0.2
+		IvElementSoulDarlene, 0.2
+		IvElementFireMarlene, 0.2
+		IvElementElectricMarlene, 0.2
+		IvElementToxicMarlene, 0.2
+		IvElementFrostMarlene, 0.2
+		IvElementSoulMarlene, 0.2
+		IvElementFireNurse, 0.2
+		IvElementElectricNurse, 0.2
+		IvElementToxicNurse, 0.2
+		IvElementFrostNurse, 0.2
+		IvElementSoulNurse, 0.2
+		IvElementFireFemaleFat, 0.2
+		IvElementElectricFemaleFat, 0.2
+		IvElementToxicFemaleFat, 0.2
+		IvElementFrostFemaleFat, 0.2
+		IvElementSoulFemaleFat, 0.2
+		IvElementFireBurnt, 0.2
+		IvElementElectricBurnt, 0.2
+		IvElementToxicBurnt, 0.2
+		IvElementFrostBurnt, 0.2
+		IvElementSoulBurnt, 0.2
+		IvElementFireMaleHazmat, 0.2
+		IvElementElectricMaleHazmat, 0.2
+		IvElementToxicMaleHazmat, 0.2
+		IvElementFrostMaleHazmat, 0.2
+		IvElementSoulMaleHazmat, 0.2
+		IvElementFireFatHawaiian, 0.2
+		IvElementElectricFatHawaiian, 0.2
+		IvElementToxicFatHawaiian, 0.2
+		IvElementFrostFatHawaiian, 0.2
+		IvElementSoulFatHawaiian, 0.2
+		IvElementFireSoldier, 0.2
+		IvElementElectricSoldier, 0.2
+		IvElementToxicSoldier, 0.2
+		IvElementFrostSoldier, 0.2
+		IvElementSoulSoldier, 0.2
+	</csv>
+
+	<csv xpath="/entitygroups/entitygroup[@name='ZombiesWastelandNight']/text()" delim="\n" op="add">
+		IvElementFireBoe, 0.4
+		IvElementElectricBoe, 0.4
+		IvElementToxicBoe, 0.4
+		IvElementFrostBoe, 0.4
+		IvElementSoulBoe, 0.4
+		IvElementFireJoe, 0.4
+		IvElementElectricJoe, 0.4
+		IvElementToxicJoe, 0.4
+		IvElementFrostJoe, 0.4
+		IvElementSoulJoe, 0.4
+		IvElementFireSteve, 0.4
+		IvElementElectricSteve, 0.4
+		IvElementToxicSteve, 0.4
+		IvElementFrostSteve, 0.4
+		IvElementSoulSteve, 0.4
+		IvElementFireTomClark, 0.4
+		IvElementElectricTomClark, 0.4
+		IvElementToxicTomClark, 0.4
+		IvElementFrostTomClark, 0.4
+		IvElementSoulTomClark, 0.4
+		IvElementFireMoe, 0.4
+		IvElementElectricMoe, 0.4
+		IvElementToxicMoe, 0.4
+		IvElementFrostMoe, 0.4
+		IvElementSoulMoe, 0.4
+		IvElementFireYo, 0.4
+		IvElementElectricYo, 0.4
+		IvElementToxicYo, 0.4
+		IvElementFrostYo, 0.4
+		IvElementSoulYo, 0.4
+		IvElementFireBusinessMan, 0.4
+		IvElementElectricBusinessMan, 0.4
+		IvElementToxicBusinessMan, 0.4
+		IvElementFrostBusinessMan, 0.4
+		IvElementSoulBusinessMan, 0.4
+		IvElementFireArlene, 0.4
+		IvElementElectricArlene, 0.4
+		IvElementToxicArlene, 0.4
+		IvElementFrostArlene, 0.4
+		IvElementSoulArlene, 0.4
+		IvElementFireDarlene, 0.4
+		IvElementElectricDarlene, 0.4
+		IvElementToxicDarlene, 0.4
+		IvElementFrostDarlene, 0.4
+		IvElementSoulDarlene, 0.4
+		IvElementFireMarlene, 0.4
+		IvElementElectricMarlene, 0.4
+		IvElementToxicMarlene, 0.4
+		IvElementFrostMarlene, 0.4
+		IvElementSoulMarlene, 0.4
+		IvElementFireNurse, 0.4
+		IvElementElectricNurse, 0.4
+		IvElementToxicNurse, 0.4
+		IvElementFrostNurse, 0.4
+		IvElementSoulNurse, 0.4
+		IvElementFireFemaleFat, 0.4
+		IvElementElectricFemaleFat, 0.4
+		IvElementToxicFemaleFat, 0.4
+		IvElementFrostFemaleFat, 0.4
+		IvElementSoulFemaleFat, 0.4
+		IvElementFireBurnt, 0.4
+		IvElementElectricBurnt, 0.4
+		IvElementToxicBurnt, 0.4
+		IvElementFrostBurnt, 0.4
+		IvElementSoulBurnt, 0.4
+		IvElementFireWight, 0.4
+		IvElementElectricWight, 0.4
+		IvElementToxicWight, 0.4
+		IvElementFrostWight, 0.4
+		IvElementSoulWight, 0.4
+		IvElementFireMaleHazmat, 0.4
+		IvElementElectricMaleHazmat, 0.4
+		IvElementToxicMaleHazmat, 0.4
+		IvElementFrostMaleHazmat, 0.4
+		IvElementSoulMaleHazmat, 0.4
+		IvElementFireFatHawaiian, 0.4
+		IvElementElectricFatHawaiian, 0.4
+		IvElementToxicFatHawaiian, 0.4
+		IvElementFrostFatHawaiian, 0.4
+		IvElementSoulFatHawaiian, 0.4
+		IvElementFireSoldier, 0.4
+		IvElementElectricSoldier, 0.4
+		IvElementToxicSoldier, 0.4
+		IvElementFrostSoldier, 0.4
+		IvElementSoulSoldier, 0.4
+	</csv>
+
+	<csv xpath="/entitygroups/entitygroup[@name='ZombiesWastelandDowntown']/text()" delim="\n" op="add">
+		IvElementFireBurnt, 0.4
+		IvElementElectricBurnt, 0.4
+		IvElementToxicBurnt, 0.4
+		IvElementFrostBurnt, 0.4
+		IvElementSoulBurnt, 0.4
+		IvElementFireMaleHazmat, 0.4
+		IvElementElectricMaleHazmat, 0.4
+		IvElementToxicMaleHazmat, 0.4
+		IvElementFrostMaleHazmat, 0.4
+		IvElementSoulMaleHazmat, 0.4
+		IvElementFireBoe, 0.4
+		IvElementElectricBoe, 0.4
+		IvElementToxicBoe, 0.4
+		IvElementFrostBoe, 0.4
+		IvElementSoulBoe, 0.4
+		IvElementFireJoe, 0.4
+		IvElementElectricJoe, 0.4
+		IvElementToxicJoe, 0.4
+		IvElementFrostJoe, 0.4
+		IvElementSoulJoe, 0.4
+		IvElementFireSteve, 0.4
+		IvElementElectricSteve, 0.4
+		IvElementToxicSteve, 0.4
+		IvElementFrostSteve, 0.4
+		IvElementSoulSteve, 0.4
+		IvElementFireTomClark, 0.4
+		IvElementElectricTomClark, 0.4
+		IvElementToxicTomClark, 0.4
+		IvElementFrostTomClark, 0.4
+		IvElementSoulTomClark, 0.4
+		IvElementFireMoe, 0.4
+		IvElementElectricMoe, 0.4
+		IvElementToxicMoe, 0.4
+		IvElementFrostMoe, 0.4
+		IvElementSoulMoe, 0.4
+		IvElementFireYo, 0.4
+		IvElementElectricYo, 0.4
+		IvElementToxicYo, 0.4
+		IvElementFrostYo, 0.4
+		IvElementSoulYo, 0.4
+		IvElementFireBusinessMan, 0.4
+		IvElementElectricBusinessMan, 0.4
+		IvElementToxicBusinessMan, 0.4
+		IvElementFrostBusinessMan, 0.4
+		IvElementSoulBusinessMan, 0.4
+		IvElementFireArlene, 0.4
+		IvElementElectricArlene, 0.4
+		IvElementToxicArlene, 0.4
+		IvElementFrostArlene, 0.4
+		IvElementSoulArlene, 0.4
+		IvElementFireDarlene, 0.4
+		IvElementElectricDarlene, 0.4
+		IvElementToxicDarlene, 0.4
+		IvElementFrostDarlene, 0.4
+		IvElementSoulDarlene, 0.4
+		IvElementFireMarlene, 0.4
+		IvElementElectricMarlene, 0.4
+		IvElementToxicMarlene, 0.4
+		IvElementFrostMarlene, 0.4
+		IvElementSoulMarlene, 0.4
+		IvElementFireNurse, 0.4
+		IvElementElectricNurse, 0.4
+		IvElementToxicNurse, 0.4
+		IvElementFrostNurse, 0.4
+		IvElementSoulNurse, 0.4
+		IvElementFirePartyGirl, 0.4
+		IvElementElectricPartyGirl, 0.4
+		IvElementToxicPartyGirl, 0.4
+		IvElementFrostPartyGirl, 0.4
+		IvElementSoulPartyGirl, 0.4
+		IvElementFireFatHawaiian, 0.4
+		IvElementElectricFatHawaiian, 0.4
+		IvElementToxicFatHawaiian, 0.4
+		IvElementFrostFatHawaiian, 0.4
+		IvElementSoulFatHawaiian, 0.4
+		IvElementFireSoldier, 0.4
+		IvElementElectricSoldier, 0.4
+		IvElementToxicSoldier, 0.4
+		IvElementFrostSoldier, 0.4
+		IvElementSoulSoldier, 0.4
+		IvElementFireWight, 0.4
+		IvElementElectricWight, 0.4
+		IvElementToxicWight, 0.4
+		IvElementFrostWight, 0.4
+		IvElementSoulWight, 0.4
+		IvElementFireDemolitionRare, 0.01
+		IvElementElectricDemolitionRare, 0.01
+		IvElementToxicDemolitionRare, 0.01
+		IvElementFrostDemolitionRare, 0.01
+		IvElementSoulDemolitionRare, 0.01
+	</csv>
+
+	<csv xpath="/entitygroups/entitygroup[@name='ZombiesWastelandNightNoBears']/text()" delim="\n" op="add">
+		IvElementFireBoe, 0.2
+		IvElementElectricBoe, 0.2
+		IvElementToxicBoe, 0.2
+		IvElementFrostBoe, 0.2
+		IvElementSoulBoe, 0.2
+		IvElementFireJoe, 0.2
+		IvElementElectricJoe, 0.2
+		IvElementToxicJoe, 0.2
+		IvElementFrostJoe, 0.2
+		IvElementSoulJoe, 0.2
+		IvElementFireSteve, 0.2
+		IvElementElectricSteve, 0.2
+		IvElementToxicSteve, 0.2
+		IvElementFrostSteve, 0.2
+		IvElementSoulSteve, 0.2
+		IvElementFireTomClark, 0.2
+		IvElementElectricTomClark, 0.2
+		IvElementToxicTomClark, 0.2
+		IvElementFrostTomClark, 0.2
+		IvElementSoulTomClark, 0.2
+		IvElementFireMoe, 0.2
+		IvElementElectricMoe, 0.2
+		IvElementToxicMoe, 0.2
+		IvElementFrostMoe, 0.2
+		IvElementSoulMoe, 0.2
+		IvElementFireYo, 0.2
+		IvElementElectricYo, 0.2
+		IvElementToxicYo, 0.2
+		IvElementFrostYo, 0.2
+		IvElementSoulYo, 0.2
+		IvElementFireBusinessMan, 0.2
+		IvElementElectricBusinessMan, 0.2
+		IvElementToxicBusinessMan, 0.2
+		IvElementFrostBusinessMan, 0.2
+		IvElementSoulBusinessMan, 0.2
+		IvElementFireArlene, 0.2
+		IvElementElectricArlene, 0.2
+		IvElementToxicArlene, 0.2
+		IvElementFrostArlene, 0.2
+		IvElementSoulArlene, 0.2
+		IvElementFireDarlene, 0.2
+		IvElementElectricDarlene, 0.2
+		IvElementToxicDarlene, 0.2
+		IvElementFrostDarlene, 0.2
+		IvElementSoulDarlene, 0.2
+		IvElementFireMarlene, 0.2
+		IvElementElectricMarlene, 0.2
+		IvElementToxicMarlene, 0.2
+		IvElementFrostMarlene, 0.2
+		IvElementSoulMarlene, 0.2
+		IvElementFireNurse, 0.2
+		IvElementElectricNurse, 0.2
+		IvElementToxicNurse, 0.2
+		IvElementFrostNurse, 0.2
+		IvElementSoulNurse, 0.2
+		IvElementFireBurnt, 0.2
+		IvElementElectricBurnt, 0.2
+		IvElementToxicBurnt, 0.2
+		IvElementFrostBurnt, 0.2
+		IvElementSoulBurnt, 0.2
+		IvElementFireWight, 0.2
+		IvElementElectricWight, 0.2
+		IvElementToxicWight, 0.2
+		IvElementFrostWight, 0.2
+		IvElementSoulWight, 0.2
+		IvElementFireMaleHazmat, 0.2
+		IvElementElectricMaleHazmat, 0.2
+		IvElementToxicMaleHazmat, 0.2
+		IvElementFrostMaleHazmat, 0.2
+		IvElementSoulMaleHazmat, 0.2
+		IvElementFireFatHawaiian, 0.2
+		IvElementElectricFatHawaiian, 0.2
+		IvElementToxicFatHawaiian, 0.2
+		IvElementFrostFatHawaiian, 0.2
+		IvElementSoulFatHawaiian, 0.2
+	</csv>
+
+	<csv xpath="/entitygroups/entitygroup[@name='ZombiesWastelandNight2']/text()" delim="\n" op="add">
+		IvElementFireBoe, 0.03
+		IvElementElectricBoe, 0.03
+		IvElementToxicBoe, 0.03
+		IvElementFrostBoe, 0.03
+		IvElementSoulBoe, 0.03
+		IvElementFireJoe, 0.03
+		IvElementElectricJoe, 0.03
+		IvElementToxicJoe, 0.03
+		IvElementFrostJoe, 0.03
+		IvElementSoulJoe, 0.03
+		IvElementFireSteve, 0.03
+		IvElementElectricSteve, 0.03
+		IvElementToxicSteve, 0.03
+		IvElementFrostSteve, 0.03
+		IvElementSoulSteve, 0.03
+		IvElementFireTomClark, 0.03
+		IvElementElectricTomClark, 0.03
+		IvElementToxicTomClark, 0.03
+		IvElementFrostTomClark, 0.03
+		IvElementSoulTomClark, 0.03
+		IvElementFireMoe, 0.03
+		IvElementElectricMoe, 0.03
+		IvElementToxicMoe, 0.03
+		IvElementFrostMoe, 0.03
+		IvElementSoulMoe, 0.03
+		IvElementFireYo, 0.03
+		IvElementElectricYo, 0.03
+		IvElementToxicYo, 0.03
+		IvElementFrostYo, 0.03
+		IvElementSoulYo, 0.03
+		IvElementFireArlene, 0.5
+		IvElementElectricArlene, 0.5
+		IvElementToxicArlene, 0.5
+		IvElementFrostArlene, 0.5
+		IvElementSoulArlene, 0.5
+		IvElementFireDarlene, 0.5
+		IvElementElectricDarlene, 0.5
+		IvElementToxicDarlene, 0.5
+		IvElementFrostDarlene, 0.5
+		IvElementSoulDarlene, 0.5
+		IvElementFireMarlene, 0.5
+		IvElementElectricMarlene, 0.5
+		IvElementToxicMarlene, 0.5
+		IvElementFrostMarlene, 0.5
+		IvElementSoulMarlene, 0.5
+		IvElementFireNurse, 0.5
+		IvElementElectricNurse, 0.5
+		IvElementToxicNurse, 0.5
+		IvElementFrostNurse, 0.5
+		IvElementSoulNurse, 0.5
+		IvElementFireBurnt, 0.05
+		IvElementElectricBurnt, 0.05
+		IvElementToxicBurnt, 0.05
+		IvElementFrostBurnt, 0.05
+		IvElementSoulBurnt, 0.05
+		IvElementFireWight, 0.07
+		IvElementElectricWight, 0.07
+		IvElementToxicWight, 0.07
+		IvElementFrostWight, 0.07
+		IvElementSoulWight, 0.07
+		IvElementFireFatHawaiian, 0.5
+		IvElementElectricFatHawaiian, 0.5
+		IvElementToxicFatHawaiian, 0.5
+		IvElementFrostFatHawaiian, 0.5
+		IvElementSoulFatHawaiian, 0.5
+	</csv>
+
+	<csv xpath="/entitygroups/entitygroup[@name='ZombiesWastelandNight2NoBears']/text()" delim="\n" op="add">
+		IvElementFireBoe, 0.03
+		IvElementElectricBoe, 0.03
+		IvElementToxicBoe, 0.03
+		IvElementFrostBoe, 0.03
+		IvElementSoulBoe, 0.03
+		IvElementFireJoe, 0.03
+		IvElementElectricJoe, 0.03
+		IvElementToxicJoe, 0.03
+		IvElementFrostJoe, 0.03
+		IvElementSoulJoe, 0.03
+		IvElementFireSteve, 0.03
+		IvElementElectricSteve, 0.03
+		IvElementToxicSteve, 0.03
+		IvElementFrostSteve, 0.03
+		IvElementSoulSteve, 0.03
+		IvElementFireTomClark, 0.03
+		IvElementElectricTomClark, 0.03
+		IvElementToxicTomClark, 0.03
+		IvElementFrostTomClark, 0.03
+		IvElementSoulTomClark, 0.03
+		IvElementFireMoe, 0.03
+		IvElementElectricMoe, 0.03
+		IvElementToxicMoe, 0.03
+		IvElementFrostMoe, 0.03
+		IvElementSoulMoe, 0.03
+		IvElementFireYo, 0.03
+		IvElementElectricYo, 0.03
+		IvElementToxicYo, 0.03
+		IvElementFrostYo, 0.03
+		IvElementSoulYo, 0.03
+		IvElementFireArlene, 0.5
+		IvElementElectricArlene, 0.5
+		IvElementToxicArlene, 0.5
+		IvElementFrostArlene, 0.5
+		IvElementSoulArlene, 0.5
+		IvElementFireDarlene, 0.5
+		IvElementElectricDarlene, 0.5
+		IvElementToxicDarlene, 0.5
+		IvElementFrostDarlene, 0.5
+		IvElementSoulDarlene, 0.5
+		IvElementFireMarlene, 0.5
+		IvElementElectricMarlene, 0.5
+		IvElementToxicMarlene, 0.5
+		IvElementFrostMarlene, 0.5
+		IvElementSoulMarlene, 0.5
+		IvElementFireNurse, 0.5
+		IvElementElectricNurse, 0.5
+		IvElementToxicNurse, 0.5
+		IvElementFrostNurse, 0.5
+		IvElementSoulNurse, 0.5
+		IvElementFireBurnt, 0.05
+		IvElementElectricBurnt, 0.05
+		IvElementToxicBurnt, 0.05
+		IvElementFrostBurnt, 0.05
+		IvElementSoulBurnt, 0.05
+		IvElementFireWight, 0.07
+		IvElementElectricWight, 0.07
+		IvElementToxicWight, 0.07
+		IvElementFrostWight, 0.07
+		IvElementSoulWight, 0.07
+		IvElementFireFatHawaiian, 0.5
+		IvElementElectricFatHawaiian, 0.5
+		IvElementToxicFatHawaiian, 0.5
+		IvElementFrostFatHawaiian, 0.5
+		IvElementSoulFatHawaiian, 0.5
+	</csv>
+
+	<csv xpath="/entitygroups/entitygroup[@name='ZombiesHoard']/text()" delim="\n" op="add">
+		IvElementFireBoe, 0.05
+		IvElementElectricBoe, 0.05
+		IvElementToxicBoe, 0.05
+		IvElementFrostBoe, 0.05
+		IvElementSoulBoe, 0.05
+		IvElementFireJoe, 0.05
+		IvElementElectricJoe, 0.05
+		IvElementToxicJoe, 0.05
+		IvElementFrostJoe, 0.05
+		IvElementSoulJoe, 0.05
+		IvElementFireSteve, 0.05
+		IvElementElectricSteve, 0.05
+		IvElementToxicSteve, 0.05
+		IvElementFrostSteve, 0.05
+		IvElementSoulSteve, 0.05
+		IvElementFireTomClark, 0.05
+		IvElementElectricTomClark, 0.05
+		IvElementToxicTomClark, 0.05
+		IvElementFrostTomClark, 0.05
+		IvElementSoulTomClark, 0.05
+		IvElementFireMoe, 0.05
+		IvElementElectricMoe, 0.05
+		IvElementToxicMoe, 0.05
+		IvElementFrostMoe, 0.05
+		IvElementSoulMoe, 0.05
+		IvElementFireYo, 0.05
+		IvElementElectricYo, 0.05
+		IvElementToxicYo, 0.05
+		IvElementFrostYo, 0.05
+		IvElementSoulYo, 0.05
+		IvElementFireArlene, 0.5
+		IvElementElectricArlene, 0.5
+		IvElementToxicArlene, 0.5
+		IvElementFrostArlene, 0.5
+		IvElementSoulArlene, 0.5
+		IvElementFireDarlene, 0.5
+		IvElementElectricDarlene, 0.5
+		IvElementToxicDarlene, 0.5
+		IvElementFrostDarlene, 0.5
+		IvElementSoulDarlene, 0.5
+		IvElementFireMarlene, 0.5
+		IvElementElectricMarlene, 0.5
+		IvElementToxicMarlene, 0.5
+		IvElementFrostMarlene, 0.5
+		IvElementSoulMarlene, 0.5
+		IvElementFireNurse, 0.5
+		IvElementElectricNurse, 0.5
+		IvElementToxicNurse, 0.5
+		IvElementFrostNurse, 0.5
+		IvElementSoulNurse, 0.5
+	</csv>
+
+	<csv xpath="/entitygroups/entitygroup[@name='ZombiesBurntForest']/text()" delim="\n" op="add">
+		IvElementFireBurnt, 0.1
+		IvElementElectricBurnt, 0.1
+		IvElementToxicBurnt, 0.1
+		IvElementFrostBurnt, 0.1
+		IvElementSoulBurnt, 0.1
+		IvElementFireBurntRare, 0.01
+		IvElementElectricBurntRare, 0.01
+		IvElementToxicBurntRare, 0.01
+		IvElementFrostBurntRare, 0.01
+		IvElementSoulBurntRare, 0.01
+	</csv>
+
+	<csv xpath="/entitygroups/entitygroup[@name='ZombiesCave']/text()" delim="\n" op="add">
+		IvElementFireJoe, 0.03
+		IvElementElectricJoe, 0.03
+		IvElementToxicJoe, 0.03
+		IvElementFrostJoe, 0.03
+		IvElementSoulJoe, 0.03
+		IvElementFireSteve, 0.03
+		IvElementElectricSteve, 0.03
+		IvElementToxicSteve, 0.03
+		IvElementFrostSteve, 0.03
+		IvElementSoulSteve, 0.03
+		IvElementFireTomClark, 0.03
+		IvElementElectricTomClark, 0.03
+		IvElementToxicTomClark, 0.03
+		IvElementFrostTomClark, 0.03
+		IvElementSoulTomClark, 0.03
+		IvElementFireMoe, 0.03
+		IvElementElectricMoe, 0.03
+		IvElementToxicMoe, 0.03
+		IvElementFrostMoe, 0.03
+		IvElementSoulMoe, 0.03
+		IvElementFireYo, 0.03
+		IvElementElectricYo, 0.03
+		IvElementToxicYo, 0.03
+		IvElementFrostYo, 0.03
+		IvElementSoulYo, 0.03
+		IvElementFireWight, 0.01
+		IvElementElectricWight, 0.01
+		IvElementToxicWight, 0.01
+		IvElementFrostWight, 0.01
+		IvElementSoulWight, 0.01
+	</csv>
+
+	<csv xpath="/entitygroups/entitygroup[@name='ZombieBadassGroup']/text()" delim="\n" op="add">
+		IvElementFireArlene, 0.5
+		IvElementElectricArlene, 0.5
+		IvElementToxicArlene, 0.5
+		IvElementFrostArlene, 0.5
+		IvElementSoulArlene, 0.5
+		IvElementFireBoe, 0.5
+		IvElementElectricBoe, 0.5
+		IvElementToxicBoe, 0.5
+		IvElementFrostBoe, 0.5
+		IvElementSoulBoe, 0.5
+		IvElementFireBusinessMan, 0.5
+		IvElementElectricBusinessMan, 0.5
+		IvElementToxicBusinessMan, 0.5
+		IvElementFrostBusinessMan, 0.5
+		IvElementSoulBusinessMan, 0.5
+		IvElementFireDarlene, 0.5
+		IvElementElectricDarlene, 0.5
+		IvElementToxicDarlene, 0.5
+		IvElementFrostDarlene, 0.5
+		IvElementSoulDarlene, 0.5
+		IvElementFireJanitor, 0.5
+		IvElementElectricJanitor, 0.5
+		IvElementToxicJanitor, 0.5
+		IvElementFrostJanitor, 0.5
+		IvElementSoulJanitor, 0.5
+		IvElementFireJoe, 0.5
+		IvElementElectricJoe, 0.5
+		IvElementToxicJoe, 0.5
+		IvElementFrostJoe, 0.5
+		IvElementSoulJoe, 0.5
+		IvElementFireMarlene, 0.5
+		IvElementElectricMarlene, 0.5
+		IvElementToxicMarlene, 0.5
+		IvElementFrostMarlene, 0.5
+		IvElementSoulMarlene, 0.5
+		IvElementFireMoe, 0.5
+		IvElementElectricMoe, 0.5
+		IvElementToxicMoe, 0.5
+		IvElementFrostMoe, 0.5
+		IvElementSoulMoe, 0.5
+		IvElementFireNurse, 0.5
+		IvElementElectricNurse, 0.5
+		IvElementToxicNurse, 0.5
+		IvElementFrostNurse, 0.5
+		IvElementSoulNurse, 0.5
+		IvElementFirePartyGirl, 0.5
+		IvElementElectricPartyGirl, 0.5
+		IvElementToxicPartyGirl, 0.5
+		IvElementFrostPartyGirl, 0.5
+		IvElementSoulPartyGirl, 0.5
+		IvElementFireSteve, 0.5
+		IvElementElectricSteve, 0.5
+		IvElementToxicSteve, 0.5
+		IvElementFrostSteve, 0.5
+		IvElementSoulSteve, 0.5
+		IvElementFireTomClark, 0.5
+		IvElementElectricTomClark, 0.5
+		IvElementToxicTomClark, 0.5
+		IvElementFrostTomClark, 0.5
+		IvElementSoulTomClark, 0.5
+		IvElementFireUtilityWorker, 0.5
+		IvElementElectricUtilityWorker, 0.5
+		IvElementToxicUtilityWorker, 0.5
+		IvElementFrostUtilityWorker, 0.5
+		IvElementSoulUtilityWorker, 0.5
+		IvElementFireYo, 0.5
+		IvElementElectricYo, 0.5
+		IvElementToxicYo, 0.5
+		IvElementFrostYo, 0.5
+		IvElementSoulYo, 0.5
+		IvElementFireLumberjack, 0.5
+		IvElementElectricLumberjack, 0.5
+		IvElementToxicLumberjack, 0.5
+		IvElementFrostLumberjack, 0.5
+		IvElementSoulLumberjack, 0.5
+		IvElementFireSkateboarder, 0.5
+		IvElementElectricSkateboarder, 0.5
+		IvElementToxicSkateboarder, 0.5
+		IvElementFrostSkateboarder, 0.5
+		IvElementSoulSkateboarder, 0.5
+		IvElementFireBiker, 0.5
+		IvElementElectricBiker, 0.5
+		IvElementToxicBiker, 0.5
+		IvElementFrostBiker, 0.5
+		IvElementSoulBiker, 0.5
+		IvElementFireFatPolice, 0.5
+		IvElementElectricFatPolice, 0.5
+		IvElementToxicFatPolice, 0.5
+		IvElementFrostFatPolice, 0.5
+		IvElementSoulFatPolice, 0.5
+		IvElementFireFatHawaiian, 0.5
+		IvElementElectricFatHawaiian, 0.5
+		IvElementToxicFatHawaiian, 0.5
+		IvElementFrostFatHawaiian, 0.5
+		IvElementSoulFatHawaiian, 0.5
+		IvElementFireFemaleFat, 0.5
+		IvElementElectricFemaleFat, 0.5
+		IvElementToxicFemaleFat, 0.5
+		IvElementFrostFemaleFat, 0.5
+		IvElementSoulFemaleFat, 0.5
+		IvElementFireSoldier, 0.5
+		IvElementElectricSoldier, 0.5
+		IvElementToxicSoldier, 0.5
+		IvElementFrostSoldier, 0.5
+		IvElementSoulSoldier, 0.5
+		IvElementFireWight, 0.5
+		IvElementElectricWight, 0.5
+		IvElementToxicWight, 0.5
+		IvElementFrostWight, 0.5
+		IvElementSoulWight, 0.5
+	</csv>
+
+	<csv xpath="/entitygroups/entitygroup[ starts-with(@name, 'zombieLumberjackGroupGS')]/text()" delim="\n" op="add">
+		IvElementFireLumberjack, 0.2
+		IvElementElectricLumberjack, 0.2
+		IvElementToxicLumberjack, 0.2
+		IvElementFrostLumberjack, 0.2
+		IvElementSoulLumberjack, 0.2
+	</csv>
+	<csv xpath="/entitygroups/entitygroup[ starts-with(@name, 'zombieBusinessManGroupGS')]/text()" delim="\n" op="add">
+		IvElementFireBusinessMan, 0.2
+		IvElementElectricBusinessMan, 0.2
+		IvElementToxicBusinessMan, 0.2
+		IvElementFrostBusinessMan, 0.2
+		IvElementSoulBusinessMan, 0.2
+	</csv>
+	<csv xpath="/entitygroups/entitygroup[ starts-with(@name, 'zombieFatCopGroupGS')]/text()" delim="\n" op="add">
+		IvElementFireFatPolice, 0.2
+		IvElementElectricFatPolice, 0.2
+		IvElementToxicFatPolice, 0.2
+		IvElementFrostFatPolice, 0.2
+		IvElementSoulFatPolice, 0.2
+	</csv>
+	<csv xpath="/entitygroups/entitygroup[ starts-with(@name, 'zombieBurntGroupGS')]/text()" delim="\n" op="add">
+		IvElementFireBurnt, 0.2
+		IvElementElectricBurnt, 0.2
+		IvElementToxicBurnt, 0.2
+		IvElementFrostBurnt, 0.2
+		IvElementSoulBurnt, 0.2
+		IvElementFireBurntSpecial, 0.05
+		IvElementElectricBurntSpecial, 0.05
+		IvElementToxicBurntSpecial, 0.05
+		IvElementFrostBurntSpecial, 0.05
+		IvElementSoulBurntSpecial, 0.05
+		IvElementFireBurntRare, 0.01
+		IvElementElectricBurntRare, 0.01
+		IvElementToxicBurntRare, 0.01
+		IvElementFrostBurntRare, 0.01
+		IvElementSoulBurntRare, 0.01
+	</csv>
+	<csv xpath="/entitygroups/entitygroup[ starts-with(@name, 'zombieSoldierGroupGS')]/text()" delim="\n" op="add">
+		IvElementFireSoldier, 0.2
+		IvElementElectricSoldier, 0.2
+		IvElementToxicSoldier, 0.2
+		IvElementFrostSoldier, 0.2
+		IvElementSoulSoldier, 0.2
+		IvElementFireMaleHazmat, 0.2
+		IvElementElectricMaleHazmat, 0.2
+		IvElementToxicMaleHazmat, 0.2
+		IvElementFrostMaleHazmat, 0.2
+		IvElementSoulMaleHazmat, 0.2
+	</csv>
+	<csv xpath="/entitygroups/entitygroup[ starts-with(@name, 'ZombieMaleHazmatGroupGS')]/text()" delim="\n" op="add">
+		IvElementFireMaleHazmat, 0.2
+		IvElementElectricMaleHazmat, 0.2
+		IvElementToxicMaleHazmat, 0.2
+		IvElementFrostMaleHazmat, 0.2
+		IvElementSoulMaleHazmat, 0.2
+	</csv>
+	<csv xpath="/entitygroups/entitygroup[ starts-with(@name, 'zombieUtilityWorkerGroupGS')]/text()" delim="\n" op="add">
+		IvElementFireUtilityWorker, 0.2
+		IvElementElectricUtilityWorker, 0.2
+		IvElementToxicUtilityWorker, 0.2
+		IvElementFrostUtilityWorker, 0.2
+		IvElementSoulUtilityWorker, 0.2
+		IvElementFireJanitor, 0.2
+		IvElementElectricJanitor, 0.2
+		IvElementToxicJanitor, 0.2
+		IvElementFrostJanitor, 0.2
+		IvElementSoulJanitor, 0.2
+	</csv>
+	<csv xpath="/entitygroups/entitygroup[ starts-with(@name, 'zombieJanitorGroupGS')]/text()" delim="\n" op="add">
+		IvElementFireJanitor, 0.2
+		IvElementElectricJanitor, 0.2
+		IvElementToxicJanitor, 0.2
+		IvElementFrostJanitor, 0.2
+		IvElementSoulJanitor, 0.2
+	</csv>
+	<csv xpath="/entitygroups/entitygroup[ starts-with(@name, 'ZombieGhostTownGroupGS')]/text()" delim="\n" op="add">
+		IvElementFireMarlene, 0.2
+		IvElementElectricMarlene, 0.2
+		IvElementToxicMarlene, 0.2
+		IvElementFrostMarlene, 0.2
+		IvElementSoulMarlene, 0.2
+		IvElementFireArlene, 0.2
+		IvElementElectricArlene, 0.2
+		IvElementToxicArlene, 0.2
+		IvElementFrostArlene, 0.2
+		IvElementSoulArlene, 0.2
+		IvElementFireJoe, 0.2
+		IvElementElectricJoe, 0.2
+		IvElementToxicJoe, 0.2
+		IvElementFrostJoe, 0.2
+		IvElementSoulJoe, 0.2
+		IvElementFireBoe, 0.2
+		IvElementElectricBoe, 0.2
+		IvElementToxicBoe, 0.2
+		IvElementFrostBoe, 0.2
+		IvElementSoulBoe, 0.2
+		IvElementFireMoe, 0.2
+		IvElementElectricMoe, 0.2
+		IvElementToxicMoe, 0.2
+		IvElementFrostMoe, 0.2
+		IvElementSoulMoe, 0.2
+		IvElementFireSteve, 0.2
+		IvElementElectricSteve, 0.2
+		IvElementToxicSteve, 0.2
+		IvElementFrostSteve, 0.2
+		IvElementSoulSteve, 0.2
+		IvElementFireTomClark, 0.2
+		IvElementElectricTomClark, 0.2
+		IvElementToxicTomClark, 0.2
+		IvElementFrostTomClark, 0.2
+		IvElementSoulTomClark, 0.2
+		IvElementFireFemaleFat, 0.2
+		IvElementElectricFemaleFat, 0.2
+		IvElementToxicFemaleFat, 0.2
+		IvElementFrostFemaleFat, 0.2
+		IvElementSoulFemaleFat, 0.2
+		IvElementFireSkateboarder, 0.2
+		IvElementElectricSkateboarder, 0.2
+		IvElementToxicSkateboarder, 0.2
+		IvElementFrostSkateboarder, 0.2
+		IvElementSoulSkateboarder, 0.2
+		IvElementFireYo, 0.2
+		IvElementElectricYo, 0.2
+		IvElementToxicYo, 0.2
+		IvElementFrostYo, 0.2
+		IvElementSoulYo, 0.2
+	</csv>
+	<csv xpath="/entitygroups/entitygroup[ starts-with(@name, 'zombieHospitalGroupGS')]/text()" delim="\n" op="add">
+		IvElementFireLab, 0.2
+		IvElementElectricLab, 0.2
+		IvElementToxicLab, 0.2
+		IvElementFrostLab, 0.2
+		IvElementSoulLab, 0.2
+		IvElementFireMaleHazmat, 0.2
+		IvElementElectricMaleHazmat, 0.2
+		IvElementToxicMaleHazmat, 0.2
+		IvElementFrostMaleHazmat, 0.2
+		IvElementSoulMaleHazmat, 0.2
+		IvElementFireNurse, 0.2
+		IvElementElectricNurse, 0.2
+		IvElementToxicNurse, 0.2
+		IvElementFrostNurse, 0.2
+		IvElementSoulNurse, 0.2
+		IvElementFireBoe, 0.2
+		IvElementElectricBoe, 0.2
+		IvElementToxicBoe, 0.2
+		IvElementFrostBoe, 0.2
+		IvElementSoulBoe, 0.2
+		IvElementFireArlene, 0.2
+		IvElementElectricArlene, 0.2
+		IvElementToxicArlene, 0.2
+		IvElementFrostArlene, 0.2
+		IvElementSoulArlene, 0.2
+		IvElementFireYo, 0.2
+		IvElementElectricYo, 0.2
+		IvElementToxicYo, 0.2
+		IvElementFrostYo, 0.2
+		IvElementSoulYo, 0.2
+		IvElementFireMarlene, 0.2
+		IvElementElectricMarlene, 0.2
+		IvElementToxicMarlene, 0.2
+		IvElementFrostMarlene, 0.2
+		IvElementSoulMarlene, 0.2
+		IvElementFireSkateboarder, 0.2
+		IvElementElectricSkateboarder, 0.2
+		IvElementToxicSkateboarder, 0.2
+		IvElementFrostSkateboarder, 0.2
+		IvElementSoulSkateboarder, 0.2
+		IvElementFireJoe, 0.2
+		IvElementElectricJoe, 0.2
+		IvElementToxicJoe, 0.2
+		IvElementFrostJoe, 0.2
+		IvElementSoulJoe, 0.2
+		IvElementFireLabSpecial, 0.05
+		IvElementElectricLabSpecial, 0.05
+		IvElementToxicLabSpecial, 0.05
+		IvElementFrostLabSpecial, 0.05
+		IvElementSoulLabSpecial, 0.05
+	</csv>
+	<csv xpath="/entitygroups/entitygroup[ starts-with(@name, 'zombieLabWorkerGroupGS')]/text()" delim="\n" op="add">
+		IvElementFireLab, 0.2
+		IvElementElectricLab, 0.2
+		IvElementToxicLab, 0.2
+		IvElementFrostLab, 0.2
+		IvElementSoulLab, 0.2
+		IvElementFireBusinessMan, 0.2
+		IvElementElectricBusinessMan, 0.2
+		IvElementToxicBusinessMan, 0.2
+		IvElementFrostBusinessMan, 0.2
+		IvElementSoulBusinessMan, 0.2
+		IvElementFireMaleHazmat, 0.2
+		IvElementElectricMaleHazmat, 0.2
+		IvElementToxicMaleHazmat, 0.2
+		IvElementFrostMaleHazmat, 0.2
+		IvElementSoulMaleHazmat, 0.2
+		IvElementFireLabSpecial, 0.05
+		IvElementElectricLabSpecial, 0.05
+		IvElementToxicLabSpecial, 0.05
+		IvElementFrostLabSpecial, 0.05
+		IvElementSoulLabSpecial, 0.05
+	</csv>
+	<csv xpath="/entitygroups/entitygroup[ starts-with(@name, 'ZombieBikerBarGroupGS')]/text()" delim="\n" op="add">
+		IvElementFireBiker, 0.2
+		IvElementElectricBiker, 0.2
+		IvElementToxicBiker, 0.2
+		IvElementFrostBiker, 0.2
+		IvElementSoulBiker, 0.2
+		IvElementFirePartyGirl, 0.2
+		IvElementElectricPartyGirl, 0.2
+		IvElementToxicPartyGirl, 0.2
+		IvElementFrostPartyGirl, 0.2
+		IvElementSoulPartyGirl, 0.2
+		IvElementFireUtilityWorker, 0.2
+		IvElementElectricUtilityWorker, 0.2
+		IvElementToxicUtilityWorker, 0.2
+		IvElementFrostUtilityWorker, 0.2
+		IvElementSoulUtilityWorker, 0.2
+		IvElementFireJanitor, 0.2
+		IvElementElectricJanitor, 0.2
+		IvElementToxicJanitor, 0.2
+		IvElementFrostJanitor, 0.2
+		IvElementSoulJanitor, 0.2
+		IvElementFireSkateboarder, 0.2
+		IvElementElectricSkateboarder, 0.2
+		IvElementToxicSkateboarder, 0.2
+		IvElementFrostSkateboarder, 0.2
+		IvElementSoulSkateboarder, 0.2
+		IvElementFireBoe, 0.2
+		IvElementElectricBoe, 0.2
+		IvElementToxicBoe, 0.2
+		IvElementFrostBoe, 0.2
+		IvElementSoulBoe, 0.2
+		IvElementFireMoe, 0.2
+		IvElementElectricMoe, 0.2
+		IvElementToxicMoe, 0.2
+		IvElementFrostMoe, 0.2
+		IvElementSoulMoe, 0.2
+	</csv>
+	<csv xpath="/entitygroups/entitygroup[ starts-with(@name, 'ZombieNightClubGroupGS')]/text()" delim="\n" op="add">
+		IvElementFirePartyGirl, 0.2
+		IvElementElectricPartyGirl, 0.2
+		IvElementToxicPartyGirl, 0.2
+		IvElementFrostPartyGirl, 0.2
+		IvElementSoulPartyGirl, 0.2
+		IvElementFireBusinessMan, 0.2
+		IvElementElectricBusinessMan, 0.2
+		IvElementToxicBusinessMan, 0.2
+		IvElementFrostBusinessMan, 0.2
+		IvElementSoulBusinessMan, 0.2
+	</csv>
+	<csv xpath="/entitygroups/entitygroup[ starts-with(@name, 'ZombieSpecialInfectedGroupGS')]/text()" delim="\n" op="add">
+		IvElementFireWight, 0.2
+		IvElementElectricWight, 0.2
+		IvElementToxicWight, 0.2
+		IvElementFrostWight, 0.2
+		IvElementSoulWight, 0.2
+	</csv>
+
+	<!-- 一般壞蛋群組, 只加入特殊型 -->
+	<csv xpath="/entitygroups/entitygroup[@name='badassHordeStageGS1']/text()" delim="\n" op="add">
+		IvElementFireMaleHazmatSpecial, 0.5
+		IvElementElectricMaleHazmatSpecial, 0.5
+		IvElementToxicMaleHazmatSpecial, 0.5
+		IvElementFrostMaleHazmatSpecial, 0.5
+		IvElementSoulMaleHazmatSpecial, 0.5
+		IvElementFireBikerSpecial, 0.5
+		IvElementElectricBikerSpecial, 0.5
+		IvElementToxicBikerSpecial, 0.5
+		IvElementFrostBikerSpecial, 0.5
+		IvElementSoulBikerSpecial, 0.5
+		IvElementFireLumberjackSpecial, 0.5
+		IvElementElectricLumberjackSpecial, 0.5
+		IvElementToxicLumberjackSpecial, 0.5
+		IvElementFrostLumberjackSpecial, 0.5
+		IvElementSoulLumberjackSpecial, 0.5
+		IvElementFireFemaleFatSpecial, 0.5
+		IvElementElectricFemaleFatSpecial, 0.5
+		IvElementToxicFemaleFatSpecial, 0.5
+		IvElementFrostFemaleFatSpecial, 0.5
+		IvElementSoulFemaleFatSpecial, 0.5
+		IvElementFireFatHawaiianSpecial, 0.5
+		IvElementElectricFatHawaiianSpecial, 0.5
+		IvElementToxicFatHawaiianSpecial, 0.5
+		IvElementFrostFatHawaiianSpecial, 0.5
+		IvElementSoulFatHawaiianSpecial, 0.5
+		IvElementFireSkateboarderSpecial, 0.5
+		IvElementElectricSkateboarderSpecial, 0.5
+		IvElementToxicSkateboarderSpecial, 0.5
+		IvElementFrostSkateboarderSpecial, 0.5
+		IvElementSoulSkateboarderSpecial, 0.5
+	</csv>
+	<csv xpath="/entitygroups/entitygroup[@name='badassHordeStageGS3']/text()" delim="\n" op="add">
+		IvElementFireMaleHazmatSpecial, 0.5
+		IvElementElectricMaleHazmatSpecial, 0.5
+		IvElementToxicMaleHazmatSpecial, 0.5
+		IvElementFrostMaleHazmatSpecial, 0.5
+		IvElementSoulMaleHazmatSpecial, 0.5
+		IvElementFireBikerSpecial, 0.5
+		IvElementElectricBikerSpecial, 0.5
+		IvElementToxicBikerSpecial, 0.5
+		IvElementFrostBikerSpecial, 0.5
+		IvElementSoulBikerSpecial, 0.5
+		IvElementFireLumberjackSpecial, 0.5
+		IvElementElectricLumberjackSpecial, 0.5
+		IvElementToxicLumberjackSpecial, 0.5
+		IvElementFrostLumberjackSpecial, 0.5
+		IvElementSoulLumberjackSpecial, 0.5
+		IvElementFireFemaleFatSpecial, 0.5
+		IvElementElectricFemaleFatSpecial, 0.5
+		IvElementToxicFemaleFatSpecial, 0.5
+		IvElementFrostFemaleFatSpecial, 0.5
+		IvElementSoulFemaleFatSpecial, 0.5
+		IvElementFireFatHawaiianSpecial, 0.5
+		IvElementElectricFatHawaiianSpecial, 0.5
+		IvElementToxicFatHawaiianSpecial, 0.5
+		IvElementFrostFatHawaiianSpecial, 0.5
+		IvElementSoulFatHawaiianSpecial, 0.5
+		IvElementFireSkateboarderSpecial, 0.5
+		IvElementElectricSkateboarderSpecial, 0.5
+		IvElementToxicSkateboarderSpecial, 0.5
+		IvElementFrostSkateboarderSpecial, 0.5
+		IvElementSoulSkateboarderSpecial, 0.5
+	</csv>
+	<csv xpath="/entitygroups/entitygroup[@name='badassHordeStageGS8']/text()" delim="\n" op="add">
+		IvElementFireMaleHazmatSpecial, 0.5
+		IvElementElectricMaleHazmatSpecial, 0.5
+		IvElementToxicMaleHazmatSpecial, 0.5
+		IvElementFrostMaleHazmatSpecial, 0.5
+		IvElementSoulMaleHazmatSpecial, 0.5
+		IvElementFireBikerSpecial, 0.5
+		IvElementElectricBikerSpecial, 0.5
+		IvElementToxicBikerSpecial, 0.5
+		IvElementFrostBikerSpecial, 0.5
+		IvElementSoulBikerSpecial, 0.5
+		IvElementFireLumberjackSpecial, 0.5
+		IvElementElectricLumberjackSpecial, 0.5
+		IvElementToxicLumberjackSpecial, 0.5
+		IvElementFrostLumberjackSpecial, 0.5
+		IvElementSoulLumberjackSpecial, 0.5
+		IvElementFireFemaleFatSpecial, 0.5
+		IvElementElectricFemaleFatSpecial, 0.5
+		IvElementToxicFemaleFatSpecial, 0.5
+		IvElementFrostFemaleFatSpecial, 0.5
+		IvElementSoulFemaleFatSpecial, 0.5
+		IvElementFireFatHawaiianSpecial, 0.5
+		IvElementElectricFatHawaiianSpecial, 0.5
+		IvElementToxicFatHawaiianSpecial, 0.5
+		IvElementFrostFatHawaiianSpecial, 0.5
+		IvElementSoulFatHawaiianSpecial, 0.5
+		IvElementFireSkateboarderSpecial, 0.5
+		IvElementElectricSkateboarderSpecial, 0.5
+		IvElementToxicSkateboarderSpecial, 0.5
+		IvElementFrostSkateboarderSpecial, 0.5
+		IvElementSoulSkateboarderSpecial, 0.5
+	</csv>
+	<csv xpath="/entitygroups/entitygroup[@name='badassHordeStageGS13']/text()" delim="\n" op="add">
+		IvElementFireMaleHazmatSpecial, 0.5
+		IvElementElectricMaleHazmatSpecial, 0.5
+		IvElementToxicMaleHazmatSpecial, 0.5
+		IvElementFrostMaleHazmatSpecial, 0.5
+		IvElementSoulMaleHazmatSpecial, 0.5
+		IvElementFireBikerSpecial, 0.5
+		IvElementElectricBikerSpecial, 0.5
+		IvElementToxicBikerSpecial, 0.5
+		IvElementFrostBikerSpecial, 0.5
+		IvElementSoulBikerSpecial, 0.5
+		IvElementFireLumberjackSpecial, 0.5
+		IvElementElectricLumberjackSpecial, 0.5
+		IvElementToxicLumberjackSpecial, 0.5
+		IvElementFrostLumberjackSpecial, 0.5
+		IvElementSoulLumberjackSpecial, 0.5
+		IvElementFireFemaleFatSpecial, 0.5
+		IvElementElectricFemaleFatSpecial, 0.5
+		IvElementToxicFemaleFatSpecial, 0.5
+		IvElementFrostFemaleFatSpecial, 0.5
+		IvElementSoulFemaleFatSpecial, 0.5
+		IvElementFireFatHawaiianSpecial, 0.5
+		IvElementElectricFatHawaiianSpecial, 0.5
+		IvElementToxicFatHawaiianSpecial, 0.5
+		IvElementFrostFatHawaiianSpecial, 0.5
+		IvElementSoulFatHawaiianSpecial, 0.5
+		IvElementFireSkateboarderSpecial, 0.5
+		IvElementElectricSkateboarderSpecial, 0.5
+		IvElementToxicSkateboarderSpecial, 0.5
+		IvElementFrostSkateboarderSpecial, 0.5
+		IvElementSoulSkateboarderSpecial, 0.5
+	</csv>
+	<csv xpath="/entitygroups/entitygroup[@name='badassHordeStageGS21']/text()" delim="\n" op="add">
+		IvElementFireMaleHazmatSpecial, 0.5
+		IvElementElectricMaleHazmatSpecial, 0.5
+		IvElementToxicMaleHazmatSpecial, 0.5
+		IvElementFrostMaleHazmatSpecial, 0.5
+		IvElementSoulMaleHazmatSpecial, 0.5
+		IvElementFireBikerSpecial, 0.5
+		IvElementElectricBikerSpecial, 0.5
+		IvElementToxicBikerSpecial, 0.5
+		IvElementFrostBikerSpecial, 0.5
+		IvElementSoulBikerSpecial, 0.5
+		IvElementFireLumberjackSpecial, 0.5
+		IvElementElectricLumberjackSpecial, 0.5
+		IvElementToxicLumberjackSpecial, 0.5
+		IvElementFrostLumberjackSpecial, 0.5
+		IvElementSoulLumberjackSpecial, 0.5
+		IvElementFireFemaleFatSpecial, 0.5
+		IvElementElectricFemaleFatSpecial, 0.5
+		IvElementToxicFemaleFatSpecial, 0.5
+		IvElementFrostFemaleFatSpecial, 0.5
+		IvElementSoulFemaleFatSpecial, 0.5
+		IvElementFireFatHawaiianSpecial, 0.5
+		IvElementElectricFatHawaiianSpecial, 0.5
+		IvElementToxicFatHawaiianSpecial, 0.5
+		IvElementFrostFatHawaiianSpecial, 0.5
+		IvElementSoulFatHawaiianSpecial, 0.5
+		IvElementFireSkateboarderSpecial, 0.5
+		IvElementElectricSkateboarderSpecial, 0.5
+		IvElementToxicSkateboarderSpecial, 0.5
+		IvElementFrostSkateboarderSpecial, 0.5
+		IvElementSoulSkateboarderSpecial, 0.5
+	</csv>
+	<csv xpath="/entitygroups/entitygroup[@name='badassHordeStageGS30']/text()" delim="\n" op="add">
+		IvElementFireSteveSpecial, 0.5
+		IvElementElectricSteveSpecial, 0.5
+		IvElementToxicSteveSpecial, 0.5
+		IvElementFrostSteveSpecial, 0.5
+		IvElementSoulSteveSpecial, 0.5
+		IvElementFireMaleHazmatSpecial, 0.5
+		IvElementElectricMaleHazmatSpecial, 0.5
+		IvElementToxicMaleHazmatSpecial, 0.5
+		IvElementFrostMaleHazmatSpecial, 0.5
+		IvElementSoulMaleHazmatSpecial, 0.5
+		IvElementFireBikerSpecial, 0.5
+		IvElementElectricBikerSpecial, 0.5
+		IvElementToxicBikerSpecial, 0.5
+		IvElementFrostBikerSpecial, 0.5
+		IvElementSoulBikerSpecial, 0.5
+		IvElementFireLumberjackSpecial, 0.5
+		IvElementElectricLumberjackSpecial, 0.5
+		IvElementToxicLumberjackSpecial, 0.5
+		IvElementFrostLumberjackSpecial, 0.5
+		IvElementSoulLumberjackSpecial, 0.5
+		IvElementFireFemaleFatSpecial, 0.5
+		IvElementElectricFemaleFatSpecial, 0.5
+		IvElementToxicFemaleFatSpecial, 0.5
+		IvElementFrostFemaleFatSpecial, 0.5
+		IvElementSoulFemaleFatSpecial, 0.5
+		IvElementFireFatHawaiianSpecial, 0.5
+		IvElementElectricFatHawaiianSpecial, 0.5
+		IvElementToxicFatHawaiianSpecial, 0.5
+		IvElementFrostFatHawaiianSpecial, 0.5
+		IvElementSoulFatHawaiianSpecial, 0.5
+		IvElementFireSkateboarderSpecial, 0.5
+		IvElementElectricSkateboarderSpecial, 0.5
+		IvElementToxicSkateboarderSpecial, 0.5
+		IvElementFrostSkateboarderSpecial, 0.5
+		IvElementSoulSkateboarderSpecial, 0.5
+	</csv>
+	<csv xpath="/entitygroups/entitygroup[@name='badassHordeStageGS40']/text()" delim="\n" op="add">
+		IvElementFireArleneSpecial, 0.5
+		IvElementElectricArleneSpecial, 0.5
+		IvElementToxicArleneSpecial, 0.5
+		IvElementFrostArleneSpecial, 0.5
+		IvElementSoulArleneSpecial, 0.5
+		IvElementFireMarleneSpecial, 0.5
+		IvElementElectricMarleneSpecial, 0.5
+		IvElementToxicMarleneSpecial, 0.5
+		IvElementFrostMarleneSpecial, 0.5
+		IvElementSoulMarleneSpecial, 0.5
+		IvElementFireJoeSpecial, 0.5
+		IvElementElectricJoeSpecial, 0.5
+		IvElementToxicJoeSpecial, 0.5
+		IvElementFrostJoeSpecial, 0.5
+		IvElementSoulJoeSpecial, 0.5
+		IvElementFireBoeSpecial, 0.5
+		IvElementElectricBoeSpecial, 0.5
+		IvElementToxicBoeSpecial, 0.5
+		IvElementFrostBoeSpecial, 0.5
+		IvElementSoulBoeSpecial, 0.5
+		IvElementFireMoeSpecial, 0.5
+		IvElementElectricMoeSpecial, 0.5
+		IvElementToxicMoeSpecial, 0.5
+		IvElementFrostMoeSpecial, 0.5
+		IvElementSoulMoeSpecial, 0.5
+		IvElementFireDarleneSpecial, 0.5
+		IvElementElectricDarleneSpecial, 0.5
+		IvElementToxicDarleneSpecial, 0.5
+		IvElementFrostDarleneSpecial, 0.5
+		IvElementSoulDarleneSpecial, 0.5
+		IvElementFireMaleHazmatSpecial, 0.5
+		IvElementElectricMaleHazmatSpecial, 0.5
+		IvElementToxicMaleHazmatSpecial, 0.5
+		IvElementFrostMaleHazmatSpecial, 0.5
+		IvElementSoulMaleHazmatSpecial, 0.5
+		IvElementFireBikerSpecial, 0.5
+		IvElementElectricBikerSpecial, 0.5
+		IvElementToxicBikerSpecial, 0.5
+		IvElementFrostBikerSpecial, 0.5
+		IvElementSoulBikerSpecial, 0.5
+		IvElementFireFatHawaiianSpecial, 0.5
+		IvElementElectricFatHawaiianSpecial, 0.5
+		IvElementToxicFatHawaiianSpecial, 0.5
+		IvElementFrostFatHawaiianSpecial, 0.5
+		IvElementSoulFatHawaiianSpecial, 0.5
+		IvElementFireSkateboarderSpecial, 0.5
+		IvElementElectricSkateboarderSpecial, 0.5
+		IvElementToxicSkateboarderSpecial, 0.5
+		IvElementFrostSkateboarderSpecial, 0.5
+		IvElementSoulSkateboarderSpecial, 0.5
+	</csv>
+	<csv xpath="/entitygroups/entitygroup[@name='badassHordeStageGS51']/text()" delim="\n" op="add">
+		IvElementFirePartyGirlSpecial, 0.5
+		IvElementElectricPartyGirlSpecial, 0.5
+		IvElementToxicPartyGirlSpecial, 0.5
+		IvElementFrostPartyGirlSpecial, 0.5
+		IvElementSoulPartyGirlSpecial, 0.5
+		IvElementFireSteveSpecial, 0.5
+		IvElementElectricSteveSpecial, 0.5
+		IvElementToxicSteveSpecial, 0.5
+		IvElementFrostSteveSpecial, 0.5
+		IvElementSoulSteveSpecial, 0.5
+		IvElementFireBoeSpecial, 0.5
+		IvElementElectricBoeSpecial, 0.5
+		IvElementToxicBoeSpecial, 0.5
+		IvElementFrostBoeSpecial, 0.5
+		IvElementSoulBoeSpecial, 0.5
+		IvElementFireYoSpecial, 0.5
+		IvElementElectricYoSpecial, 0.5
+		IvElementToxicYoSpecial, 0.5
+		IvElementFrostYoSpecial, 0.5
+		IvElementSoulYoSpecial, 0.5
+		IvElementFireUtilityWorkerSpecial, 0.5
+		IvElementElectricUtilityWorkerSpecial, 0.5
+		IvElementToxicUtilityWorkerSpecial, 0.5
+		IvElementFrostUtilityWorkerSpecial, 0.5
+		IvElementSoulUtilityWorkerSpecial, 0.5
+		IvElementFireLumberjackSpecial, 0.5
+		IvElementElectricLumberjackSpecial, 0.5
+		IvElementToxicLumberjackSpecial, 0.5
+		IvElementFrostLumberjackSpecial, 0.5
+		IvElementSoulLumberjackSpecial, 0.5
+		IvElementFireFemaleFatSpecial, 0.5
+		IvElementElectricFemaleFatSpecial, 0.5
+		IvElementToxicFemaleFatSpecial, 0.5
+		IvElementFrostFemaleFatSpecial, 0.5
+		IvElementSoulFemaleFatSpecial, 0.5
+		IvElementFireSkateboarderSpecial, 0.5
+		IvElementElectricSkateboarderSpecial, 0.5
+		IvElementToxicSkateboarderSpecial, 0.5
+		IvElementFrostSkateboarderSpecial, 0.5
+		IvElementSoulSkateboarderSpecial, 0.5
+	</csv>
+	<csv xpath="/entitygroups/entitygroup[@name='badassHordeStageGS65']/text()" delim="\n" op="add">
+		IvElementFireMarleneSpecial, 0.5
+		IvElementElectricMarleneSpecial, 0.5
+		IvElementToxicMarleneSpecial, 0.5
+		IvElementFrostMarleneSpecial, 0.5
+		IvElementSoulMarleneSpecial, 0.5
+		IvElementFirePartyGirlSpecial, 0.5
+		IvElementElectricPartyGirlSpecial, 0.5
+		IvElementToxicPartyGirlSpecial, 0.5
+		IvElementFrostPartyGirlSpecial, 0.5
+		IvElementSoulPartyGirlSpecial, 0.5
+		IvElementFireJoeSpecial, 0.5
+		IvElementElectricJoeSpecial, 0.5
+		IvElementToxicJoeSpecial, 0.5
+		IvElementFrostJoeSpecial, 0.5
+		IvElementSoulJoeSpecial, 0.5
+		IvElementFireSteveSpecial, 0.5
+		IvElementElectricSteveSpecial, 0.5
+		IvElementToxicSteveSpecial, 0.5
+		IvElementFrostSteveSpecial, 0.5
+		IvElementSoulSteveSpecial, 0.5
+		IvElementFireBoeSpecial, 0.5
+		IvElementElectricBoeSpecial, 0.5
+		IvElementToxicBoeSpecial, 0.5
+		IvElementFrostBoeSpecial, 0.5
+		IvElementSoulBoeSpecial, 0.5
+		IvElementFireYoSpecial, 0.5
+		IvElementElectricYoSpecial, 0.5
+		IvElementToxicYoSpecial, 0.5
+		IvElementFrostYoSpecial, 0.5
+		IvElementSoulYoSpecial, 0.5
+		IvElementFireMaleHazmatSpecial, 0.5
+		IvElementElectricMaleHazmatSpecial, 0.5
+		IvElementToxicMaleHazmatSpecial, 0.5
+		IvElementFrostMaleHazmatSpecial, 0.5
+		IvElementSoulMaleHazmatSpecial, 0.5
+		IvElementFireLumberjackSpecial, 0.5
+		IvElementElectricLumberjackSpecial, 0.5
+		IvElementToxicLumberjackSpecial, 0.5
+		IvElementFrostLumberjackSpecial, 0.5
+		IvElementSoulLumberjackSpecial, 0.5
+		IvElementFireFemaleFatSpecial, 0.5
+		IvElementElectricFemaleFatSpecial, 0.5
+		IvElementToxicFemaleFatSpecial, 0.5
+		IvElementFrostFemaleFatSpecial, 0.5
+		IvElementSoulFemaleFatSpecial, 0.5
+	</csv>
+	<csv xpath="/entitygroups/entitygroup[@name='badassHordeStageGS79']/text()" delim="\n" op="add">
+		IvElementFirePartyGirlSpecial, 0.5
+		IvElementElectricPartyGirlSpecial, 0.5
+		IvElementToxicPartyGirlSpecial, 0.5
+		IvElementFrostPartyGirlSpecial, 0.5
+		IvElementSoulPartyGirlSpecial, 0.5
+		IvElementFireJoeSpecial, 0.5
+		IvElementElectricJoeSpecial, 0.5
+		IvElementToxicJoeSpecial, 0.5
+		IvElementFrostJoeSpecial, 0.5
+		IvElementSoulJoeSpecial, 0.5
+		IvElementFireBusinessManSpecial, 0.5
+		IvElementElectricBusinessManSpecial, 0.5
+		IvElementToxicBusinessManSpecial, 0.5
+		IvElementFrostBusinessManSpecial, 0.5
+		IvElementSoulBusinessManSpecial, 0.5
+		IvElementFireJanitorSpecial, 0.5
+		IvElementElectricJanitorSpecial, 0.5
+		IvElementToxicJanitorSpecial, 0.5
+		IvElementFrostJanitorSpecial, 0.5
+		IvElementSoulJanitorSpecial, 0.5
+		IvElementFireMoeSpecial, 0.5
+		IvElementElectricMoeSpecial, 0.5
+		IvElementToxicMoeSpecial, 0.5
+		IvElementFrostMoeSpecial, 0.5
+		IvElementSoulMoeSpecial, 0.5
+		IvElementFireUtilityWorkerSpecial, 0.5
+		IvElementElectricUtilityWorkerSpecial, 0.5
+		IvElementToxicUtilityWorkerSpecial, 0.5
+		IvElementFrostUtilityWorkerSpecial, 0.5
+		IvElementSoulUtilityWorkerSpecial, 0.5
+		IvElementFireBikerSpecial, 0.5
+		IvElementElectricBikerSpecial, 0.5
+		IvElementToxicBikerSpecial, 0.5
+		IvElementFrostBikerSpecial, 0.5
+		IvElementSoulBikerSpecial, 0.5
+		IvElementFireFatHawaiianSpecial, 0.5
+		IvElementElectricFatHawaiianSpecial, 0.5
+		IvElementToxicFatHawaiianSpecial, 0.5
+		IvElementFrostFatHawaiianSpecial, 0.5
+		IvElementSoulFatHawaiianSpecial, 0.5
+	</csv>
+	<csv xpath="/entitygroups/entitygroup[@name='badassHordeStageGS95']/text()" delim="\n" op="add">
+		IvElementFireMarleneSpecial, 0.5
+		IvElementElectricMarleneSpecial, 0.5
+		IvElementToxicMarleneSpecial, 0.5
+		IvElementFrostMarleneSpecial, 0.5
+		IvElementSoulMarleneSpecial, 0.5
+		IvElementFireJoeSpecial, 0.5
+		IvElementElectricJoeSpecial, 0.5
+		IvElementToxicJoeSpecial, 0.5
+		IvElementFrostJoeSpecial, 0.5
+		IvElementSoulJoeSpecial, 0.5
+		IvElementFireSteveSpecial, 0.5
+		IvElementElectricSteveSpecial, 0.5
+		IvElementToxicSteveSpecial, 0.5
+		IvElementFrostSteveSpecial, 0.5
+		IvElementSoulSteveSpecial, 0.5
+		IvElementFireTomClarkSpecial, 0.5
+		IvElementElectricTomClarkSpecial, 0.5
+		IvElementToxicTomClarkSpecial, 0.5
+		IvElementFrostTomClarkSpecial, 0.5
+		IvElementSoulTomClarkSpecial, 0.5
+		IvElementFireBusinessManSpecial, 0.5
+		IvElementElectricBusinessManSpecial, 0.5
+		IvElementToxicBusinessManSpecial, 0.5
+		IvElementFrostBusinessManSpecial, 0.5
+		IvElementSoulBusinessManSpecial, 0.5
+		IvElementFireMaleHazmatSpecial, 0.5
+		IvElementElectricMaleHazmatSpecial, 0.5
+		IvElementToxicMaleHazmatSpecial, 0.5
+		IvElementFrostMaleHazmatSpecial, 0.5
+		IvElementSoulMaleHazmatSpecial, 0.5
+		IvElementFireBikerSpecial, 0.5
+		IvElementElectricBikerSpecial, 0.5
+		IvElementToxicBikerSpecial, 0.5
+		IvElementFrostBikerSpecial, 0.5
+		IvElementSoulBikerSpecial, 0.5
+		IvElementFireFemaleFatSpecial, 0.5
+		IvElementElectricFemaleFatSpecial, 0.5
+		IvElementToxicFemaleFatSpecial, 0.5
+		IvElementFrostFemaleFatSpecial, 0.5
+		IvElementSoulFemaleFatSpecial, 0.5
+	</csv>
+	<csv xpath="/entitygroups/entitygroup[@name='badassHordeStageGS112']/text()" delim="\n" op="add">
+		IvElementFireArleneSpecial, 0.5
+		IvElementElectricArleneSpecial, 0.5
+		IvElementToxicArleneSpecial, 0.5
+		IvElementFrostArleneSpecial, 0.5
+		IvElementSoulArleneSpecial, 0.5
+		IvElementFireNurseSpecial, 0.5
+		IvElementElectricNurseSpecial, 0.5
+		IvElementToxicNurseSpecial, 0.5
+		IvElementFrostNurseSpecial, 0.5
+		IvElementSoulNurseSpecial, 0.5
+		IvElementFireBoeSpecial, 0.5
+		IvElementElectricBoeSpecial, 0.5
+		IvElementToxicBoeSpecial, 0.5
+		IvElementFrostBoeSpecial, 0.5
+		IvElementSoulBoeSpecial, 0.5
+		IvElementFireMaleHazmatSpecial, 0.5
+		IvElementElectricMaleHazmatSpecial, 0.5
+		IvElementToxicMaleHazmatSpecial, 0.5
+		IvElementFrostMaleHazmatSpecial, 0.5
+		IvElementSoulMaleHazmatSpecial, 0.5
+		IvElementFireLumberjackSpecial, 0.5
+		IvElementElectricLumberjackSpecial, 0.5
+		IvElementToxicLumberjackSpecial, 0.5
+		IvElementFrostLumberjackSpecial, 0.5
+		IvElementSoulLumberjackSpecial, 0.5
+		IvElementFireFemaleFatSpecial, 0.5
+		IvElementElectricFemaleFatSpecial, 0.5
+		IvElementToxicFemaleFatSpecial, 0.5
+		IvElementFrostFemaleFatSpecial, 0.5
+		IvElementSoulFemaleFatSpecial, 0.5
+		IvElementFireFatHawaiianSpecial, 0.5
+		IvElementElectricFatHawaiianSpecial, 0.5
+		IvElementToxicFatHawaiianSpecial, 0.5
+		IvElementFrostFatHawaiianSpecial, 0.5
+		IvElementSoulFatHawaiianSpecial, 0.5
+		IvElementFireSkateboarderSpecial, 0.5
+		IvElementElectricSkateboarderSpecial, 0.5
+		IvElementToxicSkateboarderSpecial, 0.5
+		IvElementFrostSkateboarderSpecial, 0.5
+		IvElementSoulSkateboarderSpecial, 0.5
+	</csv>
+	<csv xpath="/entitygroups/entitygroup[@name='badassHordeStageGS130']/text()" delim="\n" op="add">
+		IvElementFirePartyGirlSpecial, 0.5
+		IvElementElectricPartyGirlSpecial, 0.5
+		IvElementToxicPartyGirlSpecial, 0.5
+		IvElementFrostPartyGirlSpecial, 0.5
+		IvElementSoulPartyGirlSpecial, 0.5
+		IvElementFireJoeSpecial, 0.5
+		IvElementElectricJoeSpecial, 0.5
+		IvElementToxicJoeSpecial, 0.5
+		IvElementFrostJoeSpecial, 0.5
+		IvElementSoulJoeSpecial, 0.5
+		IvElementFireBusinessManSpecial, 0.5
+		IvElementElectricBusinessManSpecial, 0.5
+		IvElementToxicBusinessManSpecial, 0.5
+		IvElementFrostBusinessManSpecial, 0.5
+		IvElementSoulBusinessManSpecial, 0.5
+		IvElementFireMoeSpecial, 0.5
+		IvElementElectricMoeSpecial, 0.5
+		IvElementToxicMoeSpecial, 0.5
+		IvElementFrostMoeSpecial, 0.5
+		IvElementSoulMoeSpecial, 0.5
+		IvElementFireBikerSpecial, 0.5
+		IvElementElectricBikerSpecial, 0.5
+		IvElementToxicBikerSpecial, 0.5
+		IvElementFrostBikerSpecial, 0.5
+		IvElementSoulBikerSpecial, 0.5
+		IvElementFireLumberjackSpecial, 0.5
+		IvElementElectricLumberjackSpecial, 0.5
+		IvElementToxicLumberjackSpecial, 0.5
+		IvElementFrostLumberjackSpecial, 0.5
+		IvElementSoulLumberjackSpecial, 0.5
+		IvElementFireFatHawaiianSpecial, 0.5
+		IvElementElectricFatHawaiianSpecial, 0.5
+		IvElementToxicFatHawaiianSpecial, 0.5
+		IvElementFrostFatHawaiianSpecial, 0.5
+		IvElementSoulFatHawaiianSpecial, 0.5
+		IvElementFireSkateboarderSpecial, 0.5
+		IvElementElectricSkateboarderSpecial, 0.5
+		IvElementToxicSkateboarderSpecial, 0.5
+		IvElementFrostSkateboarderSpecial, 0.5
+		IvElementSoulSkateboarderSpecial, 0.5
+	</csv>
+	<csv xpath="/entitygroups/entitygroup[@name='badassHordeStageGS150']/text()" delim="\n" op="add">
+		IvElementFireMarleneSpecial, 0.5
+		IvElementElectricMarleneSpecial, 0.5
+		IvElementToxicMarleneSpecial, 0.5
+		IvElementFrostMarleneSpecial, 0.5
+		IvElementSoulMarleneSpecial, 0.5
+		IvElementFireJoeSpecial, 0.5
+		IvElementElectricJoeSpecial, 0.5
+		IvElementToxicJoeSpecial, 0.5
+		IvElementFrostJoeSpecial, 0.5
+		IvElementSoulJoeSpecial, 0.5
+		IvElementFireSteveSpecial, 0.5
+		IvElementElectricSteveSpecial, 0.5
+		IvElementToxicSteveSpecial, 0.5
+		IvElementFrostSteveSpecial, 0.5
+		IvElementSoulSteveSpecial, 0.5
+		IvElementFireJanitorSpecial, 0.5
+		IvElementElectricJanitorSpecial, 0.5
+		IvElementToxicJanitorSpecial, 0.5
+		IvElementFrostJanitorSpecial, 0.5
+		IvElementSoulJanitorSpecial, 0.5
+		IvElementFireDarleneSpecial, 0.5
+		IvElementElectricDarleneSpecial, 0.5
+		IvElementToxicDarleneSpecial, 0.5
+		IvElementFrostDarleneSpecial, 0.5
+		IvElementSoulDarleneSpecial, 0.5
+		IvElementFireLumberjackSpecial, 0.5
+		IvElementElectricLumberjackSpecial, 0.5
+		IvElementToxicLumberjackSpecial, 0.5
+		IvElementFrostLumberjackSpecial, 0.5
+		IvElementSoulLumberjackSpecial, 0.5
+		IvElementFireFemaleFatSpecial, 0.5
+		IvElementElectricFemaleFatSpecial, 0.5
+		IvElementToxicFemaleFatSpecial, 0.5
+		IvElementFrostFemaleFatSpecial, 0.5
+		IvElementSoulFemaleFatSpecial, 0.5
+		IvElementFireFatHawaiianSpecial, 0.5
+		IvElementElectricFatHawaiianSpecial, 0.5
+		IvElementToxicFatHawaiianSpecial, 0.5
+		IvElementFrostFatHawaiianSpecial, 0.5
+		IvElementSoulFatHawaiianSpecial, 0.5
+	</csv>
+	<csv xpath="/entitygroups/entitygroup[@name='badassHordeStageGS171']/text()" delim="\n" op="add">
+		IvElementFireBusinessManSpecial, 0.5
+		IvElementElectricBusinessManSpecial, 0.5
+		IvElementToxicBusinessManSpecial, 0.5
+		IvElementFrostBusinessManSpecial, 0.5
+		IvElementSoulBusinessManSpecial, 0.5
+		IvElementFireJanitorSpecial, 0.5
+		IvElementElectricJanitorSpecial, 0.5
+		IvElementToxicJanitorSpecial, 0.5
+		IvElementFrostJanitorSpecial, 0.5
+		IvElementSoulJanitorSpecial, 0.5
+		IvElementFireMoeSpecial, 0.5
+		IvElementElectricMoeSpecial, 0.5
+		IvElementToxicMoeSpecial, 0.5
+		IvElementFrostMoeSpecial, 0.5
+		IvElementSoulMoeSpecial, 0.5
+		IvElementFireDarleneSpecial, 0.5
+		IvElementElectricDarleneSpecial, 0.5
+		IvElementToxicDarleneSpecial, 0.5
+		IvElementFrostDarleneSpecial, 0.5
+		IvElementSoulDarleneSpecial, 0.5
+		IvElementFireYoSpecial, 0.5
+		IvElementElectricYoSpecial, 0.5
+		IvElementToxicYoSpecial, 0.5
+		IvElementFrostYoSpecial, 0.5
+		IvElementSoulYoSpecial, 0.5
+		IvElementFireMaleHazmatSpecial, 0.5
+		IvElementElectricMaleHazmatSpecial, 0.5
+		IvElementToxicMaleHazmatSpecial, 0.5
+		IvElementFrostMaleHazmatSpecial, 0.5
+		IvElementSoulMaleHazmatSpecial, 0.5
+		IvElementFireSkateboarderSpecial, 0.5
+		IvElementElectricSkateboarderSpecial, 0.5
+		IvElementToxicSkateboarderSpecial, 0.5
+		IvElementFrostSkateboarderSpecial, 0.5
+		IvElementSoulSkateboarderSpecial, 0.5
+	</csv>
+	<csv xpath="/entitygroups/entitygroup[@name='badassHordeStageGS194']/text()" delim="\n" op="add">
+		IvElementFireArleneSpecial, 0.5
+		IvElementElectricArleneSpecial, 0.5
+		IvElementToxicArleneSpecial, 0.5
+		IvElementFrostArleneSpecial, 0.5
+		IvElementSoulArleneSpecial, 0.5
+		IvElementFireMoeSpecial, 0.5
+		IvElementElectricMoeSpecial, 0.5
+		IvElementToxicMoeSpecial, 0.5
+		IvElementFrostMoeSpecial, 0.5
+		IvElementSoulMoeSpecial, 0.5
+		IvElementFireUtilityWorkerSpecial, 0.5
+		IvElementElectricUtilityWorkerSpecial, 0.5
+		IvElementToxicUtilityWorkerSpecial, 0.5
+		IvElementFrostUtilityWorkerSpecial, 0.5
+		IvElementSoulUtilityWorkerSpecial, 0.5
+		IvElementFireMaleHazmatSpecial, 0.5
+		IvElementElectricMaleHazmatSpecial, 0.5
+		IvElementToxicMaleHazmatSpecial, 0.5
+		IvElementFrostMaleHazmatSpecial, 0.5
+		IvElementSoulMaleHazmatSpecial, 0.5
+		IvElementFireBikerSpecial, 0.5
+		IvElementElectricBikerSpecial, 0.5
+		IvElementToxicBikerSpecial, 0.5
+		IvElementFrostBikerSpecial, 0.5
+		IvElementSoulBikerSpecial, 0.5
+		IvElementFireLumberjackSpecial, 0.5
+		IvElementElectricLumberjackSpecial, 0.5
+		IvElementToxicLumberjackSpecial, 0.5
+		IvElementFrostLumberjackSpecial, 0.5
+		IvElementSoulLumberjackSpecial, 0.5
+		IvElementFireFemaleFatSpecial, 0.5
+		IvElementElectricFemaleFatSpecial, 0.5
+		IvElementToxicFemaleFatSpecial, 0.5
+		IvElementFrostFemaleFatSpecial, 0.5
+		IvElementSoulFemaleFatSpecial, 0.5
+	</csv>
+	<csv xpath="/entitygroups/entitygroup[@name='badassHordeStageGS217']/text()" delim="\n" op="add">
+		IvElementFireArleneSpecial, 0.5
+		IvElementElectricArleneSpecial, 0.5
+		IvElementToxicArleneSpecial, 0.5
+		IvElementFrostArleneSpecial, 0.5
+		IvElementSoulArleneSpecial, 0.5
+		IvElementFireMarleneSpecial, 0.5
+		IvElementElectricMarleneSpecial, 0.5
+		IvElementToxicMarleneSpecial, 0.5
+		IvElementFrostMarleneSpecial, 0.5
+		IvElementSoulMarleneSpecial, 0.5
+		IvElementFireBusinessManSpecial, 0.5
+		IvElementElectricBusinessManSpecial, 0.5
+		IvElementToxicBusinessManSpecial, 0.5
+		IvElementFrostBusinessManSpecial, 0.5
+		IvElementSoulBusinessManSpecial, 0.5
+		IvElementFireMoeSpecial, 0.5
+		IvElementElectricMoeSpecial, 0.5
+		IvElementToxicMoeSpecial, 0.5
+		IvElementFrostMoeSpecial, 0.5
+		IvElementSoulMoeSpecial, 0.5
+		IvElementFireYoSpecial, 0.5
+		IvElementElectricYoSpecial, 0.5
+		IvElementToxicYoSpecial, 0.5
+		IvElementFrostYoSpecial, 0.5
+		IvElementSoulYoSpecial, 0.5
+		IvElementFireMaleHazmatSpecial, 0.5
+		IvElementElectricMaleHazmatSpecial, 0.5
+		IvElementToxicMaleHazmatSpecial, 0.5
+		IvElementFrostMaleHazmatSpecial, 0.5
+		IvElementSoulMaleHazmatSpecial, 0.5
+		IvElementFireBikerSpecial, 0.5
+		IvElementElectricBikerSpecial, 0.5
+		IvElementToxicBikerSpecial, 0.5
+		IvElementFrostBikerSpecial, 0.5
+		IvElementSoulBikerSpecial, 0.5
+		IvElementFireFemaleFatSpecial, 0.5
+		IvElementElectricFemaleFatSpecial, 0.5
+		IvElementToxicFemaleFatSpecial, 0.5
+		IvElementFrostFemaleFatSpecial, 0.5
+		IvElementSoulFemaleFatSpecial, 0.5
+		IvElementFireWightSpecial, 0.5
+		IvElementElectricWightSpecial, 0.5
+		IvElementToxicWightSpecial, 0.5
+		IvElementFrostWightSpecial, 0.5
+		IvElementSoulWightSpecial, 0.5
+	</csv>
+	<csv xpath="/entitygroups/entitygroup[@name='badassHordeStageGS242']/text()" delim="\n" op="add">
+		IvElementFireArleneSpecial, 0.5
+		IvElementElectricArleneSpecial, 0.5
+		IvElementToxicArleneSpecial, 0.5
+		IvElementFrostArleneSpecial, 0.5
+		IvElementSoulArleneSpecial, 0.5
+		IvElementFireMarleneSpecial, 0.5
+		IvElementElectricMarleneSpecial, 0.5
+		IvElementToxicMarleneSpecial, 0.5
+		IvElementFrostMarleneSpecial, 0.5
+		IvElementSoulMarleneSpecial, 0.5
+		IvElementFireDarleneSpecial, 0.5
+		IvElementElectricDarleneSpecial, 0.5
+		IvElementToxicDarleneSpecial, 0.5
+		IvElementFrostDarleneSpecial, 0.5
+		IvElementSoulDarleneSpecial, 0.5
+		IvElementFireMaleHazmatSpecial, 0.5
+		IvElementElectricMaleHazmatSpecial, 0.5
+		IvElementToxicMaleHazmatSpecial, 0.5
+		IvElementFrostMaleHazmatSpecial, 0.5
+		IvElementSoulMaleHazmatSpecial, 0.5
+		IvElementFireBikerSpecial, 0.5
+		IvElementElectricBikerSpecial, 0.5
+		IvElementToxicBikerSpecial, 0.5
+		IvElementFrostBikerSpecial, 0.5
+		IvElementSoulBikerSpecial, 0.5
+		IvElementFireFemaleFatSpecial, 0.5
+		IvElementElectricFemaleFatSpecial, 0.5
+		IvElementToxicFemaleFatSpecial, 0.5
+		IvElementFrostFemaleFatSpecial, 0.5
+		IvElementSoulFemaleFatSpecial, 0.5
+		IvElementFireSkateboarderSpecial, 0.5
+		IvElementElectricSkateboarderSpecial, 0.5
+		IvElementToxicSkateboarderSpecial, 0.5
+		IvElementFrostSkateboarderSpecial, 0.5
+		IvElementSoulSkateboarderSpecial, 0.5
+		IvElementFireWightSpecial, 0.5
+		IvElementElectricWightSpecial, 0.5
+		IvElementToxicWightSpecial, 0.5
+		IvElementFrostWightSpecial, 0.5
+		IvElementSoulWightSpecial, 0.5
+	</csv>
+	<csv xpath="/entitygroups/entitygroup[@name='badassHordeStageGS268']/text()" delim="\n" op="add">
+		IvElementFirePartyGirlSpecial, 0.5
+		IvElementElectricPartyGirlSpecial, 0.5
+		IvElementToxicPartyGirlSpecial, 0.5
+		IvElementFrostPartyGirlSpecial, 0.5
+		IvElementSoulPartyGirlSpecial, 0.5
+		IvElementFireTomClarkSpecial, 0.5
+		IvElementElectricTomClarkSpecial, 0.5
+		IvElementToxicTomClarkSpecial, 0.5
+		IvElementFrostTomClarkSpecial, 0.5
+		IvElementSoulTomClarkSpecial, 0.5
+		IvElementFireBoeSpecial, 0.5
+		IvElementElectricBoeSpecial, 0.5
+		IvElementToxicBoeSpecial, 0.5
+		IvElementFrostBoeSpecial, 0.5
+		IvElementSoulBoeSpecial, 0.5
+		IvElementFireYoSpecial, 0.5
+		IvElementElectricYoSpecial, 0.5
+		IvElementToxicYoSpecial, 0.5
+		IvElementFrostYoSpecial, 0.5
+		IvElementSoulYoSpecial, 0.5
+		IvElementFireFatHawaiianSpecial, 0.5
+		IvElementElectricFatHawaiianSpecial, 0.5
+		IvElementToxicFatHawaiianSpecial, 0.5
+		IvElementFrostFatHawaiianSpecial, 0.5
+		IvElementSoulFatHawaiianSpecial, 0.5
+		IvElementFireWightSpecial, 0.5
+		IvElementElectricWightSpecial, 0.5
+		IvElementToxicWightSpecial, 0.5
+		IvElementFrostWightSpecial, 0.5
+		IvElementSoulWightSpecial, 0.5
+	</csv>
+	<csv xpath="/entitygroups/entitygroup[@name='badassHordeStageGS296']/text()" delim="\n" op="add">
+		IvElementFireMarleneSpecial, 0.5
+		IvElementElectricMarleneSpecial, 0.5
+		IvElementToxicMarleneSpecial, 0.5
+		IvElementFrostMarleneSpecial, 0.5
+		IvElementSoulMarleneSpecial, 0.5
+		IvElementFireNurseSpecial, 0.5
+		IvElementElectricNurseSpecial, 0.5
+		IvElementToxicNurseSpecial, 0.5
+		IvElementFrostNurseSpecial, 0.5
+		IvElementSoulNurseSpecial, 0.5
+		IvElementFireSteveSpecial, 0.5
+		IvElementElectricSteveSpecial, 0.5
+		IvElementToxicSteveSpecial, 0.5
+		IvElementFrostSteveSpecial, 0.5
+		IvElementSoulSteveSpecial, 0.5
+		IvElementFireBoeSpecial, 0.5
+		IvElementElectricBoeSpecial, 0.5
+		IvElementToxicBoeSpecial, 0.5
+		IvElementFrostBoeSpecial, 0.5
+		IvElementSoulBoeSpecial, 0.5
+		IvElementFireJanitorSpecial, 0.5
+		IvElementElectricJanitorSpecial, 0.5
+		IvElementToxicJanitorSpecial, 0.5
+		IvElementFrostJanitorSpecial, 0.5
+		IvElementSoulJanitorSpecial, 0.5
+		IvElementFireDarleneSpecial, 0.5
+		IvElementElectricDarleneSpecial, 0.5
+		IvElementToxicDarleneSpecial, 0.5
+		IvElementFrostDarleneSpecial, 0.5
+		IvElementSoulDarleneSpecial, 0.5
+		IvElementFireMaleHazmatSpecial, 0.5
+		IvElementElectricMaleHazmatSpecial, 0.5
+		IvElementToxicMaleHazmatSpecial, 0.5
+		IvElementFrostMaleHazmatSpecial, 0.5
+		IvElementSoulMaleHazmatSpecial, 0.5
+		IvElementFireLumberjackSpecial, 0.5
+		IvElementElectricLumberjackSpecial, 0.5
+		IvElementToxicLumberjackSpecial, 0.5
+		IvElementFrostLumberjackSpecial, 0.5
+		IvElementSoulLumberjackSpecial, 0.5
+		IvElementFireFemaleFatSpecial, 0.5
+		IvElementElectricFemaleFatSpecial, 0.5
+		IvElementToxicFemaleFatSpecial, 0.5
+		IvElementFrostFemaleFatSpecial, 0.5
+		IvElementSoulFemaleFatSpecial, 0.5
+		IvElementFireFatHawaiianSpecial, 0.5
+		IvElementElectricFatHawaiianSpecial, 0.5
+		IvElementToxicFatHawaiianSpecial, 0.5
+		IvElementFrostFatHawaiianSpecial, 0.5
+		IvElementSoulFatHawaiianSpecial, 0.5
+	</csv>
+	<csv xpath="/entitygroups/entitygroup[@name='badassHordeStageGS325']/text()" delim="\n" op="add">
+		IvElementFireArleneSpecial, 0.5
+		IvElementElectricArleneSpecial, 0.5
+		IvElementToxicArleneSpecial, 0.5
+		IvElementFrostArleneSpecial, 0.5
+		IvElementSoulArleneSpecial, 0.5
+		IvElementFireMarleneSpecial, 0.5
+		IvElementElectricMarleneSpecial, 0.5
+		IvElementToxicMarleneSpecial, 0.5
+		IvElementFrostMarleneSpecial, 0.5
+		IvElementSoulMarleneSpecial, 0.5
+		IvElementFireTomClarkSpecial, 0.5
+		IvElementElectricTomClarkSpecial, 0.5
+		IvElementToxicTomClarkSpecial, 0.5
+		IvElementFrostTomClarkSpecial, 0.5
+		IvElementSoulTomClarkSpecial, 0.5
+		IvElementFireBoeSpecial, 0.5
+		IvElementElectricBoeSpecial, 0.5
+		IvElementToxicBoeSpecial, 0.5
+		IvElementFrostBoeSpecial, 0.5
+		IvElementSoulBoeSpecial, 0.5
+		IvElementFireMoeSpecial, 0.5
+		IvElementElectricMoeSpecial, 0.5
+		IvElementToxicMoeSpecial, 0.5
+		IvElementFrostMoeSpecial, 0.5
+		IvElementSoulMoeSpecial, 0.5
+		IvElementFireMaleHazmatSpecial, 0.5
+		IvElementElectricMaleHazmatSpecial, 0.5
+		IvElementToxicMaleHazmatSpecial, 0.5
+		IvElementFrostMaleHazmatSpecial, 0.5
+		IvElementSoulMaleHazmatSpecial, 0.5
+		IvElementFireBikerSpecial, 0.5
+		IvElementElectricBikerSpecial, 0.5
+		IvElementToxicBikerSpecial, 0.5
+		IvElementFrostBikerSpecial, 0.5
+		IvElementSoulBikerSpecial, 0.5
+		IvElementFireFemaleFatSpecial, 0.5
+		IvElementElectricFemaleFatSpecial, 0.5
+		IvElementToxicFemaleFatSpecial, 0.5
+		IvElementFrostFemaleFatSpecial, 0.5
+		IvElementSoulFemaleFatSpecial, 0.5
+	</csv>
+	<csv xpath="/entitygroups/entitygroup[@name='badassHordeStageGS355']/text()" delim="\n" op="add">
+		IvElementFireSteveSpecial, 0.5
+		IvElementElectricSteveSpecial, 0.5
+		IvElementToxicSteveSpecial, 0.5
+		IvElementFrostSteveSpecial, 0.5
+		IvElementSoulSteveSpecial, 0.5
+		IvElementFireTomClarkSpecial, 0.5
+		IvElementElectricTomClarkSpecial, 0.5
+		IvElementToxicTomClarkSpecial, 0.5
+		IvElementFrostTomClarkSpecial, 0.5
+		IvElementSoulTomClarkSpecial, 0.5
+		IvElementFireBusinessManSpecial, 0.5
+		IvElementElectricBusinessManSpecial, 0.5
+		IvElementToxicBusinessManSpecial, 0.5
+		IvElementFrostBusinessManSpecial, 0.5
+		IvElementSoulBusinessManSpecial, 0.5
+		IvElementFireBoeSpecial, 0.5
+		IvElementElectricBoeSpecial, 0.5
+		IvElementToxicBoeSpecial, 0.5
+		IvElementFrostBoeSpecial, 0.5
+		IvElementSoulBoeSpecial, 0.5
+		IvElementFireJanitorSpecial, 0.5
+		IvElementElectricJanitorSpecial, 0.5
+		IvElementToxicJanitorSpecial, 0.5
+		IvElementFrostJanitorSpecial, 0.5
+		IvElementSoulJanitorSpecial, 0.5
+		IvElementFireMaleHazmatSpecial, 0.5
+		IvElementElectricMaleHazmatSpecial, 0.5
+		IvElementToxicMaleHazmatSpecial, 0.5
+		IvElementFrostMaleHazmatSpecial, 0.5
+		IvElementSoulMaleHazmatSpecial, 0.5
+		IvElementFireFemaleFatSpecial, 0.5
+		IvElementElectricFemaleFatSpecial, 0.5
+		IvElementToxicFemaleFatSpecial, 0.5
+		IvElementFrostFemaleFatSpecial, 0.5
+		IvElementSoulFemaleFatSpecial, 0.5
+		IvElementFireSkateboarderSpecial, 0.5
+		IvElementElectricSkateboarderSpecial, 0.5
+		IvElementToxicSkateboarderSpecial, 0.5
+		IvElementFrostSkateboarderSpecial, 0.5
+		IvElementSoulSkateboarderSpecial, 0.5
+		IvElementFireWightSpecial, 0.5
+		IvElementElectricWightSpecial, 0.5
+		IvElementToxicWightSpecial, 0.5
+		IvElementFrostWightSpecial, 0.5
+		IvElementSoulWightSpecial, 0.5
+	</csv>
+	<csv xpath="/entitygroups/entitygroup[@name='badassHordeStageGS386']/text()" delim="\n" op="add">
+		IvElementFireMarleneSpecial, 0.5
+		IvElementElectricMarleneSpecial, 0.5
+		IvElementToxicMarleneSpecial, 0.5
+		IvElementFrostMarleneSpecial, 0.5
+		IvElementSoulMarleneSpecial, 0.5
+		IvElementFireNurseSpecial, 0.5
+		IvElementElectricNurseSpecial, 0.5
+		IvElementToxicNurseSpecial, 0.5
+		IvElementFrostNurseSpecial, 0.5
+		IvElementSoulNurseSpecial, 0.5
+		IvElementFireSteveSpecial, 0.5
+		IvElementElectricSteveSpecial, 0.5
+		IvElementToxicSteveSpecial, 0.5
+		IvElementFrostSteveSpecial, 0.5
+		IvElementSoulSteveSpecial, 0.5
+		IvElementFireTomClarkSpecial, 0.5
+		IvElementElectricTomClarkSpecial, 0.5
+		IvElementToxicTomClarkSpecial, 0.5
+		IvElementFrostTomClarkSpecial, 0.5
+		IvElementSoulTomClarkSpecial, 0.5
+		IvElementFireBoeSpecial, 0.5
+		IvElementElectricBoeSpecial, 0.5
+		IvElementToxicBoeSpecial, 0.5
+		IvElementFrostBoeSpecial, 0.5
+		IvElementSoulBoeSpecial, 0.5
+		IvElementFireDarleneSpecial, 0.5
+		IvElementElectricDarleneSpecial, 0.5
+		IvElementToxicDarleneSpecial, 0.5
+		IvElementFrostDarleneSpecial, 0.5
+		IvElementSoulDarleneSpecial, 0.5
+		IvElementFireMaleHazmatSpecial, 0.5
+		IvElementElectricMaleHazmatSpecial, 0.5
+		IvElementToxicMaleHazmatSpecial, 0.5
+		IvElementFrostMaleHazmatSpecial, 0.5
+		IvElementSoulMaleHazmatSpecial, 0.5
+		IvElementFireBikerSpecial, 0.5
+		IvElementElectricBikerSpecial, 0.5
+		IvElementToxicBikerSpecial, 0.5
+		IvElementFrostBikerSpecial, 0.5
+		IvElementSoulBikerSpecial, 0.5
+		IvElementFireFemaleFatSpecial, 0.5
+		IvElementElectricFemaleFatSpecial, 0.5
+		IvElementToxicFemaleFatSpecial, 0.5
+		IvElementFrostFemaleFatSpecial, 0.5
+		IvElementSoulFemaleFatSpecial, 0.5
+		IvElementFireSkateboarderSpecial, 0.5
+		IvElementElectricSkateboarderSpecial, 0.5
+		IvElementToxicSkateboarderSpecial, 0.5
+		IvElementFrostSkateboarderSpecial, 0.5
+		IvElementSoulSkateboarderSpecial, 0.5
+	</csv>
+	<csv xpath="/entitygroups/entitygroup[@name='badassHordeStageGS419']/text()" delim="\n" op="add">
+		IvElementFireArleneSpecial, 0.5
+		IvElementElectricArleneSpecial, 0.5
+		IvElementToxicArleneSpecial, 0.5
+		IvElementFrostArleneSpecial, 0.5
+		IvElementSoulArleneSpecial, 0.5
+		IvElementFirePartyGirlSpecial, 0.5
+		IvElementElectricPartyGirlSpecial, 0.5
+		IvElementToxicPartyGirlSpecial, 0.5
+		IvElementFrostPartyGirlSpecial, 0.5
+		IvElementSoulPartyGirlSpecial, 0.5
+		IvElementFireJoeSpecial, 0.5
+		IvElementElectricJoeSpecial, 0.5
+		IvElementToxicJoeSpecial, 0.5
+		IvElementFrostJoeSpecial, 0.5
+		IvElementSoulJoeSpecial, 0.5
+		IvElementFireBoeSpecial, 0.5
+		IvElementElectricBoeSpecial, 0.5
+		IvElementToxicBoeSpecial, 0.5
+		IvElementFrostBoeSpecial, 0.5
+		IvElementSoulBoeSpecial, 0.5
+		IvElementFireBikerSpecial, 0.5
+		IvElementElectricBikerSpecial, 0.5
+		IvElementToxicBikerSpecial, 0.5
+		IvElementFrostBikerSpecial, 0.5
+		IvElementSoulBikerSpecial, 0.5
+		IvElementFireFemaleFatSpecial, 0.5
+		IvElementElectricFemaleFatSpecial, 0.5
+		IvElementToxicFemaleFatSpecial, 0.5
+		IvElementFrostFemaleFatSpecial, 0.5
+		IvElementSoulFemaleFatSpecial, 0.5
+		IvElementFireFatHawaiianSpecial, 0.5
+		IvElementElectricFatHawaiianSpecial, 0.5
+		IvElementToxicFatHawaiianSpecial, 0.5
+		IvElementFrostFatHawaiianSpecial, 0.5
+		IvElementSoulFatHawaiianSpecial, 0.5
+		IvElementFireSkateboarderSpecial, 0.5
+		IvElementElectricSkateboarderSpecial, 0.5
+		IvElementToxicSkateboarderSpecial, 0.5
+		IvElementFrostSkateboarderSpecial, 0.5
+		IvElementSoulSkateboarderSpecial, 0.5
+	</csv>
+	<csv xpath="/entitygroups/entitygroup[@name='badassHordeStageGS452']/text()" delim="\n" op="add">
+		IvElementFirePartyGirlSpecial, 0.5
+		IvElementElectricPartyGirlSpecial, 0.5
+		IvElementToxicPartyGirlSpecial, 0.5
+		IvElementFrostPartyGirlSpecial, 0.5
+		IvElementSoulPartyGirlSpecial, 0.5
+		IvElementFireJoeSpecial, 0.5
+		IvElementElectricJoeSpecial, 0.5
+		IvElementToxicJoeSpecial, 0.5
+		IvElementFrostJoeSpecial, 0.5
+		IvElementSoulJoeSpecial, 0.5
+		IvElementFireSteveSpecial, 0.5
+		IvElementElectricSteveSpecial, 0.5
+		IvElementToxicSteveSpecial, 0.5
+		IvElementFrostSteveSpecial, 0.5
+		IvElementSoulSteveSpecial, 0.5
+		IvElementFireBoeSpecial, 0.5
+		IvElementElectricBoeSpecial, 0.5
+		IvElementToxicBoeSpecial, 0.5
+		IvElementFrostBoeSpecial, 0.5
+		IvElementSoulBoeSpecial, 0.5
+		IvElementFireJanitorSpecial, 0.5
+		IvElementElectricJanitorSpecial, 0.5
+		IvElementToxicJanitorSpecial, 0.5
+		IvElementFrostJanitorSpecial, 0.5
+		IvElementSoulJanitorSpecial, 0.5
+		IvElementFireDarleneSpecial, 0.5
+		IvElementElectricDarleneSpecial, 0.5
+		IvElementToxicDarleneSpecial, 0.5
+		IvElementFrostDarleneSpecial, 0.5
+		IvElementSoulDarleneSpecial, 0.5
+		IvElementFireYoSpecial, 0.5
+		IvElementElectricYoSpecial, 0.5
+		IvElementToxicYoSpecial, 0.5
+		IvElementFrostYoSpecial, 0.5
+		IvElementSoulYoSpecial, 0.5
+		IvElementFireUtilityWorkerSpecial, 0.5
+		IvElementElectricUtilityWorkerSpecial, 0.5
+		IvElementToxicUtilityWorkerSpecial, 0.5
+		IvElementFrostUtilityWorkerSpecial, 0.5
+		IvElementSoulUtilityWorkerSpecial, 0.5
+		IvElementFireBikerSpecial, 0.5
+		IvElementElectricBikerSpecial, 0.5
+		IvElementToxicBikerSpecial, 0.5
+		IvElementFrostBikerSpecial, 0.5
+		IvElementSoulBikerSpecial, 0.5
+		IvElementFireFatHawaiianSpecial, 0.5
+		IvElementElectricFatHawaiianSpecial, 0.5
+		IvElementToxicFatHawaiianSpecial, 0.5
+		IvElementFrostFatHawaiianSpecial, 0.5
+		IvElementSoulFatHawaiianSpecial, 0.5
+		IvElementFireSkateboarderSpecial, 0.5
+		IvElementElectricSkateboarderSpecial, 0.5
+		IvElementToxicSkateboarderSpecial, 0.5
+		IvElementFrostSkateboarderSpecial, 0.5
+		IvElementSoulSkateboarderSpecial, 0.5
+	</csv>
+	<csv xpath="/entitygroups/entitygroup[@name='badassHordeStageGS488']/text()" delim="\n" op="add">
+		IvElementFireSteveSpecial, 0.5
+		IvElementElectricSteveSpecial, 0.5
+		IvElementToxicSteveSpecial, 0.5
+		IvElementFrostSteveSpecial, 0.5
+		IvElementSoulSteveSpecial, 0.5
+		IvElementFireBusinessManSpecial, 0.5
+		IvElementElectricBusinessManSpecial, 0.5
+		IvElementToxicBusinessManSpecial, 0.5
+		IvElementFrostBusinessManSpecial, 0.5
+		IvElementSoulBusinessManSpecial, 0.5
+		IvElementFireJanitorSpecial, 0.5
+		IvElementElectricJanitorSpecial, 0.5
+		IvElementToxicJanitorSpecial, 0.5
+		IvElementFrostJanitorSpecial, 0.5
+		IvElementSoulJanitorSpecial, 0.5
+		IvElementFireDarleneSpecial, 0.5
+		IvElementElectricDarleneSpecial, 0.5
+		IvElementToxicDarleneSpecial, 0.5
+		IvElementFrostDarleneSpecial, 0.5
+		IvElementSoulDarleneSpecial, 0.5
+		IvElementFireBikerSpecial, 0.5
+		IvElementElectricBikerSpecial, 0.5
+		IvElementToxicBikerSpecial, 0.5
+		IvElementFrostBikerSpecial, 0.5
+		IvElementSoulBikerSpecial, 0.5
+		IvElementFireLumberjackSpecial, 0.5
+		IvElementElectricLumberjackSpecial, 0.5
+		IvElementToxicLumberjackSpecial, 0.5
+		IvElementFrostLumberjackSpecial, 0.5
+		IvElementSoulLumberjackSpecial, 0.5
+		IvElementFireFemaleFatSpecial, 0.5
+		IvElementElectricFemaleFatSpecial, 0.5
+		IvElementToxicFemaleFatSpecial, 0.5
+		IvElementFrostFemaleFatSpecial, 0.5
+		IvElementSoulFemaleFatSpecial, 0.5
+		IvElementFireFatHawaiianSpecial, 0.5
+		IvElementElectricFatHawaiianSpecial, 0.5
+		IvElementToxicFatHawaiianSpecial, 0.5
+		IvElementFrostFatHawaiianSpecial, 0.5
+		IvElementSoulFatHawaiianSpecial, 0.5
+	</csv>
+	<csv xpath="/entitygroups/entitygroup[@name='badassHordeStageGS524']/text()" delim="\n" op="add">
+		IvElementFirePartyGirlSpecial, 0.5
+		IvElementElectricPartyGirlSpecial, 0.5
+		IvElementToxicPartyGirlSpecial, 0.5
+		IvElementFrostPartyGirlSpecial, 0.5
+		IvElementSoulPartyGirlSpecial, 0.5
+		IvElementFireSteveSpecial, 0.5
+		IvElementElectricSteveSpecial, 0.5
+		IvElementToxicSteveSpecial, 0.5
+		IvElementFrostSteveSpecial, 0.5
+		IvElementSoulSteveSpecial, 0.5
+		IvElementFireUtilityWorkerSpecial, 0.5
+		IvElementElectricUtilityWorkerSpecial, 0.5
+		IvElementToxicUtilityWorkerSpecial, 0.5
+		IvElementFrostUtilityWorkerSpecial, 0.5
+		IvElementSoulUtilityWorkerSpecial, 0.5
+		IvElementFireLumberjackSpecial, 0.5
+		IvElementElectricLumberjackSpecial, 0.5
+		IvElementToxicLumberjackSpecial, 0.5
+		IvElementFrostLumberjackSpecial, 0.5
+		IvElementSoulLumberjackSpecial, 0.5
+		IvElementFireFemaleFatSpecial, 0.5
+		IvElementElectricFemaleFatSpecial, 0.5
+		IvElementToxicFemaleFatSpecial, 0.5
+		IvElementFrostFemaleFatSpecial, 0.5
+		IvElementSoulFemaleFatSpecial, 0.5
+		IvElementFireFatHawaiianSpecial, 0.5
+		IvElementElectricFatHawaiianSpecial, 0.5
+		IvElementToxicFatHawaiianSpecial, 0.5
+		IvElementFrostFatHawaiianSpecial, 0.5
+		IvElementSoulFatHawaiianSpecial, 0.5
+		IvElementFireSkateboarderSpecial, 0.5
+		IvElementElectricSkateboarderSpecial, 0.5
+		IvElementToxicSkateboarderSpecial, 0.5
+		IvElementFrostSkateboarderSpecial, 0.5
+		IvElementSoulSkateboarderSpecial, 0.5
+	</csv>
+	<csv xpath="/entitygroups/entitygroup[@name='badassHordeStageGS561']/text()" delim="\n" op="add">
+		IvElementFireJoeSpecial, 0.5
+		IvElementElectricJoeSpecial, 0.5
+		IvElementToxicJoeSpecial, 0.5
+		IvElementFrostJoeSpecial, 0.5
+		IvElementSoulJoeSpecial, 0.5
+		IvElementFireSteveSpecial, 0.5
+		IvElementElectricSteveSpecial, 0.5
+		IvElementToxicSteveSpecial, 0.5
+		IvElementFrostSteveSpecial, 0.5
+		IvElementSoulSteveSpecial, 0.5
+		IvElementFireTomClarkSpecial, 0.5
+		IvElementElectricTomClarkSpecial, 0.5
+		IvElementToxicTomClarkSpecial, 0.5
+		IvElementFrostTomClarkSpecial, 0.5
+		IvElementSoulTomClarkSpecial, 0.5
+		IvElementFireBoeSpecial, 0.5
+		IvElementElectricBoeSpecial, 0.5
+		IvElementToxicBoeSpecial, 0.5
+		IvElementFrostBoeSpecial, 0.5
+		IvElementSoulBoeSpecial, 0.5
+		IvElementFireJanitorSpecial, 0.5
+		IvElementElectricJanitorSpecial, 0.5
+		IvElementToxicJanitorSpecial, 0.5
+		IvElementFrostJanitorSpecial, 0.5
+		IvElementSoulJanitorSpecial, 0.5
+		IvElementFireUtilityWorkerSpecial, 0.5
+		IvElementElectricUtilityWorkerSpecial, 0.5
+		IvElementToxicUtilityWorkerSpecial, 0.5
+		IvElementFrostUtilityWorkerSpecial, 0.5
+		IvElementSoulUtilityWorkerSpecial, 0.5
+		IvElementFireBikerSpecial, 0.5
+		IvElementElectricBikerSpecial, 0.5
+		IvElementToxicBikerSpecial, 0.5
+		IvElementFrostBikerSpecial, 0.5
+		IvElementSoulBikerSpecial, 0.5
+		IvElementFireSkateboarderSpecial, 0.5
+		IvElementElectricSkateboarderSpecial, 0.5
+		IvElementToxicSkateboarderSpecial, 0.5
+		IvElementFrostSkateboarderSpecial, 0.5
+		IvElementSoulSkateboarderSpecial, 0.5
+	</csv>
+	<csv xpath="/entitygroups/entitygroup[@name='badassHordeStageGS600']/text()" delim="\n" op="add">
+		IvElementFireMarleneSpecial, 0.5
+		IvElementElectricMarleneSpecial, 0.5
+		IvElementToxicMarleneSpecial, 0.5
+		IvElementFrostMarleneSpecial, 0.5
+		IvElementSoulMarleneSpecial, 0.5
+		IvElementFireJoeSpecial, 0.5
+		IvElementElectricJoeSpecial, 0.5
+		IvElementToxicJoeSpecial, 0.5
+		IvElementFrostJoeSpecial, 0.5
+		IvElementSoulJoeSpecial, 0.5
+		IvElementFireBoeSpecial, 0.5
+		IvElementElectricBoeSpecial, 0.5
+		IvElementToxicBoeSpecial, 0.5
+		IvElementFrostBoeSpecial, 0.5
+		IvElementSoulBoeSpecial, 0.5
+		IvElementFireDarleneSpecial, 0.5
+		IvElementElectricDarleneSpecial, 0.5
+		IvElementToxicDarleneSpecial, 0.5
+		IvElementFrostDarleneSpecial, 0.5
+		IvElementSoulDarleneSpecial, 0.5
+		IvElementFireMaleHazmatSpecial, 0.5
+		IvElementElectricMaleHazmatSpecial, 0.5
+		IvElementToxicMaleHazmatSpecial, 0.5
+		IvElementFrostMaleHazmatSpecial, 0.5
+		IvElementSoulMaleHazmatSpecial, 0.5
+		IvElementFireBikerSpecial, 0.5
+		IvElementElectricBikerSpecial, 0.5
+		IvElementToxicBikerSpecial, 0.5
+		IvElementFrostBikerSpecial, 0.5
+		IvElementSoulBikerSpecial, 0.5
+		IvElementFireLumberjackSpecial, 0.5
+		IvElementElectricLumberjackSpecial, 0.5
+		IvElementToxicLumberjackSpecial, 0.5
+		IvElementFrostLumberjackSpecial, 0.5
+		IvElementSoulLumberjackSpecial, 0.5
+		IvElementFireFemaleFatSpecial, 0.5
+		IvElementElectricFemaleFatSpecial, 0.5
+		IvElementToxicFemaleFatSpecial, 0.5
+		IvElementFrostFemaleFatSpecial, 0.5
+		IvElementSoulFemaleFatSpecial, 0.5
+		IvElementFireWightSpecial, 0.5
+		IvElementElectricWightSpecial, 0.5
+		IvElementToxicWightSpecial, 0.5
+		IvElementFrostWightSpecial, 0.5
+		IvElementSoulWightSpecial, 0.5
+	</csv>
+	<csv xpath="/entitygroups/entitygroup[@name='badassHordeStageGS640']/text()" delim="\n" op="add">
+		IvElementFireMarleneSpecial, 0.5
+		IvElementElectricMarleneSpecial, 0.5
+		IvElementToxicMarleneSpecial, 0.5
+		IvElementFrostMarleneSpecial, 0.5
+		IvElementSoulMarleneSpecial, 0.5
+		IvElementFireNurseSpecial, 0.5
+		IvElementElectricNurseSpecial, 0.5
+		IvElementToxicNurseSpecial, 0.5
+		IvElementFrostNurseSpecial, 0.5
+		IvElementSoulNurseSpecial, 0.5
+		IvElementFireBoeSpecial, 0.5
+		IvElementElectricBoeSpecial, 0.5
+		IvElementToxicBoeSpecial, 0.5
+		IvElementFrostBoeSpecial, 0.5
+		IvElementSoulBoeSpecial, 0.5
+		IvElementFireMaleHazmatSpecial, 0.5
+		IvElementElectricMaleHazmatSpecial, 0.5
+		IvElementToxicMaleHazmatSpecial, 0.5
+		IvElementFrostMaleHazmatSpecial, 0.5
+		IvElementSoulMaleHazmatSpecial, 0.5
+		IvElementFireBikerSpecial, 0.5
+		IvElementElectricBikerSpecial, 0.5
+		IvElementToxicBikerSpecial, 0.5
+		IvElementFrostBikerSpecial, 0.5
+		IvElementSoulBikerSpecial, 0.5
+		IvElementFireLumberjackSpecial, 0.5
+		IvElementElectricLumberjackSpecial, 0.5
+		IvElementToxicLumberjackSpecial, 0.5
+		IvElementFrostLumberjackSpecial, 0.5
+		IvElementSoulLumberjackSpecial, 0.5
+		IvElementFireFemaleFatSpecial, 0.5
+		IvElementElectricFemaleFatSpecial, 0.5
+		IvElementToxicFemaleFatSpecial, 0.5
+		IvElementFrostFemaleFatSpecial, 0.5
+		IvElementSoulFemaleFatSpecial, 0.5
+		IvElementFireFatHawaiianSpecial, 0.5
+		IvElementElectricFatHawaiianSpecial, 0.5
+		IvElementToxicFatHawaiianSpecial, 0.5
+		IvElementFrostFatHawaiianSpecial, 0.5
+		IvElementSoulFatHawaiianSpecial, 0.5
+		IvElementFireSkateboarderSpecial, 0.5
+		IvElementElectricSkateboarderSpecial, 0.5
+		IvElementToxicSkateboarderSpecial, 0.5
+		IvElementFrostSkateboarderSpecial, 0.5
+		IvElementSoulSkateboarderSpecial, 0.5
+		IvElementFireWightSpecial, 0.5
+		IvElementElectricWightSpecial, 0.5
+		IvElementToxicWightSpecial, 0.5
+		IvElementFrostWightSpecial, 0.5
+		IvElementSoulWightSpecial, 0.5
+	</csv>
+	<csv xpath="/entitygroups/entitygroup[@name='badassHordeStageGS681']/text()" delim="\n" op="add">
+		IvElementFirePartyGirlSpecial, 0.5
+		IvElementElectricPartyGirlSpecial, 0.5
+		IvElementToxicPartyGirlSpecial, 0.5
+		IvElementFrostPartyGirlSpecial, 0.5
+		IvElementSoulPartyGirlSpecial, 0.5
+		IvElementFireNurseSpecial, 0.5
+		IvElementElectricNurseSpecial, 0.5
+		IvElementToxicNurseSpecial, 0.5
+		IvElementFrostNurseSpecial, 0.5
+		IvElementSoulNurseSpecial, 0.5
+		IvElementFireSteveSpecial, 0.5
+		IvElementElectricSteveSpecial, 0.5
+		IvElementToxicSteveSpecial, 0.5
+		IvElementFrostSteveSpecial, 0.5
+		IvElementSoulSteveSpecial, 0.5
+		IvElementFireMoeSpecial, 0.5
+		IvElementElectricMoeSpecial, 0.5
+		IvElementToxicMoeSpecial, 0.5
+		IvElementFrostMoeSpecial, 0.5
+		IvElementSoulMoeSpecial, 0.5
+		IvElementFireMaleHazmatSpecial, 0.5
+		IvElementElectricMaleHazmatSpecial, 0.5
+		IvElementToxicMaleHazmatSpecial, 0.5
+		IvElementFrostMaleHazmatSpecial, 0.5
+		IvElementSoulMaleHazmatSpecial, 0.5
+		IvElementFireBikerSpecial, 0.5
+		IvElementElectricBikerSpecial, 0.5
+		IvElementToxicBikerSpecial, 0.5
+		IvElementFrostBikerSpecial, 0.5
+		IvElementSoulBikerSpecial, 0.5
+		IvElementFireFemaleFatSpecial, 0.5
+		IvElementElectricFemaleFatSpecial, 0.5
+		IvElementToxicFemaleFatSpecial, 0.5
+		IvElementFrostFemaleFatSpecial, 0.5
+		IvElementSoulFemaleFatSpecial, 0.5
+		IvElementFireSkateboarderSpecial, 0.5
+		IvElementElectricSkateboarderSpecial, 0.5
+		IvElementToxicSkateboarderSpecial, 0.5
+		IvElementFrostSkateboarderSpecial, 0.5
+		IvElementSoulSkateboarderSpecial, 0.5
+	</csv>
+	<csv xpath="/entitygroups/entitygroup[@name='badassHordeStageGS724']/text()" delim="\n" op="add">
+		IvElementFireArleneSpecial, 0.5
+		IvElementElectricArleneSpecial, 0.5
+		IvElementToxicArleneSpecial, 0.5
+		IvElementFrostArleneSpecial, 0.5
+		IvElementSoulArleneSpecial, 0.5
+		IvElementFirePartyGirlSpecial, 0.5
+		IvElementElectricPartyGirlSpecial, 0.5
+		IvElementToxicPartyGirlSpecial, 0.5
+		IvElementFrostPartyGirlSpecial, 0.5
+		IvElementSoulPartyGirlSpecial, 0.5
+		IvElementFireNurseSpecial, 0.5
+		IvElementElectricNurseSpecial, 0.5
+		IvElementToxicNurseSpecial, 0.5
+		IvElementFrostNurseSpecial, 0.5
+		IvElementSoulNurseSpecial, 0.5
+		IvElementFireSteveSpecial, 0.5
+		IvElementElectricSteveSpecial, 0.5
+		IvElementToxicSteveSpecial, 0.5
+		IvElementFrostSteveSpecial, 0.5
+		IvElementSoulSteveSpecial, 0.5
+		IvElementFireTomClarkSpecial, 0.5
+		IvElementElectricTomClarkSpecial, 0.5
+		IvElementToxicTomClarkSpecial, 0.5
+		IvElementFrostTomClarkSpecial, 0.5
+		IvElementSoulTomClarkSpecial, 0.5
+		IvElementFireDarleneSpecial, 0.5
+		IvElementElectricDarleneSpecial, 0.5
+		IvElementToxicDarleneSpecial, 0.5
+		IvElementFrostDarleneSpecial, 0.5
+		IvElementSoulDarleneSpecial, 0.5
+		IvElementFireLumberjackSpecial, 0.5
+		IvElementElectricLumberjackSpecial, 0.5
+		IvElementToxicLumberjackSpecial, 0.5
+		IvElementFrostLumberjackSpecial, 0.5
+		IvElementSoulLumberjackSpecial, 0.5
+		IvElementFireFemaleFatSpecial, 0.5
+		IvElementElectricFemaleFatSpecial, 0.5
+		IvElementToxicFemaleFatSpecial, 0.5
+		IvElementFrostFemaleFatSpecial, 0.5
+		IvElementSoulFemaleFatSpecial, 0.5
+		IvElementFireFatHawaiianSpecial, 0.5
+		IvElementElectricFatHawaiianSpecial, 0.5
+		IvElementToxicFatHawaiianSpecial, 0.5
+		IvElementFrostFatHawaiianSpecial, 0.5
+		IvElementSoulFatHawaiianSpecial, 0.5
+	</csv>
+	<csv xpath="/entitygroups/entitygroup[@name='badassHordeStageGS767']/text()" delim="\n" op="add">
+		IvElementFireNurseSpecial, 0.5
+		IvElementElectricNurseSpecial, 0.5
+		IvElementToxicNurseSpecial, 0.5
+		IvElementFrostNurseSpecial, 0.5
+		IvElementSoulNurseSpecial, 0.5
+		IvElementFireSteveSpecial, 0.5
+		IvElementElectricSteveSpecial, 0.5
+		IvElementToxicSteveSpecial, 0.5
+		IvElementFrostSteveSpecial, 0.5
+		IvElementSoulSteveSpecial, 0.5
+		IvElementFireTomClarkSpecial, 0.5
+		IvElementElectricTomClarkSpecial, 0.5
+		IvElementToxicTomClarkSpecial, 0.5
+		IvElementFrostTomClarkSpecial, 0.5
+		IvElementSoulTomClarkSpecial, 0.5
+		IvElementFireDarleneSpecial, 0.5
+		IvElementElectricDarleneSpecial, 0.5
+		IvElementToxicDarleneSpecial, 0.5
+		IvElementFrostDarleneSpecial, 0.5
+		IvElementSoulDarleneSpecial, 0.5
+		IvElementFireYoSpecial, 0.5
+		IvElementElectricYoSpecial, 0.5
+		IvElementToxicYoSpecial, 0.5
+		IvElementFrostYoSpecial, 0.5
+		IvElementSoulYoSpecial, 0.5
+		IvElementFireMaleHazmatSpecial, 0.5
+		IvElementElectricMaleHazmatSpecial, 0.5
+		IvElementToxicMaleHazmatSpecial, 0.5
+		IvElementFrostMaleHazmatSpecial, 0.5
+		IvElementSoulMaleHazmatSpecial, 0.5
+		IvElementFireBikerSpecial, 0.5
+		IvElementElectricBikerSpecial, 0.5
+		IvElementToxicBikerSpecial, 0.5
+		IvElementFrostBikerSpecial, 0.5
+		IvElementSoulBikerSpecial, 0.5
+		IvElementFireFatHawaiianSpecial, 0.5
+		IvElementElectricFatHawaiianSpecial, 0.5
+		IvElementToxicFatHawaiianSpecial, 0.5
+		IvElementFrostFatHawaiianSpecial, 0.5
+		IvElementSoulFatHawaiianSpecial, 0.5
+		IvElementFireWightSpecial, 0.5
+		IvElementElectricWightSpecial, 0.5
+		IvElementToxicWightSpecial, 0.5
+		IvElementFrostWightSpecial, 0.5
+		IvElementSoulWightSpecial, 0.5
+	</csv>
+	<csv xpath="/entitygroups/entitygroup[@name='badassHordeStageGS812']/text()" delim="\n" op="add">
+		IvElementFireArleneSpecial, 0.5
+		IvElementElectricArleneSpecial, 0.5
+		IvElementToxicArleneSpecial, 0.5
+		IvElementFrostArleneSpecial, 0.5
+		IvElementSoulArleneSpecial, 0.5
+		IvElementFireJanitorSpecial, 0.5
+		IvElementElectricJanitorSpecial, 0.5
+		IvElementToxicJanitorSpecial, 0.5
+		IvElementFrostJanitorSpecial, 0.5
+		IvElementSoulJanitorSpecial, 0.5
+		IvElementFireDarleneSpecial, 0.5
+		IvElementElectricDarleneSpecial, 0.5
+		IvElementToxicDarleneSpecial, 0.5
+		IvElementFrostDarleneSpecial, 0.5
+		IvElementSoulDarleneSpecial, 0.5
+		IvElementFireMaleHazmatSpecial, 0.5
+		IvElementElectricMaleHazmatSpecial, 0.5
+		IvElementToxicMaleHazmatSpecial, 0.5
+		IvElementFrostMaleHazmatSpecial, 0.5
+		IvElementSoulMaleHazmatSpecial, 0.5
+		IvElementFireBikerSpecial, 0.5
+		IvElementElectricBikerSpecial, 0.5
+		IvElementToxicBikerSpecial, 0.5
+		IvElementFrostBikerSpecial, 0.5
+		IvElementSoulBikerSpecial, 0.5
+		IvElementFireFemaleFatSpecial, 0.5
+		IvElementElectricFemaleFatSpecial, 0.5
+		IvElementToxicFemaleFatSpecial, 0.5
+		IvElementFrostFemaleFatSpecial, 0.5
+		IvElementSoulFemaleFatSpecial, 0.5
+		IvElementFireFatHawaiianSpecial, 0.5
+		IvElementElectricFatHawaiianSpecial, 0.5
+		IvElementToxicFatHawaiianSpecial, 0.5
+		IvElementFrostFatHawaiianSpecial, 0.5
+		IvElementSoulFatHawaiianSpecial, 0.5
+	</csv>
+	<csv xpath="/entitygroups/entitygroup[@name='badassHordeStageGS858']/text()" delim="\n" op="add">
+		IvElementFireMarleneSpecial, 0.5
+		IvElementElectricMarleneSpecial, 0.5
+		IvElementToxicMarleneSpecial, 0.5
+		IvElementFrostMarleneSpecial, 0.5
+		IvElementSoulMarleneSpecial, 0.5
+		IvElementFireJoeSpecial, 0.5
+		IvElementElectricJoeSpecial, 0.5
+		IvElementToxicJoeSpecial, 0.5
+		IvElementFrostJoeSpecial, 0.5
+		IvElementSoulJoeSpecial, 0.5
+		IvElementFireSteveSpecial, 0.5
+		IvElementElectricSteveSpecial, 0.5
+		IvElementToxicSteveSpecial, 0.5
+		IvElementFrostSteveSpecial, 0.5
+		IvElementSoulSteveSpecial, 0.5
+		IvElementFireUtilityWorkerSpecial, 0.5
+		IvElementElectricUtilityWorkerSpecial, 0.5
+		IvElementToxicUtilityWorkerSpecial, 0.5
+		IvElementFrostUtilityWorkerSpecial, 0.5
+		IvElementSoulUtilityWorkerSpecial, 0.5
+		IvElementFireFemaleFatSpecial, 0.5
+		IvElementElectricFemaleFatSpecial, 0.5
+		IvElementToxicFemaleFatSpecial, 0.5
+		IvElementFrostFemaleFatSpecial, 0.5
+		IvElementSoulFemaleFatSpecial, 0.5
+		IvElementFireFatHawaiianSpecial, 0.5
+		IvElementElectricFatHawaiianSpecial, 0.5
+		IvElementToxicFatHawaiianSpecial, 0.5
+		IvElementFrostFatHawaiianSpecial, 0.5
+		IvElementSoulFatHawaiianSpecial, 0.5
+	</csv>
+	<csv xpath="/entitygroups/entitygroup[@name='badassHordeStageGS905']/text()" delim="\n" op="add">
+		IvElementFireMarleneSpecial, 0.5
+		IvElementElectricMarleneSpecial, 0.5
+		IvElementToxicMarleneSpecial, 0.5
+		IvElementFrostMarleneSpecial, 0.5
+		IvElementSoulMarleneSpecial, 0.5
+		IvElementFireJoeSpecial, 0.5
+		IvElementElectricJoeSpecial, 0.5
+		IvElementToxicJoeSpecial, 0.5
+		IvElementFrostJoeSpecial, 0.5
+		IvElementSoulJoeSpecial, 0.5
+		IvElementFireBoeSpecial, 0.5
+		IvElementElectricBoeSpecial, 0.5
+		IvElementToxicBoeSpecial, 0.5
+		IvElementFrostBoeSpecial, 0.5
+		IvElementSoulBoeSpecial, 0.5
+		IvElementFireJanitorSpecial, 0.5
+		IvElementElectricJanitorSpecial, 0.5
+		IvElementToxicJanitorSpecial, 0.5
+		IvElementFrostJanitorSpecial, 0.5
+		IvElementSoulJanitorSpecial, 0.5
+		IvElementFireDarleneSpecial, 0.5
+		IvElementElectricDarleneSpecial, 0.5
+		IvElementToxicDarleneSpecial, 0.5
+		IvElementFrostDarleneSpecial, 0.5
+		IvElementSoulDarleneSpecial, 0.5
+		IvElementFireYoSpecial, 0.5
+		IvElementElectricYoSpecial, 0.5
+		IvElementToxicYoSpecial, 0.5
+		IvElementFrostYoSpecial, 0.5
+		IvElementSoulYoSpecial, 0.5
+		IvElementFireUtilityWorkerSpecial, 0.5
+		IvElementElectricUtilityWorkerSpecial, 0.5
+		IvElementToxicUtilityWorkerSpecial, 0.5
+		IvElementFrostUtilityWorkerSpecial, 0.5
+		IvElementSoulUtilityWorkerSpecial, 0.5
+		IvElementFireFemaleFatSpecial, 0.5
+		IvElementElectricFemaleFatSpecial, 0.5
+		IvElementToxicFemaleFatSpecial, 0.5
+		IvElementFrostFemaleFatSpecial, 0.5
+		IvElementSoulFemaleFatSpecial, 0.5
+		IvElementFireFatHawaiianSpecial, 0.5
+		IvElementElectricFatHawaiianSpecial, 0.5
+		IvElementToxicFatHawaiianSpecial, 0.5
+		IvElementFrostFatHawaiianSpecial, 0.5
+		IvElementSoulFatHawaiianSpecial, 0.5
+	</csv>
+	<csv xpath="/entitygroups/entitygroup[@name='badassHordeStageGS954']/text()" delim="\n" op="add">
+		IvElementFireArleneSpecial, 0.5
+		IvElementElectricArleneSpecial, 0.5
+		IvElementToxicArleneSpecial, 0.5
+		IvElementFrostArleneSpecial, 0.5
+		IvElementSoulArleneSpecial, 0.5
+		IvElementFireMarleneSpecial, 0.5
+		IvElementElectricMarleneSpecial, 0.5
+		IvElementToxicMarleneSpecial, 0.5
+		IvElementFrostMarleneSpecial, 0.5
+		IvElementSoulMarleneSpecial, 0.5
+		IvElementFirePartyGirlSpecial, 0.5
+		IvElementElectricPartyGirlSpecial, 0.5
+		IvElementToxicPartyGirlSpecial, 0.5
+		IvElementFrostPartyGirlSpecial, 0.5
+		IvElementSoulPartyGirlSpecial, 0.5
+		IvElementFireNurseSpecial, 0.5
+		IvElementElectricNurseSpecial, 0.5
+		IvElementToxicNurseSpecial, 0.5
+		IvElementFrostNurseSpecial, 0.5
+		IvElementSoulNurseSpecial, 0.5
+		IvElementFireBoeSpecial, 0.5
+		IvElementElectricBoeSpecial, 0.5
+		IvElementToxicBoeSpecial, 0.5
+		IvElementFrostBoeSpecial, 0.5
+		IvElementSoulBoeSpecial, 0.5
+		IvElementFireJanitorSpecial, 0.5
+		IvElementElectricJanitorSpecial, 0.5
+		IvElementToxicJanitorSpecial, 0.5
+		IvElementFrostJanitorSpecial, 0.5
+		IvElementSoulJanitorSpecial, 0.5
+		IvElementFireYoSpecial, 0.5
+		IvElementElectricYoSpecial, 0.5
+		IvElementToxicYoSpecial, 0.5
+		IvElementFrostYoSpecial, 0.5
+		IvElementSoulYoSpecial, 0.5
+		IvElementFireUtilityWorkerSpecial, 0.5
+		IvElementElectricUtilityWorkerSpecial, 0.5
+		IvElementToxicUtilityWorkerSpecial, 0.5
+		IvElementFrostUtilityWorkerSpecial, 0.5
+		IvElementSoulUtilityWorkerSpecial, 0.5
+		IvElementFireFatHawaiianSpecial, 0.5
+		IvElementElectricFatHawaiianSpecial, 0.5
+		IvElementToxicFatHawaiianSpecial, 0.5
+		IvElementFrostFatHawaiianSpecial, 0.5
+		IvElementSoulFatHawaiianSpecial, 0.5
+	</csv>
+	<csv xpath="/entitygroups/entitygroup[@name='badassHordeStageGS1003']/text()" delim="\n" op="add">
+		IvElementFirePartyGirlSpecial, 0.5
+		IvElementElectricPartyGirlSpecial, 0.5
+		IvElementToxicPartyGirlSpecial, 0.5
+		IvElementFrostPartyGirlSpecial, 0.5
+		IvElementSoulPartyGirlSpecial, 0.5
+		IvElementFireNurseSpecial, 0.5
+		IvElementElectricNurseSpecial, 0.5
+		IvElementToxicNurseSpecial, 0.5
+		IvElementFrostNurseSpecial, 0.5
+		IvElementSoulNurseSpecial, 0.5
+		IvElementFireJoeSpecial, 0.5
+		IvElementElectricJoeSpecial, 0.5
+		IvElementToxicJoeSpecial, 0.5
+		IvElementFrostJoeSpecial, 0.5
+		IvElementSoulJoeSpecial, 0.5
+		IvElementFireJanitorSpecial, 0.5
+		IvElementElectricJanitorSpecial, 0.5
+		IvElementToxicJanitorSpecial, 0.5
+		IvElementFrostJanitorSpecial, 0.5
+		IvElementSoulJanitorSpecial, 0.5
+		IvElementFireDarleneSpecial, 0.5
+		IvElementElectricDarleneSpecial, 0.5
+		IvElementToxicDarleneSpecial, 0.5
+		IvElementFrostDarleneSpecial, 0.5
+		IvElementSoulDarleneSpecial, 0.5
+		IvElementFireMaleHazmatSpecial, 0.5
+		IvElementElectricMaleHazmatSpecial, 0.5
+		IvElementToxicMaleHazmatSpecial, 0.5
+		IvElementFrostMaleHazmatSpecial, 0.5
+		IvElementSoulMaleHazmatSpecial, 0.5
+		IvElementFireBikerSpecial, 0.5
+		IvElementElectricBikerSpecial, 0.5
+		IvElementToxicBikerSpecial, 0.5
+		IvElementFrostBikerSpecial, 0.5
+		IvElementSoulBikerSpecial, 0.5
+		IvElementFireLumberjackSpecial, 0.5
+		IvElementElectricLumberjackSpecial, 0.5
+		IvElementToxicLumberjackSpecial, 0.5
+		IvElementFrostLumberjackSpecial, 0.5
+		IvElementSoulLumberjackSpecial, 0.5
+		IvElementFireFatHawaiianSpecial, 0.5
+		IvElementElectricFatHawaiianSpecial, 0.5
+		IvElementToxicFatHawaiianSpecial, 0.5
+		IvElementFrostFatHawaiianSpecial, 0.5
+		IvElementSoulFatHawaiianSpecial, 0.5
+	</csv>
+	<csv xpath="/entitygroups/entitygroup[@name='badassHordeStageGS1054']/text()" delim="\n" op="add">
+		IvElementFirePartyGirlSpecial, 0.5
+		IvElementElectricPartyGirlSpecial, 0.5
+		IvElementToxicPartyGirlSpecial, 0.5
+		IvElementFrostPartyGirlSpecial, 0.5
+		IvElementSoulPartyGirlSpecial, 0.5
+		IvElementFireJoeSpecial, 0.5
+		IvElementElectricJoeSpecial, 0.5
+		IvElementToxicJoeSpecial, 0.5
+		IvElementFrostJoeSpecial, 0.5
+		IvElementSoulJoeSpecial, 0.5
+		IvElementFireSteveSpecial, 0.5
+		IvElementElectricSteveSpecial, 0.5
+		IvElementToxicSteveSpecial, 0.5
+		IvElementFrostSteveSpecial, 0.5
+		IvElementSoulSteveSpecial, 0.5
+		IvElementFireMoeSpecial, 0.5
+		IvElementElectricMoeSpecial, 0.5
+		IvElementToxicMoeSpecial, 0.5
+		IvElementFrostMoeSpecial, 0.5
+		IvElementSoulMoeSpecial, 0.5
+		IvElementFireYoSpecial, 0.5
+		IvElementElectricYoSpecial, 0.5
+		IvElementToxicYoSpecial, 0.5
+		IvElementFrostYoSpecial, 0.5
+		IvElementSoulYoSpecial, 0.5
+		IvElementFireUtilityWorkerSpecial, 0.5
+		IvElementElectricUtilityWorkerSpecial, 0.5
+		IvElementToxicUtilityWorkerSpecial, 0.5
+		IvElementFrostUtilityWorkerSpecial, 0.5
+		IvElementSoulUtilityWorkerSpecial, 0.5
+		IvElementFireMaleHazmatSpecial, 0.5
+		IvElementElectricMaleHazmatSpecial, 0.5
+		IvElementToxicMaleHazmatSpecial, 0.5
+		IvElementFrostMaleHazmatSpecial, 0.5
+		IvElementSoulMaleHazmatSpecial, 0.5
+		IvElementFireBikerSpecial, 0.5
+		IvElementElectricBikerSpecial, 0.5
+		IvElementToxicBikerSpecial, 0.5
+		IvElementFrostBikerSpecial, 0.5
+		IvElementSoulBikerSpecial, 0.5
+		IvElementFireLumberjackSpecial, 0.5
+		IvElementElectricLumberjackSpecial, 0.5
+		IvElementToxicLumberjackSpecial, 0.5
+		IvElementFrostLumberjackSpecial, 0.5
+		IvElementSoulLumberjackSpecial, 0.5
+	</csv>
+	<csv xpath="/entitygroups/entitygroup[@name='badassHordeStageGS1106']/text()" delim="\n" op="add">
+		IvElementFireNurseSpecial, 0.5
+		IvElementElectricNurseSpecial, 0.5
+		IvElementToxicNurseSpecial, 0.5
+		IvElementFrostNurseSpecial, 0.5
+		IvElementSoulNurseSpecial, 0.5
+		IvElementFireTomClarkSpecial, 0.5
+		IvElementElectricTomClarkSpecial, 0.5
+		IvElementToxicTomClarkSpecial, 0.5
+		IvElementFrostTomClarkSpecial, 0.5
+		IvElementSoulTomClarkSpecial, 0.5
+		IvElementFireBoeSpecial, 0.5
+		IvElementElectricBoeSpecial, 0.5
+		IvElementToxicBoeSpecial, 0.5
+		IvElementFrostBoeSpecial, 0.5
+		IvElementSoulBoeSpecial, 0.5
+		IvElementFireMoeSpecial, 0.5
+		IvElementElectricMoeSpecial, 0.5
+		IvElementToxicMoeSpecial, 0.5
+		IvElementFrostMoeSpecial, 0.5
+		IvElementSoulMoeSpecial, 0.5
+		IvElementFireSkateboarderSpecial, 0.5
+		IvElementElectricSkateboarderSpecial, 0.5
+		IvElementToxicSkateboarderSpecial, 0.5
+		IvElementFrostSkateboarderSpecial, 0.5
+		IvElementSoulSkateboarderSpecial, 0.5
+		IvElementFireWightSpecial, 0.5
+		IvElementElectricWightSpecial, 0.5
+		IvElementToxicWightSpecial, 0.5
+		IvElementFrostWightSpecial, 0.5
+		IvElementSoulWightSpecial, 0.5
+	</csv>
+	<csv xpath="/entitygroups/entitygroup[@name='badassHordeStageGS1159']/text()" delim="\n" op="add">
+		IvElementFireJoeSpecial, 0.5
+		IvElementElectricJoeSpecial, 0.5
+		IvElementToxicJoeSpecial, 0.5
+		IvElementFrostJoeSpecial, 0.5
+		IvElementSoulJoeSpecial, 0.5
+		IvElementFireMoeSpecial, 0.5
+		IvElementElectricMoeSpecial, 0.5
+		IvElementToxicMoeSpecial, 0.5
+		IvElementFrostMoeSpecial, 0.5
+		IvElementSoulMoeSpecial, 0.5
+		IvElementFireYoSpecial, 0.5
+		IvElementElectricYoSpecial, 0.5
+		IvElementToxicYoSpecial, 0.5
+		IvElementFrostYoSpecial, 0.5
+		IvElementSoulYoSpecial, 0.5
+		IvElementFireMaleHazmatSpecial, 0.5
+		IvElementElectricMaleHazmatSpecial, 0.5
+		IvElementToxicMaleHazmatSpecial, 0.5
+		IvElementFrostMaleHazmatSpecial, 0.5
+		IvElementSoulMaleHazmatSpecial, 0.5
+		IvElementFireBikerSpecial, 0.5
+		IvElementElectricBikerSpecial, 0.5
+		IvElementToxicBikerSpecial, 0.5
+		IvElementFrostBikerSpecial, 0.5
+		IvElementSoulBikerSpecial, 0.5
+		IvElementFireFemaleFatSpecial, 0.5
+		IvElementElectricFemaleFatSpecial, 0.5
+		IvElementToxicFemaleFatSpecial, 0.5
+		IvElementFrostFemaleFatSpecial, 0.5
+		IvElementSoulFemaleFatSpecial, 0.5
+		IvElementFireFatHawaiianSpecial, 0.5
+		IvElementElectricFatHawaiianSpecial, 0.5
+		IvElementToxicFatHawaiianSpecial, 0.5
+		IvElementFrostFatHawaiianSpecial, 0.5
+		IvElementSoulFatHawaiianSpecial, 0.5
+		IvElementFireSkateboarderSpecial, 0.5
+		IvElementElectricSkateboarderSpecial, 0.5
+		IvElementToxicSkateboarderSpecial, 0.5
+		IvElementFrostSkateboarderSpecial, 0.5
+		IvElementSoulSkateboarderSpecial, 0.5
+		IvElementFireWightSpecial, 0.5
+		IvElementElectricWightSpecial, 0.5
+		IvElementToxicWightSpecial, 0.5
+		IvElementFrostWightSpecial, 0.5
+		IvElementSoulWightSpecial, 0.5
+	</csv>
+	<csv xpath="/entitygroups/entitygroup[@name='badassHordeStageGS1213']/text()" delim="\n" op="add">
+		IvElementFireNurseSpecial, 0.5
+		IvElementElectricNurseSpecial, 0.5
+		IvElementToxicNurseSpecial, 0.5
+		IvElementFrostNurseSpecial, 0.5
+		IvElementSoulNurseSpecial, 0.5
+		IvElementFireSteveSpecial, 0.5
+		IvElementElectricSteveSpecial, 0.5
+		IvElementToxicSteveSpecial, 0.5
+		IvElementFrostSteveSpecial, 0.5
+		IvElementSoulSteveSpecial, 0.5
+		IvElementFireTomClarkSpecial, 0.5
+		IvElementElectricTomClarkSpecial, 0.5
+		IvElementToxicTomClarkSpecial, 0.5
+		IvElementFrostTomClarkSpecial, 0.5
+		IvElementSoulTomClarkSpecial, 0.5
+		IvElementFireBusinessManSpecial, 0.5
+		IvElementElectricBusinessManSpecial, 0.5
+		IvElementToxicBusinessManSpecial, 0.5
+		IvElementFrostBusinessManSpecial, 0.5
+		IvElementSoulBusinessManSpecial, 0.5
+		IvElementFireBoeSpecial, 0.5
+		IvElementElectricBoeSpecial, 0.5
+		IvElementToxicBoeSpecial, 0.5
+		IvElementFrostBoeSpecial, 0.5
+		IvElementSoulBoeSpecial, 0.5
+		IvElementFireMoeSpecial, 0.5
+		IvElementElectricMoeSpecial, 0.5
+		IvElementToxicMoeSpecial, 0.5
+		IvElementFrostMoeSpecial, 0.5
+		IvElementSoulMoeSpecial, 0.5
+		IvElementFireYoSpecial, 0.5
+		IvElementElectricYoSpecial, 0.5
+		IvElementToxicYoSpecial, 0.5
+		IvElementFrostYoSpecial, 0.5
+		IvElementSoulYoSpecial, 0.5
+		IvElementFireFatHawaiianSpecial, 0.5
+		IvElementElectricFatHawaiianSpecial, 0.5
+		IvElementToxicFatHawaiianSpecial, 0.5
+		IvElementFrostFatHawaiianSpecial, 0.5
+		IvElementSoulFatHawaiianSpecial, 0.5
+		IvElementFireSkateboarderSpecial, 0.5
+		IvElementElectricSkateboarderSpecial, 0.5
+		IvElementToxicSkateboarderSpecial, 0.5
+		IvElementFrostSkateboarderSpecial, 0.5
+		IvElementSoulSkateboarderSpecial, 0.5
+		IvElementFireWightSpecial, 0.5
+		IvElementElectricWightSpecial, 0.5
+		IvElementToxicWightSpecial, 0.5
+		IvElementFrostWightSpecial, 0.5
+		IvElementSoulWightSpecial, 0.5
+	</csv>
+	<csv xpath="/entitygroups/entitygroup[@name='badassHordeStageGS1269']/text()" delim="\n" op="add">
+		IvElementFireArleneSpecial, 0.5
+		IvElementElectricArleneSpecial, 0.5
+		IvElementToxicArleneSpecial, 0.5
+		IvElementFrostArleneSpecial, 0.5
+		IvElementSoulArleneSpecial, 0.5
+		IvElementFireTomClarkSpecial, 0.5
+		IvElementElectricTomClarkSpecial, 0.5
+		IvElementToxicTomClarkSpecial, 0.5
+		IvElementFrostTomClarkSpecial, 0.5
+		IvElementSoulTomClarkSpecial, 0.5
+		IvElementFireJanitorSpecial, 0.5
+		IvElementElectricJanitorSpecial, 0.5
+		IvElementToxicJanitorSpecial, 0.5
+		IvElementFrostJanitorSpecial, 0.5
+		IvElementSoulJanitorSpecial, 0.5
+		IvElementFireMaleHazmatSpecial, 0.5
+		IvElementElectricMaleHazmatSpecial, 0.5
+		IvElementToxicMaleHazmatSpecial, 0.5
+		IvElementFrostMaleHazmatSpecial, 0.5
+		IvElementSoulMaleHazmatSpecial, 0.5
+		IvElementFireSkateboarderSpecial, 0.5
+		IvElementElectricSkateboarderSpecial, 0.5
+		IvElementToxicSkateboarderSpecial, 0.5
+		IvElementFrostSkateboarderSpecial, 0.5
+		IvElementSoulSkateboarderSpecial, 0.5
+	</csv>
+	<csv xpath="/entitygroups/entitygroup[@name='badassHordeStageGS1326']/text()" delim="\n" op="add">
+		IvElementFireNurseSpecial, 0.5
+		IvElementElectricNurseSpecial, 0.5
+		IvElementToxicNurseSpecial, 0.5
+		IvElementFrostNurseSpecial, 0.5
+		IvElementSoulNurseSpecial, 0.5
+		IvElementFireMoeSpecial, 0.5
+		IvElementElectricMoeSpecial, 0.5
+		IvElementToxicMoeSpecial, 0.5
+		IvElementFrostMoeSpecial, 0.5
+		IvElementSoulMoeSpecial, 0.5
+		IvElementFireDarleneSpecial, 0.5
+		IvElementElectricDarleneSpecial, 0.5
+		IvElementToxicDarleneSpecial, 0.5
+		IvElementFrostDarleneSpecial, 0.5
+		IvElementSoulDarleneSpecial, 0.5
+		IvElementFireUtilityWorkerSpecial, 0.5
+		IvElementElectricUtilityWorkerSpecial, 0.5
+		IvElementToxicUtilityWorkerSpecial, 0.5
+		IvElementFrostUtilityWorkerSpecial, 0.5
+		IvElementSoulUtilityWorkerSpecial, 0.5
+		IvElementFireLumberjackSpecial, 0.5
+		IvElementElectricLumberjackSpecial, 0.5
+		IvElementToxicLumberjackSpecial, 0.5
+		IvElementFrostLumberjackSpecial, 0.5
+		IvElementSoulLumberjackSpecial, 0.5
+		IvElementFireWightSpecial, 0.5
+		IvElementElectricWightSpecial, 0.5
+		IvElementToxicWightSpecial, 0.5
+		IvElementFrostWightSpecial, 0.5
+		IvElementSoulWightSpecial, 0.5
+	</csv>
+	<csv xpath="/entitygroups/entitygroup[@name='badassHordeStageGS1383']/text()" delim="\n" op="add">
+		IvElementFirePartyGirlSpecial, 0.5
+		IvElementElectricPartyGirlSpecial, 0.5
+		IvElementToxicPartyGirlSpecial, 0.5
+		IvElementFrostPartyGirlSpecial, 0.5
+		IvElementSoulPartyGirlSpecial, 0.5
+		IvElementFireSteveSpecial, 0.5
+		IvElementElectricSteveSpecial, 0.5
+		IvElementToxicSteveSpecial, 0.5
+		IvElementFrostSteveSpecial, 0.5
+		IvElementSoulSteveSpecial, 0.5
+		IvElementFireTomClarkSpecial, 0.5
+		IvElementElectricTomClarkSpecial, 0.5
+		IvElementToxicTomClarkSpecial, 0.5
+		IvElementFrostTomClarkSpecial, 0.5
+		IvElementSoulTomClarkSpecial, 0.5
+		IvElementFireJanitorSpecial, 0.5
+		IvElementElectricJanitorSpecial, 0.5
+		IvElementToxicJanitorSpecial, 0.5
+		IvElementFrostJanitorSpecial, 0.5
+		IvElementSoulJanitorSpecial, 0.5
+		IvElementFireMoeSpecial, 0.5
+		IvElementElectricMoeSpecial, 0.5
+		IvElementToxicMoeSpecial, 0.5
+		IvElementFrostMoeSpecial, 0.5
+		IvElementSoulMoeSpecial, 0.5
+		IvElementFireDarleneSpecial, 0.5
+		IvElementElectricDarleneSpecial, 0.5
+		IvElementToxicDarleneSpecial, 0.5
+		IvElementFrostDarleneSpecial, 0.5
+		IvElementSoulDarleneSpecial, 0.5
+		IvElementFireFemaleFatSpecial, 0.5
+		IvElementElectricFemaleFatSpecial, 0.5
+		IvElementToxicFemaleFatSpecial, 0.5
+		IvElementFrostFemaleFatSpecial, 0.5
+		IvElementSoulFemaleFatSpecial, 0.5
+	</csv>
+	<csv xpath="/entitygroups/entitygroup[@name='badassHordeStageGS1442']/text()" delim="\n" op="add">
+		IvElementFireMarleneSpecial, 0.5
+		IvElementElectricMarleneSpecial, 0.5
+		IvElementToxicMarleneSpecial, 0.5
+		IvElementFrostMarleneSpecial, 0.5
+		IvElementSoulMarleneSpecial, 0.5
+		IvElementFireJoeSpecial, 0.5
+		IvElementElectricJoeSpecial, 0.5
+		IvElementToxicJoeSpecial, 0.5
+		IvElementFrostJoeSpecial, 0.5
+		IvElementSoulJoeSpecial, 0.5
+		IvElementFireTomClarkSpecial, 0.5
+		IvElementElectricTomClarkSpecial, 0.5
+		IvElementToxicTomClarkSpecial, 0.5
+		IvElementFrostTomClarkSpecial, 0.5
+		IvElementSoulTomClarkSpecial, 0.5
+		IvElementFireBoeSpecial, 0.5
+		IvElementElectricBoeSpecial, 0.5
+		IvElementToxicBoeSpecial, 0.5
+		IvElementFrostBoeSpecial, 0.5
+		IvElementSoulBoeSpecial, 0.5
+		IvElementFireJanitorSpecial, 0.5
+		IvElementElectricJanitorSpecial, 0.5
+		IvElementToxicJanitorSpecial, 0.5
+		IvElementFrostJanitorSpecial, 0.5
+		IvElementSoulJanitorSpecial, 0.5
+		IvElementFireBikerSpecial, 0.5
+		IvElementElectricBikerSpecial, 0.5
+		IvElementToxicBikerSpecial, 0.5
+		IvElementFrostBikerSpecial, 0.5
+		IvElementSoulBikerSpecial, 0.5
+		IvElementFireLumberjackSpecial, 0.5
+		IvElementElectricLumberjackSpecial, 0.5
+		IvElementToxicLumberjackSpecial, 0.5
+		IvElementFrostLumberjackSpecial, 0.5
+		IvElementSoulLumberjackSpecial, 0.5
+		IvElementFireFemaleFatSpecial, 0.5
+		IvElementElectricFemaleFatSpecial, 0.5
+		IvElementToxicFemaleFatSpecial, 0.5
+		IvElementFrostFemaleFatSpecial, 0.5
+		IvElementSoulFemaleFatSpecial, 0.5
+	</csv>
+	<csv xpath="/entitygroups/entitygroup[@name='badassHordeStageGS1503']/text()" delim="\n" op="add">
+		IvElementFireArleneSpecial, 0.5
+		IvElementElectricArleneSpecial, 0.5
+		IvElementToxicArleneSpecial, 0.5
+		IvElementFrostArleneSpecial, 0.5
+		IvElementSoulArleneSpecial, 0.5
+		IvElementFireMarleneSpecial, 0.5
+		IvElementElectricMarleneSpecial, 0.5
+		IvElementToxicMarleneSpecial, 0.5
+		IvElementFrostMarleneSpecial, 0.5
+		IvElementSoulMarleneSpecial, 0.5
+		IvElementFireBusinessManSpecial, 0.5
+		IvElementElectricBusinessManSpecial, 0.5
+		IvElementToxicBusinessManSpecial, 0.5
+		IvElementFrostBusinessManSpecial, 0.5
+		IvElementSoulBusinessManSpecial, 0.5
+		IvElementFireBoeSpecial, 0.5
+		IvElementElectricBoeSpecial, 0.5
+		IvElementToxicBoeSpecial, 0.5
+		IvElementFrostBoeSpecial, 0.5
+		IvElementSoulBoeSpecial, 0.5
+		IvElementFireJanitorSpecial, 0.5
+		IvElementElectricJanitorSpecial, 0.5
+		IvElementToxicJanitorSpecial, 0.5
+		IvElementFrostJanitorSpecial, 0.5
+		IvElementSoulJanitorSpecial, 0.5
+		IvElementFireMoeSpecial, 0.5
+		IvElementElectricMoeSpecial, 0.5
+		IvElementToxicMoeSpecial, 0.5
+		IvElementFrostMoeSpecial, 0.5
+		IvElementSoulMoeSpecial, 0.5
+		IvElementFireLumberjackSpecial, 0.5
+		IvElementElectricLumberjackSpecial, 0.5
+		IvElementToxicLumberjackSpecial, 0.5
+		IvElementFrostLumberjackSpecial, 0.5
+		IvElementSoulLumberjackSpecial, 0.5
+		IvElementFireFemaleFatSpecial, 0.5
+		IvElementElectricFemaleFatSpecial, 0.5
+		IvElementToxicFemaleFatSpecial, 0.5
+		IvElementFrostFemaleFatSpecial, 0.5
+		IvElementSoulFemaleFatSpecial, 0.5
+		IvElementFireFatHawaiianSpecial, 0.5
+		IvElementElectricFatHawaiianSpecial, 0.5
+		IvElementToxicFatHawaiianSpecial, 0.5
+		IvElementFrostFatHawaiianSpecial, 0.5
+		IvElementSoulFatHawaiianSpecial, 0.5
+		IvElementFireSkateboarderSpecial, 0.5
+		IvElementElectricSkateboarderSpecial, 0.5
+		IvElementToxicSkateboarderSpecial, 0.5
+		IvElementFrostSkateboarderSpecial, 0.5
+		IvElementSoulSkateboarderSpecial, 0.5
+	</csv>
+	<csv xpath="/entitygroups/entitygroup[@name='badassHordeStageGS1564']/text()" delim="\n" op="add">
+		IvElementFirePartyGirlSpecial, 0.5
+		IvElementElectricPartyGirlSpecial, 0.5
+		IvElementToxicPartyGirlSpecial, 0.5
+		IvElementFrostPartyGirlSpecial, 0.5
+		IvElementSoulPartyGirlSpecial, 0.5
+		IvElementFireNurseSpecial, 0.5
+		IvElementElectricNurseSpecial, 0.5
+		IvElementToxicNurseSpecial, 0.5
+		IvElementFrostNurseSpecial, 0.5
+		IvElementSoulNurseSpecial, 0.5
+		IvElementFireBusinessManSpecial, 0.5
+		IvElementElectricBusinessManSpecial, 0.5
+		IvElementToxicBusinessManSpecial, 0.5
+		IvElementFrostBusinessManSpecial, 0.5
+		IvElementSoulBusinessManSpecial, 0.5
+		IvElementFireMoeSpecial, 0.5
+		IvElementElectricMoeSpecial, 0.5
+		IvElementToxicMoeSpecial, 0.5
+		IvElementFrostMoeSpecial, 0.5
+		IvElementSoulMoeSpecial, 0.5
+		IvElementFireDarleneSpecial, 0.5
+		IvElementElectricDarleneSpecial, 0.5
+		IvElementToxicDarleneSpecial, 0.5
+		IvElementFrostDarleneSpecial, 0.5
+		IvElementSoulDarleneSpecial, 0.5
+		IvElementFireYoSpecial, 0.5
+		IvElementElectricYoSpecial, 0.5
+		IvElementToxicYoSpecial, 0.5
+		IvElementFrostYoSpecial, 0.5
+		IvElementSoulYoSpecial, 0.5
+		IvElementFireLumberjackSpecial, 0.5
+		IvElementElectricLumberjackSpecial, 0.5
+		IvElementToxicLumberjackSpecial, 0.5
+		IvElementFrostLumberjackSpecial, 0.5
+		IvElementSoulLumberjackSpecial, 0.5
+		IvElementFireSkateboarderSpecial, 0.5
+		IvElementElectricSkateboarderSpecial, 0.5
+		IvElementToxicSkateboarderSpecial, 0.5
+		IvElementFrostSkateboarderSpecial, 0.5
+		IvElementSoulSkateboarderSpecial, 0.5
+	</csv>
+	<csv xpath="/entitygroups/entitygroup[@name='badassHordeStageGS1626']/text()" delim="\n" op="add">
+		IvElementFireArleneSpecial, 0.5
+		IvElementElectricArleneSpecial, 0.5
+		IvElementToxicArleneSpecial, 0.5
+		IvElementFrostArleneSpecial, 0.5
+		IvElementSoulArleneSpecial, 0.5
+		IvElementFireMarleneSpecial, 0.5
+		IvElementElectricMarleneSpecial, 0.5
+		IvElementToxicMarleneSpecial, 0.5
+		IvElementFrostMarleneSpecial, 0.5
+		IvElementSoulMarleneSpecial, 0.5
+		IvElementFireTomClarkSpecial, 0.5
+		IvElementElectricTomClarkSpecial, 0.5
+		IvElementToxicTomClarkSpecial, 0.5
+		IvElementFrostTomClarkSpecial, 0.5
+		IvElementSoulTomClarkSpecial, 0.5
+		IvElementFireBoeSpecial, 0.5
+		IvElementElectricBoeSpecial, 0.5
+		IvElementToxicBoeSpecial, 0.5
+		IvElementFrostBoeSpecial, 0.5
+		IvElementSoulBoeSpecial, 0.5
+		IvElementFireJanitorSpecial, 0.5
+		IvElementElectricJanitorSpecial, 0.5
+		IvElementToxicJanitorSpecial, 0.5
+		IvElementFrostJanitorSpecial, 0.5
+		IvElementSoulJanitorSpecial, 0.5
+		IvElementFireMaleHazmatSpecial, 0.5
+		IvElementElectricMaleHazmatSpecial, 0.5
+		IvElementToxicMaleHazmatSpecial, 0.5
+		IvElementFrostMaleHazmatSpecial, 0.5
+		IvElementSoulMaleHazmatSpecial, 0.5
+		IvElementFireBikerSpecial, 0.5
+		IvElementElectricBikerSpecial, 0.5
+		IvElementToxicBikerSpecial, 0.5
+		IvElementFrostBikerSpecial, 0.5
+		IvElementSoulBikerSpecial, 0.5
+		IvElementFireLumberjackSpecial, 0.5
+		IvElementElectricLumberjackSpecial, 0.5
+		IvElementToxicLumberjackSpecial, 0.5
+		IvElementFrostLumberjackSpecial, 0.5
+		IvElementSoulLumberjackSpecial, 0.5
+		IvElementFireFemaleFatSpecial, 0.5
+		IvElementElectricFemaleFatSpecial, 0.5
+		IvElementToxicFemaleFatSpecial, 0.5
+		IvElementFrostFemaleFatSpecial, 0.5
+		IvElementSoulFemaleFatSpecial, 0.5
+	</csv>
+	<csv xpath="/entitygroups/entitygroup[@name='badassHordeStageGS1690']/text()" delim="\n" op="add">
+		IvElementFireArleneSpecial, 0.5
+		IvElementElectricArleneSpecial, 0.5
+		IvElementToxicArleneSpecial, 0.5
+		IvElementFrostArleneSpecial, 0.5
+		IvElementSoulArleneSpecial, 0.5
+		IvElementFireNurseSpecial, 0.5
+		IvElementElectricNurseSpecial, 0.5
+		IvElementToxicNurseSpecial, 0.5
+		IvElementFrostNurseSpecial, 0.5
+		IvElementSoulNurseSpecial, 0.5
+		IvElementFireSteveSpecial, 0.5
+		IvElementElectricSteveSpecial, 0.5
+		IvElementToxicSteveSpecial, 0.5
+		IvElementFrostSteveSpecial, 0.5
+		IvElementSoulSteveSpecial, 0.5
+		IvElementFireMoeSpecial, 0.5
+		IvElementElectricMoeSpecial, 0.5
+		IvElementToxicMoeSpecial, 0.5
+		IvElementFrostMoeSpecial, 0.5
+		IvElementSoulMoeSpecial, 0.5
+		IvElementFireDarleneSpecial, 0.5
+		IvElementElectricDarleneSpecial, 0.5
+		IvElementToxicDarleneSpecial, 0.5
+		IvElementFrostDarleneSpecial, 0.5
+		IvElementSoulDarleneSpecial, 0.5
+		IvElementFireMaleHazmatSpecial, 0.5
+		IvElementElectricMaleHazmatSpecial, 0.5
+		IvElementToxicMaleHazmatSpecial, 0.5
+		IvElementFrostMaleHazmatSpecial, 0.5
+		IvElementSoulMaleHazmatSpecial, 0.5
+		IvElementFireLumberjackSpecial, 0.5
+		IvElementElectricLumberjackSpecial, 0.5
+		IvElementToxicLumberjackSpecial, 0.5
+		IvElementFrostLumberjackSpecial, 0.5
+		IvElementSoulLumberjackSpecial, 0.5
+		IvElementFireFatHawaiianSpecial, 0.5
+		IvElementElectricFatHawaiianSpecial, 0.5
+		IvElementToxicFatHawaiianSpecial, 0.5
+		IvElementFrostFatHawaiianSpecial, 0.5
+		IvElementSoulFatHawaiianSpecial, 0.5
+	</csv>
+	<csv xpath="/entitygroups/entitygroup[@name='badassHordeStageGS1755']/text()" delim="\n" op="add">
+		IvElementFireSteveSpecial, 0.5
+		IvElementElectricSteveSpecial, 0.5
+		IvElementToxicSteveSpecial, 0.5
+		IvElementFrostSteveSpecial, 0.5
+		IvElementSoulSteveSpecial, 0.5
+		IvElementFireBusinessManSpecial, 0.5
+		IvElementElectricBusinessManSpecial, 0.5
+		IvElementToxicBusinessManSpecial, 0.5
+		IvElementFrostBusinessManSpecial, 0.5
+		IvElementSoulBusinessManSpecial, 0.5
+		IvElementFireBoeSpecial, 0.5
+		IvElementElectricBoeSpecial, 0.5
+		IvElementToxicBoeSpecial, 0.5
+		IvElementFrostBoeSpecial, 0.5
+		IvElementSoulBoeSpecial, 0.5
+		IvElementFireMaleHazmatSpecial, 0.5
+		IvElementElectricMaleHazmatSpecial, 0.5
+		IvElementToxicMaleHazmatSpecial, 0.5
+		IvElementFrostMaleHazmatSpecial, 0.5
+		IvElementSoulMaleHazmatSpecial, 0.5
+		IvElementFireLumberjackSpecial, 0.5
+		IvElementElectricLumberjackSpecial, 0.5
+		IvElementToxicLumberjackSpecial, 0.5
+		IvElementFrostLumberjackSpecial, 0.5
+		IvElementSoulLumberjackSpecial, 0.5
+		IvElementFireFemaleFatSpecial, 0.5
+		IvElementElectricFemaleFatSpecial, 0.5
+		IvElementToxicFemaleFatSpecial, 0.5
+		IvElementFrostFemaleFatSpecial, 0.5
+		IvElementSoulFemaleFatSpecial, 0.5
+		IvElementFireFatHawaiianSpecial, 0.5
+		IvElementElectricFatHawaiianSpecial, 0.5
+		IvElementToxicFatHawaiianSpecial, 0.5
+		IvElementFrostFatHawaiianSpecial, 0.5
+		IvElementSoulFatHawaiianSpecial, 0.5
+		IvElementFireWightSpecial, 0.5
+		IvElementElectricWightSpecial, 0.5
+		IvElementToxicWightSpecial, 0.5
+		IvElementFrostWightSpecial, 0.5
+		IvElementSoulWightSpecial, 0.5
+	</csv>
+	<csv xpath="/entitygroups/entitygroup[@name='badassHordeStageGS1821']/text()" delim="\n" op="add">
+		IvElementFireMarleneSpecial, 0.5
+		IvElementElectricMarleneSpecial, 0.5
+		IvElementToxicMarleneSpecial, 0.5
+		IvElementFrostMarleneSpecial, 0.5
+		IvElementSoulMarleneSpecial, 0.5
+		IvElementFireSteveSpecial, 0.5
+		IvElementElectricSteveSpecial, 0.5
+		IvElementToxicSteveSpecial, 0.5
+		IvElementFrostSteveSpecial, 0.5
+		IvElementSoulSteveSpecial, 0.5
+		IvElementFireMoeSpecial, 0.5
+		IvElementElectricMoeSpecial, 0.5
+		IvElementToxicMoeSpecial, 0.5
+		IvElementFrostMoeSpecial, 0.5
+		IvElementSoulMoeSpecial, 0.5
+		IvElementFireYoSpecial, 0.5
+		IvElementElectricYoSpecial, 0.5
+		IvElementToxicYoSpecial, 0.5
+		IvElementFrostYoSpecial, 0.5
+		IvElementSoulYoSpecial, 0.5
+		IvElementFireUtilityWorkerSpecial, 0.5
+		IvElementElectricUtilityWorkerSpecial, 0.5
+		IvElementToxicUtilityWorkerSpecial, 0.5
+		IvElementFrostUtilityWorkerSpecial, 0.5
+		IvElementSoulUtilityWorkerSpecial, 0.5
+		IvElementFireLumberjackSpecial, 0.5
+		IvElementElectricLumberjackSpecial, 0.5
+		IvElementToxicLumberjackSpecial, 0.5
+		IvElementFrostLumberjackSpecial, 0.5
+		IvElementSoulLumberjackSpecial, 0.5
+		IvElementFireFemaleFatSpecial, 0.5
+		IvElementElectricFemaleFatSpecial, 0.5
+		IvElementToxicFemaleFatSpecial, 0.5
+		IvElementFrostFemaleFatSpecial, 0.5
+		IvElementSoulFemaleFatSpecial, 0.5
+		IvElementFireWightSpecial, 0.5
+		IvElementElectricWightSpecial, 0.5
+		IvElementToxicWightSpecial, 0.5
+		IvElementFrostWightSpecial, 0.5
+		IvElementSoulWightSpecial, 0.5
+	</csv>
+	<csv xpath="/entitygroups/entitygroup[@name='badassHordeStageGS1888']/text()" delim="\n" op="add">
+		IvElementFireArleneSpecial, 0.5
+		IvElementElectricArleneSpecial, 0.5
+		IvElementToxicArleneSpecial, 0.5
+		IvElementFrostArleneSpecial, 0.5
+		IvElementSoulArleneSpecial, 0.5
+		IvElementFireJoeSpecial, 0.5
+		IvElementElectricJoeSpecial, 0.5
+		IvElementToxicJoeSpecial, 0.5
+		IvElementFrostJoeSpecial, 0.5
+		IvElementSoulJoeSpecial, 0.5
+		IvElementFireSteveSpecial, 0.5
+		IvElementElectricSteveSpecial, 0.5
+		IvElementToxicSteveSpecial, 0.5
+		IvElementFrostSteveSpecial, 0.5
+		IvElementSoulSteveSpecial, 0.5
+		IvElementFireJanitorSpecial, 0.5
+		IvElementElectricJanitorSpecial, 0.5
+		IvElementToxicJanitorSpecial, 0.5
+		IvElementFrostJanitorSpecial, 0.5
+		IvElementSoulJanitorSpecial, 0.5
+		IvElementFireLumberjackSpecial, 0.5
+		IvElementElectricLumberjackSpecial, 0.5
+		IvElementToxicLumberjackSpecial, 0.5
+		IvElementFrostLumberjackSpecial, 0.5
+		IvElementSoulLumberjackSpecial, 0.5
+		IvElementFireFemaleFatSpecial, 0.5
+		IvElementElectricFemaleFatSpecial, 0.5
+		IvElementToxicFemaleFatSpecial, 0.5
+		IvElementFrostFemaleFatSpecial, 0.5
+		IvElementSoulFemaleFatSpecial, 0.5
+		IvElementFireFatHawaiianSpecial, 0.5
+		IvElementElectricFatHawaiianSpecial, 0.5
+		IvElementToxicFatHawaiianSpecial, 0.5
+		IvElementFrostFatHawaiianSpecial, 0.5
+		IvElementSoulFatHawaiianSpecial, 0.5
+		IvElementFireWightSpecial, 0.5
+		IvElementElectricWightSpecial, 0.5
+		IvElementToxicWightSpecial, 0.5
+		IvElementFrostWightSpecial, 0.5
+		IvElementSoulWightSpecial, 0.5
+	</csv>
+	<csv xpath="/entitygroups/entitygroup[@name='badassHordeStageGS1956']/text()" delim="\n" op="add">
+		IvElementFireArleneSpecial, 0.5
+		IvElementElectricArleneSpecial, 0.5
+		IvElementToxicArleneSpecial, 0.5
+		IvElementFrostArleneSpecial, 0.5
+		IvElementSoulArleneSpecial, 0.5
+		IvElementFireSteveSpecial, 0.5
+		IvElementElectricSteveSpecial, 0.5
+		IvElementToxicSteveSpecial, 0.5
+		IvElementFrostSteveSpecial, 0.5
+		IvElementSoulSteveSpecial, 0.5
+		IvElementFireBoeSpecial, 0.5
+		IvElementElectricBoeSpecial, 0.5
+		IvElementToxicBoeSpecial, 0.5
+		IvElementFrostBoeSpecial, 0.5
+		IvElementSoulBoeSpecial, 0.5
+		IvElementFireFemaleFatSpecial, 0.5
+		IvElementElectricFemaleFatSpecial, 0.5
+		IvElementToxicFemaleFatSpecial, 0.5
+		IvElementFrostFemaleFatSpecial, 0.5
+		IvElementSoulFemaleFatSpecial, 0.5
+		IvElementFireFatHawaiianSpecial, 0.5
+		IvElementElectricFatHawaiianSpecial, 0.5
+		IvElementToxicFatHawaiianSpecial, 0.5
+		IvElementFrostFatHawaiianSpecial, 0.5
+		IvElementSoulFatHawaiianSpecial, 0.5
+		IvElementFireSkateboarderSpecial, 0.5
+		IvElementElectricSkateboarderSpecial, 0.5
+		IvElementToxicSkateboarderSpecial, 0.5
+		IvElementFrostSkateboarderSpecial, 0.5
+		IvElementSoulSkateboarderSpecial, 0.5
+	</csv>
+	<csv xpath="/entitygroups/entitygroup[@name='badassHordeStageGS2026']/text()" delim="\n" op="add">
+		IvElementFireNurseSpecial, 0.5
+		IvElementElectricNurseSpecial, 0.5
+		IvElementToxicNurseSpecial, 0.5
+		IvElementFrostNurseSpecial, 0.5
+		IvElementSoulNurseSpecial, 0.5
+		IvElementFireJoeSpecial, 0.5
+		IvElementElectricJoeSpecial, 0.5
+		IvElementToxicJoeSpecial, 0.5
+		IvElementFrostJoeSpecial, 0.5
+		IvElementSoulJoeSpecial, 0.5
+		IvElementFireSteveSpecial, 0.5
+		IvElementElectricSteveSpecial, 0.5
+		IvElementToxicSteveSpecial, 0.5
+		IvElementFrostSteveSpecial, 0.5
+		IvElementSoulSteveSpecial, 0.5
+		IvElementFireBoeSpecial, 0.5
+		IvElementElectricBoeSpecial, 0.5
+		IvElementToxicBoeSpecial, 0.5
+		IvElementFrostBoeSpecial, 0.5
+		IvElementSoulBoeSpecial, 0.5
+		IvElementFireMoeSpecial, 0.5
+		IvElementElectricMoeSpecial, 0.5
+		IvElementToxicMoeSpecial, 0.5
+		IvElementFrostMoeSpecial, 0.5
+		IvElementSoulMoeSpecial, 0.5
+		IvElementFireDarleneSpecial, 0.5
+		IvElementElectricDarleneSpecial, 0.5
+		IvElementToxicDarleneSpecial, 0.5
+		IvElementFrostDarleneSpecial, 0.5
+		IvElementSoulDarleneSpecial, 0.5
+		IvElementFireMaleHazmatSpecial, 0.5
+		IvElementElectricMaleHazmatSpecial, 0.5
+		IvElementToxicMaleHazmatSpecial, 0.5
+		IvElementFrostMaleHazmatSpecial, 0.5
+		IvElementSoulMaleHazmatSpecial, 0.5
+	</csv>
+
+	<!-- 血月群組, 一般配置 -->
+	<csv xpath="/entitygroups/entitygroup[starts-with(@name, 'feralHordeStageGS')]/text()" delim="\n" op="add">
+		IvElementFireBoe
+		IvElementElectricBoe
+		IvElementToxicBoe
+		IvElementFrostBoe
+		IvElementSoulBoe
+		IvElementFireJoe
+		IvElementElectricJoe
+		IvElementToxicJoe
+		IvElementFrostJoe
+		IvElementSoulJoe
+		IvElementFireSteve
+		IvElementElectricSteve
+		IvElementToxicSteve
+		IvElementFrostSteve
+		IvElementSoulSteve
+		IvElementFireTomClark
+		IvElementElectricTomClark
+		IvElementToxicTomClark
+		IvElementFrostTomClark
+		IvElementSoulTomClark
+		IvElementFireMoe
+		IvElementElectricMoe
+		IvElementToxicMoe
+		IvElementFrostMoe
+		IvElementSoulMoe
+		IvElementFireYo
+		IvElementElectricYo
+		IvElementToxicYo
+		IvElementFrostYo
+		IvElementSoulYo
+		IvElementFireBusinessMan
+		IvElementElectricBusinessMan
+		IvElementToxicBusinessMan
+		IvElementFrostBusinessMan
+		IvElementSoulBusinessMan
+		IvElementFireArlene
+		IvElementElectricArlene
+		IvElementToxicArlene
+		IvElementFrostArlene
+		IvElementSoulArlene
+		IvElementFireDarlene
+		IvElementElectricDarlene
+		IvElementToxicDarlene
+		IvElementFrostDarlene
+		IvElementSoulDarlene
+		IvElementFireMarlene
+		IvElementElectricMarlene
+		IvElementToxicMarlene
+		IvElementFrostMarlene
+		IvElementSoulMarlene
+		IvElementFireFatHawaiian
+		IvElementElectricFatHawaiian
+		IvElementToxicFatHawaiian
+		IvElementFrostFatHawaiian
+		IvElementSoulFatHawaiian
+		IvElementFireJanitor
+		IvElementElectricJanitor
+		IvElementToxicJanitor
+		IvElementFrostJanitor
+		IvElementSoulJanitor
+		IvElementFireBiker
+		IvElementElectricBiker
+		IvElementToxicBiker
+		IvElementFrostBiker
+		IvElementSoulBiker
+		IvElementFireFemaleFat
+		IvElementElectricFemaleFat
+		IvElementToxicFemaleFat
+		IvElementFrostFemaleFat
+		IvElementSoulFemaleFat
+		IvElementFireSkateboarder
+		IvElementElectricSkateboarder
+		IvElementToxicSkateboarder
+		IvElementFrostSkateboarder
+		IvElementSoulSkateboarder
+		IvElementFireSoldier, 0.1
+		IvElementElectricSoldier, 0.1
+		IvElementToxicSoldier, 0.1
+		IvElementFrostSoldier, 0.1
+		IvElementSoulSoldier, 0.1
+		IvElementFireWight, 0.05
+		IvElementElectricWight, 0.05
+		IvElementToxicWight, 0.05
+		IvElementFrostWight, 0.05
+		IvElementSoulWight, 0.05
+		IvElementFireFatPolice, 0.08
+		IvElementElectricFatPolice, 0.08
+		IvElementToxicFatPolice, 0.08
+		IvElementFrostFatPolice, 0.08
+		IvElementSoulFatPolice, 0.08
+	</csv>
+	<!-- 血月群組, 精英級的配置 -->
+	<csv xpath="/entitygroups/entitygroup[contains(@name, 'feralHordeStageGS2') and (string-length(@name) = 21)]/text()" delim="\n" op="add">
+		IvElementFireArleneSpecial
+		IvElementElectricArleneSpecial
+		IvElementToxicArleneSpecial
+		IvElementFrostArleneSpecial
+		IvElementSoulArleneSpecial
+		IvElementFireMarleneSpecial
+		IvElementElectricMarleneSpecial
+		IvElementToxicMarleneSpecial
+		IvElementFrostMarleneSpecial
+		IvElementSoulMarleneSpecial
+		IvElementFirePartyGirlSpecial
+		IvElementElectricPartyGirlSpecial
+		IvElementToxicPartyGirlSpecial
+		IvElementFrostPartyGirlSpecial
+		IvElementSoulPartyGirlSpecial
+		IvElementFireNurseSpecial
+		IvElementElectricNurseSpecial
+		IvElementToxicNurseSpecial
+		IvElementFrostNurseSpecial
+		IvElementSoulNurseSpecial
+		IvElementFireJoeSpecial
+		IvElementElectricJoeSpecial
+		IvElementToxicJoeSpecial
+		IvElementFrostJoeSpecial
+		IvElementSoulJoeSpecial
+		IvElementFireSteveSpecial
+		IvElementElectricSteveSpecial
+		IvElementToxicSteveSpecial
+		IvElementFrostSteveSpecial
+		IvElementSoulSteveSpecial
+		IvElementFireTomClarkSpecial
+		IvElementElectricTomClarkSpecial
+		IvElementToxicTomClarkSpecial
+		IvElementFrostTomClarkSpecial
+		IvElementSoulTomClarkSpecial
+		IvElementFireBusinessManSpecial
+		IvElementElectricBusinessManSpecial
+		IvElementToxicBusinessManSpecial
+		IvElementFrostBusinessManSpecial
+		IvElementSoulBusinessManSpecial
+		IvElementFireBurntSpecial
+		IvElementElectricBurntSpecial
+		IvElementToxicBurntSpecial
+		IvElementFrostBurntSpecial
+		IvElementSoulBurntSpecial
+		IvElementFireBoeSpecial
+		IvElementElectricBoeSpecial
+		IvElementToxicBoeSpecial
+		IvElementFrostBoeSpecial
+		IvElementSoulBoeSpecial
+		IvElementFireJanitorSpecial
+		IvElementElectricJanitorSpecial
+		IvElementToxicJanitorSpecial
+		IvElementFrostJanitorSpecial
+		IvElementSoulJanitorSpecial
+		IvElementFireMoeSpecial
+		IvElementElectricMoeSpecial
+		IvElementToxicMoeSpecial
+		IvElementFrostMoeSpecial
+		IvElementSoulMoeSpecial
+		IvElementFireLabSpecial
+		IvElementElectricLabSpecial
+		IvElementToxicLabSpecial
+		IvElementFrostLabSpecial
+		IvElementSoulLabSpecial
+		IvElementFireDarleneSpecial
+		IvElementElectricDarleneSpecial
+		IvElementToxicDarleneSpecial
+		IvElementFrostDarleneSpecial
+		IvElementSoulDarleneSpecial
+		IvElementFireYoSpecial
+		IvElementElectricYoSpecial
+		IvElementToxicYoSpecial
+		IvElementFrostYoSpecial
+		IvElementSoulYoSpecial
+		IvElementFireUtilityWorkerSpecial
+		IvElementElectricUtilityWorkerSpecial
+		IvElementToxicUtilityWorkerSpecial
+		IvElementFrostUtilityWorkerSpecial
+		IvElementSoulUtilityWorkerSpecial
+		IvElementFireMaleHazmatSpecial
+		IvElementElectricMaleHazmatSpecial
+		IvElementToxicMaleHazmatSpecial
+		IvElementFrostMaleHazmatSpecial
+		IvElementSoulMaleHazmatSpecial
+		IvElementFireBikerSpecial
+		IvElementElectricBikerSpecial
+		IvElementToxicBikerSpecial
+		IvElementFrostBikerSpecial
+		IvElementSoulBikerSpecial
+		IvElementFireLumberjackSpecial
+		IvElementElectricLumberjackSpecial
+		IvElementToxicLumberjackSpecial
+		IvElementFrostLumberjackSpecial
+		IvElementSoulLumberjackSpecial
+		IvElementFireFemaleFatSpecial
+		IvElementElectricFemaleFatSpecial
+		IvElementToxicFemaleFatSpecial
+		IvElementFrostFemaleFatSpecial
+		IvElementSoulFemaleFatSpecial
+		IvElementFireFatHawaiianSpecial
+		IvElementElectricFatHawaiianSpecial
+		IvElementToxicFatHawaiianSpecial
+		IvElementFrostFatHawaiianSpecial
+		IvElementSoulFatHawaiianSpecial
+		IvElementFireSkateboarderSpecial
+		IvElementElectricSkateboarderSpecial
+		IvElementToxicSkateboarderSpecial
+		IvElementFrostSkateboarderSpecial
+		IvElementSoulSkateboarderSpecial
+		IvElementFireSoldierSpecial
+		IvElementElectricSoldierSpecial
+		IvElementToxicSoldierSpecial
+		IvElementFrostSoldierSpecial
+		IvElementSoulSoldierSpecial
+		IvElementFireWightSpecial
+		IvElementElectricWightSpecial
+		IvElementToxicWightSpecial
+		IvElementFrostWightSpecial
+		IvElementSoulWightSpecial
+	</csv>
+
+</config>

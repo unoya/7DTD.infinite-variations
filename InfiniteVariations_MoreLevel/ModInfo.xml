@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<xml>
+	<Name value="IV_MoreLevel" />
+	<DisplayName value="Infinite Variations: More level" />
+	<Description value="Players can exceed level 300." />
+	<Version value="21.1.16.0" />
+	<Author value="unoya" />
+	<Website value="https://github.com/unoya" />
+</xml>

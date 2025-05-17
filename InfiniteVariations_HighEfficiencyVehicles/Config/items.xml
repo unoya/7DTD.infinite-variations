@@ -1,0 +1,11 @@
+<config>
+<!-- Adjusted durability value -->
+	<!-- Minibike -->
+	<set xpath="/items/item[@name='vehicleMinibikePlaceable']/effect_group[@name='vehicleMinibikePlaceable']/passive_effect[@name='DegradationMax']/@value">4000</set>
+	<!-- Motorcycle -->
+	<set xpath="/items/item[@name='vehicleMotorcyclePlaceable']/effect_group[@name='vehicleMotorcyclePlaceable']/passive_effect[@name='DegradationMax']/@value">8000</set>
+	<!-- 4x4Truck -->
+	<set xpath="/items/item[@name='vehicle4x4TruckPlaceable']/effect_group[@name='vehicle4x4TruckPlaceable']/passive_effect[@name='DegradationMax']/@value">16000</set>
+	<!-- Gyrocopter -->
+	<set xpath="/items/item[@name='vehicleGyrocopterPlaceable']/effect_group[@name='vehicleGyrocopterPlaceable']/passive_effect[@name='DegradationMax']/@value">32000</set>
+</config>

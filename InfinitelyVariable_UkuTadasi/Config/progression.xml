@@ -1,0 +1,68 @@
+<configs>
+	<append xpath="/progression/crafting_skills">
+		<!-- 燃燒 -->
+		<crafting_skill name="ukutadasiFire" max_level="300" parent="attCrafting" name_key="ukutadasiFireName" desc_key="ukutadasiFireDesc" long_desc_key="ukutadasiFireDesc" icon="ui_game_symbol_ukutadasi_fire">
+			<display_entry item="modUkuTadasiSpellsFire" unlock_level="2,300"/>
+			<display_entry item="ivSoulEssenceFlammables" unlock_level="5,300"/>
+			<effect_group>
+				<passive_effect name="RecipeTagUnlocked" operation="base_set" level="2,300" value="1" tags="modUkuTadasiSpellsFire"/>
+				<passive_effect name="RecipeTagUnlocked" operation="base_set" level="5,300" value="1" tags="ivSoulEssenceFlammables"/>
+			</effect_group>
+		</crafting_skill>
+		<!-- 冰凍 -->
+		<crafting_skill name="ukutadasiIce" max_level="300" parent="attCrafting" name_key="ukutadasiIceName" desc_key="ukutadasiIceDesc" long_desc_key="ukutadasiIceDesc" icon="ui_game_symbol_ukutadasi_ice">
+			<display_entry item="modUkuTadasiSpellsIce" unlock_level="2,300"/>
+			<display_entry item="ivSoulEssenceCrystals" unlock_level="5,300"/>
+			<effect_group>
+				<passive_effect name="RecipeTagUnlocked" operation="base_set" level="2,300" value="1" tags="modUkuTadasiSpellsIce"/>
+				<passive_effect name="RecipeTagUnlocked" operation="base_set" level="5,300" value="1" tags="ivSoulEssenceCrystals"/>
+			</effect_group>
+		</crafting_skill>
+		<!-- 中毒 -->
+		<crafting_skill name="ukutadasiPoison" max_level="300" parent="attCrafting" name_key="ukutadasiPoisonName" desc_key="ukutadasiPoisonDesc" long_desc_key="ukutadasiPoisonDesc" icon="ui_game_symbol_ukutadasi_poison">
+			<display_entry item="modUkuTadasiSpellsPoison" unlock_level="2,300"/>
+			<display_entry item="ivSoulEssenceInfectiousDisease" unlock_level="5,300"/>
+			<effect_group>
+				<passive_effect name="RecipeTagUnlocked" operation="base_set" level="2,300" value="1" tags="modUkuTadasiSpellsPoison"/>
+				<passive_effect name="RecipeTagUnlocked" operation="base_set" level="5,300" value="1" tags="ivSoulEssenceInfectiousDisease"/>
+			</effect_group>
+		</crafting_skill>
+		<!-- 感電 -->
+		<crafting_skill name="ukutadasiElectricShock" max_level="300" parent="attCrafting" name_key="ukutadasiElectricShockName" desc_key="ukutadasiElectricShockDesc" long_desc_key="ukutadasiElectricShockDesc" icon="ui_game_symbol_ukutadasi_electricshock">
+			<display_entry item="modUkuTadasiSpellsElectricShock" unlock_level="2,300"/>
+			<display_entry item="ivSoulEssenceElectricalConductor" unlock_level="5,300"/>
+			<effect_group>
+				<passive_effect name="RecipeTagUnlocked" operation="base_set" level="2,300" value="1" tags="modUkuTadasiSpellsElectricShock"/>
+				<passive_effect name="RecipeTagUnlocked" operation="base_set" level="5,300" value="1" tags="ivSoulEssenceElectricalConductor"/>
+			</effect_group>
+		</crafting_skill>
+		<!-- 易燃物 -->
+		<crafting_skill name="ukutadasiFlammables" max_level="50" parent="attCrafting" name_key="ukutadasiFlammablesName" desc_key="ukutadasiFlammablesDesc" long_desc_key="ukutadasiFlammablesDesc" icon="ui_game_symbol_ukutadasi_flammables">
+			<display_entry item="modUkuTadasiSpellsFlammables" unlock_level="2,50"/>
+			<effect_group>
+				<passive_effect name="RecipeTagUnlocked" operation="base_set" level="2,50" value="1" tags="modUkuTadasiSpellsFlammables"/>
+			</effect_group>
+		</crafting_skill>
+		<!-- 結晶體 -->
+		<crafting_skill name="ukutadasiCrystals" max_level="50" parent="attCrafting" name_key="ukutadasiCrystalsName" desc_key="ukutadasiCrystalsDesc" long_desc_key="ukutadasiCrystalsDesc" icon="ui_game_symbol_ukutadasi_crystals">
+			<display_entry item="modUkuTadasiSpellsCrystals" unlock_level="2,50"/>
+			<effect_group>
+				<passive_effect name="RecipeTagUnlocked" operation="base_set" level="2,50" value="1" tags="modUkuTadasiSpellsCrystals"/>
+			</effect_group>
+		</crafting_skill>
+		<!-- 傳染病 -->
+		<crafting_skill name="ukutadasiInfectiousDisease" max_level="50" parent="attCrafting" name_key="ukutadasiInfectiousDiseaseName" desc_key="ukutadasiInfectiousDiseaseDesc" long_desc_key="ukutadasiInfectiousDiseaseDesc" icon="ui_game_symbol_ukutadasi_infectiousdisease">
+			<display_entry item="modUkuTadasiSpellsInfectiousDisease" unlock_level="2,50"/>
+			<effect_group>
+				<passive_effect name="RecipeTagUnlocked" operation="base_set" level="2,50" value="1" tags="modUkuTadasiSpellsInfectiousDisease"/>
+			</effect_group>
+		</crafting_skill>
+		<!-- 導電體 -->
+		<crafting_skill name="ukutadasiElectricalConductor" max_level="50" parent="attCrafting" name_key="ukutadasiElectricalConductorName" desc_key="ukutadasiElectricalConductorDesc" long_desc_key="ukutadasiElectricalConductorDesc" icon="ui_game_symbol_ukutadasi_electricalconductor">
+			<display_entry item="modUkuTadasiSpellsElectricalConductor" unlock_level="2,50"/>
+			<effect_group>
+				<passive_effect name="RecipeTagUnlocked" operation="base_set" level="2,50" value="1" tags="modUkuTadasiSpellsElectricalConductor"/>
+			</effect_group>
+		</crafting_skill>
+	</append>
+</configs>

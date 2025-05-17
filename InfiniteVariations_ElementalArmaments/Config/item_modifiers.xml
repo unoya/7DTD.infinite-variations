@@ -1,0 +1,323 @@
+<config>
+	<!-- 
+	自我記錄:
+	2023年9月 A21.1版,合成表要出現在玩家自身開啟背包時,在Group一定要加Science
+	-->
+	<append xpath="/item_modifiers">
+		<!-- 定義範本 -->
+		<item_modifier name="modEleArmSpellsTemplate" type="attachment">
+			<property name="CreativeMode" value="None"/>
+			<property name="CustomIcon" value="missingIcon"/>
+			<property name="Stacknumber" value="1"/>
+			<property name="HoldType" value="45"/>
+			<property name="Meshfile" value="@:Other/Items/Misc/sackPrefab.prefab"/>
+			<property name="DropMeshfile" value="@:Other/Items/Misc/sack_droppedPrefab.prefab"/>
+			<property name="Group" value="Mods,Tool/Weapon Mods,Science"/>
+		</item_modifier>
+
+		<!-- 燃燒 Lv1 -->
+		<item_modifier name="modEleArmSpellsFire" installable_tags="EleArmSpells" modifier_tags="EleArmAcctiveSkill" blocked_tags="noMods" type="attachment">
+			<property name="Extends" value="modEleArmSpellsTemplate" param1="CustomIcon"/>
+			<property name="CustomIcon" value="modEleArmSpellsFire"/>
+			<property name="DescriptionKey" value="modEleArmSpellsFireDesc"/>
+			<property name="TraderStageTemplate" value="modsTier1"/>
+
+			<effect_group name="particle effect" tiered="false">
+				<triggered_effect trigger="onSelfHoldingItemCreated" action="AddPart" part="AddFireEffect" prefab="#@modfolder:Resources/elearmspells?attachmentEffectKatana_Fire" parentTransform="#HeldItemRoot" localPos="0,0,0">
+					<requirement name="HoldingItemHasTags" tags="SpeciallyDesignedKatana"/>
+				</triggered_effect>
+				<triggered_effect trigger="onSelfHoldingItemCreated" action="AddPart" part="AddFireEffect" prefab="#@modfolder:Resources/elearmspells?attachmentEffectToWeaponFire" parentTransform="#HeldItemRoot" localPos="0,0.35,0">
+					<requirement name="HoldingItemHasTags" tags="SpeciallyDesignedMorningstar"/>
+				</triggered_effect>
+				<triggered_effect trigger="onSelfHoldingItemCreated" action="AddPart" part="AddFireEffect" prefab="#@modfolder:Resources/elearmspells?attachmentEffectToWeaponFire" parentTransform="#HeldItemRoot" localPos="0,0.2,0">
+					<requirement name="!HoldingItemHasTags" tags="SpeciallyDesignedMorningstar,SpeciallyDesignedKatana"/>
+				</triggered_effect>
+			</effect_group>
+
+			<effect_group tiered="false">
+				<triggered_effect trigger="onSelfDamagedOther" action="AddBuff" target="other" target_tags="zombie,animal" buff="buffEleArmSpellsFireLv1"/>
+			</effect_group>
+			<effect_group tiered="false">
+				<triggered_effect trigger="onSelfDamagedOther" action="AddBuff" target="other" target_tags="zombie,animal" buff="buffEleArmSpellsTornado">
+					<requirement name="HasBuff" target="other" buff="buffMarksExistingPropertyIce"/>
+					<requirement name="HasBuff" target="other" buff="buffMarksExistingPropertyPoison"/>
+					<requirement name="HasBuff" target="other" buff="buffMarksExistingPropertyElectric"/>
+				</triggered_effect>
+			</effect_group>
+		</item_modifier>
+		<!-- 燃燒 Lv2 -->
+		<item_modifier name="modEleArmSpellsFireLv2" installable_tags="EleArmSpells" modifier_tags="EleArmAcctiveSkill" blocked_tags="noMods" type="attachment">
+			<property name="Extends" value="modEleArmSpellsTemplate" param1="CustomIcon"/>
+			<property name="CustomIcon" value="modEleArmSpellsFireLv2"/>
+			<property name="DescriptionKey" value="modEleArmSpellsFireDesc"/>
+			<property name="TraderStageTemplate" value="modsTier2"/>
+			<property name="UnlockedBy" value="modEleArmSpellsFireLv2Schematic"/>
+			
+			<effect_group name="particle effect" tiered="false">
+				<triggered_effect trigger="onSelfHoldingItemCreated" action="AddPart" part="AddFireEffect" prefab="#@modfolder:Resources/elearmspells?attachmentEffectKatana_Fire" parentTransform="#HeldItemRoot" localPos="0,0,0">
+					<requirement name="HoldingItemHasTags" tags="SpeciallyDesignedKatana"/>
+				</triggered_effect>
+				<triggered_effect trigger="onSelfHoldingItemCreated" action="AddPart" part="AddFireEffect" prefab="#@modfolder:Resources/elearmspells?attachmentEffectToWeaponFire" parentTransform="#HeldItemRoot" localPos="0,0.35,0">
+					<requirement name="HoldingItemHasTags" tags="SpeciallyDesignedMorningstar"/>
+				</triggered_effect>
+				<triggered_effect trigger="onSelfHoldingItemCreated" action="AddPart" part="AddFireEffect" prefab="#@modfolder:Resources/elearmspells?attachmentEffectToWeaponFire" parentTransform="#HeldItemRoot" localPos="0,0.2,0">
+					<requirement name="!HoldingItemHasTags" tags="SpeciallyDesignedMorningstar,SpeciallyDesignedKatana"/>
+				</triggered_effect>
+			</effect_group>
+			<effect_group tiered="false">
+				<triggered_effect trigger="onSelfDamagedOther" action="AddBuff" target="other" target_tags="zombie,animal" buff="buffEleArmSpellsFireLv2"/>
+			</effect_group>
+		</item_modifier>
+		<!-- 燃燒 Lv3 -->
+		<item_modifier name="modEleArmSpellsFireLv3" installable_tags="EleArmSpells" modifier_tags="EleArmAcctiveSkill" blocked_tags="noMods" type="attachment">
+			<property name="Extends" value="modEleArmSpellsTemplate" param1="CustomIcon"/>
+			<property name="CustomIcon" value="modEleArmSpellsFireLv3"/>
+			<property name="DescriptionKey" value="modEleArmSpellsFireDesc"/>
+			<property name="TraderStageTemplate" value="modsTier3"/>
+			<property name="UnlockedBy" value="modEleArmSpellsFireLv3Schematic"/>
+
+			<effect_group name="particle effect" tiered="false">
+				<triggered_effect trigger="onSelfHoldingItemCreated" action="AddPart" part="AddFireEffect" prefab="#@modfolder:Resources/elearmspells?attachmentEffectKatana_Fire" parentTransform="#HeldItemRoot" localPos="0,0,0">
+					<requirement name="HoldingItemHasTags" tags="SpeciallyDesignedKatana"/>
+				</triggered_effect>
+				<triggered_effect trigger="onSelfHoldingItemCreated" action="AddPart" part="AddFireEffect" prefab="#@modfolder:Resources/elearmspells?attachmentEffectToWeaponFire" parentTransform="#HeldItemRoot" localPos="0,0.35,0">
+					<requirement name="HoldingItemHasTags" tags="SpeciallyDesignedMorningstar"/>
+				</triggered_effect>
+				<triggered_effect trigger="onSelfHoldingItemCreated" action="AddPart" part="AddFireEffect" prefab="#@modfolder:Resources/elearmspells?attachmentEffectToWeaponFire" parentTransform="#HeldItemRoot" localPos="0,0.2,0">
+					<requirement name="!HoldingItemHasTags" tags="SpeciallyDesignedMorningstar,SpeciallyDesignedKatana"/>
+				</triggered_effect>
+			</effect_group>
+			<effect_group tiered="false">
+				<triggered_effect trigger="onSelfDamagedOther" action="AddBuff" target="other" target_tags="zombie,animal" buff="buffEleArmSpellsFireLv3"/>
+			</effect_group>
+		</item_modifier>
+
+		<!-- 冰凍 Lv1 -->
+		<item_modifier name="modEleArmSpellsIce" installable_tags="EleArmSpells" modifier_tags="EleArmAcctiveSkill" blocked_tags="noMods" type="attachment">
+			<property name="Extends" value="modEleArmSpellsTemplate" param1="CustomIcon"/>
+			<property name="CustomIcon" value="modEleArmSpellsIce"/>
+			<property name="DescriptionKey" value="modEleArmSpellsIceDesc"/>
+			<property name="TraderStageTemplate" value="modsTier1"/>
+
+			<effect_group name="particle effect" tiered="false">
+				<triggered_effect trigger="onSelfHoldingItemCreated" action="AddPart" part="AddFireEffect" prefab="#@modfolder:Resources/elearmspells?attachmentEffectKatana_Ice" parentTransform="#HeldItemRoot" localPos="0,0,0">
+					<requirement name="HoldingItemHasTags" tags="SpeciallyDesignedKatana"/>
+				</triggered_effect>
+				<triggered_effect trigger="onSelfHoldingItemCreated" action="AddPart" part="AddFireEffect" prefab="#@modfolder:Resources/elearmspells?attachmentEffectToWeaponIce" parentTransform="#HeldItemRoot" localPos="0,0.34,0">
+					<requirement name="HoldingItemHasTags" tags="SpeciallyDesignedMorningstar"/>
+				</triggered_effect>
+				<triggered_effect trigger="onSelfHoldingItemCreated" action="AddPart" part="AddFireEffect" prefab="#@modfolder:Resources/elearmspells?attachmentEffectToWeaponIce" parentTransform="#HeldItemRoot" localPos="0,0.2,0">
+					<requirement name="!HoldingItemHasTags" tags="SpeciallyDesignedMorningstar,SpeciallyDesignedKatana"/>
+				</triggered_effect>
+			</effect_group>
+			<effect_group tiered="false">
+				<triggered_effect trigger="onSelfDamagedOther" action="AddBuff" target="other" target_tags="zombie,animal" buff="buffEleArmSpellsIceLv1"/>
+			</effect_group>
+			<effect_group tiered="false">
+				<triggered_effect trigger="onSelfDamagedOther" action="AddBuff" target="other" target_tags="zombie,animal" buff="buffEleArmSpellsTornado">
+					<requirement name="HasBuff" target="other" buff="buffMarksExistingPropertyFire"/>
+					<requirement name="HasBuff" target="other" buff="buffMarksExistingPropertyPoison"/>
+					<requirement name="HasBuff" target="other" buff="buffMarksExistingPropertyElectric"/>
+				</triggered_effect>
+			</effect_group>
+		</item_modifier>
+		<!-- 冰凍 Lv2 -->
+		<item_modifier name="modEleArmSpellsIceLv2" installable_tags="EleArmSpells" modifier_tags="EleArmAcctiveSkill" blocked_tags="noMods" type="attachment">
+			<property name="Extends" value="modEleArmSpellsTemplate" param1="CustomIcon"/>
+			<property name="CustomIcon" value="modEleArmSpellsIceLv2"/>
+			<property name="DescriptionKey" value="modEleArmSpellsIceDesc"/>
+			<property name="TraderStageTemplate" value="modsTier2"/>
+			<property name="UnlockedBy" value="modEleArmSpellsIceLv2Schematic"/>
+
+			<effect_group name="particle effect" tiered="false">
+				<triggered_effect trigger="onSelfHoldingItemCreated" action="AddPart" part="AddFireEffect" prefab="#@modfolder:Resources/elearmspells?attachmentEffectKatana_Ice" parentTransform="#HeldItemRoot" localPos="0,0,0">
+					<requirement name="HoldingItemHasTags" tags="SpeciallyDesignedKatana"/>
+				</triggered_effect>
+				<triggered_effect trigger="onSelfHoldingItemCreated" action="AddPart" part="AddFireEffect" prefab="#@modfolder:Resources/elearmspells?attachmentEffectToWeaponIce" parentTransform="#HeldItemRoot" localPos="0,0.34,0">
+					<requirement name="HoldingItemHasTags" tags="SpeciallyDesignedMorningstar"/>
+				</triggered_effect>
+				<triggered_effect trigger="onSelfHoldingItemCreated" action="AddPart" part="AddFireEffect" prefab="#@modfolder:Resources/elearmspells?attachmentEffectToWeaponIce" parentTransform="#HeldItemRoot" localPos="0,0.2,0">
+					<requirement name="!HoldingItemHasTags" tags="SpeciallyDesignedMorningstar,SpeciallyDesignedKatana"/>
+				</triggered_effect>
+			</effect_group>
+			<effect_group tiered="false">
+				<triggered_effect trigger="onSelfDamagedOther" action="AddBuff" target="other" target_tags="zombie,animal" buff="buffEleArmSpellsIceLv2"/>
+			</effect_group>
+		</item_modifier>
+		<!-- 冰凍 Lv3 -->
+		<item_modifier name="modEleArmSpellsIceLv3" installable_tags="EleArmSpells" modifier_tags="EleArmAcctiveSkill" blocked_tags="noMods" type="attachment">
+			<property name="Extends" value="modEleArmSpellsTemplate" param1="CustomIcon"/>
+			<property name="CustomIcon" value="modEleArmSpellsIceLv3"/>
+			<property name="DescriptionKey" value="modEleArmSpellsIceDesc"/>
+			<property name="TraderStageTemplate" value="modsTier3"/>
+			<property name="UnlockedBy" value="modEleArmSpellsIceLv3Schematic"/>
+
+			<effect_group name="particle effect" tiered="false">
+				<triggered_effect trigger="onSelfHoldingItemCreated" action="AddPart" part="AddFireEffect" prefab="#@modfolder:Resources/elearmspells?attachmentEffectKatana_Ice" parentTransform="#HeldItemRoot" localPos="0,0,0">
+					<requirement name="HoldingItemHasTags" tags="SpeciallyDesignedKatana"/>
+				</triggered_effect>
+				<triggered_effect trigger="onSelfHoldingItemCreated" action="AddPart" part="AddFireEffect" prefab="#@modfolder:Resources/elearmspells?attachmentEffectToWeaponIce" parentTransform="#HeldItemRoot" localPos="0,0.34,0">
+					<requirement name="HoldingItemHasTags" tags="SpeciallyDesignedMorningstar"/>
+				</triggered_effect>
+				<triggered_effect trigger="onSelfHoldingItemCreated" action="AddPart" part="AddFireEffect" prefab="#@modfolder:Resources/elearmspells?attachmentEffectToWeaponIce" parentTransform="#HeldItemRoot" localPos="0,0.2,0">
+					<requirement name="!HoldingItemHasTags" tags="SpeciallyDesignedMorningstar,SpeciallyDesignedKatana"/>
+				</triggered_effect>
+			</effect_group>
+			<effect_group tiered="false">
+				<triggered_effect trigger="onSelfDamagedOther" action="AddBuff" target="other" target_tags="zombie,animal" buff="buffEleArmSpellsIceLv3"/>
+			</effect_group>
+		</item_modifier>
+
+		<!-- 中毒 Lv1 -->
+		<item_modifier name="modEleArmSpellsPoison" installable_tags="EleArmSpells" modifier_tags="EleArmAcctiveSkill" blocked_tags="noMods" type="attachment">
+			<property name="Extends" value="modEleArmSpellsTemplate" param1="CustomIcon"/>
+			<property name="CustomIcon" value="modEleArmSpellsPoison"/>
+			<property name="DescriptionKey" value="modEleArmSpellsPoisonDesc"/>
+			<property name="TraderStageTemplate" value="modsTier1"/>
+
+			<effect_group name="particle effect" tiered="false">
+				<triggered_effect trigger="onSelfHoldingItemCreated" action="AddPart" part="AddPoisonEffect" prefab="#@modfolder:Resources/elearmspells?attachmentEffectKatana_Poison" parentTransform="#HeldItemRoot" localPos="0,0,0">
+					<requirement name="HoldingItemHasTags" tags="SpeciallyDesignedKatana"/>
+				</triggered_effect>
+				<triggered_effect trigger="onSelfHoldingItemCreated" action="AddPart" part="AddPoisonEffect" prefab="#@modfolder:Resources/elearmspells?attachmentEffectToWeaponPoison" parentTransform="#HeldItemRoot" localPos="0,0.33,0">
+					<requirement name="HoldingItemHasTags" tags="SpeciallyDesignedMorningstar"/>
+				</triggered_effect>
+				<triggered_effect trigger="onSelfHoldingItemCreated" action="AddPart" part="AddPoisonEffect" prefab="#@modfolder:Resources/elearmspells?attachmentEffectToWeaponPoison" parentTransform="#HeldItemRoot" localPos="0,0.2,0">
+					<requirement name="!HoldingItemHasTags" tags="SpeciallyDesignedMorningstar,SpeciallyDesignedKatana"/>
+				</triggered_effect>
+			</effect_group>
+			<effect_group tiered="false">
+				<triggered_effect trigger="onSelfDamagedOther" action="AddBuff" target="other" target_tags="zombie,animal" buff="buffEleArmSpellsPoisonLv1"/>
+			</effect_group>
+			<effect_group tiered="false">
+				<triggered_effect trigger="onSelfDamagedOther" action="AddBuff" target="other" target_tags="zombie,animal" buff="buffEleArmSpellsTornado">
+					<requirement name="HasBuff" target="other" buff="buffMarksExistingPropertyFire"/>
+					<requirement name="HasBuff" target="other" buff="buffMarksExistingPropertyIce"/>
+					<requirement name="HasBuff" target="other" buff="buffMarksExistingPropertyElectric"/>
+				</triggered_effect>
+			</effect_group>
+		</item_modifier>
+		<!-- 中毒 Lv2 -->
+		<item_modifier name="modEleArmSpellsPoisonLv2" installable_tags="EleArmSpells" modifier_tags="EleArmAcctiveSkill" blocked_tags="noMods" type="attachment">
+			<property name="Extends" value="modEleArmSpellsTemplate" param1="CustomIcon"/>
+			<property name="CustomIcon" value="modEleArmSpellsPoisonLv2"/>
+			<property name="DescriptionKey" value="modEleArmSpellsPoisonDesc"/>
+			<property name="TraderStageTemplate" value="modsTier2"/>
+			<property name="UnlockedBy" value="modEleArmSpellsPoisonLv2Schematic"/>
+
+			<effect_group name="particle effect" tiered="false">
+				<triggered_effect trigger="onSelfHoldingItemCreated" action="AddPart" part="AddPoisonEffect" prefab="#@modfolder:Resources/elearmspells?attachmentEffectKatana_Poison" parentTransform="#HeldItemRoot" localPos="0,0,0">
+					<requirement name="HoldingItemHasTags" tags="SpeciallyDesignedKatana"/>
+				</triggered_effect>
+				<triggered_effect trigger="onSelfHoldingItemCreated" action="AddPart" part="AddPoisonEffect" prefab="#@modfolder:Resources/elearmspells?attachmentEffectToWeaponPoison" parentTransform="#HeldItemRoot" localPos="0,0.33,0">
+					<requirement name="HoldingItemHasTags" tags="SpeciallyDesignedMorningstar"/>
+				</triggered_effect>
+				<triggered_effect trigger="onSelfHoldingItemCreated" action="AddPart" part="AddPoisonEffect" prefab="#@modfolder:Resources/elearmspells?attachmentEffectToWeaponPoison" parentTransform="#HeldItemRoot" localPos="0,0.2,0">
+					<requirement name="!HoldingItemHasTags" tags="SpeciallyDesignedMorningstar,SpeciallyDesignedKatana"/>
+				</triggered_effect>
+			</effect_group>
+			<effect_group tiered="false">
+				<triggered_effect trigger="onSelfDamagedOther" action="AddBuff" target="other" target_tags="zombie,animal" buff="buffEleArmSpellsPoisonLv2"/>
+			</effect_group>
+		</item_modifier>
+		<!-- 中毒 Lv3 -->
+		<item_modifier name="modEleArmSpellsPoisonLv3" installable_tags="EleArmSpells" modifier_tags="EleArmAcctiveSkill" blocked_tags="noMods" type="attachment">
+			<property name="Extends" value="modEleArmSpellsTemplate" param1="CustomIcon"/>
+			<property name="CustomIcon" value="modEleArmSpellsPoisonLv3"/>
+			<property name="DescriptionKey" value="modEleArmSpellsPoisonDesc"/>
+			<property name="TraderStageTemplate" value="modsTier3"/>
+			<property name="UnlockedBy" value="modEleArmSpellsPoisonLv3Schematic"/>
+
+			<effect_group name="particle effect" tiered="false">
+				<triggered_effect trigger="onSelfHoldingItemCreated" action="AddPart" part="AddPoisonEffect" prefab="#@modfolder:Resources/elearmspells?attachmentEffectKatana_Poison" parentTransform="#HeldItemRoot" localPos="0,0,0">
+					<requirement name="HoldingItemHasTags" tags="SpeciallyDesignedKatana"/>
+				</triggered_effect>
+				<triggered_effect trigger="onSelfHoldingItemCreated" action="AddPart" part="AddPoisonEffect" prefab="#@modfolder:Resources/elearmspells?attachmentEffectToWeaponPoison" parentTransform="#HeldItemRoot" localPos="0,0.33,0">
+					<requirement name="HoldingItemHasTags" tags="SpeciallyDesignedMorningstar"/>
+				</triggered_effect>
+				<triggered_effect trigger="onSelfHoldingItemCreated" action="AddPart" part="AddPoisonEffect" prefab="#@modfolder:Resources/elearmspells?attachmentEffectToWeaponPoison" parentTransform="#HeldItemRoot" localPos="0,0.2,0">
+					<requirement name="!HoldingItemHasTags" tags="SpeciallyDesignedMorningstar,SpeciallyDesignedKatana"/>
+				</triggered_effect>
+			</effect_group>
+			<effect_group tiered="false">
+				<triggered_effect trigger="onSelfDamagedOther" action="AddBuff" target="other" target_tags="zombie,animal" buff="buffEleArmSpellsPoisonLv3"/>
+			</effect_group>
+		</item_modifier>
+
+		<!-- 電擊 Lv1 -->
+		<item_modifier name="modEleArmSpellsElectricShock" installable_tags="EleArmSpells" modifier_tags="EleArmAcctiveSkill" blocked_tags="noMods" type="attachment">
+			<property name="Extends" value="modEleArmSpellsTemplate" param1="CustomIcon"/>
+			<property name="CustomIcon" value="modEleArmSpellsElectricShock"/>
+			<property name="DescriptionKey" value="modEleArmSpellsElectricShockDesc"/>
+			<property name="TraderStageTemplate" value="modsTier1"/>
+
+			<effect_group name="particle effect" tiered="false">
+				<triggered_effect trigger="onSelfHoldingItemCreated" action="AddPart" part="AddElectricEffect" prefab="#@modfolder:Resources/elearmspells?attachmentEffectKatana_Electric" parentTransform="#HeldItemRoot" localPos="0,0,0">
+					<requirement name="HoldingItemHasTags" tags="SpeciallyDesignedKatana"/>
+				</triggered_effect>
+				<triggered_effect trigger="onSelfHoldingItemCreated" action="AddPart" part="AddElectricEffect" prefab="#@modfolder:Resources/elearmspells?attachmentEffectToWeaponElectric" parentTransform="#HeldItemRoot" localPos="0,0.32,0">
+					<requirement name="HoldingItemHasTags" tags="SpeciallyDesignedMorningstar"/>
+				</triggered_effect>
+				<triggered_effect trigger="onSelfHoldingItemCreated" action="AddPart" part="AddElectricEffect" prefab="#@modfolder:Resources/elearmspells?attachmentEffectToWeaponElectric" parentTransform="#HeldItemRoot" localPos="0,0.2,0">
+					<requirement name="!HoldingItemHasTags" tags="SpeciallyDesignedMorningstar,SpeciallyDesignedKatana"/>
+				</triggered_effect>
+			</effect_group>
+			<effect_group tiered="false">
+				<triggered_effect trigger="onSelfDamagedOther" action="AddBuff" target="other" target_tags="zombie,animal" buff="buffEleArmSpellsElectricShockLv1"/>
+			</effect_group>
+			<effect_group tiered="false">
+				<triggered_effect trigger="onSelfDamagedOther" action="AddBuff" target="other" target_tags="zombie,animal" buff="buffEleArmSpellsTornado">
+					<requirement name="HasBuff" target="other" buff="buffMarksExistingPropertyFire"/>
+					<requirement name="HasBuff" target="other" buff="buffMarksExistingPropertyIce"/>
+					<requirement name="HasBuff" target="other" buff="buffMarksExistingPropertyPoison"/>
+				</triggered_effect>
+			</effect_group>
+		</item_modifier>
+		<!-- 電擊 Lv2 -->
+		<item_modifier name="modEleArmSpellsElectricShockLv2" installable_tags="EleArmSpells" modifier_tags="EleArmAcctiveSkill" blocked_tags="noMods" type="attachment">
+			<property name="Extends" value="modEleArmSpellsTemplate" param1="CustomIcon"/>
+			<property name="CustomIcon" value="modEleArmSpellsElectricShockLv2"/>
+			<property name="DescriptionKey" value="modEleArmSpellsElectricShockDesc"/>
+			<property name="TraderStageTemplate" value="modsTier2"/>
+			<property name="UnlockedBy" value="modEleArmSpellsElectricShockLv2Schematic"/>
+
+			<effect_group name="particle effect" tiered="false">
+				<triggered_effect trigger="onSelfHoldingItemCreated" action="AddPart" part="AddElectricEffect" prefab="#@modfolder:Resources/elearmspells?attachmentEffectKatana_Electric" parentTransform="#HeldItemRoot" localPos="0,0,0">
+					<requirement name="HoldingItemHasTags" tags="SpeciallyDesignedKatana"/>
+				</triggered_effect>
+				<triggered_effect trigger="onSelfHoldingItemCreated" action="AddPart" part="AddElectricEffect" prefab="#@modfolder:Resources/elearmspells?attachmentEffectToWeaponElectric" parentTransform="#HeldItemRoot" localPos="0,0.32,0">
+					<requirement name="HoldingItemHasTags" tags="SpeciallyDesignedMorningstar"/>
+				</triggered_effect>
+				<triggered_effect trigger="onSelfHoldingItemCreated" action="AddPart" part="AddElectricEffect" prefab="#@modfolder:Resources/elearmspells?attachmentEffectToWeaponElectric" parentTransform="#HeldItemRoot" localPos="0,0.2,0">
+					<requirement name="!HoldingItemHasTags" tags="SpeciallyDesignedMorningstar,SpeciallyDesignedKatana"/>
+				</triggered_effect>
+			</effect_group>
+			<effect_group tiered="false">
+				<triggered_effect trigger="onSelfDamagedOther" action="AddBuff" target="other" target_tags="zombie,animal" buff="buffEleArmSpellsElectricShockLv2"/>
+			</effect_group>
+		</item_modifier>
+		<!-- 電擊 Lv3 -->
+		<item_modifier name="modEleArmSpellsElectricShockLv3" installable_tags="EleArmSpells" modifier_tags="EleArmAcctiveSkill" blocked_tags="noMods" type="attachment">
+			<property name="Extends" value="modEleArmSpellsTemplate" param1="CustomIcon"/>
+			<property name="CustomIcon" value="modEleArmSpellsElectricShockLv3"/>
+			<property name="DescriptionKey" value="modEleArmSpellsElectricShockDesc"/>
+			<property name="TraderStageTemplate" value="modsTier3"/>
+			<property name="UnlockedBy" value="modEleArmSpellsElectricShockLv3Schematic"/>
+
+			<effect_group name="particle effect" tiered="false">
+				<triggered_effect trigger="onSelfHoldingItemCreated" action="AddPart" part="AddElectricEffect" prefab="#@modfolder:Resources/elearmspells?attachmentEffectKatana_Electric" parentTransform="#HeldItemRoot" localPos="0,0,0">
+					<requirement name="HoldingItemHasTags" tags="SpeciallyDesignedKatana"/>
+				</triggered_effect>
+				<triggered_effect trigger="onSelfHoldingItemCreated" action="AddPart" part="AddElectricEffect" prefab="#@modfolder:Resources/elearmspells?attachmentEffectToWeaponElectric" parentTransform="#HeldItemRoot" localPos="0,0.32,0">
+					<requirement name="HoldingItemHasTags" tags="SpeciallyDesignedMorningstar"/>
+				</triggered_effect>
+				<triggered_effect trigger="onSelfHoldingItemCreated" action="AddPart" part="AddElectricEffect" prefab="#@modfolder:Resources/elearmspells?attachmentEffectToWeaponElectric" parentTransform="#HeldItemRoot" localPos="0,0.2,0">
+					<requirement name="!HoldingItemHasTags" tags="SpeciallyDesignedMorningstar,SpeciallyDesignedKatana"/>
+				</triggered_effect>
+			</effect_group>
+			<effect_group tiered="false">
+				<triggered_effect trigger="onSelfDamagedOther" action="AddBuff" target="other" target_tags="zombie,animal" buff="buffEleArmSpellsElectricShockLv3"/>
+			</effect_group>
+		</item_modifier>
+	</append>
+</config>

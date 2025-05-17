@@ -1,0 +1,1002 @@
+<config>
+	<append xpath="/items">
+		<item name="ivResourceBrokenSoul"><!-- 殘破魂魄 -->
+			<property name="HoldType" value="45"/>
+			<property name="Meshfile" value="@:Other/Items/Misc/sackPrefab.prefab"/>
+			<property name="DropMeshfile" value="@:Other/Items/Misc/sack_droppedPrefab.prefab"/>
+			<property name="Material" value="MresourceCement"/>
+			<property name="CustomIcon" value="ivResourceBrokenSoul"/>
+			<property name="DescriptionKey" value="ivResourceBrokenSoulDesc"/>
+			<property name="Stacknumber" value="3000"/>
+			<property name="EconomicValue" value="0"/>
+			<property name="Group" value="Resources"/>
+		</item>
+	
+		<item name="ivSoulEssenceFire"><!-- 魂魄精華 : 燃燒 -->
+			<property name="Extends" value="masterSkillMagazine"/>
+			<property name="CustomIcon" value="ivSoulEssenceFire"/>
+			<property name="DescriptionKey" value="ivSoulEssenceFireDesc"/>
+			<property name="Unlocks" value="ukutadasiFire"/>
+			<property name="Stacknumber" value="1000"/>
+			<property name="EconomicValue" value="1"/>
+			<property name="Group" value="Resources"/>
+			<effect_group tiered="false">
+				<triggered_effect trigger="onSelfPrimaryActionEnd" action="AddProgressionLevel" progression_name="ukutadasiFire" level="1"/>
+				<triggered_effect trigger="onSelfPrimaryActionEnd" action="GiveExp" exp="10"/>
+			</effect_group>
+		</item>
+
+		<item name="ivSoulEssenceIce"><!-- 魂魄精華 : 冰凍 -->
+			<property name="Extends" value="masterSkillMagazine"/>
+			<property name="CustomIcon" value="ivSoulEssenceIce"/>
+			<property name="DescriptionKey" value="ivSoulEssenceIceDesc"/>
+			<property name="Unlocks" value="ukutadasiIce"/>
+			<property name="Stacknumber" value="1000"/>
+			<property name="EconomicValue" value="1"/>
+			<property name="Group" value="Resources"/>
+			<effect_group tiered="false">
+				<triggered_effect trigger="onSelfPrimaryActionEnd" action="AddProgressionLevel" progression_name="ukutadasiIce" level="1"/>
+				<triggered_effect trigger="onSelfPrimaryActionEnd" action="GiveExp" exp="10"/>
+			</effect_group>
+		</item>
+
+		<item name="ivSoulEssencePoison"><!-- 魂魄精華 : 中毒 -->
+			<property name="Extends" value="masterSkillMagazine"/>
+			<property name="CustomIcon" value="ivSoulEssencePoison"/>
+			<property name="DescriptionKey" value="ivSoulEssencePoisonDesc"/>
+			<property name="Unlocks" value="ukutadasiPoison"/>
+			<property name="Stacknumber" value="1000"/>
+			<property name="EconomicValue" value="1"/>
+			<property name="Group" value="Resources"/>
+			<effect_group tiered="false">
+				<triggered_effect trigger="onSelfPrimaryActionEnd" action="AddProgressionLevel" progression_name="ukutadasiPoison" level="1"/>
+				<triggered_effect trigger="onSelfPrimaryActionEnd" action="GiveExp" exp="10"/>
+			</effect_group>
+		</item>
+
+		<item name="ivSoulEssenceElectricShock"><!-- 魂魄精華 : 感電 -->
+			<property name="Extends" value="masterSkillMagazine"/>
+			<property name="CustomIcon" value="ivSoulEssenceElectricShock"/>
+			<property name="DescriptionKey" value="ivSoulEssenceElectricShockDesc"/>
+			<property name="Unlocks" value="ukutadasiElectricShock"/>
+			<property name="Stacknumber" value="1000"/>
+			<property name="EconomicValue" value="1"/>
+			<property name="Group" value="Resources"/>
+			<effect_group tiered="false">
+				<triggered_effect trigger="onSelfPrimaryActionEnd" action="AddProgressionLevel" progression_name="ukutadasiElectricShock" level="1"/>
+				<triggered_effect trigger="onSelfPrimaryActionEnd" action="GiveExp" exp="10"/>
+			</effect_group>
+		</item>
+
+		<item name="ivSoulEssenceFlammables"><!-- 魂魄精華 : 易燃物 -->
+			<property name="Extends" value="masterSkillMagazine"/>
+			<property name="CustomIcon" value="ivSoulEssenceFlammables"/>
+			<property name="DescriptionKey" value="ivSoulEssenceFlammablesDesc"/>
+			<property name="Unlocks" value="ukutadasiFlammables"/>
+			<property name="Stacknumber" value="1000"/>
+			<property name="EconomicValue" value="1"/>
+			<property name="Group" value="Resources"/>
+			<property class="Action0">
+				<requirement name="ProgressionLevel" progression_name="ukutadasiFire" operation="GTE" value="5"/>
+				<property name="Class" value="Eat"/>
+				<property name="Delay" value="0.5"/>
+				<property name="Sound_start" value="ui_mag_read"/>
+			</property>
+			<effect_group tiered="false">
+				<requirement name="ProgressionLevel" progression_name="ukutadasiFire" operation="GTE" value="5"/>
+				<triggered_effect trigger="onSelfPrimaryActionEnd" action="AddProgressionLevel" progression_name="ukutadasiFlammables" level="1"/>
+				<triggered_effect trigger="onSelfPrimaryActionEnd" action="GiveExp" exp="10"/>
+			</effect_group>
+		</item>
+
+		<item name="ivSoulEssenceCrystals"><!-- 魂魄精華 : 結晶體 -->
+			<property name="Extends" value="masterSkillMagazine"/>
+			<property name="CustomIcon" value="ivSoulEssenceCrystals"/>
+			<property name="DescriptionKey" value="ivSoulEssenceCrystalsDesc"/>
+			<property name="Unlocks" value="ukutadasiCrystals"/>
+			<property name="Stacknumber" value="1000"/>
+			<property name="EconomicValue" value="1"/>
+			<property name="Group" value="Resources"/>
+			<property class="Action0">
+				<requirement name="ProgressionLevel" progression_name="ukutadasiIce" operation="GTE" value="5"/>
+				<property name="Class" value="Eat"/>
+				<property name="Delay" value="0.5"/>
+				<property name="Sound_start" value="ui_mag_read"/>
+			</property>
+			<effect_group tiered="false">
+				<requirement name="ProgressionLevel" progression_name="ukutadasiIce" operation="GTE" value="5"/>
+				<triggered_effect trigger="onSelfPrimaryActionEnd" action="AddProgressionLevel" progression_name="ukutadasiCrystals" level="1"/>
+				<triggered_effect trigger="onSelfPrimaryActionEnd" action="GiveExp" exp="10"/>
+			</effect_group>
+		</item>
+
+		<item name="ivSoulEssenceInfectiousDisease"><!-- 魂魄精華 : 傳染病 -->
+			<property name="Extends" value="masterSkillMagazine"/>
+			<property name="CustomIcon" value="ivSoulEssenceInfectiousDisease"/>
+			<property name="DescriptionKey" value="ivSoulEssenceInfectiousDiseaseDesc"/>
+			<property name="Unlocks" value="ukutadasiInfectiousDisease"/>
+			<property name="Stacknumber" value="1000"/>
+			<property name="EconomicValue" value="1"/>
+			<property name="Group" value="Resources"/>
+			<property class="Action0">
+				<requirement name="ProgressionLevel" progression_name="ukutadasiPoison" operation="GTE" value="5"/>
+				<property name="Class" value="Eat"/>
+				<property name="Delay" value="0.5"/>
+				<property name="Sound_start" value="ui_mag_read"/>
+			</property>
+			<effect_group tiered="false">
+				<requirement name="ProgressionLevel" progression_name="ukutadasiPoison" operation="GTE" value="5"/>
+				<triggered_effect trigger="onSelfPrimaryActionEnd" action="AddProgressionLevel" progression_name="ukutadasiInfectiousDisease" level="1"/>
+				<triggered_effect trigger="onSelfPrimaryActionEnd" action="GiveExp" exp="10"/>
+			</effect_group>
+		</item>
+
+		<item name="ivSoulEssenceElectricalConductor"><!-- 魂魄精華 : 導電體 -->
+			<property name="Extends" value="masterSkillMagazine"/>
+			<property name="CustomIcon" value="ivSoulEssenceElectricalConductor"/>
+			<property name="DescriptionKey" value="ivSoulEssenceElectricalConductorDesc"/>
+			<property name="Unlocks" value="ukutadasiElectricalConductor"/>
+			<property name="Stacknumber" value="1000"/>
+			<property name="EconomicValue" value="1"/>
+			<property name="Group" value="Resources"/>
+			<property class="Action0">
+				<requirement name="ProgressionLevel" progression_name="ukutadasiElectricShock" operation="GTE" value="5"/>
+				<property name="Class" value="Eat"/>
+				<property name="Delay" value="0.5"/>
+				<property name="Sound_start" value="ui_mag_read"/>
+			</property>
+			<effect_group tiered="false">
+				<requirement name="ProgressionLevel" progression_name="ukutadasiElectricShock" operation="GTE" value="5"/>
+				<triggered_effect trigger="onSelfPrimaryActionEnd" action="AddProgressionLevel" progression_name="ukutadasiElectricalConductor" level="1"/>
+				<triggered_effect trigger="onSelfPrimaryActionEnd" action="GiveExp" exp="10"/>
+			</effect_group>
+		</item>
+		
+		<item name="thrownUkuTadasiSpellsFlameBurstBomb"><!-- 法術: 炎爆彈 -->
+			<property name="Tags" value="ammo,weapon"/>
+			<property name="CustomIcon" value="thrownUkuTadasiSpellsFlameBurstBomb"/>
+			<property name="DescriptionKey" value="thrownUkuTadasiSpellsFlameBurstBombDesc"/>
+			<property name="ItemTypeIcon" value="explosion"/>
+			<property name="DisplayType" value="ammoGrenadeUkuTadasiSpells"/>
+			<property name="Class" value="ItemClassTimeBomb"/>
+			<property name="HoldType" value="40"/>
+			<property name="Meshfile" value="#@modfolder:Resources/ukutadasispells?ukutadasiFlameBurstBombHold"/>
+			<property name="DropMeshfile" value="#@modfolder:Resources/ukutadasispells?ukutadasiFlameBurstBombHold"/>
+			<property name="DropScale" value="2.5"/>
+			<property name="Material" value="Mmetal"/>
+			<property name="Stacknumber" value="1000"/>
+			<property name="EconomicValue" value="100"/>
+			<property name="TraderStageTemplate" value="baseTier2"/>
+			<property name="Weight" value="0"/>
+			<property name="Explosion.ParticleIndex" value="#@modfolder(IVS_UkuTaDasi):Resources/ukutadasispells?ukutadasiFlameBurstBomb$fireball"/>
+			<property name="Explosion.Duration" value="15"/>
+			<property name="Explosion.CustomScriptTypes" value="ExplosionAreaBuffTick,CustomParticleLoaderBuffArea"/>
+			<property name="Explosion.TickInterval" value="0.5"/>
+			<property name="Explosion.Buff" value="buffUkuTadasiSpellsFlameBurstBomb"/>
+			<property name="FusePrimeOnActivate" value="false"/>
+			<property name="ExplodeOnHit" value="true"/>
+			<property name="Group" value="Ammo/Weapons,Ammo"/>
+			<property name="SoundUnholster" value="weapon_unholster"/>
+			<property class="Action0">
+				<property name="Class" value="ThrowAway"/>
+				<property name="Delay" value="1"/>
+				<property name="Throw_strength_default" value="30"/>
+				<property name="Throw_strength_max" value="60"/>
+				<property name="Max_strain_time" value="1.0"/>
+				<property name="Sound_start" value="swoosh"/>
+				<property name="Gravity" value="0"/>
+				<property name="FlyTime" value="10"/>
+				<property name="LifeTime" value="60"/>
+				<property name="triggerEffectTriggerPullDualsense" value="ShotgunTrigger"/>
+				<property name="triggerEffectTriggerPullXbox" value="ShotgunTrigger"/>
+				<property name="triggerEffectShootDualsense" value="ShotgunShoot"/>
+				<property name="triggerEffectShootXbox" value="PistolShoot"/>
+			</property>
+			<property name="ThrowableDecoy" value="true"/>
+			<effect_group tiered="false">
+				<passive_effect name="BlockDamage" operation="base_set" value="0"/>
+				<passive_effect name="EntityDamage" operation="base_set" value="0"/>
+				<display_value name="dExRadius" value="4"/>
+				<display_value name="dDuration" value="15"/>
+			</effect_group>
+		</item>
+
+		<item name="thrownUkuTadasiSpellsFrostBomb"><!-- 法術: 冰霜彈 -->
+			<property name="Tags" value="ammo,weapon"/>
+			<property name="CustomIcon" value="thrownUkuTadasiSpellsFrostBomb"/>
+			<property name="DescriptionKey" value="thrownUkuTadasiSpellsFrostBombDesc"/>
+			<property name="ItemTypeIcon" value="explosion"/>
+			<property name="DisplayType" value="ammoGrenadeUkuTadasiSpells"/>
+			<property name="Class" value="ItemClassTimeBomb"/>
+			<property name="HoldType" value="40"/>
+			<property name="Meshfile" value="#@modfolder:Resources/ukutadasispells?ukutadasiFrostBombHold"/>
+			<property name="DropMeshfile" value="#@modfolder:Resources/ukutadasispells?ukutadasiFrostBombHold"/>
+			<property name="DropScale" value="2.5"/>
+			<property name="Material" value="Mmetal"/>
+			<property name="Stacknumber" value="1000"/>
+			<property name="EconomicValue" value="100"/>
+			<property name="TraderStageTemplate" value="baseTier2"/>
+			<property name="Weight" value="0"/>
+			<property name="Explosion.ParticleIndex" value="#@modfolder(IVS_UkuTaDasi):Resources/ukutadasispells?ukutadasiFrostBomb$iceball"/>
+			<property name="Explosion.Duration" value="15"/>
+			<property name="Explosion.CustomScriptTypes" value="ExplosionAreaBuffTick,CustomParticleLoaderBuffArea"/>
+			<property name="Explosion.TickInterval" value="0.5"/>
+			<property name="Explosion.Buff" value="buffUkuTadasiSpellsFrostBomb"/>
+			<property name="FusePrimeOnActivate" value="false"/>
+			<property name="ExplodeOnHit" value="true"/>
+			<property name="Group" value="Ammo/Weapons,Ammo"/>
+			<property name="SoundUnholster" value="weapon_unholster"/>
+			<property class="Action0">
+				<property name="Class" value="ThrowAway"/>
+				<property name="Delay" value="1"/>
+				<property name="Throw_strength_default" value="30"/>
+				<property name="Throw_strength_max" value="60"/>
+				<property name="Max_strain_time" value="1.0"/>
+				<property name="Sound_start" value="swoosh"/>
+				<property name="Gravity" value="0"/>
+				<property name="FlyTime" value="10"/>
+				<property name="LifeTime" value="60"/>
+				<property name="triggerEffectTriggerPullDualsense" value="ShotgunTrigger"/>
+				<property name="triggerEffectTriggerPullXbox" value="ShotgunTrigger"/>
+				<property name="triggerEffectShootDualsense" value="ShotgunShoot"/>
+				<property name="triggerEffectShootXbox" value="PistolShoot"/>
+			</property>
+			<property name="ThrowableDecoy" value="true"/>
+			<effect_group tiered="false">
+				<passive_effect name="BlockDamage" operation="base_set" value="0"/>
+				<passive_effect name="EntityDamage" operation="base_set" value="0"/>
+				<display_value name="dExRadius" value="4"/>
+				<display_value name="dDuration" value="15"/>
+			</effect_group>
+		</item>
+
+		<item name="thrownUkuTadasiSpellsElectricArcImpactBomb"><!-- 法術: 電衝彈 -->
+			<property name="Tags" value="ammo,weapon"/>
+			<property name="CustomIcon" value="thrownUkuTadasiSpellsElectricArcImpactBomb"/>
+			<property name="DescriptionKey" value="thrownUkuTadasiSpellsElectricArcImpactBombDesc"/>
+			<property name="ItemTypeIcon" value="explosion"/>
+			<property name="DisplayType" value="ammoGrenadeUkuTadasiSpells"/>
+			<property name="Class" value="ItemClassTimeBomb"/>
+			<property name="HoldType" value="40"/>
+			<property name="Meshfile" value="#@modfolder:Resources/ukutadasispells?ukutadasiElectricArcImpactBombHold"/>
+			<property name="DropMeshfile" value="#@modfolder:Resources/ukutadasispells?ukutadasiElectricArcImpactBombHold"/>
+			<property name="DropScale" value="2.5"/>
+			<property name="Material" value="Mmetal"/>
+			<property name="Stacknumber" value="1000"/>
+			<property name="EconomicValue" value="100"/>
+			<property name="TraderStageTemplate" value="baseTier2"/>
+			<property name="Weight" value="0"/>
+			<property name="Explosion.ParticleIndex" value="#@modfolder(IVS_UkuTaDasi):Resources/ukutadasispells?ukutadasiElectricArcImpactBomb$electricalball"/>
+			<property name="Explosion.Duration" value="15"/>
+			<property name="Explosion.CustomScriptTypes" value="ExplosionAreaBuffTick,CustomParticleLoaderBuffArea"/>
+			<property name="Explosion.TickInterval" value="0.5"/>
+			<property name="Explosion.Buff" value="buffUkuTadasiSpellsElectricArcImpactBomb"/>
+			<property name="FusePrimeOnActivate" value="false"/>
+			<property name="ExplodeOnHit" value="true"/>
+			<property name="Group" value="Ammo/Weapons,Ammo"/>
+			<property name="SoundUnholster" value="weapon_unholster"/>
+			<property class="Action0">
+				<property name="Class" value="ThrowAway"/>
+				<property name="Delay" value="1"/>
+				<property name="Throw_strength_default" value="30"/>
+				<property name="Throw_strength_max" value="60"/>
+				<property name="Max_strain_time" value="1.0"/>
+				<property name="Sound_start" value="swoosh"/>
+				<property name="Gravity" value="0"/>
+				<property name="FlyTime" value="10"/>
+				<property name="LifeTime" value="60"/>
+				<property name="triggerEffectTriggerPullDualsense" value="ShotgunTrigger"/>
+				<property name="triggerEffectTriggerPullXbox" value="ShotgunTrigger"/>
+				<property name="triggerEffectShootDualsense" value="ShotgunShoot"/>
+				<property name="triggerEffectShootXbox" value="PistolShoot"/>
+			</property>
+			<property name="ThrowableDecoy" value="true"/>
+			<effect_group tiered="false">
+				<passive_effect name="BlockDamage" operation="base_set" value="0"/>
+				<passive_effect name="EntityDamage" operation="base_set" value="0"/>
+				<display_value name="dExRadius" value="4"/>
+				<display_value name="dDuration" value="15"/>
+			</effect_group>
+		</item>
+
+		<item name="thrownUkuTadasiSpellsPoisonGasBomb"><!-- 法術: 毒氣彈 -->
+			<property name="Tags" value="ammo,weapon"/>
+			<property name="CustomIcon" value="thrownUkuTadasiSpellsPoisonGasBomb"/>
+			<property name="DescriptionKey" value="thrownUkuTadasiSpellsPoisonGasBombDesc"/>
+			<property name="ItemTypeIcon" value="explosion"/>
+			<property name="DisplayType" value="ammoGrenadeUkuTadasiSpells"/>
+			<property name="Class" value="ItemClassTimeBomb"/>
+			<property name="HoldType" value="40"/>
+			<property name="Meshfile" value="#@modfolder:Resources/ukutadasispells?ukutadasiPoisonGasBombHold"/>
+			<property name="DropMeshfile" value="#@modfolder:Resources/ukutadasispells?ukutadasiPoisonGasBombHold"/>
+			<property name="DropScale" value="2.5"/>
+			<property name="Material" value="Mmetal"/>
+			<property name="Stacknumber" value="1000"/>
+			<property name="EconomicValue" value="100"/>
+			<property name="TraderStageTemplate" value="baseTier2"/>
+			<property name="Weight" value="0"/>
+			<property name="Explosion.ParticleIndex" value="#@modfolder(IVS_UkuTaDasi):Resources/ukutadasispells?ukutadasiPoisonGasBomb$gasball"/>
+			<property name="Explosion.Duration" value="15"/>
+			<property name="Explosion.CustomScriptTypes" value="ExplosionAreaBuffTick,CustomParticleLoaderBuffArea"/>
+			<property name="Explosion.TickInterval" value="0.5"/>
+			<property name="Explosion.Buff" value="buffUkuTadasiSpellsPoisonGasBomb"/>
+			<property name="FusePrimeOnActivate" value="false"/>
+			<property name="ExplodeOnHit" value="true"/>
+			<property name="Group" value="Ammo/Weapons,Ammo"/>
+			<property name="SoundUnholster" value="weapon_unholster"/>
+			<property class="Action0">
+				<property name="Class" value="ThrowAway"/>
+				<property name="Delay" value="1"/>
+				<property name="Throw_strength_default" value="30"/>
+				<property name="Throw_strength_max" value="60"/>
+				<property name="Max_strain_time" value="1.0"/>
+				<property name="Sound_start" value="swoosh"/>
+				<property name="Gravity" value="0"/>
+				<property name="FlyTime" value="10"/>
+				<property name="LifeTime" value="60"/>
+				<property name="triggerEffectTriggerPullDualsense" value="ShotgunTrigger"/>
+				<property name="triggerEffectTriggerPullXbox" value="ShotgunTrigger"/>
+				<property name="triggerEffectShootDualsense" value="ShotgunShoot"/>
+				<property name="triggerEffectShootXbox" value="PistolShoot"/>
+			</property>
+			<property name="ThrowableDecoy" value="true"/>
+			<effect_group tiered="false">
+				<passive_effect name="BlockDamage" operation="base_set" value="0"/>
+				<passive_effect name="EntityDamage" operation="base_set" value="0"/>
+				<display_value name="dExRadius" value="4"/>
+				<display_value name="dDuration" value="15"/>
+			</effect_group>
+		</item>
+
+		<item name="thrownUkuTadasiSpellsPurifyBomb"><!-- 法術: 淨化彈 -->
+			<property name="Tags" value="ammo,weapon"/>
+			<property name="CustomIcon" value="thrownUkuTadasiSpellsPurifyBomb"/>
+			<property name="DescriptionKey" value="thrownUkuTadasiSpellsPurifyBombDesc"/>
+			<property name="ItemTypeIcon" value="explosion"/>
+			<property name="DisplayType" value="ammoGrenadeUkuTadasiSpells"/>
+			<property name="Class" value="ItemClassTimeBomb"/>
+			<property name="HoldType" value="40"/>
+			<property name="Meshfile" value="#@modfolder:Resources/ukutadasispells?ukutadasiPurifyBombHold"/>
+			<property name="DropMeshfile" value="#@modfolder:Resources/ukutadasispells?ukutadasiPurifyBombHold"/>
+			<property name="DropScale" value="2.5"/>
+			<property name="Material" value="Mmetal"/>
+			<property name="Stacknumber" value="1000"/>
+			<property name="EconomicValue" value="100"/>
+			<property name="TraderStageTemplate" value="baseTier2"/>
+			<property name="Weight" value="0"/>
+			<property name="Explosion.ParticleIndex" value="#@modfolder(IVS_UkuTaDasi):Resources/ukutadasispells?ukutadasiPurifyBomb$purifyball"/>
+			<property name="Explosion.Duration" value="15"/>
+			<property name="Explosion.CustomScriptTypes" value="ExplosionAreaBuffTick,CustomParticleLoaderBuffArea"/>
+			<property name="Explosion.TickInterval" value="0.5"/>
+			<property name="Explosion.Buff" value="buffUkuTadasiSpellsPurifyBomb"/>
+			<property name="FusePrimeOnActivate" value="false"/>
+			<property name="ExplodeOnHit" value="true"/>
+			<property name="Group" value="Ammo/Weapons,Ammo"/>
+			<property name="SoundUnholster" value="weapon_unholster"/>
+			<property class="Action0">
+				<property name="Class" value="ThrowAway"/>
+				<property name="Delay" value="1"/>
+				<property name="Throw_strength_default" value="30"/>
+				<property name="Throw_strength_max" value="60"/>
+				<property name="Max_strain_time" value="1.0"/>
+				<property name="Sound_start" value="swoosh"/>
+				<property name="Gravity" value="0"/>
+				<property name="FlyTime" value="10"/>
+				<property name="LifeTime" value="60"/>
+				<property name="triggerEffectTriggerPullDualsense" value="ShotgunTrigger"/>
+				<property name="triggerEffectTriggerPullXbox" value="ShotgunTrigger"/>
+				<property name="triggerEffectShootDualsense" value="ShotgunShoot"/>
+				<property name="triggerEffectShootXbox" value="PistolShoot"/>
+			</property>
+			<property name="ThrowableDecoy" value="true"/>
+			<effect_group tiered="false">
+				<passive_effect name="BlockDamage" operation="base_set" value="0"/>
+				<passive_effect name="EntityDamage" operation="base_set" value="0"/>
+				<display_value name="dExRadius" value="4"/>
+				<display_value name="dDuration" value="15"/>
+			</effect_group>
+		</item>
+
+		<item name="thrownUkuTadasiSpellsCursedKillBomb"><!-- 法術: 咒殺彈 -->
+			<property name="Tags" value="ammo,weapon"/>
+			<property name="CustomIcon" value="thrownUkuTadasiSpellsCursedKillBomb"/>
+			<property name="DescriptionKey" value="thrownUkuTadasiSpellsCursedKillBombDesc"/>
+			<property name="ItemTypeIcon" value="explosion"/>
+			<property name="DisplayType" value="ammoGrenadeUkuTadasiSpells"/>
+			<property name="Class" value="ItemClassTimeBomb"/>
+			<property name="HoldType" value="40"/>
+			<property name="Meshfile" value="#@modfolder:Resources/ukutadasispells?ukutadasiCursedKillBombHold"/>
+			<property name="DropMeshfile" value="#@modfolder:Resources/ukutadasispells?ukutadasiCursedKillBombHold"/>
+			<property name="DropScale" value="2.5"/>
+			<property name="Material" value="Mmetal"/>
+			<property name="Stacknumber" value="1000"/>
+			<property name="EconomicValue" value="100"/>
+			<property name="TraderStageTemplate" value="baseTier2"/>
+			<property name="Weight" value="0"/>
+			<property name="Explosion.ParticleIndex" value="#@modfolder(IVS_UkuTaDasi):Resources/ukutadasispells?ukutadasiCursedKillBomb$cursedkillball"/>
+			<property name="Explosion.Duration" value="15"/>
+			<property name="Explosion.CustomScriptTypes" value="ExplosionAreaBuffTick,CustomParticleLoaderBuffArea"/>
+			<property name="Explosion.TickInterval" value="0.5"/>
+			<property name="Explosion.Buff" value="buffUkuTadasiSpellsCursedKillBomb"/>
+			<property name="FusePrimeOnActivate" value="false"/>
+			<property name="ExplodeOnHit" value="true"/>
+			<property name="Group" value="Ammo/Weapons,Ammo"/>
+			<property name="SoundUnholster" value="weapon_unholster"/>
+			<property class="Action0">
+				<property name="Class" value="ThrowAway"/>
+				<property name="Delay" value="1"/>
+				<property name="Throw_strength_default" value="30"/>
+				<property name="Throw_strength_max" value="60"/>
+				<property name="Max_strain_time" value="1.0"/>
+				<property name="Sound_start" value="swoosh"/>
+				<property name="Gravity" value="0"/>
+				<property name="FlyTime" value="10"/>
+				<property name="LifeTime" value="60"/>
+				<property name="triggerEffectTriggerPullDualsense" value="ShotgunTrigger"/>
+				<property name="triggerEffectTriggerPullXbox" value="ShotgunTrigger"/>
+				<property name="triggerEffectShootDualsense" value="ShotgunShoot"/>
+				<property name="triggerEffectShootXbox" value="PistolShoot"/>
+			</property>
+			<property name="ThrowableDecoy" value="true"/>
+			<effect_group tiered="false">
+				<passive_effect name="BlockDamage" operation="base_set" value="0"/>
+				<passive_effect name="EntityDamage" operation="base_set" value="0"/>
+				<display_value name="dExRadius" value="4"/>
+				<display_value name="dDuration" value="15"/>
+			</effect_group>
+		</item>
+
+		<item name="thrownUkuTadasiSpellsSkySwordBomb"><!-- 法術: 天劍彈 -->
+			<property name="Tags" value="ammo,weapon"/>
+			<property name="CustomIcon" value="thrownUkuTadasiSpellsSkySwordBomb"/>
+			<property name="DescriptionKey" value="thrownUkuTadasiSpellsSkySwordBombDesc"/>
+			<property name="ItemTypeIcon" value="explosion"/>
+			<property name="DisplayType" value="ammoGrenadeUkuTadasiSpells"/>
+			<property name="Class" value="ItemClassTimeBomb"/>
+			<property name="HoldType" value="40"/>
+			<property name="Meshfile" value="#@modfolder:Resources/ukutadasispells?ukutadasiSkySwordBombHold"/>
+			<property name="DropMeshfile" value="#@modfolder:Resources/ukutadasispells?ukutadasiSkySwordBombHold"/>
+			<property name="DropScale" value="2.5"/>
+			<property name="Material" value="Mmetal"/>
+			<property name="Stacknumber" value="1000"/>
+			<property name="EconomicValue" value="100"/>
+			<property name="TraderStageTemplate" value="baseTier2"/>
+			<property name="Weight" value="0"/>
+			<property name="Explosion.ParticleIndex" value="#@modfolder(IVS_UkuTaDasi):Resources/ukutadasispells?ukutadasiSkySwordBomb$skyswordball"/>
+			<property name="Explosion.Duration" value="15"/>
+			<property name="Explosion.CustomScriptTypes" value="ExplosionAreaBuffTick,CustomParticleLoaderBuffArea"/>
+			<property name="Explosion.TickInterval" value="0.5"/>
+			<property name="Explosion.Buff" value="buffUkuTadasiSpellsSkySwordBomb"/>
+			<property name="FusePrimeOnActivate" value="false"/>
+			<property name="ExplodeOnHit" value="true"/>
+			<property name="Group" value="Ammo/Weapons,Ammo"/>
+			<property name="SoundUnholster" value="weapon_unholster"/>
+			<property class="Action0">
+				<property name="Class" value="ThrowAway"/>
+				<property name="Delay" value="1"/>
+				<property name="Throw_strength_default" value="30"/>
+				<property name="Throw_strength_max" value="60"/>
+				<property name="Max_strain_time" value="1.0"/>
+				<property name="Sound_start" value="swoosh"/>
+				<property name="Gravity" value="0"/>
+				<property name="FlyTime" value="10"/>
+				<property name="LifeTime" value="60"/>
+				<property name="triggerEffectTriggerPullDualsense" value="ShotgunTrigger"/>
+				<property name="triggerEffectTriggerPullXbox" value="ShotgunTrigger"/>
+				<property name="triggerEffectShootDualsense" value="ShotgunShoot"/>
+				<property name="triggerEffectShootXbox" value="PistolShoot"/>
+			</property>
+			<property name="ThrowableDecoy" value="true"/>
+			<effect_group tiered="false">
+				<passive_effect name="BlockDamage" operation="base_set" value="0"/>
+				<passive_effect name="EntityDamage" operation="base_set" value="0"/>
+				<display_value name="dExRadius" value="4"/>
+				<display_value name="dDuration" value="15"/>
+			</effect_group>
+		</item>
+
+		<item name="thrownUkuTadasiSpellsEnhanceAttackBomb"><!-- 法術: 強攻彈 -->
+			<property name="Tags" value="ammo,weapon"/>
+			<property name="CustomIcon" value="thrownUkuTadasiSpellsEnhanceAttackBomb"/>
+			<property name="DescriptionKey" value="thrownUkuTadasiSpellsEnhanceAttackBombDesc"/>
+			<property name="ItemTypeIcon" value="explosion"/>
+			<property name="DisplayType" value="ammoGrenadeUkuTadasiSpells"/>
+			<property name="Class" value="ItemClassTimeBomb"/>
+			<property name="HoldType" value="40"/>
+			<property name="Meshfile" value="#@modfolder:Resources/ukutadasispells?ukutadasiEnhanceAttackBombHold"/>
+			<property name="DropMeshfile" value="#@modfolder:Resources/ukutadasispells?ukutadasiEnhanceAttackBombHold"/>
+			<property name="DropScale" value="2.5"/>
+			<property name="Material" value="Mmetal"/>
+			<property name="Stacknumber" value="1000"/>
+			<property name="EconomicValue" value="100"/>
+			<property name="TraderStageTemplate" value="baseTier2"/>
+			<property name="Weight" value="0"/>
+			<property name="Explosion.ParticleIndex" value="#@modfolder(IVS_UkuTaDasi):Resources/ukutadasispells?ukutadasiEnhanceAttackBomb$enhanceattackball"/>
+			<property name="Explosion.Duration" value="12"/>
+			<property name="Explosion.CustomScriptTypes" value="ExplosionAreaBuffTick,CustomParticleLoaderBuffArea"/>
+			<property name="Explosion.TickInterval" value="0.5"/>
+			<property name="Explosion.Buff" value="buffUkuTadasiSpellsEnhanceAttackBomb"/>
+			<property name="FusePrimeOnActivate" value="false"/>
+			<property name="ExplodeOnHit" value="true"/>
+			<property name="Group" value="Ammo/Weapons,Ammo"/>
+			<property name="SoundUnholster" value="weapon_unholster"/>
+			<property class="Action0">
+				<property name="Class" value="ThrowAway"/>
+				<property name="Delay" value="1"/>
+				<property name="Throw_strength_default" value="30"/>
+				<property name="Throw_strength_max" value="60"/>
+				<property name="Max_strain_time" value="1.0"/>
+				<property name="Sound_start" value="swoosh"/>
+				<property name="Gravity" value="0"/>
+				<property name="FlyTime" value="10"/>
+				<property name="LifeTime" value="60"/>
+				<property name="triggerEffectTriggerPullDualsense" value="ShotgunTrigger"/>
+				<property name="triggerEffectTriggerPullXbox" value="ShotgunTrigger"/>
+				<property name="triggerEffectShootDualsense" value="ShotgunShoot"/>
+				<property name="triggerEffectShootXbox" value="PistolShoot"/>
+			</property>
+			<property name="ThrowableDecoy" value="true"/>
+			<effect_group tiered="false">
+				<passive_effect name="BlockDamage" operation="base_set" value="0"/>
+				<passive_effect name="EntityDamage" operation="base_set" value="0"/>
+				<display_value name="dExRadius" value="4"/>
+				<display_value name="dDuration" value="12"/>
+			</effect_group>
+		</item>
+
+		<item name="thrownUkuTadasiSpellsEnhanceDefenseBomb"><!-- 法術: 固防彈 -->
+			<property name="Tags" value="ammo,weapon"/>
+			<property name="CustomIcon" value="thrownUkuTadasiSpellsEnhanceDefenseBomb"/>
+			<property name="DescriptionKey" value="thrownUkuTadasiSpellsEnhanceDefenseBombDesc"/>
+			<property name="ItemTypeIcon" value="explosion"/>
+			<property name="DisplayType" value="ammoGrenadeUkuTadasiSpells"/>
+			<property name="Class" value="ItemClassTimeBomb"/>
+			<property name="HoldType" value="40"/>
+			<property name="Meshfile" value="#@modfolder:Resources/ukutadasispells?ukutadasiEnhanceDefenseBombHold"/>
+			<property name="DropMeshfile" value="#@modfolder:Resources/ukutadasispells?ukutadasiEnhanceDefenseBombHold"/>
+			<property name="DropScale" value="2.5"/>
+			<property name="Material" value="Mmetal"/>
+			<property name="Stacknumber" value="1000"/>
+			<property name="EconomicValue" value="100"/>
+			<property name="TraderStageTemplate" value="baseTier2"/>
+			<property name="Weight" value="0"/>
+			<property name="Explosion.ParticleIndex" value="#@modfolder(IVS_UkuTaDasi):Resources/ukutadasispells?ukutadasiEnhanceDefenseBomb$enhancedefenseball"/>
+			<property name="Explosion.Duration" value="12"/>
+			<property name="Explosion.CustomScriptTypes" value="ExplosionAreaBuffTick,CustomParticleLoaderBuffArea"/>
+			<property name="Explosion.TickInterval" value="0.5"/>
+			<property name="Explosion.Buff" value="buffUkuTadasiSpellsEnhanceDefenseBomb"/>
+			<property name="FusePrimeOnActivate" value="false"/>
+			<property name="ExplodeOnHit" value="true"/>
+			<property name="Group" value="Ammo/Weapons,Ammo"/>
+			<property name="SoundUnholster" value="weapon_unholster"/>
+			<property class="Action0">
+				<property name="Class" value="ThrowAway"/>
+				<property name="Delay" value="1"/>
+				<property name="Throw_strength_default" value="30"/>
+				<property name="Throw_strength_max" value="60"/>
+				<property name="Max_strain_time" value="1.0"/>
+				<property name="Sound_start" value="swoosh"/>
+				<property name="Gravity" value="0"/>
+				<property name="FlyTime" value="10"/>
+				<property name="LifeTime" value="60"/>
+				<property name="triggerEffectTriggerPullDualsense" value="ShotgunTrigger"/>
+				<property name="triggerEffectTriggerPullXbox" value="ShotgunTrigger"/>
+				<property name="triggerEffectShootDualsense" value="ShotgunShoot"/>
+				<property name="triggerEffectShootXbox" value="PistolShoot"/>
+			</property>
+			<property name="ThrowableDecoy" value="true"/>
+			<effect_group tiered="false">
+				<passive_effect name="BlockDamage" operation="base_set" value="0"/>
+				<passive_effect name="EntityDamage" operation="base_set" value="0"/>
+				<display_value name="dExRadius" value="4"/>
+				<display_value name="dDuration" value="12"/>
+			</effect_group>
+		</item>
+
+		<item name="ammoBowUkuTadasiSpellsFlameBurstBomb"><!-- 弓專用: 炎爆彈 -->
+			<property name="Tags" value="ammo,ranged,attAgility,perkArchery"/>
+			<property name="DescriptionKey" value="ammoBowUkuTadasiSpellsFlameBurstBombDesc"/>
+			<property name="CustomIcon" value="ammoBowUkuTadasiSpellsFlameBurstBomb"/>
+			<property name="DisplayType" value="ammoArrowUkuTadasiSpells"/>
+			<property name="Meshfile" value="#@modfolder:Resources/ukutadasispells?ukutadasi_arrow_bow_flame"/>
+			<property name="HoldType" value="45"/>
+			<property name="HandMeshfile" value="@:Other/Items/Misc/sackPrefab.prefab"/>
+			<property name="DropMeshfile" value="#@modfolder:Resources/ukutadasispells?ukutadasi_arrow_bow"/>
+			<property name="DropScale" value="2"/>
+			<property name="Material" value="Mmetal"/>
+			<property name="IsSticky" value="false"/>
+			<property name="StickyOffset" value=".25"/>
+			<property name="StickyColliderUp" value="2"/>
+			<property name="StickyColliderRadius" value=".05"/>
+			<property name="StickyColliderLength" value="1"/>
+			<property name="Stacknumber" value="1000"/>
+			<property name="EconomicValue" value="200"/>
+			<property name="TraderStageTemplate" value="arrowsTier4"/>
+			<property name="UsableUnderwater" value="true"/>
+			<property name="Group" value="Ammo/Weapons,Ammo,Ranged Weapons"/>
+			
+			<property class="Action1">
+				<property name="Class" value="Projectile"/>
+				<property name="Gravity" value="-3"/>
+				<property name="FlyTime" value="5"/>
+				<property name="LifeTime" value="10"/>
+				<property name="Explosion.ParticleIndex" value="#@modfolder(IVS_UkuTaDasi):Resources/ukutadasispells?ukutadasiFlameBurstBomb$fireball"/>
+				<property name="Explosion.Duration" value="20"/>
+				<property name="Explosion.CustomScriptTypes" value="ExplosionAreaBuffTick,CustomParticleLoaderBuffArea"/>
+				<property name="Explosion.TickInterval" value="0.5"/>
+				<property name="Explosion.Buff" value="buffUkuTadasiSpellsFlameBurstBomb"/>
+				<property name="ExplodeOnHit" value="true"/>
+				<property name="Explosion.EntityDamage" value="0"/>
+				<property name="Explosion.BlockDamage" value="0"/>
+				<property name="Explosion.RadiusBlocks" value="0"/>
+				<property name="Explosion.RadiusEntities" value="0"/>
+			</property>
+			<effect_group name="ammoBowUkuTadasiSpellsFlameBurstBomb" tiered="false">
+				<passive_effect name="BlockDamage" operation="base_set" value="1"/>
+				<passive_effect name="EntityDamage" operation="base_set" value="40" tags="perkArchery"/>
+				<passive_effect name="ProjectileVelocity" operation="base_set" value="50" tags="perkArchery"/>
+				<display_value name="dExRadius" value="4"/>
+				<display_value name="dDuration" value="20"/>
+			</effect_group>
+		</item>
+		<item name="ammoBowUkuTadasiSpellsFrostBomb"><!-- 弓專用: 冰霜彈 -->
+			<property name="Tags" value="ammo,ranged,attAgility,perkArchery"/>
+			<property name="DescriptionKey" value="ammoBowUkuTadasiSpellsFrostBombDesc"/>
+			<property name="CustomIcon" value="ammoBowUkuTadasiSpellsFrostBomb"/>
+			<property name="DisplayType" value="ammoArrowUkuTadasiSpells"/>
+			<property name="Meshfile" value="#@modfolder:Resources/ukutadasispells?ukutadasi_arrow_bow_frost"/>
+			<property name="HoldType" value="45"/>
+			<property name="HandMeshfile" value="@:Other/Items/Misc/sackPrefab.prefab"/>
+			<property name="DropMeshfile" value="#@modfolder:Resources/ukutadasispells?ukutadasi_arrow_bow"/>
+			<property name="DropScale" value="2"/>
+			<property name="Material" value="Mmetal"/>
+			<property name="IsSticky" value="false"/>
+			<property name="StickyOffset" value=".25"/>
+			<property name="StickyColliderUp" value="2"/>
+			<property name="StickyColliderRadius" value=".05"/>
+			<property name="StickyColliderLength" value="1"/>
+			<property name="Stacknumber" value="1000"/>
+			<property name="EconomicValue" value="200"/>
+			<property name="TraderStageTemplate" value="arrowsTier4"/>
+			<property name="UsableUnderwater" value="true"/>
+			<property name="Group" value="Ammo/Weapons,Ammo,Ranged Weapons"/>
+			
+			<property class="Action1">
+				<property name="Class" value="Projectile"/>
+				<property name="Gravity" value="-3"/>
+				<property name="FlyTime" value="5"/>
+				<property name="LifeTime" value="10"/>
+				<property name="Explosion.ParticleIndex" value="#@modfolder(IVS_UkuTaDasi):Resources/ukutadasispells?ukutadasiFrostBomb$iceball"/>
+				<property name="Explosion.Duration" value="20"/>
+				<property name="Explosion.CustomScriptTypes" value="ExplosionAreaBuffTick,CustomParticleLoaderBuffArea"/>
+				<property name="Explosion.TickInterval" value="0.5"/>
+				<property name="Explosion.Buff" value="buffUkuTadasiSpellsFrostBomb"/>
+				<property name="ExplodeOnHit" value="true"/>
+				<property name="Explosion.EntityDamage" value="0"/>
+				<property name="Explosion.BlockDamage" value="0"/>
+				<property name="Explosion.RadiusBlocks" value="0"/>
+				<property name="Explosion.RadiusEntities" value="0"/>
+			</property>
+			<effect_group name="ammoBowUkuTadasiSpellsFrostBomb" tiered="false">
+				<passive_effect name="BlockDamage" operation="base_set" value="1"/>
+				<passive_effect name="EntityDamage" operation="base_set" value="40" tags="perkArchery"/>
+				<passive_effect name="ProjectileVelocity" operation="base_set" value="50" tags="perkArchery"/>
+				<display_value name="dExRadius" value="4"/>
+				<display_value name="dDuration" value="20"/>
+			</effect_group>
+		</item>
+		<item name="ammoBowUkuTadasiSpellsElectricArcImpactBomb"><!-- 弓專用: 電衝彈 -->
+			<property name="Tags" value="ammo,ranged,attAgility,perkArchery"/>
+			<property name="DescriptionKey" value="ammoBowUkuTadasiSpellsElectricArcImpactBombDesc"/>
+			<property name="CustomIcon" value="ammoBowUkuTadasiSpellsElectricArcImpactBomb"/>
+			<property name="DisplayType" value="ammoArrowUkuTadasiSpells"/>
+			<property name="Meshfile" value="#@modfolder:Resources/ukutadasispells?ukutadasi_arrow_bow_electric"/>
+			<property name="HoldType" value="45"/>
+			<property name="HandMeshfile" value="@:Other/Items/Misc/sackPrefab.prefab"/>
+			<property name="DropMeshfile" value="#@modfolder:Resources/ukutadasispells?ukutadasi_arrow_bow"/>
+			<property name="DropScale" value="2"/>
+			<property name="Material" value="Mmetal"/>
+			<property name="IsSticky" value="false"/>
+			<property name="StickyOffset" value=".25"/>
+			<property name="StickyColliderUp" value="2"/>
+			<property name="StickyColliderRadius" value=".05"/>
+			<property name="StickyColliderLength" value="1"/>
+			<property name="Stacknumber" value="1000"/>
+			<property name="EconomicValue" value="200"/>
+			<property name="TraderStageTemplate" value="arrowsTier4"/>
+			<property name="UsableUnderwater" value="true"/>
+			<property name="Group" value="Ammo/Weapons,Ammo,Ranged Weapons"/>
+			
+			<property class="Action1">
+				<property name="Class" value="Projectile"/>
+				<property name="Gravity" value="-3"/>
+				<property name="FlyTime" value="5"/>
+				<property name="LifeTime" value="10"/>
+				<property name="Explosion.ParticleIndex" value="#@modfolder(IVS_UkuTaDasi):Resources/ukutadasispells?ukutadasiElectricArcImpactBomb$electricalball"/>
+				<property name="Explosion.Duration" value="20"/>
+				<property name="Explosion.CustomScriptTypes" value="ExplosionAreaBuffTick,CustomParticleLoaderBuffArea"/>
+				<property name="Explosion.TickInterval" value="0.5"/>
+				<property name="Explosion.Buff" value="buffUkuTadasiSpellsElectricArcImpactBomb"/>
+				<property name="ExplodeOnHit" value="true"/>
+				<property name="Explosion.EntityDamage" value="0"/>
+				<property name="Explosion.BlockDamage" value="0"/>
+				<property name="Explosion.RadiusBlocks" value="0"/>
+				<property name="Explosion.RadiusEntities" value="0"/>
+			</property>
+			<effect_group name="ammoBowUkuTadasiSpellsElectricArcImpactBomb" tiered="false">
+				<passive_effect name="BlockDamage" operation="base_set" value="1"/>
+				<passive_effect name="EntityDamage" operation="base_set" value="40" tags="perkArchery"/>
+				<passive_effect name="ProjectileVelocity" operation="base_set" value="50" tags="perkArchery"/>
+				<display_value name="dExRadius" value="4"/>
+				<display_value name="dDuration" value="20"/>
+			</effect_group>
+		</item>
+		<item name="ammoBowUkuTadasiSpellsPoisonGasBomb"><!-- 弓專用: 毒氣彈 -->
+			<property name="Tags" value="ammo,ranged,attAgility,perkArchery"/>
+			<property name="DescriptionKey" value="ammoBowUkuTadasiSpellsPoisonGasBombDesc"/>
+			<property name="CustomIcon" value="ammoBowUkuTadasiSpellsPoisonGasBomb"/>
+			<property name="DisplayType" value="ammoArrowUkuTadasiSpells"/>
+			<property name="Meshfile" value="#@modfolder:Resources/ukutadasispells?ukutadasi_arrow_bow_poison"/>
+			<property name="HoldType" value="45"/>
+			<property name="HandMeshfile" value="@:Other/Items/Misc/sackPrefab.prefab"/>
+			<property name="DropMeshfile" value="#@modfolder:Resources/ukutadasispells?ukutadasi_arrow_bow"/>
+			<property name="DropScale" value="2"/>
+			<property name="Material" value="Mmetal"/>
+			<property name="IsSticky" value="false"/>
+			<property name="StickyOffset" value=".25"/>
+			<property name="StickyColliderUp" value="2"/>
+			<property name="StickyColliderRadius" value=".05"/>
+			<property name="StickyColliderLength" value="1"/>
+			<property name="Stacknumber" value="1000"/>
+			<property name="EconomicValue" value="200"/>
+			<property name="TraderStageTemplate" value="arrowsTier4"/>
+			<property name="UsableUnderwater" value="true"/>
+			<property name="Group" value="Ammo/Weapons,Ammo,Ranged Weapons"/>
+			
+			<property class="Action1">
+				<property name="Class" value="Projectile"/>
+				<property name="Gravity" value="-3"/>
+				<property name="FlyTime" value="5"/>
+				<property name="LifeTime" value="10"/>
+				<property name="Explosion.ParticleIndex" value="#@modfolder(IVS_UkuTaDasi):Resources/ukutadasispells?ukutadasiPoisonGasBomb$gasball"/>
+				<property name="Explosion.Duration" value="20"/>
+				<property name="Explosion.CustomScriptTypes" value="ExplosionAreaBuffTick,CustomParticleLoaderBuffArea"/>
+				<property name="Explosion.TickInterval" value="0.5"/>
+				<property name="Explosion.Buff" value="buffUkuTadasiSpellsPoisonGasBomb"/>
+				<property name="ExplodeOnHit" value="true"/>
+				<property name="Explosion.EntityDamage" value="0"/>
+				<property name="Explosion.BlockDamage" value="0"/>
+				<property name="Explosion.RadiusBlocks" value="0"/>
+				<property name="Explosion.RadiusEntities" value="0"/>
+			</property>
+			<effect_group name="ammoBowUkuTadasiSpellsPoisonGasBomb" tiered="false">
+				<passive_effect name="BlockDamage" operation="base_set" value="1"/>
+				<passive_effect name="EntityDamage" operation="base_set" value="40" tags="perkArchery"/>
+				<passive_effect name="ProjectileVelocity" operation="base_set" value="50" tags="perkArchery"/>
+				<display_value name="dExRadius" value="4"/>
+				<display_value name="dDuration" value="20"/>
+			</effect_group>
+		</item>
+
+		<item name="ammoCrossbowUkuTadasiSpellsFlameBurstBomb"><!-- 十字弓專用: 炎爆彈 -->
+			<property name="Tags" value="ammo,ranged,attAgility,perkArchery"/>
+			<property name="DescriptionKey" value="ammoCrossbowUkuTadasiSpellsFlameBurstBombDesc"/>
+			<property name="CustomIcon" value="ammoCrossbowUkuTadasiSpellsFlameBurstBomb"/>
+			<property name="DisplayType" value="ammoArrowUkuTadasiSpells"/>
+			<property name="Meshfile" value="#@modfolder:Resources/ukutadasispells?ukutadasi_arrow_crossbow_flame"/>
+			<property name="HoldType" value="45"/>
+			<property name="HandMeshfile" value="@:Other/Items/Misc/sackPrefab.prefab"/>
+			<property name="DropMeshfile" value="#@modfolder:Resources/ukutadasispells?ukutadasi_arrow_crossbow"/>
+			<property name="DropScale" value="2"/>
+			<property name="Material" value="Mmetal"/>
+			<property name="IsSticky" value="false"/>
+			<property name="StickyOffset" value=".13"/>
+			<property name="StickyColliderUp" value="2"/>
+			<property name="StickyColliderRadius" value=".05"/>
+			<property name="StickyColliderLength" value=".75"/>
+			<property name="Stacknumber" value="1000"/>
+			<property name="EconomicValue" value="200"/>
+			<property name="TraderStageTemplate" value="arrowsTier4"/>
+			<property name="UsableUnderwater" value="true"/>
+			<property name="Group" value="Ammo/Weapons,Ammo,Ranged Weapons"/>
+			
+			<property class="Action1">
+				<property name="Class" value="Projectile"/>
+				<property name="Gravity" value="-3"/>
+				<property name="FlyTime" value="5"/>
+				<property name="LifeTime" value="10"/>
+				<property name="Explosion.ParticleIndex" value="#@modfolder(IVS_UkuTaDasi):Resources/ukutadasispells?ukutadasiFlameBurstBomb$fireball"/>
+				<property name="Explosion.Duration" value="25"/>
+				<property name="Explosion.CustomScriptTypes" value="ExplosionAreaBuffTick,CustomParticleLoaderBuffArea"/>
+				<property name="Explosion.TickInterval" value="0.5"/>
+				<property name="Explosion.Buff" value="buffUkuTadasiSpellsFlameBurstBomb"/>
+				<property name="ExplodeOnHit" value="true"/>
+				<property name="Explosion.EntityDamage" value="0"/>
+				<property name="Explosion.BlockDamage" value="0"/>
+				<property name="Explosion.RadiusBlocks" value="0"/>
+				<property name="Explosion.RadiusEntities" value="0"/>
+			</property>
+			<effect_group name="ammoCrossbowUkuTadasiSpellsFlameBurstBomb" tiered="false">
+				<passive_effect name="BlockDamage" operation="base_set" value="1"/>
+				<passive_effect name="EntityDamage" operation="base_set" value="72" tags="perkArchery"/>
+				<passive_effect name="ProjectileVelocity" operation="base_set" value="80" tags="perkArchery"/>
+				<display_value name="dExRadius" value="4"/>
+				<display_value name="dDuration" value="25"/>
+			</effect_group>
+		</item>
+		<item name="ammoCrossbowUkuTadasiSpellsFrostBomb"><!-- 十字弓專用: 冰霜彈 -->
+			<property name="Tags" value="ammo,ranged,attAgility,perkArchery"/>
+			<property name="DescriptionKey" value="ammoCrossbowUkuTadasiSpellsFrostBombDesc"/>
+			<property name="CustomIcon" value="ammoCrossbowUkuTadasiSpellsFrostBomb"/>
+			<property name="DisplayType" value="ammoArrowUkuTadasiSpells"/>
+			<property name="Meshfile" value="#@modfolder:Resources/ukutadasispells?ukutadasi_arrow_crossbow_frost"/>
+			<property name="HoldType" value="45"/>
+			<property name="HandMeshfile" value="@:Other/Items/Misc/sackPrefab.prefab"/>
+			<property name="DropMeshfile" value="#@modfolder:Resources/ukutadasispells?ukutadasi_arrow_crossbow"/>
+			<property name="DropScale" value="2"/>
+			<property name="Material" value="Mmetal"/>
+			<property name="IsSticky" value="false"/>
+			<property name="StickyOffset" value=".13"/>
+			<property name="StickyColliderUp" value="2"/>
+			<property name="StickyColliderRadius" value=".05"/>
+			<property name="StickyColliderLength" value=".75"/>
+			<property name="Stacknumber" value="1000"/>
+			<property name="EconomicValue" value="200"/>
+			<property name="TraderStageTemplate" value="arrowsTier4"/>
+			<property name="UsableUnderwater" value="true"/>
+			<property name="Group" value="Ammo/Weapons,Ammo,Ranged Weapons"/>
+			
+			<property class="Action1">
+				<property name="Class" value="Projectile"/>
+				<property name="Gravity" value="-3"/>
+				<property name="FlyTime" value="5"/>
+				<property name="LifeTime" value="10"/>
+				<property name="Explosion.ParticleIndex" value="#@modfolder(IVS_UkuTaDasi):Resources/ukutadasispells?ukutadasiFrostBomb$iceball"/>
+				<property name="Explosion.Duration" value="25"/>
+				<property name="Explosion.CustomScriptTypes" value="ExplosionAreaBuffTick,CustomParticleLoaderBuffArea"/>
+				<property name="Explosion.TickInterval" value="0.5"/>
+				<property name="Explosion.Buff" value="buffUkuTadasiSpellsFrostBomb"/>
+				<property name="ExplodeOnHit" value="true"/>
+				<property name="Explosion.EntityDamage" value="0"/>
+				<property name="Explosion.BlockDamage" value="0"/>
+				<property name="Explosion.RadiusBlocks" value="0"/>
+				<property name="Explosion.RadiusEntities" value="0"/>
+			</property>
+			<effect_group name="ammoCrossbowUkuTadasiSpellsFrostBomb" tiered="false">
+				<passive_effect name="BlockDamage" operation="base_set" value="1"/>
+				<passive_effect name="EntityDamage" operation="base_set" value="72" tags="perkArchery"/>
+				<passive_effect name="ProjectileVelocity" operation="base_set" value="80" tags="perkArchery"/>
+				<display_value name="dExRadius" value="4"/>
+				<display_value name="dDuration" value="25"/>
+			</effect_group>
+		</item>
+		<item name="ammoCrossbowUkuTadasiSpellsElectricArcImpactBomb"><!-- 十字弓專用: 電衝彈 -->
+			<property name="Tags" value="ammo,ranged,attAgility,perkArchery"/>
+			<property name="DescriptionKey" value="ammoCrossbowUkuTadasiSpellsElectricArcImpactBombDesc"/>
+			<property name="CustomIcon" value="ammoCrossbowUkuTadasiSpellsElectricArcImpactBomb"/>
+			<property name="DisplayType" value="ammoArrowUkuTadasiSpells"/>
+			<property name="Meshfile" value="#@modfolder:Resources/ukutadasispells?ukutadasi_arrow_crossbow_electric"/>
+			<property name="HoldType" value="45"/>
+			<property name="HandMeshfile" value="@:Other/Items/Misc/sackPrefab.prefab"/>
+			<property name="DropMeshfile" value="#@modfolder:Resources/ukutadasispells?ukutadasi_arrow_crossbow"/>
+			<property name="DropScale" value="2"/>
+			<property name="Material" value="Mmetal"/>
+			<property name="IsSticky" value="false"/>
+			<property name="StickyOffset" value=".13"/>
+			<property name="StickyColliderUp" value="2"/>
+			<property name="StickyColliderRadius" value=".05"/>
+			<property name="StickyColliderLength" value=".75"/>
+			<property name="Stacknumber" value="1000"/>
+			<property name="EconomicValue" value="200"/>
+			<property name="TraderStageTemplate" value="arrowsTier4"/>
+			<property name="UsableUnderwater" value="true"/>
+			<property name="Group" value="Ammo/Weapons,Ammo,Ranged Weapons"/>
+			
+			<property class="Action1">
+				<property name="Class" value="Projectile"/>
+				<property name="Gravity" value="-3"/>
+				<property name="FlyTime" value="5"/>
+				<property name="LifeTime" value="10"/>
+				<property name="Explosion.ParticleIndex" value="#@modfolder(IVS_UkuTaDasi):Resources/ukutadasispells?ukutadasiElectricArcImpactBomb$electricalball"/>
+				<property name="Explosion.Duration" value="25"/>
+				<property name="Explosion.CustomScriptTypes" value="ExplosionAreaBuffTick,CustomParticleLoaderBuffArea"/>
+				<property name="Explosion.TickInterval" value="0.5"/>
+				<property name="Explosion.Buff" value="buffUkuTadasiSpellsElectricArcImpactBomb"/>
+				<property name="ExplodeOnHit" value="true"/>
+				<property name="Explosion.EntityDamage" value="0"/>
+				<property name="Explosion.BlockDamage" value="0"/>
+				<property name="Explosion.RadiusBlocks" value="0"/>
+				<property name="Explosion.RadiusEntities" value="0"/>
+			</property>
+			<effect_group name="ammoCrossbowUkuTadasiSpellsElectricArcImpactBomb" tiered="false">
+				<passive_effect name="BlockDamage" operation="base_set" value="1"/>
+				<passive_effect name="EntityDamage" operation="base_set" value="72" tags="perkArchery"/>
+				<passive_effect name="ProjectileVelocity" operation="base_set" value="80" tags="perkArchery"/>
+				<display_value name="dExRadius" value="4"/>
+				<display_value name="dDuration" value="25"/>
+			</effect_group>
+		</item>
+		<item name="ammoCrossbowUkuTadasiSpellsPoisonGasBomb"><!-- 十字弓專用: 毒氣彈 -->
+			<property name="Tags" value="ammo,ranged,attAgility,perkArchery"/>
+			<property name="DescriptionKey" value="ammoCrossbowUkuTadasiSpellsPoisonGasBombDesc"/>
+			<property name="CustomIcon" value="ammoCrossbowUkuTadasiSpellsPoisonGasBomb"/>
+			<property name="DisplayType" value="ammoArrowUkuTadasiSpells"/>
+			<property name="Meshfile" value="#@modfolder:Resources/ukutadasispells?ukutadasi_arrow_crossbow_poison"/>
+			<property name="HoldType" value="45"/>
+			<property name="HandMeshfile" value="@:Other/Items/Misc/sackPrefab.prefab"/>
+			<property name="DropMeshfile" value="#@modfolder:Resources/ukutadasispells?ukutadasi_arrow_crossbow"/>
+			<property name="DropScale" value="2"/>
+			<property name="Material" value="Mmetal"/>
+			<property name="IsSticky" value="false"/>
+			<property name="StickyOffset" value=".13"/>
+			<property name="StickyColliderUp" value="2"/>
+			<property name="StickyColliderRadius" value=".05"/>
+			<property name="StickyColliderLength" value=".75"/>
+			<property name="Stacknumber" value="1000"/>
+			<property name="EconomicValue" value="200"/>
+			<property name="TraderStageTemplate" value="arrowsTier4"/>
+			<property name="UsableUnderwater" value="true"/>
+			<property name="Group" value="Ammo/Weapons,Ammo,Ranged Weapons"/>
+			
+			<property class="Action1">
+				<property name="Class" value="Projectile"/>
+				<property name="Gravity" value="-3"/>
+				<property name="FlyTime" value="5"/>
+				<property name="LifeTime" value="10"/>
+				<property name="Explosion.ParticleIndex" value="#@modfolder(IVS_UkuTaDasi):Resources/ukutadasispells?ukutadasiPoisonGasBomb$gasball"/>
+				<property name="Explosion.Duration" value="25"/>
+				<property name="Explosion.CustomScriptTypes" value="ExplosionAreaBuffTick,CustomParticleLoaderBuffArea"/>
+				<property name="Explosion.TickInterval" value="0.5"/>
+				<property name="Explosion.Buff" value="buffUkuTadasiSpellsPoisonGasBomb"/>
+				<property name="ExplodeOnHit" value="true"/>
+				<property name="Explosion.EntityDamage" value="0"/>
+				<property name="Explosion.BlockDamage" value="0"/>
+				<property name="Explosion.RadiusBlocks" value="0"/>
+				<property name="Explosion.RadiusEntities" value="0"/>
+			</property>
+			<effect_group name="ammoCrossbowUkuTadasiSpellsPoisonGasBomb" tiered="false">
+				<passive_effect name="BlockDamage" operation="base_set" value="1"/>
+				<passive_effect name="EntityDamage" operation="base_set" value="72" tags="perkArchery"/>
+				<passive_effect name="ProjectileVelocity" operation="base_set" value="80" tags="perkArchery"/>
+				<display_value name="dExRadius" value="4"/>
+				<display_value name="dDuration" value="25"/>
+			</effect_group>
+		</item>
+	</append>
+	<append xpath="/items/item[@name='meleeToolRepairT0StoneAxe']/property[@name='Tags']/@value">,UkuTadasiSpells</append>
+	<append xpath="/items/item[@name='meleeToolRepairT0TazasStoneAxe']/property[@name='Tags']/@value">,UkuTadasiSpells</append>
+	<append xpath="/items/item[@name='meleeToolRepairT1ClawHammer']/property[@name='Tags']/@value">,UkuTadasiSpells</append>
+	<append xpath="/items/item[@name='meleeToolAxeT1IronFireaxe']/property[@name='Tags']/@value">,UkuTadasiSpells</append>
+	<append xpath="/items/item[@name='meleeToolPickT1IronPickaxe']/property[@name='Tags']/@value">,UkuTadasiSpells</append>
+	<append xpath="/items/item[@name='meleeToolShovelT0StoneShovel']/property[@name='Tags']/@value">,UkuTadasiSpells</append>
+	<append xpath="/items/item[@name='meleeToolShovelT1IronShovel']/property[@name='Tags']/@value">,UkuTadasiSpells</append>
+	<append xpath="/items/item[@name='meleeToolShovelT2SteelShovel']/property[@name='Tags']/@value">,UkuTadasiSpells</append>
+	<append xpath="/items/item[@name='meleeToolAxeT3Chainsaw']/property[@name='Tags']/@value">,UkuTadasiSpells</append>
+	<append xpath="/items/item[@name='meleeToolPickT3Auger']/property[@name='Tags']/@value">,UkuTadasiSpells</append>
+	<append xpath="/items/item[@name='meleeToolSalvageT1Wrench']/property[@name='Tags']/@value">,UkuTadasiSpells</append>
+	<append xpath="/items/item[@name='meleeToolSalvageT2Ratchet']/property[@name='Tags']/@value">,UkuTadasiSpells</append>
+	<append xpath="/items/item[@name='meleeToolSalvageT3ImpactDriver']/property[@name='Tags']/@value">,UkuTadasiSpells</append>
+	<append xpath="/items/item[@name='meleeWpnBladeT0BoneKnife']/property[@name='Tags']/@value">,UkuTadasiSpells</append>
+	<append xpath="/items/item[@name='meleeWpnBladeT1HuntingKnife']/property[@name='Tags']/@value">,UkuTadasiSpells</append>
+	<append xpath="/items/item[@name='meleeWpnBladeT1CandyKnife']/property[@name='Tags']/@value">,UkuTadasiSpells</append>
+	<append xpath="/items/item[@name='meleeWpnBladeT3Machete']/property[@name='Tags']/@value">,UkuTadasiSpells</append>
+	<append xpath="/items/item[@name='meleeWpnClubT0WoodenClub']/property[@name='Tags']/@value">,UkuTadasiSpells</append>
+	<append xpath="/items/item[@name='meleeWpnClubT1BaseballBat']/property[@name='Tags']/@value">,UkuTadasiSpells</append>
+	<append xpath="/items/item[@name='meleeWpnClubT1CandyClub']/property[@name='Tags']/@value">,UkuTadasiSpells</append>
+	<append xpath="/items/item[@name='meleeWpnClubT3SteelClub']/property[@name='Tags']/@value">,UkuTadasiSpells</append>
+	<append xpath="/items/item[@name='meleeWpnBatonT0PipeBaton']/property[@name='Tags']/@value">,UkuTadasiSpells</append>
+	<append xpath="/items/item[@name='meleeWpnBatonT2StunBaton']/property[@name='Tags']/@value">,UkuTadasiSpells</append>
+	<append xpath="/items/item[@name='meleeWpnSpearT0StoneSpear']/property[@name='Tags']/@value">,UkuTadasiSpells</append>
+	<append xpath="/items/item[@name='meleeWpnSledgeT0StoneSledgehammer']/property[@name='Tags']/@value">,UkuTadasiSpells</append>
+	<append xpath="/items/item[@name='meleeWpnSledgeT1IronSledgehammer']/property[@name='Tags']/@value">,UkuTadasiSpells</append>
+	<append xpath="/items/item[@name='meleeWpnSledgeT3SteelSledgehammer']/property[@name='Tags']/@value">,UkuTadasiSpells</append>
+	<append xpath="/items/item[@name='meleeWpnKnucklesT0LeatherKnuckles']/property[@name='Tags']/@value">,UkuTadasiSpells</append>
+	<append xpath="/items/item[@name='meleeWpnKnucklesT1IronKnuckles']/property[@name='Tags']/@value">,UkuTadasiSpells</append>
+	<append xpath="/items/item[@name='meleeWpnKnucklesT3SteelKnuckles']/property[@name='Tags']/@value">,UkuTadasiSpells</append>
+
+	<append xpath="/items/item[@name='gunBowT0PrimitiveBow']/property[@class='Action0']/property[@name='Magazine_items']/@value">,ammoBowUkuTadasiSpellsFlameBurstBomb,ammoBowUkuTadasiSpellsFrostBomb,ammoBowUkuTadasiSpellsElectricArcImpactBomb,ammoBowUkuTadasiSpellsPoisonGasBomb</append>
+	<append xpath="/items/item[@name='gunBowT1WoodenBow']/property[@class='Action0']/property[@name='Magazine_items']/@value">,ammoBowUkuTadasiSpellsFlameBurstBomb,ammoBowUkuTadasiSpellsFrostBomb,ammoBowUkuTadasiSpellsElectricArcImpactBomb,ammoBowUkuTadasiSpellsPoisonGasBomb</append>
+	<append xpath="/items/item[@name='gunBowT3CompoundBow']/property[@class='Action0']/property[@name='Magazine_items']/@value">,ammoBowUkuTadasiSpellsFlameBurstBomb,ammoBowUkuTadasiSpellsFrostBomb,ammoBowUkuTadasiSpellsElectricArcImpactBomb,ammoBowUkuTadasiSpellsPoisonGasBomb</append>
+	<append xpath="/items/item[@name='gunBowT1IronCrossbow']/property[@class='Action0']/property[@name='Magazine_items']/@value">,ammoCrossbowUkuTadasiSpellsFlameBurstBomb,ammoCrossbowUkuTadasiSpellsFrostBomb,ammoCrossbowUkuTadasiSpellsElectricArcImpactBomb,ammoCrossbowUkuTadasiSpellsPoisonGasBomb</append>
+	<append xpath="/items/item[@name='gunBowT3CompoundCrossbow']/property[@class='Action0']/property[@name='Magazine_items']/@value">,ammoCrossbowUkuTadasiSpellsFlameBurstBomb,ammoCrossbowUkuTadasiSpellsFrostBomb,ammoCrossbowUkuTadasiSpellsElectricArcImpactBomb,ammoCrossbowUkuTadasiSpellsPoisonGasBomb</append>
+</config>

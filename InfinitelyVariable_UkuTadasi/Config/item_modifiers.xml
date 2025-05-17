@@ -1,0 +1,786 @@
+<config>
+	<append xpath="/item_modifiers">
+		<!-- 定義範本 -->
+		<item_modifier name="modUkuTadasiSpellsTemplate" type="attachment">
+			<property name="CreativeMode" value="None"/>
+			<property name="CustomIcon" value="missingIcon"/>
+			<property name="Stacknumber" value="1"/>
+			<property name="HoldType" value="45"/>
+			<property name="Meshfile" value="@:Other/Items/Misc/sackPrefab.prefab"/>
+			<property name="DropMeshfile" value="@:Other/Items/Misc/sack_droppedPrefab.prefab"/>
+			<property name="Group" value="Mods,Tool/Weapon Mods"/>
+		</item_modifier>
+
+		<!-- 燃燒 -->
+		<item_modifier name="modUkuTadasiSpellsFire" installable_tags="UkuTadasiSpells" modifier_tags="UkuTadasiAcctiveSkill" blocked_tags="noMods" type="attachment">
+			<property name="Extends" value="modUkuTadasiSpellsTemplate" param1="CustomIcon"/>
+			<property name="CustomIcon" value="modUkuTadasiSpellsFire"/>
+			<property name="DescriptionKey" value="modUkuTadasiSpellsFireDesc"/>
+			<property name="UnlockedBy" value="ivSoulEssenceFire"/>
+			<property name="TraderStageTemplate" value="modsTier1"/>
+			<effect_group tiered="false">
+				<triggered_effect trigger="onSelfDamagedOther" action="AddBuff" target="other" target_tags="zombie,animal" buff="buffUkuTadasiSpellsFireLv1">
+					<requirement name="ProgressionLevel" progression_name="ukutadasiFire" operation="GTE" value="2"/>
+					<requirement name="ProgressionLevel" progression_name="ukutadasiFire" operation="LTE" value="19"/>
+				</triggered_effect>
+			</effect_group>
+			<effect_group tiered="false">
+				<triggered_effect trigger="onSelfDamagedOther" action="AddBuff" target="other" target_tags="zombie,animal" buff="buffUkuTadasiSpellsFireLv2">
+					<requirement name="ProgressionLevel" progression_name="ukutadasiFire" operation="GTE" value="20"/>
+					<requirement name="ProgressionLevel" progression_name="ukutadasiFire" operation="LTE" value="29"/>
+				</triggered_effect>
+			</effect_group>
+			<effect_group tiered="false">
+				<triggered_effect trigger="onSelfDamagedOther" action="AddBuff" target="other" target_tags="zombie,animal" buff="buffUkuTadasiSpellsFireLv3">
+					<requirement name="ProgressionLevel" progression_name="ukutadasiFire" operation="GTE" value="30"/>
+					<requirement name="ProgressionLevel" progression_name="ukutadasiFire" operation="LTE" value="39"/>
+				</triggered_effect>
+			</effect_group>
+			<effect_group tiered="false">
+				<triggered_effect trigger="onSelfDamagedOther" action="AddBuff" target="other" target_tags="zombie,animal" buff="buffUkuTadasiSpellsFireLv4">
+					<requirement name="ProgressionLevel" progression_name="ukutadasiFire" operation="GTE" value="40"/>
+					<requirement name="ProgressionLevel" progression_name="ukutadasiFire" operation="LTE" value="49"/>
+				</triggered_effect>
+			</effect_group>
+			<effect_group tiered="false">
+				<triggered_effect trigger="onSelfDamagedOther" action="AddBuff" target="other" target_tags="zombie,animal" buff="buffUkuTadasiSpellsFireLv5">
+					<requirement name="ProgressionLevel" progression_name="ukutadasiFire" operation="GTE" value="50"/>
+				</triggered_effect>
+			</effect_group>
+			<effect_group tiered="false">
+				<triggered_effect trigger="onSelfDamagedOther" action="AddBuff" target="other" target_tags="zombie,animal" buff="buffUkuTadasiSpellsUkutadasiTornado">
+					<requirement name="HasBuff" target="other" buff="buffMarksExistingPropertyIce"/>
+					<requirement name="HasBuff" target="other" buff="buffMarksExistingPropertyPoison"/>
+					<requirement name="HasBuff" target="other" buff="buffMarksExistingPropertyElectric"/>
+				</triggered_effect>
+			</effect_group>
+
+			<!-- 傷害限界提升 -->
+			<effect_group tiered="false">
+				<triggered_effect trigger="onSelfDamagedOther" action="ModifyCVar" target="other" cvar="spellsFireDamage" operation="set" value="0">
+					<requirement name="ProgressionLevel" progression_name="ukutadasiFire" operation="LTE" value="50"/>
+				</triggered_effect>
+				<triggered_effect trigger="onSelfDamagedOther" action="ModifyCVar" target="other" cvar="spellsFireDamage" operation="set" value="14">
+					<requirement name="ProgressionLevel" progression_name="ukutadasiFire" operation="GTE" value="51"/>
+					<requirement name="ProgressionLevel" progression_name="ukutadasiFire" operation="LTE" value="59"/>
+				</triggered_effect>
+				<triggered_effect trigger="onSelfDamagedOther" action="ModifyCVar" target="other" cvar="spellsFireDamage" operation="set" value="28">
+					<requirement name="ProgressionLevel" progression_name="ukutadasiFire" operation="GTE" value="60"/>
+					<requirement name="ProgressionLevel" progression_name="ukutadasiFire" operation="LTE" value="69"/>
+				</triggered_effect>
+				<triggered_effect trigger="onSelfDamagedOther" action="ModifyCVar" target="other" cvar="spellsFireDamage" operation="set" value="42">
+					<requirement name="ProgressionLevel" progression_name="ukutadasiFire" operation="GTE" value="70"/>
+					<requirement name="ProgressionLevel" progression_name="ukutadasiFire" operation="LTE" value="79"/>
+				</triggered_effect>
+				<triggered_effect trigger="onSelfDamagedOther" action="ModifyCVar" target="other" cvar="spellsFireDamage" operation="set" value="56">
+					<requirement name="ProgressionLevel" progression_name="ukutadasiFire" operation="GTE" value="80"/>
+					<requirement name="ProgressionLevel" progression_name="ukutadasiFire" operation="LTE" value="89"/>
+				</triggered_effect>
+				<triggered_effect trigger="onSelfDamagedOther" action="ModifyCVar" target="other" cvar="spellsFireDamage" operation="set" value="70">
+					<requirement name="ProgressionLevel" progression_name="ukutadasiFire" operation="GTE" value="90"/>
+					<requirement name="ProgressionLevel" progression_name="ukutadasiFire" operation="LTE" value="99"/>
+				</triggered_effect>
+				<triggered_effect trigger="onSelfDamagedOther" action="ModifyCVar" target="other" cvar="spellsFireDamage" operation="set" value="84">
+					<requirement name="ProgressionLevel" progression_name="ukutadasiFire" operation="GTE" value="100"/>
+					<requirement name="ProgressionLevel" progression_name="ukutadasiFire" operation="LTE" value="109"/>
+				</triggered_effect>
+				<triggered_effect trigger="onSelfDamagedOther" action="ModifyCVar" target="other" cvar="spellsFireDamage" operation="set" value="98">
+					<requirement name="ProgressionLevel" progression_name="ukutadasiFire" operation="GTE" value="110"/>
+					<requirement name="ProgressionLevel" progression_name="ukutadasiFire" operation="LTE" value="119"/>
+				</triggered_effect>
+				<triggered_effect trigger="onSelfDamagedOther" action="ModifyCVar" target="other" cvar="spellsFireDamage" operation="set" value="112">
+					<requirement name="ProgressionLevel" progression_name="ukutadasiFire" operation="GTE" value="120"/>
+					<requirement name="ProgressionLevel" progression_name="ukutadasiFire" operation="LTE" value="129"/>
+				</triggered_effect>
+				<triggered_effect trigger="onSelfDamagedOther" action="ModifyCVar" target="other" cvar="spellsFireDamage" operation="set" value="126">
+					<requirement name="ProgressionLevel" progression_name="ukutadasiFire" operation="GTE" value="130"/>
+					<requirement name="ProgressionLevel" progression_name="ukutadasiFire" operation="LTE" value="139"/>
+				</triggered_effect>
+				<triggered_effect trigger="onSelfDamagedOther" action="ModifyCVar" target="other" cvar="spellsFireDamage" operation="set" value="140">
+					<requirement name="ProgressionLevel" progression_name="ukutadasiFire" operation="GTE" value="140"/>
+					<requirement name="ProgressionLevel" progression_name="ukutadasiFire" operation="LTE" value="149"/>
+				</triggered_effect>
+				<triggered_effect trigger="onSelfDamagedOther" action="ModifyCVar" target="other" cvar="spellsFireDamage" operation="set" value="154">
+					<requirement name="ProgressionLevel" progression_name="ukutadasiFire" operation="GTE" value="150"/>
+					<requirement name="ProgressionLevel" progression_name="ukutadasiFire" operation="LTE" value="159"/>
+				</triggered_effect>
+				<triggered_effect trigger="onSelfDamagedOther" action="ModifyCVar" target="other" cvar="spellsFireDamage" operation="set" value="240">
+					<requirement name="ProgressionLevel" progression_name="ukutadasiFire" operation="GTE" value="160"/>
+					<requirement name="ProgressionLevel" progression_name="ukutadasiFire" operation="LTE" value="169"/>
+				</triggered_effect>
+				<triggered_effect trigger="onSelfDamagedOther" action="ModifyCVar" target="other" cvar="spellsFireDamage" operation="set" value="168">
+					<requirement name="ProgressionLevel" progression_name="ukutadasiFire" operation="GTE" value="170"/>
+					<requirement name="ProgressionLevel" progression_name="ukutadasiFire" operation="LTE" value="179"/>
+				</triggered_effect>
+				<triggered_effect trigger="onSelfDamagedOther" action="ModifyCVar" target="other" cvar="spellsFireDamage" operation="set" value="280">
+					<requirement name="ProgressionLevel" progression_name="ukutadasiFire" operation="GTE" value="180"/>
+					<requirement name="ProgressionLevel" progression_name="ukutadasiFire" operation="LTE" value="189"/>
+				</triggered_effect>
+				<triggered_effect trigger="onSelfDamagedOther" action="ModifyCVar" target="other" cvar="spellsFireDamage" operation="set" value="182">
+					<requirement name="ProgressionLevel" progression_name="ukutadasiFire" operation="GTE" value="190"/>
+					<requirement name="ProgressionLevel" progression_name="ukutadasiFire" operation="LTE" value="199"/>
+				</triggered_effect>
+				<triggered_effect trigger="onSelfDamagedOther" action="ModifyCVar" target="other" cvar="spellsFireDamage" operation="set" value="196">
+					<requirement name="ProgressionLevel" progression_name="ukutadasiFire" operation="GTE" value="200"/>
+					<requirement name="ProgressionLevel" progression_name="ukutadasiFire" operation="LTE" value="209"/>
+				</triggered_effect>
+				<triggered_effect trigger="onSelfDamagedOther" action="ModifyCVar" target="other" cvar="spellsFireDamage" operation="set" value="210">
+					<requirement name="ProgressionLevel" progression_name="ukutadasiFire" operation="GTE" value="210"/>
+					<requirement name="ProgressionLevel" progression_name="ukutadasiFire" operation="LTE" value="219"/>
+				</triggered_effect>
+				<triggered_effect trigger="onSelfDamagedOther" action="ModifyCVar" target="other" cvar="spellsFireDamage" operation="set" value="224">
+					<requirement name="ProgressionLevel" progression_name="ukutadasiFire" operation="GTE" value="220"/>
+					<requirement name="ProgressionLevel" progression_name="ukutadasiFire" operation="LTE" value="229"/>
+				</triggered_effect>
+				<triggered_effect trigger="onSelfDamagedOther" action="ModifyCVar" target="other" cvar="spellsFireDamage" operation="set" value="238">
+					<requirement name="ProgressionLevel" progression_name="ukutadasiFire" operation="GTE" value="230"/>
+					<requirement name="ProgressionLevel" progression_name="ukutadasiFire" operation="LTE" value="239"/>
+				</triggered_effect>
+				<triggered_effect trigger="onSelfDamagedOther" action="ModifyCVar" target="other" cvar="spellsFireDamage" operation="set" value="252">
+					<requirement name="ProgressionLevel" progression_name="ukutadasiFire" operation="GTE" value="240"/>
+					<requirement name="ProgressionLevel" progression_name="ukutadasiFire" operation="LTE" value="249"/>
+				</triggered_effect>
+				<triggered_effect trigger="onSelfDamagedOther" action="ModifyCVar" target="other" cvar="spellsFireDamage" operation="set" value="266">
+					<requirement name="ProgressionLevel" progression_name="ukutadasiFire" operation="GTE" value="250"/>
+					<requirement name="ProgressionLevel" progression_name="ukutadasiFire" operation="LTE" value="259"/>
+				</triggered_effect>
+				<triggered_effect trigger="onSelfDamagedOther" action="ModifyCVar" target="other" cvar="spellsFireDamage" operation="set" value="280">
+					<requirement name="ProgressionLevel" progression_name="ukutadasiFire" operation="GTE" value="260"/>
+					<requirement name="ProgressionLevel" progression_name="ukutadasiFire" operation="LTE" value="269"/>
+				</triggered_effect>
+				<triggered_effect trigger="onSelfDamagedOther" action="ModifyCVar" target="other" cvar="spellsFireDamage" operation="set" value="294">
+					<requirement name="ProgressionLevel" progression_name="ukutadasiFire" operation="GTE" value="270"/>
+					<requirement name="ProgressionLevel" progression_name="ukutadasiFire" operation="LTE" value="279"/>
+				</triggered_effect>
+				<triggered_effect trigger="onSelfDamagedOther" action="ModifyCVar" target="other" cvar="spellsFireDamage" operation="set" value="308">
+					<requirement name="ProgressionLevel" progression_name="ukutadasiFire" operation="GTE" value="280"/>
+					<requirement name="ProgressionLevel" progression_name="ukutadasiFire" operation="LTE" value="289"/>
+				</triggered_effect>
+				<triggered_effect trigger="onSelfDamagedOther" action="ModifyCVar" target="other" cvar="spellsFireDamage" operation="set" value="322">
+					<requirement name="ProgressionLevel" progression_name="ukutadasiFire" operation="GTE" value="290"/>
+					<requirement name="ProgressionLevel" progression_name="ukutadasiFire" operation="LTE" value="299"/>
+				</triggered_effect>
+				<triggered_effect trigger="onSelfDamagedOther" action="ModifyCVar" target="other" cvar="spellsFireDamage" operation="set" value="400">
+					<requirement name="ProgressionLevel" progression_name="ukutadasiFire" operation="GTE" value="300"/>
+				</triggered_effect>
+			</effect_group>
+		</item_modifier>
+
+		<!-- 冰凍 -->
+		<item_modifier name="modUkuTadasiSpellsIce" installable_tags="UkuTadasiSpells" modifier_tags="UkuTadasiAcctiveSkill" blocked_tags="noMods" type="attachment">
+			<property name="Extends" value="modUkuTadasiSpellsTemplate" param1="CustomIcon"/>
+			<property name="CustomIcon" value="modUkuTadasiSpellsIce"/>
+			<property name="DescriptionKey" value="modUkuTadasiSpellsIceDesc"/>
+			<property name="UnlockedBy" value="ivSoulEssenceIce"/>
+			<property name="TraderStageTemplate" value="modsTier1"/>
+			<effect_group tiered="false">
+				<triggered_effect trigger="onSelfDamagedOther" action="AddBuff" target="other" target_tags="zombie,animal" buff="buffUkuTadasiSpellsIceLv1">
+					<requirement name="ProgressionLevel" progression_name="ukutadasiIce" operation="GTE" value="2"/>
+					<requirement name="ProgressionLevel" progression_name="ukutadasiIce" operation="LTE" value="19"/>
+				</triggered_effect>
+			</effect_group>
+			<effect_group tiered="false">
+				<triggered_effect trigger="onSelfDamagedOther" action="AddBuff" target="other" target_tags="zombie,animal" buff="buffUkuTadasiSpellsIceLv2">
+					<requirement name="ProgressionLevel" progression_name="ukutadasiIce" operation="GTE" value="20"/>
+					<requirement name="ProgressionLevel" progression_name="ukutadasiIce" operation="LTE" value="29"/>
+				</triggered_effect>
+			</effect_group>
+			<effect_group tiered="false">
+				<triggered_effect trigger="onSelfDamagedOther" action="AddBuff" target="other" target_tags="zombie,animal" buff="buffUkuTadasiSpellsIceLv3">
+					<requirement name="ProgressionLevel" progression_name="ukutadasiIce" operation="GTE" value="30"/>
+					<requirement name="ProgressionLevel" progression_name="ukutadasiIce" operation="LTE" value="39"/>
+				</triggered_effect>
+			</effect_group>
+			<effect_group tiered="false">
+				<triggered_effect trigger="onSelfDamagedOther" action="AddBuff" target="other" target_tags="zombie,animal" buff="buffUkuTadasiSpellsIceLv4">
+					<requirement name="ProgressionLevel" progression_name="ukutadasiIce" operation="GTE" value="40"/>
+					<requirement name="ProgressionLevel" progression_name="ukutadasiIce" operation="LTE" value="49"/>
+				</triggered_effect>
+			</effect_group>
+			<effect_group tiered="false">
+				<triggered_effect trigger="onSelfDamagedOther" action="AddBuff" target="other" target_tags="zombie,animal" buff="buffUkuTadasiSpellsIceLv5">
+					<requirement name="ProgressionLevel" progression_name="ukutadasiIce" operation="GTE" value="50"/>
+				</triggered_effect>
+			</effect_group>
+			<effect_group tiered="false">
+				<triggered_effect trigger="onSelfDamagedOther" action="AddBuff" target="other" target_tags="zombie,animal" buff="buffUkuTadasiSpellsUkutadasiTornado">
+					<requirement name="HasBuff" target="other" buff="buffMarksExistingPropertyFire"/>
+					<requirement name="HasBuff" target="other" buff="buffMarksExistingPropertyPoison"/>
+					<requirement name="HasBuff" target="other" buff="buffMarksExistingPropertyElectric"/>
+				</triggered_effect>
+			</effect_group>
+
+			<!-- 傷害限界提升 -->
+			<effect_group tiered="false">
+				<triggered_effect trigger="onSelfDamagedOther" action="ModifyCVar" target="other" cvar="spellsIceDamage" operation="set" value="0">
+					<requirement name="ProgressionLevel" progression_name="ukutadasiIce" operation="LTE" value="50"/>
+				</triggered_effect>
+				<triggered_effect trigger="onSelfDamagedOther" action="ModifyCVar" target="other" cvar="spellsIceDamage" operation="set" value="19">
+					<requirement name="ProgressionLevel" progression_name="ukutadasiIce" operation="GTE" value="51"/>
+					<requirement name="ProgressionLevel" progression_name="ukutadasiIce" operation="LTE" value="59"/>
+				</triggered_effect>
+				<triggered_effect trigger="onSelfDamagedOther" action="ModifyCVar" target="other" cvar="spellsIceDamage" operation="set" value="38">
+					<requirement name="ProgressionLevel" progression_name="ukutadasiIce" operation="GTE" value="60"/>
+					<requirement name="ProgressionLevel" progression_name="ukutadasiIce" operation="LTE" value="69"/>
+				</triggered_effect>
+				<triggered_effect trigger="onSelfDamagedOther" action="ModifyCVar" target="other" cvar="spellsIceDamage" operation="set" value="57">
+					<requirement name="ProgressionLevel" progression_name="ukutadasiIce" operation="GTE" value="70"/>
+					<requirement name="ProgressionLevel" progression_name="ukutadasiIce" operation="LTE" value="79"/>
+				</triggered_effect>
+				<triggered_effect trigger="onSelfDamagedOther" action="ModifyCVar" target="other" cvar="spellsIceDamage" operation="set" value="76">
+					<requirement name="ProgressionLevel" progression_name="ukutadasiIce" operation="GTE" value="80"/>
+					<requirement name="ProgressionLevel" progression_name="ukutadasiIce" operation="LTE" value="89"/>
+				</triggered_effect>
+				<triggered_effect trigger="onSelfDamagedOther" action="ModifyCVar" target="other" cvar="spellsIceDamage" operation="set" value="95">
+					<requirement name="ProgressionLevel" progression_name="ukutadasiIce" operation="GTE" value="90"/>
+					<requirement name="ProgressionLevel" progression_name="ukutadasiIce" operation="LTE" value="99"/>
+				</triggered_effect>
+				<triggered_effect trigger="onSelfDamagedOther" action="ModifyCVar" target="other" cvar="spellsIceDamage" operation="set" value="114">
+					<requirement name="ProgressionLevel" progression_name="ukutadasiIce" operation="GTE" value="100"/>
+					<requirement name="ProgressionLevel" progression_name="ukutadasiIce" operation="LTE" value="109"/>
+				</triggered_effect>
+				<triggered_effect trigger="onSelfDamagedOther" action="ModifyCVar" target="other" cvar="spellsIceDamage" operation="set" value="133">
+					<requirement name="ProgressionLevel" progression_name="ukutadasiIce" operation="GTE" value="110"/>
+					<requirement name="ProgressionLevel" progression_name="ukutadasiIce" operation="LTE" value="119"/>
+				</triggered_effect>
+				<triggered_effect trigger="onSelfDamagedOther" action="ModifyCVar" target="other" cvar="spellsIceDamage" operation="set" value="152">
+					<requirement name="ProgressionLevel" progression_name="ukutadasiIce" operation="GTE" value="120"/>
+					<requirement name="ProgressionLevel" progression_name="ukutadasiIce" operation="LTE" value="129"/>
+				</triggered_effect>
+				<triggered_effect trigger="onSelfDamagedOther" action="ModifyCVar" target="other" cvar="spellsIceDamage" operation="set" value="171">
+					<requirement name="ProgressionLevel" progression_name="ukutadasiIce" operation="GTE" value="130"/>
+					<requirement name="ProgressionLevel" progression_name="ukutadasiIce" operation="LTE" value="139"/>
+				</triggered_effect>
+				<triggered_effect trigger="onSelfDamagedOther" action="ModifyCVar" target="other" cvar="spellsIceDamage" operation="set" value="190">
+					<requirement name="ProgressionLevel" progression_name="ukutadasiIce" operation="GTE" value="140"/>
+					<requirement name="ProgressionLevel" progression_name="ukutadasiIce" operation="LTE" value="149"/>
+				</triggered_effect>
+				<triggered_effect trigger="onSelfDamagedOther" action="ModifyCVar" target="other" cvar="spellsIceDamage" operation="set" value="209">
+					<requirement name="ProgressionLevel" progression_name="ukutadasiIce" operation="GTE" value="150"/>
+					<requirement name="ProgressionLevel" progression_name="ukutadasiIce" operation="LTE" value="159"/>
+				</triggered_effect>
+				<triggered_effect trigger="onSelfDamagedOther" action="ModifyCVar" target="other" cvar="spellsIceDamage" operation="set" value="228">
+					<requirement name="ProgressionLevel" progression_name="ukutadasiIce" operation="GTE" value="160"/>
+					<requirement name="ProgressionLevel" progression_name="ukutadasiIce" operation="LTE" value="169"/>
+				</triggered_effect>
+				<triggered_effect trigger="onSelfDamagedOther" action="ModifyCVar" target="other" cvar="spellsIceDamage" operation="set" value="247">
+					<requirement name="ProgressionLevel" progression_name="ukutadasiIce" operation="GTE" value="170"/>
+					<requirement name="ProgressionLevel" progression_name="ukutadasiIce" operation="LTE" value="179"/>
+				</triggered_effect>
+				<triggered_effect trigger="onSelfDamagedOther" action="ModifyCVar" target="other" cvar="spellsIceDamage" operation="set" value="266">
+					<requirement name="ProgressionLevel" progression_name="ukutadasiIce" operation="GTE" value="180"/>
+					<requirement name="ProgressionLevel" progression_name="ukutadasiIce" operation="LTE" value="189"/>
+				</triggered_effect>
+				<triggered_effect trigger="onSelfDamagedOther" action="ModifyCVar" target="other" cvar="spellsIceDamage" operation="set" value="285">
+					<requirement name="ProgressionLevel" progression_name="ukutadasiIce" operation="GTE" value="190"/>
+					<requirement name="ProgressionLevel" progression_name="ukutadasiIce" operation="LTE" value="199"/>
+				</triggered_effect>
+				<triggered_effect trigger="onSelfDamagedOther" action="ModifyCVar" target="other" cvar="spellsIceDamage" operation="set" value="304">
+					<requirement name="ProgressionLevel" progression_name="ukutadasiIce" operation="GTE" value="200"/>
+					<requirement name="ProgressionLevel" progression_name="ukutadasiIce" operation="LTE" value="209"/>
+				</triggered_effect>
+				<triggered_effect trigger="onSelfDamagedOther" action="ModifyCVar" target="other" cvar="spellsIceDamage" operation="set" value="323">
+					<requirement name="ProgressionLevel" progression_name="ukutadasiIce" operation="GTE" value="210"/>
+					<requirement name="ProgressionLevel" progression_name="ukutadasiIce" operation="LTE" value="219"/>
+				</triggered_effect>
+				<triggered_effect trigger="onSelfDamagedOther" action="ModifyCVar" target="other" cvar="spellsIceDamage" operation="set" value="342">
+					<requirement name="ProgressionLevel" progression_name="ukutadasiIce" operation="GTE" value="220"/>
+					<requirement name="ProgressionLevel" progression_name="ukutadasiIce" operation="LTE" value="229"/>
+				</triggered_effect>
+				<triggered_effect trigger="onSelfDamagedOther" action="ModifyCVar" target="other" cvar="spellsIceDamage" operation="set" value="361">
+					<requirement name="ProgressionLevel" progression_name="ukutadasiIce" operation="GTE" value="230"/>
+					<requirement name="ProgressionLevel" progression_name="ukutadasiIce" operation="LTE" value="239"/>
+				</triggered_effect>
+				<triggered_effect trigger="onSelfDamagedOther" action="ModifyCVar" target="other" cvar="spellsIceDamage" operation="set" value="380">
+					<requirement name="ProgressionLevel" progression_name="ukutadasiIce" operation="GTE" value="240"/>
+					<requirement name="ProgressionLevel" progression_name="ukutadasiIce" operation="LTE" value="249"/>
+				</triggered_effect>
+				<triggered_effect trigger="onSelfDamagedOther" action="ModifyCVar" target="other" cvar="spellsIceDamage" operation="set" value="399">
+					<requirement name="ProgressionLevel" progression_name="ukutadasiIce" operation="GTE" value="250"/>
+					<requirement name="ProgressionLevel" progression_name="ukutadasiIce" operation="LTE" value="259"/>
+				</triggered_effect>
+				<triggered_effect trigger="onSelfDamagedOther" action="ModifyCVar" target="other" cvar="spellsIceDamage" operation="set" value="418">
+					<requirement name="ProgressionLevel" progression_name="ukutadasiIce" operation="GTE" value="260"/>
+					<requirement name="ProgressionLevel" progression_name="ukutadasiIce" operation="LTE" value="269"/>
+				</triggered_effect>
+				<triggered_effect trigger="onSelfDamagedOther" action="ModifyCVar" target="other" cvar="spellsIceDamage" operation="set" value="437">
+					<requirement name="ProgressionLevel" progression_name="ukutadasiIce" operation="GTE" value="270"/>
+					<requirement name="ProgressionLevel" progression_name="ukutadasiIce" operation="LTE" value="279"/>
+				</triggered_effect>
+				<triggered_effect trigger="onSelfDamagedOther" action="ModifyCVar" target="other" cvar="spellsIceDamage" operation="set" value="456">
+					<requirement name="ProgressionLevel" progression_name="ukutadasiIce" operation="GTE" value="280"/>
+					<requirement name="ProgressionLevel" progression_name="ukutadasiIce" operation="LTE" value="289"/>
+				</triggered_effect>
+				<triggered_effect trigger="onSelfDamagedOther" action="ModifyCVar" target="other" cvar="spellsIceDamage" operation="set" value="475">
+					<requirement name="ProgressionLevel" progression_name="ukutadasiIce" operation="GTE" value="290"/>
+					<requirement name="ProgressionLevel" progression_name="ukutadasiIce" operation="LTE" value="299"/>
+				</triggered_effect>
+				<triggered_effect trigger="onSelfDamagedOther" action="ModifyCVar" target="other" cvar="spellsIceDamage" operation="set" value="500">
+					<requirement name="ProgressionLevel" progression_name="ukutadasiIce" operation="GTE" value="300"/>
+				</triggered_effect>
+			</effect_group>
+		</item_modifier>
+
+		<!-- 中毒 -->
+		<item_modifier name="modUkuTadasiSpellsPoison" installable_tags="UkuTadasiSpells" modifier_tags="UkuTadasiAcctiveSkill" blocked_tags="noMods" type="attachment">
+			<property name="Extends" value="modUkuTadasiSpellsTemplate" param1="CustomIcon"/>
+			<property name="CustomIcon" value="modUkuTadasiSpellsPoison"/>
+			<property name="DescriptionKey" value="modUkuTadasiSpellsPoisonDesc"/>
+			<property name="UnlockedBy" value="ivSoulEssencePoison"/>
+			<property name="TraderStageTemplate" value="modsTier1"/>
+			<effect_group tiered="false">
+				<triggered_effect trigger="onSelfDamagedOther" action="AddBuff" target="other" target_tags="zombie,animal" buff="buffUkuTadasiSpellsPoisonLv1">
+					<requirement name="ProgressionLevel" progression_name="ukutadasiPoison" operation="GTE" value="2"/>
+					<requirement name="ProgressionLevel" progression_name="ukutadasiPoison" operation="LTE" value="19"/>
+				</triggered_effect>
+			</effect_group>
+			<effect_group tiered="false">
+				<triggered_effect trigger="onSelfDamagedOther" action="AddBuff" target="other" target_tags="zombie,animal" buff="buffUkuTadasiSpellsPoisonLv2">
+					<requirement name="ProgressionLevel" progression_name="ukutadasiPoison" operation="GTE" value="20"/>
+					<requirement name="ProgressionLevel" progression_name="ukutadasiPoison" operation="LTE" value="29"/>
+				</triggered_effect>
+			</effect_group>
+			<effect_group tiered="false">
+				<triggered_effect trigger="onSelfDamagedOther" action="AddBuff" target="other" target_tags="zombie,animal" buff="buffUkuTadasiSpellsPoisonLv3">
+					<requirement name="ProgressionLevel" progression_name="ukutadasiPoison" operation="GTE" value="30"/>
+					<requirement name="ProgressionLevel" progression_name="ukutadasiPoison" operation="LTE" value="39"/>
+				</triggered_effect>
+			</effect_group>
+			<effect_group tiered="false">
+				<triggered_effect trigger="onSelfDamagedOther" action="AddBuff" target="other" target_tags="zombie,animal" buff="buffUkuTadasiSpellsPoisonLv4">
+					<requirement name="ProgressionLevel" progression_name="ukutadasiPoison" operation="GTE" value="40"/>
+					<requirement name="ProgressionLevel" progression_name="ukutadasiPoison" operation="LTE" value="49"/>
+				</triggered_effect>
+			</effect_group>
+			<effect_group tiered="false">
+				<triggered_effect trigger="onSelfDamagedOther" action="AddBuff" target="other" target_tags="zombie,animal" buff="buffUkuTadasiSpellsPoisonLv5">
+					<requirement name="ProgressionLevel" progression_name="ukutadasiPoison" operation="GTE" value="50"/>
+				</triggered_effect>
+			</effect_group>
+			<effect_group tiered="false">
+				<triggered_effect trigger="onSelfDamagedOther" action="AddBuff" target="other" target_tags="zombie,animal" buff="buffUkuTadasiSpellsUkutadasiTornado">
+					<requirement name="HasBuff" target="other" buff="buffMarksExistingPropertyFire"/>
+					<requirement name="HasBuff" target="other" buff="buffMarksExistingPropertyIce"/>
+					<requirement name="HasBuff" target="other" buff="buffMarksExistingPropertyElectric"/>
+				</triggered_effect>
+			</effect_group>
+
+			<!-- 傷害限界提升 -->
+			<effect_group tiered="false">
+				<triggered_effect trigger="onSelfDamagedOther" action="ModifyCVar" target="other" cvar="spellsPoisonDamage" operation="set" value="0">
+					<requirement name="ProgressionLevel" progression_name="ukutadasiPoison" operation="LTE" value="50"/>
+				</triggered_effect>
+				<triggered_effect trigger="onSelfDamagedOther" action="ModifyCVar" target="other" cvar="spellsPoisonDamage" operation="set" value="20">
+					<requirement name="ProgressionLevel" progression_name="ukutadasiPoison" operation="GTE" value="51"/>
+					<requirement name="ProgressionLevel" progression_name="ukutadasiPoison" operation="LTE" value="59"/>
+				</triggered_effect>
+				<triggered_effect trigger="onSelfDamagedOther" action="ModifyCVar" target="other" cvar="spellsPoisonDamage" operation="set" value="40">
+					<requirement name="ProgressionLevel" progression_name="ukutadasiPoison" operation="GTE" value="60"/>
+					<requirement name="ProgressionLevel" progression_name="ukutadasiPoison" operation="LTE" value="69"/>
+				</triggered_effect>
+				<triggered_effect trigger="onSelfDamagedOther" action="ModifyCVar" target="other" cvar="spellsPoisonDamage" operation="set" value="60">
+					<requirement name="ProgressionLevel" progression_name="ukutadasiPoison" operation="GTE" value="70"/>
+					<requirement name="ProgressionLevel" progression_name="ukutadasiPoison" operation="LTE" value="79"/>
+				</triggered_effect>
+				<triggered_effect trigger="onSelfDamagedOther" action="ModifyCVar" target="other" cvar="spellsPoisonDamage" operation="set" value="80">
+					<requirement name="ProgressionLevel" progression_name="ukutadasiPoison" operation="GTE" value="80"/>
+					<requirement name="ProgressionLevel" progression_name="ukutadasiPoison" operation="LTE" value="89"/>
+				</triggered_effect>
+				<triggered_effect trigger="onSelfDamagedOther" action="ModifyCVar" target="other" cvar="spellsPoisonDamage" operation="set" value="100">
+					<requirement name="ProgressionLevel" progression_name="ukutadasiPoison" operation="GTE" value="90"/>
+					<requirement name="ProgressionLevel" progression_name="ukutadasiPoison" operation="LTE" value="99"/>
+				</triggered_effect>
+				<triggered_effect trigger="onSelfDamagedOther" action="ModifyCVar" target="other" cvar="spellsPoisonDamage" operation="set" value="120">
+					<requirement name="ProgressionLevel" progression_name="ukutadasiPoison" operation="GTE" value="100"/>
+					<requirement name="ProgressionLevel" progression_name="ukutadasiPoison" operation="LTE" value="109"/>
+				</triggered_effect>
+				<triggered_effect trigger="onSelfDamagedOther" action="ModifyCVar" target="other" cvar="spellsPoisonDamage" operation="set" value="140">
+					<requirement name="ProgressionLevel" progression_name="ukutadasiPoison" operation="GTE" value="110"/>
+					<requirement name="ProgressionLevel" progression_name="ukutadasiPoison" operation="LTE" value="119"/>
+				</triggered_effect>
+				<triggered_effect trigger="onSelfDamagedOther" action="ModifyCVar" target="other" cvar="spellsPoisonDamage" operation="set" value="160">
+					<requirement name="ProgressionLevel" progression_name="ukutadasiPoison" operation="GTE" value="120"/>
+					<requirement name="ProgressionLevel" progression_name="ukutadasiPoison" operation="LTE" value="129"/>
+				</triggered_effect>
+				<triggered_effect trigger="onSelfDamagedOther" action="ModifyCVar" target="other" cvar="spellsPoisonDamage" operation="set" value="180">
+					<requirement name="ProgressionLevel" progression_name="ukutadasiPoison" operation="GTE" value="130"/>
+					<requirement name="ProgressionLevel" progression_name="ukutadasiPoison" operation="LTE" value="139"/>
+				</triggered_effect>
+				<triggered_effect trigger="onSelfDamagedOther" action="ModifyCVar" target="other" cvar="spellsPoisonDamage" operation="set" value="200">
+					<requirement name="ProgressionLevel" progression_name="ukutadasiPoison" operation="GTE" value="140"/>
+					<requirement name="ProgressionLevel" progression_name="ukutadasiPoison" operation="LTE" value="149"/>
+				</triggered_effect>
+				<triggered_effect trigger="onSelfDamagedOther" action="ModifyCVar" target="other" cvar="spellsPoisonDamage" operation="set" value="220">
+					<requirement name="ProgressionLevel" progression_name="ukutadasiPoison" operation="GTE" value="150"/>
+					<requirement name="ProgressionLevel" progression_name="ukutadasiPoison" operation="LTE" value="159"/>
+				</triggered_effect>
+				<triggered_effect trigger="onSelfDamagedOther" action="ModifyCVar" target="other" cvar="spellsPoisonDamage" operation="set" value="240">
+					<requirement name="ProgressionLevel" progression_name="ukutadasiPoison" operation="GTE" value="160"/>
+					<requirement name="ProgressionLevel" progression_name="ukutadasiPoison" operation="LTE" value="169"/>
+				</triggered_effect>
+				<triggered_effect trigger="onSelfDamagedOther" action="ModifyCVar" target="other" cvar="spellsPoisonDamage" operation="set" value="260">
+					<requirement name="ProgressionLevel" progression_name="ukutadasiPoison" operation="GTE" value="170"/>
+					<requirement name="ProgressionLevel" progression_name="ukutadasiPoison" operation="LTE" value="179"/>
+				</triggered_effect>
+				<triggered_effect trigger="onSelfDamagedOther" action="ModifyCVar" target="other" cvar="spellsPoisonDamage" operation="set" value="280">
+					<requirement name="ProgressionLevel" progression_name="ukutadasiPoison" operation="GTE" value="180"/>
+					<requirement name="ProgressionLevel" progression_name="ukutadasiPoison" operation="LTE" value="189"/>
+				</triggered_effect>
+				<triggered_effect trigger="onSelfDamagedOther" action="ModifyCVar" target="other" cvar="spellsPoisonDamage" operation="set" value="300">
+					<requirement name="ProgressionLevel" progression_name="ukutadasiPoison" operation="GTE" value="190"/>
+					<requirement name="ProgressionLevel" progression_name="ukutadasiPoison" operation="LTE" value="199"/>
+				</triggered_effect>
+				<triggered_effect trigger="onSelfDamagedOther" action="ModifyCVar" target="other" cvar="spellsPoisonDamage" operation="set" value="320">
+					<requirement name="ProgressionLevel" progression_name="ukutadasiPoison" operation="GTE" value="200"/>
+					<requirement name="ProgressionLevel" progression_name="ukutadasiPoison" operation="LTE" value="209"/>
+				</triggered_effect>
+				<triggered_effect trigger="onSelfDamagedOther" action="ModifyCVar" target="other" cvar="spellsPoisonDamage" operation="set" value="340">
+					<requirement name="ProgressionLevel" progression_name="ukutadasiPoison" operation="GTE" value="210"/>
+					<requirement name="ProgressionLevel" progression_name="ukutadasiPoison" operation="LTE" value="219"/>
+				</triggered_effect>
+				<triggered_effect trigger="onSelfDamagedOther" action="ModifyCVar" target="other" cvar="spellsPoisonDamage" operation="set" value="360">
+					<requirement name="ProgressionLevel" progression_name="ukutadasiPoison" operation="GTE" value="220"/>
+					<requirement name="ProgressionLevel" progression_name="ukutadasiPoison" operation="LTE" value="229"/>
+				</triggered_effect>
+				<triggered_effect trigger="onSelfDamagedOther" action="ModifyCVar" target="other" cvar="spellsPoisonDamage" operation="set" value="380">
+					<requirement name="ProgressionLevel" progression_name="ukutadasiPoison" operation="GTE" value="230"/>
+					<requirement name="ProgressionLevel" progression_name="ukutadasiPoison" operation="LTE" value="239"/>
+				</triggered_effect>
+				<triggered_effect trigger="onSelfDamagedOther" action="ModifyCVar" target="other" cvar="spellsPoisonDamage" operation="set" value="400">
+					<requirement name="ProgressionLevel" progression_name="ukutadasiPoison" operation="GTE" value="240"/>
+					<requirement name="ProgressionLevel" progression_name="ukutadasiPoison" operation="LTE" value="249"/>
+				</triggered_effect>
+				<triggered_effect trigger="onSelfDamagedOther" action="ModifyCVar" target="other" cvar="spellsPoisonDamage" operation="set" value="420">
+					<requirement name="ProgressionLevel" progression_name="ukutadasiPoison" operation="GTE" value="250"/>
+					<requirement name="ProgressionLevel" progression_name="ukutadasiPoison" operation="LTE" value="259"/>
+				</triggered_effect>
+				<triggered_effect trigger="onSelfDamagedOther" action="ModifyCVar" target="other" cvar="spellsPoisonDamage" operation="set" value="440">
+					<requirement name="ProgressionLevel" progression_name="ukutadasiPoison" operation="GTE" value="260"/>
+					<requirement name="ProgressionLevel" progression_name="ukutadasiPoison" operation="LTE" value="269"/>
+				</triggered_effect>
+				<triggered_effect trigger="onSelfDamagedOther" action="ModifyCVar" target="other" cvar="spellsPoisonDamage" operation="set" value="460">
+					<requirement name="ProgressionLevel" progression_name="ukutadasiPoison" operation="GTE" value="270"/>
+					<requirement name="ProgressionLevel" progression_name="ukutadasiPoison" operation="LTE" value="279"/>
+				</triggered_effect>
+				<triggered_effect trigger="onSelfDamagedOther" action="ModifyCVar" target="other" cvar="spellsPoisonDamage" operation="set" value="480">
+					<requirement name="ProgressionLevel" progression_name="ukutadasiPoison" operation="GTE" value="280"/>
+					<requirement name="ProgressionLevel" progression_name="ukutadasiPoison" operation="LTE" value="289"/>
+				</triggered_effect>
+				<triggered_effect trigger="onSelfDamagedOther" action="ModifyCVar" target="other" cvar="spellsPoisonDamage" operation="set" value="500">
+					<requirement name="ProgressionLevel" progression_name="ukutadasiPoison" operation="GTE" value="290"/>
+					<requirement name="ProgressionLevel" progression_name="ukutadasiPoison" operation="LTE" value="299"/>
+				</triggered_effect>
+				<triggered_effect trigger="onSelfDamagedOther" action="ModifyCVar" target="other" cvar="spellsPoisonDamage" operation="set" value="600">
+					<requirement name="ProgressionLevel" progression_name="ukutadasiPoison" operation="GTE" value="300"/>
+				</triggered_effect>
+			</effect_group>
+		</item_modifier>
+
+		<!-- 感電 -->
+		<item_modifier name="modUkuTadasiSpellsElectricShock" installable_tags="UkuTadasiSpells" modifier_tags="UkuTadasiAcctiveSkill" blocked_tags="noMods" type="attachment">
+			<property name="Extends" value="modUkuTadasiSpellsTemplate" param1="CustomIcon"/>
+			<property name="CustomIcon" value="modUkuTadasiSpellsElectricShock"/>
+			<property name="DescriptionKey" value="modUkuTadasiSpellsElectricShockDesc"/>
+			<property name="UnlockedBy" value="ivSoulEssenceElectricShock"/>
+			<property name="TraderStageTemplate" value="modsTier1"/>
+			<effect_group tiered="false">
+				<triggered_effect trigger="onSelfDamagedOther" action="AddBuff" target="other" target_tags="zombie,animal" buff="buffUkuTadasiSpellsElectricShockLv1">
+					<requirement name="ProgressionLevel" progression_name="ukutadasiElectricShock" operation="GTE" value="2"/>
+					<requirement name="ProgressionLevel" progression_name="ukutadasiElectricShock" operation="LTE" value="19"/>
+				</triggered_effect>
+			</effect_group>
+			<effect_group tiered="false">
+				<triggered_effect trigger="onSelfDamagedOther" action="AddBuff" target="other" target_tags="zombie,animal" buff="buffUkuTadasiSpellsElectricShockLv2">
+					<requirement name="ProgressionLevel" progression_name="ukutadasiElectricShock" operation="GTE" value="20"/>
+					<requirement name="ProgressionLevel" progression_name="ukutadasiElectricShock" operation="LTE" value="29"/>
+				</triggered_effect>
+			</effect_group>
+			<effect_group tiered="false">
+				<triggered_effect trigger="onSelfDamagedOther" action="AddBuff" target="other" target_tags="zombie,animal" buff="buffUkuTadasiSpellsElectricShockLv3">
+					<requirement name="ProgressionLevel" progression_name="ukutadasiElectricShock" operation="GTE" value="30"/>
+					<requirement name="ProgressionLevel" progression_name="ukutadasiElectricShock" operation="LTE" value="39"/>
+				</triggered_effect>
+			</effect_group>
+			<effect_group tiered="false">
+				<triggered_effect trigger="onSelfDamagedOther" action="AddBuff" target="other" target_tags="zombie,animal" buff="buffUkuTadasiSpellsElectricShockLv4">
+					<requirement name="ProgressionLevel" progression_name="ukutadasiElectricShock" operation="GTE" value="40"/>
+					<requirement name="ProgressionLevel" progression_name="ukutadasiElectricShock" operation="LTE" value="49"/>
+				</triggered_effect>
+			</effect_group>
+			<effect_group tiered="false">
+				<triggered_effect trigger="onSelfDamagedOther" action="AddBuff" target="other" target_tags="zombie,animal" buff="buffUkuTadasiSpellsElectricShockLv5">
+					<requirement name="ProgressionLevel" progression_name="ukutadasiElectricShock" operation="GTE" value="50"/>
+				</triggered_effect>
+			</effect_group>
+			<effect_group tiered="false">
+				<triggered_effect trigger="onSelfDamagedOther" action="AddBuff" target="other" target_tags="zombie,animal" buff="buffUkuTadasiSpellsUkutadasiTornado">
+					<requirement name="HasBuff" target="other" buff="buffMarksExistingPropertyFire"/>
+					<requirement name="HasBuff" target="other" buff="buffMarksExistingPropertyIce"/>
+					<requirement name="HasBuff" target="other" buff="buffMarksExistingPropertyPoison"/>
+				</triggered_effect>
+			</effect_group>
+
+			<!-- 傷害限界提升 -->
+			<effect_group tiered="false">
+				<triggered_effect trigger="onSelfDamagedOther" action="ModifyCVar" target="other" cvar="spellsElectricShockDamage" operation="set" value="0">
+					<requirement name="ProgressionLevel" progression_name="ukutadasiElectricShock" operation="LTE" value="50"/>
+				</triggered_effect>
+				<triggered_effect trigger="onSelfDamagedOther" action="ModifyCVar" target="other" cvar="spellsElectricShockDamage" operation="set" value="14">
+					<requirement name="ProgressionLevel" progression_name="ukutadasiElectricShock" operation="GTE" value="51"/>
+					<requirement name="ProgressionLevel" progression_name="ukutadasiElectricShock" operation="LTE" value="59"/>
+				</triggered_effect>
+				<triggered_effect trigger="onSelfDamagedOther" action="ModifyCVar" target="other" cvar="spellsElectricShockDamage" operation="set" value="28">
+					<requirement name="ProgressionLevel" progression_name="ukutadasiElectricShock" operation="GTE" value="60"/>
+					<requirement name="ProgressionLevel" progression_name="ukutadasiElectricShock" operation="LTE" value="69"/>
+				</triggered_effect>
+				<triggered_effect trigger="onSelfDamagedOther" action="ModifyCVar" target="other" cvar="spellsElectricShockDamage" operation="set" value="42">
+					<requirement name="ProgressionLevel" progression_name="ukutadasiElectricShock" operation="GTE" value="70"/>
+					<requirement name="ProgressionLevel" progression_name="ukutadasiElectricShock" operation="LTE" value="79"/>
+				</triggered_effect>
+				<triggered_effect trigger="onSelfDamagedOther" action="ModifyCVar" target="other" cvar="spellsElectricShockDamage" operation="set" value="56">
+					<requirement name="ProgressionLevel" progression_name="ukutadasiElectricShock" operation="GTE" value="80"/>
+					<requirement name="ProgressionLevel" progression_name="ukutadasiElectricShock" operation="LTE" value="89"/>
+				</triggered_effect>
+				<triggered_effect trigger="onSelfDamagedOther" action="ModifyCVar" target="other" cvar="spellsElectricShockDamage" operation="set" value="70">
+					<requirement name="ProgressionLevel" progression_name="ukutadasiElectricShock" operation="GTE" value="90"/>
+					<requirement name="ProgressionLevel" progression_name="ukutadasiElectricShock" operation="LTE" value="99"/>
+				</triggered_effect>
+				<triggered_effect trigger="onSelfDamagedOther" action="ModifyCVar" target="other" cvar="spellsElectricShockDamage" operation="set" value="84">
+					<requirement name="ProgressionLevel" progression_name="ukutadasiElectricShock" operation="GTE" value="100"/>
+					<requirement name="ProgressionLevel" progression_name="ukutadasiElectricShock" operation="LTE" value="109"/>
+				</triggered_effect>
+				<triggered_effect trigger="onSelfDamagedOther" action="ModifyCVar" target="other" cvar="spellsElectricShockDamage" operation="set" value="98">
+					<requirement name="ProgressionLevel" progression_name="ukutadasiElectricShock" operation="GTE" value="110"/>
+					<requirement name="ProgressionLevel" progression_name="ukutadasiElectricShock" operation="LTE" value="119"/>
+				</triggered_effect>
+				<triggered_effect trigger="onSelfDamagedOther" action="ModifyCVar" target="other" cvar="spellsElectricShockDamage" operation="set" value="112">
+					<requirement name="ProgressionLevel" progression_name="ukutadasiElectricShock" operation="GTE" value="120"/>
+					<requirement name="ProgressionLevel" progression_name="ukutadasiElectricShock" operation="LTE" value="129"/>
+				</triggered_effect>
+				<triggered_effect trigger="onSelfDamagedOther" action="ModifyCVar" target="other" cvar="spellsElectricShockDamage" operation="set" value="126">
+					<requirement name="ProgressionLevel" progression_name="ukutadasiElectricShock" operation="GTE" value="130"/>
+					<requirement name="ProgressionLevel" progression_name="ukutadasiElectricShock" operation="LTE" value="139"/>
+				</triggered_effect>
+				<triggered_effect trigger="onSelfDamagedOther" action="ModifyCVar" target="other" cvar="spellsElectricShockDamage" operation="set" value="140">
+					<requirement name="ProgressionLevel" progression_name="ukutadasiElectricShock" operation="GTE" value="140"/>
+					<requirement name="ProgressionLevel" progression_name="ukutadasiElectricShock" operation="LTE" value="149"/>
+				</triggered_effect>
+				<triggered_effect trigger="onSelfDamagedOther" action="ModifyCVar" target="other" cvar="spellsElectricShockDamage" operation="set" value="154">
+					<requirement name="ProgressionLevel" progression_name="ukutadasiElectricShock" operation="GTE" value="150"/>
+					<requirement name="ProgressionLevel" progression_name="ukutadasiElectricShock" operation="LTE" value="159"/>
+				</triggered_effect>
+				<triggered_effect trigger="onSelfDamagedOther" action="ModifyCVar" target="other" cvar="spellsElectricShockDamage" operation="set" value="240">
+					<requirement name="ProgressionLevel" progression_name="ukutadasiElectricShock" operation="GTE" value="160"/>
+					<requirement name="ProgressionLevel" progression_name="ukutadasiElectricShock" operation="LTE" value="169"/>
+				</triggered_effect>
+				<triggered_effect trigger="onSelfDamagedOther" action="ModifyCVar" target="other" cvar="spellsElectricShockDamage" operation="set" value="168">
+					<requirement name="ProgressionLevel" progression_name="ukutadasiElectricShock" operation="GTE" value="170"/>
+					<requirement name="ProgressionLevel" progression_name="ukutadasiElectricShock" operation="LTE" value="179"/>
+				</triggered_effect>
+				<triggered_effect trigger="onSelfDamagedOther" action="ModifyCVar" target="other" cvar="spellsElectricShockDamage" operation="set" value="280">
+					<requirement name="ProgressionLevel" progression_name="ukutadasiElectricShock" operation="GTE" value="180"/>
+					<requirement name="ProgressionLevel" progression_name="ukutadasiElectricShock" operation="LTE" value="189"/>
+				</triggered_effect>
+				<triggered_effect trigger="onSelfDamagedOther" action="ModifyCVar" target="other" cvar="spellsElectricShockDamage" operation="set" value="182">
+					<requirement name="ProgressionLevel" progression_name="ukutadasiElectricShock" operation="GTE" value="190"/>
+					<requirement name="ProgressionLevel" progression_name="ukutadasiElectricShock" operation="LTE" value="199"/>
+				</triggered_effect>
+				<triggered_effect trigger="onSelfDamagedOther" action="ModifyCVar" target="other" cvar="spellsElectricShockDamage" operation="set" value="196">
+					<requirement name="ProgressionLevel" progression_name="ukutadasiElectricShock" operation="GTE" value="200"/>
+					<requirement name="ProgressionLevel" progression_name="ukutadasiElectricShock" operation="LTE" value="209"/>
+				</triggered_effect>
+				<triggered_effect trigger="onSelfDamagedOther" action="ModifyCVar" target="other" cvar="spellsElectricShockDamage" operation="set" value="210">
+					<requirement name="ProgressionLevel" progression_name="ukutadasiElectricShock" operation="GTE" value="210"/>
+					<requirement name="ProgressionLevel" progression_name="ukutadasiElectricShock" operation="LTE" value="219"/>
+				</triggered_effect>
+				<triggered_effect trigger="onSelfDamagedOther" action="ModifyCVar" target="other" cvar="spellsElectricShockDamage" operation="set" value="224">
+					<requirement name="ProgressionLevel" progression_name="ukutadasiElectricShock" operation="GTE" value="220"/>
+					<requirement name="ProgressionLevel" progression_name="ukutadasiElectricShock" operation="LTE" value="229"/>
+				</triggered_effect>
+				<triggered_effect trigger="onSelfDamagedOther" action="ModifyCVar" target="other" cvar="spellsElectricShockDamage" operation="set" value="238">
+					<requirement name="ProgressionLevel" progression_name="ukutadasiElectricShock" operation="GTE" value="230"/>
+					<requirement name="ProgressionLevel" progression_name="ukutadasiElectricShock" operation="LTE" value="239"/>
+				</triggered_effect>
+				<triggered_effect trigger="onSelfDamagedOther" action="ModifyCVar" target="other" cvar="spellsElectricShockDamage" operation="set" value="252">
+					<requirement name="ProgressionLevel" progression_name="ukutadasiElectricShock" operation="GTE" value="240"/>
+					<requirement name="ProgressionLevel" progression_name="ukutadasiElectricShock" operation="LTE" value="249"/>
+				</triggered_effect>
+				<triggered_effect trigger="onSelfDamagedOther" action="ModifyCVar" target="other" cvar="spellsElectricShockDamage" operation="set" value="266">
+					<requirement name="ProgressionLevel" progression_name="ukutadasiElectricShock" operation="GTE" value="250"/>
+					<requirement name="ProgressionLevel" progression_name="ukutadasiElectricShock" operation="LTE" value="259"/>
+				</triggered_effect>
+				<triggered_effect trigger="onSelfDamagedOther" action="ModifyCVar" target="other" cvar="spellsElectricShockDamage" operation="set" value="280">
+					<requirement name="ProgressionLevel" progression_name="ukutadasiElectricShock" operation="GTE" value="260"/>
+					<requirement name="ProgressionLevel" progression_name="ukutadasiElectricShock" operation="LTE" value="269"/>
+				</triggered_effect>
+				<triggered_effect trigger="onSelfDamagedOther" action="ModifyCVar" target="other" cvar="spellsElectricShockDamage" operation="set" value="294">
+					<requirement name="ProgressionLevel" progression_name="ukutadasiElectricShock" operation="GTE" value="270"/>
+					<requirement name="ProgressionLevel" progression_name="ukutadasiElectricShock" operation="LTE" value="279"/>
+				</triggered_effect>
+				<triggered_effect trigger="onSelfDamagedOther" action="ModifyCVar" target="other" cvar="spellsElectricShockDamage" operation="set" value="308">
+					<requirement name="ProgressionLevel" progression_name="ukutadasiElectricShock" operation="GTE" value="280"/>
+					<requirement name="ProgressionLevel" progression_name="ukutadasiElectricShock" operation="LTE" value="289"/>
+				</triggered_effect>
+				<triggered_effect trigger="onSelfDamagedOther" action="ModifyCVar" target="other" cvar="spellsElectricShockDamage" operation="set" value="322">
+					<requirement name="ProgressionLevel" progression_name="ukutadasiElectricShock" operation="GTE" value="290"/>
+					<requirement name="ProgressionLevel" progression_name="ukutadasiElectricShock" operation="LTE" value="299"/>
+				</triggered_effect>
+				<triggered_effect trigger="onSelfDamagedOther" action="ModifyCVar" target="other" cvar="spellsElectricShockDamage" operation="set" value="350">
+					<requirement name="ProgressionLevel" progression_name="ukutadasiElectricShock" operation="GTE" value="300"/>
+				</triggered_effect>
+			</effect_group>
+		</item_modifier>
+
+		<!-- 易燃物 -->
+		<item_modifier name="modUkuTadasiSpellsFlammables" installable_tags="UkuTadasiSpells" modifier_tags="UkuTadasiAcctiveSkill" blocked_tags="noMods" type="attachment">
+			<property name="Extends" value="modUkuTadasiSpellsTemplate" param1="CustomIcon"/>
+			<property name="CustomIcon" value="modUkuTadasiSpellsFlammables"/>
+			<property name="DescriptionKey" value="modUkuTadasiSpellsFlammablesDesc"/>
+			<property name="UnlockedBy" value="ivSoulEssenceFlammables"/>
+			<property name="TraderStageTemplate" value="modsTier1"/>
+			<effect_group tiered="false">
+				<triggered_effect trigger="onSelfDamagedOther" action="AddBuff" target="other" target_tags="zombie,animal" buff="buffUkuTadasiSpellsFlammablesLv1">
+					<requirement name="ProgressionLevel" progression_name="ukutadasiFlammables" operation="GTE" value="2"/>
+					<requirement name="ProgressionLevel" progression_name="ukutadasiFlammables" operation="LTE" value="19"/>
+				</triggered_effect>
+			</effect_group>
+			<effect_group tiered="false">
+				<triggered_effect trigger="onSelfDamagedOther" action="AddBuff" target="other" target_tags="zombie,animal" buff="buffUkuTadasiSpellsFlammablesLv2">
+					<requirement name="ProgressionLevel" progression_name="ukutadasiFlammables" operation="GTE" value="20"/>
+					<requirement name="ProgressionLevel" progression_name="ukutadasiFlammables" operation="LTE" value="29"/>
+				</triggered_effect>
+			</effect_group>
+			<effect_group tiered="false">
+				<triggered_effect trigger="onSelfDamagedOther" action="AddBuff" target="other" target_tags="zombie,animal" buff="buffUkuTadasiSpellsFlammablesLv3">
+					<requirement name="ProgressionLevel" progression_name="ukutadasiFlammables" operation="GTE" value="30"/>
+					<requirement name="ProgressionLevel" progression_name="ukutadasiFlammables" operation="LTE" value="39"/>
+				</triggered_effect>
+			</effect_group>
+			<effect_group tiered="false">
+				<triggered_effect trigger="onSelfDamagedOther" action="AddBuff" target="other" target_tags="zombie,animal" buff="buffUkuTadasiSpellsFlammablesLv4">
+					<requirement name="ProgressionLevel" progression_name="ukutadasiFlammables" operation="GTE" value="40"/>
+					<requirement name="ProgressionLevel" progression_name="ukutadasiFlammables" operation="LTE" value="49"/>
+				</triggered_effect>
+			</effect_group>
+			<effect_group tiered="false">
+				<triggered_effect trigger="onSelfDamagedOther" action="AddBuff" target="other" target_tags="zombie,animal" buff="buffUkuTadasiSpellsFlammablesLv5">
+					<requirement name="ProgressionLevel" progression_name="ukutadasiFlammables" operation="GTE" value="50"/>
+				</triggered_effect>
+			</effect_group>
+		</item_modifier>
+
+		<!-- 結晶體 -->
+		<item_modifier name="modUkuTadasiSpellsCrystals" installable_tags="UkuTadasiSpells" modifier_tags="UkuTadasiAcctiveSkill" blocked_tags="noMods" type="attachment">
+			<property name="Extends" value="modUkuTadasiSpellsTemplate" param1="CustomIcon"/>
+			<property name="CustomIcon" value="modUkuTadasiSpellsCrystals"/>
+			<property name="DescriptionKey" value="modUkuTadasiSpellsCrystalsDesc"/>
+			<property name="UnlockedBy" value="ivSoulEssenceCrystals"/>
+			<property name="TraderStageTemplate" value="modsTier1"/>
+			<effect_group tiered="false">
+				<triggered_effect trigger="onSelfDamagedOther" action="AddBuff" target="other" target_tags="zombie,animal" buff="buffUkuTadasiSpellsCrystalsLv1">
+					<requirement name="ProgressionLevel" progression_name="ukutadasiCrystals" operation="GTE" value="2"/>
+					<requirement name="ProgressionLevel" progression_name="ukutadasiCrystals" operation="LTE" value="19"/>
+				</triggered_effect>
+			</effect_group>
+			<effect_group tiered="false">
+				<triggered_effect trigger="onSelfDamagedOther" action="AddBuff" target="other" target_tags="zombie,animal" buff="buffUkuTadasiSpellsCrystalsLv2">
+					<requirement name="ProgressionLevel" progression_name="ukutadasiCrystals" operation="GTE" value="20"/>
+					<requirement name="ProgressionLevel" progression_name="ukutadasiCrystals" operation="LTE" value="29"/>
+				</triggered_effect>
+			</effect_group>
+			<effect_group tiered="false">
+				<triggered_effect trigger="onSelfDamagedOther" action="AddBuff" target="other" target_tags="zombie,animal" buff="buffUkuTadasiSpellsCrystalsLv3">
+					<requirement name="ProgressionLevel" progression_name="ukutadasiCrystals" operation="GTE" value="30"/>
+					<requirement name="ProgressionLevel" progression_name="ukutadasiCrystals" operation="LTE" value="39"/>
+				</triggered_effect>
+			</effect_group>
+			<effect_group tiered="false">
+				<triggered_effect trigger="onSelfDamagedOther" action="AddBuff" target="other" target_tags="zombie,animal" buff="buffUkuTadasiSpellsCrystalsLv4">
+					<requirement name="ProgressionLevel" progression_name="ukutadasiCrystals" operation="GTE" value="40"/>
+					<requirement name="ProgressionLevel" progression_name="ukutadasiCrystals" operation="LTE" value="49"/>
+				</triggered_effect>
+			</effect_group>
+			<effect_group tiered="false">
+				<triggered_effect trigger="onSelfDamagedOther" action="AddBuff" target="other" target_tags="zombie,animal" buff="buffUkuTadasiSpellsCrystalsLv5">
+					<requirement name="ProgressionLevel" progression_name="ukutadasiCrystals" operation="GTE" value="50"/>
+				</triggered_effect>
+			</effect_group>
+		</item_modifier>
+
+		<!-- 傳染病 -->
+		<item_modifier name="modUkuTadasiSpellsInfectiousDisease" installable_tags="UkuTadasiSpells" modifier_tags="UkuTadasiAcctiveSkill" blocked_tags="noMods" type="attachment">
+			<property name="Extends" value="modUkuTadasiSpellsTemplate" param1="CustomIcon"/>
+			<property name="CustomIcon" value="modUkuTadasiSpellsInfectiousDisease"/>
+			<property name="DescriptionKey" value="modUkuTadasiSpellsInfectiousDiseaseDesc"/>
+			<property name="UnlockedBy" value="ivSoulEssenceInfectiousDisease"/>
+			<property name="TraderStageTemplate" value="modsTier1"/>
+			<effect_group tiered="false">
+				<triggered_effect trigger="onSelfDamagedOther" action="AddBuff" target="other" target_tags="zombie,animal" buff="buffUkuTadasiSpellsInfectiousDiseaseLv1">
+					<requirement name="ProgressionLevel" progression_name="ukutadasiInfectiousDisease" operation="GTE" value="2"/>
+					<requirement name="ProgressionLevel" progression_name="ukutadasiInfectiousDisease" operation="LTE" value="19"/>
+				</triggered_effect>
+			</effect_group>
+			<effect_group tiered="false">
+				<triggered_effect trigger="onSelfDamagedOther" action="AddBuff" target="other" target_tags="zombie,animal" buff="buffUkuTadasiSpellsInfectiousDiseaseLv2">
+					<requirement name="ProgressionLevel" progression_name="ukutadasiInfectiousDisease" operation="GTE" value="20"/>
+					<requirement name="ProgressionLevel" progression_name="ukutadasiInfectiousDisease" operation="LTE" value="29"/>
+				</triggered_effect>
+			</effect_group>
+			<effect_group tiered="false">
+				<triggered_effect trigger="onSelfDamagedOther" action="AddBuff" target="other" target_tags="zombie,animal" buff="buffUkuTadasiSpellsInfectiousDiseaseLv3">
+					<requirement name="ProgressionLevel" progression_name="ukutadasiInfectiousDisease" operation="GTE" value="30"/>
+					<requirement name="ProgressionLevel" progression_name="ukutadasiInfectiousDisease" operation="LTE" value="39"/>
+				</triggered_effect>
+			</effect_group>
+			<effect_group tiered="false">
+				<triggered_effect trigger="onSelfDamagedOther" action="AddBuff" target="other" target_tags="zombie,animal" buff="buffUkuTadasiSpellsInfectiousDiseaseLv4">
+					<requirement name="ProgressionLevel" progression_name="ukutadasiInfectiousDisease" operation="GTE" value="40"/>
+					<requirement name="ProgressionLevel" progression_name="ukutadasiInfectiousDisease" operation="LTE" value="49"/>
+				</triggered_effect>
+			</effect_group>
+			<effect_group tiered="false">
+				<triggered_effect trigger="onSelfDamagedOther" action="AddBuff" target="other" target_tags="zombie,animal" buff="buffUkuTadasiSpellsInfectiousDiseaseLv5">
+					<requirement name="ProgressionLevel" progression_name="ukutadasiInfectiousDisease" operation="GTE" value="50"/>
+				</triggered_effect>
+			</effect_group>
+		</item_modifier>
+
+		<!-- 導電體 -->
+		<item_modifier name="modUkuTadasiSpellsElectricalConductor" installable_tags="UkuTadasiSpells" modifier_tags="UkuTadasiAcctiveSkill" blocked_tags="noMods" type="attachment">
+			<property name="Extends" value="modUkuTadasiSpellsTemplate" param1="CustomIcon"/>
+			<property name="CustomIcon" value="modUkuTadasiSpellsElectricalConductor"/>
+			<property name="DescriptionKey" value="modUkuTadasiSpellsElectricalConductorDesc"/>
+			<property name="UnlockedBy" value="ivSoulEssenceElectricalConductor"/>
+			<property name="TraderStageTemplate" value="modsTier1"/>
+			<effect_group tiered="false">
+				<triggered_effect trigger="onSelfDamagedOther" action="AddBuff" target="other" target_tags="zombie,animal" buff="buffUkuTadasiSpellsElectricalConductorLv1">
+					<requirement name="ProgressionLevel" progression_name="ukutadasiElectricalConductor" operation="GTE" value="2"/>
+					<requirement name="ProgressionLevel" progression_name="ukutadasiElectricalConductor" operation="LTE" value="19"/>
+				</triggered_effect>
+			</effect_group>
+			<effect_group tiered="false">
+				<triggered_effect trigger="onSelfDamagedOther" action="AddBuff" target="other" target_tags="zombie,animal" buff="buffUkuTadasiSpellsElectricalConductorLv2">
+					<requirement name="ProgressionLevel" progression_name="ukutadasiElectricalConductor" operation="GTE" value="20"/>
+					<requirement name="ProgressionLevel" progression_name="ukutadasiElectricalConductor" operation="LTE" value="29"/>
+				</triggered_effect>
+			</effect_group>
+			<effect_group tiered="false">
+				<triggered_effect trigger="onSelfDamagedOther" action="AddBuff" target="other" target_tags="zombie,animal" buff="buffUkuTadasiSpellsElectricalConductorLv3">
+					<requirement name="ProgressionLevel" progression_name="ukutadasiElectricalConductor" operation="GTE" value="30"/>
+					<requirement name="ProgressionLevel" progression_name="ukutadasiElectricalConductor" operation="LTE" value="39"/>
+				</triggered_effect>
+			</effect_group>
+			<effect_group tiered="false">
+				<triggered_effect trigger="onSelfDamagedOther" action="AddBuff" target="other" target_tags="zombie,animal" buff="buffUkuTadasiSpellsElectricalConductorLv4">
+					<requirement name="ProgressionLevel" progression_name="ukutadasiElectricalConductor" operation="GTE" value="40"/>
+					<requirement name="ProgressionLevel" progression_name="ukutadasiElectricalConductor" operation="LTE" value="49"/>
+				</triggered_effect>
+			</effect_group>
+			<effect_group tiered="false">
+				<triggered_effect trigger="onSelfDamagedOther" action="AddBuff" target="other" target_tags="zombie,animal" buff="buffUkuTadasiSpellsElectricalConductorLv5">
+					<requirement name="ProgressionLevel" progression_name="ukutadasiElectricalConductor" operation="GTE" value="50"/>
+				</triggered_effect>
+			</effect_group>
+		</item_modifier>
+	</append>
+</config>

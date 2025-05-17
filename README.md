@@ -3,10 +3,10 @@
 ## ⚙️元素殭屍 (Elemental Zombies) 模組
 
 - **模組資訊**
-  - **模組名稱** : Element zombie of the Infinitely Variable Series
-  - **模組版本** : A20
-  - **支援遊戲版本** : Alpha 20
-  - **最後更新日期** : 2022-5-11
+  - **模組名稱** : Infinite Variations: Element Zombies
+  - **模組版本** : 21.2.30.2
+  - **支援遊戲版本** : Alpha 21
+  - **最後更新日期** : 2023-11-28
 
 - **模組功能簡介**
   - 增加五種自訂的元素型殭屍
@@ -21,49 +21,79 @@
 
 - **相容性**
   - 完全自訂的實體類, 不會產生任何衝突, 可自由安裝、移除.
-  - 相容於妖刀模組.
+  - 相容於元素武裝模組.
 
-- **支援語系 : 繁體中文、簡体中文、英文、日文**
+- **支援語系 : 繁體中文、英文**
 
 - 詳細內容請參考[資料庫](https://github.com/unoya/7DTD.infinite-variations/wiki)
 
 ---
 
-## ⚙️妖刀 (Demon Katana) 模組
+## ⚙️元素武裝 (Elemental Armaments) 模組
 
 - **模組資訊**
-  - **模組名稱** : Demon katana of the Infinitely Variable Series
-  - **模組版本** : A20
-  - **支援遊戲版本** : Alpha 20
-  - **最後更新日期** : 2022-7-18
+  - **模組名稱** : Infinite Variations: Elemental Armament
+  - **模組版本** : 21.2.30.1
+  - **支援遊戲版本** : Alpha 21
+  - **最後更新日期** : 2023-11-25
 
 - **模組功能簡介**
-  - 此模組只有一把刀。
-  - 搭配專屬法術模組可以使用超過30種法術.
-  - 大部分法術發動都以強力攻擊按鍵（滑鼠右鍵）為主.
-  - 妖刀的耐久值歸 0 時會直接消失(包括已安裝的MOD).
-  - 如果有安裝元素殭屍模組, 法術對元素殭屍有額外的傷害.
+  - 提供燃燒、冰凍、電擊、中毒四種近戰模組, 每種各有三個階段的強度.
+  - 投擲型的元素彈藥, 就像手榴彈一樣丟出去, 觸碰後會在原地產生範圍性傷害.
+  - 弓與十字弓也有專屬的燃燒、冰凍、電擊、中毒四種範圍型元素箭.
+  - 提供自製的近戰武器, 個別擁有不同的潛在效果.
 
 - **安裝方式**
   - 請在七日殺的安裝目錄裡自己增加Mods目錄, 例如
     ` C:\Program Files (x86)\Steam\steamapps\common\7 Days To Die\Mods `
-  - 直接將 InfinitelyVariable_WeaponKatana 目錄放到Mods目錄裡即可.
+  - 直接將 InfiniteVariations_ElementalArmaments 目錄放到Mods目錄裡即可.
+
+- **相容性**
+  - 若有安裝元素殭屍(Elemental Zombies)模組, 元素傷害對元素殭屍有額外的傷害.
+  - 必須關閉 EAC 才能正常運作.
+
+- **支援語系 : 繁體中文、英文**
+
+- 詳細內容請參考[資料庫](https://github.com/unoya/7DTD.infinite-variations/wiki)
+
+---
+
+## ⚙️奧義 (Ukutadasi) 模組
+
+- **模組資訊**
+  - **模組名稱** : UkuTadasi of the Infinitely Variable Series
+  - **模組版本** : 21.1.16.0
+  - **支援遊戲版本** : Alpha 21
+  - **最後更新日期** : 2023-9-28
+
+- **模組功能簡介**
+  - 利用火、冰、毒、電四屬性的能力來增強自己的近戰攻擊能力。
+  - 道具製作不需要工作台。
+  
+- **安裝方式**
+  - 請在七日殺的安裝目錄裡自己增加Mods目錄, 例如
+    ` C:\Program Files (x86)\Steam\steamapps\common\7 Days To Die\Mods `
+  - 直接將 InfinitelyVariable_UkuTadasi 目錄放到Mods目錄裡即可.
 
 - **相容性**
   - 完全自訂的道具類, 不會產生任何衝突, 可自由安裝、移除.
   - 相容於元素殭屍模組.
+  - 與元素裝甲模組可能有衝突, 因為此模組是元素裝甲的第一代.
+  - 必須關閉 EAC 才能正常運作.
 
-- **支援語系 : 繁體中文、簡体中文、英文、日文**
+- **支援語系 : 繁體中文、英文**
+
+- 詳細內容請參考[資料庫](https://github.com/unoya/7DTD.infinite-variations/wiki)
 
 ---
 
 ## ⚙️照明彈 (Lighting Ball) 模組
 
 - **模組資訊**
-  - **模組名稱** : Lighting Items of the Infinitely Variable Series
-  - **模組版本** : A20
-  - **支援遊戲版本** : Alpha 20
-  - **最後更新日期** : 2022-5-15
+  - **模組名稱** : Infinite Variations: Lighting Items
+  - **模組版本** : 21.1.16.0
+  - **支援遊戲版本** : Alpha 21
+  - **最後更新日期** : 2023-9-3
 
 - **模組功能簡介**
   - 可以蓄力投擲, 飛行距離遠.
@@ -86,67 +116,13 @@
 
 ---
 
-## ⚙️可怕的陷阱 (Scary Trap) 模組
-
-- **模組資訊**
-  - **模組名稱** : Scary Trap of the Infinitely Variable Series
-  - **模組版本** : A20
-  - **支援遊戲版本** : Alpha 20
-  - **最後更新日期** : 2022-5-25
-
-- **模組功能簡介**
-  - 我個人實驗性用的模組.
-  - 鐵刺球 : 與科幻建築裡的道具相同.
-  - 鋸馬 : 效果如同內建的木刺陷阱, 碰觸時會受傷.
-
-- **安裝方式**
-  - 請在七日殺的安裝目錄裡自己增加Mods目錄, 例如
-    ` C:\Program Files (x86)\Steam\steamapps\common\7 Days To Die\Mods `
-  - 直接將 InfinitelyVariable_ScaryTrap 目錄放到Mods目錄裡即可.
-
-- **相容性**
-  - 完全自訂的方塊類, 不會產生任何衝突, 可自由安裝、移除.
-
----
-
-## ⚙️科幻建築 (SciFi Building) 模組
-
-- **模組資訊**
-  - **模組名稱** : Sci-Fi building of the Infinitely Variable Series
-  - **模組版本** : A20
-  - **支援遊戲版本** : Alpha 20
-  - **最後更新日期** : 2022-6-30
-
-- **模組功能簡介**
-  - 自訂的方塊, 類似科幻的材質.
-  - 城牆, 地板, 浮空地基(偽)
-  - 自動門 : 運作方式相同內建的鐵捲門.
-  - 電梯 : 只能上下.
-    - 寬度 : 正方形1格, 正方形5格.
-    - 高度 : 5格, 10格, 20格, 30格.
-  - 平面橋 : 可自動伸縮, 寬度1格, 長度7格.
-  - 樓梯 : 可自動伸縮, 固定面積, 寬3格, 高5格, 長7格.
-  - 鐵刺球 : 效果如同內建的木刺陷阱.
-
-- **安裝方式**
-  - 請在七日殺的安裝目錄裡自己增加Mods目錄, 例如
-    ` C:\Program Files (x86)\Steam\steamapps\common\7 Days To Die\Mods `
-  - 直接將 InfinitelyVariable_SciFiBuilding 目錄放到Mods目錄裡即可.
-
-- **相容性**
-  - 完全自訂的方塊類, 不會產生任何衝突, 可自由安裝、移除.
-
-- **支援語系 : 繁體中文、簡体中文、英文、日文**
-
----
-
 ## ⚙️鳥巢 (Bird's Nest) 模組
 
 - **模組資訊**
-  - **模組名稱** : Birds Nest of the Infinitely Variable Series
-  - **模組版本** : A20
-  - **支援遊戲版本** : Alpha 20
-  - **最後更新日期** : 2022-6-3
+  - **模組名稱** : Infinite Variations: Birds Nest
+  - **模組版本** : 21.1.16.0
+  - **支援遊戲版本** : Alpha 21
+  - **最後更新日期** : 2023-9-3
 
 - **模組功能簡介**
   - 空的鳥巢由玩家自行製作, 歸類在食物表單.
@@ -156,7 +132,7 @@
     - 第二階段採收能得到蛋(3 ~ 5)和羽毛(1).
     - 第三階段採收能得到蛋(4 ~ 6)和羽毛(1 ~ 3).
     - 最終階段採收能得到蛋(5 ~ 7)和羽毛(2 ~ 5).
-  - 每個階段的鳥巢外觀會有變化, 第一階段可以看到１顆蛋, 第二階段可以看到３顆蛋, 第三階段可以看到５顆蛋, 最終階段可以看到７顆蛋.
+  - 每個階段的鳥巢外觀會有變化, 第一階段可以看到1顆蛋, 第二階段可以看到3顆蛋, 第三階段可以看到5顆蛋, 最終階段可以看到７顆蛋.
   - 官方技能的＂Living off the Land＂對採收蛋數量有加成.
   - 蛋的生成速度比內建植物生長速度快.
 
@@ -175,10 +151,10 @@
 ## ⚙️邁向大師之路 (The road to the master) 模組
 
 - **模組資訊**
-  - **模組名稱** : The road to the master of the Infinitely Variable Series
-  - **模組版本** : A20
-  - **支援遊戲版本** : Alpha 20
-  - **最後更新日期** : 2022-4-29
+  - **模組名稱** : Infinite Variations: The road to the master
+  - **模組版本** : 21.1.16.0
+  - **支援遊戲版本** : Alpha 21
+  - **最後更新日期** : 2023-9-3
 
 - **模組功能簡介**
   - 此模組是寫給我自己用的, 如果你有興趣可以下載回去用.
@@ -202,10 +178,10 @@
 ## ⚙️等級上限9999 (More Level) 模組
 
 - **模組資訊**
-  - **模組名稱** : More level of the Infinitely Variable Series
-  - **模組版本** : A20
-  - **支援遊戲版本** : Alpha 20
-  - **最後更新日期** : 2022-1-30
+  - **模組名稱** : Infinite Variations: More level
+  - **模組版本** : 21.1.16.0
+  - **支援遊戲版本** : Alpha 21
+  - **最後更新日期** : 2023-9-3
 
 - **模組功能簡介**
   - 調整玩家可升級的上限至9999級.
@@ -223,10 +199,10 @@
 ## ⚙️道具堆疊量三萬 (Item Stack 30K) 模組
 
 - **模組資訊**
-  - **模組名稱** : Item stack 30K of the Infinitely Variable Series
-  - **模組版本** : A20
-  - **支援遊戲版本** : Alpha 20
-  - **最後更新日期** : 2022-1-30
+  - **模組名稱** : Infinite Variations: Item stack 30K
+  - **模組版本** : 21.1.16.0
+  - **支援遊戲版本** : Alpha 21
+  - **最後更新日期** : 2023-9-3
 
 - **模組功能簡介**
   - 修改道具可堆疊量上限至3萬.
@@ -245,10 +221,10 @@
 ## ⚙️三倍技能點數 (Triple Skill Points) 模組
 
 - **模組資訊**
-  - **模組名稱** : Triple skill points of the Infinitely Variable Series
-  - **模組版本** : A20
-  - **支援遊戲版本** : Alpha 20
-  - **最後更新日期** : 2022-3-31
+  - **模組名稱** : Infinite Variations: Triple skill points
+  - **模組版本** : 21.1.16.0
+  - **支援遊戲版本** : Alpha 21
+  - **最後更新日期** : 2023-9-3
 
 - **模組功能簡介**
   - 玩家每次升級給予三個技能點數.
@@ -266,10 +242,10 @@
 ## ⚙️減少野外雜草的生成 (Less Weeds) 模組
 
 - **模組資訊**
-  - **模組名稱** : Less weeds of the Infinitely Variable Series
-  - **模組版本** : A20
-  - **支援遊戲版本** : Alpha 20
-  - **最後更新日期** : 2022-6-30
+  - **模組名稱** : Infinite Variations: Less weeds
+  - **模組版本** : 21.1.16.0
+  - **支援遊戲版本** : Alpha 21
+  - **最後更新日期** : 2023-9-3
 
 - **模組功能簡介**
   - 可減少野外雜草的生成, 但必須是地圖區塊未揭開之前使用此模組才有效果.
@@ -282,3 +258,25 @@
 
 - **相容性**
   - 若有安裝改變野外雜草的生成控制相關模組, 請自行注意衝突的可能性.
+
+---
+
+## ⚙️高效能車輛 (High Efficiency Vehicles) 模組
+
+- **模組資訊**
+  - **模組名稱** : Infinite Variations: High Efficiency Vehicles
+  - **模組版本** : 21.2.30.0
+  - **支援遊戲版本** : Alpha 21
+  - **最後更新日期** : 2023-11-28
+
+- **模組功能簡介**
+  - 增強交通工具的能力, 更省油, 跑更快, 扭力更大.
+  - 調整內建交通工具腳踏車、摩托車、吉普車、旋翼機的基礎數值.
+
+- **安裝方式**
+  - 請在七日殺的安裝目錄裡自己增加Mods目錄, 例如
+    ` C:\Program Files (x86)\Steam\steamapps\common\7 Days To Die\Mods `
+  - 直接將 InfiniteVariations_HighEfficiencyVehicles 目錄放到Mods目錄裡即可.
+
+- **相容性**
+  - 若有安裝改變交通工具控制相關模組, 請自行注意衝突的可能性.

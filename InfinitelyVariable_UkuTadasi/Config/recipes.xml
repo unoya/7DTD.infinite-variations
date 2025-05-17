@@ -1,0 +1,229 @@
+<configs>
+    <append xpath="/recipes">
+	<!--
+	麒麟草 (resourceCropGoldenrodPlant)(電)
+	菊花 (resourceCropChrysanthemumPlant)(火)
+	咖啡 (resourceCropCoffeeBeans)(毒)
+	棉花 (resourceCropCottonPlant)(冰)
+	啤酒花 (resourceCropHopsFlower)(範圍擴增)
+	-->
+		<!-- 魂魄精華: 單一 -->
+		<recipe name="ivSoulEssenceFire" count="1" craft_time="1" craft_exp_gain="100">
+			<ingredient name="ivResourceBrokenSoul" count="6"/>
+			<ingredient name="resourceCropChrysanthemumPlant" count="3"/>
+			<ingredient name="resourceGlue" count="3"/>
+			<ingredient name="resourceRockSmall" count="100"/>
+		</recipe>
+		<recipe name="ivSoulEssenceIce" count="1" craft_time="1" craft_exp_gain="100">
+			<ingredient name="ivResourceBrokenSoul" count="6"/>
+			<ingredient name="resourceCropCottonPlant" count="3"/>
+			<ingredient name="resourceGlue" count="3"/>
+			<ingredient name="resourceRockSmall" count="100"/>
+		</recipe>
+		<recipe name="ivSoulEssencePoison" count="1" craft_time="1" craft_exp_gain="100">
+			<ingredient name="ivResourceBrokenSoul" count="6"/>
+			<ingredient name="resourceCropCoffeeBeans" count="3"/>
+			<ingredient name="resourceGlue" count="3"/>
+			<ingredient name="resourceRockSmall" count="100"/>
+		</recipe>
+		<recipe name="ivSoulEssenceElectricShock" count="1" craft_time="1" craft_exp_gain="100">
+			<ingredient name="ivResourceBrokenSoul" count="6"/>
+			<ingredient name="resourceCropGoldenrodPlant" count="3"/>
+			<ingredient name="resourceGlue" count="3"/>
+			<ingredient name="resourceRockSmall" count="100"/>
+		</recipe>
+		<!-- 魂魄精華: 範圍 -->
+		<recipe name="ivSoulEssenceFlammables" count="1" craft_time="1" craft_exp_gain="100" tags="learnable">
+			<ingredient name="ivResourceBrokenSoul" count="8"/>
+			<ingredient name="resourceCropChrysanthemumPlant" count="6"/>
+			<ingredient name="resourceCropHopsFlower" count="10"/>
+			<ingredient name="resourceGlue" count="6"/>
+			<ingredient name="resourceRockSmall" count="100"/>
+		</recipe>
+		<recipe name="ivSoulEssenceCrystals" count="1" craft_time="1" craft_exp_gain="100" tags="learnable">
+			<ingredient name="ivResourceBrokenSoul" count="8"/>
+			<ingredient name="resourceCropCottonPlant" count="6"/>
+			<ingredient name="resourceCropHopsFlower" count="10"/>
+			<ingredient name="resourceGlue" count="6"/>
+			<ingredient name="resourceRockSmall" count="100"/>
+		</recipe>
+		<recipe name="ivSoulEssenceInfectiousDisease" count="1" craft_time="1" craft_exp_gain="100" tags="learnable">
+			<ingredient name="ivResourceBrokenSoul" count="8"/>
+			<ingredient name="resourceCropCoffeeBeans" count="6"/>
+			<ingredient name="resourceCropHopsFlower" count="10"/>
+			<ingredient name="resourceGlue" count="6"/>
+			<ingredient name="resourceRockSmall" count="100"/>
+		</recipe>
+		<recipe name="ivSoulEssenceElectricalConductor" count="1" craft_time="1" craft_exp_gain="100" tags="learnable">
+			<ingredient name="ivResourceBrokenSoul" count="8"/>
+			<ingredient name="resourceCropGoldenrodPlant" count="6"/>
+			<ingredient name="resourceCropHopsFlower" count="10"/>
+			<ingredient name="resourceGlue" count="6"/>
+			<ingredient name="resourceRockSmall" count="100"/>
+		</recipe>
+		<!-- 模組: 單一 -->
+		<recipe name="modUkuTadasiSpellsFire" count="1" craft_time="30" tags="learnable">
+			<ingredient name="ivSoulEssenceFire" count="3"/>
+			<ingredient name="resourceScrapPolymers" count="10"/>
+			<ingredient name="resourceForgedIron" count="2"/>
+			<ingredient name="resourceDuctTape" count="5"/>
+		</recipe>
+		<recipe name="modUkuTadasiSpellsIce" count="1" craft_time="30" tags="learnable">
+			<ingredient name="ivSoulEssenceIce" count="3"/>
+			<ingredient name="resourceScrapPolymers" count="10"/>
+			<ingredient name="resourceForgedIron" count="2"/>
+			<ingredient name="resourceDuctTape" count="5"/>
+		</recipe>
+		<recipe name="modUkuTadasiSpellsPoison" count="1" craft_time="30" tags="learnable">
+			<ingredient name="ivSoulEssencePoison" count="3"/>
+			<ingredient name="resourceScrapPolymers" count="10"/>
+			<ingredient name="resourceForgedIron" count="2"/>
+			<ingredient name="resourceDuctTape" count="5"/>
+		</recipe>
+		<recipe name="modUkuTadasiSpellsElectricShock" count="1" craft_time="30" tags="learnable">
+			<ingredient name="ivSoulEssenceElectricShock" count="3"/>
+			<ingredient name="resourceScrapPolymers" count="10"/>
+			<ingredient name="resourceForgedIron" count="2"/>
+			<ingredient name="resourceDuctTape" count="5"/>
+		</recipe>
+		<!-- 模組: 範圍 -->
+		<recipe name="modUkuTadasiSpellsFlammables" count="1" craft_time="30" tags="learnable">
+			<ingredient name="ivSoulEssenceFlammables" count="5"/>
+			<ingredient name="resourceScrapPolymers" count="30"/>
+			<ingredient name="resourceForgedIron" count="5"/>
+			<ingredient name="resourceDuctTape" count="5"/>
+		</recipe>
+		<recipe name="modUkuTadasiSpellsCrystals" count="1" craft_time="30" tags="learnable">
+			<ingredient name="ivSoulEssenceCrystals" count="5"/>
+			<ingredient name="resourceScrapPolymers" count="30"/>
+			<ingredient name="resourceForgedIron" count="5"/>
+			<ingredient name="resourceDuctTape" count="5"/>
+		</recipe>
+		<recipe name="modUkuTadasiSpellsInfectiousDisease" count="1" craft_time="30" tags="learnable">
+			<ingredient name="ivSoulEssenceInfectiousDisease" count="5"/>
+			<ingredient name="resourceScrapPolymers" count="30"/>
+			<ingredient name="resourceForgedIron" count="5"/>
+			<ingredient name="resourceDuctTape" count="5"/>
+		</recipe>
+		<recipe name="modUkuTadasiSpellsElectricalConductor" count="1" craft_time="30" tags="learnable">
+			<ingredient name="ivSoulEssenceElectricalConductor" count="5"/>
+			<ingredient name="resourceScrapPolymers" count="30"/>
+			<ingredient name="resourceForgedIron" count="5"/>
+			<ingredient name="resourceDuctTape" count="5"/>
+		</recipe>
+		<!-- 法術: 投擲型 -->
+		<recipe name="thrownUkuTadasiSpellsFlameBurstBomb" count="1" craft_time="3" craft_exp_gain="10">
+			<ingredient name="ivResourceBrokenSoul" count="1"/>
+			<ingredient name="resourceMechanicalParts" count="1"/>
+			<ingredient name="resourceGunPowder" count="10"/>
+			<ingredient name="resourceElectricParts" count="1"/>
+			<ingredient name="resourceSpring" count="1"/>
+		</recipe>
+		<recipe name="thrownUkuTadasiSpellsFrostBomb" count="1" craft_time="3" craft_exp_gain="10">
+			<ingredient name="ivResourceBrokenSoul" count="1"/>
+			<ingredient name="resourceMechanicalParts" count="1"/>
+			<ingredient name="resourceGunPowder" count="10"/>
+			<ingredient name="resourceElectricParts" count="1"/>
+			<ingredient name="resourceSpring" count="1"/>
+		</recipe>
+		<recipe name="thrownUkuTadasiSpellsElectricArcImpactBomb" count="1" craft_time="3" craft_exp_gain="10">
+			<ingredient name="ivResourceBrokenSoul" count="3"/>
+			<ingredient name="resourceMechanicalParts" count="1"/>
+			<ingredient name="resourceGunPowder" count="10"/>
+			<ingredient name="resourceElectricParts" count="1"/>
+			<ingredient name="resourceSpring" count="1"/>
+		</recipe>
+		<recipe name="thrownUkuTadasiSpellsPoisonGasBomb" count="1" craft_time="3" craft_exp_gain="10">
+			<ingredient name="ivResourceBrokenSoul" count="2"/>
+			<ingredient name="resourceMechanicalParts" count="1"/>
+			<ingredient name="resourceGunPowder" count="10"/>
+			<ingredient name="resourceElectricParts" count="1"/>
+			<ingredient name="resourceSpring" count="1"/>
+		</recipe>
+		<recipe name="thrownUkuTadasiSpellsPurifyBomb" count="1" craft_time="3" craft_exp_gain="10">
+			<ingredient name="ivResourceBrokenSoul" count="10"/>
+			<ingredient name="resourceMechanicalParts" count="1"/>
+			<ingredient name="resourceGunPowder" count="20"/>
+			<ingredient name="resourceElectricParts" count="1"/>
+			<ingredient name="resourceSpring" count="1"/>
+		</recipe>
+		<recipe name="thrownUkuTadasiSpellsCursedKillBomb" count="1" craft_time="3" craft_exp_gain="10">
+			<ingredient name="ivResourceBrokenSoul" count="5"/>
+			<ingredient name="resourceMechanicalParts" count="1"/>
+			<ingredient name="resourceGunPowder" count="20"/>
+			<ingredient name="resourceElectricParts" count="1"/>
+			<ingredient name="resourceSpring" count="1"/>
+		</recipe>
+		<recipe name="thrownUkuTadasiSpellsSkySwordBomb" count="1" craft_time="3" craft_exp_gain="10">
+			<ingredient name="ivResourceBrokenSoul" count="10"/>
+			<ingredient name="resourceMechanicalParts" count="1"/>
+			<ingredient name="resourceGunPowder" count="10"/>
+			<ingredient name="resourceElectricParts" count="1"/>
+			<ingredient name="resourceSpring" count="1"/>
+		</recipe>
+		<recipe name="thrownUkuTadasiSpellsEnhanceAttackBomb" count="1" craft_time="3" craft_exp_gain="10">
+			<ingredient name="ivResourceBrokenSoul" count="10"/>
+			<ingredient name="resourceMechanicalParts" count="1"/>
+			<ingredient name="resourceGunPowder" count="20"/>
+			<ingredient name="resourceElectricParts" count="1"/>
+			<ingredient name="resourceSpring" count="1"/>
+		</recipe>
+		<recipe name="thrownUkuTadasiSpellsEnhanceDefenseBomb" count="1" craft_time="3" craft_exp_gain="10">
+			<ingredient name="ivResourceBrokenSoul" count="10"/>
+			<ingredient name="resourceMechanicalParts" count="1"/>
+			<ingredient name="resourceGunPowder" count="20"/>
+			<ingredient name="resourceElectricParts" count="1"/>
+			<ingredient name="resourceSpring" count="1"/>
+		</recipe>
+		<!-- 子彈: 弓專用 -->
+		<recipe name="ammoBowUkuTadasiSpellsFlameBurstBomb" count="1" craft_time="3" craft_exp_gain="5">
+			<ingredient name="ivResourceBrokenSoul" count="1"/>
+			<ingredient name="thrownUkuTadasiSpellsFlameBurstBomb" count="1"/>
+			<ingredient name="ammoArrowStone" count="1"/>
+			<ingredient name="resourceDuctTape" count="1"/>
+		</recipe>
+		<recipe name="ammoBowUkuTadasiSpellsFrostBomb" count="1" craft_time="3" craft_exp_gain="5">
+			<ingredient name="ivResourceBrokenSoul" count="1"/>
+			<ingredient name="thrownUkuTadasiSpellsFrostBomb" count="1"/>
+			<ingredient name="ammoArrowStone" count="1"/>
+			<ingredient name="resourceDuctTape" count="1"/>
+		</recipe>
+		<recipe name="ammoBowUkuTadasiSpellsElectricArcImpactBomb" count="1" craft_time="3" craft_exp_gain="5">
+			<ingredient name="ivResourceBrokenSoul" count="1"/>
+			<ingredient name="thrownUkuTadasiSpellsElectricArcImpactBomb" count="1"/>
+			<ingredient name="ammoArrowStone" count="1"/>
+			<ingredient name="resourceDuctTape" count="1"/>
+		</recipe>
+		<recipe name="ammoBowUkuTadasiSpellsPoisonGasBomb" count="1" craft_time="3" craft_exp_gain="5">
+			<ingredient name="ivResourceBrokenSoul" count="1"/>
+			<ingredient name="thrownUkuTadasiSpellsPoisonGasBomb" count="1"/>
+			<ingredient name="ammoArrowStone" count="1"/>
+			<ingredient name="resourceDuctTape" count="1"/>
+		</recipe>
+		<!-- 子彈: 十字弓專用 -->
+		<recipe name="ammoCrossbowUkuTadasiSpellsFlameBurstBomb" count="1" craft_time="3" craft_exp_gain="5">
+			<ingredient name="ivResourceBrokenSoul" count="2"/>
+			<ingredient name="thrownUkuTadasiSpellsFlameBurstBomb" count="1"/>
+			<ingredient name="ammoCrossbowBoltStone" count="1"/>
+			<ingredient name="resourceDuctTape" count="1"/>
+		</recipe>
+		<recipe name="ammoCrossbowUkuTadasiSpellsFrostBomb" count="1" craft_time="3" craft_exp_gain="5">
+			<ingredient name="ivResourceBrokenSoul" count="2"/>
+			<ingredient name="thrownUkuTadasiSpellsFrostBomb" count="1"/>
+			<ingredient name="ammoCrossbowBoltStone" count="1"/>
+			<ingredient name="resourceDuctTape" count="1"/>
+		</recipe>
+		<recipe name="ammoCrossbowUkuTadasiSpellsElectricArcImpactBomb" count="1" craft_time="3" craft_exp_gain="5">
+			<ingredient name="ivResourceBrokenSoul" count="2"/>
+			<ingredient name="thrownUkuTadasiSpellsElectricArcImpactBomb" count="1"/>
+			<ingredient name="ammoCrossbowBoltStone" count="1"/>
+			<ingredient name="resourceDuctTape" count="1"/>
+		</recipe>
+		<recipe name="ammoCrossbowUkuTadasiSpellsPoisonGasBomb" count="1" craft_time="3" craft_exp_gain="5">
+			<ingredient name="ivResourceBrokenSoul" count="2"/>
+			<ingredient name="thrownUkuTadasiSpellsPoisonGasBomb" count="1"/>
+			<ingredient name="ammoCrossbowBoltStone" count="1"/>
+			<ingredient name="resourceDuctTape" count="1"/>
+		</recipe>
+	</append>
+</configs>

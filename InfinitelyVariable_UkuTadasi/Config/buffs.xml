@@ -1,0 +1,2307 @@
+<configs>
+	<!-- 單體型 -->
+	<append xpath="/buffs">
+		<!-- 2023年9月 目前A21.1版, 只有Elemental Damage Types的傷害在擊殺目標後能自動得到經驗值 -->
+
+		<!-- 燃燒 -->
+		<!-- dmg依技能級別線性遞增: 0.8 -->
+		<!-- time: 6, 8, 10, 12, 14  dmg: 12.5, 13.3, 14.1, 14.9, 15.7	-->
+		<!-- 類別傷害線性: 2, 4, 6 -->
+		<buff name="buffUkuTadasiSpellsFireLv1">
+			<damage_type value="heat"/>
+			<stack_type value="duration"/>
+			<duration value="6"/>
+			<effect_group>
+				<triggered_effect trigger="onSelfBuffStart" action="AddBuff" buff="buffMarksExistingPropertyFire"/>
+			</effect_group>
+			<effect_group>
+				<requirement name="EntityTagCompare" target="self" tags="ezFrost"/>
+				<passive_effect name="HealthChangeOT" operation="base_subtract" value="25"/>
+			</effect_group>
+			<effect_group>
+				<passive_effect name="HealthChangeOT" operation="base_subtract" value="12.5"/>
+
+				<passive_effect name="HealthChangeOT" operation="base_subtract" value="2.1">
+					<requirement name="EntityTagCompare" target="self" tags="feral"/>
+				</passive_effect>
+				<passive_effect name="HealthChangeOT" operation="base_subtract" value="3.5">
+					<requirement name="EntityTagCompare" target="self" tags="radiated"/>
+				</passive_effect>
+
+				<triggered_effect trigger="onSelfDied" action="RemoveBuff" buff="buffUkuTadasiSpellsFireLv1"/>
+				<triggered_effect trigger="onSelfEnteredGame" action="RemoveBuff" buff="buffUkuTadasiSpellsFireLv1"/>
+
+				<triggered_effect trigger="onSelfBuffStart" action="AttachParticleEffectToEntity" particle="#@modfolder:Resources/ukutadasispells?ukutadasiFire" parent_transform="Hips"/>
+				<triggered_effect trigger="onSelfEnteredGame" action="AttachParticleEffectToEntity" particle="#@modfolder:Resources/ukutadasispells?ukutadasiFire" parent_transform="Hips"/>
+				<triggered_effect trigger="onSelfBuffRemove" action="RemoveParticleEffectFromEntity" particle="ukutadasiFire"/>
+				<triggered_effect trigger="onSelfDied" action="RemoveParticleEffectFromEntity" particle="ukutadasiFire"/>
+			</effect_group>
+		</buff>
+		<buff name="buffUkuTadasiSpellsFireLv2">
+			<damage_type value="heat"/>
+			<stack_type value="duration"/>
+			<duration value="8"/>
+			<effect_group>
+				<triggered_effect trigger="onSelfBuffStart" action="AddBuff" buff="buffMarksExistingPropertyFire"/>
+			</effect_group>
+			<effect_group>
+				<requirement name="EntityTagCompare" target="self" tags="ezFrost"/>
+				<passive_effect name="HealthChangeOT" operation="base_subtract" value="26.6"/>
+			</effect_group>
+			<effect_group>
+				<passive_effect name="HealthChangeOT" operation="base_subtract" value="13.3"/>
+				
+				<passive_effect name="HealthChangeOT" operation="base_subtract" value="2.3">
+					<requirement name="EntityTagCompare" target="self" tags="feral"/>
+				</passive_effect>
+				<passive_effect name="HealthChangeOT" operation="base_subtract" value="3.7">
+					<requirement name="EntityTagCompare" target="self" tags="radiated"/>
+				</passive_effect>
+
+				<triggered_effect trigger="onSelfDied" action="RemoveBuff" buff="buffUkuTadasiSpellsFireLv2"/>
+				<triggered_effect trigger="onSelfEnteredGame" action="RemoveBuff" buff="buffUkuTadasiSpellsFireLv2"/>
+
+				<triggered_effect trigger="onSelfBuffStart" action="AttachParticleEffectToEntity" particle="#@modfolder:Resources/ukutadasispells?ukutadasiFire02"/>
+				<triggered_effect trigger="onSelfEnteredGame" action="AttachParticleEffectToEntity" particle="#@modfolder:Resources/ukutadasispells?ukutadasiFire02" />
+				<triggered_effect trigger="onSelfBuffRemove" action="RemoveParticleEffectFromEntity" particle="ukutadasiFire02"/>
+				<triggered_effect trigger="onSelfDied" action="RemoveParticleEffectFromEntity" particle="ukutadasiFire02"/>
+			</effect_group>
+		</buff>
+		<buff name="buffUkuTadasiSpellsFireLv3">
+			<damage_type value="heat"/>
+			<stack_type value="duration"/>
+			<duration value="10"/>
+			<effect_group>
+				<triggered_effect trigger="onSelfBuffStart" action="AddBuff" buff="buffMarksExistingPropertyFire"/>
+			</effect_group>
+			<effect_group>
+				<requirement name="EntityTagCompare" target="self" tags="ezFrost"/>
+				<passive_effect name="HealthChangeOT" operation="base_subtract" value="28.2"/>
+			</effect_group>
+			<effect_group>
+				<passive_effect name="HealthChangeOT" operation="base_subtract" value="14.1"/>
+
+				<passive_effect name="HealthChangeOT" operation="base_subtract" value="2.4">
+					<requirement name="EntityTagCompare" target="self" tags="feral"/>
+				</passive_effect>
+				<passive_effect name="HealthChangeOT" operation="base_subtract" value="3.9">
+					<requirement name="EntityTagCompare" target="self" tags="radiated"/>
+				</passive_effect>
+
+				<triggered_effect trigger="onSelfDied" action="RemoveBuff" buff="buffUkuTadasiSpellsFireLv3"/>
+				<triggered_effect trigger="onSelfEnteredGame" action="RemoveBuff" buff="buffUkuTadasiSpellsFireLv3"/>
+
+				<triggered_effect trigger="onSelfBuffStart" action="AttachParticleEffectToEntity" particle="#@modfolder:Resources/ukutadasispells?ukutadasiFire03"/>
+				<triggered_effect trigger="onSelfEnteredGame" action="AttachParticleEffectToEntity" particle="#@modfolder:Resources/ukutadasispells?ukutadasiFire03" />
+				<triggered_effect trigger="onSelfBuffRemove" action="RemoveParticleEffectFromEntity" particle="ukutadasiFire03"/>
+				<triggered_effect trigger="onSelfDied" action="RemoveParticleEffectFromEntity" particle="ukutadasiFire03"/>
+			</effect_group>
+		</buff>
+		<buff name="buffUkuTadasiSpellsFireLv4">
+			<damage_type value="heat"/>
+			<stack_type value="duration"/>
+			<duration value="12"/>
+			<effect_group>
+				<triggered_effect trigger="onSelfBuffStart" action="AddBuff" buff="buffMarksExistingPropertyFire"/>
+			</effect_group>
+			<effect_group>
+				<requirement name="EntityTagCompare" target="self" tags="ezFrost"/>
+				<passive_effect name="HealthChangeOT" operation="base_subtract" value="29.8"/>
+			</effect_group>
+			<effect_group>
+				<passive_effect name="HealthChangeOT" operation="base_subtract" value="14.9"/>
+
+				<passive_effect name="HealthChangeOT" operation="base_subtract" value="2.5">
+					<requirement name="EntityTagCompare" target="self" tags="feral"/>
+				</passive_effect>
+				<passive_effect name="HealthChangeOT" operation="base_subtract" value="4.1">
+					<requirement name="EntityTagCompare" target="self" tags="radiated"/>
+				</passive_effect>
+
+				<triggered_effect trigger="onSelfDied" action="RemoveBuff" buff="buffUkuTadasiSpellsFireLv4"/>
+				<triggered_effect trigger="onSelfEnteredGame" action="RemoveBuff" buff="buffUkuTadasiSpellsFireLv4"/>
+
+				<triggered_effect trigger="onSelfBuffStart" action="AttachParticleEffectToEntity" particle="#@modfolder:Resources/ukutadasispells?ukutadasiFire04"/>
+				<triggered_effect trigger="onSelfEnteredGame" action="AttachParticleEffectToEntity" particle="#@modfolder:Resources/ukutadasispells?ukutadasiFire04" />
+				<triggered_effect trigger="onSelfBuffRemove" action="RemoveParticleEffectFromEntity" particle="ukutadasiFire04"/>
+				<triggered_effect trigger="onSelfDied" action="RemoveParticleEffectFromEntity" particle="ukutadasiFire04"/>
+			</effect_group>
+		</buff>
+		<buff name="buffUkuTadasiSpellsFireLv5">
+			<damage_type value="heat"/>
+			<stack_type value="duration"/>
+			<duration value="14"/>
+			<effect_group>
+				<triggered_effect trigger="onSelfBuffStart" action="AddBuff" buff="buffMarksExistingPropertyFire"/>
+			</effect_group>
+			<effect_group>
+				<requirement name="EntityTagCompare" target="self" tags="ezFrost"/>
+				<passive_effect name="HealthChangeOT" operation="base_subtract" value="31.4"/>
+			</effect_group>
+			<effect_group>
+				<passive_effect name="HealthChangeOT" operation="base_subtract" value="15.7"/>
+				<passive_effect name="HealthChangeOT" operation="base_subtract" value="@spellsFireDamage"/>
+
+				<passive_effect name="HealthChangeOT" operation="base_subtract" value="2.7">
+					<requirement name="EntityTagCompare" target="self" tags="feral"/>
+				</passive_effect>
+				<passive_effect name="HealthChangeOT" operation="base_subtract" value="4.4">
+					<requirement name="EntityTagCompare" target="self" tags="radiated"/>
+				</passive_effect>
+
+				<triggered_effect trigger="onSelfDied" action="RemoveBuff" buff="buffUkuTadasiSpellsFireLv5"/>
+				<triggered_effect trigger="onSelfEnteredGame" action="RemoveBuff" buff="buffUkuTadasiSpellsFireLv5"/>
+
+				<triggered_effect trigger="onSelfBuffStart" action="AttachParticleEffectToEntity" particle="#@modfolder:Resources/ukutadasispells?ukutadasiFire05"/>
+				<triggered_effect trigger="onSelfEnteredGame" action="AttachParticleEffectToEntity" particle="#@modfolder:Resources/ukutadasispells?ukutadasiFire05" />
+				<triggered_effect trigger="onSelfBuffRemove" action="RemoveParticleEffectFromEntity" particle="ukutadasiFire05"/>
+				<triggered_effect trigger="onSelfDied" action="RemoveParticleEffectFromEntity" particle="ukutadasiFire05"/>
+			</effect_group>
+		</buff>
+
+		<!-- 冰凍 -->
+		<!-- time: 6, 8, 10, 12, 14  dmg: 6.3, 7.1, 7.9, 8.7, 9.5 -->
+		<!-- 類別傷害線性: 4, 6, 8 -->
+		<buff name="buffUkuTadasiSpellsIceLv1">
+			<damage_type value="cold"/>
+			<stack_type value="duration"/>
+			<duration value="6"/>
+			<effect_group>
+				<triggered_effect trigger="onSelfBuffStart" action="AddBuff" buff="buffMarksExistingPropertyIce"/>
+			</effect_group>
+			<effect_group>
+				<requirement name="EntityTagCompare" target="self" tags="ezFire"/>
+				<passive_effect name="HealthChangeOT" operation="base_subtract" value="12.6"/>
+			</effect_group>
+			<effect_group>
+				<passive_effect name="HealthChangeOT" operation="base_subtract" value="6.3"/>
+
+				<passive_effect name="HealthChangeOT" operation="base_subtract" value="3.4">
+					<requirement name="EntityTagCompare" target="self" tags="feral"/>
+				</passive_effect>
+				<passive_effect name="HealthChangeOT" operation="base_subtract" value="3.8">
+					<requirement name="EntityTagCompare" target="self" tags="radiated"/>
+				</passive_effect>
+
+				<passive_effect name="WalkSpeed" operation="perc_subtract" value="0.5"/>
+				<passive_effect name="RunSpeed" operation="perc_subtract" value="0.5"/>
+				<passive_effect name="Mobility" operation="perc_subtract" value="0.5" tags="falling,climbing,swimming"/>
+				<passive_effect name="AttacksPerMinute" operation="perc_subtract" value="0.5"/>
+
+				<triggered_effect trigger="onSelfDied" action="RemoveBuff" buff="buffUkuTadasiSpellsIceLv1"/>
+				<triggered_effect trigger="onSelfEnteredGame" action="RemoveBuff" buff="buffUkuTadasiSpellsIceLv1"/>
+
+				<triggered_effect trigger="onSelfBuffStart" action="AttachParticleEffectToEntity" particle="#@modfolder:Resources/ukutadasispells?ukutadasiIce" parent_transform="Hips"/>
+				<triggered_effect trigger="onSelfEnteredGame" action="AttachParticleEffectToEntity" particle="#@modfolder:Resources/ukutadasispells?ukutadasiIce" parent_transform="Hips"/>
+				<triggered_effect trigger="onSelfBuffRemove" action="RemoveParticleEffectFromEntity" particle="ukutadasiIce"/>
+				<triggered_effect trigger="onSelfDied" action="RemoveParticleEffectFromEntity" particle="ukutadasiIce"/>
+			</effect_group>
+		</buff>
+		<buff name="buffUkuTadasiSpellsIceLv2">
+			<damage_type value="cold"/>
+			<stack_type value="duration"/>
+			<duration value="8"/>
+			<effect_group>
+				<triggered_effect trigger="onSelfBuffStart" action="AddBuff" buff="buffMarksExistingPropertyIce"/>
+			</effect_group>
+			<effect_group>
+				<requirement name="EntityTagCompare" target="self" tags="ezFire"/>
+				<passive_effect name="HealthChangeOT" operation="base_subtract" value="14.2"/>
+			</effect_group>
+			<effect_group>
+				<passive_effect name="HealthChangeOT" operation="base_subtract" value="7.1"/>
+
+				<passive_effect name="HealthChangeOT" operation="base_subtract" value="3.7">
+					<requirement name="EntityTagCompare" target="self" tags="feral"/>
+				</passive_effect>
+				<passive_effect name="HealthChangeOT" operation="base_subtract" value="4.2">
+					<requirement name="EntityTagCompare" target="self" tags="radiated"/>
+				</passive_effect>
+
+				<passive_effect name="WalkSpeed" operation="perc_subtract" value="0.5"/>
+				<passive_effect name="RunSpeed" operation="perc_subtract" value="0.5"/>
+				<passive_effect name="Mobility" operation="perc_subtract" value="0.5" tags="falling,climbing,swimming"/>
+				<passive_effect name="AttacksPerMinute" operation="perc_subtract" value="0.5"/>
+
+				<triggered_effect trigger="onSelfDied" action="RemoveBuff" buff="buffUkuTadasiSpellsIceLv2"/>
+				<triggered_effect trigger="onSelfEnteredGame" action="RemoveBuff" buff="buffUkuTadasiSpellsIceLv2"/>
+
+				<triggered_effect trigger="onSelfBuffStart" action="AttachParticleEffectToEntity" particle="#@modfolder:Resources/ukutadasispells?ukutadasiIce02"/>
+				<triggered_effect trigger="onSelfEnteredGame" action="AttachParticleEffectToEntity" particle="#@modfolder:Resources/ukutadasispells?ukutadasiIce02"/>
+				<triggered_effect trigger="onSelfBuffRemove" action="RemoveParticleEffectFromEntity" particle="ukutadasiIce02"/>
+				<triggered_effect trigger="onSelfDied" action="RemoveParticleEffectFromEntity" particle="ukutadasiIce02"/>
+			</effect_group>
+		</buff>
+		<buff name="buffUkuTadasiSpellsIceLv3">
+			<damage_type value="cold"/>
+			<stack_type value="duration"/>
+			<duration value="10"/>
+			<effect_group>
+				<triggered_effect trigger="onSelfBuffStart" action="AddBuff" buff="buffMarksExistingPropertyIce"/>
+			</effect_group>
+			<effect_group>
+				<requirement name="EntityTagCompare" target="self" tags="ezFire"/>
+				<passive_effect name="HealthChangeOT" operation="base_subtract" value="15.8"/>
+			</effect_group>
+			<effect_group>
+				<passive_effect name="HealthChangeOT" operation="base_subtract" value="7.9"/>
+
+				<passive_effect name="HealthChangeOT" operation="base_subtract" value="4.2">
+					<requirement name="EntityTagCompare" target="self" tags="feral"/>
+				</passive_effect>
+				<passive_effect name="HealthChangeOT" operation="base_subtract" value="4.6">
+					<requirement name="EntityTagCompare" target="self" tags="radiated"/>
+				</passive_effect>
+
+				<passive_effect name="WalkSpeed" operation="perc_subtract" value="0.6"/>
+				<passive_effect name="RunSpeed" operation="perc_subtract" value="0.6"/>
+				<passive_effect name="Mobility" operation="perc_subtract" value="0.6" tags="falling,climbing,swimming"/>
+				<passive_effect name="AttacksPerMinute" operation="perc_subtract" value="0.6"/>
+
+				<triggered_effect trigger="onSelfDied" action="RemoveBuff" buff="buffUkuTadasiSpellsIceLv3"/>
+				<triggered_effect trigger="onSelfEnteredGame" action="RemoveBuff" buff="buffUkuTadasiSpellsIceLv3"/>
+
+				<triggered_effect trigger="onSelfBuffStart" action="AttachParticleEffectToEntity" particle="#@modfolder:Resources/ukutadasispells?ukutadasiIce03"/>
+				<triggered_effect trigger="onSelfEnteredGame" action="AttachParticleEffectToEntity" particle="#@modfolder:Resources/ukutadasispells?ukutadasiIce03"/>
+				<triggered_effect trigger="onSelfBuffRemove" action="RemoveParticleEffectFromEntity" particle="ukutadasiIce03"/>
+				<triggered_effect trigger="onSelfDied" action="RemoveParticleEffectFromEntity" particle="ukutadasiIce03"/>
+			</effect_group>
+		</buff>
+		<buff name="buffUkuTadasiSpellsIceLv4">
+			<damage_type value="cold"/>
+			<stack_type value="duration"/>
+			<duration value="12"/>
+			<effect_group>
+				<triggered_effect trigger="onSelfBuffStart" action="AddBuff" buff="buffMarksExistingPropertyIce"/>
+			</effect_group>
+			<effect_group>
+				<requirement name="EntityTagCompare" target="self" tags="ezFire"/>
+				<passive_effect name="HealthChangeOT" operation="base_subtract" value="17.4"/>
+			</effect_group>
+			<effect_group>
+				<passive_effect name="HealthChangeOT" operation="base_subtract" value="8.7"/>
+
+				<passive_effect name="HealthChangeOT" operation="base_subtract" value="4.6">
+					<requirement name="EntityTagCompare" target="self" tags="feral"/>
+				</passive_effect>
+				<passive_effect name="HealthChangeOT" operation="base_subtract" value="5.1">
+					<requirement name="EntityTagCompare" target="self" tags="radiated"/>
+				</passive_effect>
+
+				<passive_effect name="WalkSpeed" operation="perc_subtract" value="0.7"/>
+				<passive_effect name="RunSpeed" operation="perc_subtract" value="0.7"/>
+				<passive_effect name="Mobility" operation="perc_subtract" value="0.7" tags="falling,climbing,swimming"/>
+				<passive_effect name="AttacksPerMinute" operation="perc_subtract" value="0.7"/>
+
+				<triggered_effect trigger="onSelfDied" action="RemoveBuff" buff="buffUkuTadasiSpellsIceLv4"/>
+				<triggered_effect trigger="onSelfEnteredGame" action="RemoveBuff" buff="buffUkuTadasiSpellsIceLv4"/>
+
+				<triggered_effect trigger="onSelfBuffStart" action="AttachParticleEffectToEntity" particle="#@modfolder:Resources/ukutadasispells?ukutadasiIce04" parent_transform="Hips"/>
+				<triggered_effect trigger="onSelfEnteredGame" action="AttachParticleEffectToEntity" particle="#@modfolder:Resources/ukutadasispells?ukutadasiIce04" parent_transform="Hips"/>
+				<triggered_effect trigger="onSelfBuffRemove" action="RemoveParticleEffectFromEntity" particle="ukutadasiIce04"/>
+				<triggered_effect trigger="onSelfDied" action="RemoveParticleEffectFromEntity" particle="ukutadasiIce04"/>
+			</effect_group>
+		</buff>
+		<buff name="buffUkuTadasiSpellsIceLv5">
+			<damage_type value="cold"/>
+			<stack_type value="duration"/>
+			<duration value="14"/>
+			<effect_group>
+				<triggered_effect trigger="onSelfBuffStart" action="AddBuff" buff="buffMarksExistingPropertyIce"/>
+			</effect_group>
+			<effect_group>
+				<requirement name="EntityTagCompare" target="self" tags="ezFire"/>
+				<passive_effect name="HealthChangeOT" operation="base_subtract" value="19"/>
+			</effect_group>
+			<effect_group>
+				<passive_effect name="HealthChangeOT" operation="base_subtract" value="9.5"/>
+				<passive_effect name="HealthChangeOT" operation="base_subtract" value="@spellsIceDamage"/>
+
+				<passive_effect name="HealthChangeOT" operation="base_subtract" value="5">
+					<requirement name="EntityTagCompare" target="self" tags="feral"/>
+				</passive_effect>
+				<passive_effect name="HealthChangeOT" operation="base_subtract" value="5.6">
+					<requirement name="EntityTagCompare" target="self" tags="radiated"/>
+				</passive_effect>
+
+				<passive_effect name="WalkSpeed" operation="perc_subtract" value="0.8"/>
+				<passive_effect name="RunSpeed" operation="perc_subtract" value="0.8"/>
+				<passive_effect name="Mobility" operation="perc_subtract" value="0.8" tags="falling,climbing,swimming"/>
+				<passive_effect name="AttacksPerMinute" operation="perc_subtract" value="0.8"/>
+
+				<triggered_effect trigger="onSelfDied" action="RemoveBuff" buff="buffUkuTadasiSpellsIceLv5"/>
+				<triggered_effect trigger="onSelfEnteredGame" action="RemoveBuff" buff="buffUkuTadasiSpellsIceLv5"/>
+
+				<triggered_effect trigger="onSelfBuffStart" action="AttachParticleEffectToEntity" particle="#@modfolder:Resources/ukutadasispells?ukutadasiIce05" parent_transform="Hips"/>
+				<triggered_effect trigger="onSelfEnteredGame" action="AttachParticleEffectToEntity" particle="#@modfolder:Resources/ukutadasispells?ukutadasiIce05" parent_transform="Hips"/>
+				<triggered_effect trigger="onSelfBuffRemove" action="RemoveParticleEffectFromEntity" particle="ukutadasiIce05"/>
+				<triggered_effect trigger="onSelfDied" action="RemoveParticleEffectFromEntity" particle="ukutadasiIce05"/>
+			</effect_group>
+		</buff>
+
+		<!-- 中毒 -->
+		<!-- time: 8, 10, 12, 14, 16  dmg: 9.4, 10.2, 11, 11.8, 12.6 -->
+		<!-- 類別傷害線性: 2, 4, 6 -->
+		<buff name="buffUkuTadasiSpellsPoisonLv1">
+			<damage_type value="toxic"/>
+			<stack_type value="duration"/>
+			<duration value="8"/>
+			<effect_group>
+				<triggered_effect trigger="onSelfBuffStart" action="AddBuff" buff="buffMarksExistingPropertyPoison"/>
+			</effect_group>
+			<effect_group>
+				<requirement name="EntityTagCompare" target="self" tags="ezElectric"/>
+				<passive_effect name="HealthChangeOT" operation="base_subtract" value="18.8"/>
+			</effect_group>
+			<effect_group>
+				<passive_effect name="HealthChangeOT" operation="base_subtract" value="9.4"/>
+				<passive_effect name="RunSpeed" operation="perc_subtract" value="0.8"/>
+
+				<passive_effect name="HealthChangeOT" operation="base_subtract" value="1.5">
+					<requirement name="EntityTagCompare" target="self" tags="feral"/>
+				</passive_effect>
+				<passive_effect name="HealthChangeOT" operation="base_subtract" value="2.6">
+					<requirement name="EntityTagCompare" target="self" tags="radiated"/>
+				</passive_effect>
+
+				<triggered_effect trigger="onSelfDied" action="RemoveBuff" buff="buffUkuTadasiSpellsPoisonLv1"/>
+				<triggered_effect trigger="onSelfEnteredGame" action="RemoveBuff" buff="buffUkuTadasiSpellsPoisonLv1"/>
+				<triggered_effect trigger="onSelfBuffStart" action="AttachParticleEffectToEntity" particle="#@modfolder:Resources/ukutadasispells?ukutadasiPoison" parent_transform="Hips"/>
+				<triggered_effect trigger="onSelfEnteredGame" action="AttachParticleEffectToEntity" particle="#@modfolder:Resources/ukutadasispells?ukutadasiPoison" parent_transform="Hips"/>
+				<triggered_effect trigger="onSelfBuffRemove" action="RemoveParticleEffectFromEntity" particle="ukutadasiPoison"/>
+				<triggered_effect trigger="onSelfDied" action="RemoveParticleEffectFromEntity" particle="ukutadasiPoison"/>
+			</effect_group>
+		</buff>
+		<buff name="buffUkuTadasiSpellsPoisonLv2">
+			<damage_type value="toxic"/>
+			<stack_type value="duration"/>
+			<duration value="10"/>
+			<effect_group>
+				<triggered_effect trigger="onSelfBuffStart" action="AddBuff" buff="buffMarksExistingPropertyPoison"/>
+			</effect_group>
+			<effect_group>
+				<requirement name="EntityTagCompare" target="self" tags="ezElectric"/>
+				<passive_effect name="HealthChangeOT" operation="base_subtract" value="20.4"/>
+			</effect_group>
+			<effect_group>
+				<passive_effect name="HealthChangeOT" operation="base_subtract" value="10.2"/>
+				<passive_effect name="RunSpeed" operation="perc_subtract" value="0.8"/>
+
+				<passive_effect name="HealthChangeOT" operation="base_subtract" value="1.6">
+					<requirement name="EntityTagCompare" target="self" tags="feral"/>
+				</passive_effect>
+				<passive_effect name="HealthChangeOT" operation="base_subtract" value="2.8">
+					<requirement name="EntityTagCompare" target="self" tags="radiated"/>
+				</passive_effect>
+
+				<triggered_effect trigger="onSelfDied" action="RemoveBuff" buff="buffUkuTadasiSpellsPoisonLv2"/>
+				<triggered_effect trigger="onSelfEnteredGame" action="RemoveBuff" buff="buffUkuTadasiSpellsPoisonLv2"/>
+				<triggered_effect trigger="onSelfBuffStart" action="AttachParticleEffectToEntity" particle="#@modfolder:Resources/ukutadasispells?ukutadasiPoison02"/>
+				<triggered_effect trigger="onSelfEnteredGame" action="AttachParticleEffectToEntity" particle="#@modfolder:Resources/ukutadasispells?ukutadasiPoison02"/>
+				<triggered_effect trigger="onSelfBuffRemove" action="RemoveParticleEffectFromEntity" particle="ukutadasiPoison02"/>
+				<triggered_effect trigger="onSelfDied" action="RemoveParticleEffectFromEntity" particle="ukutadasiPoison02"/>
+			</effect_group>
+		</buff>
+		<buff name="buffUkuTadasiSpellsPoisonLv3">
+			<damage_type value="toxic"/>
+			<stack_type value="duration"/>
+			<duration value="12"/>
+			<effect_group>
+				<triggered_effect trigger="onSelfBuffStart" action="AddBuff" buff="buffMarksExistingPropertyPoison"/>
+			</effect_group>
+			<effect_group>
+				<requirement name="EntityTagCompare" target="self" tags="ezElectric"/>
+				<passive_effect name="HealthChangeOT" operation="base_subtract" value="22"/>
+			</effect_group>
+			<effect_group>
+				<passive_effect name="HealthChangeOT" operation="base_subtract" value="11"/>
+				<passive_effect name="RunSpeed" operation="perc_subtract" value="0.8"/>
+
+				<passive_effect name="HealthChangeOT" operation="base_subtract" value="1.7">
+					<requirement name="EntityTagCompare" target="self" tags="feral"/>
+				</passive_effect>
+				<passive_effect name="HealthChangeOT" operation="base_subtract" value="3.1">
+					<requirement name="EntityTagCompare" target="self" tags="radiated"/>
+				</passive_effect>
+
+				<triggered_effect trigger="onSelfDied" action="RemoveBuff" buff="buffUkuTadasiSpellsPoisonLv3"/>
+				<triggered_effect trigger="onSelfEnteredGame" action="RemoveBuff" buff="buffUkuTadasiSpellsPoisonLv3"/>
+				<triggered_effect trigger="onSelfBuffStart" action="AttachParticleEffectToEntity" particle="#@modfolder:Resources/ukutadasispells?ukutadasiPoison03"/>
+				<triggered_effect trigger="onSelfEnteredGame" action="AttachParticleEffectToEntity" particle="#@modfolder:Resources/ukutadasispells?ukutadasiPoison03"/>
+				<triggered_effect trigger="onSelfBuffRemove" action="RemoveParticleEffectFromEntity" particle="ukutadasiPoison03"/>
+				<triggered_effect trigger="onSelfDied" action="RemoveParticleEffectFromEntity" particle="ukutadasiPoison03"/>
+			</effect_group>
+		</buff>
+		<buff name="buffUkuTadasiSpellsPoisonLv4">
+			<damage_type value="toxic"/>
+			<stack_type value="duration"/>
+			<duration value="14"/>
+			<effect_group>
+				<triggered_effect trigger="onSelfBuffStart" action="AddBuff" buff="buffMarksExistingPropertyPoison"/>
+			</effect_group>
+			<effect_group>
+				<requirement name="EntityTagCompare" target="self" tags="ezElectric"/>
+				<passive_effect name="HealthChangeOT" operation="base_subtract" value="23.6"/>
+			</effect_group>
+			<effect_group>
+				<passive_effect name="HealthChangeOT" operation="base_subtract" value="11.8"/>
+				<passive_effect name="RunSpeed" operation="perc_subtract" value="0.8"/>
+
+				<passive_effect name="HealthChangeOT" operation="base_subtract" value="1.9">
+					<requirement name="EntityTagCompare" target="self" tags="feral"/>
+				</passive_effect>
+				<passive_effect name="HealthChangeOT" operation="base_subtract" value="3.3">
+					<requirement name="EntityTagCompare" target="self" tags="radiated"/>
+				</passive_effect>
+
+				<triggered_effect trigger="onSelfDied" action="RemoveBuff" buff="buffUkuTadasiSpellsPoisonLv4"/>
+				<triggered_effect trigger="onSelfEnteredGame" action="RemoveBuff" buff="buffUkuTadasiSpellsPoisonLv4"/>
+				<triggered_effect trigger="onSelfBuffStart" action="AttachParticleEffectToEntity" particle="#@modfolder:Resources/ukutadasispells?ukutadasiPoison04"/>
+				<triggered_effect trigger="onSelfEnteredGame" action="AttachParticleEffectToEntity" particle="#@modfolder:Resources/ukutadasispells?ukutadasiPoison04"/>
+				<triggered_effect trigger="onSelfBuffRemove" action="RemoveParticleEffectFromEntity" particle="ukutadasiPoison04"/>
+				<triggered_effect trigger="onSelfDied" action="RemoveParticleEffectFromEntity" particle="ukutadasiPoison04"/>
+			</effect_group>
+		</buff>
+		<buff name="buffUkuTadasiSpellsPoisonLv5">
+			<damage_type value="toxic"/>
+			<stack_type value="duration"/>
+			<duration value="16"/>
+			<effect_group>
+				<triggered_effect trigger="onSelfBuffStart" action="AddBuff" buff="buffMarksExistingPropertyPoison"/>
+			</effect_group>
+			<effect_group>
+				<requirement name="EntityTagCompare" target="self" tags="ezElectric"/>
+				<passive_effect name="HealthChangeOT" operation="base_subtract" value="25.2"/>
+			</effect_group>
+			<effect_group>
+				<passive_effect name="HealthChangeOT" operation="base_subtract" value="12.6"/>
+				<passive_effect name="HealthChangeOT" operation="base_subtract" value="@spellsPoisonDamage"/>
+				<passive_effect name="RunSpeed" operation="perc_subtract" value="0.8"/>
+
+				<passive_effect name="HealthChangeOT" operation="base_subtract" value="2">
+					<requirement name="EntityTagCompare" target="self" tags="feral"/>
+				</passive_effect>
+				<passive_effect name="HealthChangeOT" operation="base_subtract" value="3.5">
+					<requirement name="EntityTagCompare" target="self" tags="radiated"/>
+				</passive_effect>
+
+				<triggered_effect trigger="onSelfDied" action="RemoveBuff" buff="buffUkuTadasiSpellsPoisonLv5"/>
+				<triggered_effect trigger="onSelfEnteredGame" action="RemoveBuff" buff="buffUkuTadasiSpellsPoisonLv5"/>
+				<triggered_effect trigger="onSelfBuffStart" action="AttachParticleEffectToEntity" particle="#@modfolder:Resources/ukutadasispells?ukutadasiPoison05"/>
+				<triggered_effect trigger="onSelfEnteredGame" action="AttachParticleEffectToEntity" particle="#@modfolder:Resources/ukutadasispells?ukutadasiPoison05"/>
+				<triggered_effect trigger="onSelfBuffRemove" action="RemoveParticleEffectFromEntity" particle="ukutadasiPoison05"/>
+				<triggered_effect trigger="onSelfDied" action="RemoveParticleEffectFromEntity" particle="ukutadasiPoison05"/>
+
+				<triggered_effect trigger="onSelfBuffUpdate" action="AddBuff" target="self" buff="buffUkuTadasiSpellsPoisonInstantDeath">
+					<requirement name="RandomRoll" seed_type="Random" min_max="0,100" operation="LTE" value="5"/>
+				</triggered_effect>
+			</effect_group>
+		</buff>
+		<buff name="buffUkuTadasiSpellsPoisonInstantDeath">
+			<damage_type value="toxic"/>
+			<effect_group>
+				<passive_effect name="HealthChangeOT" operation="base_subtract" value="99999999"/>
+				<triggered_effect trigger="onSelfDied" action="RemoveBuff" buff="buffUkuTadasiSpellsPoisonInstantDeath"/>
+				<triggered_effect trigger="onSelfEnteredGame" action="RemoveBuff" buff="buffUkuTadasiSpellsPoisonInstantDeath"/>
+			</effect_group>
+		</buff>
+
+		<!-- 電擊 -->
+		<!-- time: 4, 5, 6, 7, 8  dmg: 9.4, 10.2, 11, 11.8, 12.6 -->
+		<!-- 類別傷害線性: 4, 6, 8 -->
+		<buff name="buffUkuTadasiSpellsElectricShockLv1">
+			<damage_type value="electrical"/>
+			<stack_type value="duration"/>
+			<duration value="4"/>
+			<effect_group>
+				<triggered_effect trigger="onSelfBuffStart" action="AddBuff" buff="buffMarksExistingPropertyElectric"/>
+			</effect_group>
+			<effect_group>
+				<requirement name="EntityTagCompare" target="self" tags="ezToxic"/>
+				<passive_effect name="HealthChangeOT" operation="base_subtract" value="18.8"/>
+			</effect_group>
+			<effect_group>
+				<passive_effect name="HealthChangeOT" operation="base_subtract" value="9.4"/>
+				<passive_effect name="WalkSpeed" operation="perc_subtract" value=".5,.1" duration="0,4"/>
+				<passive_effect name="RunSpeed" operation="perc_subtract" value=".5,.1" duration="0,4"/>
+				<passive_effect name="JumpStrength" operation="perc_subtract" value=".5,.1" duration="0,4"/>
+				<passive_effect name="Mobility" operation="perc_subtract" value="0.5" tags="falling,climbing,swimming"/>
+
+				<passive_effect name="HealthChangeOT" operation="base_subtract" value="5.2">
+					<requirement name="EntityTagCompare" target="self" tags="feral"/>
+				</passive_effect>
+				<passive_effect name="HealthChangeOT" operation="base_subtract" value="5.7">
+					<requirement name="EntityTagCompare" target="self" tags="radiated"/>
+				</passive_effect>
+
+				<triggered_effect trigger="onSelfDied" action="RemoveBuff" buff="buffUkuTadasiSpellsElectricShockLv1"/>
+				<triggered_effect trigger="onSelfEnteredGame" action="RemoveBuff" buff="buffUkuTadasiSpellsElectricShockLv1"/>
+				<triggered_effect trigger="onSelfBuffStart" action="AttachParticleEffectToEntity" particle="#@modfolder:Resources/ukutadasispells?ukutadasiElectric" parent_transform="Hips"/>
+				<triggered_effect trigger="onSelfEnteredGame" action="AttachParticleEffectToEntity" particle="#@modfolder:Resources/ukutadasispells?ukutadasiElectric" parent_transform="Hips"/>
+				<triggered_effect trigger="onSelfBuffRemove" action="RemoveParticleEffectFromEntity" particle="ukutadasiElectric"/>
+				<triggered_effect trigger="onSelfDied" action="RemoveParticleEffectFromEntity" particle="ukutadasiElectric"/>
+			</effect_group>
+		</buff>
+		<buff name="buffUkuTadasiSpellsElectricShockLv2">
+			<damage_type value="electrical"/>
+			<stack_type value="duration"/>
+			<duration value="5"/>
+			<effect_group>
+				<triggered_effect trigger="onSelfBuffStart" action="AddBuff" buff="buffMarksExistingPropertyElectric"/>
+			</effect_group>
+			<effect_group>
+				<requirement name="EntityTagCompare" target="self" tags="ezToxic"/>
+				<passive_effect name="HealthChangeOT" operation="base_subtract" value="20.4"/>
+			</effect_group>
+			<effect_group>
+				<passive_effect name="HealthChangeOT" operation="base_subtract" value="10.2"/>
+				<passive_effect name="WalkSpeed" operation="perc_subtract" value=".6,.1" duration="0,5"/>
+				<passive_effect name="RunSpeed" operation="perc_subtract" value=".6,.1" duration="0,5"/>
+				<passive_effect name="JumpStrength" operation="perc_subtract" value=".6,.1" duration="0,5"/>
+				<passive_effect name="Mobility" operation="perc_subtract" value="0.6" tags="falling,climbing,swimming"/>
+
+				<passive_effect name="HealthChangeOT" operation="base_subtract" value="5.7">
+					<requirement name="EntityTagCompare" target="self" tags="feral"/>
+				</passive_effect>
+				<passive_effect name="HealthChangeOT" operation="base_subtract" value="6.4">
+					<requirement name="EntityTagCompare" target="self" tags="radiated"/>
+				</passive_effect>
+
+				<triggered_effect trigger="onSelfDied" action="RemoveBuff" buff="buffUkuTadasiSpellsElectricShockLv2"/>
+				<triggered_effect trigger="onSelfEnteredGame" action="RemoveBuff" buff="buffUkuTadasiSpellsElectricShockLv2"/>
+				<triggered_effect trigger="onSelfBuffStart" action="AttachParticleEffectToEntity" particle="#@modfolder:Resources/ukutadasispells?ukutadasiElectric02"/>
+				<triggered_effect trigger="onSelfEnteredGame" action="AttachParticleEffectToEntity" particle="#@modfolder:Resources/ukutadasispells?ukutadasiElectric02"/>
+				<triggered_effect trigger="onSelfBuffRemove" action="RemoveParticleEffectFromEntity" particle="ukutadasiElectric02"/>
+				<triggered_effect trigger="onSelfDied" action="RemoveParticleEffectFromEntity" particle="ukutadasiElectric02"/>
+			</effect_group>
+		</buff>
+		<buff name="buffUkuTadasiSpellsElectricShockLv3">
+			<damage_type value="electrical"/>
+			<stack_type value="duration"/>
+			<duration value="6"/>
+			<effect_group>
+				<triggered_effect trigger="onSelfBuffStart" action="AddBuff" buff="buffMarksExistingPropertyElectric"/>
+			</effect_group>
+			<effect_group>
+				<requirement name="EntityTagCompare" target="self" tags="ezToxic"/>
+				<passive_effect name="HealthChangeOT" operation="base_subtract" value="22"/>
+			</effect_group>
+			<effect_group>
+				<passive_effect name="HealthChangeOT" operation="base_subtract" value="11"/>
+				<passive_effect name="WalkSpeed" operation="perc_subtract" value=".7,.1" duration="0,6"/>
+				<passive_effect name="RunSpeed" operation="perc_subtract" value=".7,.1" duration="0,6"/>
+				<passive_effect name="JumpStrength" operation="perc_subtract" value=".7,.1" duration="0,6"/>
+				<passive_effect name="Mobility" operation="perc_subtract" value="0.7" tags="falling,climbing,swimming"/>
+
+				<passive_effect name="HealthChangeOT" operation="base_subtract" value="6.1">
+					<requirement name="EntityTagCompare" target="self" tags="feral"/>
+				</passive_effect>
+				<passive_effect name="HealthChangeOT" operation="base_subtract" value="6.9">
+					<requirement name="EntityTagCompare" target="self" tags="radiated"/>
+				</passive_effect>
+
+				<triggered_effect trigger="onSelfDied" action="RemoveBuff" buff="buffUkuTadasiSpellsElectricShockLv3"/>
+				<triggered_effect trigger="onSelfEnteredGame" action="RemoveBuff" buff="buffUkuTadasiSpellsElectricShockLv3"/>
+				<triggered_effect trigger="onSelfBuffStart" action="AttachParticleEffectToEntity" particle="#@modfolder:Resources/ukutadasispells?ukutadasiElectric03"/>
+				<triggered_effect trigger="onSelfEnteredGame" action="AttachParticleEffectToEntity" particle="#@modfolder:Resources/ukutadasispells?ukutadasiElectric03"/>
+				<triggered_effect trigger="onSelfBuffRemove" action="RemoveParticleEffectFromEntity" particle="ukutadasiElectric03"/>
+				<triggered_effect trigger="onSelfDied" action="RemoveParticleEffectFromEntity" particle="ukutadasiElectric03"/>
+			</effect_group>
+		</buff>
+		<buff name="buffUkuTadasiSpellsElectricShockLv4">
+			<damage_type value="electrical"/>
+			<stack_type value="duration"/>
+			<duration value="7"/>
+			<effect_group>
+				<triggered_effect trigger="onSelfBuffStart" action="AddBuff" buff="buffMarksExistingPropertyElectric"/>
+			</effect_group>
+			<effect_group>
+				<requirement name="EntityTagCompare" target="self" tags="ezToxic"/>
+				<passive_effect name="HealthChangeOT" operation="base_subtract" value="23.6"/>
+			</effect_group>
+			<effect_group>
+				<passive_effect name="HealthChangeOT" operation="base_subtract" value="11.8"/>
+				<passive_effect name="WalkSpeed" operation="perc_subtract" value=".8,.1" duration="0,7"/>
+				<passive_effect name="RunSpeed" operation="perc_subtract" value=".8,.1" duration="0,7"/>
+				<passive_effect name="JumpStrength" operation="perc_subtract" value=".8,.1" duration="0,7"/>
+				<passive_effect name="Mobility" operation="perc_subtract" value="0.8" tags="falling,climbing,swimming"/>
+
+				<passive_effect name="HealthChangeOT" operation="base_subtract" value="6.6">
+					<requirement name="EntityTagCompare" target="self" tags="feral"/>
+				</passive_effect>
+				<passive_effect name="HealthChangeOT" operation="base_subtract" value="7.4">
+					<requirement name="EntityTagCompare" target="self" tags="radiated"/>
+				</passive_effect>
+
+				<triggered_effect trigger="onSelfDied" action="RemoveBuff" buff="buffUkuTadasiSpellsElectricShockLv4"/>
+				<triggered_effect trigger="onSelfEnteredGame" action="RemoveBuff" buff="buffUkuTadasiSpellsElectricShockLv4"/>
+				<triggered_effect trigger="onSelfBuffStart" action="AttachParticleEffectToEntity" particle="#@modfolder:Resources/ukutadasispells?ukutadasiElectric04"/>
+				<triggered_effect trigger="onSelfEnteredGame" action="AttachParticleEffectToEntity" particle="#@modfolder:Resources/ukutadasispells?ukutadasiElectric04"/>
+				<triggered_effect trigger="onSelfBuffRemove" action="RemoveParticleEffectFromEntity" particle="ukutadasiElectric04"/>
+				<triggered_effect trigger="onSelfDied" action="RemoveParticleEffectFromEntity" particle="ukutadasiElectric04"/>
+			</effect_group>
+		</buff>
+		<buff name="buffUkuTadasiSpellsElectricShockLv5">
+			<damage_type value="electrical"/>
+			<stack_type value="duration"/>
+			<duration value="8"/>
+			<effect_group>
+				<triggered_effect trigger="onSelfBuffStart" action="AddBuff" buff="buffMarksExistingPropertyElectric"/>
+			</effect_group>
+			<effect_group>
+				<requirement name="EntityTagCompare" target="self" tags="ezToxic"/>
+				<passive_effect name="HealthChangeOT" operation="base_subtract" value="25.2"/>
+			</effect_group>
+			<effect_group>
+				<passive_effect name="HealthChangeOT" operation="base_subtract" value="12.6"/>
+				<passive_effect name="HealthChangeOT" operation="base_subtract" value="@spellsElectricShockDamage"/>
+
+				<passive_effect name="WalkSpeed" operation="perc_subtract" value=".9,.1" duration="0,8"/>
+				<passive_effect name="RunSpeed" operation="perc_subtract" value=".9,.1" duration="0,8"/>
+				<passive_effect name="JumpStrength" operation="perc_subtract" value=".9,.1" duration="0,8"/>
+				<passive_effect name="Mobility" operation="perc_subtract" value="0.9" tags="falling,climbing,swimming"/>
+
+				<passive_effect name="HealthChangeOT" operation="base_subtract" value="7">
+					<requirement name="EntityTagCompare" target="self" tags="feral"/>
+				</passive_effect>
+				<passive_effect name="HealthChangeOT" operation="base_subtract" value="7.9">
+					<requirement name="EntityTagCompare" target="self" tags="radiated"/>
+				</passive_effect>
+
+				<triggered_effect trigger="onSelfDied" action="RemoveBuff" buff="buffUkuTadasiSpellsElectricShockLv5"/>
+				<triggered_effect trigger="onSelfEnteredGame" action="RemoveBuff" buff="buffUkuTadasiSpellsElectricShockLv5"/>
+				<triggered_effect trigger="onSelfBuffStart" action="AttachParticleEffectToEntity" particle="#@modfolder:Resources/ukutadasispells?ukutadasiElectric05"/>
+				<triggered_effect trigger="onSelfEnteredGame" action="AttachParticleEffectToEntity" particle="#@modfolder:Resources/ukutadasispells?ukutadasiElectric05"/>
+				<triggered_effect trigger="onSelfBuffRemove" action="RemoveParticleEffectFromEntity" particle="ukutadasiElectric05"/>
+				<triggered_effect trigger="onSelfDied" action="RemoveParticleEffectFromEntity" particle="ukutadasiElectric05"/>
+			</effect_group>
+		</buff>
+	</append>
+	<!-- 範圍型 -->
+	<!-- dmg依技能級別線性遞增: 0.5 -->
+	<append xpath="/buffs">
+		<!-- 易燃物 -->
+		<!-- time: 6, 8, 10, 12, 14  dmg: 10, 10.5, 11, 11.5, 12  rang: 2, 3, 4, 5, 6 -->
+		<buff name="buffUkuTadasiSpellsFlammablesLv1">
+			<damage_type value="heat"/>
+			<stack_type value="duration"/>
+			<duration value="6"/>
+			<effect_group>
+				<requirement name="EntityTagCompare" target="self" tags="ezFrost"/>
+				<passive_effect name="HealthChangeOT" operation="base_subtract" value="20"/>
+			</effect_group>
+			<effect_group>
+				<passive_effect name="HealthChangeOT" operation="base_subtract" value="10"/>
+
+				<passive_effect name="HealthChangeOT" operation="base_subtract" value="1.7">
+					<requirement name="EntityTagCompare" target="self" tags="feral"/>
+				</passive_effect>
+				<passive_effect name="HealthChangeOT" operation="base_subtract" value="2.8">
+					<requirement name="EntityTagCompare" target="self" tags="radiated"/>
+				</passive_effect>
+
+				<triggered_effect trigger="onSelfDied" action="RemoveBuff" buff="buffUkuTadasiSpellsFlammablesLv1"/>
+				<triggered_effect trigger="onSelfEnteredGame" action="RemoveBuff" buff="buffUkuTadasiSpellsFlammablesLv1"/>
+
+				<triggered_effect trigger="onSelfBuffStart" action="AttachParticleEffectToEntity" particle="#@modfolder:Resources/ukutadasispells?ukutadasiFlammables"/>
+				<triggered_effect trigger="onSelfEnteredGame" action="AttachParticleEffectToEntity" particle="#@modfolder:Resources/ukutadasispells?ukutadasiFlammables"/>
+				<triggered_effect trigger="onSelfBuffRemove" action="RemoveParticleEffectFromEntity" particle="ukutadasiFlammables"/>
+				<triggered_effect trigger="onSelfDied" action="RemoveParticleEffectFromEntity" particle="ukutadasiFlammables"/>
+
+				<triggered_effect trigger="onSelfBuffUpdate" action="AddBuff" target="selfAOE" range="2" target_tags="zombie,animal" buff="buffUkuTadasiSpellsFlammablesLv1Spread"/>
+			</effect_group>
+		</buff>
+		<buff name="buffUkuTadasiSpellsFlammablesLv1Spread">
+			<damage_type value="heat"/>
+			<stack_type value="replace"/>
+			<duration value="6"/>
+			<effect_group>
+				<requirement name="EntityTagCompare" target="self" tags="ezFrost"/>
+				<passive_effect name="HealthChangeOT" operation="base_subtract" value="20"/>
+			</effect_group>
+			<effect_group>
+				<passive_effect name="HealthChangeOT" operation="base_subtract" value="10"/>
+
+				<passive_effect name="HealthChangeOT" operation="base_subtract" value="1.7">
+					<requirement name="EntityTagCompare" target="self" tags="feral"/>
+				</passive_effect>
+				<passive_effect name="HealthChangeOT" operation="base_subtract" value="2.8">
+					<requirement name="EntityTagCompare" target="self" tags="radiated"/>
+				</passive_effect>
+
+				<triggered_effect trigger="onSelfDied" action="RemoveBuff" buff="buffUkuTadasiSpellsFlammablesLv1Spread"/>
+				<triggered_effect trigger="onSelfEnteredGame" action="RemoveBuff" buff="buffUkuTadasiSpellsFlammablesLv1Spread"/>
+
+				<triggered_effect trigger="onSelfBuffStart" action="AttachParticleEffectToEntity" particle="#@modfolder:Resources/ukutadasispells?ukutadasiFlammablesSpread"/>
+				<triggered_effect trigger="onSelfEnteredGame" action="AttachParticleEffectToEntity" particle="#@modfolder:Resources/ukutadasispells?ukutadasiFlammablesSpread"/>
+				<triggered_effect trigger="onSelfBuffRemove" action="RemoveParticleEffectFromEntity" particle="ukutadasiFlammablesSpread"/>
+				<triggered_effect trigger="onSelfDied" action="RemoveParticleEffectFromEntity" particle="ukutadasiFlammablesSpread"/>
+
+				<triggered_effect trigger="onSelfBuffUpdate" action="AddBuff" target="selfAOE" range="2" target_tags="zombie,animal" buff="buffUkuTadasiSpellsFlammablesLv1Spread"/>
+			</effect_group>
+		</buff>
+		<buff name="buffUkuTadasiSpellsFlammablesLv2">
+			<damage_type value="heat"/>
+			<stack_type value="duration"/>
+			<duration value="8"/>
+			<effect_group>
+				<requirement name="EntityTagCompare" target="self" tags="ezFrost"/>
+				<passive_effect name="HealthChangeOT" operation="base_subtract" value="21"/>
+			</effect_group>
+			<effect_group>
+				<passive_effect name="HealthChangeOT" operation="base_subtract" value="10.5"/>
+
+				<passive_effect name="HealthChangeOT" operation="base_subtract" value="1.8">
+					<requirement name="EntityTagCompare" target="self" tags="feral"/>
+				</passive_effect>
+				<passive_effect name="HealthChangeOT" operation="base_subtract" value="2.9">
+					<requirement name="EntityTagCompare" target="self" tags="radiated"/>
+				</passive_effect>
+
+				<triggered_effect trigger="onSelfDied" action="RemoveBuff" buff="buffUkuTadasiSpellsFlammablesLv2"/>
+				<triggered_effect trigger="onSelfEnteredGame" action="RemoveBuff" buff="buffUkuTadasiSpellsFlammablesLv2"/>
+
+				<triggered_effect trigger="onSelfBuffStart" action="AttachParticleEffectToEntity" particle="#@modfolder:Resources/ukutadasispells?ukutadasiFlammables02"/>
+				<triggered_effect trigger="onSelfEnteredGame" action="AttachParticleEffectToEntity" particle="#@modfolder:Resources/ukutadasispells?ukutadasiFlammables02"/>
+				<triggered_effect trigger="onSelfBuffRemove" action="RemoveParticleEffectFromEntity" particle="ukutadasiFlammables02"/>
+				<triggered_effect trigger="onSelfDied" action="RemoveParticleEffectFromEntity" particle="ukutadasiFlammables02"/>
+
+				<triggered_effect trigger="onSelfBuffUpdate" action="AddBuff" target="selfAOE" range="3" target_tags="zombie,animal" buff="buffUkuTadasiSpellsFlammablesLv2Spread"/>
+			</effect_group>
+		</buff>
+		<buff name="buffUkuTadasiSpellsFlammablesLv2Spread">
+			<damage_type value="heat"/>
+			<stack_type value="replace"/>
+			<duration value="8"/>
+			<effect_group>
+				<requirement name="EntityTagCompare" target="self" tags="ezFrost"/>
+				<passive_effect name="HealthChangeOT" operation="base_subtract" value="21"/>
+			</effect_group>
+			<effect_group>
+				<passive_effect name="HealthChangeOT" operation="base_subtract" value="10.5"/>
+
+				<passive_effect name="HealthChangeOT" operation="base_subtract" value="1.8">
+					<requirement name="EntityTagCompare" target="self" tags="feral"/>
+				</passive_effect>
+				<passive_effect name="HealthChangeOT" operation="base_subtract" value="2.9">
+					<requirement name="EntityTagCompare" target="self" tags="radiated"/>
+				</passive_effect>
+
+				<triggered_effect trigger="onSelfDied" action="RemoveBuff" buff="buffUkuTadasiSpellsFlammablesLv2Spread"/>
+				<triggered_effect trigger="onSelfEnteredGame" action="RemoveBuff" buff="buffUkuTadasiSpellsFlammablesLv2Spread"/>
+
+				<triggered_effect trigger="onSelfBuffStart" action="AttachParticleEffectToEntity" particle="#@modfolder:Resources/ukutadasispells?ukutadasiFlammablesSpread02" />
+				<triggered_effect trigger="onSelfEnteredGame" action="AttachParticleEffectToEntity" particle="#@modfolder:Resources/ukutadasispells?ukutadasiFlammablesSpread02" />
+				<triggered_effect trigger="onSelfBuffRemove" action="RemoveParticleEffectFromEntity" particle="ukutadasiFlammablesSpread02"/>
+				<triggered_effect trigger="onSelfDied" action="RemoveParticleEffectFromEntity" particle="ukutadasiFlammablesSpread02"/>
+
+				<triggered_effect trigger="onSelfBuffUpdate" action="AddBuff" target="selfAOE" range="3" target_tags="zombie,animal" buff="buffUkuTadasiSpellsFlammablesLv2Spread"/>
+			</effect_group>
+		</buff>
+		<buff name="buffUkuTadasiSpellsFlammablesLv3">
+			<damage_type value="heat"/>
+			<stack_type value="duration"/>
+			<duration value="10"/>
+			<effect_group>
+				<requirement name="EntityTagCompare" target="self" tags="ezFrost"/>
+				<passive_effect name="HealthChangeOT" operation="base_subtract" value="22"/>
+			</effect_group>
+			<effect_group>
+				<passive_effect name="HealthChangeOT" operation="base_subtract" value="11"/>
+
+				<passive_effect name="HealthChangeOT" operation="base_subtract" value="1.8">
+					<requirement name="EntityTagCompare" target="self" tags="feral"/>
+				</passive_effect>
+				<passive_effect name="HealthChangeOT" operation="base_subtract" value="3.1">
+					<requirement name="EntityTagCompare" target="self" tags="radiated"/>
+				</passive_effect>
+
+				<triggered_effect trigger="onSelfDied" action="RemoveBuff" buff="buffUkuTadasiSpellsFlammablesLv3"/>
+				<triggered_effect trigger="onSelfEnteredGame" action="RemoveBuff" buff="buffUkuTadasiSpellsFlammablesLv3"/>
+
+				<triggered_effect trigger="onSelfBuffStart" action="AttachParticleEffectToEntity" particle="#@modfolder:Resources/ukutadasispells?ukutadasiFlammables03"/>
+				<triggered_effect trigger="onSelfEnteredGame" action="AttachParticleEffectToEntity" particle="#@modfolder:Resources/ukutadasispells?ukutadasiFlammables03"/>
+				<triggered_effect trigger="onSelfBuffRemove" action="RemoveParticleEffectFromEntity" particle="ukutadasiFlammables03"/>
+				<triggered_effect trigger="onSelfDied" action="RemoveParticleEffectFromEntity" particle="ukutadasiFlammables03"/>
+
+				<triggered_effect trigger="onSelfBuffUpdate" action="AddBuff" target="selfAOE" range="4" target_tags="zombie,animal" buff="buffUkuTadasiSpellsFlammablesLv3Spread"/>
+			</effect_group>
+		</buff>
+		<buff name="buffUkuTadasiSpellsFlammablesLv3Spread">
+			<damage_type value="heat"/>
+			<stack_type value="replace"/>
+			<duration value="10"/>
+			<effect_group>
+				<requirement name="EntityTagCompare" target="self" tags="ezFrost"/>
+				<passive_effect name="HealthChangeOT" operation="base_subtract" value="22"/>
+			</effect_group>
+			<effect_group>
+				<passive_effect name="HealthChangeOT" operation="base_subtract" value="11"/>
+
+				<passive_effect name="HealthChangeOT" operation="base_subtract" value="1.8">
+					<requirement name="EntityTagCompare" target="self" tags="feral"/>
+				</passive_effect>
+				<passive_effect name="HealthChangeOT" operation="base_subtract" value="3.1">
+					<requirement name="EntityTagCompare" target="self" tags="radiated"/>
+				</passive_effect>
+
+				<triggered_effect trigger="onSelfDied" action="RemoveBuff" buff="buffUkuTadasiSpellsFlammablesLv3Spread"/>
+				<triggered_effect trigger="onSelfEnteredGame" action="RemoveBuff" buff="buffUkuTadasiSpellsFlammablesLv3Spread"/>
+
+				<triggered_effect trigger="onSelfBuffStart" action="AttachParticleEffectToEntity" particle="#@modfolder:Resources/ukutadasispells?ukutadasiFlammablesSpread03" />
+				<triggered_effect trigger="onSelfEnteredGame" action="AttachParticleEffectToEntity" particle="#@modfolder:Resources/ukutadasispells?ukutadasiFlammablesSpread03" />
+				<triggered_effect trigger="onSelfBuffRemove" action="RemoveParticleEffectFromEntity" particle="ukutadasiFlammablesSpread03"/>
+				<triggered_effect trigger="onSelfDied" action="RemoveParticleEffectFromEntity" particle="ukutadasiFlammablesSpread03"/>
+
+				<triggered_effect trigger="onSelfBuffUpdate" action="AddBuff" target="selfAOE" range="4" target_tags="zombie,animal" buff="buffUkuTadasiSpellsFlammablesLv3Spread"/>
+			</effect_group>
+		</buff>
+		<buff name="buffUkuTadasiSpellsFlammablesLv4">
+			<damage_type value="heat"/>
+			<stack_type value="duration"/>
+			<duration value="12"/>
+			<effect_group>
+				<requirement name="EntityTagCompare" target="self" tags="ezFrost"/>
+				<passive_effect name="HealthChangeOT" operation="base_subtract" value="23"/>
+			</effect_group>
+			<effect_group>
+				<passive_effect name="HealthChangeOT" operation="base_subtract" value="11.5"/>
+
+				<passive_effect name="HealthChangeOT" operation="base_subtract" value="1.9">
+					<requirement name="EntityTagCompare" target="self" tags="feral"/>
+				</passive_effect>
+				<passive_effect name="HealthChangeOT" operation="base_subtract" value="3.2">
+					<requirement name="EntityTagCompare" target="self" tags="radiated"/>
+				</passive_effect>
+
+				<triggered_effect trigger="onSelfDied" action="RemoveBuff" buff="buffUkuTadasiSpellsFlammablesLv4"/>
+				<triggered_effect trigger="onSelfEnteredGame" action="RemoveBuff" buff="buffUkuTadasiSpellsFlammablesLv4"/>
+
+				<triggered_effect trigger="onSelfBuffStart" action="AttachParticleEffectToEntity" particle="#@modfolder:Resources/ukutadasispells?ukutadasiFlammables04"/>
+				<triggered_effect trigger="onSelfEnteredGame" action="AttachParticleEffectToEntity" particle="#@modfolder:Resources/ukutadasispells?ukutadasiFlammables04"/>
+				<triggered_effect trigger="onSelfBuffRemove" action="RemoveParticleEffectFromEntity" particle="ukutadasiFlammables04"/>
+				<triggered_effect trigger="onSelfDied" action="RemoveParticleEffectFromEntity" particle="ukutadasiFlammables04"/>
+
+				<triggered_effect trigger="onSelfBuffUpdate" action="AddBuff" target="selfAOE" range="5" target_tags="zombie,animal" buff="buffUkuTadasiSpellsFlammablesLv4Spread"/>
+			</effect_group>
+		</buff>
+		<buff name="buffUkuTadasiSpellsFlammablesLv4Spread">
+			<damage_type value="heat"/>
+			<stack_type value="replace"/>
+			<duration value="12"/>
+			<effect_group>
+				<requirement name="EntityTagCompare" target="self" tags="ezFrost"/>
+				<passive_effect name="HealthChangeOT" operation="base_subtract" value="23"/>
+			</effect_group>
+			<effect_group>
+				<passive_effect name="HealthChangeOT" operation="base_subtract" value="11.5"/>
+
+				<passive_effect name="HealthChangeOT" operation="base_subtract" value="1.9">
+					<requirement name="EntityTagCompare" target="self" tags="feral"/>
+				</passive_effect>
+				<passive_effect name="HealthChangeOT" operation="base_subtract" value="3.2">
+					<requirement name="EntityTagCompare" target="self" tags="radiated"/>
+				</passive_effect>
+
+				<triggered_effect trigger="onSelfDied" action="RemoveBuff" buff="buffUkuTadasiSpellsFlammablesLv4Spread"/>
+				<triggered_effect trigger="onSelfEnteredGame" action="RemoveBuff" buff="buffUkuTadasiSpellsFlammablesLv4Spread"/>
+
+				<triggered_effect trigger="onSelfBuffStart" action="AttachParticleEffectToEntity" particle="#@modfolder:Resources/ukutadasispells?ukutadasiFlammablesSpread04" />
+				<triggered_effect trigger="onSelfEnteredGame" action="AttachParticleEffectToEntity" particle="#@modfolder:Resources/ukutadasispells?ukutadasiFlammablesSpread04" />
+				<triggered_effect trigger="onSelfBuffRemove" action="RemoveParticleEffectFromEntity" particle="ukutadasiFlammablesSpread04"/>
+				<triggered_effect trigger="onSelfDied" action="RemoveParticleEffectFromEntity" particle="ukutadasiFlammablesSpread04"/>
+
+				<triggered_effect trigger="onSelfBuffUpdate" action="AddBuff" target="selfAOE" range="5" target_tags="zombie,animal" buff="buffUkuTadasiSpellsFlammablesLv4Spread"/>
+			</effect_group>
+		</buff>
+		<buff name="buffUkuTadasiSpellsFlammablesLv5">
+			<damage_type value="heat"/>
+			<stack_type value="duration"/>
+			<duration value="14"/>
+			<effect_group>
+				<requirement name="EntityTagCompare" target="self" tags="ezFrost"/>
+				<passive_effect name="HealthChangeOT" operation="base_subtract" value="24"/>
+			</effect_group>
+			<effect_group>
+				<passive_effect name="HealthChangeOT" operation="base_subtract" value="12"/>
+
+				<passive_effect name="HealthChangeOT" operation="base_subtract" value="2">
+					<requirement name="EntityTagCompare" target="self" tags="feral"/>
+				</passive_effect>
+				<passive_effect name="HealthChangeOT" operation="base_subtract" value="3.3">
+					<requirement name="EntityTagCompare" target="self" tags="radiated"/>
+				</passive_effect>
+
+				<triggered_effect trigger="onSelfDied" action="RemoveBuff" buff="buffUkuTadasiSpellsFlammablesLv5"/>
+				<triggered_effect trigger="onSelfEnteredGame" action="RemoveBuff" buff="buffUkuTadasiSpellsFlammablesLv5"/>
+
+				<triggered_effect trigger="onSelfBuffStart" action="AttachParticleEffectToEntity" particle="#@modfolder:Resources/ukutadasispells?ukutadasiFlammables05"/>
+				<triggered_effect trigger="onSelfEnteredGame" action="AttachParticleEffectToEntity" particle="#@modfolder:Resources/ukutadasispells?ukutadasiFlammables05"/>
+				<triggered_effect trigger="onSelfBuffRemove" action="RemoveParticleEffectFromEntity" particle="ukutadasiFlammables05"/>
+				<triggered_effect trigger="onSelfDied" action="RemoveParticleEffectFromEntity" particle="ukutadasiFlammables05"/>
+
+				<triggered_effect trigger="onSelfBuffUpdate" action="AddBuff" target="selfAOE" range="6" target_tags="zombie,animal" buff="buffUkuTadasiSpellsFlammablesLv5Spread"/>
+			</effect_group>
+		</buff>
+		<buff name="buffUkuTadasiSpellsFlammablesLv5Spread">
+			<damage_type value="heat"/>
+			<stack_type value="replace"/>
+			<duration value="14"/>
+			<effect_group>
+				<requirement name="EntityTagCompare" target="self" tags="ezFrost"/>
+				<passive_effect name="HealthChangeOT" operation="base_subtract" value="24"/>
+			</effect_group>
+			<effect_group>
+				<passive_effect name="HealthChangeOT" operation="base_subtract" value="12"/>
+
+				<passive_effect name="HealthChangeOT" operation="base_subtract" value="2">
+					<requirement name="EntityTagCompare" target="self" tags="feral"/>
+				</passive_effect>
+				<passive_effect name="HealthChangeOT" operation="base_subtract" value="3.3">
+					<requirement name="EntityTagCompare" target="self" tags="radiated"/>
+				</passive_effect>
+
+				<triggered_effect trigger="onSelfDied" action="RemoveBuff" buff="buffUkuTadasiSpellsFlammablesLv5Spread"/>
+				<triggered_effect trigger="onSelfEnteredGame" action="RemoveBuff" buff="buffUkuTadasiSpellsFlammablesLv5Spread"/>
+
+				<triggered_effect trigger="onSelfBuffStart" action="AttachParticleEffectToEntity" particle="#@modfolder:Resources/ukutadasispells?ukutadasiFlammablesSpread05" />
+				<triggered_effect trigger="onSelfEnteredGame" action="AttachParticleEffectToEntity" particle="#@modfolder:Resources/ukutadasispells?ukutadasiFlammablesSpread05" />
+				<triggered_effect trigger="onSelfBuffRemove" action="RemoveParticleEffectFromEntity" particle="ukutadasiFlammablesSpread05"/>
+				<triggered_effect trigger="onSelfDied" action="RemoveParticleEffectFromEntity" particle="ukutadasiFlammablesSpread05"/>
+
+				<triggered_effect trigger="onSelfBuffUpdate" action="AddBuff" target="selfAOE" range="6" target_tags="zombie,animal" buff="buffUkuTadasiSpellsFlammablesLv5Spread"/>
+			</effect_group>
+		</buff>
+
+		<!-- 結晶體 -->
+		<!-- time: 6, 8, 10, 12, 14  dmg: 5, 5.5, 6, 6.5, 7  rang: 2, 2, 3, 4, 5 -->
+		<buff name="buffUkuTadasiSpellsCrystalsLv1">
+			<damage_type value="cold"/>
+			<stack_type value="duration"/>
+			<duration value="6"/>
+			<effect_group>
+				<requirement name="EntityTagCompare" target="self" tags="ezFire"/>
+				<passive_effect name="HealthChangeOT" operation="base_subtract" value="10"/>
+			</effect_group>
+			<effect_group>
+				<passive_effect name="HealthChangeOT" operation="base_subtract" value="5"/>
+
+				<passive_effect name="HealthChangeOT" operation="base_subtract" value="2.6">
+					<requirement name="EntityTagCompare" target="self" tags="feral"/>
+				</passive_effect>
+				<passive_effect name="HealthChangeOT" operation="base_subtract" value="2.9">
+					<requirement name="EntityTagCompare" target="self" tags="radiated"/>
+				</passive_effect>
+
+				<passive_effect name="WalkSpeed" operation="perc_subtract" value="0.5"/>
+				<passive_effect name="RunSpeed" operation="perc_subtract" value="0.5"/>
+				<passive_effect name="Mobility" operation="perc_subtract" value="0.5" tags="falling,climbing,swimming"/>
+				<passive_effect name="AttacksPerMinute" operation="perc_subtract" value="0.5"/>
+
+				<triggered_effect trigger="onSelfDied" action="RemoveBuff" buff="buffUkuTadasiSpellsCrystalsLv1"/>
+				<triggered_effect trigger="onSelfEnteredGame" action="RemoveBuff" buff="buffUkuTadasiSpellsCrystalsLv1"/>
+
+				<triggered_effect trigger="onSelfBuffStart" action="AttachParticleEffectToEntity" particle="#@modfolder:Resources/ukutadasispells?ukutadasiCrystals"/>
+				<triggered_effect trigger="onSelfEnteredGame" action="AttachParticleEffectToEntity" particle="#@modfolder:Resources/ukutadasispells?ukutadasiCrystals"/>
+				<triggered_effect trigger="onSelfBuffRemove" action="RemoveParticleEffectFromEntity" particle="ukutadasiCrystals"/>
+				<triggered_effect trigger="onSelfDied" action="RemoveParticleEffectFromEntity" particle="ukutadasiCrystals"/>
+
+				<triggered_effect trigger="onSelfBuffUpdate" action="AddBuff" target="selfAOE" range="2" target_tags="zombie,animal" buff="buffUkuTadasiSpellsCrystalsLv1Spread"/>
+			</effect_group>
+		</buff>
+		<buff name="buffUkuTadasiSpellsCrystalsLv1Spread">
+			<damage_type value="cold"/>
+			<stack_type value="replace"/>
+			<duration value="6"/>
+			<effect_group>
+				<requirement name="EntityTagCompare" target="self" tags="ezFrost"/>
+				<passive_effect name="HealthChangeOT" operation="base_subtract" value="10"/>
+			</effect_group>
+			<effect_group>
+				<passive_effect name="HealthChangeOT" operation="base_subtract" value="5"/>
+
+				<passive_effect name="HealthChangeOT" operation="base_subtract" value="2.6">
+					<requirement name="EntityTagCompare" target="self" tags="feral"/>
+				</passive_effect>
+				<passive_effect name="HealthChangeOT" operation="base_subtract" value="2.9">
+					<requirement name="EntityTagCompare" target="self" tags="radiated"/>
+				</passive_effect>
+
+				<passive_effect name="WalkSpeed" operation="perc_subtract" value="0.5"/>
+				<passive_effect name="RunSpeed" operation="perc_subtract" value="0.5"/>
+				<passive_effect name="Mobility" operation="perc_subtract" value="0.5" tags="falling,climbing,swimming"/>
+				<passive_effect name="AttacksPerMinute" operation="perc_subtract" value="0.5"/>
+
+				<triggered_effect trigger="onSelfDied" action="RemoveBuff" buff="buffUkuTadasiSpellsCrystalsLv1Spread"/>
+				<triggered_effect trigger="onSelfEnteredGame" action="RemoveBuff" buff="buffUkuTadasiSpellsCrystalsLv1Spread"/>
+
+				<triggered_effect trigger="onSelfBuffStart" action="AttachParticleEffectToEntity" particle="#@modfolder:Resources/ukutadasispells?ukutadasiCrystalsSpread"/>
+				<triggered_effect trigger="onSelfEnteredGame" action="AttachParticleEffectToEntity" particle="#@modfolder:Resources/ukutadasispells?ukutadasiCrystalsSpread"/>
+				<triggered_effect trigger="onSelfBuffRemove" action="RemoveParticleEffectFromEntity" particle="ukutadasiCrystalsSpread"/>
+				<triggered_effect trigger="onSelfDied" action="RemoveParticleEffectFromEntity" particle="ukutadasiCrystalsSpread"/>
+
+				<triggered_effect trigger="onSelfBuffUpdate" action="AddBuff" target="selfAOE" range="2" target_tags="zombie,animal" buff="buffUkuTadasiSpellsCrystalsLv1Spread"/>
+			</effect_group>
+		</buff>
+		<buff name="buffUkuTadasiSpellsCrystalsLv2">
+			<damage_type value="cold"/>
+			<stack_type value="duration"/>
+			<duration value="8"/>
+			<effect_group>
+				<requirement name="EntityTagCompare" target="self" tags="ezFire"/>
+				<passive_effect name="HealthChangeOT" operation="base_subtract" value="11"/>
+			</effect_group>
+			<effect_group>
+				<passive_effect name="HealthChangeOT" operation="base_subtract" value="5.5"/>
+
+				<passive_effect name="HealthChangeOT" operation="base_subtract" value="2.9">
+					<requirement name="EntityTagCompare" target="self" tags="feral"/>
+				</passive_effect>
+				<passive_effect name="HealthChangeOT" operation="base_subtract" value="3.2">
+					<requirement name="EntityTagCompare" target="self" tags="radiated"/>
+				</passive_effect>
+
+				<passive_effect name="WalkSpeed" operation="perc_subtract" value="0.6"/>
+				<passive_effect name="RunSpeed" operation="perc_subtract" value="0.6"/>
+				<passive_effect name="Mobility" operation="perc_subtract" value="0.6" tags="falling,climbing,swimming"/>
+				<passive_effect name="AttacksPerMinute" operation="perc_subtract" value="0.6"/>
+
+				<triggered_effect trigger="onSelfDied" action="RemoveBuff" buff="buffUkuTadasiSpellsCrystalsLv2"/>
+				<triggered_effect trigger="onSelfEnteredGame" action="RemoveBuff" buff="buffUkuTadasiSpellsCrystalsLv2"/>
+
+				<triggered_effect trigger="onSelfBuffStart" action="AttachParticleEffectToEntity" particle="#@modfolder:Resources/ukutadasispells?ukutadasiCrystals02"/>
+				<triggered_effect trigger="onSelfEnteredGame" action="AttachParticleEffectToEntity" particle="#@modfolder:Resources/ukutadasispells?ukutadasiCrystals02"/>
+				<triggered_effect trigger="onSelfBuffRemove" action="RemoveParticleEffectFromEntity" particle="ukutadasiCrystals02"/>
+				<triggered_effect trigger="onSelfDied" action="RemoveParticleEffectFromEntity" particle="ukutadasiCrystals02"/>
+
+				<triggered_effect trigger="onSelfBuffUpdate" action="AddBuff" target="selfAOE" range="2" target_tags="zombie,animal" buff="buffUkuTadasiSpellsCrystalsLv2Spread"/>
+			</effect_group>
+		</buff>
+		<buff name="buffUkuTadasiSpellsCrystalsLv2Spread">
+			<damage_type value="cold"/>
+			<stack_type value="replace"/>
+			<duration value="8"/>
+			<effect_group>
+				<requirement name="EntityTagCompare" target="self" tags="ezFrost"/>
+				<passive_effect name="HealthChangeOT" operation="base_subtract" value="11"/>
+			</effect_group>
+			<effect_group>
+				<passive_effect name="HealthChangeOT" operation="base_subtract" value="5.5"/>
+
+				<passive_effect name="HealthChangeOT" operation="base_subtract" value="2.9">
+					<requirement name="EntityTagCompare" target="self" tags="feral"/>
+				</passive_effect>
+				<passive_effect name="HealthChangeOT" operation="base_subtract" value="3.2">
+					<requirement name="EntityTagCompare" target="self" tags="radiated"/>
+				</passive_effect>
+
+				<passive_effect name="WalkSpeed" operation="perc_subtract" value="0.6"/>
+				<passive_effect name="RunSpeed" operation="perc_subtract" value="0.6"/>
+				<passive_effect name="Mobility" operation="perc_subtract" value="0.6" tags="falling,climbing,swimming"/>
+				<passive_effect name="AttacksPerMinute" operation="perc_subtract" value="0.6"/>
+
+				<triggered_effect trigger="onSelfDied" action="RemoveBuff" buff="buffUkuTadasiSpellsCrystalsLv2Spread"/>
+				<triggered_effect trigger="onSelfEnteredGame" action="RemoveBuff" buff="buffUkuTadasiSpellsCrystalsLv2Spread"/>
+
+				<triggered_effect trigger="onSelfBuffStart" action="AttachParticleEffectToEntity" particle="#@modfolder:Resources/ukutadasispells?ukutadasiCrystalsSpread02"/>
+				<triggered_effect trigger="onSelfEnteredGame" action="AttachParticleEffectToEntity" particle="#@modfolder:Resources/ukutadasispells?ukutadasiCrystalsSpread02"/>
+				<triggered_effect trigger="onSelfBuffRemove" action="RemoveParticleEffectFromEntity" particle="ukutadasiCrystalsSpread02"/>
+				<triggered_effect trigger="onSelfDied" action="RemoveParticleEffectFromEntity" particle="ukutadasiCrystalsSpread02"/>
+
+				<triggered_effect trigger="onSelfBuffUpdate" action="AddBuff" target="selfAOE" range="2" target_tags="zombie,animal" buff="buffUkuTadasiSpellsCrystalsLv2Spread"/>
+			</effect_group>
+		</buff>
+		<buff name="buffUkuTadasiSpellsCrystalsLv3">
+			<damage_type value="cold"/>
+			<stack_type value="duration"/>
+			<duration value="10"/>
+			<effect_group>
+				<requirement name="EntityTagCompare" target="self" tags="ezFire"/>
+				<passive_effect name="HealthChangeOT" operation="base_subtract" value="12"/>
+			</effect_group>
+			<effect_group>
+				<passive_effect name="HealthChangeOT" operation="base_subtract" value="6"/>
+
+				<passive_effect name="HealthChangeOT" operation="base_subtract" value="3.2">
+					<requirement name="EntityTagCompare" target="self" tags="feral"/>
+				</passive_effect>
+				<passive_effect name="HealthChangeOT" operation="base_subtract" value="3.5">
+					<requirement name="EntityTagCompare" target="self" tags="radiated"/>
+				</passive_effect>
+
+				<passive_effect name="WalkSpeed" operation="perc_subtract" value="0.7"/>
+				<passive_effect name="RunSpeed" operation="perc_subtract" value="0.7"/>
+				<passive_effect name="Mobility" operation="perc_subtract" value="0.7" tags="falling,climbing,swimming"/>
+				<passive_effect name="AttacksPerMinute" operation="perc_subtract" value="0.7"/>
+
+				<triggered_effect trigger="onSelfDied" action="RemoveBuff" buff="buffUkuTadasiSpellsCrystalsLv3"/>
+				<triggered_effect trigger="onSelfEnteredGame" action="RemoveBuff" buff="buffUkuTadasiSpellsCrystalsLv3"/>
+
+				<triggered_effect trigger="onSelfBuffStart" action="AttachParticleEffectToEntity" particle="#@modfolder:Resources/ukutadasispells?ukutadasiCrystals03"/>
+				<triggered_effect trigger="onSelfEnteredGame" action="AttachParticleEffectToEntity" particle="#@modfolder:Resources/ukutadasispells?ukutadasiCrystals03"/>
+				<triggered_effect trigger="onSelfBuffRemove" action="RemoveParticleEffectFromEntity" particle="ukutadasiCrystals03"/>
+				<triggered_effect trigger="onSelfDied" action="RemoveParticleEffectFromEntity" particle="ukutadasiCrystals03"/>
+
+				<triggered_effect trigger="onSelfBuffUpdate" action="AddBuff" target="selfAOE" range="3" target_tags="zombie,animal" buff="buffUkuTadasiSpellsCrystalsLv3Spread"/>
+			</effect_group>
+		</buff>
+		<buff name="buffUkuTadasiSpellsCrystalsLv3Spread">
+			<damage_type value="cold"/>
+			<stack_type value="replace"/>
+			<duration value="10"/>
+			<effect_group>
+				<requirement name="EntityTagCompare" target="self" tags="ezFrost"/>
+				<passive_effect name="HealthChangeOT" operation="base_subtract" value="12"/>
+			</effect_group>
+			<effect_group>
+				<passive_effect name="HealthChangeOT" operation="base_subtract" value="6"/>
+
+				<passive_effect name="HealthChangeOT" operation="base_subtract" value="3.2">
+					<requirement name="EntityTagCompare" target="self" tags="feral"/>
+				</passive_effect>
+				<passive_effect name="HealthChangeOT" operation="base_subtract" value="3.5">
+					<requirement name="EntityTagCompare" target="self" tags="radiated"/>
+				</passive_effect>
+
+				<passive_effect name="WalkSpeed" operation="perc_subtract" value="0.7"/>
+				<passive_effect name="RunSpeed" operation="perc_subtract" value="0.7"/>
+				<passive_effect name="Mobility" operation="perc_subtract" value="0.7" tags="falling,climbing,swimming"/>
+				<passive_effect name="AttacksPerMinute" operation="perc_subtract" value="0.7"/>
+
+				<triggered_effect trigger="onSelfDied" action="RemoveBuff" buff="buffUkuTadasiSpellsCrystalsLv3Spread"/>
+				<triggered_effect trigger="onSelfEnteredGame" action="RemoveBuff" buff="buffUkuTadasiSpellsCrystalsLv3Spread"/>
+
+				<triggered_effect trigger="onSelfBuffStart" action="AttachParticleEffectToEntity" particle="#@modfolder:Resources/ukutadasispells?ukutadasiCrystalsSpread03"/>
+				<triggered_effect trigger="onSelfEnteredGame" action="AttachParticleEffectToEntity" particle="#@modfolder:Resources/ukutadasispells?ukutadasiCrystalsSpread03"/>
+				<triggered_effect trigger="onSelfBuffRemove" action="RemoveParticleEffectFromEntity" particle="ukutadasiCrystalsSpread03"/>
+				<triggered_effect trigger="onSelfDied" action="RemoveParticleEffectFromEntity" particle="ukutadasiCrystalsSpread03"/>
+
+				<triggered_effect trigger="onSelfBuffUpdate" action="AddBuff" target="selfAOE" range="3" target_tags="zombie,animal" buff="buffUkuTadasiSpellsCrystalsLv3Spread"/>
+			</effect_group>
+		</buff>
+		<buff name="buffUkuTadasiSpellsCrystalsLv4">
+			<damage_type value="cold"/>
+			<stack_type value="duration"/>
+			<duration value="12"/>
+			<effect_group>
+				<requirement name="EntityTagCompare" target="self" tags="ezFire"/>
+				<passive_effect name="HealthChangeOT" operation="base_subtract" value="13"/>
+			</effect_group>
+			<effect_group>
+				<passive_effect name="HealthChangeOT" operation="base_subtract" value="6.5"/>
+
+				<passive_effect name="HealthChangeOT" operation="base_subtract" value="3.4">
+					<requirement name="EntityTagCompare" target="self" tags="feral"/>
+				</passive_effect>
+				<passive_effect name="HealthChangeOT" operation="base_subtract" value="3.8">
+					<requirement name="EntityTagCompare" target="self" tags="radiated"/>
+				</passive_effect>
+
+				<passive_effect name="WalkSpeed" operation="perc_subtract" value="0.8"/>
+				<passive_effect name="RunSpeed" operation="perc_subtract" value="0.8"/>
+				<passive_effect name="Mobility" operation="perc_subtract" value="0.8" tags="falling,climbing,swimming"/>
+				<passive_effect name="AttacksPerMinute" operation="perc_subtract" value="0.8"/>
+
+				<triggered_effect trigger="onSelfDied" action="RemoveBuff" buff="buffUkuTadasiSpellsCrystalsLv4"/>
+				<triggered_effect trigger="onSelfEnteredGame" action="RemoveBuff" buff="buffUkuTadasiSpellsCrystalsLv4"/>
+
+				<triggered_effect trigger="onSelfBuffStart" action="AttachParticleEffectToEntity" particle="#@modfolder:Resources/ukutadasispells?ukutadasiCrystals04"/>
+				<triggered_effect trigger="onSelfEnteredGame" action="AttachParticleEffectToEntity" particle="#@modfolder:Resources/ukutadasispells?ukutadasiCrystals04"/>
+				<triggered_effect trigger="onSelfBuffRemove" action="RemoveParticleEffectFromEntity" particle="ukutadasiCrystals04"/>
+				<triggered_effect trigger="onSelfDied" action="RemoveParticleEffectFromEntity" particle="ukutadasiCrystals04"/>
+
+				<triggered_effect trigger="onSelfBuffUpdate" action="AddBuff" target="selfAOE" range="4" target_tags="zombie,animal" buff="buffUkuTadasiSpellsCrystalsLv4Spread"/>
+			</effect_group>
+		</buff>
+		<buff name="buffUkuTadasiSpellsCrystalsLv4Spread">
+			<damage_type value="cold"/>
+			<stack_type value="replace"/>
+			<duration value="12"/>
+			<effect_group>
+				<requirement name="EntityTagCompare" target="self" tags="ezFrost"/>
+				<passive_effect name="HealthChangeOT" operation="base_subtract" value="13"/>
+			</effect_group>
+			<effect_group>
+				<passive_effect name="HealthChangeOT" operation="base_subtract" value="6.5"/>
+
+				<passive_effect name="HealthChangeOT" operation="base_subtract" value="3.4">
+					<requirement name="EntityTagCompare" target="self" tags="feral"/>
+				</passive_effect>
+				<passive_effect name="HealthChangeOT" operation="base_subtract" value="3.8">
+					<requirement name="EntityTagCompare" target="self" tags="radiated"/>
+				</passive_effect>
+
+				<passive_effect name="WalkSpeed" operation="perc_subtract" value="0.8"/>
+				<passive_effect name="RunSpeed" operation="perc_subtract" value="0.8"/>
+				<passive_effect name="Mobility" operation="perc_subtract" value="0.8" tags="falling,climbing,swimming"/>
+				<passive_effect name="AttacksPerMinute" operation="perc_subtract" value="0.8"/>
+
+				<triggered_effect trigger="onSelfDied" action="RemoveBuff" buff="buffUkuTadasiSpellsCrystalsLv4Spread"/>
+				<triggered_effect trigger="onSelfEnteredGame" action="RemoveBuff" buff="buffUkuTadasiSpellsCrystalsLv4Spread"/>
+
+				<triggered_effect trigger="onSelfBuffStart" action="AttachParticleEffectToEntity" particle="#@modfolder:Resources/ukutadasispells?ukutadasiCrystalsSpread04"/>
+				<triggered_effect trigger="onSelfEnteredGame" action="AttachParticleEffectToEntity" particle="#@modfolder:Resources/ukutadasispells?ukutadasiCrystalsSpread04"/>
+				<triggered_effect trigger="onSelfBuffRemove" action="RemoveParticleEffectFromEntity" particle="ukutadasiCrystalsSpread04"/>
+				<triggered_effect trigger="onSelfDied" action="RemoveParticleEffectFromEntity" particle="ukutadasiCrystalsSpread04"/>
+
+				<triggered_effect trigger="onSelfBuffUpdate" action="AddBuff" target="selfAOE" range="4" target_tags="zombie,animal" buff="buffUkuTadasiSpellsCrystalsLv4Spread"/>
+			</effect_group>
+		</buff>
+		<buff name="buffUkuTadasiSpellsCrystalsLv5">
+			<damage_type value="cold"/>
+			<stack_type value="duration"/>
+			<duration value="14"/>
+			<effect_group>
+				<requirement name="EntityTagCompare" target="self" tags="ezFire"/>
+				<passive_effect name="HealthChangeOT" operation="base_subtract" value="14"/>
+			</effect_group>
+			<effect_group>
+				<passive_effect name="HealthChangeOT" operation="base_subtract" value="7"/>
+
+				<passive_effect name="HealthChangeOT" operation="base_subtract" value="3.7">
+					<requirement name="EntityTagCompare" target="self" tags="feral"/>
+				</passive_effect>
+				<passive_effect name="HealthChangeOT" operation="base_subtract" value="4.1">
+					<requirement name="EntityTagCompare" target="self" tags="radiated"/>
+				</passive_effect>
+
+				<passive_effect name="WalkSpeed" operation="perc_subtract" value="0.9"/>
+				<passive_effect name="RunSpeed" operation="perc_subtract" value="0.9"/>
+				<passive_effect name="Mobility" operation="perc_subtract" value="0.9" tags="falling,climbing,swimming"/>
+				<passive_effect name="AttacksPerMinute" operation="perc_subtract" value="0.9"/>
+
+				<triggered_effect trigger="onSelfDied" action="RemoveBuff" buff="buffUkuTadasiSpellsCrystalsLv5"/>
+				<triggered_effect trigger="onSelfEnteredGame" action="RemoveBuff" buff="buffUkuTadasiSpellsCrystalsLv5"/>
+
+				<triggered_effect trigger="onSelfBuffStart" action="AttachParticleEffectToEntity" particle="#@modfolder:Resources/ukutadasispells?ukutadasiCrystals05"/>
+				<triggered_effect trigger="onSelfEnteredGame" action="AttachParticleEffectToEntity" particle="#@modfolder:Resources/ukutadasispells?ukutadasiCrystals05"/>
+				<triggered_effect trigger="onSelfBuffRemove" action="RemoveParticleEffectFromEntity" particle="ukutadasiCrystals05"/>
+				<triggered_effect trigger="onSelfDied" action="RemoveParticleEffectFromEntity" particle="ukutadasiCrystals05"/>
+
+				<triggered_effect trigger="onSelfBuffUpdate" action="AddBuff" target="selfAOE" range="5" target_tags="zombie,animal" buff="buffUkuTadasiSpellsCrystalsLv5Spread"/>
+			</effect_group>
+		</buff>
+		<buff name="buffUkuTadasiSpellsCrystalsLv5Spread">
+			<damage_type value="cold"/>
+			<stack_type value="replace"/>
+			<duration value="14"/>
+			<effect_group>
+				<requirement name="EntityTagCompare" target="self" tags="ezFrost"/>
+				<passive_effect name="HealthChangeOT" operation="base_subtract" value="14"/>
+			</effect_group>
+			<effect_group>
+				<passive_effect name="HealthChangeOT" operation="base_subtract" value="7"/>
+
+				<passive_effect name="HealthChangeOT" operation="base_subtract" value="3.7">
+					<requirement name="EntityTagCompare" target="self" tags="feral"/>
+				</passive_effect>
+				<passive_effect name="HealthChangeOT" operation="base_subtract" value="4.1">
+					<requirement name="EntityTagCompare" target="self" tags="radiated"/>
+				</passive_effect>
+
+				<passive_effect name="WalkSpeed" operation="perc_subtract" value="0.9"/>
+				<passive_effect name="RunSpeed" operation="perc_subtract" value="0.9"/>
+				<passive_effect name="Mobility" operation="perc_subtract" value="0.9" tags="falling,climbing,swimming"/>
+				<passive_effect name="AttacksPerMinute" operation="perc_subtract" value="0.9"/>
+
+				<triggered_effect trigger="onSelfDied" action="RemoveBuff" buff="buffUkuTadasiSpellsCrystalsLv5Spread"/>
+				<triggered_effect trigger="onSelfEnteredGame" action="RemoveBuff" buff="buffUkuTadasiSpellsCrystalsLv5Spread"/>
+
+				<triggered_effect trigger="onSelfBuffStart" action="AttachParticleEffectToEntity" particle="#@modfolder:Resources/ukutadasispells?ukutadasiCrystalsSpread05"/>
+				<triggered_effect trigger="onSelfEnteredGame" action="AttachParticleEffectToEntity" particle="#@modfolder:Resources/ukutadasispells?ukutadasiCrystalsSpread05"/>
+				<triggered_effect trigger="onSelfBuffRemove" action="RemoveParticleEffectFromEntity" particle="ukutadasiCrystalsSpread05"/>
+				<triggered_effect trigger="onSelfDied" action="RemoveParticleEffectFromEntity" particle="ukutadasiCrystalsSpread05"/>
+
+				<triggered_effect trigger="onSelfBuffUpdate" action="AddBuff" target="selfAOE" range="5" target_tags="zombie,animal" buff="buffUkuTadasiSpellsCrystalsLv5Spread"/>
+			</effect_group>
+		</buff>
+
+		<!-- 傳染病 -->
+		<!-- time: 8, 10, 12, 14, 16  dmg: 7.5, 8, 8.5, 9, 9.5 rang: 2, 2, 3, 3, 4 -->
+		<buff name="buffUkuTadasiSpellsInfectiousDiseaseLv1">
+			<damage_type value="toxic"/>
+			<stack_type value="duration"/>
+			<duration value="8"/>
+			<effect_group>
+				<requirement name="EntityTagCompare" target="self" tags="ezElectric"/>
+				<passive_effect name="HealthChangeOT" operation="base_subtract" value="15"/>
+			</effect_group>
+			<effect_group>
+				<passive_effect name="HealthChangeOT" operation="base_subtract" value="7.5"/>
+				<passive_effect name="RunSpeed" operation="perc_subtract" value="0.7"/>
+
+				<passive_effect name="HealthChangeOT" operation="base_subtract" value="1.2">
+					<requirement name="EntityTagCompare" target="self" tags="feral"/>
+				</passive_effect>
+				<passive_effect name="HealthChangeOT" operation="base_subtract" value="2.1">
+					<requirement name="EntityTagCompare" target="self" tags="radiated"/>
+				</passive_effect>
+
+				<triggered_effect trigger="onSelfDied" action="RemoveBuff" buff="buffUkuTadasiSpellsInfectiousDiseaseLv1"/>
+				<triggered_effect trigger="onSelfEnteredGame" action="RemoveBuff" buff="buffUkuTadasiSpellsInfectiousDiseaseLv1"/>
+				<triggered_effect trigger="onSelfBuffStart" action="AttachParticleEffectToEntity" particle="#@modfolder:Resources/ukutadasispells?ukutadasiInfectiousDisease"/>
+				<triggered_effect trigger="onSelfEnteredGame" action="AttachParticleEffectToEntity" particle="#@modfolder:Resources/ukutadasispells?ukutadasiInfectiousDisease"/>
+				<triggered_effect trigger="onSelfBuffRemove" action="RemoveParticleEffectFromEntity" particle="ukutadasiInfectiousDisease"/>
+				<triggered_effect trigger="onSelfDied" action="RemoveParticleEffectFromEntity" particle="ukutadasiInfectiousDisease"/>
+
+				<triggered_effect trigger="onSelfBuffUpdate" action="AddBuff" target="selfAOE" range="2" target_tags="zombie,animal" buff="buffUkuTadasiSpellsInfectiousDiseaseLv1Spread"/>
+			</effect_group>
+		</buff>
+		<buff name="buffUkuTadasiSpellsInfectiousDiseaseLv1Spread">
+			<damage_type value="toxic"/>
+			<stack_type value="replace"/>
+			<duration value="8"/>
+			<effect_group>
+				<requirement name="EntityTagCompare" target="self" tags="ezElectric"/>
+				<passive_effect name="HealthChangeOT" operation="base_subtract" value="15"/>
+			</effect_group>
+			<effect_group>
+				<passive_effect name="HealthChangeOT" operation="base_subtract" value="7.5"/>
+				<passive_effect name="RunSpeed" operation="perc_subtract" value="0.7"/>
+
+				<passive_effect name="HealthChangeOT" operation="base_subtract" value="1.2">
+					<requirement name="EntityTagCompare" target="self" tags="feral"/>
+				</passive_effect>
+				<passive_effect name="HealthChangeOT" operation="base_subtract" value="2.1">
+					<requirement name="EntityTagCompare" target="self" tags="radiated"/>
+				</passive_effect>
+
+				<triggered_effect trigger="onSelfDied" action="RemoveBuff" buff="buffUkuTadasiSpellsInfectiousDiseaseLv1Spread"/>
+				<triggered_effect trigger="onSelfEnteredGame" action="RemoveBuff" buff="buffUkuTadasiSpellsInfectiousDiseaseLv1Spread"/>
+				<triggered_effect trigger="onSelfBuffStart" action="AttachParticleEffectToEntity" particle="#@modfolder:Resources/ukutadasispells?ukutadasiInfectiousDiseaseSpread"/>
+				<triggered_effect trigger="onSelfEnteredGame" action="AttachParticleEffectToEntity" particle="#@modfolder:Resources/ukutadasispells?ukutadasiInfectiousDiseaseSpread"/>
+				<triggered_effect trigger="onSelfBuffRemove" action="RemoveParticleEffectFromEntity" particle="ukutadasiInfectiousDiseaseSpread"/>
+				<triggered_effect trigger="onSelfDied" action="RemoveParticleEffectFromEntity" particle="ukutadasiInfectiousDiseaseSpread"/>
+
+				<triggered_effect trigger="onSelfBuffUpdate" action="AddBuff" target="selfAOE" range="2" target_tags="zombie,animal" buff="buffUkuTadasiSpellsInfectiousDiseaseLv1Spread"/>
+			</effect_group>
+		</buff>
+		<buff name="buffUkuTadasiSpellsInfectiousDiseaseLv2">
+			<damage_type value="toxic"/>
+			<stack_type value="duration"/>
+			<duration value="10"/>
+			<effect_group>
+				<requirement name="EntityTagCompare" target="self" tags="ezElectric"/>
+				<passive_effect name="HealthChangeOT" operation="base_subtract" value="16"/>
+			</effect_group>
+			<effect_group>
+				<passive_effect name="HealthChangeOT" operation="base_subtract" value="8"/>
+				<passive_effect name="RunSpeed" operation="perc_subtract" value="0.8"/>
+
+				<passive_effect name="HealthChangeOT" operation="base_subtract" value="1.3">
+					<requirement name="EntityTagCompare" target="self" tags="feral"/>
+				</passive_effect>
+				<passive_effect name="HealthChangeOT" operation="base_subtract" value="2.2">
+					<requirement name="EntityTagCompare" target="self" tags="radiated"/>
+				</passive_effect>
+
+				<triggered_effect trigger="onSelfDied" action="RemoveBuff" buff="buffUkuTadasiSpellsInfectiousDiseaseLv2"/>
+				<triggered_effect trigger="onSelfEnteredGame" action="RemoveBuff" buff="buffUkuTadasiSpellsInfectiousDiseaseLv2"/>
+				<triggered_effect trigger="onSelfBuffStart" action="AttachParticleEffectToEntity" particle="#@modfolder:Resources/ukutadasispells?ukutadasiInfectiousDisease02"/>
+				<triggered_effect trigger="onSelfEnteredGame" action="AttachParticleEffectToEntity" particle="#@modfolder:Resources/ukutadasispells?ukutadasiInfectiousDisease02"/>
+				<triggered_effect trigger="onSelfBuffRemove" action="RemoveParticleEffectFromEntity" particle="ukutadasiInfectiousDisease02"/>
+				<triggered_effect trigger="onSelfDied" action="RemoveParticleEffectFromEntity" particle="ukutadasiInfectiousDisease02"/>
+
+				<triggered_effect trigger="onSelfBuffUpdate" action="AddBuff" target="selfAOE" range="2" target_tags="zombie,animal" buff="buffUkuTadasiSpellsInfectiousDiseaseLv2Spread"/>
+			</effect_group>
+		</buff>
+		<buff name="buffUkuTadasiSpellsInfectiousDiseaseLv2Spread">
+			<damage_type value="toxic"/>
+			<stack_type value="replace"/>
+			<duration value="10"/>
+			<effect_group>
+				<requirement name="EntityTagCompare" target="self" tags="ezElectric"/>
+				<passive_effect name="HealthChangeOT" operation="base_subtract" value="16"/>
+			</effect_group>
+			<effect_group>
+				<passive_effect name="HealthChangeOT" operation="base_subtract" value="8"/>
+				<passive_effect name="RunSpeed" operation="perc_subtract" value="0.8"/>
+
+				<passive_effect name="HealthChangeOT" operation="base_subtract" value="1.3">
+					<requirement name="EntityTagCompare" target="self" tags="feral"/>
+				</passive_effect>
+				<passive_effect name="HealthChangeOT" operation="base_subtract" value="2.2">
+					<requirement name="EntityTagCompare" target="self" tags="radiated"/>
+				</passive_effect>
+
+				<triggered_effect trigger="onSelfDied" action="RemoveBuff" buff="buffUkuTadasiSpellsInfectiousDiseaseLv2Spread"/>
+				<triggered_effect trigger="onSelfEnteredGame" action="RemoveBuff" buff="buffUkuTadasiSpellsInfectiousDiseaseLv2Spread"/>
+				<triggered_effect trigger="onSelfBuffStart" action="AttachParticleEffectToEntity" particle="#@modfolder:Resources/ukutadasispells?ukutadasiInfectiousDiseaseSpread02"/>
+				<triggered_effect trigger="onSelfEnteredGame" action="AttachParticleEffectToEntity" particle="#@modfolder:Resources/ukutadasispells?ukutadasiInfectiousDiseaseSpread02"/>
+				<triggered_effect trigger="onSelfBuffRemove" action="RemoveParticleEffectFromEntity" particle="ukutadasiInfectiousDiseaseSpread02"/>
+				<triggered_effect trigger="onSelfDied" action="RemoveParticleEffectFromEntity" particle="ukutadasiInfectiousDiseaseSpread02"/>
+
+				<triggered_effect trigger="onSelfBuffUpdate" action="AddBuff" target="selfAOE" range="2" target_tags="zombie,animal" buff="buffUkuTadasiSpellsInfectiousDiseaseLv2Spread"/>
+			</effect_group>
+		</buff>
+		<buff name="buffUkuTadasiSpellsInfectiousDiseaseLv3">
+			<damage_type value="toxic"/>
+			<stack_type value="duration"/>
+			<duration value="12"/>
+			<effect_group>
+				<requirement name="EntityTagCompare" target="self" tags="ezElectric"/>
+				<passive_effect name="HealthChangeOT" operation="base_subtract" value="17"/>
+			</effect_group>
+			<effect_group>
+				<passive_effect name="HealthChangeOT" operation="base_subtract" value="8.5"/>
+				<passive_effect name="RunSpeed" operation="perc_subtract" value="0.8"/>
+
+				<passive_effect name="HealthChangeOT" operation="base_subtract" value="1.3">
+					<requirement name="EntityTagCompare" target="self" tags="feral"/>
+				</passive_effect>
+				<passive_effect name="HealthChangeOT" operation="base_subtract" value="2.4">
+					<requirement name="EntityTagCompare" target="self" tags="radiated"/>
+				</passive_effect>
+
+				<triggered_effect trigger="onSelfDied" action="RemoveBuff" buff="buffUkuTadasiSpellsInfectiousDiseaseLv3"/>
+				<triggered_effect trigger="onSelfEnteredGame" action="RemoveBuff" buff="buffUkuTadasiSpellsInfectiousDiseaseLv3"/>
+				<triggered_effect trigger="onSelfBuffStart" action="AttachParticleEffectToEntity" particle="#@modfolder:Resources/ukutadasispells?ukutadasiInfectiousDisease03"/>
+				<triggered_effect trigger="onSelfEnteredGame" action="AttachParticleEffectToEntity" particle="#@modfolder:Resources/ukutadasispells?ukutadasiInfectiousDisease03"/>
+				<triggered_effect trigger="onSelfBuffRemove" action="RemoveParticleEffectFromEntity" particle="ukutadasiInfectiousDisease03"/>
+				<triggered_effect trigger="onSelfDied" action="RemoveParticleEffectFromEntity" particle="ukutadasiInfectiousDisease03"/>
+
+				<triggered_effect trigger="onSelfBuffUpdate" action="AddBuff" target="selfAOE" range="3" target_tags="zombie,animal" buff="buffUkuTadasiSpellsInfectiousDiseaseLv3Spread"/>
+			</effect_group>
+		</buff>
+		<buff name="buffUkuTadasiSpellsInfectiousDiseaseLv3Spread">
+			<damage_type value="toxic"/>
+			<stack_type value="replace"/>
+			<duration value="12"/>
+			<effect_group>
+				<requirement name="EntityTagCompare" target="self" tags="ezElectric"/>
+				<passive_effect name="HealthChangeOT" operation="base_subtract" value="17"/>
+			</effect_group>
+			<effect_group>
+				<passive_effect name="HealthChangeOT" operation="base_subtract" value="8.5"/>
+				<passive_effect name="RunSpeed" operation="perc_subtract" value="0.8"/>
+
+				<passive_effect name="HealthChangeOT" operation="base_subtract" value="1.3">
+					<requirement name="EntityTagCompare" target="self" tags="feral"/>
+				</passive_effect>
+				<passive_effect name="HealthChangeOT" operation="base_subtract" value="2.4">
+					<requirement name="EntityTagCompare" target="self" tags="radiated"/>
+				</passive_effect>
+
+				<triggered_effect trigger="onSelfDied" action="RemoveBuff" buff="buffUkuTadasiSpellsInfectiousDiseaseLv3Spread"/>
+				<triggered_effect trigger="onSelfEnteredGame" action="RemoveBuff" buff="buffUkuTadasiSpellsInfectiousDiseaseLv3Spread"/>
+				<triggered_effect trigger="onSelfBuffStart" action="AttachParticleEffectToEntity" particle="#@modfolder:Resources/ukutadasispells?ukutadasiInfectiousDiseaseSpread03"/>
+				<triggered_effect trigger="onSelfEnteredGame" action="AttachParticleEffectToEntity" particle="#@modfolder:Resources/ukutadasispells?ukutadasiInfectiousDiseaseSpread03"/>
+				<triggered_effect trigger="onSelfBuffRemove" action="RemoveParticleEffectFromEntity" particle="ukutadasiInfectiousDiseaseSpread03"/>
+				<triggered_effect trigger="onSelfDied" action="RemoveParticleEffectFromEntity" particle="ukutadasiInfectiousDiseaseSpread03"/>
+
+				<triggered_effect trigger="onSelfBuffUpdate" action="AddBuff" target="selfAOE" range="3" target_tags="zombie,animal" buff="buffUkuTadasiSpellsInfectiousDiseaseLv3Spread"/>
+			</effect_group>
+		</buff>
+		<buff name="buffUkuTadasiSpellsInfectiousDiseaseLv4">
+			<damage_type value="toxic"/>
+			<stack_type value="duration"/>
+			<duration value="14"/>
+			<effect_group>
+				<requirement name="EntityTagCompare" target="self" tags="ezElectric"/>
+				<passive_effect name="HealthChangeOT" operation="base_subtract" value="18"/>
+			</effect_group>
+			<effect_group>
+				<passive_effect name="HealthChangeOT" operation="base_subtract" value="9"/>
+				<passive_effect name="RunSpeed" operation="perc_subtract" value="0.9"/>
+
+				<passive_effect name="HealthChangeOT" operation="base_subtract" value="1.4">
+					<requirement name="EntityTagCompare" target="self" tags="feral"/>
+				</passive_effect>
+				<passive_effect name="HealthChangeOT" operation="base_subtract" value="2.5">
+					<requirement name="EntityTagCompare" target="self" tags="radiated"/>
+				</passive_effect>
+
+				<triggered_effect trigger="onSelfDied" action="RemoveBuff" buff="buffUkuTadasiSpellsInfectiousDiseaseLv4"/>
+				<triggered_effect trigger="onSelfEnteredGame" action="RemoveBuff" buff="buffUkuTadasiSpellsInfectiousDiseaseLv4"/>
+				<triggered_effect trigger="onSelfBuffStart" action="AttachParticleEffectToEntity" particle="#@modfolder:Resources/ukutadasispells?ukutadasiInfectiousDisease04"/>
+				<triggered_effect trigger="onSelfEnteredGame" action="AttachParticleEffectToEntity" particle="#@modfolder:Resources/ukutadasispells?ukutadasiInfectiousDisease04"/>
+				<triggered_effect trigger="onSelfBuffRemove" action="RemoveParticleEffectFromEntity" particle="ukutadasiInfectiousDisease04"/>
+				<triggered_effect trigger="onSelfDied" action="RemoveParticleEffectFromEntity" particle="ukutadasiInfectiousDisease04"/>
+
+				<triggered_effect trigger="onSelfBuffUpdate" action="AddBuff" target="selfAOE" range="3" target_tags="zombie,animal" buff="buffUkuTadasiSpellsInfectiousDiseaseLv4Spread"/>
+			</effect_group>
+		</buff>
+		<buff name="buffUkuTadasiSpellsInfectiousDiseaseLv4Spread">
+			<damage_type value="toxic"/>
+			<stack_type value="replace"/>
+			<duration value="14"/>
+			<effect_group>
+				<requirement name="EntityTagCompare" target="self" tags="ezElectric"/>
+				<passive_effect name="HealthChangeOT" operation="base_subtract" value="18"/>
+			</effect_group>
+			<effect_group>
+				<passive_effect name="HealthChangeOT" operation="base_subtract" value="9"/>
+				<passive_effect name="RunSpeed" operation="perc_subtract" value="0.9"/>
+
+				<passive_effect name="HealthChangeOT" operation="base_subtract" value="1.4">
+					<requirement name="EntityTagCompare" target="self" tags="feral"/>
+				</passive_effect>
+				<passive_effect name="HealthChangeOT" operation="base_subtract" value="2.5">
+					<requirement name="EntityTagCompare" target="self" tags="radiated"/>
+				</passive_effect>
+
+				<triggered_effect trigger="onSelfDied" action="RemoveBuff" buff="buffUkuTadasiSpellsInfectiousDiseaseLv4Spread"/>
+				<triggered_effect trigger="onSelfEnteredGame" action="RemoveBuff" buff="buffUkuTadasiSpellsInfectiousDiseaseLv4Spread"/>
+				<triggered_effect trigger="onSelfBuffStart" action="AttachParticleEffectToEntity" particle="#@modfolder:Resources/ukutadasispells?ukutadasiInfectiousDiseaseSpread04"/>
+				<triggered_effect trigger="onSelfEnteredGame" action="AttachParticleEffectToEntity" particle="#@modfolder:Resources/ukutadasispells?ukutadasiInfectiousDiseaseSpread04"/>
+				<triggered_effect trigger="onSelfBuffRemove" action="RemoveParticleEffectFromEntity" particle="ukutadasiInfectiousDiseaseSpread04"/>
+				<triggered_effect trigger="onSelfDied" action="RemoveParticleEffectFromEntity" particle="ukutadasiInfectiousDiseaseSpread04"/>
+
+				<triggered_effect trigger="onSelfBuffUpdate" action="AddBuff" target="selfAOE" range="3" target_tags="zombie,animal" buff="buffUkuTadasiSpellsInfectiousDiseaseLv4Spread"/>
+			</effect_group>
+		</buff>
+		<buff name="buffUkuTadasiSpellsInfectiousDiseaseLv5">
+			<damage_type value="toxic"/>
+			<stack_type value="duration"/>
+			<duration value="16"/>
+			<effect_group>
+				<requirement name="EntityTagCompare" target="self" tags="ezElectric"/>
+				<passive_effect name="HealthChangeOT" operation="base_subtract" value="19"/>
+			</effect_group>
+			<effect_group>
+				<passive_effect name="HealthChangeOT" operation="base_subtract" value="9.5"/>
+				<passive_effect name="RunSpeed" operation="perc_subtract" value="0.9"/>
+
+				<passive_effect name="HealthChangeOT" operation="base_subtract" value="1.5">
+					<requirement name="EntityTagCompare" target="self" tags="feral"/>
+				</passive_effect>
+				<passive_effect name="HealthChangeOT" operation="base_subtract" value="2.6">
+					<requirement name="EntityTagCompare" target="self" tags="radiated"/>
+				</passive_effect>
+
+				<triggered_effect trigger="onSelfDied" action="RemoveBuff" buff="buffUkuTadasiSpellsInfectiousDiseaseLv5"/>
+				<triggered_effect trigger="onSelfEnteredGame" action="RemoveBuff" buff="buffUkuTadasiSpellsInfectiousDiseaseLv5"/>
+				<triggered_effect trigger="onSelfBuffStart" action="AttachParticleEffectToEntity" particle="#@modfolder:Resources/ukutadasispells?ukutadasiInfectiousDisease05"/>
+				<triggered_effect trigger="onSelfEnteredGame" action="AttachParticleEffectToEntity" particle="#@modfolder:Resources/ukutadasispells?ukutadasiInfectiousDisease05"/>
+				<triggered_effect trigger="onSelfBuffRemove" action="RemoveParticleEffectFromEntity" particle="ukutadasiInfectiousDisease05"/>
+				<triggered_effect trigger="onSelfDied" action="RemoveParticleEffectFromEntity" particle="ukutadasiInfectiousDisease05"/>
+
+				<triggered_effect trigger="onSelfBuffUpdate" action="AddBuff" target="selfAOE" range="4" target_tags="zombie,animal" buff="buffUkuTadasiSpellsInfectiousDiseaseLv5Spread"/>
+
+				<triggered_effect trigger="onSelfBuffUpdate" action="AddBuff" target="self" buff="buffUkuTadasiSpellsInfectiousDiseaseInstantDeath">
+					<requirement name="RandomRoll" seed_type="Random" min_max="0,100" operation="LTE" value="5"/>
+				</triggered_effect>
+			</effect_group>
+		</buff>
+		<buff name="buffUkuTadasiSpellsInfectiousDiseaseLv5Spread">
+			<damage_type value="toxic"/>
+			<stack_type value="replace"/>
+			<duration value="16"/>
+			<effect_group>
+				<requirement name="EntityTagCompare" target="self" tags="ezElectric"/>
+				<passive_effect name="HealthChangeOT" operation="base_subtract" value="19"/>
+			</effect_group>
+			<effect_group>
+				<passive_effect name="HealthChangeOT" operation="base_subtract" value="9.5"/>
+				<passive_effect name="RunSpeed" operation="perc_subtract" value="0.9"/>
+
+				<passive_effect name="HealthChangeOT" operation="base_subtract" value="1.5">
+					<requirement name="EntityTagCompare" target="self" tags="feral"/>
+				</passive_effect>
+				<passive_effect name="HealthChangeOT" operation="base_subtract" value="2.6">
+					<requirement name="EntityTagCompare" target="self" tags="radiated"/>
+				</passive_effect>
+
+				<triggered_effect trigger="onSelfDied" action="RemoveBuff" buff="buffUkuTadasiSpellsInfectiousDiseaseLv5Spread"/>
+				<triggered_effect trigger="onSelfEnteredGame" action="RemoveBuff" buff="buffUkuTadasiSpellsInfectiousDiseaseLv5Spread"/>
+				<triggered_effect trigger="onSelfBuffStart" action="AttachParticleEffectToEntity" particle="#@modfolder:Resources/ukutadasispells?ukutadasiInfectiousDiseaseSpread05"/>
+				<triggered_effect trigger="onSelfEnteredGame" action="AttachParticleEffectToEntity" particle="#@modfolder:Resources/ukutadasispells?ukutadasiInfectiousDiseaseSpread05"/>
+				<triggered_effect trigger="onSelfBuffRemove" action="RemoveParticleEffectFromEntity" particle="ukutadasiInfectiousDiseaseSpread05"/>
+				<triggered_effect trigger="onSelfDied" action="RemoveParticleEffectFromEntity" particle="ukutadasiInfectiousDiseaseSpread05"/>
+
+				<triggered_effect trigger="onSelfBuffUpdate" action="AddBuff" target="selfAOE" range="4" target_tags="zombie,animal" buff="buffUkuTadasiSpellsInfectiousDiseaseLv5Spread"/>
+
+				<triggered_effect trigger="onSelfBuffUpdate" action="AddBuff" target="self" buff="buffUkuTadasiSpellsInfectiousDiseaseInstantDeath">
+					<requirement name="RandomRoll" seed_type="Random" min_max="0,100" operation="LTE" value="5"/>
+				</triggered_effect>
+			</effect_group>
+		</buff>
+		<buff name="buffUkuTadasiSpellsInfectiousDiseaseInstantDeath">
+			<damage_type value="toxic"/>
+			<effect_group>
+				<passive_effect name="HealthChangeOT" operation="base_subtract" value="99999999"/>
+				<triggered_effect trigger="onSelfDied" action="RemoveBuff" buff="buffUkuTadasiSpellsInfectiousDiseaseInstantDeath"/>
+				<triggered_effect trigger="onSelfEnteredGame" action="RemoveBuff" buff="buffUkuTadasiSpellsInfectiousDiseaseInstantDeath"/>
+			</effect_group>
+		</buff>
+
+		<!-- 導電體 -->
+		<!-- time: 4, 5, 6, 7, 8  dmg: 7.5, 8, 8.5, 9, 9.5 rang: 2, 2, 3, 3, 3 -->
+		<buff name="buffUkuTadasiSpellsElectricalConductorLv1">
+			<damage_type value="electrical"/>
+			<stack_type value="duration"/>
+			<duration value="4"/>
+			<effect_group>
+				<requirement name="EntityTagCompare" target="self" tags="ezToxic"/>
+				<passive_effect name="HealthChangeOT" operation="base_subtract" value="15"/>
+			</effect_group>
+			<effect_group>
+				<passive_effect name="HealthChangeOT" operation="base_subtract" value="7.5"/>
+				<passive_effect name="WalkSpeed" operation="perc_subtract" value=".5,.1" duration="0,4"/>
+				<passive_effect name="RunSpeed" operation="perc_subtract" value=".5,.1" duration="0,4"/>
+				<passive_effect name="JumpStrength" operation="perc_subtract" value=".5,.1" duration="0,4"/>
+				<passive_effect name="Mobility" operation="perc_subtract" value="0.5" tags="falling,climbing,swimming"/>
+
+				<passive_effect name="HealthChangeOT" operation="base_subtract" value="4.2">
+					<requirement name="EntityTagCompare" target="self" tags="feral"/>
+				</passive_effect>
+				<passive_effect name="HealthChangeOT" operation="base_subtract" value="4.7">
+					<requirement name="EntityTagCompare" target="self" tags="radiated"/>
+				</passive_effect>
+
+				<triggered_effect trigger="onSelfDied" action="RemoveBuff" buff="buffUkuTadasiSpellsElectricalConductorLv1"/>
+				<triggered_effect trigger="onSelfEnteredGame" action="RemoveBuff" buff="buffUkuTadasiSpellsElectricalConductorLv1"/>
+				<triggered_effect trigger="onSelfBuffStart" action="AttachParticleEffectToEntity" particle="#@modfolder:Resources/ukutadasispells?ukutadasiElectricalConductor"/>
+				<triggered_effect trigger="onSelfEnteredGame" action="AttachParticleEffectToEntity" particle="#@modfolder:Resources/ukutadasispells?ukutadasiElectricalConductor"/>
+				<triggered_effect trigger="onSelfBuffRemove" action="RemoveParticleEffectFromEntity" particle="ukutadasiElectricalConductor"/>
+				<triggered_effect trigger="onSelfDied" action="RemoveParticleEffectFromEntity" particle="ukutadasiElectricalConductor"/>
+
+				<triggered_effect trigger="onSelfBuffUpdate" action="AddBuff" target="selfAOE" range="2" target_tags="zombie,animal" buff="buffUkuTadasiSpellsElectricalConductorLv1Spread"/>
+			</effect_group>
+		</buff>
+		<buff name="buffUkuTadasiSpellsElectricalConductorLv1Spread">
+			<damage_type value="electrical"/>
+			<stack_type value="replace"/>
+			<duration value="4"/>
+			<effect_group>
+				<requirement name="EntityTagCompare" target="self" tags="ezToxic"/>
+				<passive_effect name="HealthChangeOT" operation="base_subtract" value="15"/>
+			</effect_group>
+			<effect_group>
+				<passive_effect name="HealthChangeOT" operation="base_subtract" value="7.5"/>
+				<passive_effect name="WalkSpeed" operation="perc_subtract" value=".5,.1" duration="0,4"/>
+				<passive_effect name="RunSpeed" operation="perc_subtract" value=".5,.1" duration="0,4"/>
+				<passive_effect name="JumpStrength" operation="perc_subtract" value=".5,.1" duration="0,4"/>
+				<passive_effect name="Mobility" operation="perc_subtract" value="0.5" tags="falling,climbing,swimming"/>
+
+				<passive_effect name="HealthChangeOT" operation="base_subtract" value="4.2">
+					<requirement name="EntityTagCompare" target="self" tags="feral"/>
+				</passive_effect>
+				<passive_effect name="HealthChangeOT" operation="base_subtract" value="4.7">
+					<requirement name="EntityTagCompare" target="self" tags="radiated"/>
+				</passive_effect>
+
+				<triggered_effect trigger="onSelfDied" action="RemoveBuff" buff="buffUkuTadasiSpellsElectricalConductorLv1Spread"/>
+				<triggered_effect trigger="onSelfEnteredGame" action="RemoveBuff" buff="buffUkuTadasiSpellsElectricalConductorLv1Spread"/>
+				<triggered_effect trigger="onSelfBuffStart" action="AttachParticleEffectToEntity" particle="#@modfolder:Resources/ukutadasispells?ukutadasiElectricalConductorSpread"/>
+				<triggered_effect trigger="onSelfEnteredGame" action="AttachParticleEffectToEntity" particle="#@modfolder:Resources/ukutadasispells?ukutadasiElectricalConductorSpread"/>
+				<triggered_effect trigger="onSelfBuffRemove" action="RemoveParticleEffectFromEntity" particle="ukutadasiElectricalConductorSpread"/>
+				<triggered_effect trigger="onSelfDied" action="RemoveParticleEffectFromEntity" particle="ukutadasiElectricalConductorSpread"/>
+
+				<triggered_effect trigger="onSelfBuffUpdate" action="AddBuff" target="selfAOE" range="2" target_tags="zombie,animal" buff="buffUkuTadasiSpellsElectricalConductorLv1Spread"/>
+			</effect_group>
+		</buff>
+		<buff name="buffUkuTadasiSpellsElectricalConductorLv2">
+			<damage_type value="electrical"/>
+			<stack_type value="duration"/>
+			<duration value="5"/>
+			<effect_group>
+				<requirement name="EntityTagCompare" target="self" tags="ezToxic"/>
+				<passive_effect name="HealthChangeOT" operation="base_subtract" value="16"/>
+			</effect_group>
+			<effect_group>
+				<passive_effect name="HealthChangeOT" operation="base_subtract" value="8"/>
+				<passive_effect name="WalkSpeed" operation="perc_subtract" value=".6,.1" duration="0,5"/>
+				<passive_effect name="RunSpeed" operation="perc_subtract" value=".6,.1" duration="0,5"/>
+				<passive_effect name="JumpStrength" operation="perc_subtract" value=".6,.1" duration="0,5"/>
+				<passive_effect name="Mobility" operation="perc_subtract" value="0.6" tags="falling,climbing,swimming"/>
+
+				<passive_effect name="HealthChangeOT" operation="base_subtract" value="4.4">
+					<requirement name="EntityTagCompare" target="self" tags="feral"/>
+				</passive_effect>
+				<passive_effect name="HealthChangeOT" operation="base_subtract" value="5">
+					<requirement name="EntityTagCompare" target="self" tags="radiated"/>
+				</passive_effect>
+
+				<triggered_effect trigger="onSelfDied" action="RemoveBuff" buff="buffUkuTadasiSpellsElectricalConductorLv2"/>
+				<triggered_effect trigger="onSelfEnteredGame" action="RemoveBuff" buff="buffUkuTadasiSpellsElectricalConductorLv2"/>
+				<triggered_effect trigger="onSelfBuffStart" action="AttachParticleEffectToEntity" particle="#@modfolder:Resources/ukutadasispells?ukutadasiElectricalConductor02"/>
+				<triggered_effect trigger="onSelfEnteredGame" action="AttachParticleEffectToEntity" particle="#@modfolder:Resources/ukutadasispells?ukutadasiElectricalConductor02"/>
+				<triggered_effect trigger="onSelfBuffRemove" action="RemoveParticleEffectFromEntity" particle="ukutadasiElectricalConductor02"/>
+				<triggered_effect trigger="onSelfDied" action="RemoveParticleEffectFromEntity" particle="ukutadasiElectricalConductor02"/>
+
+				<triggered_effect trigger="onSelfBuffUpdate" action="AddBuff" target="selfAOE" range="2" target_tags="zombie,animal" buff="buffUkuTadasiSpellsElectricalConductorLv2Spread"/>
+			</effect_group>
+		</buff>
+		<buff name="buffUkuTadasiSpellsElectricalConductorLv2Spread">
+			<damage_type value="electrical"/>
+			<stack_type value="replace"/>
+			<duration value="5"/>
+			<effect_group>
+				<requirement name="EntityTagCompare" target="self" tags="ezToxic"/>
+				<passive_effect name="HealthChangeOT" operation="base_subtract" value="16"/>
+			</effect_group>
+			<effect_group>
+				<passive_effect name="HealthChangeOT" operation="base_subtract" value="8"/>
+				<passive_effect name="WalkSpeed" operation="perc_subtract" value=".6,.1" duration="0,5"/>
+				<passive_effect name="RunSpeed" operation="perc_subtract" value=".6,.1" duration="0,5"/>
+				<passive_effect name="JumpStrength" operation="perc_subtract" value=".6,.1" duration="0,5"/>
+				<passive_effect name="Mobility" operation="perc_subtract" value="0.6" tags="falling,climbing,swimming"/>
+
+				<passive_effect name="HealthChangeOT" operation="base_subtract" value="4.4">
+					<requirement name="EntityTagCompare" target="self" tags="feral"/>
+				</passive_effect>
+				<passive_effect name="HealthChangeOT" operation="base_subtract" value="5">
+					<requirement name="EntityTagCompare" target="self" tags="radiated"/>
+				</passive_effect>
+
+				<triggered_effect trigger="onSelfDied" action="RemoveBuff" buff="buffUkuTadasiSpellsElectricalConductorLv2Spread"/>
+				<triggered_effect trigger="onSelfEnteredGame" action="RemoveBuff" buff="buffUkuTadasiSpellsElectricalConductorLv2Spread"/>
+				<triggered_effect trigger="onSelfBuffStart" action="AttachParticleEffectToEntity" particle="#@modfolder:Resources/ukutadasispells?ukutadasiElectricalConductorSpread02"/>
+				<triggered_effect trigger="onSelfEnteredGame" action="AttachParticleEffectToEntity" particle="#@modfolder:Resources/ukutadasispells?ukutadasiElectricalConductorSpread02"/>
+				<triggered_effect trigger="onSelfBuffRemove" action="RemoveParticleEffectFromEntity" particle="ukutadasiElectricalConductorSpread02"/>
+				<triggered_effect trigger="onSelfDied" action="RemoveParticleEffectFromEntity" particle="ukutadasiElectricalConductorSpread02"/>
+
+				<triggered_effect trigger="onSelfBuffUpdate" action="AddBuff" target="selfAOE" range="2" target_tags="zombie,animal" buff="buffUkuTadasiSpellsElectricalConductorLv2Spread"/>
+			</effect_group>
+		</buff>
+		<buff name="buffUkuTadasiSpellsElectricalConductorLv3">
+			<damage_type value="electrical"/>
+			<stack_type value="duration"/>
+			<duration value="6"/>
+			<effect_group>
+				<requirement name="EntityTagCompare" target="self" tags="ezToxic"/>
+				<passive_effect name="HealthChangeOT" operation="base_subtract" value="17"/>
+			</effect_group>
+			<effect_group>
+				<passive_effect name="HealthChangeOT" operation="base_subtract" value="8.5"/>
+				<passive_effect name="WalkSpeed" operation="perc_subtract" value=".7,.1" duration="0,6"/>
+				<passive_effect name="RunSpeed" operation="perc_subtract" value=".7,.1" duration="0,6"/>
+				<passive_effect name="JumpStrength" operation="perc_subtract" value=".7,.1" duration="0,6"/>
+				<passive_effect name="Mobility" operation="perc_subtract" value="0.7" tags="falling,climbing,swimming"/>
+
+				<passive_effect name="HealthChangeOT" operation="base_subtract" value="4.7">
+					<requirement name="EntityTagCompare" target="self" tags="feral"/>
+				</passive_effect>
+				<passive_effect name="HealthChangeOT" operation="base_subtract" value="5.3">
+					<requirement name="EntityTagCompare" target="self" tags="radiated"/>
+				</passive_effect>
+
+				<triggered_effect trigger="onSelfDied" action="RemoveBuff" buff="buffUkuTadasiSpellsElectricalConductorLv3"/>
+				<triggered_effect trigger="onSelfEnteredGame" action="RemoveBuff" buff="buffUkuTadasiSpellsElectricalConductorLv3"/>
+				<triggered_effect trigger="onSelfBuffStart" action="AttachParticleEffectToEntity" particle="#@modfolder:Resources/ukutadasispells?ukutadasiElectricalConductor03"/>
+				<triggered_effect trigger="onSelfEnteredGame" action="AttachParticleEffectToEntity" particle="#@modfolder:Resources/ukutadasispells?ukutadasiElectricalConductor03"/>
+				<triggered_effect trigger="onSelfBuffRemove" action="RemoveParticleEffectFromEntity" particle="ukutadasiElectricalConductor03"/>
+				<triggered_effect trigger="onSelfDied" action="RemoveParticleEffectFromEntity" particle="ukutadasiElectricalConductor03"/>
+
+				<triggered_effect trigger="onSelfBuffUpdate" action="AddBuff" target="selfAOE" range="3" target_tags="zombie,animal" buff="buffUkuTadasiSpellsElectricalConductorLv3Spread"/>
+			</effect_group>
+		</buff>
+		<buff name="buffUkuTadasiSpellsElectricalConductorLv3Spread">
+			<damage_type value="electrical"/>
+			<stack_type value="replace"/>
+			<duration value="6"/>
+			<effect_group>
+				<requirement name="EntityTagCompare" target="self" tags="ezToxic"/>
+				<passive_effect name="HealthChangeOT" operation="base_subtract" value="17"/>
+			</effect_group>
+			<effect_group>
+				<passive_effect name="HealthChangeOT" operation="base_subtract" value="8.5"/>
+				<passive_effect name="WalkSpeed" operation="perc_subtract" value=".7,.1" duration="0,6"/>
+				<passive_effect name="RunSpeed" operation="perc_subtract" value=".7,.1" duration="0,6"/>
+				<passive_effect name="JumpStrength" operation="perc_subtract" value=".7,.1" duration="0,6"/>
+				<passive_effect name="Mobility" operation="perc_subtract" value="0.7" tags="falling,climbing,swimming"/>
+
+				<passive_effect name="HealthChangeOT" operation="base_subtract" value="4.7">
+					<requirement name="EntityTagCompare" target="self" tags="feral"/>
+				</passive_effect>
+				<passive_effect name="HealthChangeOT" operation="base_subtract" value="5.3">
+					<requirement name="EntityTagCompare" target="self" tags="radiated"/>
+				</passive_effect>
+
+				<triggered_effect trigger="onSelfDied" action="RemoveBuff" buff="buffUkuTadasiSpellsElectricalConductorLv3Spread"/>
+				<triggered_effect trigger="onSelfEnteredGame" action="RemoveBuff" buff="buffUkuTadasiSpellsElectricalConductorLv3Spread"/>
+				<triggered_effect trigger="onSelfBuffStart" action="AttachParticleEffectToEntity" particle="#@modfolder:Resources/ukutadasispells?ukutadasiElectricalConductorSpread03"/>
+				<triggered_effect trigger="onSelfEnteredGame" action="AttachParticleEffectToEntity" particle="#@modfolder:Resources/ukutadasispells?ukutadasiElectricalConductorSpread03"/>
+				<triggered_effect trigger="onSelfBuffRemove" action="RemoveParticleEffectFromEntity" particle="ukutadasiElectricalConductorSpread03"/>
+				<triggered_effect trigger="onSelfDied" action="RemoveParticleEffectFromEntity" particle="ukutadasiElectricalConductorSpread03"/>
+
+				<triggered_effect trigger="onSelfBuffUpdate" action="AddBuff" target="selfAOE" range="3" target_tags="zombie,animal" buff="buffUkuTadasiSpellsElectricalConductorLv3Spread"/>
+			</effect_group>
+		</buff>
+		<buff name="buffUkuTadasiSpellsElectricalConductorLv4">
+			<damage_type value="electrical"/>
+			<stack_type value="duration"/>
+			<duration value="7"/>
+			<effect_group>
+				<requirement name="EntityTagCompare" target="self" tags="ezToxic"/>
+				<passive_effect name="HealthChangeOT" operation="base_subtract" value="18"/>
+			</effect_group>
+			<effect_group>
+				<passive_effect name="HealthChangeOT" operation="base_subtract" value="9"/>
+				<passive_effect name="WalkSpeed" operation="perc_subtract" value=".8,.1" duration="0,7"/>
+				<passive_effect name="RunSpeed" operation="perc_subtract" value=".8,.1" duration="0,7"/>
+				<passive_effect name="JumpStrength" operation="perc_subtract" value=".8,.1" duration="0,7"/>
+				<passive_effect name="Mobility" operation="perc_subtract" value="0.8" tags="falling,climbing,swimming"/>
+
+				<passive_effect name="HealthChangeOT" operation="base_subtract" value="5">
+					<requirement name="EntityTagCompare" target="self" tags="feral"/>
+				</passive_effect>
+				<passive_effect name="HealthChangeOT" operation="base_subtract" value="5.6">
+					<requirement name="EntityTagCompare" target="self" tags="radiated"/>
+				</passive_effect>
+
+				<triggered_effect trigger="onSelfDied" action="RemoveBuff" buff="buffUkuTadasiSpellsElectricalConductorLv4"/>
+				<triggered_effect trigger="onSelfEnteredGame" action="RemoveBuff" buff="buffUkuTadasiSpellsElectricalConductorLv4"/>
+				<triggered_effect trigger="onSelfBuffStart" action="AttachParticleEffectToEntity" particle="#@modfolder:Resources/ukutadasispells?ukutadasiElectricalConductor04"/>
+				<triggered_effect trigger="onSelfEnteredGame" action="AttachParticleEffectToEntity" particle="#@modfolder:Resources/ukutadasispells?ukutadasiElectricalConductor04"/>
+				<triggered_effect trigger="onSelfBuffRemove" action="RemoveParticleEffectFromEntity" particle="ukutadasiElectricalConductor04"/>
+				<triggered_effect trigger="onSelfDied" action="RemoveParticleEffectFromEntity" particle="ukutadasiElectricalConductor04"/>
+
+				<triggered_effect trigger="onSelfBuffUpdate" action="AddBuff" target="selfAOE" range="3" target_tags="zombie,animal" buff="buffUkuTadasiSpellsElectricalConductorLv4Spread"/>
+			</effect_group>
+		</buff>
+		<buff name="buffUkuTadasiSpellsElectricalConductorLv4Spread">
+			<damage_type value="electrical"/>
+			<stack_type value="replace"/>
+			<duration value="7"/>
+			<effect_group>
+				<requirement name="EntityTagCompare" target="self" tags="ezToxic"/>
+				<passive_effect name="HealthChangeOT" operation="base_subtract" value="18"/>
+			</effect_group>
+			<effect_group>
+				<passive_effect name="HealthChangeOT" operation="base_subtract" value="9"/>
+				<passive_effect name="WalkSpeed" operation="perc_subtract" value=".8,.1" duration="0,7"/>
+				<passive_effect name="RunSpeed" operation="perc_subtract" value=".8,.1" duration="0,7"/>
+				<passive_effect name="JumpStrength" operation="perc_subtract" value=".8,.1" duration="0,7"/>
+				<passive_effect name="Mobility" operation="perc_subtract" value="0.8" tags="falling,climbing,swimming"/>
+
+				<passive_effect name="HealthChangeOT" operation="base_subtract" value="5">
+					<requirement name="EntityTagCompare" target="self" tags="feral"/>
+				</passive_effect>
+				<passive_effect name="HealthChangeOT" operation="base_subtract" value="5.6">
+					<requirement name="EntityTagCompare" target="self" tags="radiated"/>
+				</passive_effect>
+
+				<triggered_effect trigger="onSelfDied" action="RemoveBuff" buff="buffUkuTadasiSpellsElectricalConductorLv4Spread"/>
+				<triggered_effect trigger="onSelfEnteredGame" action="RemoveBuff" buff="buffUkuTadasiSpellsElectricalConductorLv4Spread"/>
+				<triggered_effect trigger="onSelfBuffStart" action="AttachParticleEffectToEntity" particle="#@modfolder:Resources/ukutadasispells?ukutadasiElectricalConductorSpread04"/>
+				<triggered_effect trigger="onSelfEnteredGame" action="AttachParticleEffectToEntity" particle="#@modfolder:Resources/ukutadasispells?ukutadasiElectricalConductorSpread04"/>
+				<triggered_effect trigger="onSelfBuffRemove" action="RemoveParticleEffectFromEntity" particle="ukutadasiElectricalConductorSpread04"/>
+				<triggered_effect trigger="onSelfDied" action="RemoveParticleEffectFromEntity" particle="ukutadasiElectricalConductorSpread04"/>
+
+				<triggered_effect trigger="onSelfBuffUpdate" action="AddBuff" target="selfAOE" range="3" target_tags="zombie,animal" buff="buffUkuTadasiSpellsElectricalConductorLv4Spread"/>
+			</effect_group>
+		</buff>
+		<buff name="buffUkuTadasiSpellsElectricalConductorLv5">
+			<damage_type value="electrical"/>
+			<stack_type value="duration"/>
+			<duration value="8"/>
+			<effect_group>
+				<requirement name="EntityTagCompare" target="self" tags="ezToxic"/>
+				<passive_effect name="HealthChangeOT" operation="base_subtract" value="19"/>
+			</effect_group>
+			<effect_group>
+				<passive_effect name="HealthChangeOT" operation="base_subtract" value="9.5"/>
+				<passive_effect name="WalkSpeed" operation="perc_subtract" value=".9,.1" duration="0,8"/>
+				<passive_effect name="RunSpeed" operation="perc_subtract" value=".9,.1" duration="0,8"/>
+				<passive_effect name="JumpStrength" operation="perc_subtract" value=".9,.1" duration="0,8"/>
+				<passive_effect name="Mobility" operation="perc_subtract" value="0.9" tags="falling,climbing,swimming"/>
+
+				<passive_effect name="HealthChangeOT" operation="base_subtract" value="5.3">
+					<requirement name="EntityTagCompare" target="self" tags="feral"/>
+				</passive_effect>
+				<passive_effect name="HealthChangeOT" operation="base_subtract" value="5.9">
+					<requirement name="EntityTagCompare" target="self" tags="radiated"/>
+				</passive_effect>
+
+				<triggered_effect trigger="onSelfDied" action="RemoveBuff" buff="buffUkuTadasiSpellsElectricalConductorLv5"/>
+				<triggered_effect trigger="onSelfEnteredGame" action="RemoveBuff" buff="buffUkuTadasiSpellsElectricalConductorLv5"/>
+				<triggered_effect trigger="onSelfBuffStart" action="AttachParticleEffectToEntity" particle="#@modfolder:Resources/ukutadasispells?ukutadasiElectricalConductor05"/>
+				<triggered_effect trigger="onSelfEnteredGame" action="AttachParticleEffectToEntity" particle="#@modfolder:Resources/ukutadasispells?ukutadasiElectricalConductor05"/>
+				<triggered_effect trigger="onSelfBuffRemove" action="RemoveParticleEffectFromEntity" particle="ukutadasiElectricalConductor05"/>
+				<triggered_effect trigger="onSelfDied" action="RemoveParticleEffectFromEntity" particle="ukutadasiElectricalConductor05"/>
+
+				<triggered_effect trigger="onSelfBuffUpdate" action="AddBuff" target="selfAOE" range="3" target_tags="zombie,animal" buff="buffUkuTadasiSpellsElectricalConductorLv5Spread"/>
+			</effect_group>
+		</buff>
+		<buff name="buffUkuTadasiSpellsElectricalConductorLv5Spread">
+			<damage_type value="electrical"/>
+			<stack_type value="replace"/>
+			<duration value="8"/>
+			<effect_group>
+				<requirement name="EntityTagCompare" target="self" tags="ezToxic"/>
+				<passive_effect name="HealthChangeOT" operation="base_subtract" value="19"/>
+			</effect_group>
+			<effect_group>
+				<passive_effect name="HealthChangeOT" operation="base_subtract" value="9.5"/>
+				<passive_effect name="WalkSpeed" operation="perc_subtract" value=".9,.1" duration="0,8"/>
+				<passive_effect name="RunSpeed" operation="perc_subtract" value=".9,.1" duration="0,8"/>
+				<passive_effect name="JumpStrength" operation="perc_subtract" value=".9,.1" duration="0,8"/>
+				<passive_effect name="Mobility" operation="perc_subtract" value="0.9" tags="falling,climbing,swimming"/>
+
+				<passive_effect name="HealthChangeOT" operation="base_subtract" value="5.3">
+					<requirement name="EntityTagCompare" target="self" tags="feral"/>
+				</passive_effect>
+				<passive_effect name="HealthChangeOT" operation="base_subtract" value="5.9">
+					<requirement name="EntityTagCompare" target="self" tags="radiated"/>
+				</passive_effect>
+
+				<triggered_effect trigger="onSelfDied" action="RemoveBuff" buff="buffUkuTadasiSpellsElectricalConductorLv5Spread"/>
+				<triggered_effect trigger="onSelfEnteredGame" action="RemoveBuff" buff="buffUkuTadasiSpellsElectricalConductorLv5Spread"/>
+				<triggered_effect trigger="onSelfBuffStart" action="AttachParticleEffectToEntity" particle="#@modfolder:Resources/ukutadasispells?ukutadasiElectricalConductorSpread05"/>
+				<triggered_effect trigger="onSelfEnteredGame" action="AttachParticleEffectToEntity" particle="#@modfolder:Resources/ukutadasispells?ukutadasiElectricalConductorSpread05"/>
+				<triggered_effect trigger="onSelfBuffRemove" action="RemoveParticleEffectFromEntity" particle="ukutadasiElectricalConductorSpread05"/>
+				<triggered_effect trigger="onSelfDied" action="RemoveParticleEffectFromEntity" particle="ukutadasiElectricalConductorSpread05"/>
+
+				<triggered_effect trigger="onSelfBuffUpdate" action="AddBuff" target="selfAOE" range="3" target_tags="zombie,animal" buff="buffUkuTadasiSpellsElectricalConductorLv5Spread"/>
+			</effect_group>
+		</buff>
+	</append>
+
+	<append xpath="/buffs">
+		<!-- 合體技: 龍捲風 -->
+		<!-- 普通殭屍級別的血量, 普通:150, 野性: 350, 輻射: 650 , 跳階普通:350, 野性:650, 輻射1350-->
+		<!-- 類別傷害線性: 2, 4, 6 -->
+		<buff name="buffUkuTadasiSpellsUkutadasiTornado">
+			<damage_type value="Radiation"/>
+			<stack_type value="replace"/>
+			<duration value="8"/>
+			<effect_group>
+				<requirement name="EntityTagCompare" target="self" tags="ezSoul"/>
+				<passive_effect name="HealthChangeOT" operation="base_subtract" value="18.8"/>
+			</effect_group>
+			<effect_group>
+				<passive_effect name="HealthChangeOT" operation="base_subtract" value="9.4"/>
+
+				<passive_effect name="HealthChangeOT" operation="base_subtract" value="1.5">
+					<requirement name="EntityTagCompare" target="self" tags="feral"/>
+				</passive_effect>
+				<passive_effect name="HealthChangeOT" operation="base_subtract" value="2.6">
+					<requirement name="EntityTagCompare" target="self" tags="radiated"/>
+				</passive_effect>
+
+				<triggered_effect trigger="onSelfBuffUpdate" action="Ragdoll" duration="0.1">
+					<requirement name="RandomRoll" seed_type="Random" min_max="0,100" operation="LTE" value="50"/>
+				</triggered_effect>
+
+				<triggered_effect trigger="onSelfDied" action="RemoveBuff" buff="buffUkuTadasiSpellsUkutadasiTornado"/>
+				<triggered_effect trigger="onSelfEnteredGame" action="RemoveBuff" buff="buffUkuTadasiSpellsUkutadasiTornado"/>
+
+				<triggered_effect trigger="onSelfBuffStart" action="AttachParticleEffectToEntity" particle="#@modfolder:Resources/ukutadasispells?ukutadasiTornado"/>
+				<triggered_effect trigger="onSelfEnteredGame" action="AttachParticleEffectToEntity" particle="#@modfolder:Resources/ukutadasispells?ukutadasiTornado"/>
+				<triggered_effect trigger="onSelfBuffRemove" action="RemoveParticleEffectFromEntity" particle="ukutadasiTornado"/>
+				<triggered_effect trigger="onSelfDied" action="RemoveParticleEffectFromEntity" particle="ukutadasiTornado"/>
+
+				<triggered_effect trigger="onSelfBuffUpdate" action="AddBuff" target="selfAOE" range="5" target_tags="zombie,animal" buff="buffUkuTadasiSpellsUkutadasiTornado"/>
+			</effect_group>
+		</buff>
+	</append>
+
+	<!-- 投擲型法術 -->
+	<append xpath="/buffs">
+		<!-- 炎爆彈 -->
+		<buff name="buffUkuTadasiSpellsFlameBurstBomb">
+			<damage_type value="heat"/>
+			<stack_type value="replace"/>
+			<duration value="5"/>
+			<effect_group>
+				<requirement name="EntityTagCompare" target="self" tags="ezFrost"/>
+				<passive_effect name="HealthChangeOT" operation="base_subtract" value="25"/>
+			</effect_group>
+			<effect_group>
+				<requirement name="EntityTagCompare" target="self" tags="zombie,animal"/>
+				<passive_effect name="HealthChangeOT" operation="base_subtract" value="12.5"/>
+
+				<passive_effect name="HealthChangeOT" operation="base_subtract" value="2.1">
+					<requirement name="EntityTagCompare" target="self" tags="feral"/>
+				</passive_effect>
+				<passive_effect name="HealthChangeOT" operation="base_subtract" value="3.5">
+					<requirement name="EntityTagCompare" target="self" tags="radiated"/>
+				</passive_effect>
+
+				<triggered_effect trigger="onSelfDied" action="RemoveBuff" buff="buffUkuTadasiSpellsFlameBurstBomb"/>
+				<triggered_effect trigger="onSelfEnteredGame" action="RemoveBuff" buff="buffUkuTadasiSpellsFlameBurstBomb"/>
+
+				<triggered_effect trigger="onSelfBuffStart" action="AttachParticleEffectToEntity" particle="#@modfolder:Resources/ukutadasispells?ukutadasiFlameBurstBombTarget" parent_transform="Hips"/>
+				<triggered_effect trigger="onSelfEnteredGame" action="AttachParticleEffectToEntity" particle="#@modfolder:Resources/ukutadasispells?ukutadasiFlameBurstBombTarget" parent_transform="Hips"/>
+				<triggered_effect trigger="onSelfBuffRemove" action="RemoveParticleEffectFromEntity" particle="ukutadasiFlameBurstBombTarget"/>
+				<triggered_effect trigger="onSelfDied" action="RemoveParticleEffectFromEntity" particle="ukutadasiFlameBurstBombTarget"/>
+			</effect_group>
+		</buff>
+		<!-- 冰霜彈 -->
+		<buff name="buffUkuTadasiSpellsFrostBomb">
+			<damage_type value="cold"/>
+			<stack_type value="replace"/>
+			<duration value="5"/>
+			<effect_group>
+				<requirement name="EntityTagCompare" target="self" tags="ezFire"/>
+				<passive_effect name="HealthChangeOT" operation="base_subtract" value="12.6"/>
+			</effect_group>
+			<effect_group>
+				<requirement name="EntityTagCompare" target="self" tags="zombie,animal"/>
+				<passive_effect name="HealthChangeOT" operation="base_subtract" value="6.3"/>
+
+				<passive_effect name="HealthChangeOT" operation="base_subtract" value="3.4">
+					<requirement name="EntityTagCompare" target="self" tags="feral"/>
+				</passive_effect>
+				<passive_effect name="HealthChangeOT" operation="base_subtract" value="3.8">
+					<requirement name="EntityTagCompare" target="self" tags="radiated"/>
+				</passive_effect>
+
+				<passive_effect name="WalkSpeed" operation="perc_subtract" value="0.9" duration="3"/>
+				<passive_effect name="RunSpeed" operation="perc_subtract" value="0.9" duration="3"/>
+				<passive_effect name="Mobility" operation="perc_subtract" value="0.9" duration="3" tags="falling,climbing,swimming"/>
+				<passive_effect name="AttacksPerMinute" operation="perc_subtract" value="0.9" duration="3"/>
+
+				<triggered_effect trigger="onSelfDied" action="RemoveBuff" buff="buffUkuTadasiSpellsFrostBomb"/>
+				<triggered_effect trigger="onSelfEnteredGame" action="RemoveBuff" buff="buffUkuTadasiSpellsFrostBomb"/>
+
+				<triggered_effect trigger="onSelfBuffStart" action="AttachParticleEffectToEntity" particle="#@modfolder:Resources/ukutadasispells?ukutadasiIce03"/>
+				<triggered_effect trigger="onSelfEnteredGame" action="AttachParticleEffectToEntity" particle="#@modfolder:Resources/ukutadasispells?ukutadasiIce03"/>
+				<triggered_effect trigger="onSelfBuffRemove" action="RemoveParticleEffectFromEntity" particle="ukutadasiIce03"/>
+				<triggered_effect trigger="onSelfDied" action="RemoveParticleEffectFromEntity" particle="ukutadasiIce03"/>
+			</effect_group>
+		</buff>
+		<!-- 電衝彈 -->
+		<buff name="buffUkuTadasiSpellsElectricArcImpactBomb">
+			<damage_type value="electrical"/>
+			<stack_type value="replace"/>
+			<duration value="5"/>
+			<effect_group>
+				<requirement name="EntityTagCompare" target="self" tags="ezToxic"/>
+				<passive_effect name="HealthChangeOT" operation="base_subtract" value="18.8"/>
+			</effect_group>
+			<effect_group>
+				<requirement name="EntityTagCompare" target="self" tags="zombie,animal"/>
+				<passive_effect name="HealthChangeOT" operation="base_subtract" value="9.4"/>
+
+				<passive_effect name="HealthChangeOT" operation="base_subtract" value="1.5">
+					<requirement name="EntityTagCompare" target="self" tags="feral"/>
+				</passive_effect>
+				<passive_effect name="HealthChangeOT" operation="base_subtract" value="2.6">
+					<requirement name="EntityTagCompare" target="self" tags="radiated"/>
+				</passive_effect>
+
+				<passive_effect name="WalkSpeed" operation="perc_subtract" value=".5,.01" duration="0,4"/>
+				<passive_effect name="RunSpeed" operation="perc_subtract" value=".5,.01" duration="0,4"/>
+				<passive_effect name="JumpStrength" operation="perc_subtract" value=".5,.01" duration="0,4"/>
+				<passive_effect name="Mobility" operation="perc_subtract" value="0.5" tags="falling,climbing,swimming"/>
+
+				<triggered_effect trigger="onSelfDied" action="RemoveBuff" buff="buffUkuTadasiSpellsElectricArcImpactBomb"/>
+				<triggered_effect trigger="onSelfEnteredGame" action="RemoveBuff" buff="buffUkuTadasiSpellsElectricArcImpactBomb"/>
+
+				<triggered_effect trigger="onSelfBuffStart" action="AttachParticleEffectToEntity" particle="#@modfolder:Resources/ukutadasispells?ukutadasiElectric" parent_transform="Hips"/>
+				<triggered_effect trigger="onSelfEnteredGame" action="AttachParticleEffectToEntity" particle="#@modfolder:Resources/ukutadasispells?ukutadasiElectric" parent_transform="Hips"/>
+				<triggered_effect trigger="onSelfBuffRemove" action="RemoveParticleEffectFromEntity" particle="ukutadasiElectric"/>
+				<triggered_effect trigger="onSelfDied" action="RemoveParticleEffectFromEntity" particle="ukutadasiElectric"/>
+			</effect_group>
+		</buff>
+		<!-- 毒氣彈 -->
+		<buff name="buffUkuTadasiSpellsPoisonGasBomb">
+			<damage_type value="toxic"/>
+			<stack_type value="replace"/>
+			<duration value="5"/>
+			<effect_group>
+				<requirement name="EntityTagCompare" target="self" tags="ezElectric"/>
+				<passive_effect name="HealthChangeOT" operation="base_subtract" value="19.3"/>
+			</effect_group>
+			<effect_group>
+				<requirement name="EntityTagCompare" target="self" tags="zombie,animal"/>
+				<passive_effect name="HealthChangeOT" operation="base_subtract" value="9.9"/>
+				<passive_effect name="RunSpeed" operation="perc_subtract" value="0.8"/>
+
+				<passive_effect name="HealthChangeOT" operation="base_subtract" value="2">
+					<requirement name="EntityTagCompare" target="self" tags="feral"/>
+				</passive_effect>
+				<passive_effect name="HealthChangeOT" operation="base_subtract" value="3.1">
+					<requirement name="EntityTagCompare" target="self" tags="radiated"/>
+				</passive_effect>
+
+				<triggered_effect trigger="onSelfDied" action="RemoveBuff" buff="buffUkuTadasiSpellsPoisonGasBomb"/>
+				<triggered_effect trigger="onSelfEnteredGame" action="RemoveBuff" buff="buffUkuTadasiSpellsPoisonGasBomb"/>
+				<triggered_effect trigger="onSelfBuffStart" action="AttachParticleEffectToEntity" particle="#@modfolder:Resources/ukutadasispells?ukutadasiPoison" parent_transform="Hips"/>
+				<triggered_effect trigger="onSelfEnteredGame" action="AttachParticleEffectToEntity" particle="#@modfolder:Resources/ukutadasispells?ukutadasiPoison" parent_transform="Hips"/>
+				<triggered_effect trigger="onSelfBuffRemove" action="RemoveParticleEffectFromEntity" particle="ukutadasiPoison"/>
+				<triggered_effect trigger="onSelfDied" action="RemoveParticleEffectFromEntity" particle="ukutadasiPoison"/>
+			</effect_group>
+		</buff>
+		<!-- 咒殺彈 -->
+		<buff name="buffUkuTadasiSpellsCursedKillBomb">
+			<damage_type value="electrical"/>
+			<stack_type value="replace"/>
+			<duration value="5"/>
+			<effect_group>
+				<requirement name="EntityTagCompare" target="self" tags="ezSoul"/>
+				<passive_effect name="HealthChangeOT" operation="base_subtract" value="36.4"/>
+			</effect_group>
+			<effect_group>
+				<requirement name="EntityTagCompare" target="self" tags="zombie,animal"/>
+				<passive_effect name="HealthChangeOT" operation="base_subtract" value="20.7"/>
+
+				<passive_effect name="HealthChangeOT" operation="base_subtract" value="7.7">
+					<requirement name="EntityTagCompare" target="self" tags="feral"/>
+				</passive_effect>
+				<passive_effect name="HealthChangeOT" operation="base_subtract" value="9.4">
+					<requirement name="EntityTagCompare" target="self" tags="radiated"/>
+				</passive_effect>
+
+				<passive_effect name="WalkSpeed" operation="perc_subtract" value="0.9" duration="5"/>
+				<passive_effect name="RunSpeed" operation="perc_subtract" value="0.9" duration="5"/>
+				<passive_effect name="Mobility" operation="perc_subtract" value="0.9" duration="5" tags="falling,climbing,swimming"/>
+				<passive_effect name="AttacksPerMinute" operation="perc_subtract" value="0.9" duration="5"/>
+
+				<triggered_effect trigger="onSelfDied" action="RemoveBuff" buff="buffUkuTadasiSpellsCursedKillBomb"/>
+				<triggered_effect trigger="onSelfEnteredGame" action="RemoveBuff" buff="buffUkuTadasiSpellsCursedKillBomb"/>
+
+				<triggered_effect trigger="onSelfBuffStart" action="AttachParticleEffectToEntity" particle="#@modfolder:Resources/ukutadasispells?ukutadasiCursedKillBombTarget"/>
+				<triggered_effect trigger="onSelfEnteredGame" action="AttachParticleEffectToEntity" particle="#@modfolder:Resources/ukutadasispells?ukutadasiCursedKillBombTarget"/>
+				<triggered_effect trigger="onSelfBuffRemove" action="RemoveParticleEffectFromEntity" particle="ukutadasiCursedKillBombTarget"/>
+				<triggered_effect trigger="onSelfDied" action="RemoveParticleEffectFromEntity" particle="ukutadasiCursedKillBombTarget"/>
+			</effect_group>
+		</buff>
+		<!-- 淨化彈 -->
+		<buff name="buffUkuTadasiSpellsPurifyBomb" name_key="buffUkuTadasiSpellsPurifyBombName" description_key="buffUkuTadasiSpellsPurifyBombDesc" icon="ui_game_symbol_ukutadasi_purify" icon_color="0,200,80" icon_blink="true">
+			<damage_type value="BloodLoss"/>
+			<stack_type value="replace"/>
+			<duration value="5"/>
+			<effect_group>
+				<requirement name="EntityTagCompare" target="self" tags="player"/>
+				<passive_effect name="HealthChangeOT" operation="base_add" value="5"/>
+
+				<triggered_effect trigger="onSelfBuffUpdate" action="RemoveBuff" target="self" buff="buffInjuryBleeding"/>
+				<triggered_effect trigger="onSelfBuffUpdate" action="RemoveBuff" target="self" buff="buffLaceration"/>
+				<triggered_effect trigger="onSelfBuffUpdate" action="RemoveBuff" target="self" buff="buffLegBroken"/>
+				<triggered_effect trigger="onSelfBuffUpdate" action="RemoveBuff" target="self" buff="buffLegSprained"/>
+				<triggered_effect trigger="onSelfBuffUpdate" action="RemoveBuff" target="self" buff="buffArmSprained"/>
+				<triggered_effect trigger="onSelfBuffUpdate" action="RemoveBuff" target="self" buff="buffFatiguedTrigger"/>
+				<triggered_effect trigger="onSelfBuffUpdate" action="RemoveBuff" target="self" buff="buffInjuryConcussion"/>
+				<triggered_effect trigger="onSelfBuffUpdate" action="RemoveBuff" target="self" buff="buffDysenteryCatchFood"/>
+				<triggered_effect trigger="onSelfBuffUpdate" action="RemoveBuff" target="self" buff="buffInfectionCatch"/>
+				<triggered_effect trigger="onSelfBuffUpdate" action="RemoveBuff" target="self" buff="buffInfection01Main"/>
+				<triggered_effect trigger="onSelfBuffUpdate" action="RemoveBuff" target="self" buff="buffStayDownKO"/>
+				<!--<triggered_effect trigger="onSelfBuffUpdate" action="RemoveBuff" target="self" buff="buffNearDeathTrauma"/>-->
+				<passive_effect name="BuffResistance" operation="base_add" value="2" tags="buffInfectionCatch,buffInfection01Main,buffInjuryBleeding,buffDrowning01,buffDrowning02,buffArmorShredding,buffLegSprainedFallTrigger,buffLegBroken,buffArmSprained"/>
+				<passive_effect name="BuffResistance" operation="base_add" value="2" tags="buffArmBroken,buffInjuryStunned01,buffInjuryStunned02,buffInjuryStunned03,buffInjuryCrippled01,buffInjuryKnockdown01,buffInjuryKnockdown01,buffInjuryUnconscious,buffStayDownKO"/>
+				<passive_effect name="BuffResistance" operation="base_add" value="2" tags="buffInjuryConcussion,buffShocked,buffBurningElement,buffBurningEnvironment,buffBurningFlamingArrow,buffBurningMolotov,buffBurning"/>
+
+				<triggered_effect trigger="onSelfBuffStart" action="AttachParticleEffectToEntity" particle="#@modfolder:Resources/ukutadasispells?ukutadasiPurifyBombTargetPlayer" local_rotation="90,0,0"/>
+				<triggered_effect trigger="onSelfEnteredGame" action="AttachParticleEffectToEntity" particle="#@modfolder:Resources/ukutadasispells?ukutadasiPurifyBombTargetPlayer" local_rotation="90,0,0"/>
+				<triggered_effect trigger="onSelfBuffRemove" action="RemoveParticleEffectFromEntity" particle="ukutadasiPurifyBombTargetPlayer"/>
+				<triggered_effect trigger="onSelfDied" action="RemoveParticleEffectFromEntity" particle="ukutadasiPurifyBombTargetPlayer"/>
+			</effect_group>
+
+			<effect_group>
+				<requirement name="EntityTagCompare" target="self" tags="ezFire,ezFrost,ezElectric,ezToxic,ezSoul"/>
+				<passive_effect name="HealthChangeOT" operation="base_subtract" value="12.6"/>
+			</effect_group>
+			<effect_group>
+				<requirement name="EntityTagCompare" target="self" tags="zombie,animal"/>
+				<passive_effect name="HealthChangeOT" operation="base_subtract" value="6.3"/>
+				<passive_effect name="HealthChangeOT" operation="base_subtract" value="3.4">
+					<requirement name="EntityTagCompare" target="self" tags="feral"/>
+				</passive_effect>
+				<passive_effect name="HealthChangeOT" operation="base_subtract" value="3.8">
+					<requirement name="EntityTagCompare" target="self" tags="radiated"/>
+				</passive_effect>
+
+				<passive_effect name="WalkSpeed" operation="perc_subtract" value="0.5"/>
+				<passive_effect name="RunSpeed" operation="perc_subtract" value="0.5"/>
+				<passive_effect name="Mobility" operation="perc_subtract" value="0.5" tags="falling,climbing,swimming"/>
+
+				<triggered_effect trigger="onSelfDied" action="RemoveBuff" buff="buffUkuTadasiSpellsPurifyBomb"/>
+				<triggered_effect trigger="onSelfEnteredGame" action="RemoveBuff" buff="buffUkuTadasiSpellsPurifyBomb"/>
+				<triggered_effect trigger="onSelfBuffStart" action="AttachParticleEffectToEntity" particle="#@modfolder:Resources/ukutadasispells?ukutadasiPurifyBombTargetEnemy"/>
+				<triggered_effect trigger="onSelfEnteredGame" action="AttachParticleEffectToEntity" particle="#@modfolder:Resources/ukutadasispells?ukutadasiPurifyBombTargetEnemy"/>
+				<triggered_effect trigger="onSelfBuffRemove" action="RemoveParticleEffectFromEntity" particle="ukutadasiPurifyBombTargetEnemy"/>
+				<triggered_effect trigger="onSelfDied" action="RemoveParticleEffectFromEntity" particle="ukutadasiPurifyBombTargetEnemy"/>
+			</effect_group>
+		</buff>
+		<!-- 天劍彈 -->
+		<buff name="buffUkuTadasiSpellsSkySwordBomb">
+			<damage_type value="BloodLoss"/>
+			<stack_type value="replace"/>
+			<duration value="1"/>
+			<effect_group>
+				<requirement name="EntityTagCompare" target="self" tags="ezFire,ezFrost,ezElectric,ezToxic,ezSoul"/>
+				<passive_effect name="HealthChangeOT" operation="base_subtract" value="25"/>
+			</effect_group>
+			<effect_group>
+				<requirement name="EntityTagCompare" target="self" tags="zombie,animal"/>
+				<passive_effect name="HealthChangeOT" operation="base_subtract" value="13"/>
+
+				<passive_effect name="HealthChangeOT" operation="base_subtract" value="2.6">
+					<requirement name="EntityTagCompare" target="self" tags="feral"/>
+				</passive_effect>
+				<passive_effect name="HealthChangeOT" operation="base_subtract" value="4">
+					<requirement name="EntityTagCompare" target="self" tags="radiated"/>
+				</passive_effect>
+
+				<passive_effect name="WalkSpeed" operation="perc_subtract" value="0.9" duration="3"/>
+				<passive_effect name="RunSpeed" operation="perc_subtract" value="0.9" duration="3"/>
+				<passive_effect name="Mobility" operation="perc_subtract" value="0.9" duration="3" tags="falling,climbing,swimming"/>
+
+				<triggered_effect trigger="onSelfBuffStart" action="AddBuff" target="self" buff="buffInjuryBleeding"/>
+				
+				<triggered_effect trigger="onSelfDied" action="RemoveBuff" buff="buffUkuTadasiSpellsSkySwordBomb"/>
+				<triggered_effect trigger="onSelfEnteredGame" action="RemoveBuff" buff="buffUkuTadasiSpellsSkySwordBomb"/>
+
+				<triggered_effect trigger="onSelfBuffStart" action="AttachParticleEffectToEntity" particle="#@modfolder:Resources/ukutadasispells?ukutadasiSkySwordBombTarget"/>
+				<triggered_effect trigger="onSelfEnteredGame" action="AttachParticleEffectToEntity" particle="#@modfolder:Resources/ukutadasispells?ukutadasiSkySwordBombTarget"/>
+				<triggered_effect trigger="onSelfBuffRemove" action="RemoveParticleEffectFromEntity" particle="ukutadasiSkySwordBombTarget"/>
+				<triggered_effect trigger="onSelfDied" action="RemoveParticleEffectFromEntity" particle="ukutadasiSkySwordBombTarget"/>
+			</effect_group>
+		</buff>
+		<!-- 強攻彈 -->
+		<buff name="buffUkuTadasiSpellsEnhanceAttackBomb" name_key="buffUkuTadasiSpellsEnhanceAttackBombName" description_key="buffUkuTadasiSpellsEnhanceAttackBombDesc" icon="ui_game_symbol_ukutadasi_enhance_attack" icon_color="0,200,80" icon_blink="true">
+			<stack_type value="replace"/>
+			<duration value="50"/>
+			<effect_group>
+				<requirement name="EntityTagCompare" target="self" tags="player"/>
+				<passive_effect name="EntityDamage" operation="perc_add" value=".3"/>
+				<passive_effect name="BlockDamage" operation="perc_add" value=".3"/>
+				<passive_effect name="AttacksPerMinute" operation="perc_add" value=".3"/>
+			</effect_group>
+			<effect_group>
+				<requirement name="EntityTagCompare" target="self" tags="zombie,animal"/>
+				<passive_effect name="EntityDamage" operation="perc_subtract" value=".3"/>
+				<passive_effect name="BlockDamage" operation="perc_subtract" value=".3"/>
+				<passive_effect name="AttacksPerMinute" operation="perc_subtract" value=".3"/>
+				<triggered_effect trigger="onSelfDied" action="RemoveBuff" buff="buffUkuTadasiSpellsEnhanceAttackBomb"/>
+				<triggered_effect trigger="onSelfEnteredGame" action="RemoveBuff" buff="buffUkuTadasiSpellsEnhanceAttackBomb"/>
+			</effect_group>
+		</buff>
+		<!-- 固防彈 -->
+		<buff name="buffUkuTadasiSpellsEnhanceDefenseBomb" name_key="buffUkuTadasiSpellsEnhanceDefenseBombName" description_key="buffUkuTadasiSpellsEnhanceDefenseBombDesc" icon="ui_game_symbol_ukutadasi_enhance_defense" icon_color="0,200,80" icon_blink="true">
+			<stack_type value="replace"/>
+			<duration value="50"/>
+			<effect_group>
+				<requirement name="EntityTagCompare" target="self" tags="player"/>
+				<passive_effect name="PhysicalDamageResist" operation="perc_add" value=".3"/>
+				<passive_effect name="ElementalDamageResist" operation="perc_add" value=".3"/>
+				<passive_effect name="BuffResistance" operation="perc_add" value=".3" tags="buffFatiguedTrigger,buffArmSprainedCHTrigger,buffLegSprainedCHTrigger,buffLaceration,buffInfectionCatch,buffInjuryStunned01CHTrigger,buffInjuryBleedingTwo,buffInjuryBleedingBarbedWire,critResistDisplay"/>
+			</effect_group>
+			<effect_group>
+				<requirement name="EntityTagCompare" target="self" tags="zombie,animal"/>
+				<passive_effect name="PhysicalDamageResist" operation="perc_subtract" value=".3"/>
+				<passive_effect name="ElementalDamageResist" operation="perc_subtract" value=".3"/>
+				<triggered_effect trigger="onSelfDied" action="RemoveBuff" buff="buffUkuTadasiSpellsEnhanceDefenseBomb"/>
+				<triggered_effect trigger="onSelfEnteredGame" action="RemoveBuff" buff="buffUkuTadasiSpellsEnhanceDefenseBomb"/>
+			</effect_group>
+		</buff>
+	</append>
+
+	<!-- 記錄目前已有的負面狀態 -->
+	<append xpath="/buffs">
+		<!-- 標記已有的狀態: 燃燒 -->
+		<buff name="buffMarksExistingPropertyFire" hidden="true">
+			<stack_type value="replace"/>
+			<duration value="10"/>
+		</buff>
+		<!-- 標記已有的狀態: 冰凍 -->
+		<buff name="buffMarksExistingPropertyIce" hidden="true">
+			<stack_type value="replace"/>
+			<duration value="10"/>
+		</buff>
+		<!-- 標記已有的狀態: 中毒 -->
+		<buff name="buffMarksExistingPropertyPoison" hidden="true">
+			<stack_type value="replace"/>
+			<duration value="10"/>
+		</buff>
+		<!-- 標記已有的狀態: 電擊 -->
+		<buff name="buffMarksExistingPropertyElectric" hidden="true">
+			<stack_type value="replace"/>
+			<duration value="10"/>
+		</buff>
+	</append>
+</configs>

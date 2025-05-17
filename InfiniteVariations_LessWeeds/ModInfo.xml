@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<xml>
+	<Name value="IV_LessWeeds" />
+	<DisplayName value="Infinite Variations: Less weeds" />
+	<Description value="Reduce the number of weeds in the ecosystem." />
+	<Version value="21.1.16.0" />
+	<Author value="unoya"/>
+	<Website value="https://sites.google.com/view/infinite-variations" />
+</xml>

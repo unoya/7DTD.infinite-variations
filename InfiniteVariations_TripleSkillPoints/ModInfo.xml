@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<xml>
+	<Name value="IV_TSP" />
+	<DisplayName value="Infinite Variations: Triple skill points" />
+	<Description value="Grants triple skill points each time you level up." />
+	<Version value="21.1.16.0" />
+	<Author value="unoya" />
+	<Website value="https://github.com/unoya" />
+</xml>

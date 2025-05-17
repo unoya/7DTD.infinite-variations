@@ -1,0 +1,8 @@
+<config>
+	<append xpath="/ui_display_info/item_display">
+		<item_display_info display_type="RemoveHeterogeneousStatePotion" display_group="groupConsumables">
+			<display_entry name="dDuration" title_key="statDuration" display_leading_plus="true"/>
+			<display_entry name="dStackTime" title_key="statCustomStackTime" display_type="Bool"/>
+		</item_display_info>
+	</append>
+</config>

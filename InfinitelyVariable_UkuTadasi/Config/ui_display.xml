@@ -1,0 +1,15 @@
+<configs>
+	<append xpath="/ui_display_info/item_display">
+		<item_display_info display_type="ammoGrenadeUkuTadasiSpells" display_group="groupAmmo">
+			<display_entry name="dExRadius" title_key="statExRadius"/>
+			<display_entry name="dDuration" title_key="statDuration" display_type="Time"/>
+		</item_display_info>
+		<item_display_info display_type="ammoArrowUkuTadasiSpells" display_group="groupAmmo">
+			<display_entry name="EntityDamage" display_type="Decimal1" title_key="statEntityDamageRanged" tags="perkArchery,admin"/>
+			<display_entry name="BlockDamage" display_type="Decimal1" title_key="statBlockDamage"/>
+			<display_entry name="dExRadius" title_key="statExRadius"/>
+			<display_entry name="dDuration" title_key="statDuration" display_type="Time"/>
+			<display_entry name="ProjectileVelocity" title_key="statProjectileVelocity" tags="perkArchery,admin"/>
+		</item_display_info>
+	</append>
+</configs>

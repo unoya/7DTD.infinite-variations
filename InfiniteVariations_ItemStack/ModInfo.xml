@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<xml>
+	<Name value="IV_Item30000" />
+	<DisplayName value="Infinite Variations: Item stack 30K" />
+	<Description value="Item 30000 Stack Size" />
+	<Version value="21.1.16.0" />
+	<Author value="unoya" />
+	<Website value="https://github.com/unoya" />
+</xml>

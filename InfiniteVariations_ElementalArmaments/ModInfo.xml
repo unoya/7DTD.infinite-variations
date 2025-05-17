@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<xml>
+	<Name value="IV_ELEARM" />
+	<DisplayName value="Infinite Variations: Elemental Armament" />
+	<Description value="Provides players with the ability to attach four elemental attributes to their weapons, enhancing the thrill of zombie slaying." />
+	<Version value="21.2.30.1" />
+	<Author value="unoya" />
+	<Website value="https://github.com/unoya" />
+</xml>

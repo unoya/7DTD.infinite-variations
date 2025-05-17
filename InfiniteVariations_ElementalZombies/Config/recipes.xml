@@ -1,0 +1,103 @@
+<config>
+	<append xpath="/recipes">
+		<!-- 異質火焰抗性藥水 -->
+		<recipe name="drinkIvRemoveFirePotion" count="10" craft_area="campfire" craft_time="30" craft_tool="toolCookingPot" craft_exp_gain="500">
+			<ingredient name="resourceCropChrysanthemumPlant" count="1"/>
+			<ingredient name="drugAntibiotics" count="1"/>
+			<ingredient name="foodRottingFlesh" count="3"/>
+			<ingredient name="resourceElementZombieMutatedGene" count="3"/>
+			<ingredient name="drinkJarBoiledWater" count="1"/>
+		</recipe>
+		<recipe name="drinkIvRemoveFirePotion" count="10" craft_area="chemistryStation" craft_time="1" tags="chemStationCrafting" craft_exp_gain="15">
+			<ingredient name="resourceCropChrysanthemumPlant" count="1"/>
+			<ingredient name="drugAntibiotics" count="1"/>
+			<ingredient name="foodRottingFlesh" count="3"/>
+			<ingredient name="resourceElementZombieMutatedGene" count="3"/>
+			<ingredient name="drinkJarBoiledWater" count="1"/>
+		</recipe>
+		<!-- 異質電擊抗性藥水 -->
+		<recipe name="drinkIvRemoveShockPotion" count="10" craft_area="campfire" craft_time="30" craft_tool="toolCookingPot" craft_exp_gain="500">
+			<ingredient name="resourceCropGoldenrodPlant" count="1"/>
+			<ingredient name="drugAntibiotics" count="1"/>
+			<ingredient name="foodRottingFlesh" count="3"/>
+			<ingredient name="resourceElementZombieMutatedGene" count="3"/>
+			<ingredient name="drinkJarBoiledWater" count="1"/>
+		</recipe>
+		<recipe name="drinkIvRemoveShockPotion" count="10" craft_area="chemistryStation" craft_time="1" tags="chemStationCrafting" craft_exp_gain="15">
+			<ingredient name="resourceCropGoldenrodPlant" count="1"/>
+			<ingredient name="drugAntibiotics" count="1"/>
+			<ingredient name="foodRottingFlesh" count="3"/>
+			<ingredient name="resourceElementZombieMutatedGene" count="3"/>
+			<ingredient name="drinkJarBoiledWater" count="1"/>
+		</recipe>
+		<!-- 異質劇毒抗性藥水 -->
+		<recipe name="drinkIvRemovePoisonPotion" count="10" craft_area="campfire" craft_time="30" craft_tool="toolCookingPot" craft_exp_gain="500">
+			<ingredient name="resourceCropCoffeeBeans" count="1"/>
+			<ingredient name="drugAntibiotics" count="1"/>
+			<ingredient name="foodRottingFlesh" count="3"/>
+			<ingredient name="resourceElementZombieMutatedGene" count="3"/>
+			<ingredient name="drinkJarBoiledWater" count="1"/>
+		</recipe>
+		<recipe name="drinkIvRemovePoisonPotion" count="10" craft_area="chemistryStation" craft_time="1" tags="chemStationCrafting" craft_exp_gain="15">
+			<ingredient name="resourceCropCoffeeBeans" count="1"/>
+			<ingredient name="drugAntibiotics" count="1"/>
+			<ingredient name="foodRottingFlesh" count="3"/>
+			<ingredient name="resourceElementZombieMutatedGene" count="3"/>
+			<ingredient name="drinkJarBoiledWater" count="1"/>
+		</recipe>
+		<!-- 異質冰凍抗性藥水 -->
+		<recipe name="drinkIvRemoveFrostPotion" count="10" craft_area="campfire" craft_time="30" craft_tool="toolCookingPot" craft_exp_gain="500">
+			<ingredient name="resourceCropCottonPlant" count="1"/>
+			<ingredient name="drugAntibiotics" count="1"/>
+			<ingredient name="foodRottingFlesh" count="3"/>
+			<ingredient name="resourceElementZombieMutatedGene" count="3"/>
+			<ingredient name="drinkJarBoiledWater" count="1"/>
+		</recipe>
+		<recipe name="drinkIvRemoveFrostPotion" count="10" craft_area="chemistryStation" craft_time="1" tags="chemStationCrafting" craft_exp_gain="15">
+			<ingredient name="resourceCropCottonPlant" count="1"/>
+			<ingredient name="drugAntibiotics" count="1"/>
+			<ingredient name="foodRottingFlesh" count="3"/>
+			<ingredient name="resourceElementZombieMutatedGene" count="3"/>
+			<ingredient name="drinkJarBoiledWater" count="1"/>
+		</recipe>
+		<!-- 死亡宣告抗性藥水 -->
+		<recipe name="drinkIvRemoveDeathDeclarePotion" count="10" craft_area="campfire" craft_time="30" craft_tool="toolCookingPot" craft_exp_gain="500">
+			<ingredient name="resourceCropHopsFlower" count="1"/>
+			<ingredient name="drugAntibiotics" count="1"/>
+			<ingredient name="foodRottingFlesh" count="3"/>
+			<ingredient name="resourceElementZombieMutatedGene" count="3"/>
+			<ingredient name="drinkJarBoiledWater" count="1"/>
+		</recipe>
+		<recipe name="drinkIvRemoveDeathDeclarePotion" count="1" craft_area="chemistryStation" craft_time="1" tags="chemStationCrafting" craft_exp_gain="15">
+			<ingredient name="resourceCropHopsFlower" count="1"/>
+			<ingredient name="drugAntibiotics" count="1"/>
+			<ingredient name="foodRottingFlesh" count="3"/>
+			<ingredient name="resourceElementZombieMutatedGene" count="3"/>
+			<ingredient name="drinkJarBoiledWater" count="1"/>
+		</recipe>
+		<!-- 偵查殭屍藥水 -->
+		<recipe name="drinkIvDetectEnemiesPotion" count="1" craft_area="campfire" craft_time="1" craft_tool="toolCookingPot" craft_exp_gain="100">
+			<ingredient name="resourceElementZombieMutatedGene" count="1"/>
+			<ingredient name="foodRottingFlesh" count="1"/>
+			<ingredient name="resourceAnimalFat" count="1"/>
+			<ingredient name="resourceYuccaFibers" count="10"/>
+			<ingredient name="drinkJarBoiledWater" count="1"/>
+		</recipe>
+		<!-- 夜視藥水 -->
+		<recipe name="drinkIvNightVisionPotion" count="1" craft_area="campfire" craft_time="1" craft_tool="toolCookingPot" craft_exp_gain="100">
+			<ingredient name="resourceElementZombieMutatedGene" count="1"/>
+			<ingredient name="resourceCropChrysanthemumPlant" count="1"/>
+			<ingredient name="resourceCropGoldenrodPlant" count="1"/>
+			<ingredient name="drinkJarBoiledWater" count="1"/>
+		</recipe>
+	</append>
+
+	<!-- Snowballs can be crafted into murky water bottles; feel free to remove this section of code. -->
+    <append xpath="/recipes">
+		<!-- 額外增加雪球可做成髒水,可任意移除 -->
+		<recipe name="drinkJarRiverWater" count="1" craft_time="1">
+			<ingredient name="resourceSnowBall" count="1"/>
+			<ingredient name="resourceScrapPolymers" count="10"/>
+		</recipe>
+	</append>
+</config>

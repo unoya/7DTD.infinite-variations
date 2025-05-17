@@ -1,0 +1,272 @@
+<configs>
+	<!-- 殘破魂魄增加在戰利品背包中出現 -->
+	<append xpath="/lootcontainers/lootgroup[@name='groupZpackReg']">
+		<item name="resourceShatteredSoulEssence" count="1,5"/>
+	</append>
+	<append xpath="/lootcontainers/lootgroup[@name='groupZpackStrong']">
+		<item name="resourceShatteredSoulEssence" count="1,10"/>
+	</append>
+	<append xpath="/lootcontainers/lootgroup[@name='groupZpackBoss']">
+		<item name="resourceShatteredSoulEssence" count="1,15"/>
+	</append>
+	<!-- 一級元素傷害模組 -->
+	<append xpath="/lootcontainers/lootgroup[@name='modMeleeT1']">
+		<item name="modEleArmSpellsFire" loot_prob_template="veryLow"/>
+		<item name="modEleArmSpellsIce" loot_prob_template="veryLow"/>
+		<item name="modEleArmSpellsPoison" loot_prob_template="veryLow"/>
+		<item name="modEleArmSpellsElectricShock" loot_prob_template="veryLow"/>
+	</append>
+	<append xpath="/lootcontainers/lootgroup[@name='modMeleeT2']">
+		<item name="modEleArmSpellsFire" loot_prob_template="low"/>
+		<item name="modEleArmSpellsIce" loot_prob_template="low"/>
+		<item name="modEleArmSpellsPoison" loot_prob_template="low"/>
+		<item name="modEleArmSpellsElectricShock" loot_prob_template="low"/>
+	</append>
+	<append xpath="/lootcontainers/lootgroup[@name='modMeleeT3']">
+		<item name="modEleArmSpellsFire" loot_prob_template="med"/>
+		<item name="modEleArmSpellsIce" loot_prob_template="med"/>
+		<item name="modEleArmSpellsPoison" loot_prob_template="med"/>
+		<item name="modEleArmSpellsElectricShock" loot_prob_template="med"/>
+	</append>
+	<!-- 二級四元素升級模組的製作書 -->
+	<append xpath="/lootcontainers/lootgroup[@name='schematicsModsAndGeneralT1']">
+		<item name="modEleArmSpellsFireLv2Schematic"/>
+		<item name="modEleArmSpellsIceLv2Schematic"/>
+		<item name="modEleArmSpellsPoisonLv2Schematic"/>
+		<item name="modEleArmSpellsElectricShockLv2Schematic"/>
+	</append>
+	<!-- 三級四元素升級模組的製作書 -->
+	<append xpath="/lootcontainers/lootgroup[@name='schematicsModsAndGeneralT2']">
+		<item name="modEleArmSpellsFireLv3Schematic"/>
+		<item name="modEleArmSpellsIceLv3Schematic"/>
+		<item name="modEleArmSpellsPoisonLv3Schematic"/>
+		<item name="modEleArmSpellsElectricShockLv3Schematic"/>
+	</append>
+	<!-- 投擲類法術與弓與十字弓的製作書 -->
+	<append xpath="/lootcontainers/lootgroup[@name='groupQuestRewardSkillMagazinesAll01']">
+		<item name="thrownEleArmSpellsFlameBurstBombSchematic"/>
+		<item name="thrownEleArmSpellsFrostBombSchematic"/>
+		<item name="thrownEleArmSpellsElectricArcImpactBombSchematic"/>
+		<item name="thrownEleArmSpellsPoisonGasBombSchematic"/>
+		<item name="thrownEleArmSpellsPurifyBombSchematic"/>
+		<item name="thrownEleArmSpellsCursedKillBombSchematic"/>
+		<item name="thrownEleArmSpellsSkySwordBombSchematic"/>
+		<item name="thrownEleArmSpellsEnhanceAttackBombSchematic"/>
+		<item name="thrownEleArmSpellsEnhanceDefenseBombSchematic"/>
+		<item name="thrownEleArmSpellsPhantomDemonBladeBombSchematic"/>
+		<item name="ammoBowEleArmSpellsFlameBurstBombSchematic"/>
+		<item name="ammoBowEleArmSpellsFrostBombSchematic"/>
+		<item name="ammoBowEleArmSpellsElectricArcImpactBombSchematic"/>
+		<item name="ammoBowEleArmSpellsPoisonGasBombSchematic"/>
+		<item name="ammoCrossbowEleArmSpellsFlameBurstBombSchematic"/>
+		<item name="ammoCrossbowEleArmSpellsFrostBombSchematic"/>
+		<item name="ammoCrossbowEleArmSpellsElectricArcImpactBombSchematic"/>
+		<item name="ammoCrossbowEleArmSpellsPoisonGasBombSchematic"/>
+	</append>
+	<!-- 投擲類法術,出現在一般戰利品 -->
+	<append xpath="/lootcontainers/lootgroup[@name='groupWeaponsT1_Demolitionist']">
+		<item name="thrownEleArmSpellsFlameBurstBomb" count="1,3"/>
+		<item name="thrownEleArmSpellsFrostBomb" count="1,3"/>
+		<item name="thrownEleArmSpellsElectricArcImpactBomb" count="1,3"/>
+		<item name="thrownEleArmSpellsPoisonGasBomb" count="1,3"/>
+	</append>
+	<append xpath="/lootcontainers/lootgroup[@name='groupWeaponsT2_Demolitionist']">
+		<item name="thrownEleArmSpellsFlameBurstBomb" count="1,3"/>
+		<item name="thrownEleArmSpellsFrostBomb" count="1,3"/>
+		<item name="thrownEleArmSpellsElectricArcImpactBomb" count="1,3"/>
+		<item name="thrownEleArmSpellsPoisonGasBomb" count="1,3"/>
+		<item name="thrownEleArmSpellsPurifyBomb" count="1,3"/>
+		<item name="thrownEleArmSpellsCursedKillBomb" count="1,3"/>
+		<item name="thrownEleArmSpellsSkySwordBomb" count="1,3"/>
+		<item name="thrownEleArmSpellsEnhanceAttackBomb" count="1,3"/>
+		<item name="thrownEleArmSpellsEnhanceDefenseBomb" count="1,3"/>
+		<item name="thrownEleArmSpellsPhantomDemonBladeBomb" count="1,3"/>
+	</append>
+	<append xpath="/lootcontainers/lootgroup[@name='groupWeaponsT3_Demolitionist']">
+		<item name="thrownEleArmSpellsFlameBurstBomb" count="1,3"/>
+		<item name="thrownEleArmSpellsFrostBomb" count="1,3"/>
+		<item name="thrownEleArmSpellsElectricArcImpactBomb" count="1,3"/>
+		<item name="thrownEleArmSpellsPoisonGasBomb" count="1,3"/>
+		<item name="thrownEleArmSpellsPurifyBomb" count="1,3"/>
+		<item name="thrownEleArmSpellsCursedKillBomb" count="1,3"/>
+		<item name="thrownEleArmSpellsSkySwordBomb" count="1,3"/>
+		<item name="thrownEleArmSpellsEnhanceAttackBomb" count="1,3"/>
+		<item name="thrownEleArmSpellsEnhanceDefenseBomb" count="1,3"/>
+		<item name="thrownEleArmSpellsPhantomDemonBladeBomb" count="1,3"/>
+	</append>
+	<!-- 投擲類法術,只出在twitch互動 -->
+	<append xpath="/lootcontainers/lootgroup[@name='twitch_explosivesT1']">
+		<item name="thrownEleArmSpellsFlameBurstBomb" count="1,2"/>
+		<item name="thrownEleArmSpellsFrostBomb" count="1,2"/>
+		<item name="thrownEleArmSpellsElectricArcImpactBomb" count="1,2"/>
+		<item name="thrownEleArmSpellsPoisonGasBomb" count="1,2"/>
+	</append>
+	<append xpath="/lootcontainers/lootgroup[@name='twitch_explosivesT2']">
+		<item name="thrownEleArmSpellsFlameBurstBomb" count="2,3"/>
+		<item name="thrownEleArmSpellsFrostBomb" count="2,3"/>
+		<item name="thrownEleArmSpellsElectricArcImpactBomb" count="2,3"/>
+		<item name="thrownEleArmSpellsPoisonGasBomb" count="2,3"/>
+		<item name="thrownEleArmSpellsPurifyBomb" count="2,3"/>
+		<item name="thrownEleArmSpellsCursedKillBomb" count="2,3"/>
+		<item name="thrownEleArmSpellsSkySwordBomb" count="2,3"/>
+		<item name="thrownEleArmSpellsEnhanceAttackBomb" count="2,3"/>
+		<item name="thrownEleArmSpellsEnhanceDefenseBomb" count="2,3"/>
+		<item name="thrownEleArmSpellsPhantomDemonBladeBomb" count="2,3"/>
+	</append>
+	<append xpath="/lootcontainers/lootgroup[@name='twitch_explosivesT3']">
+		<item name="thrownEleArmSpellsFlameBurstBomb" count="3,5"/>
+		<item name="thrownEleArmSpellsFrostBomb" count="3,5"/>
+		<item name="thrownEleArmSpellsElectricArcImpactBomb" count="3,5"/>
+		<item name="thrownEleArmSpellsPoisonGasBomb" count="3,5"/>
+		<item name="thrownEleArmSpellsPurifyBomb" count="3,5"/>
+		<item name="thrownEleArmSpellsCursedKillBomb" count="3,5"/>
+		<item name="thrownEleArmSpellsSkySwordBomb" count="3,5"/>
+		<item name="thrownEleArmSpellsEnhanceAttackBomb" count="3,5"/>
+		<item name="thrownEleArmSpellsEnhanceDefenseBomb" count="3,5"/>
+		<item name="thrownEleArmSpellsPhantomDemonBladeBomb" count="3,5"/>
+	</append>
+	<!-- 弓與十字弓的投擲法術,只出現在任務獎勵 -->
+	<append xpath="/lootcontainers/lootgroup[@name='groupQuestAmmo']">
+		<item name="ammoBowEleArmSpellsFlameBurstBomb" count="10,30" loot_prob_template="QuestT2Prob"/>
+		<item name="ammoBowEleArmSpellsFrostBomb" count="10,30" loot_prob_template="QuestT2Prob"/>
+		<item name="ammoBowEleArmSpellsElectricArcImpactBomb" count="10,30" loot_prob_template="QuestT2Prob"/>
+		<item name="ammoBowEleArmSpellsPoisonGasBomb" count="10,30" loot_prob_template="QuestT2Prob"/>
+		<item name="ammoCrossbowEleArmSpellsFlameBurstBomb" count="10,30" loot_prob_template="QuestT2Prob"/>
+		<item name="ammoCrossbowEleArmSpellsFrostBomb" count="10,30" loot_prob_template="QuestT2Prob"/>
+		<item name="ammoCrossbowEleArmSpellsElectricArcImpactBomb" count="10,30" loot_prob_template="QuestT2Prob"/>
+		<item name="ammoCrossbowEleArmSpellsPoisonGasBomb" count="10,20" loot_prob_template="QuestT2Prob"/>
+	</append>
+	<!-- 弓與十字弓的投擲法術,只出現在twitch互動 -->
+	<append xpath="/lootcontainers/lootgroup[@name='twitch_specialarrows']">
+		<item name="ammoBowEleArmSpellsFlameBurstBomb" count="1,10"/>
+		<item name="ammoBowEleArmSpellsFrostBomb" count="1,10"/>
+		<item name="ammoBowEleArmSpellsElectricArcImpactBomb" count="1,10"/>
+		<item name="ammoBowEleArmSpellsPoisonGasBomb" count="1,10"/>
+		<item name="ammoCrossbowEleArmSpellsFlameBurstBomb" count="1,10"/>
+		<item name="ammoCrossbowEleArmSpellsFrostBomb" count="1,10"/>
+		<item name="ammoCrossbowEleArmSpellsElectricArcImpactBomb" count="1,10"/>
+		<item name="ammoCrossbowEleArmSpellsPoisonGasBomb" count="1,10"/>
+	</append>
+
+	<!-- 弓與十字弓的箭矢,出現在一般Looting -->
+	<append xpath="/lootcontainers/lootgroup[@name='groupArrowIronSmall']">
+		<item name="ammoBowArrowEleArmSpellsFire" count="1,2" loot_stage_count_mod="0.01"/>
+		<item name="ammoBowArrowEleArmSpellsIce" count="1,2" loot_stage_count_mod="0.01"/>
+		<item name="ammoBowArrowEleArmSpellsPoison" count="1,2" loot_stage_count_mod="0.01"/>
+		<item name="ammoBowArrowEleArmSpellsElectricShock" count="1,2" loot_stage_count_mod="0.01"/>
+	</append>
+	<append xpath="/lootcontainers/lootgroup[@name='groupArrowIronMedium']">
+		<item name="ammoBowArrowEleArmSpellsFire" count="2,4" loot_stage_count_mod="0.01"/>
+		<item name="ammoBowArrowEleArmSpellsIce" count="2,4" loot_stage_count_mod="0.01"/>
+		<item name="ammoBowArrowEleArmSpellsPoison" count="2,4" loot_stage_count_mod="0.01"/>
+		<item name="ammoBowArrowEleArmSpellsElectricShock" count="2,4" loot_stage_count_mod="0.01"/>
+	</append>
+	<append xpath="/lootcontainers/lootgroup[@name='groupArrowIronLarge']">
+		<item name="ammoBowArrowEleArmSpellsFire" count="4,8" loot_stage_count_mod="0.01"/>
+		<item name="ammoBowArrowEleArmSpellsIce" count="4,8" loot_stage_count_mod="0.01"/>
+		<item name="ammoBowArrowEleArmSpellsPoison" count="4,8" loot_stage_count_mod="0.01"/>
+		<item name="ammoBowArrowEleArmSpellsElectricShock" count="4,8" loot_stage_count_mod="0.01"/>
+	</append>
+	<append xpath="/lootcontainers/lootgroup[@name='groupCrossbowBoltIronSmall']">
+		<item name="ammoCrossbowArrowEleArmSpellsFire" count="1,2" loot_stage_count_mod="0.01"/>
+		<item name="ammoCrossbowArrowEleArmSpellsIce" count="1,2" loot_stage_count_mod="0.01"/>
+		<item name="ammoCrossbowArrowEleArmSpellsPoison" count="1,2" loot_stage_count_mod="0.01"/>
+		<item name="ammoCrossbowArrowEleArmSpellsElectricShock" count="1,2" loot_stage_count_mod="0.01"/>
+	</append>
+	<append xpath="/lootcontainers/lootgroup[@name='groupCrossbowBoltIronMedium']">
+		<item name="ammoCrossbowArrowEleArmSpellsFire" count="1,2" loot_stage_count_mod="0.01"/>
+		<item name="ammoCrossbowArrowEleArmSpellsIce" count="1,2" loot_stage_count_mod="0.01"/>
+		<item name="ammoCrossbowArrowEleArmSpellsPoison" count="1,2" loot_stage_count_mod="0.01"/>
+		<item name="ammoCrossbowArrowEleArmSpellsElectricShock" count="1,2" loot_stage_count_mod="0.01"/>
+	</append>
+	<append xpath="/lootcontainers/lootgroup[@name='groupCrossbowBoltIronLarge']">
+		<item name="ammoCrossbowArrowEleArmSpellsFire" count="1,2" loot_stage_count_mod="0.01"/>
+		<item name="ammoCrossbowArrowEleArmSpellsIce" count="1,2" loot_stage_count_mod="0.01"/>
+		<item name="ammoCrossbowArrowEleArmSpellsPoison" count="1,2" loot_stage_count_mod="0.01"/>
+		<item name="ammoCrossbowArrowEleArmSpellsElectricShock" count="1,2" loot_stage_count_mod="0.01"/>
+	</append>
+	<!-- 弓與十字弓的箭矢,只出現在twitch互動 -->
+	<append xpath="/lootcontainers/lootgroup[@name='twitch_bowarrow']">
+		<item name="ammoBowArrowEleArmSpellsFire" count="2,8"/>
+		<item name="ammoBowArrowEleArmSpellsIce" count="2,8"/>
+		<item name="ammoBowArrowEleArmSpellsPoison" count="2,8"/>
+		<item name="ammoBowArrowEleArmSpellsElectricShock" count="2,8"/>
+	</append>
+	<append xpath="/lootcontainers/lootgroup[@name='twitch_woodenbow']">
+		<item name="ammoBowArrowEleArmSpellsFire" count="2,8"/>
+		<item name="ammoBowArrowEleArmSpellsIce" count="2,8"/>
+		<item name="ammoBowArrowEleArmSpellsPoison" count="2,8"/>
+		<item name="ammoBowArrowEleArmSpellsElectricShock" count="2,8"/>
+	</append>
+	<append xpath="/lootcontainers/lootgroup[@name='twitch_compoundbow']">
+		<item name="ammoBowArrowEleArmSpellsFire" count="2,8"/>
+		<item name="ammoBowArrowEleArmSpellsIce" count="2,8"/>
+		<item name="ammoBowArrowEleArmSpellsPoison" count="2,8"/>
+		<item name="ammoBowArrowEleArmSpellsElectricShock" count="2,8"/>
+	</append>
+	<append xpath="/lootcontainers/lootgroup[@name='twitch_tier0ammo']">
+		<item name="ammoCrossbowArrowEleArmSpellsFire" count="1,2" prob="0.8"/>
+		<item name="ammoCrossbowArrowEleArmSpellsIce" count="1,2" prob="0.8"/>
+		<item name="ammoCrossbowArrowEleArmSpellsPoison" count="1,2" prob="0.8"/>
+		<item name="ammoCrossbowArrowEleArmSpellsElectricShock" count="1,2" prob="0.8"/>
+	</append>
+	<append xpath="/lootcontainers/lootgroup[@name='twitch_tier1ammo']">
+		<item name="ammoCrossbowArrowEleArmSpellsFire" count="2,4" prob="0.8"/>
+		<item name="ammoCrossbowArrowEleArmSpellsIce" count="2,4" prob="0.8"/>
+		<item name="ammoCrossbowArrowEleArmSpellsPoison" count="2,4" prob="0.8"/>
+		<item name="ammoCrossbowArrowEleArmSpellsElectricShock" count="2,4" prob="0.8"/>
+	</append>
+	<append xpath="/lootcontainers/lootgroup[@name='twitch_tier3ammo']">
+		<item name="ammoCrossbowArrowEleArmSpellsFire" count="2,4" prob="0.8"/>
+		<item name="ammoCrossbowArrowEleArmSpellsIce" count="2,4" prob="0.8"/>
+		<item name="ammoCrossbowArrowEleArmSpellsPoison" count="2,4" prob="0.8"/>
+		<item name="ammoCrossbowArrowEleArmSpellsElectricShock" count="2,4" prob="0.8"/>
+	</append>
+	<append xpath="/lootcontainers/lootgroup[@name='twitch_ironcrossbow']">
+		<item name="ammoCrossbowArrowEleArmSpellsFire" count="2,8"/>
+		<item name="ammoCrossbowArrowEleArmSpellsIce" count="2,8"/>
+		<item name="ammoCrossbowArrowEleArmSpellsPoison" count="2,8"/>
+		<item name="ammoCrossbowArrowEleArmSpellsElectricShock" count="2,8"/>
+	</append>
+	<append xpath="/lootcontainers/lootgroup[@name='twitch_compoundcrossbow']">
+		<item name="ammoCrossbowArrowEleArmSpellsFire" count="2,8"/>
+		<item name="ammoCrossbowArrowEleArmSpellsIce" count="2,8"/>
+		<item name="ammoCrossbowArrowEleArmSpellsPoison" count="2,8"/>
+		<item name="ammoCrossbowArrowEleArmSpellsElectricShock" count="2,8"/>
+	</append>
+	<!-- 幽晨戰錘與影刃,出現在一般戰利品 -->
+	<append xpath="/lootcontainers/lootgroup[@name='groupWeaponsT1_Melee']">
+		<item name="meleeEleArmClubMorningStar"/>
+		<item name="meleeEleArmKnifeShadowBlade"/>
+	</append>
+	<!-- 幽晨戰錘與影刃,只出現在任務獎勵 -->
+	<append xpath="/lootcontainers/lootgroup[@name='groupQuestWeaponsMeleeT1']">
+		<item name="meleeEleArmClubMorningStar"/>
+		<item name="meleeEleArmKnifeShadowBlade"/>
+	</append>
+	<!-- 幽晨戰錘與影刃,只出現在twitch互動 -->
+	<append xpath="/lootcontainers/lootgroup[@name='twitch_tier2melee']">
+		<item name="meleeEleArmClubMorningStar"/>
+		<item name="meleeEleArmKnifeShadowBlade"/>
+	</append>
+	<append xpath="/lootcontainers/lootgroup[@name='twitch_T1_Home_Run_Rewards']">
+		<item name="meleeEleArmClubMorningStar"/>
+		<item name="meleeEleArmKnifeShadowBlade"/>
+	</append>
+	<append xpath="/lootcontainers/lootgroup[@name='twitch_T2_Home_Run_Rewards']">
+		<item name="meleeEleArmClubMorningStar"/>
+		<item name="meleeEleArmKnifeShadowBlade"/>
+	</append>
+	<append xpath="/lootcontainers/lootgroup[@name='twitch_T3_Home_Run_Rewards']">
+		<item name="meleeEleArmClubMorningStar"/>
+		<item name="meleeEleArmKnifeShadowBlade"/>
+	</append>
+	<append xpath="/lootcontainers/lootgroup[@name='twitch_T4_Home_Run_Rewards']">
+		<item name="meleeEleArmClubMorningStar"/>
+		<item name="meleeEleArmKnifeShadowBlade"/>
+	</append>
+	<append xpath="/lootcontainers/lootgroup[@name='twitch_T5_Home_Run_Rewards']">
+		<item name="meleeEleArmClubMorningStar"/>
+		<item name="meleeEleArmKnifeShadowBlade"/>
+	</append>
+</configs>

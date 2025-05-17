@@ -1,0 +1,238 @@
+<configs>
+    <append xpath="/recipes">
+		<!-- 模組: 二級與三級火冰毒電 -->
+		<recipe name="modEleArmSpellsFireLv2" count="1" craft_time="30" tags="learnable">
+			<ingredient name="resourceShatteredSoulEssence" count="40"/>
+			<ingredient name="modEleArmSpellsFire" count="4"/>
+			<ingredient name="resourceForgedIron" count="20"/>
+			<ingredient name="resourceDuctTape" count="1"/>
+		</recipe>
+		<recipe name="modEleArmSpellsFireLv3" count="1" craft_time="30" tags="learnable">
+			<ingredient name="resourceShatteredSoulEssence" count="60"/>
+			<ingredient name="modEleArmSpellsFireLv2" count="4"/>
+			<ingredient name="resourceForgedIron" count="80"/>
+			<ingredient name="resourceDuctTape" count="1"/>
+		</recipe>
+		<recipe name="modEleArmSpellsIceLv2" count="1" craft_time="30" tags="learnable">
+			<ingredient name="resourceShatteredSoulEssence" count="40"/>
+			<ingredient name="modEleArmSpellsIce" count="4"/>
+			<ingredient name="resourceForgedIron" count="20"/>
+			<ingredient name="resourceDuctTape" count="1"/>
+		</recipe>
+		<recipe name="modEleArmSpellsIceLv3" count="1" craft_time="30" tags="learnable">
+			<ingredient name="resourceShatteredSoulEssence" count="60"/>
+			<ingredient name="modEleArmSpellsIceLv2" count="4"/>
+			<ingredient name="resourceForgedIron" count="80"/>
+			<ingredient name="resourceDuctTape" count="1"/>
+		</recipe>
+		<recipe name="modEleArmSpellsPoisonLv2" count="1" craft_time="30" tags="learnable">
+			<ingredient name="resourceShatteredSoulEssence" count="40"/>
+			<ingredient name="modEleArmSpellsPoison" count="4"/>
+			<ingredient name="resourceForgedIron" count="20"/>
+			<ingredient name="resourceDuctTape" count="1"/>
+		</recipe>
+		<recipe name="modEleArmSpellsPoisonLv3" count="1" craft_time="30" tags="learnable">
+			<ingredient name="resourceShatteredSoulEssence" count="60"/>
+			<ingredient name="modEleArmSpellsPoisonLv2" count="4"/>
+			<ingredient name="resourceForgedIron" count="80"/>
+			<ingredient name="resourceDuctTape" count="1"/>
+		</recipe>
+		<recipe name="modEleArmSpellsElectricShockLv2" count="1" craft_time="30" tags="learnable">
+			<ingredient name="resourceShatteredSoulEssence" count="40"/>
+			<ingredient name="modEleArmSpellsElectricShock" count="4"/>
+			<ingredient name="resourceForgedIron" count="20"/>
+			<ingredient name="resourceDuctTape" count="1"/>
+		</recipe>
+		<recipe name="modEleArmSpellsElectricShockLv3" count="1" craft_time="30" tags="learnable">
+			<ingredient name="resourceShatteredSoulEssence" count="60"/>
+			<ingredient name="modEleArmSpellsElectricShockLv2" count="4"/>
+			<ingredient name="resourceForgedIron" count="80"/>
+			<ingredient name="resourceDuctTape" count="1"/>
+		</recipe>
+		<!-- 法術: 投擲型 -->
+		<recipe name="thrownEleArmSpellsFlameBurstBomb" count="1" craft_time="3" craft_exp_gain="10" tags="learnable">
+			<ingredient name="resourceShatteredSoulEssence" count="1"/>
+			<ingredient name="resourceMechanicalParts" count="1"/>
+			<ingredient name="resourceGunPowder" count="10"/>
+			<ingredient name="resourceElectricParts" count="1"/>
+			<ingredient name="resourceSpring" count="1"/>
+		</recipe>
+		<recipe name="thrownEleArmSpellsFrostBomb" count="1" craft_time="3" craft_exp_gain="10" tags="learnable">
+			<ingredient name="resourceShatteredSoulEssence" count="1"/>
+			<ingredient name="resourceMechanicalParts" count="1"/>
+			<ingredient name="resourceGunPowder" count="10"/>
+			<ingredient name="resourceElectricParts" count="1"/>
+			<ingredient name="resourceSpring" count="1"/>
+		</recipe>
+		<recipe name="thrownEleArmSpellsElectricArcImpactBomb" count="1" craft_time="3" craft_exp_gain="10" tags="learnable">
+			<ingredient name="resourceShatteredSoulEssence" count="3"/>
+			<ingredient name="resourceMechanicalParts" count="1"/>
+			<ingredient name="resourceGunPowder" count="10"/>
+			<ingredient name="resourceElectricParts" count="1"/>
+			<ingredient name="resourceSpring" count="1"/>
+		</recipe>
+		<recipe name="thrownEleArmSpellsPoisonGasBomb" count="1" craft_time="3" craft_exp_gain="10" tags="learnable">
+			<ingredient name="resourceShatteredSoulEssence" count="2"/>
+			<ingredient name="resourceMechanicalParts" count="1"/>
+			<ingredient name="resourceGunPowder" count="10"/>
+			<ingredient name="resourceElectricParts" count="1"/>
+			<ingredient name="resourceSpring" count="1"/>
+		</recipe>
+		<recipe name="thrownEleArmSpellsPurifyBomb" count="1" craft_time="3" craft_exp_gain="10" tags="learnable">
+			<ingredient name="resourceShatteredSoulEssence" count="20"/>
+			<ingredient name="resourceMechanicalParts" count="1"/>
+			<ingredient name="resourceGunPowder" count="20"/>
+			<ingredient name="resourceElectricParts" count="1"/>
+			<ingredient name="resourceSpring" count="1"/>
+		</recipe>
+		<recipe name="thrownEleArmSpellsCursedKillBomb" count="1" craft_time="3" craft_exp_gain="10" tags="learnable">
+			<ingredient name="resourceShatteredSoulEssence" count="5"/>
+			<ingredient name="resourceMechanicalParts" count="1"/>
+			<ingredient name="resourceGunPowder" count="20"/>
+			<ingredient name="resourceElectricParts" count="1"/>
+			<ingredient name="resourceSpring" count="1"/>
+		</recipe>
+		<recipe name="thrownEleArmSpellsSkySwordBomb" count="1" craft_time="3" craft_exp_gain="10" tags="learnable">
+			<ingredient name="resourceShatteredSoulEssence" count="10"/>
+			<ingredient name="resourceMechanicalParts" count="1"/>
+			<ingredient name="resourceGunPowder" count="10"/>
+			<ingredient name="resourceElectricParts" count="1"/>
+			<ingredient name="resourceSpring" count="1"/>
+		</recipe>
+		<recipe name="thrownEleArmSpellsEnhanceAttackBomb" count="1" craft_time="3" craft_exp_gain="10" tags="learnable">
+			<ingredient name="resourceShatteredSoulEssence" count="10"/>
+			<ingredient name="resourceMechanicalParts" count="1"/>
+			<ingredient name="resourceGunPowder" count="20"/>
+			<ingredient name="resourceElectricParts" count="1"/>
+			<ingredient name="resourceSpring" count="1"/>
+		</recipe>
+		<recipe name="thrownEleArmSpellsEnhanceDefenseBomb" count="1" craft_time="3" craft_exp_gain="10" tags="learnable">
+			<ingredient name="resourceShatteredSoulEssence" count="10"/>
+			<ingredient name="resourceMechanicalParts" count="1"/>
+			<ingredient name="resourceGunPowder" count="20"/>
+			<ingredient name="resourceElectricParts" count="1"/>
+			<ingredient name="resourceSpring" count="1"/>
+		</recipe>
+		<recipe name="thrownEleArmSpellsPhantomDemonBladeBomb" count="1" craft_time="3" craft_exp_gain="10" tags="learnable">
+			<ingredient name="resourceShatteredSoulEssence" count="10"/>
+			<ingredient name="resourceMechanicalParts" count="1"/>
+			<ingredient name="resourceGunPowder" count="10"/>
+			<ingredient name="resourceElectricParts" count="1"/>
+			<ingredient name="resourceSpring" count="1"/>
+		</recipe>
+		<!-- 子彈: 弓專用 -->
+		<recipe name="ammoBowEleArmSpellsFlameBurstBomb" count="1" craft_time="1" craft_exp_gain="5" tags="learnable">
+			<ingredient name="resourceShatteredSoulEssence" count="1"/>
+			<ingredient name="thrownEleArmSpellsFlameBurstBomb" count="1"/>
+			<ingredient name="ammoArrowIron" count="1"/>
+			<ingredient name="resourceDuctTape" count="1"/>
+		</recipe>
+		<recipe name="ammoBowEleArmSpellsFrostBomb" count="1" craft_time="1" craft_exp_gain="5" tags="learnable">
+			<ingredient name="resourceShatteredSoulEssence" count="1"/>
+			<ingredient name="thrownEleArmSpellsFrostBomb" count="1"/>
+			<ingredient name="ammoArrowIron" count="1"/>
+			<ingredient name="resourceDuctTape" count="1"/>
+		</recipe>
+		<recipe name="ammoBowEleArmSpellsElectricArcImpactBomb" count="1" craft_time="1" craft_exp_gain="5" tags="learnable">
+			<ingredient name="resourceShatteredSoulEssence" count="1"/>
+			<ingredient name="thrownEleArmSpellsElectricArcImpactBomb" count="1"/>
+			<ingredient name="ammoArrowIron" count="1"/>
+			<ingredient name="resourceDuctTape" count="1"/>
+		</recipe>
+		<recipe name="ammoBowEleArmSpellsPoisonGasBomb" count="1" craft_time="1" craft_exp_gain="5" tags="learnable">
+			<ingredient name="resourceShatteredSoulEssence" count="1"/>
+			<ingredient name="thrownEleArmSpellsPoisonGasBomb" count="1"/>
+			<ingredient name="ammoArrowIron" count="1"/>
+			<ingredient name="resourceDuctTape" count="1"/>
+		</recipe>
+		<recipe name="ammoBowArrowEleArmSpellsFire" count="32" craft_time="1" craft_exp_gain="5">
+			<ingredient name="resourceShatteredSoulEssence" count="1"/>
+			<ingredient name="modEleArmSpellsFire" count="1"/>
+			<ingredient name="ammoArrowIron" count="1"/>
+		</recipe>
+		<recipe name="ammoBowArrowEleArmSpellsIce" count="32" craft_time="1" craft_exp_gain="5">
+			<ingredient name="resourceShatteredSoulEssence" count="1"/>
+			<ingredient name="modEleArmSpellsIce" count="1"/>
+			<ingredient name="ammoArrowIron" count="1"/>
+		</recipe>
+		<recipe name="ammoBowArrowEleArmSpellsPoison" count="32" craft_time="1" craft_exp_gain="5">
+			<ingredient name="resourceShatteredSoulEssence" count="1"/>
+			<ingredient name="modEleArmSpellsPoison" count="1"/>
+			<ingredient name="ammoArrowIron" count="1"/>
+		</recipe>
+		<recipe name="ammoBowArrowEleArmSpellsElectricShock" count="32" craft_time="1" craft_exp_gain="5">
+			<ingredient name="resourceShatteredSoulEssence" count="1"/>
+			<ingredient name="modEleArmSpellsElectricShock" count="1"/>
+			<ingredient name="ammoArrowIron" count="1"/>
+		</recipe>
+		<!-- 子彈: 十字弓專用 -->
+		<recipe name="ammoCrossbowEleArmSpellsFlameBurstBomb" count="1" craft_time="1" craft_exp_gain="5" tags="learnable">
+			<ingredient name="resourceShatteredSoulEssence" count="2"/>
+			<ingredient name="thrownEleArmSpellsFlameBurstBomb" count="1"/>
+			<ingredient name="ammoCrossbowBoltIron" count="1"/>
+			<ingredient name="resourceDuctTape" count="1"/>
+		</recipe>
+		<recipe name="ammoCrossbowEleArmSpellsFrostBomb" count="1" craft_time="1" craft_exp_gain="5" tags="learnable">
+			<ingredient name="resourceShatteredSoulEssence" count="2"/>
+			<ingredient name="thrownEleArmSpellsFrostBomb" count="1"/>
+			<ingredient name="ammoCrossbowBoltIron" count="1"/>
+			<ingredient name="resourceDuctTape" count="1"/>
+		</recipe>
+		<recipe name="ammoCrossbowEleArmSpellsElectricArcImpactBomb" count="1" craft_time="1" craft_exp_gain="5" tags="learnable">
+			<ingredient name="resourceShatteredSoulEssence" count="2"/>
+			<ingredient name="thrownEleArmSpellsElectricArcImpactBomb" count="1"/>
+			<ingredient name="ammoCrossbowBoltIron" count="1"/>
+			<ingredient name="resourceDuctTape" count="1"/>
+		</recipe>
+		<recipe name="ammoCrossbowEleArmSpellsPoisonGasBomb" count="1" craft_time="1" craft_exp_gain="5" tags="learnable">
+			<ingredient name="resourceShatteredSoulEssence" count="2"/>
+			<ingredient name="thrownEleArmSpellsPoisonGasBomb" count="1"/>
+			<ingredient name="ammoCrossbowBoltIron" count="1"/>
+			<ingredient name="resourceDuctTape" count="1"/>
+		</recipe>
+		<recipe name="ammoCrossbowArrowEleArmSpellsFire" count="32" craft_time="1" craft_exp_gain="5">
+			<ingredient name="resourceShatteredSoulEssence" count="1"/>
+			<ingredient name="modEleArmSpellsFire" count="1"/>
+			<ingredient name="ammoCrossbowBoltIron" count="1"/>
+		</recipe>
+		<recipe name="ammoCrossbowArrowEleArmSpellsIce" count="32" craft_time="1" craft_exp_gain="5">
+			<ingredient name="resourceShatteredSoulEssence" count="1"/>
+			<ingredient name="modEleArmSpellsIce" count="1"/>
+			<ingredient name="ammoCrossbowBoltIron" count="1"/>
+		</recipe>
+		<recipe name="ammoCrossbowArrowEleArmSpellsPoison" count="32" craft_time="1" craft_exp_gain="5">
+			<ingredient name="resourceShatteredSoulEssence" count="1"/>
+			<ingredient name="modEleArmSpellsPoison" count="1"/>
+			<ingredient name="ammoCrossbowBoltIron" count="1"/>
+		</recipe>
+		<recipe name="ammoCrossbowArrowEleArmSpellsElectricShock" count="32" craft_time="1" craft_exp_gain="5">
+			<ingredient name="resourceShatteredSoulEssence" count="1"/>
+			<ingredient name="modEleArmSpellsElectricShock" count="1"/>
+			<ingredient name="ammoCrossbowBoltIron" count="1"/>
+		</recipe>
+		<!-- 元素獵手弓 -->
+		<recipe name="gunBowElementalHunter" count="1" craft_time="30" craft_area="workbench" tags="perkArchery">
+			<ingredient name="resourceShatteredSoulEssence" count="64"/>
+			<ingredient name="modEleArmSpellsFire" count="1"/>
+			<ingredient name="modEleArmSpellsIce" count="1"/>
+			<ingredient name="modEleArmSpellsPoison" count="1"/>
+			<ingredient name="modEleArmSpellsElectricShock" count="1"/>
+			<effect_group>
+				<passive_effect name="CraftingTier" operation="base_add" level="1,2,3,4,5" value="5,5,5,5,5" tags="perkArchery"/>
+				<passive_effect name="CraftingIngredientCount" level="1,2,3,4,5,6" operation="perc_add" value="0,1,2,3,4,5" tags="resourceShatteredSoulEssence"/>
+			</effect_group>
+		</recipe>
+		<!-- 元素獵手十字弓 -->
+		<recipe name="gunCrossbowElementalHunter" count="1" craft_time="30" craft_area="workbench" tags="perkArchery">
+			<ingredient name="resourceShatteredSoulEssence" count="72"/>
+			<ingredient name="modEleArmSpellsFire" count="1"/>
+			<ingredient name="modEleArmSpellsIce" count="1"/>
+			<ingredient name="modEleArmSpellsPoison" count="1"/>
+			<ingredient name="modEleArmSpellsElectricShock" count="1"/>
+			<effect_group>
+				<passive_effect name="CraftingTier" operation="base_add" level="1,2,3,4,5" value="5,5,5,5,5" tags="perkArchery"/>
+				<passive_effect name="CraftingIngredientCount" level="1,2,3,4,5,6" operation="perc_add" value="0,1,2,3,4,5" tags="resourceShatteredSoulEssence"/>
+			</effect_group>
+		</recipe>
+	</append>
+</configs>

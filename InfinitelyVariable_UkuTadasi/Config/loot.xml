@@ -1,0 +1,11 @@
+<configs>
+	<append xpath="/lootcontainers/lootgroup[@name='groupZpackReg']">
+		<item name="ivResourceBrokenSoul" count="3,5"/>
+	</append>
+	<append xpath="/lootcontainers/lootgroup[@name='groupZpackStrong']">
+		<item name="ivResourceBrokenSoul" count="4,6"/>
+	</append>
+	<append xpath="/lootcontainers/lootgroup[@name='groupZpackBoss']">
+		<item name="ivResourceBrokenSoul" count="5,7"/>
+	</append>
+</configs>

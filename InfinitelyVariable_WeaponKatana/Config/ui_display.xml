@@ -1,9 +1,0 @@
-<configs>
-	<append xpath="/ui_display_info/item_display">
-		<item_display_info display_type="modDemonKatanaSpellScrollTyrantSwordOfDestruction" display_group="groupAttire">
-			<display_entry name="EntityDamage" title_key="statEntityDamageMelee" display_leading_plus="true"/>
-			<display_entry name="AttacksPerMinute" title_key="statAttacksPerMinute" display_leading_plus="true"/>
-			<display_entry name="DegradationMax" title_key="statDegradationMax" display_leading_plus="true"/>
-		</item_display_info>
-	</append>
-</configs>

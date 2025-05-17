@@ -1,9 +1,0 @@
-<config>
-	<append xpath="/recipes">
-		<recipe name="ivBirdNest" count="1" craft_time="1">
-			<ingredient name="resourceWood" count="4"/>
-			<ingredient name="resourceYuccaFibers" count="80"/>
-			<ingredient name="resourceClayLump" count="10"/>
-		</recipe>
-	</append>
-</config>

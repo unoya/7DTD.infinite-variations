@@ -1,0 +1,2077 @@
+<config>
+<!--
+Elemental Armaments
+元素武裝
+エレメンタル・アーマメンツ
+-->
+	<append xpath="/items">
+		<item name="schematicTemplate"><!-- 定義製作書範本 -->
+			<property name="DescriptionKey" value="schematicGeneralGroupDesc"/>
+			<property name="ItemTypeIcon" value="book"/>
+			<property name="AltItemTypeIcon" value="book_read"/>
+			<property name="CustomIcon" value="schematicMaster"/>
+			<property name="CreativeMode" value="None"/>
+			<property name="HoldType" value="31"/>
+			<property name="Meshfile" value="@:Other/Items/Misc/bookPrefab.prefab"/>
+			<property name="HandMeshfile" value="@:Other/Items/Misc/bookPrefab.prefab"/>
+			<property name="DropMeshfile" value="@:Other/Items/Misc/sack_droppedPrefab.prefab"/>
+			<property name="DropScale" value="0.5"/>
+			<property name="Material" value="Mpaper"/>
+			<property name="Weight" value="5"/>
+			<property name="Stacknumber" value="10"/>
+			<property name="EconomicValue" value="500"/>
+			<property name="Group" value="Books,SchematicsOnly,TCReading"/>
+			<property class="Action0">
+				<property name="Class" value="Eat"/>
+				<property name="Delay" value="1.0"/>
+				<property name="UseAnimation" value="false"/>
+				<property name="Sound_start" value="read_mod"/>
+				<property name="Sound_in_head" value="true"/>
+			</property>
+		</item>
+
+		<item name="resourceShatteredSoulEssence"><!-- 殘破魂魄 -->
+			<property name="HoldType" value="40"/>
+			<property name="Meshfile" value="#@modfolder:Resources/elearmspells?resourceShatteredSoulEssenceBall"/>
+			<property name="DropMeshfile" value="#@modfolder:Resources/elearmspells?resourceShatteredSoulEssenceBall"/>
+			<property name="DropScale" value="2"/>
+			<property name="Material" value="MresourceCement"/>
+			<property name="CustomIcon" value="resourceShatteredSoulEssence"/>
+			<property name="DescriptionKey" value="resourceShatteredSoulEssenceDesc"/>
+			<property name="Stacknumber" value="3000"/>
+			<property name="EconomicValue" value="0"/>
+			<property name="Group" value="Resources"/>
+			<property class="Action0">
+				<property name="Class" value="ThrowAway"/>
+				<property name="Delay" value="1"/>
+				<property name="Throw_strength_default" value="8"/>
+				<property name="Throw_strength_max" value="60"/>
+				<property name="Max_strain_time" value="1"/>
+				<property name="Sound_start" value="swoosh"/>
+			</property>
+			<property name="ThrowableDecoy" value="true"/>
+		</item>
+
+		<item name="meleeEleArmClubMorningStar"><!-- 幽晨戰錘 -->
+			<property name="Tags" value="blunt,club,melee,grunting,light,longShaft,perkFlurryOfStrength,weapon,meleeWeapon,attStrength,perkPummelPete,canHaveCosmetic,EleArmSpells,SpeciallyDesignedMorningstar"/>
+			<property name="CustomIcon" value="meleeEleArmClubMorningStar"/>
+			<property name="DescriptionKey" value="meleeEleArmClubMorningStarDesc"/>
+			<property name="DisplayType" value="melee"/>
+			<property name="Meshfile" value="#@modfolder:Resources/elearmspells?meleeMorningstar"/>
+			<property name="DropMeshfile" value="#@modfolder:Resources/elearmspells?meleeMorningstarDrop"/>
+			<property name="DropScale" value="1.5"/>
+			<property name="HoldType" value="2"/>
+			<property name="Material" value="MmeleeToolAllSteel"/>
+			<property name="RepairTools" value="resourceRepairKit"/>
+			<property name="SoundDestroy" value="wooddestroy1"/>
+			<property name="RepairExpMultiplier" value="10"/>
+			<property name="SellableToTrader" value="true"/>
+			<property name="EconomicValue" value="1000"/>
+			<property name="TraderStageTemplate" value="baseTier1"/>
+			<property name="ShowQuality" value="true"/>
+			<property name="SoundUnholster" value="weapon_unholster"/>
+			<property name="SoundHolster" value="weapon_holster"/>
+			<property name="Group" value="Ammo/Weapons,Basics,Melee Weapons"/>
+		
+			<property class="Action0">
+				<property name="Class" value="DynamicMelee"/>
+				<property name="Sound_start" value="club_swinglight"/>
+				<property name="Sphere" value=".1"/>
+				<property name="ToolCategory.harvestingTools" value=".5" param1="1"/>
+				<property name="UseGrazingHits" value="true"/>
+				<property name="GrazeStart" value=".25"/>
+				<property name="GrazeEnd" value=".32"/>
+				<property name="SwingDegrees" value="65"/>
+				<property name="SwingAngle" value="180"/>
+				<property class="HitSounds">
+					<property name="Override0" value="organic" param1="woodhitorganic"/>
+				</property>
+				<property class="GrazeSounds">
+					<property name="Override0" value="organic" param1="woodgrazeorganic"/>
+				</property>
+			</property>
+			<property class="Action1">
+				<property name="Class" value="DynamicMelee"/>
+				<property name="Sound_start" value="club_swingheavy"/>
+				<property name="Sphere" value=".2"/>
+				<property name="ToolCategory.harvestingTools" value=".5" param1="1"/>
+				<property name="UsePowerAttackAnimation" value="true"/>
+				<property name="UseGrazingHits" value="true"/>
+				<property name="IsHorizontalSwing" value="true"/>
+				<property name="GrazeStart" value=".25"/>
+				<property name="GrazeEnd" value=".32"/>
+				<property name="SwingDegrees" value="120"/>
+				<property name="SwingAngle" value="180"/>
+				<property class="HitSounds">
+					<property name="Override0" value="organic" param1="woodhitorganic"/>
+				</property>
+				<property class="GrazeSounds">
+					<property name="Override0" value="organic" param1="woodgrazeorganic"/>
+				</property>
+			</property>
+			<effect_group name="meleeEleArmClubMorningStar">
+				<passive_effect name="AttacksPerMinute" operation="base_set" value="55" tags="perkPummelPete,perkFlurryOfStrength"/>
+				<passive_effect name="StaminaLoss" operation="base_set" value="12.4" tags="primary"/>
+				<passive_effect name="DegradationMax" operation="base_set" value="600,1200" tier="1,6" tags="perkPummelPete"/>
+				<passive_effect name="DegradationPerUse" operation="base_set" value="1" tags="perkPummelPete"/>
+				<passive_effect name="MaxRange" operation="base_set" value="2.4" tags="perkPummelPete"/>
+				<passive_effect name="BlockRange" operation="base_set" value="3" tags="perkPummelPete"/>
+				<passive_effect name="ModSlots" operation="base_set" value="1,2,3,4,5,6" tier="1,2,3,4,5,6"/>
+				<passive_effect name="ModPowerBonus" operation="perc_add" value=".15" tags="EntityDamage,BlockDamage"/>
+				<passive_effect name="ModPowerBonus" operation="base_add" value="500" tags="EconomicValue"/>
+				<passive_effect name="EntityDamage" operation="base_set" value="35"/>
+				<passive_effect name="EntityDamage" operation="perc_add" value=".2,.6" tier="2,6" tags="perkPummelPete"/>
+				<passive_effect name="BlockDamage" operation="base_set" value="32"/>
+				<passive_effect name="BlockDamage" operation="perc_add" value=".2,.6" tier="2,6" tags="perkPummelPete"/>
+				<passive_effect name="DamageModifier" operation="perc_add" value="-.9" tags="earth"/>
+				<passive_effect name="DamageModifier" operation="perc_add" value="-.9" tags="stone"/>
+				<passive_effect name="DamageModifier" operation="perc_add" value="-.9" tags="metal"/>
+				<passive_effect name="HarvestCount" operation="base_add" value=".1" tags="allHarvest"/>
+				<passive_effect name="HarvestCount" operation="base_add" value=".1" tags="allToolsHarvest"/>
+				<passive_effect name="HarvestCount" operation="base_add" value=".1" tags="oreWoodHarvest"/>
+				<!-- When the target is in a purified state, trigger "Divine Judgment" damage. -->
+				<triggered_effect trigger="onSelfAttackedOther" action="AddBuff" target="other" target_tags="zombie,animal" buff="buffEleArmSpellsDivineJudgment">
+					<requirement name="EntityTagCompare" target="other" tags="zombie,animal"/>
+					<requirement name="HasBuff" target="other" buff="buffEleArmSpellsPurifyBomb"/>
+				</triggered_effect>
+				<!-- When using normal attacks, there is a high chance of knocking the target back. When using heavy attacks, there is an extremely high chance of knocking the target back. -->
+				<triggered_effect trigger="onSelfPrimaryActionRayHit" action="Ragdoll" target="otherAOE" range="1.1" duration="1.5" force="300" target_tags="zombie,animal">
+					<requirement name="RandomRoll" seed_type="Random" min_max="0,100" operation="LTE" value="50"/>
+				</triggered_effect>
+				<triggered_effect trigger="onSelfSecondaryActionRayHit" action="Ragdoll" target="otherAOE" range="1.1" duration="1.5" force="600" target_tags="zombie,animal">
+					<requirement name="RandomRoll" seed_type="Random" min_max="0,100" operation="LTE" value="90"/>
+				</triggered_effect>
+				<!-- When attacking a target, there is a chance to randomly restore stamina. -->
+				<triggered_effect trigger="onSelfAttackedOther" action="ModifyStats" stat="Stamina" operation="add" value="300">
+					<requirement name="EntityTagCompare" target="other" tags="zombie,animal"/>
+					<requirement name="IsAlive" target="other"/>
+					<requirement name="RandomRoll" seed_type="Random" min_max="0,100" operation="LTE" value="3"/>
+				</triggered_effect>
+			</effect_group>
+			<effect_group name="Power Attack">
+				<passive_effect name="EntityDamage" operation="perc_add" value="1.5" tags="secondary"/>
+				<passive_effect name="BlockDamage" operation="perc_add" value="1.5" tags="secondary"/>
+				<passive_effect name="StaminaLoss" operation="base_set" value="33.2" tags="secondary"/>
+			</effect_group>
+		</item>
+
+		<item name="meleeEleArmKnifeShadowBlade"><!-- 影刃 -->
+			<property name="Tags" value="machete,melee,grunting,light,longShaft,perkFlurryOfAgility,weapon,meleeWeapon,attAgility,perkDeepCuts,perkTheHuntsman,canHaveCosmetic,bladeSkill,corpseRemoval,EleArmSpells,SpeciallyDesignedKatana"/>
+			<property name="CustomIcon" value="meleeEleArmKnifeShadowBlade"/>
+			<property name="DescriptionKey" value="meleeEleArmKnifeShadowBladeDesc"/>
+			<property name="DisplayType" value="meleeKnife"/>
+			<property name="HoldType" value="65"/>
+			<property name="Meshfile" value="#@modfolder:Resources/elearmspells?meleeShadowBlade"/>
+			<property name="DropMeshfile" value="#@modfolder:Resources/elearmspells?meleeShadowBladeDrop"/>
+			<property name="DropScale" value="1.5"/>
+			<property name="Material" value="MmeleeWpnBladeParts"/>
+			<property name="RepairTools" value="resourceRepairKit"/>
+			<property name="DegradationBreaksAfter" value="false"/>
+			<property name="EconomicValue" value="1000"/>
+			<property name="TraderStageTemplate" value="baseTier1"/>
+			<property name="SoundJammed" value="ItemNeedsRepair"/>
+			<property name="SoundDestroy" value="wooddestroy1"/>
+			<property name="Group" value="Ammo/Weapons,Melee Weapons"/>
+			<property name="RepairExpMultiplier" value="10"/>
+			<property name="ShowQuality" value="true"/>
+			<property name="SoundUnholster" value="weapon_unholster"/>
+			<property name="SoundHolster" value="weapon_holster"/>
+		
+			<property class="Action0">
+				<property name="Class" value="DynamicMelee"/>
+				<property name="Damage_type" value="Slashing"/>
+				<property name="Sphere" value=".15"/>
+				<property name="Sound_start" value="machete_swinglight"/>
+				<property name="ToolCategory.Butcher" value="0" param1="4.7"/>
+				<property name="UseGrazingHits" value="true"/>
+				<property name="GrazeStart" value=".28"/>
+				<property name="GrazeEnd" value=".4"/>
+				<property name="SwingDegrees" value="80"/>
+				<property name="SwingAngle" value="180"/>
+				<property class="HitSounds">
+					<property name="Override0" value="organic" param1="metalslashorganic"/>
+				</property>
+				<property class="GrazeSounds">
+					<property name="Override0" value="organic" param1="metalgrazeorganic"/>
+				</property>
+			</property>
+			<property class="Action1">
+				<property name="Class" value="DynamicMelee"/>
+				<property name="Damage_type" value="Slashing"/>
+				<property name="Sphere" value=".15"/>
+				<property name="Sound_start" value="machete_swingheavy"/>
+				<property name="ToolCategory.Butcher" value="0" param1="4.7"/>
+				<property name="UsePowerAttackAnimation" value="true"/>
+				<property name="UseGrazingHits" value="true"/>
+				<property name="IsHorizontalSwing" value="true"/>
+				<property name="GrazeStart" value=".515"/>
+				<property name="GrazeEnd" value=".52"/>
+				<property name="SwingDegrees" value="110"/>
+				<property name="SwingAngle" value="90"/>
+				<property class="HitSounds">
+					<property name="Override0" value="organic" param1="metalslashorganic"/>
+				</property>
+				<property class="GrazeSounds">
+					<property name="Override0" value="organic" param1="metalgrazeorganic"/>
+				</property>
+			</property>
+			<effect_group name="meleeEleArmKnifeShadowBlade">
+				<passive_effect name="AttacksPerMinute" operation="base_set" value="87.5" tags="perkDeepCuts,perkFlurryOfAgility"/>
+				<passive_effect name="StaminaLoss" operation="base_set" value="13.3" tags="primary"/>
+				<passive_effect name="DegradationMax" operation="base_set" value="1500,2500" tier="1,6" tags="perkDeepCuts"/>
+				<passive_effect name="DegradationPerUse" operation="base_set" value="1" tags="perkDeepCuts"/>
+				<passive_effect name="MaxRange" operation="base_set" value="2.4" tags="perkDeepCuts"/>
+				<passive_effect name="BlockRange" operation="base_set" value="3" tags="perkDeepCuts"/>
+				<passive_effect name="ModSlots" operation="base_set" value="1,2,3,4,5,6" tier="1,2,3,4,5,6"/>
+				<passive_effect name="ModPowerBonus" operation="perc_add" value=".10" tags="EntityDamage,BlockDamage"/>
+				<passive_effect name="ModPowerBonus" operation="base_add" value="300" tags="EconomicValue"/>
+				<passive_effect name="EntityDamage" operation="base_set" value="22" tags="perkDeepCuts"/>
+				<passive_effect name="EntityDamage" operation="perc_add" value="-.04,.04" tags="perkDeepCuts"/>
+				<passive_effect name="EntityDamage" operation="perc_add" value=".1,.5" tier="1,6" tags="perkDeepCuts"/>
+				<passive_effect name="BlockDamage" operation="base_set" value="21" tags="perkDeepCuts"/>
+				<passive_effect name="BlockDamage" operation="perc_add" value="-.04,.04" tags="perkDeepCuts"/>
+				<passive_effect name="BlockDamage" operation="perc_add" value=".1,.5" tier="1,6" tags="perkDeepCuts"/>
+				<passive_effect name="DamageModifier" operation="perc_add" value="-.8" tags="earth"/>
+				<passive_effect name="DamageModifier" operation="perc_add" value="-.8" tags="stone"/>
+				<passive_effect name="DamageModifier" operation="perc_add" value="-.8" tags="metal"/>
+				<passive_effect name="HarvestCount" operation="base_set" value="1" tags="butcherHarvest"/>
+				<!-- Continuous bleeding. -->
+				<triggered_effect trigger="onSelfPrimaryActionRayHit" action="AddBuff" target="other" target_tags="zombie,animal" buff="buffEleArmSpellsStackBleeding"/>
+				<!-- When the target is under the effect of Phantom Phantomblade, trigger "Ghost Trace" damage. -->
+				<triggered_effect trigger="onSelfDamagedOther" action="AddBuff" target="other" target_tags="zombie,animal" buff="buffEleArmSpellsPhantomTraces">
+					<requirement name="EntityTagCompare" target="other" tags="zombie,animal"/>
+					<requirement name="HasBuff" target="other" buff="buffEleArmSpellsPhantomDemonBladeBomb"/>
+				</triggered_effect>
+				<!-- Increase dismemberment rate. -->
+				<passive_effect name="DismemberChance" operation="base_add" value=".1,.2,.3,.4,.5,.6" tier="1,2,3,4,5,6"/>
+			</effect_group>
+			<effect_group name="Night Attack">
+				<!-- At night, increase damage to entities and have a vampiric effect. -->
+				<requirement name="IsNight"/>
+				<passive_effect name="EntityDamage" operation="perc_add" value="1.5"/>
+				<passive_effect name="HealthSteal" operation="base_add" value=".03">
+					<requirement name="EntityTagCompare" target="other" tags="zombie,animal"/>
+					<requirement name="IsAlive" target="other"/>
+				</passive_effect>
+			</effect_group>
+			<effect_group name="Power Attack">
+				<passive_effect name="EntityDamage" operation="perc_add" value="1" tags="secondary"/>
+				<passive_effect name="BlockDamage" operation="perc_add" value="1" tags="secondary"/>
+				<passive_effect name="StaminaLoss" operation="base_set" value="21.8" tags="secondary"/>
+			</effect_group>
+			<effect_group name="sneak damage bonus">
+				<requirement name="CVarCompare" cvar="_crouching" operation="Equals" value="1"/>
+				<requirement name="CVarCompare" cvar="_notAlerted" operation="GT" value="0" target="other"/>
+					<passive_effect name="DamageBonus" operation="base_add" value="4"/>
+					<passive_effect name="EntityDamage" operation="perc_add" value="4" tags="perkDeepCuts"/>
+					<display_value name="dEntityDamageSneak" value="4"/>
+			</effect_group>
+		</item>
+
+		<item name="gunBowElementalHunter"><!-- 元素獵手弓 -->
+			<property name="Tags" value="weapon,ranged,bowDrawPenalty,archery,bow,attAgility,perkArchery,canHaveCosmetic,bowSkill"/>
+			<property name="CustomIcon" value="gunBowElementalHunter"/>
+			<property name="DescriptionKey" value="gunBowElementalHunterDesc"/>
+			<property name="DisplayType" value="rangedBow"/>
+			<property name="HoldType" value="53"/>
+			<property name="Meshfile" value="@:Other/Items/Weapons/Ranged/Bows/advancedBow/advancedCompoundBow/advancedCompoundBowPrefab.prefab"/>
+			<property name="Material" value="MBowCrossbowParts"/>
+			<property name="Weight" value="1"/>
+			<property name="RepairTools" value="resourceRepairKit"/>
+			<property name="EconomicValue" value="1000"/>
+			<property name="TraderStageTemplate" value="bowsTier1"/>
+			<property name="SellableToTrader" value="true"/>
+			<property name="DegradationBreaksAfter" value="false"/>
+			<property name="SoundJammed" value="ItemNeedsRepair"/>
+			<property name="SoundDestroy" value="wooddestroy1"/>
+			<property name="CrosshairOnAim" value="true"/>
+			<property name="CrosshairUpAfterShot" value="false"/>
+			<property name="RepairExpMultiplier" value="5.5"/>
+			<property name="ShowQuality" value="true"/>
+			<property name="Group" value="Ammo/Weapons,Ranged Weapons"/>
+			<property name="UsableUnderwater" value="true"/>
+			<property name="SoundUnholster" value="weapon_unholster"/>
+			<property name="SoundHolster" value="weapon_holster"/>
+			
+			<property class="Action0">
+				<property name="Class" value="Catapult"/>
+				<property name="Hitmask_override" value="Arrow"/>
+				<property name="Delay" value="1"/>
+				<!-- Exclusively employ custom ammunition types. -->
+				<property name="Magazine_items" value="ammoBowArrowEleArmSpellsFire
+				,ammoBowArrowEleArmSpellsIce
+				,ammoBowArrowEleArmSpellsPoison
+				,ammoBowArrowEleArmSpellsElectricShock
+				,ammoBowEleArmSpellsFlameBurstBomb
+				,ammoBowEleArmSpellsFrostBomb
+				,ammoBowEleArmSpellsElectricArcImpactBomb
+				,ammoBowEleArmSpellsPoisonGasBomb
+				"/>
+				<property name="Sound_start" value="bow3_fire"/>
+				<property name="Sound_repeat" value=""/>
+				<property name="Sound_end" value=""/>
+				<property name="Sound_empty" value="dryfire"/>
+				<property name="Sound_reload" value="bow_unquiver"/>
+				<property name="Sound_draw" value="bow3_draw"/>
+				<property name="Sound_cancel" value="bow_fire_cancel"/>
+				<property name="Particles_muzzle_fire" value="nozzleflashuzi"/>
+				<property name="Particles_muzzle_smoke" value="nozzlesmokeuzi"/>
+				<property name="AutoReload" value="true"/>
+				<property name="Max_strain_time" value=".3"/>
+				<property name="triggerEffectTriggerPullDualsense" value="PistolTrigger"/>
+				<property name="triggerEffectTriggerPullXbox" value="PistolTrigger"/>
+				<property name="triggerEffectShootDualsense" value="PistolShoot"/>
+				<property name="triggerEffectShootXbox" value="PistolShoot"/>
+			</property>
+			<property class="Action1">
+				<property name="Class" value="Zoom"/>
+				<property name="Zoom_max_out" value="40"/>
+				<property name="Zoom_max_in" value="40"/>
+				<property name="triggerEffectTriggerPullDualsense" value="PistolZoom"/>
+			</property>
+		
+			<effect_group name="gunBowElementalHunter">
+				<passive_effect name="ProjectileVelocity" operation="perc_add" value=".2" tags="perkArchery"/>
+				<passive_effect name="DamageFalloffRange" operation="base_set" value="34" tags="perkArchery"/>
+				<passive_effect name="DamageFalloffRange" operation="perc_add" value=".01,.08" tier="1,6" tags="perkArchery"/>
+				<passive_effect name="MaxRange" operation="base_set" value="100" tags="perkArchery"/>
+				<passive_effect name="MagazineSize" operation="base_set" value="1" tags="perkArchery"/>
+				<passive_effect name="EntityDamage" operation="base_add" value="29" tags="perkArchery"/>
+				<passive_effect name="EntityDamage" operation="perc_add" value="-.02,.02" tags="perkArchery"/>
+				<passive_effect name="EntityDamage" operation="perc_add" value=".07,.35" tier="1,6" tags="perkArchery"/>
+				<passive_effect name="BlockDamage" operation="perc_add" value=".01,.08" tags="perkArchery"/>
+				<passive_effect name="BlockDamage" operation="perc_add" value=".15,.75" tier="1,6" tags="perkArchery"/>
+				<passive_effect name="ProjectileVelocity" operation="perc_add" value=".01,.08" tags="perkArchery"/>
+				<passive_effect name="WeaponHandling" operation="base_set" value=".9" tags="perkArchery"/>
+				<passive_effect name="WeaponHandling" operation="perc_add" value=".01,.08" tags="perkArchery"/>
+			
+				<passive_effect name="SpreadDegreesVertical" operation="base_set" value="2.67" tags="perkArchery"/>
+				<passive_effect name="SpreadDegreesHorizontal" operation="base_set" value="2.67" tags="perkArchery"/>
+				<passive_effect name="SpreadMultiplierAiming" operation="base_set" value=".15" tags="perkArchery"/>
+				<passive_effect name="SpreadMultiplierCrouching" operation="base_set" value=".8" tags="perkArchery"/>
+				<passive_effect name="SpreadMultiplierWalking" operation="base_set" value="1.5" tags="perkArchery"/>
+				<passive_effect name="SpreadMultiplierRunning" operation="base_set" value="2.2" tags="perkArchery"/>
+			
+				<passive_effect name="ReloadSpeedMultiplier" operation="base_set" value="2" tags="perkArchery"/>
+				<passive_effect name="IncrementalSpreadMultiplier" operation="base_set" value="2" tags="perkArchery"/>
+			
+				<passive_effect name="RoundsPerMinute" operation="base_set" value="75" tags="perkArchery,bowDrawPenalty"/>
+				<passive_effect name="BurstRoundCount" operation="base_set" value="1" tags="perkArchery"/>
+			
+				<passive_effect name="KickDegreesVerticalMin" operation="base_set" value=".5" tags="perkArchery"/>
+				<passive_effect name="KickDegreesVerticalMax" operation="base_set" value=".5" tags="perkArchery"/>
+				<passive_effect name="KickDegreesHorizontalMin" operation="base_set" value="-.2" tags="perkArchery"/>
+				<passive_effect name="KickDegreesHorizontalMax" operation="base_set" value=".2" tags="perkArchery"/>
+			
+				<passive_effect name="DegradationMax" operation="base_set" value="600,1200" tier="1,6" tags="perkArchery"/>
+				<passive_effect name="DegradationPerUse" operation="base_set" value="1" tags="perkArchery"/>
+				<passive_effect name="ModSlots" operation="base_set" value="3,3,3,4,5,6" tier="1,2,3,4,5,6"/>
+				<passive_effect name="ModPowerBonus" operation="perc_add" value=".10" tags="EntityDamage,BlockDamage"/>
+				<passive_effect name="ModPowerBonus" operation="base_add" value="300" tags="EconomicValue"/>
+			</effect_group>
+			<effect_group name="sneak damage bonus">
+				<requirement name="CVarCompare" cvar="_crouching" operation="Equals" value="1"/>
+				<requirement name="CVarCompare" cvar="_notAlerted" operation="GT" value="0" target="other"/>
+					<passive_effect name="DamageBonus" operation="base_add" value="2"/>
+					<passive_effect name="EntityDamage" operation="perc_add" value="2" tags="perkArchery"/>
+					<display_value name="dEntityDamageSneak" value="2"/>
+			</effect_group>
+		</item>
+
+		<item name="gunCrossbowElementalHunter"><!-- 元素獵手十字弓 -->
+			<property name="Tags" value="weapon,ranged,holdBreathAiming,reloadPenalty,sideAttachments,smallTopAttachments,mediumTopAttachments,bottomAttachments,attAgility,perkArchery,crossbow,attachmentsIncluded,canHaveCosmetic,bowSkill"/>
+			<property name="CustomIcon" value="gunCrossbowElementalHunter"/>
+			<property name="DescriptionKey" value="gunCrossbowElementalHunterDesc"/>
+			<property name="DisplayType" value="rangedBow"/>
+			<property name="HoldType" value="69"/>
+			<property name="Meshfile" value="@:Other/Items/Weapons/Ranged/Bows/advancedBow/advancedCompoundCrossbow/advancedCompoundCrossbowPrefab.prefab"/>
+			<property name="Material" value="MBowCrossbowParts"/>
+			<property name="Weight" value="1"/>
+			<property name="RepairTools" value="resourceRepairKit"/>
+			<property name="EconomicValue" value="1000"/>
+			<property name="TraderStageTemplate" value="bowsTier1"/>
+			<property name="DegradationBreaksAfter" value="false"/>
+			<property name="SoundJammed" value="ItemNeedsRepair"/>
+			<property name="SoundDestroy" value="wooddestroy1"/>
+			<property name="CrosshairOnAim" value="true"/>
+			<property name="CrosshairUpAfterShot" value="true"/>
+			<property name="Sound_Sight_In" value="crossbow_sight_in"/>
+			<property name="Sound_Sight_Out" value="crossbow_sight_out"/>
+			<property name="Group" value="Ammo/Weapons,Ranged Weapons"/>
+			<property name="RepairExpMultiplier" value="5.5"/>
+			<property name="ShowQuality" value="true"/>
+			<property name="SoundUnholster" value="weapon_unholster"/>
+			<property name="SoundHolster" value="weapon_holster"/>
+			<property class="Action0">
+				<property name="Class" value="Launcher"/>
+				<property name="Hitmask_override" value="Arrow"/>
+				<property name="Delay" value="1"/>
+				<!-- Exclusively employ custom ammunition types. -->
+				<property name="Magazine_items" value="ammoCrossbowArrowEleArmSpellsFire
+				,ammoCrossbowArrowEleArmSpellsIce
+				,ammoCrossbowArrowEleArmSpellsPoison
+				,ammoCrossbowArrowEleArmSpellsElectricShock
+				,ammoCrossbowEleArmSpellsFlameBurstBomb
+				,ammoCrossbowEleArmSpellsFrostBomb
+				,ammoCrossbowEleArmSpellsElectricArcImpactBomb
+				,ammoCrossbowEleArmSpellsPoisonGasBomb
+				"/>
+				<property name="Sound_start" value="crossbow2_fire"/>
+				<property name="Sound_repeat" value=""/>
+				<property name="Sound_end" value=""/>
+				<property name="Sound_empty" value="dryfire"/>
+				<property name="Sound_reload" value="crossbow2_reload"/>
+				<property name="AutoReload" value="true"/>
+				<property name="triggerEffectTriggerPullDualsense" value="PistolTrigger"/>
+				<property name="triggerEffectTriggerPullXbox" value="PistolTrigger"/>
+				<property name="triggerEffectTriggerShootDualsense" value="PistolShoot"/>
+				<property name="triggerEffectTriggerShootXbox" value="PistolShoot"/>
+			</property>
+			<property class="Action1">
+				<property name="Class" value="Zoom"/>
+				<property name="Zoom_max_out" value="55"/>
+				<property name="Zoom_max_in" value="55"/>
+				<property name="zoomTriggerEffectTriggerPullDualsense" value="PistolZoom"/>
+				<property name="zoomTriggerEffectTriggerPullXbox" value="PistolZoom"/>
+			</property>
+			<effect_group name="gunCrossbowElementalHunter">
+				<passive_effect name="DamageFalloffRange" operation="base_set" value="40" tags="perkArchery"/>
+				<passive_effect name="DamageFalloffRange" operation="perc_add" value=".01,.08" tier="1,6" tags="perkArchery"/>
+				<passive_effect name="MaxRange" operation="base_set" value="100" tags="perkArchery"/>
+				<passive_effect name="MagazineSize" operation="base_set" value="1" tags="perkArchery"/>
+				<passive_effect name="EntityDamage" operation="base_add" value="25" tags="perkArchery"/>
+				<passive_effect name="EntityDamage" operation="perc_add" value="-.02,.02" tags="perkArchery"/>
+				<passive_effect name="EntityDamage" operation="perc_add" value=".08,.4" tier="1,6" tags="perkArchery"/>
+				<passive_effect name="BlockDamage" operation="perc_add" value=".01,.08" tags="perkArchery"/>
+				<passive_effect name="BlockDamage" operation="perc_add" value=".15,.75" tier="1,6" tags="perkArchery"/>
+				<passive_effect name="ProjectileVelocity" operation="perc_add" value=".01,.08" tags="perkArchery"/>
+				<passive_effect name="WeaponHandling" operation="base_set" value=".6" tags="perkArchery"/>
+				<passive_effect name="WeaponHandling" operation="perc_add" value=".01,.08" tags="perkArchery"/>
+		
+				<passive_effect name="SpreadDegreesVertical" operation="base_set" value="3.35" tags="perkArchery"/>
+				<passive_effect name="SpreadDegreesHorizontal" operation="base_set" value="3.35" tags="perkArchery"/>
+				<passive_effect name="SpreadMultiplierAiming" operation="base_set" value=".10" tags="perkArchery"/>
+				<passive_effect name="SpreadMultiplierCrouching" operation="base_set" value=".8" tags="perkArchery"/>
+				<passive_effect name="SpreadMultiplierWalking" operation="base_set" value="1.5" tags="perkArchery"/>
+				<passive_effect name="SpreadMultiplierRunning" operation="base_set" value="2.2" tags="perkArchery"/>
+
+				<passive_effect name="ReloadSpeedMultiplier" operation="base_set" value="1" tags="perkArchery"/>
+				<passive_effect name="IncrementalSpreadMultiplier" operation="base_set" value="2" tags="perkArchery"/>
+		
+				<passive_effect name="RoundsPerMinute" operation="base_set" value="75" tags="perkArchery"/>
+				<passive_effect name="BurstRoundCount" operation="base_set" value="1" tags="perkArchery"/>
+		
+				<passive_effect name="KickDegreesVerticalMin" operation="base_set" value="2" tags="perkArchery"/>
+				<passive_effect name="KickDegreesVerticalMax" operation="base_set" value="2" tags="perkArchery"/>
+				<passive_effect name="KickDegreesHorizontalMin" operation="base_set" value="-1" tags="perkArchery"/>
+				<passive_effect name="KickDegreesHorizontalMax" operation="base_set" value="1" tags="perkArchery"/>
+		
+				<passive_effect name="DegradationMax" operation="base_set" value="600,1200" tier="1,6" tags="perkArchery"/>
+				<passive_effect name="DegradationPerUse" operation="base_set" value="1" tags="perkArchery"/>
+				<passive_effect name="ModSlots" operation="base_set" value="3,3,3,4,5,6" tier="1,2,3,4,5,6"/>
+				<passive_effect name="ModPowerBonus" operation="perc_add" value=".10" tags="EntityDamage,BlockDamage"/>
+				<passive_effect name="ModPowerBonus" operation="base_add" value="300" tags="EconomicValue"/>
+			</effect_group>
+			<effect_group name="sneak damage bonus">
+				<requirement name="CVarCompare" cvar="_crouching" operation="Equals" value="1"/>
+				<requirement name="CVarCompare" cvar="_notAlerted" operation="GT" value="0" target="other"/>
+					<passive_effect name="DamageBonus" operation="base_add" value="2"/>
+					<passive_effect name="EntityDamage" operation="perc_add" value="2" tags="perkArchery"/>
+					<display_value name="dEntityDamageSneak" value="2"/>
+			</effect_group>
+		</item>
+
+		<item name="modEleArmSpellsFireLv2Schematic"><!-- 模組製作書: 燃燒Lv2 -->
+			<property name="Extends" value="schematicTemplate"/>
+			<property name="Meshfile" value="#@modfolder:Resources/elearmspells?BookModFire"/>
+			<property name="DropMeshfile" value="#@modfolder:Resources/elearmspells?BookModFire"/>
+			<property name="CreativeMode" value="Player"/>
+			<property name="CustomIcon" value="modEleArmSpellsFireSchematic"/>
+			<property name="DescriptionKey" value="modEleArmSpellsFireLv2SchematicDesc"/>
+			<property name="Unlocks" value="modEleArmSpellsFireLv2"/>
+			<effect_group tiered="false">
+				<triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="modEleArmSpellsFireLv2" operation="set" value="1"/>
+				<triggered_effect trigger="onSelfPrimaryActionEnd" action="GiveExp" exp="50"/>
+			</effect_group>
+		</item>
+		<item name="modEleArmSpellsFireLv3Schematic"><!-- 模組製作書: 燃燒Lv3 -->
+			<property name="Extends" value="schematicTemplate"/>
+			<property name="Meshfile" value="#@modfolder:Resources/elearmspells?BookModFire"/>
+			<property name="DropMeshfile" value="#@modfolder:Resources/elearmspells?BookModFire"/>
+			<property name="CreativeMode" value="Player"/>
+			<property name="CustomIcon" value="modEleArmSpellsFireSchematic"/>
+			<property name="DescriptionKey" value="modEleArmSpellsFireLv3SchematicDesc"/>
+			<property name="Unlocks" value="modEleArmSpellsFireLv3"/>
+			<effect_group tiered="false">
+				<triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="modEleArmSpellsFireLv3" operation="set" value="1"/>
+				<triggered_effect trigger="onSelfPrimaryActionEnd" action="GiveExp" exp="50"/>
+			</effect_group>
+		</item>
+		<item name="modEleArmSpellsIceLv2Schematic"><!-- 模組製作書: 冰凍Lv2 -->
+			<property name="Extends" value="schematicTemplate"/>
+			<property name="Meshfile" value="#@modfolder:Resources/elearmspells?BookModIce"/>
+			<property name="DropMeshfile" value="#@modfolder:Resources/elearmspells?BookModIce"/>
+			<property name="CreativeMode" value="Player"/>
+			<property name="CustomIcon" value="modEleArmSpellsIceSchematic"/>
+			<property name="DescriptionKey" value="modEleArmSpellsIceLv2SchematicDesc"/>
+			<property name="Unlocks" value="modEleArmSpellsIceLv2"/>
+			<effect_group tiered="false">
+				<triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="modEleArmSpellsIceLv2" operation="set" value="1"/>
+				<triggered_effect trigger="onSelfPrimaryActionEnd" action="GiveExp" exp="50"/>
+			</effect_group>
+		</item>
+		<item name="modEleArmSpellsIceLv3Schematic"><!-- 模組製作書: 冰凍Lv3 -->
+			<property name="Extends" value="schematicTemplate"/>
+			<property name="Meshfile" value="#@modfolder:Resources/elearmspells?BookModIce"/>
+			<property name="DropMeshfile" value="#@modfolder:Resources/elearmspells?BookModIce"/>
+			<property name="CreativeMode" value="Player"/>
+			<property name="CustomIcon" value="modEleArmSpellsIceSchematic"/>
+			<property name="DescriptionKey" value="modEleArmSpellsIceLv3SchematicDesc"/>
+			<property name="Unlocks" value="modEleArmSpellsIceLv3"/>
+			<effect_group tiered="false">
+				<triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="modEleArmSpellsIceLv3" operation="set" value="1"/>
+				<triggered_effect trigger="onSelfPrimaryActionEnd" action="GiveExp" exp="50"/>
+			</effect_group>
+		</item>
+		<item name="modEleArmSpellsPoisonLv2Schematic"><!-- 模組製作書: 中毒Lv2 -->
+			<property name="Extends" value="schematicTemplate"/>
+			<property name="Meshfile" value="#@modfolder:Resources/elearmspells?BookModPoison"/>
+			<property name="DropMeshfile" value="#@modfolder:Resources/elearmspells?BookModPoison"/>
+			<property name="CreativeMode" value="Player"/>
+			<property name="CustomIcon" value="modEleArmSpellsPoisonSchematic"/>
+			<property name="DescriptionKey" value="modEleArmSpellsPoisonLv2SchematicDesc"/>
+			<property name="Unlocks" value="modEleArmSpellsPoisonLv2"/>
+			<effect_group tiered="false">
+				<triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="modEleArmSpellsPoisonLv2" operation="set" value="1"/>
+				<triggered_effect trigger="onSelfPrimaryActionEnd" action="GiveExp" exp="50"/>
+			</effect_group>
+		</item>
+		<item name="modEleArmSpellsPoisonLv3Schematic"><!-- 模組製作書: 中毒Lv3 -->
+			<property name="Extends" value="schematicTemplate"/>
+			<property name="Meshfile" value="#@modfolder:Resources/elearmspells?BookModPoison"/>
+			<property name="DropMeshfile" value="#@modfolder:Resources/elearmspells?BookModPoison"/>
+			<property name="CreativeMode" value="Player"/>
+			<property name="CustomIcon" value="modEleArmSpellsPoisonSchematic"/>
+			<property name="DescriptionKey" value="modEleArmSpellsPoisonLv3SchematicDesc"/>
+			<property name="Unlocks" value="modEleArmSpellsPoisonLv3"/>
+			<effect_group tiered="false">
+				<triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="modEleArmSpellsPoisonLv3" operation="set" value="1"/>
+				<triggered_effect trigger="onSelfPrimaryActionEnd" action="GiveExp" exp="50"/>
+			</effect_group>
+		</item>
+		<item name="modEleArmSpellsElectricShockLv2Schematic"><!-- 模組製作書: 電擊Lv2 -->
+			<property name="Extends" value="schematicTemplate"/>
+			<property name="Meshfile" value="#@modfolder:Resources/elearmspells?BookModElectric"/>
+			<property name="DropMeshfile" value="#@modfolder:Resources/elearmspells?BookModElectric"/>
+			<property name="CreativeMode" value="Player"/>
+			<property name="CustomIcon" value="modEleArmSpellsElectricShockSchematic"/>
+			<property name="DescriptionKey" value="modEleArmSpellsElectricShockLv2SchematicDesc"/>
+			<property name="Unlocks" value="modEleArmSpellsElectricShockLv2"/>
+			<effect_group tiered="false">
+				<triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="modEleArmSpellsElectricShockLv2" operation="set" value="1"/>
+				<triggered_effect trigger="onSelfPrimaryActionEnd" action="GiveExp" exp="50"/>
+			</effect_group>
+		</item>
+		<item name="modEleArmSpellsElectricShockLv3Schematic"><!-- 模組製作書: 電擊Lv3 -->
+			<property name="Extends" value="schematicTemplate"/>
+			<property name="Meshfile" value="#@modfolder:Resources/elearmspells?BookModElectric"/>
+			<property name="DropMeshfile" value="#@modfolder:Resources/elearmspells?BookModElectric"/>
+			<property name="CreativeMode" value="Player"/>
+			<property name="CustomIcon" value="modEleArmSpellsElectricShockSchematic"/>
+			<property name="DescriptionKey" value="modEleArmSpellsElectricShockLv3SchematicDesc"/>
+			<property name="Unlocks" value="modEleArmSpellsElectricShockLv3"/>
+			<effect_group tiered="false">
+				<triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="modEleArmSpellsElectricShockLv3" operation="set" value="1"/>
+				<triggered_effect trigger="onSelfPrimaryActionEnd" action="GiveExp" exp="50"/>
+			</effect_group>
+		</item>
+
+		<item name="thrownEleArmSpellsFlameBurstBombSchematic"><!-- 法術製作書: 炎爆彈 -->
+			<property name="Extends" value="schematicTemplate"/>
+			<property name="Meshfile" value="#@modfolder:Resources/elearmspells?BookBombFlame"/>
+			<property name="DropMeshfile" value="#@modfolder:Resources/elearmspells?BookBombFlame"/>
+			<property name="CreativeMode" value="Player"/>
+			<property name="CustomIcon" value="thrownEleArmSpellsFlameBurstBombSchematic"/>
+			<property name="DescriptionKey" value="thrownEleArmSpellsFlameBurstBombSchematicDesc"/>
+			<property name="Unlocks" value="thrownEleArmSpellsFlameBurstBomb"/>
+			<effect_group tiered="false">
+				<triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="thrownEleArmSpellsFlameBurstBomb" operation="set" value="1"/>
+				<triggered_effect trigger="onSelfPrimaryActionEnd" action="GiveExp" exp="50"/>
+			</effect_group>
+		</item>
+		<item name="thrownEleArmSpellsFrostBombSchematic"><!-- 法術製作書: 冰霜彈 -->
+			<property name="Extends" value="schematicTemplate"/>
+			<property name="Meshfile" value="#@modfolder:Resources/elearmspells?BookBombFrost"/>
+			<property name="DropMeshfile" value="#@modfolder:Resources/elearmspells?BookBombFrost"/>
+			<property name="CreativeMode" value="Player"/>
+			<property name="CustomIcon" value="thrownEleArmSpellsFrostBombSchematic"/>
+			<property name="DescriptionKey" value="thrownEleArmSpellsFrostBombSchematicDesc"/>
+			<property name="Unlocks" value="thrownEleArmSpellsFrostBomb"/>
+			<effect_group tiered="false">
+				<triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="thrownEleArmSpellsFrostBomb" operation="set" value="1"/>
+				<triggered_effect trigger="onSelfPrimaryActionEnd" action="GiveExp" exp="50"/>
+			</effect_group>
+		</item>
+		<item name="thrownEleArmSpellsElectricArcImpactBombSchematic"><!-- 法術製作書: 電衝彈 -->
+			<property name="Extends" value="schematicTemplate"/>
+			<property name="Meshfile" value="#@modfolder:Resources/elearmspells?BookBombElectric"/>
+			<property name="DropMeshfile" value="#@modfolder:Resources/elearmspells?BookBombElectric"/>
+			<property name="CreativeMode" value="Player"/>
+			<property name="CustomIcon" value="thrownEleArmSpellsElectricArcImpactBombSchematic"/>
+			<property name="DescriptionKey" value="thrownEleArmSpellsElectricArcImpactBombSchematicDesc"/>
+			<property name="Unlocks" value="thrownEleArmSpellsElectricArcImpactBomb"/>
+			<effect_group tiered="false">
+				<triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="thrownEleArmSpellsElectricArcImpactBomb" operation="set" value="1"/>
+				<triggered_effect trigger="onSelfPrimaryActionEnd" action="GiveExp" exp="50"/>
+			</effect_group>
+		</item>
+		<item name="thrownEleArmSpellsPoisonGasBombSchematic"><!-- 法術製作書: 毒氣彈 -->
+			<property name="Extends" value="schematicTemplate"/>
+			<property name="Meshfile" value="#@modfolder:Resources/elearmspells?BookBombPoison"/>
+			<property name="DropMeshfile" value="#@modfolder:Resources/elearmspells?BookBombPoison"/>
+			<property name="CreativeMode" value="Player"/>
+			<property name="CustomIcon" value="thrownEleArmSpellsPoisonGasBombSchematic"/>
+			<property name="DescriptionKey" value="thrownEleArmSpellsPoisonGasBombSchematicDesc"/>
+			<property name="Unlocks" value="thrownEleArmSpellsPoisonGasBomb"/>
+			<effect_group tiered="false">
+				<triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="thrownEleArmSpellsPoisonGasBomb" operation="set" value="1"/>
+				<triggered_effect trigger="onSelfPrimaryActionEnd" action="GiveExp" exp="50"/>
+			</effect_group>
+		</item>
+		<item name="thrownEleArmSpellsPurifyBombSchematic"><!-- 法術製作書: 淨化彈 -->
+			<property name="Extends" value="schematicTemplate"/>
+			<property name="Meshfile" value="#@modfolder:Resources/elearmspells?BookBombPurify"/>
+			<property name="DropMeshfile" value="#@modfolder:Resources/elearmspells?BookBombPurify"/>
+			<property name="CreativeMode" value="Player"/>
+			<property name="CustomIcon" value="thrownEleArmSpellsPurifyBombSchematic"/>
+			<property name="DescriptionKey" value="thrownEleArmSpellsPurifyBombSchematicDesc"/>
+			<property name="Unlocks" value="thrownEleArmSpellsPurifyBomb"/>
+			<effect_group tiered="false">
+				<triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="thrownEleArmSpellsPurifyBomb" operation="set" value="1"/>
+				<triggered_effect trigger="onSelfPrimaryActionEnd" action="GiveExp" exp="50"/>
+			</effect_group>
+		</item>
+		<item name="thrownEleArmSpellsCursedKillBombSchematic"><!-- 法術製作書: 咒殺彈 -->
+			<property name="Extends" value="schematicTemplate"/>
+			<property name="Meshfile" value="#@modfolder:Resources/elearmspells?BookBombCurse"/>
+			<property name="DropMeshfile" value="#@modfolder:Resources/elearmspells?BookBombCurse"/>
+			<property name="CreativeMode" value="Player"/>
+			<property name="CustomIcon" value="thrownEleArmSpellsCursedKillBombSchematic"/>
+			<property name="DescriptionKey" value="thrownEleArmSpellsCursedKillBombSchematicDesc"/>
+			<property name="Unlocks" value="thrownEleArmSpellsCursedKillBomb"/>
+			<effect_group tiered="false">
+				<triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="thrownEleArmSpellsCursedKillBomb" operation="set" value="1"/>
+				<triggered_effect trigger="onSelfPrimaryActionEnd" action="GiveExp" exp="50"/>
+			</effect_group>
+		</item>
+		<item name="thrownEleArmSpellsSkySwordBombSchematic"><!-- 法術製作書: 天劍彈 -->
+			<property name="Extends" value="schematicTemplate"/>
+			<property name="Meshfile" value="#@modfolder:Resources/elearmspells?BookBombSkySword"/>
+			<property name="DropMeshfile" value="#@modfolder:Resources/elearmspells?BookBombSkySword"/>
+			<property name="CreativeMode" value="Player"/>
+			<property name="CustomIcon" value="thrownEleArmSpellsSkySwordBombSchematic"/>
+			<property name="DescriptionKey" value="thrownEleArmSpellsSkySwordBombSchematicDesc"/>
+			<property name="Unlocks" value="thrownEleArmSpellsSkySwordBomb"/>
+			<effect_group tiered="false">
+				<triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="thrownEleArmSpellsSkySwordBomb" operation="set" value="1"/>
+				<triggered_effect trigger="onSelfPrimaryActionEnd" action="GiveExp" exp="50"/>
+			</effect_group>
+		</item>
+		<item name="thrownEleArmSpellsEnhanceAttackBombSchematic"><!-- 法術製作書: 強攻彈 -->
+			<property name="Extends" value="schematicTemplate"/>
+			<property name="Meshfile" value="#@modfolder:Resources/elearmspells?BookBombEAttack"/>
+			<property name="DropMeshfile" value="#@modfolder:Resources/elearmspells?BookBombEAttack"/>
+			<property name="CreativeMode" value="Player"/>
+			<property name="CustomIcon" value="thrownEleArmSpellsEnhanceAttackBombSchematic"/>
+			<property name="DescriptionKey" value="thrownEleArmSpellsEnhanceAttackBombSchematicDesc"/>
+			<property name="Unlocks" value="thrownEleArmSpellsEnhanceAttackBomb"/>
+			<effect_group tiered="false">
+				<triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="thrownEleArmSpellsEnhanceAttackBomb" operation="set" value="1"/>
+				<triggered_effect trigger="onSelfPrimaryActionEnd" action="GiveExp" exp="50"/>
+			</effect_group>
+		</item>
+		<item name="thrownEleArmSpellsEnhanceDefenseBombSchematic"><!-- 法術製作書: 固防彈 -->
+			<property name="Extends" value="schematicTemplate"/>
+			<property name="Meshfile" value="#@modfolder:Resources/elearmspells?BookBombEDefense"/>
+			<property name="DropMeshfile" value="#@modfolder:Resources/elearmspells?BookBombEDefense"/>
+			<property name="CreativeMode" value="Player"/>
+			<property name="CustomIcon" value="thrownEleArmSpellsEnhanceDefenseBombSchematic"/>
+			<property name="DescriptionKey" value="thrownEleArmSpellsEnhanceDefenseBombSchematicDesc"/>
+			<property name="Unlocks" value="thrownEleArmSpellsEnhanceDefenseBomb"/>
+			<effect_group tiered="false">
+				<triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="thrownEleArmSpellsEnhanceDefenseBomb" operation="set" value="1"/>
+				<triggered_effect trigger="onSelfPrimaryActionEnd" action="GiveExp" exp="50"/>
+			</effect_group>
+		</item>
+		<item name="thrownEleArmSpellsPhantomDemonBladeBombSchematic"><!-- 法術製作書: 幻影魔刃彈 -->
+			<property name="Extends" value="schematicTemplate"/>
+			<property name="Meshfile" value="#@modfolder:Resources/elearmspells?BookBombPhantomDemonBlade"/>
+			<property name="DropMeshfile" value="#@modfolder:Resources/elearmspells?BookBombPhantomDemonBlade"/>
+			<property name="CreativeMode" value="Player"/>
+			<property name="CustomIcon" value="thrownEleArmSpellsPhantomDemonBladeBombSchematic"/>
+			<property name="DescriptionKey" value="thrownEleArmSpellsPhantomDemonBladeBombSchematicDesc"/>
+			<property name="Unlocks" value="thrownEleArmSpellsPhantomDemonBladeBomb"/>
+			<effect_group tiered="false">
+				<triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="thrownEleArmSpellsPhantomDemonBladeBomb" operation="set" value="1"/>
+				<triggered_effect trigger="onSelfPrimaryActionEnd" action="GiveExp" exp="50"/>
+			</effect_group>
+		</item>
+
+		<item name="ammoBowEleArmSpellsFlameBurstBombSchematic"><!-- 子彈製作書: 弓用炎爆彈 -->
+			<property name="Extends" value="schematicTemplate"/>
+			<property name="Meshfile" value="#@modfolder:Resources/elearmspells?BookBowFlame"/>
+			<property name="DropMeshfile" value="#@modfolder:Resources/elearmspells?BookBowFlame"/>
+			<property name="CreativeMode" value="Player"/>
+			<property name="CustomIcon" value="ammoBowEleArmSpellsFlameBurstBombSchematic"/>
+			<property name="DescriptionKey" value="ammoBowEleArmSpellsFlameBurstBombSchematicDesc"/>
+			<property name="Unlocks" value="ammoBowEleArmSpellsFlameBurstBomb"/>
+			<effect_group tiered="false">
+				<triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="ammoBowEleArmSpellsFlameBurstBomb" operation="set" value="1"/>
+				<triggered_effect trigger="onSelfPrimaryActionEnd" action="GiveExp" exp="50"/>
+			</effect_group>
+		</item>
+		<item name="ammoBowEleArmSpellsFrostBombSchematic"><!-- 子彈製作書: 弓用冰霜彈 -->
+			<property name="Extends" value="schematicTemplate"/>
+			<property name="Meshfile" value="#@modfolder:Resources/elearmspells?BookBowFrost"/>
+			<property name="DropMeshfile" value="#@modfolder:Resources/elearmspells?BookBowFrost"/>
+			<property name="CreativeMode" value="Player"/>
+			<property name="CustomIcon" value="ammoBowEleArmSpellsFrostBombSchematic"/>
+			<property name="DescriptionKey" value="ammoBowEleArmSpellsFrostBombSchematicDesc"/>
+			<property name="Unlocks" value="ammoBowEleArmSpellsFrostBomb"/>
+			<effect_group tiered="false">
+				<triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="ammoBowEleArmSpellsFrostBomb" operation="set" value="1"/>
+				<triggered_effect trigger="onSelfPrimaryActionEnd" action="GiveExp" exp="50"/>
+			</effect_group>
+		</item>
+		<item name="ammoBowEleArmSpellsElectricArcImpactBombSchematic"><!-- 子彈製作書: 弓用電衝彈 -->
+			<property name="Extends" value="schematicTemplate"/>
+			<property name="Meshfile" value="#@modfolder:Resources/elearmspells?BookBowElectric"/>
+			<property name="DropMeshfile" value="#@modfolder:Resources/elearmspells?BookBowElectric"/>
+			<property name="CreativeMode" value="Player"/>
+			<property name="CustomIcon" value="ammoBowEleArmSpellsElectricArcImpactBombSchematic"/>
+			<property name="DescriptionKey" value="ammoBowEleArmSpellsElectricArcImpactBombSchematicDesc"/>
+			<property name="Unlocks" value="ammoBowEleArmSpellsElectricArcImpactBomb"/>
+			<effect_group tiered="false">
+				<triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="ammoBowEleArmSpellsElectricArcImpactBomb" operation="set" value="1"/>
+				<triggered_effect trigger="onSelfPrimaryActionEnd" action="GiveExp" exp="50"/>
+			</effect_group>
+		</item>
+		<item name="ammoBowEleArmSpellsPoisonGasBombSchematic"><!-- 子彈製作書: 弓用毒氣彈 -->
+			<property name="Extends" value="schematicTemplate"/>
+			<property name="Meshfile" value="#@modfolder:Resources/elearmspells?BookBowPoison"/>
+			<property name="DropMeshfile" value="#@modfolder:Resources/elearmspells?BookBowPoison"/>
+			<property name="CreativeMode" value="Player"/>
+			<property name="CustomIcon" value="ammoBowEleArmSpellsPoisonGasBombSchematic"/>
+			<property name="DescriptionKey" value="ammoBowEleArmSpellsPoisonGasBombSchematicDesc"/>
+			<property name="Unlocks" value="ammoBowEleArmSpellsPoisonGasBomb"/>
+			<effect_group tiered="false">
+				<triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="ammoBowEleArmSpellsPoisonGasBomb" operation="set" value="1"/>
+				<triggered_effect trigger="onSelfPrimaryActionEnd" action="GiveExp" exp="50"/>
+			</effect_group>
+		</item>
+		<item name="ammoCrossbowEleArmSpellsFlameBurstBombSchematic"><!-- 子彈製作書: 十字弓用炎爆彈 -->
+			<property name="Extends" value="schematicTemplate"/>
+			<property name="Meshfile" value="#@modfolder:Resources/elearmspells?BookCrossBowFlame"/>
+			<property name="DropMeshfile" value="#@modfolder:Resources/elearmspells?BookCrossBowFlame"/>
+			<property name="CreativeMode" value="Player"/>
+			<property name="CustomIcon" value="ammoCrossbowEleArmSpellsFlameBurstBombSchematic"/>
+			<property name="DescriptionKey" value="ammoCrossbowEleArmSpellsFlameBurstBombSchematicDesc"/>
+			<property name="Unlocks" value="ammoCrossbowEleArmSpellsFlameBurstBomb"/>
+			<effect_group tiered="false">
+				<triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="ammoCrossbowEleArmSpellsFlameBurstBomb" operation="set" value="1"/>
+				<triggered_effect trigger="onSelfPrimaryActionEnd" action="GiveExp" exp="50"/>
+			</effect_group>
+		</item>
+		<item name="ammoCrossbowEleArmSpellsFrostBombSchematic"><!-- 子彈製作書: 十字弓用冰霜彈 -->
+			<property name="Extends" value="schematicTemplate"/>
+			<property name="Meshfile" value="#@modfolder:Resources/elearmspells?BookCrossBowFrost"/>
+			<property name="DropMeshfile" value="#@modfolder:Resources/elearmspells?BookCrossBowFrost"/>
+			<property name="CreativeMode" value="Player"/>
+			<property name="CustomIcon" value="ammoCrossbowEleArmSpellsFrostBombSchematic"/>
+			<property name="DescriptionKey" value="ammoCrossbowEleArmSpellsFrostBombSchematicDesc"/>
+			<property name="Unlocks" value="ammoCrossbowEleArmSpellsFrostBomb"/>
+			<effect_group tiered="false">
+				<triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="ammoCrossbowEleArmSpellsFrostBomb" operation="set" value="1"/>
+				<triggered_effect trigger="onSelfPrimaryActionEnd" action="GiveExp" exp="50"/>
+			</effect_group>
+		</item>
+		<item name="ammoCrossbowEleArmSpellsElectricArcImpactBombSchematic"><!-- 子彈製作書: 十字弓用電衝彈 -->
+			<property name="Extends" value="schematicTemplate"/>
+			<property name="Meshfile" value="#@modfolder:Resources/elearmspells?BookCrossBowElectric"/>
+			<property name="DropMeshfile" value="#@modfolder:Resources/elearmspells?BookCrossBowElectric"/>
+			<property name="CreativeMode" value="Player"/>
+			<property name="CustomIcon" value="ammoCrossbowEleArmSpellsElectricArcImpactBombSchematic"/>
+			<property name="DescriptionKey" value="ammoCrossbowEleArmSpellsElectricArcImpactBombSchematicDesc"/>
+			<property name="Unlocks" value="ammoCrossbowEleArmSpellsElectricArcImpactBomb"/>
+			<effect_group tiered="false">
+				<triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="ammoCrossbowEleArmSpellsElectricArcImpactBomb" operation="set" value="1"/>
+				<triggered_effect trigger="onSelfPrimaryActionEnd" action="GiveExp" exp="50"/>
+			</effect_group>
+		</item>
+		<item name="ammoCrossbowEleArmSpellsPoisonGasBombSchematic"><!-- 子彈製作書: 十字弓用毒氣彈 -->
+			<property name="Extends" value="schematicTemplate"/>
+			<property name="Meshfile" value="#@modfolder:Resources/elearmspells?BookCrossBowPoison"/>
+			<property name="DropMeshfile" value="#@modfolder:Resources/elearmspells?BookCrossBowPoison"/>
+			<property name="CreativeMode" value="Player"/>
+			<property name="CustomIcon" value="ammoCrossbowEleArmSpellsPoisonGasBombSchematic"/>
+			<property name="DescriptionKey" value="ammoCrossbowEleArmSpellsPoisonGasBombSchematicDesc"/>
+			<property name="Unlocks" value="ammoCrossbowEleArmSpellsPoisonGasBomb"/>
+			<effect_group tiered="false">
+				<triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="ammoCrossbowEleArmSpellsPoisonGasBomb" operation="set" value="1"/>
+				<triggered_effect trigger="onSelfPrimaryActionEnd" action="GiveExp" exp="50"/>
+			</effect_group>
+		</item>
+
+		<item name="thrownEleArmSpellsFlameBurstBomb"><!-- 法術: 炎爆彈 -->
+			<property name="Tags" value="ammo,weapon"/>
+			<property name="CustomIcon" value="thrownEleArmSpellsFlameBurstBomb"/>
+			<property name="DescriptionKey" value="thrownEleArmSpellsFlameBurstBombDesc"/>
+			<property name="ItemTypeIcon" value="explosion"/>
+			<property name="DisplayType" value="ammoGrenadeEleArmSpells"/>
+			<property name="Class" value="ItemClassTimeBomb"/>
+			<property name="HoldType" value="40"/>
+			<property name="Meshfile" value="#@modfolder:Resources/elearmspells?FlameBurstBombHold"/>
+			<property name="DropMeshfile" value="#@modfolder:Resources/elearmspells?FlameBurstBombHold"/>
+			<property name="DropScale" value="2.5"/>
+			<property name="Material" value="Mmetal"/>
+			<property name="Stacknumber" value="1000"/>
+			<property name="EconomicValue" value="100"/>
+			<property name="TraderStageTemplate" value="baseTier2"/>
+			<property name="Weight" value="0"/>
+			<property name="Explosion.ParticleIndex" value="#@modfolder(IV_ELEARM):Resources/elearmspells?FlameBurstBomb$fireball"/>
+			<property name="Explosion.Duration" value="15"/>
+			<property name="Explosion.CustomScriptTypes" value="ExplosionAreaBuffTick,CustomParticleLoaderBuffArea"/>
+			<property name="Explosion.TickInterval" value="0.5"/>
+			<property name="Explosion.Buff" value="buffEleArmSpellsFlameBurstBomb"/>
+			<property name="FusePrimeOnActivate" value="false"/>
+			<property name="ExplodeOnHit" value="true"/>
+			<property name="Group" value="Ammo/Weapons,Ammo"/>
+			<property name="SoundUnholster" value="weapon_unholster"/>
+			<property name="UnlockedBy" value="thrownEleArmSpellsFlameBurstBombSchematic"/>
+			<property class="Action0">
+				<property name="Class" value="ThrowAway"/>
+				<property name="Delay" value="1"/>
+				<property name="Throw_strength_default" value="30"/>
+				<property name="Throw_strength_max" value="60"/>
+				<property name="Max_strain_time" value="1.0"/>
+				<property name="Sound_start" value="swoosh"/>
+				<property name="Gravity" value="0"/>
+				<property name="FlyTime" value="10"/>
+				<property name="LifeTime" value="60"/>
+				<property name="triggerEffectTriggerPullDualsense" value="ShotgunTrigger"/>
+				<property name="triggerEffectTriggerPullXbox" value="ShotgunTrigger"/>
+				<property name="triggerEffectShootDualsense" value="ShotgunShoot"/>
+				<property name="triggerEffectShootXbox" value="PistolShoot"/>
+			</property>
+			<property name="ThrowableDecoy" value="true"/>
+			<effect_group tiered="false">
+				<passive_effect name="BlockDamage" operation="base_set" value="0"/>
+				<passive_effect name="EntityDamage" operation="base_set" value="0"/>
+				<display_value name="dExRadius" value="4"/>
+				<display_value name="dDuration" value="15"/>
+			</effect_group>
+		</item>
+		<item name="thrownEleArmSpellsFrostBomb"><!-- 法術: 冰霜彈 -->
+			<property name="Tags" value="ammo,weapon"/>
+			<property name="CustomIcon" value="thrownEleArmSpellsFrostBomb"/>
+			<property name="DescriptionKey" value="thrownEleArmSpellsFrostBombDesc"/>
+			<property name="ItemTypeIcon" value="explosion"/>
+			<property name="DisplayType" value="ammoGrenadeEleArmSpells"/>
+			<property name="Class" value="ItemClassTimeBomb"/>
+			<property name="HoldType" value="40"/>
+			<property name="Meshfile" value="#@modfolder:Resources/elearmspells?FrostBombHold"/>
+			<property name="DropMeshfile" value="#@modfolder:Resources/elearmspells?FrostBombHold"/>
+			<property name="DropScale" value="2.5"/>
+			<property name="Material" value="Mmetal"/>
+			<property name="Stacknumber" value="1000"/>
+			<property name="EconomicValue" value="100"/>
+			<property name="TraderStageTemplate" value="baseTier2"/>
+			<property name="Weight" value="0"/>
+			<property name="Explosion.ParticleIndex" value="#@modfolder(IV_ELEARM):Resources/elearmspells?FrostBomb$iceball"/>
+			<property name="Explosion.Duration" value="15"/>
+			<property name="Explosion.CustomScriptTypes" value="ExplosionAreaBuffTick,CustomParticleLoaderBuffArea"/>
+			<property name="Explosion.TickInterval" value="0.5"/>
+			<property name="Explosion.Buff" value="buffEleArmSpellsFrostBomb"/>
+			<property name="FusePrimeOnActivate" value="false"/>
+			<property name="ExplodeOnHit" value="true"/>
+			<property name="Group" value="Ammo/Weapons,Ammo"/>
+			<property name="SoundUnholster" value="weapon_unholster"/>
+			<property name="UnlockedBy" value="thrownEleArmSpellsFrostBombSchematic"/>
+			<property class="Action0">
+				<property name="Class" value="ThrowAway"/>
+				<property name="Delay" value="1"/>
+				<property name="Throw_strength_default" value="30"/>
+				<property name="Throw_strength_max" value="60"/>
+				<property name="Max_strain_time" value="1.0"/>
+				<property name="Sound_start" value="swoosh"/>
+				<property name="Gravity" value="0"/>
+				<property name="FlyTime" value="10"/>
+				<property name="LifeTime" value="60"/>
+				<property name="triggerEffectTriggerPullDualsense" value="ShotgunTrigger"/>
+				<property name="triggerEffectTriggerPullXbox" value="ShotgunTrigger"/>
+				<property name="triggerEffectShootDualsense" value="ShotgunShoot"/>
+				<property name="triggerEffectShootXbox" value="PistolShoot"/>
+			</property>
+			<property name="ThrowableDecoy" value="true"/>
+			<effect_group tiered="false">
+				<passive_effect name="BlockDamage" operation="base_set" value="0"/>
+				<passive_effect name="EntityDamage" operation="base_set" value="0"/>
+				<display_value name="dExRadius" value="4"/>
+				<display_value name="dDuration" value="15"/>
+			</effect_group>
+		</item>
+		<item name="thrownEleArmSpellsElectricArcImpactBomb"><!-- 法術: 電衝彈 -->
+			<property name="Tags" value="ammo,weapon"/>
+			<property name="CustomIcon" value="thrownEleArmSpellsElectricArcImpactBomb"/>
+			<property name="DescriptionKey" value="thrownEleArmSpellsElectricArcImpactBombDesc"/>
+			<property name="ItemTypeIcon" value="explosion"/>
+			<property name="DisplayType" value="ammoGrenadeEleArmSpells"/>
+			<property name="Class" value="ItemClassTimeBomb"/>
+			<property name="HoldType" value="40"/>
+			<property name="Meshfile" value="#@modfolder:Resources/elearmspells?ElectricArcImpactBombHold"/>
+			<property name="DropMeshfile" value="#@modfolder:Resources/elearmspells?ElectricArcImpactBombHold"/>
+			<property name="DropScale" value="2.5"/>
+			<property name="Material" value="Mmetal"/>
+			<property name="Stacknumber" value="1000"/>
+			<property name="EconomicValue" value="100"/>
+			<property name="TraderStageTemplate" value="baseTier2"/>
+			<property name="Weight" value="0"/>
+			<property name="Explosion.ParticleIndex" value="#@modfolder(IV_ELEARM):Resources/elearmspells?ElectricArcImpactBomb$electricalball"/>
+			<property name="Explosion.Duration" value="15"/>
+			<property name="Explosion.CustomScriptTypes" value="ExplosionAreaBuffTick,CustomParticleLoaderBuffArea"/>
+			<property name="Explosion.TickInterval" value="0.5"/>
+			<property name="Explosion.Buff" value="buffEleArmSpellsElectricArcImpactBomb"/>
+			<property name="FusePrimeOnActivate" value="false"/>
+			<property name="ExplodeOnHit" value="true"/>
+			<property name="Group" value="Ammo/Weapons,Ammo"/>
+			<property name="SoundUnholster" value="weapon_unholster"/>
+			<property name="UnlockedBy" value="thrownEleArmSpellsElectricArcImpactBombSchematic"/>
+			<property class="Action0">
+				<property name="Class" value="ThrowAway"/>
+				<property name="Delay" value="1"/>
+				<property name="Throw_strength_default" value="30"/>
+				<property name="Throw_strength_max" value="60"/>
+				<property name="Max_strain_time" value="1.0"/>
+				<property name="Sound_start" value="swoosh"/>
+				<property name="Gravity" value="0"/>
+				<property name="FlyTime" value="10"/>
+				<property name="LifeTime" value="60"/>
+				<property name="triggerEffectTriggerPullDualsense" value="ShotgunTrigger"/>
+				<property name="triggerEffectTriggerPullXbox" value="ShotgunTrigger"/>
+				<property name="triggerEffectShootDualsense" value="ShotgunShoot"/>
+				<property name="triggerEffectShootXbox" value="PistolShoot"/>
+			</property>
+			<property name="ThrowableDecoy" value="true"/>
+			<effect_group tiered="false">
+				<passive_effect name="BlockDamage" operation="base_set" value="0"/>
+				<passive_effect name="EntityDamage" operation="base_set" value="0"/>
+				<display_value name="dExRadius" value="4"/>
+				<display_value name="dDuration" value="15"/>
+			</effect_group>
+		</item>
+		<item name="thrownEleArmSpellsPoisonGasBomb"><!-- 法術: 毒氣彈 -->
+			<property name="Tags" value="ammo,weapon"/>
+			<property name="CustomIcon" value="thrownEleArmSpellsPoisonGasBomb"/>
+			<property name="DescriptionKey" value="thrownEleArmSpellsPoisonGasBombDesc"/>
+			<property name="ItemTypeIcon" value="explosion"/>
+			<property name="DisplayType" value="ammoGrenadeEleArmSpells"/>
+			<property name="Class" value="ItemClassTimeBomb"/>
+			<property name="HoldType" value="40"/>
+			<property name="Meshfile" value="#@modfolder:Resources/elearmspells?PoisonGasBombHold"/>
+			<property name="DropMeshfile" value="#@modfolder:Resources/elearmspells?PoisonGasBombHold"/>
+			<property name="DropScale" value="2.5"/>
+			<property name="Material" value="Mmetal"/>
+			<property name="Stacknumber" value="1000"/>
+			<property name="EconomicValue" value="100"/>
+			<property name="TraderStageTemplate" value="baseTier2"/>
+			<property name="Weight" value="0"/>
+			<property name="Explosion.ParticleIndex" value="#@modfolder(IV_ELEARM):Resources/elearmspells?PoisonGasBomb$gasball"/>
+			<property name="Explosion.Duration" value="15"/>
+			<property name="Explosion.CustomScriptTypes" value="ExplosionAreaBuffTick,CustomParticleLoaderBuffArea"/>
+			<property name="Explosion.TickInterval" value="0.5"/>
+			<property name="Explosion.Buff" value="buffEleArmSpellsPoisonGasBomb"/>
+			<property name="FusePrimeOnActivate" value="false"/>
+			<property name="ExplodeOnHit" value="true"/>
+			<property name="Group" value="Ammo/Weapons,Ammo"/>
+			<property name="SoundUnholster" value="weapon_unholster"/>
+			<property name="UnlockedBy" value="thrownEleArmSpellsPoisonGasBombSchematic"/>
+			<property class="Action0">
+				<property name="Class" value="ThrowAway"/>
+				<property name="Delay" value="1"/>
+				<property name="Throw_strength_default" value="30"/>
+				<property name="Throw_strength_max" value="60"/>
+				<property name="Max_strain_time" value="1.0"/>
+				<property name="Sound_start" value="swoosh"/>
+				<property name="Gravity" value="0"/>
+				<property name="FlyTime" value="10"/>
+				<property name="LifeTime" value="60"/>
+				<property name="triggerEffectTriggerPullDualsense" value="ShotgunTrigger"/>
+				<property name="triggerEffectTriggerPullXbox" value="ShotgunTrigger"/>
+				<property name="triggerEffectShootDualsense" value="ShotgunShoot"/>
+				<property name="triggerEffectShootXbox" value="PistolShoot"/>
+			</property>
+			<property name="ThrowableDecoy" value="true"/>
+			<effect_group tiered="false">
+				<passive_effect name="BlockDamage" operation="base_set" value="0"/>
+				<passive_effect name="EntityDamage" operation="base_set" value="0"/>
+				<display_value name="dExRadius" value="4"/>
+				<display_value name="dDuration" value="15"/>
+			</effect_group>
+		</item>
+		<item name="thrownEleArmSpellsPurifyBomb"><!-- 法術: 淨化彈 -->
+			<property name="Tags" value="ammo,weapon"/>
+			<property name="CustomIcon" value="thrownEleArmSpellsPurifyBomb"/>
+			<property name="DescriptionKey" value="thrownEleArmSpellsPurifyBombDesc"/>
+			<property name="ItemTypeIcon" value="explosion"/>
+			<property name="DisplayType" value="ammoGrenadeEleArmSpells"/>
+			<property name="Class" value="ItemClassTimeBomb"/>
+			<property name="HoldType" value="40"/>
+			<property name="Meshfile" value="#@modfolder:Resources/elearmspells?PurifyBombHold"/>
+			<property name="DropMeshfile" value="#@modfolder:Resources/elearmspells?PurifyBombHold"/>
+			<property name="DropScale" value="2.5"/>
+			<property name="Material" value="Mmetal"/>
+			<property name="Stacknumber" value="1000"/>
+			<property name="EconomicValue" value="100"/>
+			<property name="TraderStageTemplate" value="baseTier2"/>
+			<property name="Weight" value="0"/>
+			<property name="Explosion.ParticleIndex" value="#@modfolder(IV_ELEARM):Resources/elearmspells?PurifyBomb$purifyball"/>
+			<property name="Explosion.Duration" value="15"/>
+			<property name="Explosion.CustomScriptTypes" value="ExplosionAreaBuffTick,CustomParticleLoaderBuffArea"/>
+			<property name="Explosion.TickInterval" value="0.5"/>
+			<property name="Explosion.Buff" value="buffEleArmSpellsPurifyBomb"/>
+			<property name="FusePrimeOnActivate" value="false"/>
+			<property name="ExplodeOnHit" value="true"/>
+			<property name="Group" value="Ammo/Weapons,Ammo"/>
+			<property name="SoundUnholster" value="weapon_unholster"/>
+			<property name="UnlockedBy" value="thrownEleArmSpellsPurifyBombSchematic"/>
+			<property class="Action0">
+				<property name="Class" value="ThrowAway"/>
+				<property name="Delay" value="1"/>
+				<property name="Throw_strength_default" value="30"/>
+				<property name="Throw_strength_max" value="60"/>
+				<property name="Max_strain_time" value="1.0"/>
+				<property name="Sound_start" value="swoosh"/>
+				<property name="Gravity" value="0"/>
+				<property name="FlyTime" value="10"/>
+				<property name="LifeTime" value="60"/>
+				<property name="triggerEffectTriggerPullDualsense" value="ShotgunTrigger"/>
+				<property name="triggerEffectTriggerPullXbox" value="ShotgunTrigger"/>
+				<property name="triggerEffectShootDualsense" value="ShotgunShoot"/>
+				<property name="triggerEffectShootXbox" value="PistolShoot"/>
+			</property>
+			<property name="ThrowableDecoy" value="true"/>
+			<effect_group tiered="false">
+				<passive_effect name="BlockDamage" operation="base_set" value="0"/>
+				<passive_effect name="EntityDamage" operation="base_set" value="0"/>
+				<display_value name="dExRadius" value="4"/>
+				<display_value name="dDuration" value="15"/>
+			</effect_group>
+		</item>
+		<item name="thrownEleArmSpellsCursedKillBomb"><!-- 法術: 咒殺彈 -->
+			<property name="Tags" value="ammo,weapon"/>
+			<property name="CustomIcon" value="thrownEleArmSpellsCursedKillBomb"/>
+			<property name="DescriptionKey" value="thrownEleArmSpellsCursedKillBombDesc"/>
+			<property name="ItemTypeIcon" value="explosion"/>
+			<property name="DisplayType" value="ammoGrenadeEleArmSpells"/>
+			<property name="Class" value="ItemClassTimeBomb"/>
+			<property name="HoldType" value="40"/>
+			<property name="Meshfile" value="#@modfolder:Resources/elearmspells?CursedKillBombHold"/>
+			<property name="DropMeshfile" value="#@modfolder:Resources/elearmspells?CursedKillBombHold"/>
+			<property name="DropScale" value="2.5"/>
+			<property name="Material" value="Mmetal"/>
+			<property name="Stacknumber" value="1000"/>
+			<property name="EconomicValue" value="100"/>
+			<property name="TraderStageTemplate" value="baseTier2"/>
+			<property name="Weight" value="0"/>
+			<property name="Explosion.ParticleIndex" value="#@modfolder(IV_ELEARM):Resources/elearmspells?CursedKillBomb$cursedkillball"/>
+			<property name="Explosion.Duration" value="15"/>
+			<property name="Explosion.CustomScriptTypes" value="ExplosionAreaBuffTick,CustomParticleLoaderBuffArea"/>
+			<property name="Explosion.TickInterval" value="0.5"/>
+			<property name="Explosion.Buff" value="buffEleArmSpellsCursedKillBomb"/>
+			<property name="FusePrimeOnActivate" value="false"/>
+			<property name="ExplodeOnHit" value="true"/>
+			<property name="Group" value="Ammo/Weapons,Ammo"/>
+			<property name="SoundUnholster" value="weapon_unholster"/>
+			<property name="UnlockedBy" value="thrownEleArmSpellsCursedKillBombSchematic"/>
+			<property class="Action0">
+				<property name="Class" value="ThrowAway"/>
+				<property name="Delay" value="1"/>
+				<property name="Throw_strength_default" value="30"/>
+				<property name="Throw_strength_max" value="60"/>
+				<property name="Max_strain_time" value="1.0"/>
+				<property name="Sound_start" value="swoosh"/>
+				<property name="Gravity" value="0"/>
+				<property name="FlyTime" value="10"/>
+				<property name="LifeTime" value="60"/>
+				<property name="triggerEffectTriggerPullDualsense" value="ShotgunTrigger"/>
+				<property name="triggerEffectTriggerPullXbox" value="ShotgunTrigger"/>
+				<property name="triggerEffectShootDualsense" value="ShotgunShoot"/>
+				<property name="triggerEffectShootXbox" value="PistolShoot"/>
+			</property>
+			<property name="ThrowableDecoy" value="true"/>
+			<effect_group tiered="false">
+				<passive_effect name="BlockDamage" operation="base_set" value="0"/>
+				<passive_effect name="EntityDamage" operation="base_set" value="0"/>
+				<display_value name="dExRadius" value="4"/>
+				<display_value name="dDuration" value="15"/>
+			</effect_group>
+		</item>
+		<item name="thrownEleArmSpellsSkySwordBomb"><!-- 法術: 天劍彈 -->
+			<property name="Tags" value="ammo,weapon"/>
+			<property name="CustomIcon" value="thrownEleArmSpellsSkySwordBomb"/>
+			<property name="DescriptionKey" value="thrownEleArmSpellsSkySwordBombDesc"/>
+			<property name="ItemTypeIcon" value="explosion"/>
+			<property name="DisplayType" value="ammoGrenadeEleArmSpells"/>
+			<property name="Class" value="ItemClassTimeBomb"/>
+			<property name="HoldType" value="40"/>
+			<property name="Meshfile" value="#@modfolder:Resources/elearmspells?SkySwordBombHold"/>
+			<property name="DropMeshfile" value="#@modfolder:Resources/elearmspells?SkySwordBombHold"/>
+			<property name="DropScale" value="2.5"/>
+			<property name="Material" value="Mmetal"/>
+			<property name="Stacknumber" value="1000"/>
+			<property name="EconomicValue" value="100"/>
+			<property name="TraderStageTemplate" value="baseTier2"/>
+			<property name="Weight" value="0"/>
+			<property name="Explosion.ParticleIndex" value="#@modfolder(IV_ELEARM):Resources/elearmspells?SkySwordBomb$skyswordball"/>
+			<property name="Explosion.Duration" value="15"/>
+			<property name="Explosion.CustomScriptTypes" value="ExplosionAreaBuffTick,CustomParticleLoaderBuffArea"/>
+			<property name="Explosion.TickInterval" value="0.5"/>
+			<property name="Explosion.Buff" value="buffEleArmSpellsSkySwordBomb"/>
+			<property name="FusePrimeOnActivate" value="false"/>
+			<property name="ExplodeOnHit" value="true"/>
+			<property name="Group" value="Ammo/Weapons,Ammo"/>
+			<property name="SoundUnholster" value="weapon_unholster"/>
+			<property name="UnlockedBy" value="thrownEleArmSpellsSkySwordBombSchematic"/>
+			<property class="Action0">
+				<property name="Class" value="ThrowAway"/>
+				<property name="Delay" value="1"/>
+				<property name="Throw_strength_default" value="30"/>
+				<property name="Throw_strength_max" value="60"/>
+				<property name="Max_strain_time" value="1.0"/>
+				<property name="Sound_start" value="swoosh"/>
+				<property name="Gravity" value="0"/>
+				<property name="FlyTime" value="10"/>
+				<property name="LifeTime" value="60"/>
+				<property name="triggerEffectTriggerPullDualsense" value="ShotgunTrigger"/>
+				<property name="triggerEffectTriggerPullXbox" value="ShotgunTrigger"/>
+				<property name="triggerEffectShootDualsense" value="ShotgunShoot"/>
+				<property name="triggerEffectShootXbox" value="PistolShoot"/>
+			</property>
+			<property name="ThrowableDecoy" value="true"/>
+			<effect_group tiered="false">
+				<passive_effect name="BlockDamage" operation="base_set" value="0"/>
+				<passive_effect name="EntityDamage" operation="base_set" value="0"/>
+				<display_value name="dExRadius" value="4"/>
+				<display_value name="dDuration" value="15"/>
+			</effect_group>
+		</item>
+		<item name="thrownEleArmSpellsEnhanceAttackBomb"><!-- 法術: 強攻彈 -->
+			<property name="Tags" value="ammo,weapon"/>
+			<property name="CustomIcon" value="thrownEleArmSpellsEnhanceAttackBomb"/>
+			<property name="DescriptionKey" value="thrownEleArmSpellsEnhanceAttackBombDesc"/>
+			<property name="ItemTypeIcon" value="explosion"/>
+			<property name="DisplayType" value="ammoGrenadeEleArmSpells"/>
+			<property name="Class" value="ItemClassTimeBomb"/>
+			<property name="HoldType" value="40"/>
+			<property name="Meshfile" value="#@modfolder:Resources/elearmspells?EnhanceAttackBombHold"/>
+			<property name="DropMeshfile" value="#@modfolder:Resources/elearmspells?EnhanceAttackBombHold"/>
+			<property name="DropScale" value="2.5"/>
+			<property name="Material" value="Mmetal"/>
+			<property name="Stacknumber" value="1000"/>
+			<property name="EconomicValue" value="100"/>
+			<property name="TraderStageTemplate" value="baseTier2"/>
+			<property name="Weight" value="0"/>
+			<property name="Explosion.ParticleIndex" value="#@modfolder(IV_ELEARM):Resources/elearmspells?EnhanceAttackBomb$enhanceattackball"/>
+			<property name="Explosion.Duration" value="12"/>
+			<property name="Explosion.CustomScriptTypes" value="ExplosionAreaBuffTick,CustomParticleLoaderBuffArea"/>
+			<property name="Explosion.TickInterval" value="0.5"/>
+			<property name="Explosion.Buff" value="buffEleArmSpellsEnhanceAttackBomb"/>
+			<property name="FusePrimeOnActivate" value="false"/>
+			<property name="ExplodeOnHit" value="true"/>
+			<property name="Group" value="Ammo/Weapons,Ammo"/>
+			<property name="SoundUnholster" value="weapon_unholster"/>
+			<property name="UnlockedBy" value="thrownEleArmSpellsEnhanceAttackBombSchematic"/>
+			<property class="Action0">
+				<property name="Class" value="ThrowAway"/>
+				<property name="Delay" value="1"/>
+				<property name="Throw_strength_default" value="30"/>
+				<property name="Throw_strength_max" value="60"/>
+				<property name="Max_strain_time" value="1.0"/>
+				<property name="Sound_start" value="swoosh"/>
+				<property name="Gravity" value="0"/>
+				<property name="FlyTime" value="10"/>
+				<property name="LifeTime" value="60"/>
+				<property name="triggerEffectTriggerPullDualsense" value="ShotgunTrigger"/>
+				<property name="triggerEffectTriggerPullXbox" value="ShotgunTrigger"/>
+				<property name="triggerEffectShootDualsense" value="ShotgunShoot"/>
+				<property name="triggerEffectShootXbox" value="PistolShoot"/>
+			</property>
+			<property name="ThrowableDecoy" value="true"/>
+			<effect_group tiered="false">
+				<passive_effect name="BlockDamage" operation="base_set" value="0"/>
+				<passive_effect name="EntityDamage" operation="base_set" value="0"/>
+				<display_value name="dExRadius" value="4"/>
+				<display_value name="dDuration" value="12"/>
+			</effect_group>
+		</item>
+		<item name="thrownEleArmSpellsEnhanceDefenseBomb"><!-- 法術: 固防彈 -->
+			<property name="Tags" value="ammo,weapon"/>
+			<property name="CustomIcon" value="thrownEleArmSpellsEnhanceDefenseBomb"/>
+			<property name="DescriptionKey" value="thrownEleArmSpellsEnhanceDefenseBombDesc"/>
+			<property name="ItemTypeIcon" value="explosion"/>
+			<property name="DisplayType" value="ammoGrenadeEleArmSpells"/>
+			<property name="Class" value="ItemClassTimeBomb"/>
+			<property name="HoldType" value="40"/>
+			<property name="Meshfile" value="#@modfolder:Resources/elearmspells?EnhanceDefenseBombHold"/>
+			<property name="DropMeshfile" value="#@modfolder:Resources/elearmspells?EnhanceDefenseBombHold"/>
+			<property name="DropScale" value="2.5"/>
+			<property name="Material" value="Mmetal"/>
+			<property name="Stacknumber" value="1000"/>
+			<property name="EconomicValue" value="100"/>
+			<property name="TraderStageTemplate" value="baseTier2"/>
+			<property name="Weight" value="0"/>
+			<property name="Explosion.ParticleIndex" value="#@modfolder(IV_ELEARM):Resources/elearmspells?EnhanceDefenseBomb$enhancedefenseball"/>
+			<property name="Explosion.Duration" value="12"/>
+			<property name="Explosion.CustomScriptTypes" value="ExplosionAreaBuffTick,CustomParticleLoaderBuffArea"/>
+			<property name="Explosion.TickInterval" value="0.5"/>
+			<property name="Explosion.Buff" value="buffEleArmSpellsEnhanceDefenseBomb"/>
+			<property name="FusePrimeOnActivate" value="false"/>
+			<property name="ExplodeOnHit" value="true"/>
+			<property name="Group" value="Ammo/Weapons,Ammo"/>
+			<property name="SoundUnholster" value="weapon_unholster"/>
+			<property name="UnlockedBy" value="thrownEleArmSpellsEnhanceDefenseBombSchematic"/>
+			<property class="Action0">
+				<property name="Class" value="ThrowAway"/>
+				<property name="Delay" value="1"/>
+				<property name="Throw_strength_default" value="30"/>
+				<property name="Throw_strength_max" value="60"/>
+				<property name="Max_strain_time" value="1.0"/>
+				<property name="Sound_start" value="swoosh"/>
+				<property name="Gravity" value="0"/>
+				<property name="FlyTime" value="10"/>
+				<property name="LifeTime" value="60"/>
+				<property name="triggerEffectTriggerPullDualsense" value="ShotgunTrigger"/>
+				<property name="triggerEffectTriggerPullXbox" value="ShotgunTrigger"/>
+				<property name="triggerEffectShootDualsense" value="ShotgunShoot"/>
+				<property name="triggerEffectShootXbox" value="PistolShoot"/>
+			</property>
+			<property name="ThrowableDecoy" value="true"/>
+			<effect_group tiered="false">
+				<passive_effect name="BlockDamage" operation="base_set" value="0"/>
+				<passive_effect name="EntityDamage" operation="base_set" value="0"/>
+				<display_value name="dExRadius" value="4"/>
+				<display_value name="dDuration" value="12"/>
+			</effect_group>
+		</item>
+		<item name="thrownEleArmSpellsPhantomDemonBladeBomb"><!-- 法術: 幻影魔刃彈 -->
+			<property name="Tags" value="ammo,weapon"/>
+			<property name="CustomIcon" value="thrownEleArmSpellsPhantomDemonBladeBomb"/>
+			<property name="DescriptionKey" value="thrownEleArmSpellsPhantomDemonBladeBombDesc"/>
+			<property name="ItemTypeIcon" value="explosion"/>
+			<property name="DisplayType" value="ammoGrenadeEleArmSpells"/>
+			<property name="Class" value="ItemClassTimeBomb"/>
+			<property name="HoldType" value="40"/>
+			<property name="Meshfile" value="#@modfolder:Resources/elearmspells?PhantomDemonBladeBombHold"/>
+			<property name="DropMeshfile" value="#@modfolder:Resources/elearmspells?PhantomDemonBladeBombHold"/>
+			<property name="DropScale" value="2.5"/>
+			<property name="Material" value="Mmetal"/>
+			<property name="Stacknumber" value="1000"/>
+			<property name="EconomicValue" value="100"/>
+			<property name="TraderStageTemplate" value="baseTier2"/>
+			<property name="Weight" value="0"/>
+			<property name="Explosion.ParticleIndex" value="#@modfolder(IV_ELEARM):Resources/elearmspells?PhantomDemonBladeBomb$demonbladeball"/>
+			<property name="Explosion.Duration" value="15"/>
+			<property name="Explosion.CustomScriptTypes" value="ExplosionAreaBuffTick,CustomParticleLoaderBuffArea"/>
+			<property name="Explosion.TickInterval" value="0.5"/>
+			<property name="Explosion.Buff" value="buffEleArmSpellsPhantomDemonBladeBomb"/>
+			<property name="FusePrimeOnActivate" value="false"/>
+			<property name="ExplodeOnHit" value="true"/>
+			<property name="Group" value="Ammo/Weapons,Ammo"/>
+			<property name="SoundUnholster" value="weapon_unholster"/>
+			<property name="UnlockedBy" value="thrownEleArmSpellsPhantomDemonBladeBombSchematic"/>
+			<property class="Action0">
+				<property name="Class" value="ThrowAway"/>
+				<property name="Delay" value="1"/>
+				<property name="Throw_strength_default" value="30"/>
+				<property name="Throw_strength_max" value="60"/>
+				<property name="Max_strain_time" value="1.0"/>
+				<property name="Sound_start" value="swoosh"/>
+				<property name="Gravity" value="0"/>
+				<property name="FlyTime" value="10"/>
+				<property name="LifeTime" value="60"/>
+				<property name="triggerEffectTriggerPullDualsense" value="ShotgunTrigger"/>
+				<property name="triggerEffectTriggerPullXbox" value="ShotgunTrigger"/>
+				<property name="triggerEffectShootDualsense" value="ShotgunShoot"/>
+				<property name="triggerEffectShootXbox" value="PistolShoot"/>
+			</property>
+			<property name="ThrowableDecoy" value="true"/>
+			<effect_group tiered="false">
+				<passive_effect name="BlockDamage" operation="base_set" value="0"/>
+				<passive_effect name="EntityDamage" operation="base_set" value="0"/>
+				<display_value name="dExRadius" value="4"/>
+				<display_value name="dDuration" value="15"/>
+			</effect_group>
+		</item>
+
+		<item name="ammoBowEleArmSpellsFlameBurstBomb"><!-- 元素獵手弓專用: 炎爆彈 -->
+			<property name="Tags" value="ammo,ranged,attAgility,perkArchery"/>
+			<property name="DescriptionKey" value="ammoBowEleArmSpellsFlameBurstBombDesc"/>
+			<property name="CustomIcon" value="ammoBowEleArmSpellsFlameBurstBomb"/>
+			<property name="DisplayType" value="ammoArrowEleArmSpells"/>
+			<property name="Meshfile" value="#@modfolder:Resources/elearmspells?ArrowBowFlame"/>
+			<property name="HoldType" value="45"/>
+			<property name="HandMeshfile" value="@:Other/Items/Misc/sackPrefab.prefab"/>
+			<property name="DropMeshfile" value="#@modfolder:Resources/elearmspells?ArrowBowDefault"/>
+			<property name="DropScale" value="2"/>
+			<property name="Material" value="Mmetal"/>
+			<property name="IsSticky" value="false"/>
+			<property name="StickyOffset" value=".25"/>
+			<property name="StickyColliderUp" value="2"/>
+			<property name="StickyColliderRadius" value=".05"/>
+			<property name="StickyColliderLength" value="1"/>
+			<property name="Stacknumber" value="1000"/>
+			<property name="EconomicValue" value="200"/>
+			<property name="TraderStageTemplate" value="arrowsTier4"/>
+			<property name="UsableUnderwater" value="true"/>
+			<property name="Group" value="Ammo/Weapons,Ammo,Ranged Weapons"/>
+			<property name="UnlockedBy" value="ammoBowEleArmSpellsFlameBurstBombSchematic"/>
+
+			<property class="Action1">
+				<property name="Class" value="Projectile"/>
+				<property name="Gravity" value="-3"/>
+				<property name="FlyTime" value="5"/>
+				<property name="LifeTime" value="10"/>
+				<property name="Explosion.ParticleIndex" value="#@modfolder(IV_ELEARM):Resources/elearmspells?FlameBurstBomb$fireball"/>
+				<property name="Explosion.Duration" value="20"/>
+				<property name="Explosion.CustomScriptTypes" value="ExplosionAreaBuffTick,CustomParticleLoaderBuffArea"/>
+				<property name="Explosion.TickInterval" value="0.5"/>
+				<property name="Explosion.Buff" value="buffEleArmSpellsFlameBurstBomb"/>
+				<property name="ExplodeOnHit" value="true"/>
+				<property name="Explosion.EntityDamage" value="0"/>
+				<property name="Explosion.BlockDamage" value="0"/>
+				<property name="Explosion.RadiusBlocks" value="0"/>
+				<property name="Explosion.RadiusEntities" value="0"/>
+			</property>
+			<effect_group name="ammoBowEleArmSpellsFlameBurstBomb" tiered="false">
+				<passive_effect name="BlockDamage" operation="base_set" value="1"/>
+				<passive_effect name="EntityDamage" operation="base_set" value="40" tags="perkArchery"/>
+				<passive_effect name="ProjectileVelocity" operation="base_set" value="50" tags="perkArchery"/>
+				<display_value name="dExRadius" value="4"/>
+				<display_value name="dDuration" value="20"/>
+			</effect_group>
+		</item>
+		<item name="ammoBowEleArmSpellsFrostBomb"><!-- 元素獵手弓專用: 冰霜彈 -->
+			<property name="Tags" value="ammo,ranged,attAgility,perkArchery"/>
+			<property name="DescriptionKey" value="ammoBowEleArmSpellsFrostBombDesc"/>
+			<property name="CustomIcon" value="ammoBowEleArmSpellsFrostBomb"/>
+			<property name="DisplayType" value="ammoArrowEleArmSpells"/>
+			<property name="Meshfile" value="#@modfolder:Resources/elearmspells?ArrowBowFrost"/>
+			<property name="HoldType" value="45"/>
+			<property name="HandMeshfile" value="@:Other/Items/Misc/sackPrefab.prefab"/>
+			<property name="DropMeshfile" value="#@modfolder:Resources/elearmspells?ArrowBowDefault"/>
+			<property name="DropScale" value="2"/>
+			<property name="Material" value="Mmetal"/>
+			<property name="IsSticky" value="false"/>
+			<property name="StickyOffset" value=".25"/>
+			<property name="StickyColliderUp" value="2"/>
+			<property name="StickyColliderRadius" value=".05"/>
+			<property name="StickyColliderLength" value="1"/>
+			<property name="Stacknumber" value="1000"/>
+			<property name="EconomicValue" value="200"/>
+			<property name="TraderStageTemplate" value="arrowsTier4"/>
+			<property name="UsableUnderwater" value="true"/>
+			<property name="Group" value="Ammo/Weapons,Ammo,Ranged Weapons"/>
+			<property name="UnlockedBy" value="ammoBowEleArmSpellsFrostBombSchematic"/>
+
+			<property class="Action1">
+				<property name="Class" value="Projectile"/>
+				<property name="Gravity" value="-3"/>
+				<property name="FlyTime" value="5"/>
+				<property name="LifeTime" value="10"/>
+				<property name="Explosion.ParticleIndex" value="#@modfolder(IV_ELEARM):Resources/elearmspells?FrostBomb$iceball"/>
+				<property name="Explosion.Duration" value="20"/>
+				<property name="Explosion.CustomScriptTypes" value="ExplosionAreaBuffTick,CustomParticleLoaderBuffArea"/>
+				<property name="Explosion.TickInterval" value="0.5"/>
+				<property name="Explosion.Buff" value="buffEleArmSpellsFrostBomb"/>
+				<property name="ExplodeOnHit" value="true"/>
+				<property name="Explosion.EntityDamage" value="0"/>
+				<property name="Explosion.BlockDamage" value="0"/>
+				<property name="Explosion.RadiusBlocks" value="0"/>
+				<property name="Explosion.RadiusEntities" value="0"/>
+			</property>
+			<effect_group name="ammoBowEleArmSpellsFrostBomb" tiered="false">
+				<passive_effect name="BlockDamage" operation="base_set" value="1"/>
+				<passive_effect name="EntityDamage" operation="base_set" value="40" tags="perkArchery"/>
+				<passive_effect name="ProjectileVelocity" operation="base_set" value="50" tags="perkArchery"/>
+				<display_value name="dExRadius" value="4"/>
+				<display_value name="dDuration" value="20"/>
+			</effect_group>
+		</item>
+		<item name="ammoBowEleArmSpellsElectricArcImpactBomb"><!-- 元素獵手弓專用: 電衝彈 -->
+			<property name="Tags" value="ammo,ranged,attAgility,perkArchery"/>
+			<property name="DescriptionKey" value="ammoBowEleArmSpellsElectricArcImpactBombDesc"/>
+			<property name="CustomIcon" value="ammoBowElectricArcImpactBomb"/>
+			<property name="DisplayType" value="ammoArrowEleArmSpells"/>
+			<property name="Meshfile" value="#@modfolder:Resources/elearmspells?ArrowBowElectric"/>
+			<property name="HoldType" value="45"/>
+			<property name="HandMeshfile" value="@:Other/Items/Misc/sackPrefab.prefab"/>
+			<property name="DropMeshfile" value="#@modfolder:Resources/elearmspells?ArrowBowDefault"/>
+			<property name="DropScale" value="2"/>
+			<property name="Material" value="Mmetal"/>
+			<property name="IsSticky" value="false"/>
+			<property name="StickyOffset" value=".25"/>
+			<property name="StickyColliderUp" value="2"/>
+			<property name="StickyColliderRadius" value=".05"/>
+			<property name="StickyColliderLength" value="1"/>
+			<property name="Stacknumber" value="1000"/>
+			<property name="EconomicValue" value="200"/>
+			<property name="TraderStageTemplate" value="arrowsTier4"/>
+			<property name="UsableUnderwater" value="true"/>
+			<property name="Group" value="Ammo/Weapons,Ammo,Ranged Weapons"/>
+			<property name="UnlockedBy" value="ammoBowEleArmSpellsElectricArcImpactBombSchematic"/>
+
+			<property class="Action1">
+				<property name="Class" value="Projectile"/>
+				<property name="Gravity" value="-3"/>
+				<property name="FlyTime" value="5"/>
+				<property name="LifeTime" value="10"/>
+				<property name="Explosion.ParticleIndex" value="#@modfolder(IV_ELEARM):Resources/elearmspells?ElectricArcImpactBomb$electricalball"/>
+				<property name="Explosion.Duration" value="20"/>
+				<property name="Explosion.CustomScriptTypes" value="ExplosionAreaBuffTick,CustomParticleLoaderBuffArea"/>
+				<property name="Explosion.TickInterval" value="0.5"/>
+				<property name="Explosion.Buff" value="buffEleArmSpellsElectricArcImpactBomb"/>
+				<property name="ExplodeOnHit" value="true"/>
+				<property name="Explosion.EntityDamage" value="0"/>
+				<property name="Explosion.BlockDamage" value="0"/>
+				<property name="Explosion.RadiusBlocks" value="0"/>
+				<property name="Explosion.RadiusEntities" value="0"/>
+			</property>
+			<effect_group name="ammoBowEleArmSpellsElectricArcImpactBomb" tiered="false">
+				<passive_effect name="BlockDamage" operation="base_set" value="1"/>
+				<passive_effect name="EntityDamage" operation="base_set" value="40" tags="perkArchery"/>
+				<passive_effect name="ProjectileVelocity" operation="base_set" value="50" tags="perkArchery"/>
+				<display_value name="dExRadius" value="4"/>
+				<display_value name="dDuration" value="20"/>
+			</effect_group>
+		</item>
+		<item name="ammoBowEleArmSpellsPoisonGasBomb"><!-- 元素獵手弓專用: 毒氣彈 -->
+			<property name="Tags" value="ammo,ranged,attAgility,perkArchery"/>
+			<property name="DescriptionKey" value="ammoBowEleArmSpellsPoisonGasBombDesc"/>
+			<property name="CustomIcon" value="ammoBowEleArmSpellsPoisonGasBomb"/>
+			<property name="DisplayType" value="ammoArrowEleArmSpells"/>
+			<property name="Meshfile" value="#@modfolder:Resources/elearmspells?ArrowBowPoison"/>
+			<property name="HoldType" value="45"/>
+			<property name="HandMeshfile" value="@:Other/Items/Misc/sackPrefab.prefab"/>
+			<property name="DropMeshfile" value="#@modfolder:Resources/elearmspells?ArrowBowDefault"/>
+			<property name="DropScale" value="2"/>
+			<property name="Material" value="Mmetal"/>
+			<property name="IsSticky" value="false"/>
+			<property name="StickyOffset" value=".25"/>
+			<property name="StickyColliderUp" value="2"/>
+			<property name="StickyColliderRadius" value=".05"/>
+			<property name="StickyColliderLength" value="1"/>
+			<property name="Stacknumber" value="1000"/>
+			<property name="EconomicValue" value="200"/>
+			<property name="TraderStageTemplate" value="arrowsTier4"/>
+			<property name="UsableUnderwater" value="true"/>
+			<property name="Group" value="Ammo/Weapons,Ammo,Ranged Weapons"/>
+			<property name="UnlockedBy" value="ammoBowEleArmSpellsPoisonGasBombSchematic"/>
+
+			<property class="Action1">
+				<property name="Class" value="Projectile"/>
+				<property name="Gravity" value="-3"/>
+				<property name="FlyTime" value="5"/>
+				<property name="LifeTime" value="10"/>
+				<property name="Explosion.ParticleIndex" value="#@modfolder(IV_ELEARM):Resources/elearmspells?PoisonGasBomb$gasball"/>
+				<property name="Explosion.Duration" value="20"/>
+				<property name="Explosion.CustomScriptTypes" value="ExplosionAreaBuffTick,CustomParticleLoaderBuffArea"/>
+				<property name="Explosion.TickInterval" value="0.5"/>
+				<property name="Explosion.Buff" value="buffEleArmSpellsPoisonGasBomb"/>
+				<property name="ExplodeOnHit" value="true"/>
+				<property name="Explosion.EntityDamage" value="0"/>
+				<property name="Explosion.BlockDamage" value="0"/>
+				<property name="Explosion.RadiusBlocks" value="0"/>
+				<property name="Explosion.RadiusEntities" value="0"/>
+			</property>
+			<effect_group name="ammoBowEleArmSpellsPoisonGasBomb" tiered="false">
+				<passive_effect name="BlockDamage" operation="base_set" value="1"/>
+				<passive_effect name="EntityDamage" operation="base_set" value="40" tags="perkArchery"/>
+				<passive_effect name="ProjectileVelocity" operation="base_set" value="50" tags="perkArchery"/>
+				<display_value name="dExRadius" value="4"/>
+				<display_value name="dDuration" value="20"/>
+			</effect_group>
+		</item>
+
+		<item name="ammoCrossbowEleArmSpellsFlameBurstBomb"><!-- 元素獵手十字弓專用: 炎爆彈 -->
+			<property name="Tags" value="ammo,ranged,attAgility,perkArchery"/>
+			<property name="DescriptionKey" value="ammoCrossbowEleArmSpellsFlameBurstBombDesc"/>
+			<property name="CustomIcon" value="ammoCrossbowEleArmSpellsFlameBurstBomb"/>
+			<property name="DisplayType" value="ammoArrowEleArmSpells"/>
+			<property name="Meshfile" value="#@modfolder:Resources/elearmspells?ArrowCrossbowFlame"/>
+			<property name="HoldType" value="45"/>
+			<property name="HandMeshfile" value="@:Other/Items/Misc/sackPrefab.prefab"/>
+			<property name="DropMeshfile" value="#@modfolder:Resources/elearmspells?ArrowCrossbowDefault"/>
+			<property name="DropScale" value="2"/>
+			<property name="Material" value="Mmetal"/>
+			<property name="IsSticky" value="false"/>
+			<property name="StickyOffset" value=".13"/>
+			<property name="StickyColliderUp" value="2"/>
+			<property name="StickyColliderRadius" value=".05"/>
+			<property name="StickyColliderLength" value=".75"/>
+			<property name="Stacknumber" value="1000"/>
+			<property name="EconomicValue" value="200"/>
+			<property name="TraderStageTemplate" value="arrowsTier4"/>
+			<property name="UsableUnderwater" value="true"/>
+			<property name="Group" value="Ammo/Weapons,Ammo,Ranged Weapons"/>
+			<property name="UnlockedBy" value="ammoCrossbowEleArmSpellsFlameBurstBombSchematic"/>
+
+			<property class="Action1">
+				<property name="Class" value="Projectile"/>
+				<property name="Gravity" value="-3"/>
+				<property name="FlyTime" value="5"/>
+				<property name="LifeTime" value="10"/>
+				<property name="Explosion.ParticleIndex" value="#@modfolder(IV_ELEARM):Resources/elearmspells?FlameBurstBomb$fireball"/>
+				<property name="Explosion.Duration" value="25"/>
+				<property name="Explosion.CustomScriptTypes" value="ExplosionAreaBuffTick,CustomParticleLoaderBuffArea"/>
+				<property name="Explosion.TickInterval" value="0.5"/>
+				<property name="Explosion.Buff" value="buffEleArmSpellsFlameBurstBomb"/>
+				<property name="ExplodeOnHit" value="true"/>
+				<property name="Explosion.EntityDamage" value="0"/>
+				<property name="Explosion.BlockDamage" value="0"/>
+				<property name="Explosion.RadiusBlocks" value="0"/>
+				<property name="Explosion.RadiusEntities" value="0"/>
+			</property>
+			<effect_group name="ammoCrossbowEleArmSpellsFlameBurstBomb" tiered="false">
+				<passive_effect name="BlockDamage" operation="base_set" value="1"/>
+				<passive_effect name="EntityDamage" operation="base_set" value="72" tags="perkArchery"/>
+				<passive_effect name="ProjectileVelocity" operation="base_set" value="80" tags="perkArchery"/>
+				<display_value name="dExRadius" value="4"/>
+				<display_value name="dDuration" value="25"/>
+			</effect_group>
+		</item>
+		<item name="ammoCrossbowEleArmSpellsFrostBomb"><!-- 元素獵手十字弓專用: 冰霜彈 -->
+			<property name="Tags" value="ammo,ranged,attAgility,perkArchery"/>
+			<property name="DescriptionKey" value="ammoCrossbowEleArmSpellsFrostBombDesc"/>
+			<property name="CustomIcon" value="ammoCrossbowEleArmSpellsFrostBomb"/>
+			<property name="DisplayType" value="ammoArrowEleArmSpells"/>
+			<property name="Meshfile" value="#@modfolder:Resources/elearmspells?ArrowCrossbowFrost"/>
+			<property name="HoldType" value="45"/>
+			<property name="HandMeshfile" value="@:Other/Items/Misc/sackPrefab.prefab"/>
+			<property name="DropMeshfile" value="#@modfolder:Resources/elearmspells?ArrowCrossbowDefault"/>
+			<property name="DropScale" value="2"/>
+			<property name="Material" value="Mmetal"/>
+			<property name="IsSticky" value="false"/>
+			<property name="StickyOffset" value=".13"/>
+			<property name="StickyColliderUp" value="2"/>
+			<property name="StickyColliderRadius" value=".05"/>
+			<property name="StickyColliderLength" value=".75"/>
+			<property name="Stacknumber" value="1000"/>
+			<property name="EconomicValue" value="200"/>
+			<property name="TraderStageTemplate" value="arrowsTier4"/>
+			<property name="UsableUnderwater" value="true"/>
+			<property name="Group" value="Ammo/Weapons,Ammo,Ranged Weapons"/>
+			<property name="UnlockedBy" value="ammoCrossbowEleArmSpellsFrostBombSchematic"/>
+
+			<property class="Action1">
+				<property name="Class" value="Projectile"/>
+				<property name="Gravity" value="-3"/>
+				<property name="FlyTime" value="5"/>
+				<property name="LifeTime" value="10"/>
+				<property name="Explosion.ParticleIndex" value="#@modfolder(IV_ELEARM):Resources/elearmspells?FrostBomb$iceball"/>
+				<property name="Explosion.Duration" value="25"/>
+				<property name="Explosion.CustomScriptTypes" value="ExplosionAreaBuffTick,CustomParticleLoaderBuffArea"/>
+				<property name="Explosion.TickInterval" value="0.5"/>
+				<property name="Explosion.Buff" value="buffEleArmSpellsFrostBomb"/>
+				<property name="ExplodeOnHit" value="true"/>
+				<property name="Explosion.EntityDamage" value="0"/>
+				<property name="Explosion.BlockDamage" value="0"/>
+				<property name="Explosion.RadiusBlocks" value="0"/>
+				<property name="Explosion.RadiusEntities" value="0"/>
+			</property>
+			<effect_group name="ammoCrossbowEleArmSpellsFrostBomb" tiered="false">
+				<passive_effect name="BlockDamage" operation="base_set" value="1"/>
+				<passive_effect name="EntityDamage" operation="base_set" value="72" tags="perkArchery"/>
+				<passive_effect name="ProjectileVelocity" operation="base_set" value="80" tags="perkArchery"/>
+				<display_value name="dExRadius" value="4"/>
+				<display_value name="dDuration" value="25"/>
+			</effect_group>
+		</item>
+		<item name="ammoCrossbowEleArmSpellsElectricArcImpactBomb"><!-- 元素獵手十字弓專用: 電衝彈 -->
+			<property name="Tags" value="ammo,ranged,attAgility,perkArchery"/>
+			<property name="DescriptionKey" value="ammoCrossbowEleArmSpellsElectricArcImpactBombDesc"/>
+			<property name="CustomIcon" value="ammoCrossbowEleArmSpellsElectricArcImpactBomb"/>
+			<property name="DisplayType" value="ammoArrowEleArmSpells"/>
+			<property name="Meshfile" value="#@modfolder:Resources/elearmspells?ArrowCrossbowElectric"/>
+			<property name="HoldType" value="45"/>
+			<property name="HandMeshfile" value="@:Other/Items/Misc/sackPrefab.prefab"/>
+			<property name="DropMeshfile" value="#@modfolder:Resources/elearmspells?ArrowCrossbowDefault"/>
+			<property name="DropScale" value="2"/>
+			<property name="Material" value="Mmetal"/>
+			<property name="IsSticky" value="false"/>
+			<property name="StickyOffset" value=".13"/>
+			<property name="StickyColliderUp" value="2"/>
+			<property name="StickyColliderRadius" value=".05"/>
+			<property name="StickyColliderLength" value=".75"/>
+			<property name="Stacknumber" value="1000"/>
+			<property name="EconomicValue" value="200"/>
+			<property name="TraderStageTemplate" value="arrowsTier4"/>
+			<property name="UsableUnderwater" value="true"/>
+			<property name="Group" value="Ammo/Weapons,Ammo,Ranged Weapons"/>
+			<property name="UnlockedBy" value="ammoCrossbowEleArmSpellsElectricArcImpactBombSchematic"/>
+
+			<property class="Action1">
+				<property name="Class" value="Projectile"/>
+				<property name="Gravity" value="-3"/>
+				<property name="FlyTime" value="5"/>
+				<property name="LifeTime" value="10"/>
+				<property name="Explosion.ParticleIndex" value="#@modfolder(IV_ELEARM):Resources/elearmspells?ElectricArcImpactBomb$electricalball"/>
+				<property name="Explosion.Duration" value="25"/>
+				<property name="Explosion.CustomScriptTypes" value="ExplosionAreaBuffTick,CustomParticleLoaderBuffArea"/>
+				<property name="Explosion.TickInterval" value="0.5"/>
+				<property name="Explosion.Buff" value="buffEleArmSpellsElectricArcImpactBomb"/>
+				<property name="ExplodeOnHit" value="true"/>
+				<property name="Explosion.EntityDamage" value="0"/>
+				<property name="Explosion.BlockDamage" value="0"/>
+				<property name="Explosion.RadiusBlocks" value="0"/>
+				<property name="Explosion.RadiusEntities" value="0"/>
+			</property>
+			<effect_group name="ammoCrossbowEleArmSpellsElectricArcImpactBomb" tiered="false">
+				<passive_effect name="BlockDamage" operation="base_set" value="1"/>
+				<passive_effect name="EntityDamage" operation="base_set" value="72" tags="perkArchery"/>
+				<passive_effect name="ProjectileVelocity" operation="base_set" value="80" tags="perkArchery"/>
+				<display_value name="dExRadius" value="4"/>
+				<display_value name="dDuration" value="25"/>
+			</effect_group>
+		</item>
+		<item name="ammoCrossbowEleArmSpellsPoisonGasBomb"><!-- 元素獵手十字弓專用: 毒氣彈 -->
+			<property name="Tags" value="ammo,ranged,attAgility,perkArchery"/>
+			<property name="DescriptionKey" value="ammoCrossbowEleArmSpellsPoisonGasBombDesc"/>
+			<property name="CustomIcon" value="ammoCrossbowEleArmSpellsPoisonGasBomb"/>
+			<property name="DisplayType" value="ammoArrowEleArmSpells"/>
+			<property name="Meshfile" value="#@modfolder:Resources/elearmspells?ArrowCrossbowPoison"/>
+			<property name="HoldType" value="45"/>
+			<property name="HandMeshfile" value="@:Other/Items/Misc/sackPrefab.prefab"/>
+			<property name="DropMeshfile" value="#@modfolder:Resources/elearmspells?ArrowCrossbowDefault"/>
+			<property name="DropScale" value="2"/>
+			<property name="Material" value="Mmetal"/>
+			<property name="IsSticky" value="false"/>
+			<property name="StickyOffset" value=".13"/>
+			<property name="StickyColliderUp" value="2"/>
+			<property name="StickyColliderRadius" value=".05"/>
+			<property name="StickyColliderLength" value=".75"/>
+			<property name="Stacknumber" value="1000"/>
+			<property name="EconomicValue" value="200"/>
+			<property name="TraderStageTemplate" value="arrowsTier4"/>
+			<property name="UsableUnderwater" value="true"/>
+			<property name="Group" value="Ammo/Weapons,Ammo,Ranged Weapons"/>
+			<property name="UnlockedBy" value="ammoCrossbowEleArmSpellsPoisonGasBombSchematic"/>
+
+			<property class="Action1">
+				<property name="Class" value="Projectile"/>
+				<property name="Gravity" value="-3"/>
+				<property name="FlyTime" value="5"/>
+				<property name="LifeTime" value="10"/>
+				<property name="Explosion.ParticleIndex" value="#@modfolder(IV_ELEARM):Resources/elearmspells?PoisonGasBomb$gasball"/>
+				<property name="Explosion.Duration" value="25"/>
+				<property name="Explosion.CustomScriptTypes" value="ExplosionAreaBuffTick,CustomParticleLoaderBuffArea"/>
+				<property name="Explosion.TickInterval" value="0.5"/>
+				<property name="Explosion.Buff" value="buffEleArmSpellsPoisonGasBomb"/>
+				<property name="ExplodeOnHit" value="true"/>
+				<property name="Explosion.EntityDamage" value="0"/>
+				<property name="Explosion.BlockDamage" value="0"/>
+				<property name="Explosion.RadiusBlocks" value="0"/>
+				<property name="Explosion.RadiusEntities" value="0"/>
+			</property>
+			<effect_group name="ammoCrossbowEleArmSpellsPoisonGasBomb" tiered="false">
+				<passive_effect name="BlockDamage" operation="base_set" value="1"/>
+				<passive_effect name="EntityDamage" operation="base_set" value="72" tags="perkArchery"/>
+				<passive_effect name="ProjectileVelocity" operation="base_set" value="80" tags="perkArchery"/>
+				<display_value name="dExRadius" value="4"/>
+				<display_value name="dDuration" value="25"/>
+			</effect_group>
+		</item>
+
+		<item name="ammoBowArrowEleArmSpellsFire"><!-- 元素獵手弓專用: 燃燒箭 -->
+			<property name="Tags" value="ammo,ranged,attAgility,perkArchery"/>
+			<property name="DescriptionKey" value="ammoBowArrowEleArmSpellsFireDesc"/>
+			<property name="CustomIcon" value="ammoBowArrowEleArmSpellsFire"/>
+			<property name="DisplayType" value="ammoArrowEleArmSpells"/>
+			<property name="Meshfile" value="#@modfolder:Resources/elearmspells?ArrowBowElementSingleFire"/>
+			<property name="HoldType" value="45"/>
+			<property name="HandMeshfile" value="@:Other/Items/Misc/sackPrefab.prefab"/>
+			<property name="DropMeshfile" value="#@modfolder:Resources/elearmspells?ArrowBowDefault"/>
+			<property name="DropScale" value="2"/>
+			<property name="Material" value="Mmetal"/>
+			<property name="IsSticky" value="false"/>
+			<property name="StickyOffset" value=".25"/>
+			<property name="StickyColliderUp" value="2"/>
+			<property name="StickyColliderRadius" value=".05"/>
+			<property name="StickyColliderLength" value="1"/>
+			<property name="Stacknumber" value="1000"/>
+			<property name="EconomicValue" value="200"/>
+			<property name="TraderStageTemplate" value="arrowsTier1"/>
+			<property name="UsableUnderwater" value="true"/>
+			<property name="Group" value="Basics,Ammo/Weapons,Ammo,Ranged Weapons"/>
+
+			<property class="Action1">
+				<property name="Class" value="Projectile"/>
+				<property name="Gravity" value="-3"/>
+				<property name="FlyTime" value="5"/>
+				<property name="LifeTime" value="10"/>
+				<property name="Explosion.ParticleIndex" value="0"/>
+			</property>
+			<effect_group name="ammoBowArrowEleArmSpellsFire" tiered="false">
+				<passive_effect name="BlockDamage" operation="base_set" value="1"/>
+				<passive_effect name="EntityDamage" operation="base_set" value="30" tags="perkArchery"/>
+				<passive_effect name="ProjectileVelocity" operation="base_set" value="50" tags="perkArchery"/>
+				<passive_effect name="ProjectileStickChance" operation="perc_set" value="0"/>
+				<display_value name="dExRadius" value="0"/>
+				<display_value name="dDuration" value="8"/>
+
+				<triggered_effect trigger="onProjectileImpact" action="AddBuff" target="other" target_tags="zombie,animal" buff="buffEleArmSpellsArrowFire"/>
+			</effect_group>
+		</item>
+		<item name="ammoBowArrowEleArmSpellsIce"><!-- 元素獵手弓專用: 冰凍箭 -->
+			<property name="Tags" value="ammo,ranged,attAgility,perkArchery"/>
+			<property name="DescriptionKey" value="ammoBowArrowEleArmSpellsIceDesc"/>
+			<property name="CustomIcon" value="ammoBowArrowEleArmSpellsIce"/>
+			<property name="DisplayType" value="ammoArrowEleArmSpells"/>
+			<property name="Meshfile" value="#@modfolder:Resources/elearmspells?ArrowBowElementSingleIce"/>
+			<property name="HoldType" value="45"/>
+			<property name="HandMeshfile" value="@:Other/Items/Misc/sackPrefab.prefab"/>
+			<property name="DropMeshfile" value="#@modfolder:Resources/elearmspells?ArrowBowDefault"/>
+			<property name="DropScale" value="2"/>
+			<property name="Material" value="Mmetal"/>
+			<property name="IsSticky" value="false"/>
+			<property name="StickyOffset" value=".25"/>
+			<property name="StickyColliderUp" value="2"/>
+			<property name="StickyColliderRadius" value=".05"/>
+			<property name="StickyColliderLength" value="1"/>
+			<property name="Stacknumber" value="1000"/>
+			<property name="EconomicValue" value="200"/>
+			<property name="TraderStageTemplate" value="arrowsTier1"/>
+			<property name="UsableUnderwater" value="true"/>
+			<property name="Group" value="Basics,Ammo/Weapons,Ammo,Ranged Weapons"/>
+
+			<property class="Action1">
+				<property name="Class" value="Projectile"/>
+				<property name="Gravity" value="-3"/>
+				<property name="FlyTime" value="5"/>
+				<property name="LifeTime" value="10"/>
+				<property name="Explosion.ParticleIndex" value="0"/>
+			</property>
+			<effect_group name="ammoBowArrowEleArmSpellsIce" tiered="false">
+				<passive_effect name="BlockDamage" operation="base_set" value="1"/>
+				<passive_effect name="EntityDamage" operation="base_set" value="30" tags="perkArchery"/>
+				<passive_effect name="ProjectileVelocity" operation="base_set" value="50" tags="perkArchery"/>
+				<passive_effect name="ProjectileStickChance" operation="perc_set" value="0"/>
+				<display_value name="dExRadius" value="0"/>
+				<display_value name="dDuration" value="8"/>
+
+				<triggered_effect trigger="onProjectileImpact" action="AddBuff" target="other" target_tags="zombie,animal" buff="buffEleArmSpellsArrowIce"/>
+			</effect_group>
+		</item>
+		<item name="ammoBowArrowEleArmSpellsPoison"><!-- 元素獵手弓專用: 中毒箭 -->
+			<property name="Tags" value="ammo,ranged,attAgility,perkArchery"/>
+			<property name="DescriptionKey" value="ammoBowArrowEleArmSpellsPoisonDesc"/>
+			<property name="CustomIcon" value="ammoBowArrowEleArmSpellsPoison"/>
+			<property name="DisplayType" value="ammoArrowEleArmSpells"/>
+			<property name="Meshfile" value="#@modfolder:Resources/elearmspells?ArrowBowElementSinglePoison"/>
+			<property name="HoldType" value="45"/>
+			<property name="HandMeshfile" value="@:Other/Items/Misc/sackPrefab.prefab"/>
+			<property name="DropMeshfile" value="#@modfolder:Resources/elearmspells?ArrowBowDefault"/>
+			<property name="DropScale" value="2"/>
+			<property name="Material" value="Mmetal"/>
+			<property name="IsSticky" value="false"/>
+			<property name="StickyOffset" value=".25"/>
+			<property name="StickyColliderUp" value="2"/>
+			<property name="StickyColliderRadius" value=".05"/>
+			<property name="StickyColliderLength" value="1"/>
+			<property name="Stacknumber" value="1000"/>
+			<property name="EconomicValue" value="200"/>
+			<property name="TraderStageTemplate" value="arrowsTier1"/>
+			<property name="UsableUnderwater" value="true"/>
+			<property name="Group" value="Basics,Ammo/Weapons,Ammo,Ranged Weapons"/>
+
+			<property class="Action1">
+				<property name="Class" value="Projectile"/>
+				<property name="Gravity" value="-3"/>
+				<property name="FlyTime" value="5"/>
+				<property name="LifeTime" value="10"/>
+				<property name="Explosion.ParticleIndex" value="0"/>
+			</property>
+			<effect_group name="ammoBowArrowEleArmSpellsPoison" tiered="false">
+				<passive_effect name="BlockDamage" operation="base_set" value="1"/>
+				<passive_effect name="EntityDamage" operation="base_set" value="30" tags="perkArchery"/>
+				<passive_effect name="ProjectileVelocity" operation="base_set" value="50" tags="perkArchery"/>
+				<passive_effect name="ProjectileStickChance" operation="perc_set" value="0"/>
+				<display_value name="dExRadius" value="0"/>
+				<display_value name="dDuration" value="8"/>
+
+				<triggered_effect trigger="onProjectileImpact" action="AddBuff" target="other" target_tags="zombie,animal" buff="buffEleArmSpellsArrowPoison"/>
+			</effect_group>
+		</item>
+		<item name="ammoBowArrowEleArmSpellsElectricShock"><!-- 元素獵手弓專用: 電擊箭 -->
+			<property name="Tags" value="ammo,ranged,attAgility,perkArchery"/>
+			<property name="DescriptionKey" value="ammoBowArrowEleArmSpellsElectricShockDesc"/>
+			<property name="CustomIcon" value="ammoBowArrowEleArmSpellsElectricShock"/>
+			<property name="DisplayType" value="ammoArrowEleArmSpells"/>
+			<property name="Meshfile" value="#@modfolder:Resources/elearmspells?ArrowBowElementSingleElectric"/>
+			<property name="HoldType" value="45"/>
+			<property name="HandMeshfile" value="@:Other/Items/Misc/sackPrefab.prefab"/>
+			<property name="DropMeshfile" value="#@modfolder:Resources/elearmspells?ArrowBowDefault"/>
+			<property name="DropScale" value="2"/>
+			<property name="Material" value="Mmetal"/>
+			<property name="IsSticky" value="false"/>
+			<property name="StickyOffset" value=".25"/>
+			<property name="StickyColliderUp" value="2"/>
+			<property name="StickyColliderRadius" value=".05"/>
+			<property name="StickyColliderLength" value="1"/>
+			<property name="Stacknumber" value="1000"/>
+			<property name="EconomicValue" value="200"/>
+			<property name="TraderStageTemplate" value="arrowsTier1"/>
+			<property name="UsableUnderwater" value="true"/>
+			<property name="Group" value="Basics,Ammo/Weapons,Ammo,Ranged Weapons"/>
+
+			<property class="Action1">
+				<property name="Class" value="Projectile"/>
+				<property name="Gravity" value="-3"/>
+				<property name="FlyTime" value="5"/>
+				<property name="LifeTime" value="10"/>
+				<property name="Explosion.ParticleIndex" value="0"/>
+			</property>
+			<effect_group name="ammoBowArrowEleArmSpellsElectricShock" tiered="false">
+				<passive_effect name="BlockDamage" operation="base_set" value="1"/>
+				<passive_effect name="EntityDamage" operation="base_set" value="30" tags="perkArchery"/>
+				<passive_effect name="ProjectileVelocity" operation="base_set" value="50" tags="perkArchery"/>
+				<passive_effect name="ProjectileStickChance" operation="perc_set" value="0"/>
+				<display_value name="dExRadius" value="0"/>
+				<display_value name="dDuration" value="8"/>
+
+				<triggered_effect trigger="onProjectileImpact" action="AddBuff" target="other" target_tags="zombie,animal" buff="buffEleArmSpellsArrowElectricShock"/>
+			</effect_group>
+		</item>
+
+		<item name="ammoCrossbowArrowEleArmSpellsFire"><!-- 元素獵手十字弓專用: 燃燒箭 -->
+			<property name="Tags" value="ammo,ranged,attAgility,perkArchery"/>
+			<property name="DescriptionKey" value="ammoCrossbowArrowEleArmSpellsFireDesc"/>
+			<property name="CustomIcon" value="ammoCrossbowArrowEleArmSpellsFire"/>
+			<property name="DisplayType" value="ammoArrowEleArmSpells"/>
+			<property name="Meshfile" value="#@modfolder:Resources/elearmspells?ArrowCrossbowElementSingleFire"/>
+			<property name="HoldType" value="45"/>
+			<property name="HandMeshfile" value="@:Other/Items/Misc/sackPrefab.prefab"/>
+			<property name="DropMeshfile" value="#@modfolder:Resources/elearmspells?ArrowBowDefault"/>
+			<property name="DropScale" value="2"/>
+			<property name="Material" value="Mmetal"/>
+			<property name="IsSticky" value="false"/>
+			<property name="StickyOffset" value=".13"/>
+			<property name="StickyColliderUp" value="2"/>
+			<property name="StickyColliderRadius" value=".05"/>
+			<property name="StickyColliderLength" value="0.75"/>
+			<property name="Stacknumber" value="1000"/>
+			<property name="EconomicValue" value="200"/>
+			<property name="TraderStageTemplate" value="arrowsTier1"/>
+			<property name="UsableUnderwater" value="true"/>
+			<property name="Group" value="Basics,Ammo/Weapons,Ammo,Ranged Weapons"/>
+			<property name="Damage_type" value="Heat"/>
+
+			<property class="Action1">
+				<property name="Class" value="Projectile"/>
+				<property name="Gravity" value="-3"/>
+				<property name="FlyTime" value="5"/>
+				<property name="LifeTime" value="10"/>
+				<property name="Explosion.ParticleIndex" value="0"/>
+			</property>
+			<effect_group name="ammoCrossbowArrowEleArmSpellsFire" tiered="false">
+				<passive_effect name="BlockDamage" operation="base_set" value="1"/>
+				<passive_effect name="EntityDamage" operation="base_set" value="40" tags="perkArchery"/>
+				<passive_effect name="ProjectileVelocity" operation="base_set" value="50" tags="perkArchery"/>
+				<passive_effect name="ProjectileStickChance" operation="perc_set" value="0"/>
+				<display_value name="dExRadius" value="0"/>
+				<display_value name="dDuration" value="8"/>
+
+				<triggered_effect trigger="onProjectileImpact" action="AddBuff" target="other" target_tags="zombie,animal" buff="buffEleArmSpellsArrowFire"/>
+			</effect_group>
+		</item>
+		<item name="ammoCrossbowArrowEleArmSpellsIce"><!-- 元素獵手十字弓專用: 冰凍箭 -->
+			<property name="Tags" value="ammo,ranged,attAgility,perkArchery"/>
+			<property name="DescriptionKey" value="ammoCrossbowArrowEleArmSpellsIceDesc"/>
+			<property name="CustomIcon" value="ammoCrossbowArrowEleArmSpellsIce"/>
+			<property name="DisplayType" value="ammoArrowEleArmSpells"/>
+			<property name="Meshfile" value="#@modfolder:Resources/elearmspells?ArrowCrossbowElementSingleIce"/>
+			<property name="HoldType" value="45"/>
+			<property name="HandMeshfile" value="@:Other/Items/Misc/sackPrefab.prefab"/>
+			<property name="DropMeshfile" value="#@modfolder:Resources/elearmspells?ArrowBowDefault"/>
+			<property name="DropScale" value="2"/>
+			<property name="Material" value="Mmetal"/>
+			<property name="IsSticky" value="false"/>
+			<property name="StickyOffset" value=".13"/>
+			<property name="StickyColliderUp" value="2"/>
+			<property name="StickyColliderRadius" value=".05"/>
+			<property name="StickyColliderLength" value="0.75"/>
+			<property name="Stacknumber" value="1000"/>
+			<property name="EconomicValue" value="200"/>
+			<property name="TraderStageTemplate" value="arrowsTier1"/>
+			<property name="UsableUnderwater" value="true"/>
+			<property name="Group" value="Basics,Ammo/Weapons,Ammo,Ranged Weapons"/>
+			<property name="Damage_type" value="Heat"/>
+
+			<property class="Action1">
+				<property name="Class" value="Projectile"/>
+				<property name="Gravity" value="-3"/>
+				<property name="FlyTime" value="5"/>
+				<property name="LifeTime" value="10"/>
+				<property name="Explosion.ParticleIndex" value="0"/>
+			</property>
+			<effect_group name="ammoCrossbowArrowEleArmSpellsIce" tiered="false">
+				<passive_effect name="BlockDamage" operation="base_set" value="1"/>
+				<passive_effect name="EntityDamage" operation="base_set" value="40" tags="perkArchery"/>
+				<passive_effect name="ProjectileVelocity" operation="base_set" value="50" tags="perkArchery"/>
+				<passive_effect name="ProjectileStickChance" operation="perc_set" value="0"/>
+				<display_value name="dExRadius" value="0"/>
+				<display_value name="dDuration" value="8"/>
+
+				<triggered_effect trigger="onProjectileImpact" action="AddBuff" target="other" target_tags="zombie,animal" buff="buffEleArmSpellsArrowIce"/>
+			</effect_group>
+		</item>
+		<item name="ammoCrossbowArrowEleArmSpellsPoison"><!-- 元素獵手十字弓專用: 中毒箭 -->
+			<property name="Tags" value="ammo,ranged,attAgility,perkArchery"/>
+			<property name="DescriptionKey" value="ammoCrossbowArrowEleArmSpellsPoisonDesc"/>
+			<property name="CustomIcon" value="ammoCrossbowArrowEleArmSpellsPoison"/>
+			<property name="DisplayType" value="ammoArrowEleArmSpells"/>
+			<property name="Meshfile" value="#@modfolder:Resources/elearmspells?ArrowCrossbowElementSinglePoison"/>
+			<property name="HoldType" value="45"/>
+			<property name="HandMeshfile" value="@:Other/Items/Misc/sackPrefab.prefab"/>
+			<property name="DropMeshfile" value="#@modfolder:Resources/elearmspells?ArrowBowDefault"/>
+			<property name="DropScale" value="2"/>
+			<property name="Material" value="Mmetal"/>
+			<property name="IsSticky" value="false"/>
+			<property name="StickyOffset" value=".13"/>
+			<property name="StickyColliderUp" value="2"/>
+			<property name="StickyColliderRadius" value=".05"/>
+			<property name="StickyColliderLength" value="0.75"/>
+			<property name="Stacknumber" value="1000"/>
+			<property name="EconomicValue" value="200"/>
+			<property name="TraderStageTemplate" value="arrowsTier1"/>
+			<property name="UsableUnderwater" value="true"/>
+			<property name="Group" value="Basics,Ammo/Weapons,Ammo,Ranged Weapons"/>
+			<property name="Damage_type" value="Heat"/>
+
+			<property class="Action1">
+				<property name="Class" value="Projectile"/>
+				<property name="Gravity" value="-3"/>
+				<property name="FlyTime" value="5"/>
+				<property name="LifeTime" value="10"/>
+				<property name="Explosion.ParticleIndex" value="0"/>
+			</property>
+			<effect_group name="ammoCrossbowArrowEleArmSpellsPoison" tiered="false">
+				<passive_effect name="BlockDamage" operation="base_set" value="1"/>
+				<passive_effect name="EntityDamage" operation="base_set" value="40" tags="perkArchery"/>
+				<passive_effect name="ProjectileVelocity" operation="base_set" value="50" tags="perkArchery"/>
+				<passive_effect name="ProjectileStickChance" operation="perc_set" value="0"/>
+				<display_value name="dExRadius" value="0"/>
+				<display_value name="dDuration" value="8"/>
+
+				<triggered_effect trigger="onProjectileImpact" action="AddBuff" target="other" target_tags="zombie,animal" buff="buffEleArmSpellsArrowPoison"/>
+			</effect_group>
+		</item>
+		<item name="ammoCrossbowArrowEleArmSpellsElectricShock"><!-- 元素獵手十字弓專用: 電擊箭 -->
+			<property name="Tags" value="ammo,ranged,attAgility,perkArchery"/>
+			<property name="DescriptionKey" value="ammoCrossbowArrowEleArmSpellsElectricShockDesc"/>
+			<property name="CustomIcon" value="ammoCrossbowArrowEleArmSpellsElectricShock"/>
+			<property name="DisplayType" value="ammoArrowEleArmSpells"/>
+			<property name="Meshfile" value="#@modfolder:Resources/elearmspells?ArrowCrossbowElementSingleElectric"/>
+			<property name="HoldType" value="45"/>
+			<property name="HandMeshfile" value="@:Other/Items/Misc/sackPrefab.prefab"/>
+			<property name="DropMeshfile" value="#@modfolder:Resources/elearmspells?ArrowBowDefault"/>
+			<property name="DropScale" value="2"/>
+			<property name="Material" value="Mmetal"/>
+			<property name="IsSticky" value="false"/>
+			<property name="StickyOffset" value=".13"/>
+			<property name="StickyColliderUp" value="2"/>
+			<property name="StickyColliderRadius" value=".05"/>
+			<property name="StickyColliderLength" value="0.75"/>
+			<property name="Stacknumber" value="1000"/>
+			<property name="EconomicValue" value="200"/>
+			<property name="TraderStageTemplate" value="arrowsTier1"/>
+			<property name="UsableUnderwater" value="true"/>
+			<property name="Group" value="Basics,Ammo/Weapons,Ammo,Ranged Weapons"/>
+			<property name="Damage_type" value="Heat"/>
+
+			<property class="Action1">
+				<property name="Class" value="Projectile"/>
+				<property name="Gravity" value="-3"/>
+				<property name="FlyTime" value="5"/>
+				<property name="LifeTime" value="10"/>
+				<property name="Explosion.ParticleIndex" value="0"/>
+			</property>
+			<effect_group name="ammoCrossbowArrowEleArmSpellsElectricShock" tiered="false">
+				<passive_effect name="BlockDamage" operation="base_set" value="1"/>
+				<passive_effect name="EntityDamage" operation="base_set" value="40" tags="perkArchery"/>
+				<passive_effect name="ProjectileVelocity" operation="base_set" value="50" tags="perkArchery"/>
+				<passive_effect name="ProjectileStickChance" operation="perc_set" value="0"/>
+				<display_value name="dExRadius" value="0"/>
+				<display_value name="dDuration" value="8"/>
+
+				<triggered_effect trigger="onProjectileImpact" action="AddBuff" target="other" target_tags="zombie,animal" buff="buffEleArmSpellsArrowElectricShock"/>
+			</effect_group>
+		</item>
+	</append>
+	<!-- 指定哪些武器可以使用四元素模組 -->
+	<append xpath="/items/item[@name='meleeToolRepairT0StoneAxe']/property[@name='Tags']/@value">,EleArmSpells</append>
+	<append xpath="/items/item[@name='meleeToolRepairT0TazasStoneAxe']/property[@name='Tags']/@value">,EleArmSpells</append>
+	<append xpath="/items/item[@name='meleeToolRepairT1ClawHammer']/property[@name='Tags']/@value">,EleArmSpells</append>
+	<append xpath="/items/item[@name='meleeToolAxeT1IronFireaxe']/property[@name='Tags']/@value">,EleArmSpells</append>
+	<append xpath="/items/item[@name='meleeToolPickT1IronPickaxe']/property[@name='Tags']/@value">,EleArmSpells</append>
+	<append xpath="/items/item[@name='meleeToolShovelT0StoneShovel']/property[@name='Tags']/@value">,EleArmSpells</append>
+	<append xpath="/items/item[@name='meleeToolShovelT1IronShovel']/property[@name='Tags']/@value">,EleArmSpells</append>
+	<append xpath="/items/item[@name='meleeToolShovelT2SteelShovel']/property[@name='Tags']/@value">,EleArmSpells</append>
+	<append xpath="/items/item[@name='meleeToolAxeT3Chainsaw']/property[@name='Tags']/@value">,EleArmSpells</append>
+	<append xpath="/items/item[@name='meleeToolPickT3Auger']/property[@name='Tags']/@value">,EleArmSpells</append>
+	<append xpath="/items/item[@name='meleeToolSalvageT1Wrench']/property[@name='Tags']/@value">,EleArmSpells</append>
+	<append xpath="/items/item[@name='meleeToolSalvageT2Ratchet']/property[@name='Tags']/@value">,EleArmSpells</append>
+	<append xpath="/items/item[@name='meleeToolSalvageT3ImpactDriver']/property[@name='Tags']/@value">,EleArmSpells</append>
+	<append xpath="/items/item[@name='meleeWpnBladeT0BoneKnife']/property[@name='Tags']/@value">,EleArmSpells</append>
+	<append xpath="/items/item[@name='meleeWpnBladeT1HuntingKnife']/property[@name='Tags']/@value">,EleArmSpells</append>
+	<append xpath="/items/item[@name='meleeWpnBladeT1CandyKnife']/property[@name='Tags']/@value">,EleArmSpells</append>
+	<append xpath="/items/item[@name='meleeWpnBladeT3Machete']/property[@name='Tags']/@value">,EleArmSpells</append>
+	<append xpath="/items/item[@name='meleeWpnClubT0WoodenClub']/property[@name='Tags']/@value">,EleArmSpells</append>
+	<append xpath="/items/item[@name='meleeWpnClubT1BaseballBat']/property[@name='Tags']/@value">,EleArmSpells</append>
+	<append xpath="/items/item[@name='meleeWpnClubT1CandyClub']/property[@name='Tags']/@value">,EleArmSpells</append>
+	<append xpath="/items/item[@name='meleeWpnClubT3SteelClub']/property[@name='Tags']/@value">,EleArmSpells</append>
+	<append xpath="/items/item[@name='meleeWpnBatonT0PipeBaton']/property[@name='Tags']/@value">,EleArmSpells</append>
+	<append xpath="/items/item[@name='meleeWpnBatonT2StunBaton']/property[@name='Tags']/@value">,EleArmSpells</append>
+	<append xpath="/items/item[@name='meleeWpnSpearT0StoneSpear']/property[@name='Tags']/@value">,EleArmSpells</append>
+	<append xpath="/items/item[@name='meleeWpnSledgeT0StoneSledgehammer']/property[@name='Tags']/@value">,EleArmSpells</append>
+	<append xpath="/items/item[@name='meleeWpnSledgeT1IronSledgehammer']/property[@name='Tags']/@value">,EleArmSpells</append>
+	<append xpath="/items/item[@name='meleeWpnSledgeT3SteelSledgehammer']/property[@name='Tags']/@value">,EleArmSpells</append>
+	<append xpath="/items/item[@name='meleeWpnKnucklesT0LeatherKnuckles']/property[@name='Tags']/@value">,EleArmSpells</append>
+	<append xpath="/items/item[@name='meleeWpnKnucklesT1IronKnuckles']/property[@name='Tags']/@value">,EleArmSpells</append>
+	<append xpath="/items/item[@name='meleeWpnKnucklesT3SteelKnuckles']/property[@name='Tags']/@value">,EleArmSpells</append>
+
+	<!-- 針對District Zero模組 https://www.nexusmods.com/7daystodie/mods/3174 -->
+	<!-- Supports weapons and tools from the District Zero mod. -->
+	<!--
+	<append xpath="/items/item[@name='meleeWpnClubT3LaserClub']/property[@name='Tags']/@value">,EleArmSpells</append>
+	<append xpath="/items/item[@name='meleeWpnBladeT3LaserKnife']/property[@name='Tags']/@value">,EleArmSpells</append>
+	<append xpath="/items/item[@name='meleeWpnSledgeT3LaserSledgehammer']/property[@name='Tags']/@value">,EleArmSpells</append>
+	<append xpath="/items/item[@name='meleeWpnBladeT3LaserSword']/property[@name='Tags']/@value">,EleArmSpells</append>
+	<append xpath="/items/item[@name='meleeWpnBatonT3LaserStunBaton']/property[@name='Tags']/@value">,EleArmSpells</append>
+	<append xpath="/items/item[@name='meleeWpnClubT2PlasmaClub']/property[@name='Tags']/@value">,EleArmSpells</append>
+	<append xpath="/items/item[@name='meleeWpnBladeT2PlasmaKnife']/property[@name='Tags']/@value">,EleArmSpells</append>
+	<append xpath="/items/item[@name='meleeWpnSledgeT2PlasmaSledgehammer']/property[@name='Tags']/@value">,EleArmSpells</append>
+	<append xpath="/items/item[@name='meleeWpnBladeT2PlasmaSword']/property[@name='Tags']/@value">,EleArmSpells</append>
+	<append xpath="/items/item[@name='meleeWpnBatonT2PlasmaBaton']/property[@name='Tags']/@value">,EleArmSpells</append>
+	<append xpath="/items/item[@name='meleeWpnClubT1FusionClub']/property[@name='Tags']/@value">,EleArmSpells</append>
+	<append xpath="/items/item[@name='meleeWpnBladeT1FusionKnife']/property[@name='Tags']/@value">,EleArmSpells</append>
+	<append xpath="/items/item[@name='meleeWpnSledgeT1FusionSledgehammer']/property[@name='Tags']/@value">,EleArmSpells</append>
+	<append xpath="/items/item[@name='meleeWpnBladeT1FusionSword']/property[@name='Tags']/@value">,EleArmSpells</append>
+	<append xpath="/items/item[@name='meleeWpnBatonT1FusionBaton']/property[@name='Tags']/@value">,EleArmSpells</append>
+	<append xpath="/items/item[@name='meleeToolAxeT1FusionFireaxe']/property[@name='Tags']/@value">,EleArmSpells</append>
+	<append xpath="/items/item[@name='meleeToolPickT1FusionPickaxe']/property[@name='Tags']/@value">,EleArmSpells</append>
+	<append xpath="/items/item[@name='meleeToolShovelT1FusionShovel']/property[@name='Tags']/@value">,EleArmSpells</append>
+	<append xpath="/items/item[@name='meleeToolShovelT2PlasmaShovel']/property[@name='Tags']/@value">,EleArmSpells</append>
+	<append xpath="/items/item[@name='meleeToolPickT2PlasmaAuger']/property[@name='Tags']/@value">,EleArmSpells</append>
+	<append xpath="/items/item[@name='meleeToolPickT3LaserMiningTool']/property[@name='Tags']/@value">,EleArmSpells</append>
+	-->
+</config>

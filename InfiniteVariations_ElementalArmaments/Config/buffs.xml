@@ -1,0 +1,1326 @@
+<configs>
+	<!--
+	自我記錄:
+	2023年9月 A21.1版,被元素傷害殺死的目標有機率性會無法得到經驗值
+	2023年11月 A21.1版,WalkSpeed和RunSpeed的數值如果要下降,一定要大於100%才會看到明顯效果,但是對於damage_type為electrical的則是例外
+	-->
+	<!-- 參考普通殭屍級別的血量, 普通:150, 野性: 350, 輻射: 650 , 跳階普通:350, 野性:650, 輻射1350-->
+
+	<!-- 四元素 -->
+	<append xpath="/buffs">
+		<!-- 燃燒 -->
+		<!-- dmg依技能級別線性遞增: 0.8 -->
+		<!-- time: 6, 10, 14  dmg: 12.5, 14.1, 15.7	-->
+		<!-- 類別傷害線性: 2, 4, 6 -->
+		<!-- 濺射的持續時間為原法術的1/2 -->
+		<buff name="buffEleArmSpellsFireLv1">
+			<damage_type value="heat"/>
+			<stack_type value="duration"/>
+			<duration value="6"/>
+			<effect_group>
+				<triggered_effect trigger="onSelfBuffStart" action="AddBuff" buff="buffMarksExistingPropertyFire"/>
+			</effect_group>
+			<effect_group>
+				<requirement name="EntityTagCompare" target="self" tags="ezFrost"/>
+				<passive_effect name="HealthChangeOT" operation="base_subtract" value="25"/>
+			</effect_group>
+			<effect_group>
+				<passive_effect name="HealthChangeOT" operation="base_subtract" value="12.5"/>
+
+				<passive_effect name="HealthChangeOT" operation="base_subtract" value="2.1">
+					<requirement name="EntityTagCompare" target="self" tags="feral"/>
+				</passive_effect>
+				<passive_effect name="HealthChangeOT" operation="base_subtract" value="3.5">
+					<requirement name="EntityTagCompare" target="self" tags="radiated"/>
+				</passive_effect>
+
+				<triggered_effect trigger="onSelfDied" action="RemoveBuff" buff="buffEleArmSpellsFireLv1"/>
+				<triggered_effect trigger="onSelfEnteredGame" action="RemoveBuff" buff="buffEleArmSpellsFireLv1"/>
+
+				<triggered_effect trigger="onSelfBuffStart" action="AttachParticleEffectToEntity" particle="#@modfolder:Resources/elearmspells?Fire" parent_transform="Hips"/>
+				<triggered_effect trigger="onSelfEnteredGame" action="AttachParticleEffectToEntity" particle="#@modfolder:Resources/elearmspells?Fire" parent_transform="Hips"/>
+				<triggered_effect trigger="onSelfBuffRemove" action="RemoveParticleEffectFromEntity" particle="Fire"/>
+				<triggered_effect trigger="onSelfDied" action="RemoveParticleEffectFromEntity" particle="Fire"/>
+			</effect_group>
+		</buff>
+		<buff name="buffEleArmSpellsFireLv2">
+			<damage_type value="heat"/>
+			<stack_type value="duration"/>
+			<duration value="10"/>
+			<effect_group>
+				<triggered_effect trigger="onSelfBuffStart" action="AddBuff" buff="buffMarksExistingPropertyFire"/>
+			</effect_group>
+			<effect_group>
+				<requirement name="EntityTagCompare" target="self" tags="ezFrost"/>
+				<passive_effect name="HealthChangeOT" operation="base_subtract" value="28.2"/>
+			</effect_group>
+			<effect_group>
+				<passive_effect name="HealthChangeOT" operation="base_subtract" value="14.1"/>
+
+				<passive_effect name="HealthChangeOT" operation="base_subtract" value="2.4">
+					<requirement name="EntityTagCompare" target="self" tags="feral"/>
+				</passive_effect>
+				<passive_effect name="HealthChangeOT" operation="base_subtract" value="3.9">
+					<requirement name="EntityTagCompare" target="self" tags="radiated"/>
+				</passive_effect>
+
+				<triggered_effect trigger="onSelfDied" action="RemoveBuff" buff="buffEleArmSpellsFireLv2"/>
+				<triggered_effect trigger="onSelfEnteredGame" action="RemoveBuff" buff="buffEleArmSpellsFireLv2"/>
+
+				<triggered_effect trigger="onSelfBuffStart" action="AttachParticleEffectToEntity" particle="#@modfolder:Resources/elearmspells?Fire02"/>
+				<triggered_effect trigger="onSelfEnteredGame" action="AttachParticleEffectToEntity" particle="#@modfolder:Resources/elearmspells?Fire02" />
+				<triggered_effect trigger="onSelfBuffRemove" action="RemoveParticleEffectFromEntity" particle="Fire02"/>
+				<triggered_effect trigger="onSelfDied" action="RemoveParticleEffectFromEntity" particle="Fire02"/>
+
+				<triggered_effect trigger="onSelfBuffUpdate" action="AddBuff" target="selfAOE" range="2" target_tags="zombie,animal" buff="buffEleArmSpellsFireLv2Spread"/>
+			</effect_group>
+		</buff>
+		<buff name="buffEleArmSpellsFireLv2Spread">
+			<damage_type value="heat"/>
+			<stack_type value="replace"/>
+			<duration value="5"/>
+			<effect_group>
+				<triggered_effect trigger="onSelfBuffStart" action="AddBuff" buff="buffMarksExistingPropertyFire"/>
+			</effect_group>
+			<effect_group>
+				<requirement name="EntityTagCompare" target="self" tags="ezFrost"/>
+				<passive_effect name="HealthChangeOT" operation="base_subtract" value="28.2"/>
+			</effect_group>
+			<effect_group>
+				<passive_effect name="HealthChangeOT" operation="base_subtract" value="14.1"/>
+
+				<passive_effect name="HealthChangeOT" operation="base_subtract" value="2.4">
+					<requirement name="EntityTagCompare" target="self" tags="feral"/>
+				</passive_effect>
+				<passive_effect name="HealthChangeOT" operation="base_subtract" value="3.9">
+					<requirement name="EntityTagCompare" target="self" tags="radiated"/>
+				</passive_effect>
+
+				<triggered_effect trigger="onSelfDied" action="RemoveBuff" buff="buffEleArmSpellsFireLv2Spread"/>
+				<triggered_effect trigger="onSelfEnteredGame" action="RemoveBuff" buff="buffEleArmSpellsFireLv2Spread"/>
+
+				<triggered_effect trigger="onSelfBuffStart" action="AttachParticleEffectToEntity" particle="#@modfolder:Resources/elearmspells?Fire02"/>
+				<triggered_effect trigger="onSelfEnteredGame" action="AttachParticleEffectToEntity" particle="#@modfolder:Resources/elearmspells?Fire02"/>
+				<triggered_effect trigger="onSelfBuffRemove" action="RemoveParticleEffectFromEntity" particle="Fire02"/>
+				<triggered_effect trigger="onSelfDied" action="RemoveParticleEffectFromEntity" particle="Fire02"/>
+
+				<triggered_effect trigger="onSelfBuffUpdate" action="AddBuff" target="selfAOE" range="2" target_tags="zombie,animal" buff="buffEleArmSpellsFireLv2Spread">
+					<requirement name="NotHasBuff" target="other" buff="buffEleArmSpellsFireLv2"/>
+				</triggered_effect>
+			</effect_group>
+		</buff>
+		<buff name="buffEleArmSpellsFireLv3">
+			<damage_type value="heat"/>
+			<stack_type value="duration"/>
+			<duration value="14"/>
+			<effect_group>
+				<triggered_effect trigger="onSelfBuffStart" action="AddBuff" buff="buffMarksExistingPropertyFire"/>
+			</effect_group>
+			<effect_group>
+				<requirement name="EntityTagCompare" target="self" tags="ezFrost"/>
+				<passive_effect name="HealthChangeOT" operation="base_subtract" value="31.4"/>
+			</effect_group>
+			<effect_group>
+				<passive_effect name="HealthChangeOT" operation="base_subtract" value="15.7"/>
+
+				<passive_effect name="HealthChangeOT" operation="base_subtract" value="2.7">
+					<requirement name="EntityTagCompare" target="self" tags="feral"/>
+				</passive_effect>
+				<passive_effect name="HealthChangeOT" operation="base_subtract" value="4.4">
+					<requirement name="EntityTagCompare" target="self" tags="radiated"/>
+				</passive_effect>
+
+				<triggered_effect trigger="onSelfDied" action="RemoveBuff" buff="buffEleArmSpellsFireLv3"/>
+				<triggered_effect trigger="onSelfEnteredGame" action="RemoveBuff" buff="buffEleArmSpellsFireLv3"/>
+
+				<triggered_effect trigger="onSelfBuffStart" action="AttachParticleEffectToEntity" particle="#@modfolder:Resources/elearmspells?Fire03"/>
+				<triggered_effect trigger="onSelfEnteredGame" action="AttachParticleEffectToEntity" particle="#@modfolder:Resources/elearmspells?Fire03" />
+				<triggered_effect trigger="onSelfBuffRemove" action="RemoveParticleEffectFromEntity" particle="Fire03"/>
+				<triggered_effect trigger="onSelfDied" action="RemoveParticleEffectFromEntity" particle="Fire03"/>
+
+				<triggered_effect trigger="onSelfBuffUpdate" action="AddBuff" target="selfAOE" range="3" target_tags="zombie,animal" buff="buffEleArmSpellsFireLv3Spread"/>
+			</effect_group>
+		</buff>
+		<buff name="buffEleArmSpellsFireLv3Spread">
+			<damage_type value="heat"/>
+			<stack_type value="replace"/>
+			<duration value="7"/>
+			<effect_group>
+				<requirement name="EntityTagCompare" target="self" tags="ezFrost"/>
+				<passive_effect name="HealthChangeOT" operation="base_subtract" value="31.4"/>
+			</effect_group>
+			<effect_group>
+				<passive_effect name="HealthChangeOT" operation="base_subtract" value="15.7"/>
+
+				<passive_effect name="HealthChangeOT" operation="base_subtract" value="2.7">
+					<requirement name="EntityTagCompare" target="self" tags="feral"/>
+				</passive_effect>
+				<passive_effect name="HealthChangeOT" operation="base_subtract" value="4.4">
+					<requirement name="EntityTagCompare" target="self" tags="radiated"/>
+				</passive_effect>
+
+				<triggered_effect trigger="onSelfDied" action="RemoveBuff" buff="buffEleArmSpellsFireLv3Spread"/>
+				<triggered_effect trigger="onSelfEnteredGame" action="RemoveBuff" buff="buffEleArmSpellsFireLv3Spread"/>
+
+				<triggered_effect trigger="onSelfBuffStart" action="AttachParticleEffectToEntity" particle="#@modfolder:Resources/elearmspells?Fire03" />
+				<triggered_effect trigger="onSelfEnteredGame" action="AttachParticleEffectToEntity" particle="#@modfolder:Resources/elearmspells?Fire03" />
+				<triggered_effect trigger="onSelfBuffRemove" action="RemoveParticleEffectFromEntity" particle="Fire03"/>
+				<triggered_effect trigger="onSelfDied" action="RemoveParticleEffectFromEntity" particle="Fire03"/>
+
+				<triggered_effect trigger="onSelfBuffUpdate" action="AddBuff" target="selfAOE" range="3" target_tags="zombie,animal" buff="buffEleArmSpellsFireLv3Spread">
+					<requirement name="NotHasBuff" target="other" buff="buffEleArmSpellsFireLv3"/>
+				</triggered_effect>
+			</effect_group>
+		</buff>
+
+		<!-- 冰凍 -->
+		<!-- time: 6, 10, 14  dmg: 6.3, 7.9, 9.5 -->
+		<!-- 類別傷害線性: 4, 6, 8 -->
+		<!-- 濺射的持續時間為原法術的1/2 -->
+		<buff name="buffEleArmSpellsIceLv1">
+			<damage_type value="Cold"/>
+			<stack_type value="duration"/>
+			<duration value="6"/>
+			<effect_group>
+				<triggered_effect trigger="onSelfBuffStart" action="AddBuff" buff="buffMarksExistingPropertyIce"/>
+			</effect_group>
+			<effect_group>
+				<requirement name="EntityTagCompare" target="self" tags="ezFire"/>
+				<passive_effect name="HealthChangeOT" operation="base_subtract" value="12.6"/>
+			</effect_group>
+			<effect_group>
+				<passive_effect name="HealthChangeOT" operation="base_subtract" value="6.3"/>
+
+				<passive_effect name="HealthChangeOT" operation="base_subtract" value="3.4">
+					<requirement name="EntityTagCompare" target="self" tags="feral"/>
+				</passive_effect>
+				<passive_effect name="HealthChangeOT" operation="base_subtract" value="3.8">
+					<requirement name="EntityTagCompare" target="self" tags="radiated"/>
+				</passive_effect>
+
+				<passive_effect name="WalkSpeed" operation="perc_subtract" value="2"/>
+				<passive_effect name="RunSpeed" operation="perc_subtract" value="2"/>
+				<passive_effect name="Mobility" operation="perc_subtract" value="2" tags="falling,climbing,swimming"/>
+				<passive_effect name="AttacksPerMinute" operation="perc_subtract" value=".5"/>
+				<passive_effect name="PhysicalDamageResist" operation="perc_subtract" value=".1"/>
+
+				<triggered_effect trigger="onSelfDied" action="RemoveBuff" buff="buffEleArmSpellsIceLv1"/>
+				<triggered_effect trigger="onSelfEnteredGame" action="RemoveBuff" buff="buffEleArmSpellsIceLv1"/>
+
+				<triggered_effect trigger="onSelfBuffStart" action="AttachParticleEffectToEntity" particle="#@modfolder:Resources/elearmspells?Ice" parent_transform="Hips"/>
+				<triggered_effect trigger="onSelfEnteredGame" action="AttachParticleEffectToEntity" particle="#@modfolder:Resources/elearmspells?Ice" parent_transform="Hips"/>
+				<triggered_effect trigger="onSelfBuffRemove" action="RemoveParticleEffectFromEntity" particle="Ice"/>
+				<triggered_effect trigger="onSelfDied" action="RemoveParticleEffectFromEntity" particle="Ice"/>
+			</effect_group>
+		</buff>
+		<buff name="buffEleArmSpellsIceLv2">
+			<damage_type value="Cold"/>
+			<stack_type value="duration"/>
+			<duration value="10"/>
+			<effect_group>
+				<triggered_effect trigger="onSelfBuffStart" action="AddBuff" buff="buffMarksExistingPropertyIce"/>
+			</effect_group>
+			<effect_group>
+				<requirement name="EntityTagCompare" target="self" tags="ezFire"/>
+				<passive_effect name="HealthChangeOT" operation="base_subtract" value="15.8"/>
+			</effect_group>
+			<effect_group>
+				<passive_effect name="HealthChangeOT" operation="base_subtract" value="7.9"/>
+
+				<passive_effect name="HealthChangeOT" operation="base_subtract" value="4.2">
+					<requirement name="EntityTagCompare" target="self" tags="feral"/>
+				</passive_effect>
+				<passive_effect name="HealthChangeOT" operation="base_subtract" value="4.6">
+					<requirement name="EntityTagCompare" target="self" tags="radiated"/>
+				</passive_effect>
+
+				<passive_effect name="WalkSpeed" operation="perc_subtract" value="2"/>
+				<passive_effect name="RunSpeed" operation="perc_subtract" value="2"/>
+				<passive_effect name="Mobility" operation="perc_subtract" value="2" tags="falling,climbing,swimming"/>
+				<passive_effect name="AttacksPerMinute" operation="perc_subtract" value=".7"/>
+				<passive_effect name="PhysicalDamageResist" operation="perc_subtract" value=".1"/>
+
+				<triggered_effect trigger="onSelfDied" action="RemoveBuff" buff="buffEleArmSpellsIceLv2"/>
+				<triggered_effect trigger="onSelfEnteredGame" action="RemoveBuff" buff="buffEleArmSpellsIceLv2"/>
+
+				<triggered_effect trigger="onSelfBuffStart" action="AttachParticleEffectToEntity" particle="#@modfolder:Resources/elearmspells?Ice02"/>
+				<triggered_effect trigger="onSelfEnteredGame" action="AttachParticleEffectToEntity" particle="#@modfolder:Resources/elearmspells?Ice02"/>
+				<triggered_effect trigger="onSelfBuffRemove" action="RemoveParticleEffectFromEntity" particle="Ice02"/>
+				<triggered_effect trigger="onSelfDied" action="RemoveParticleEffectFromEntity" particle="Ice02"/>
+
+				<triggered_effect trigger="onSelfBuffUpdate" action="AddBuff" target="selfAOE" range="2" target_tags="zombie,animal" buff="buffEleArmSpellsIceLv2Spread"/>
+			</effect_group>
+		</buff>
+		<buff name="buffEleArmSpellsIceLv2Spread">
+			<damage_type value="Cold"/>
+			<stack_type value="replace"/>
+			<duration value="5"/>
+			<effect_group>
+				<triggered_effect trigger="onSelfBuffStart" action="AddBuff" buff="buffMarksExistingPropertyIce"/>
+			</effect_group>
+			<effect_group>
+				<requirement name="EntityTagCompare" target="self" tags="ezFrost"/>
+				<passive_effect name="HealthChangeOT" operation="base_subtract" value="15.8"/>
+			</effect_group>
+			<effect_group>
+				<passive_effect name="HealthChangeOT" operation="base_subtract" value="7.9"/>
+
+				<passive_effect name="HealthChangeOT" operation="base_subtract" value="4.2">
+					<requirement name="EntityTagCompare" target="self" tags="feral"/>
+				</passive_effect>
+				<passive_effect name="HealthChangeOT" operation="base_subtract" value="4.6">
+					<requirement name="EntityTagCompare" target="self" tags="radiated"/>
+				</passive_effect>
+
+				<passive_effect name="WalkSpeed" operation="perc_subtract" value="2"/>
+				<passive_effect name="RunSpeed" operation="perc_subtract" value="2"/>
+				<passive_effect name="Mobility" operation="perc_subtract" value="2" tags="falling,climbing,swimming"/>
+				<passive_effect name="AttacksPerMinute" operation="perc_subtract" value=".7"/>
+				<passive_effect name="PhysicalDamageResist" operation="perc_subtract" value=".1"/>
+
+				<triggered_effect trigger="onSelfDied" action="RemoveBuff" buff="buffEleArmSpellsIceLv2Spread"/>
+				<triggered_effect trigger="onSelfEnteredGame" action="RemoveBuff" buff="buffEleArmSpellsIceLv2Spread"/>
+
+				<triggered_effect trigger="onSelfBuffStart" action="AttachParticleEffectToEntity" particle="#@modfolder:Resources/elearmspells?Ice02"/>
+				<triggered_effect trigger="onSelfEnteredGame" action="AttachParticleEffectToEntity" particle="#@modfolder:Resources/elearmspells?Ice02"/>
+				<triggered_effect trigger="onSelfBuffRemove" action="RemoveParticleEffectFromEntity" particle="Ice02"/>
+				<triggered_effect trigger="onSelfDied" action="RemoveParticleEffectFromEntity" particle="Ice02"/>
+
+				<triggered_effect trigger="onSelfBuffUpdate" action="AddBuff" target="selfAOE" range="2" target_tags="zombie,animal" buff="buffEleArmSpellsIceLv2Spread">
+					<requirement name="NotHasBuff" target="other" buff="buffEleArmSpellsIceLv2"/>
+				</triggered_effect>
+			</effect_group>
+		</buff>
+		<buff name="buffEleArmSpellsIceLv3">
+			<damage_type value="Cold"/>
+			<stack_type value="duration"/>
+			<duration value="14"/>
+			<effect_group>
+				<triggered_effect trigger="onSelfBuffStart" action="AddBuff" buff="buffMarksExistingPropertyIce"/>
+			</effect_group>
+			<effect_group>
+				<requirement name="EntityTagCompare" target="self" tags="ezFire"/>
+				<passive_effect name="HealthChangeOT" operation="base_subtract" value="19"/>
+			</effect_group>
+			<effect_group>
+				<passive_effect name="HealthChangeOT" operation="base_subtract" value="9.5"/>
+
+				<passive_effect name="HealthChangeOT" operation="base_subtract" value="5">
+					<requirement name="EntityTagCompare" target="self" tags="feral"/>
+				</passive_effect>
+				<passive_effect name="HealthChangeOT" operation="base_subtract" value="5.6">
+					<requirement name="EntityTagCompare" target="self" tags="radiated"/>
+				</passive_effect>
+
+				<passive_effect name="WalkSpeed" operation="perc_subtract" value="3"/>
+				<passive_effect name="RunSpeed" operation="perc_subtract" value="3"/>
+				<passive_effect name="Mobility" operation="perc_subtract" value="3" tags="falling,climbing,swimming"/>
+				<passive_effect name="AttacksPerMinute" operation="perc_subtract" value=".9"/>
+				<passive_effect name="PhysicalDamageResist" operation="perc_subtract" value=".1"/>
+
+				<triggered_effect trigger="onSelfDied" action="RemoveBuff" buff="buffEleArmSpellsIceLv3"/>
+				<triggered_effect trigger="onSelfEnteredGame" action="RemoveBuff" buff="buffEleArmSpellsIceLv3"/>
+
+				<triggered_effect trigger="onSelfBuffStart" action="AttachParticleEffectToEntity" particle="#@modfolder:Resources/elearmspells?Ice03"/>
+				<triggered_effect trigger="onSelfEnteredGame" action="AttachParticleEffectToEntity" particle="#@modfolder:Resources/elearmspells?Ice03"/>
+				<triggered_effect trigger="onSelfBuffRemove" action="RemoveParticleEffectFromEntity" particle="Ice03"/>
+				<triggered_effect trigger="onSelfDied" action="RemoveParticleEffectFromEntity" particle="Ice03"/>
+
+				<triggered_effect trigger="onSelfBuffUpdate" action="AddBuff" target="selfAOE" range="3" target_tags="zombie,animal" buff="buffEleArmSpellsIceLv3Spread"/>
+			</effect_group>
+		</buff>
+		<buff name="buffEleArmSpellsIceLv3Spread">
+			<damage_type value="Cold"/>
+			<stack_type value="replace"/>
+			<duration value="7"/>
+			<effect_group>
+				<triggered_effect trigger="onSelfBuffStart" action="AddBuff" buff="buffMarksExistingPropertyIce"/>
+			</effect_group>
+			<effect_group>
+				<requirement name="EntityTagCompare" target="self" tags="ezFrost"/>
+				<passive_effect name="HealthChangeOT" operation="base_subtract" value="19"/>
+			</effect_group>
+			<effect_group>
+				<passive_effect name="HealthChangeOT" operation="base_subtract" value="9.5"/>
+
+				<passive_effect name="HealthChangeOT" operation="base_subtract" value="5">
+					<requirement name="EntityTagCompare" target="self" tags="feral"/>
+				</passive_effect>
+				<passive_effect name="HealthChangeOT" operation="base_subtract" value="5.6">
+					<requirement name="EntityTagCompare" target="self" tags="radiated"/>
+				</passive_effect>
+
+				<passive_effect name="WalkSpeed" operation="perc_subtract" value="3"/>
+				<passive_effect name="RunSpeed" operation="perc_subtract" value="3"/>
+				<passive_effect name="Mobility" operation="perc_subtract" value="3" tags="falling,climbing,swimming"/>
+				<passive_effect name="AttacksPerMinute" operation="perc_subtract" value=".9"/>
+				<passive_effect name="PhysicalDamageResist" operation="perc_subtract" value=".1"/>
+
+				<triggered_effect trigger="onSelfDied" action="RemoveBuff" buff="buffEleArmSpellsIceLv3Spread"/>
+				<triggered_effect trigger="onSelfEnteredGame" action="RemoveBuff" buff="buffEleArmSpellsIceLv3Spread"/>
+
+				<triggered_effect trigger="onSelfBuffStart" action="AttachParticleEffectToEntity" particle="#@modfolder:Resources/elearmspells?Ice03"/>
+				<triggered_effect trigger="onSelfEnteredGame" action="AttachParticleEffectToEntity" particle="#@modfolder:Resources/elearmspells?Ice03"/>
+				<triggered_effect trigger="onSelfBuffRemove" action="RemoveParticleEffectFromEntity" particle="Ice03"/>
+				<triggered_effect trigger="onSelfDied" action="RemoveParticleEffectFromEntity" particle="Ice03"/>
+
+				<triggered_effect trigger="onSelfBuffUpdate" action="AddBuff" target="selfAOE" range="3" target_tags="zombie,animal" buff="buffEleArmSpellsIceLv3Spread">
+					<requirement name="NotHasBuff" target="other" buff="buffEleArmSpellsIceLv3"/>
+				</triggered_effect>
+			</effect_group>
+		</buff>
+
+		<!-- 中毒 -->
+		<!-- time: 8, 12, 16  dmg: 9.4, 11, 12.6 -->
+		<!-- 類別傷害線性: 2, 4, 6 -->
+		<!-- 濺射的持續時間為原法術的1/2 -->
+		<buff name="buffEleArmSpellsPoisonLv1">
+			<damage_type value="toxic"/>
+			<stack_type value="duration"/>
+			<duration value="8"/>
+			<effect_group>
+				<triggered_effect trigger="onSelfBuffStart" action="AddBuff" buff="buffMarksExistingPropertyPoison"/>
+			</effect_group>
+			<effect_group>
+				<requirement name="EntityTagCompare" target="self" tags="ezElectric"/>
+				<passive_effect name="HealthChangeOT" operation="base_subtract" value="18.8"/>
+			</effect_group>
+			<effect_group>
+				<passive_effect name="HealthChangeOT" operation="base_subtract" value="9.4"/>
+				<passive_effect name="RunSpeed" operation="perc_subtract" value="1"/>
+
+				<passive_effect name="HealthChangeOT" operation="base_subtract" value="1.5">
+					<requirement name="EntityTagCompare" target="self" tags="feral"/>
+				</passive_effect>
+				<passive_effect name="HealthChangeOT" operation="base_subtract" value="2.6">
+					<requirement name="EntityTagCompare" target="self" tags="radiated"/>
+				</passive_effect>
+
+				<triggered_effect trigger="onSelfDied" action="RemoveBuff" buff="buffEleArmSpellsPoisonLv1"/>
+				<triggered_effect trigger="onSelfEnteredGame" action="RemoveBuff" buff="buffEleArmSpellsPoisonLv1"/>
+				<triggered_effect trigger="onSelfBuffStart" action="AttachParticleEffectToEntity" particle="#@modfolder:Resources/elearmspells?Poison" parent_transform="Hips"/>
+				<triggered_effect trigger="onSelfEnteredGame" action="AttachParticleEffectToEntity" particle="#@modfolder:Resources/elearmspells?Poison" parent_transform="Hips"/>
+				<triggered_effect trigger="onSelfBuffRemove" action="RemoveParticleEffectFromEntity" particle="Poison"/>
+				<triggered_effect trigger="onSelfDied" action="RemoveParticleEffectFromEntity" particle="Poison"/>
+
+				<triggered_effect trigger="onSelfBuffUpdate" action="AddBuff" target="self" buff="buffEleArmSpellsPoisonInstantDeath">
+					<requirement name="RandomRoll" seed_type="Random" min_max="0,100" operation="LTE" value="5"/>
+				</triggered_effect>
+			</effect_group>
+		</buff>
+		<buff name="buffEleArmSpellsPoisonLv2">
+			<damage_type value="toxic"/>
+			<stack_type value="duration"/>
+			<duration value="12"/>
+			<effect_group>
+				<triggered_effect trigger="onSelfBuffStart" action="AddBuff" buff="buffMarksExistingPropertyPoison"/>
+			</effect_group>
+			<effect_group>
+				<requirement name="EntityTagCompare" target="self" tags="ezElectric"/>
+				<passive_effect name="HealthChangeOT" operation="base_subtract" value="22"/>
+			</effect_group>
+			<effect_group>
+				<passive_effect name="HealthChangeOT" operation="base_subtract" value="11"/>
+				<passive_effect name="RunSpeed" operation="perc_subtract" value="2"/>
+
+				<passive_effect name="HealthChangeOT" operation="base_subtract" value="1.7">
+					<requirement name="EntityTagCompare" target="self" tags="feral"/>
+				</passive_effect>
+				<passive_effect name="HealthChangeOT" operation="base_subtract" value="3.1">
+					<requirement name="EntityTagCompare" target="self" tags="radiated"/>
+				</passive_effect>
+
+				<triggered_effect trigger="onSelfDied" action="RemoveBuff" buff="buffEleArmSpellsPoisonLv2"/>
+				<triggered_effect trigger="onSelfEnteredGame" action="RemoveBuff" buff="buffEleArmSpellsPoisonLv2"/>
+				<triggered_effect trigger="onSelfBuffStart" action="AttachParticleEffectToEntity" particle="#@modfolder:Resources/elearmspells?Poison02"/>
+				<triggered_effect trigger="onSelfEnteredGame" action="AttachParticleEffectToEntity" particle="#@modfolder:Resources/elearmspells?Poison02"/>
+				<triggered_effect trigger="onSelfBuffRemove" action="RemoveParticleEffectFromEntity" particle="Poison02"/>
+				<triggered_effect trigger="onSelfDied" action="RemoveParticleEffectFromEntity" particle="Poison02"/>
+
+				<triggered_effect trigger="onSelfBuffUpdate" action="AddBuff" target="selfAOE" range="2" target_tags="zombie,animal" buff="buffEleArmSpellsPoisonLv2Spread"/>
+				<triggered_effect trigger="onSelfBuffUpdate" action="AddBuff" target="self" buff="buffEleArmSpellsPoisonInstantDeath">
+					<requirement name="RandomRoll" seed_type="Random" min_max="0,100" operation="LTE" value="5"/>
+				</triggered_effect>
+			</effect_group>
+		</buff>
+		<buff name="buffEleArmSpellsPoisonLv2Spread">
+			<damage_type value="toxic"/>
+			<stack_type value="replace"/>
+			<duration value="6"/>
+			<effect_group>
+				<triggered_effect trigger="onSelfBuffStart" action="AddBuff" buff="buffMarksExistingPropertyPoison"/>
+			</effect_group>
+			<effect_group>
+				<requirement name="EntityTagCompare" target="self" tags="ezElectric"/>
+				<passive_effect name="HealthChangeOT" operation="base_subtract" value="22"/>
+			</effect_group>
+			<effect_group>
+				<passive_effect name="HealthChangeOT" operation="base_subtract" value="11"/>
+				<passive_effect name="RunSpeed" operation="perc_subtract" value="2"/>
+
+				<passive_effect name="HealthChangeOT" operation="base_subtract" value="1.7">
+					<requirement name="EntityTagCompare" target="self" tags="feral"/>
+				</passive_effect>
+				<passive_effect name="HealthChangeOT" operation="base_subtract" value="3.1">
+					<requirement name="EntityTagCompare" target="self" tags="radiated"/>
+				</passive_effect>
+
+				<triggered_effect trigger="onSelfDied" action="RemoveBuff" buff="buffEleArmSpellsPoisonLv2Spread"/>
+				<triggered_effect trigger="onSelfEnteredGame" action="RemoveBuff" buff="buffEleArmSpellsPoisonLv2Spread"/>
+				<triggered_effect trigger="onSelfBuffStart" action="AttachParticleEffectToEntity" particle="#@modfolder:Resources/elearmspells?Poison02"/>
+				<triggered_effect trigger="onSelfEnteredGame" action="AttachParticleEffectToEntity" particle="#@modfolder:Resources/elearmspells?Poison02"/>
+				<triggered_effect trigger="onSelfBuffRemove" action="RemoveParticleEffectFromEntity" particle="Poison02"/>
+				<triggered_effect trigger="onSelfDied" action="RemoveParticleEffectFromEntity" particle="Poison02"/>
+
+				<triggered_effect trigger="onSelfBuffUpdate" action="AddBuff" target="selfAOE" range="2" target_tags="zombie,animal" buff="buffEleArmSpellsPoisonLv2Spread">
+					<requirement name="NotHasBuff" target="other" buff="buffEleArmSpellsPoisonLv2"/>
+				</triggered_effect>
+				<triggered_effect trigger="onSelfBuffUpdate" action="AddBuff" target="self" buff="buffEleArmSpellsPoisonInstantDeath">
+					<requirement name="RandomRoll" seed_type="Random" min_max="0,100" operation="LTE" value="5"/>
+				</triggered_effect>
+			</effect_group>
+		</buff>
+		<buff name="buffEleArmSpellsPoisonLv3">
+			<damage_type value="toxic"/>
+			<stack_type value="duration"/>
+			<duration value="16"/>
+			<effect_group>
+				<triggered_effect trigger="onSelfBuffStart" action="AddBuff" buff="buffMarksExistingPropertyPoison"/>
+			</effect_group>
+			<effect_group>
+				<requirement name="EntityTagCompare" target="self" tags="ezElectric"/>
+				<passive_effect name="HealthChangeOT" operation="base_subtract" value="25.2"/>
+			</effect_group>
+			<effect_group>
+				<passive_effect name="HealthChangeOT" operation="base_subtract" value="12.6"/>
+				<passive_effect name="RunSpeed" operation="perc_subtract" value="3"/>
+
+				<passive_effect name="HealthChangeOT" operation="base_subtract" value="2">
+					<requirement name="EntityTagCompare" target="self" tags="feral"/>
+				</passive_effect>
+				<passive_effect name="HealthChangeOT" operation="base_subtract" value="3.5">
+					<requirement name="EntityTagCompare" target="self" tags="radiated"/>
+				</passive_effect>
+
+				<triggered_effect trigger="onSelfDied" action="RemoveBuff" buff="buffEleArmSpellsPoisonLv3"/>
+				<triggered_effect trigger="onSelfEnteredGame" action="RemoveBuff" buff="buffEleArmSpellsPoisonLv3"/>
+				<triggered_effect trigger="onSelfBuffStart" action="AttachParticleEffectToEntity" particle="#@modfolder:Resources/elearmspells?Poison03"/>
+				<triggered_effect trigger="onSelfEnteredGame" action="AttachParticleEffectToEntity" particle="#@modfolder:Resources/elearmspells?Poison03"/>
+				<triggered_effect trigger="onSelfBuffRemove" action="RemoveParticleEffectFromEntity" particle="Poison03"/>
+				<triggered_effect trigger="onSelfDied" action="RemoveParticleEffectFromEntity" particle="Poison03"/>
+
+				<triggered_effect trigger="onSelfBuffUpdate" action="AddBuff" target="selfAOE" range="3" target_tags="zombie,animal" buff="buffEleArmSpellsPoisonLv3Spread"/>
+				<triggered_effect trigger="onSelfBuffUpdate" action="AddBuff" target="self" buff="buffEleArmSpellsPoisonInstantDeath">
+					<requirement name="RandomRoll" seed_type="Random" min_max="0,100" operation="LTE" value="5"/>
+				</triggered_effect>
+			</effect_group>
+		</buff>
+		<buff name="buffEleArmSpellsPoisonLv3Spread">
+			<damage_type value="toxic"/>
+			<stack_type value="replace"/>
+			<duration value="8"/>
+			<effect_group>
+				<triggered_effect trigger="onSelfBuffStart" action="AddBuff" buff="buffMarksExistingPropertyPoison"/>
+			</effect_group>
+			<effect_group>
+				<requirement name="EntityTagCompare" target="self" tags="ezElectric"/>
+				<passive_effect name="HealthChangeOT" operation="base_subtract" value="25.2"/>
+			</effect_group>
+			<effect_group>
+				<passive_effect name="HealthChangeOT" operation="base_subtract" value="12.6"/>
+				<passive_effect name="RunSpeed" operation="perc_subtract" value="3"/>
+
+				<passive_effect name="HealthChangeOT" operation="base_subtract" value="2">
+					<requirement name="EntityTagCompare" target="self" tags="feral"/>
+				</passive_effect>
+				<passive_effect name="HealthChangeOT" operation="base_subtract" value="3.5">
+					<requirement name="EntityTagCompare" target="self" tags="radiated"/>
+				</passive_effect>
+
+				<triggered_effect trigger="onSelfDied" action="RemoveBuff" buff="buffEleArmSpellsPoisonLv3Spread"/>
+				<triggered_effect trigger="onSelfEnteredGame" action="RemoveBuff" buff="buffEleArmSpellsPoisonLv3Spread"/>
+				<triggered_effect trigger="onSelfBuffStart" action="AttachParticleEffectToEntity" particle="#@modfolder:Resources/elearmspells?Poison03"/>
+				<triggered_effect trigger="onSelfEnteredGame" action="AttachParticleEffectToEntity" particle="#@modfolder:Resources/elearmspells?Poison03"/>
+				<triggered_effect trigger="onSelfBuffRemove" action="RemoveParticleEffectFromEntity" particle="Poison03"/>
+				<triggered_effect trigger="onSelfDied" action="RemoveParticleEffectFromEntity" particle="Poison03"/>
+
+				<triggered_effect trigger="onSelfBuffUpdate" action="AddBuff" target="selfAOE" range="3" target_tags="zombie,animal" buff="buffEleArmSpellsPoisonLv3Spread">
+					<requirement name="NotHasBuff" target="other" buff="buffEleArmSpellsPoisonLv3"/>
+				</triggered_effect>
+				<triggered_effect trigger="onSelfBuffUpdate" action="AddBuff" target="self" buff="buffEleArmSpellsPoisonInstantDeath">
+					<requirement name="RandomRoll" seed_type="Random" min_max="0,100" operation="LTE" value="5"/>
+				</triggered_effect>
+			</effect_group>
+		</buff>
+		<buff name="buffEleArmSpellsPoisonInstantDeath">
+			<damage_type value="toxic"/>
+			<effect_group>
+				<passive_effect name="HealthChangeOT" operation="base_subtract" value="99999999"/>
+				<triggered_effect trigger="onSelfDied" action="RemoveBuff" buff="buffEleArmSpellsPoisonInstantDeath"/>
+				<triggered_effect trigger="onSelfEnteredGame" action="RemoveBuff" buff="buffEleArmSpellsPoisonInstantDeath"/>
+			</effect_group>
+		</buff>
+
+		<!-- 電擊 -->
+		<!-- time: 4, 6, 8  dmg: 9.4, 11, 12.6 -->
+		<!-- 類別傷害線性: 4, 6, 8 -->
+		<!-- 濺射的持續時間為原法術的1/2 -->
+		<buff name="buffEleArmSpellsElectricShockLv1">
+			<damage_type value="electrical"/>
+			<stack_type value="duration"/>
+			<duration value="4"/>
+			<effect_group>
+				<triggered_effect trigger="onSelfBuffStart" action="AddBuff" buff="buffMarksExistingPropertyElectric"/>
+			</effect_group>
+			<effect_group>
+				<requirement name="EntityTagCompare" target="self" tags="ezToxic"/>
+				<passive_effect name="HealthChangeOT" operation="base_subtract" value="18.8"/>
+			</effect_group>
+			<effect_group>
+				<passive_effect name="HealthChangeOT" operation="base_subtract" value="9.4"/>
+				<passive_effect name="WalkSpeed" operation="perc_subtract" value=".5,.01" duration="0,4"/>
+				<passive_effect name="RunSpeed" operation="perc_subtract" value=".5,.01" duration="0,4"/>
+				<passive_effect name="JumpStrength" operation="perc_subtract" value=".5,.01" duration="0,4"/>
+				<passive_effect name="Mobility" operation="perc_subtract" value=".5" tags="falling,climbing,swimming"/>
+
+				<passive_effect name="HealthChangeOT" operation="base_subtract" value="5.2">
+					<requirement name="EntityTagCompare" target="self" tags="feral"/>
+				</passive_effect>
+				<passive_effect name="HealthChangeOT" operation="base_subtract" value="5.7">
+					<requirement name="EntityTagCompare" target="self" tags="radiated"/>
+				</passive_effect>
+
+				<triggered_effect trigger="onSelfDied" action="RemoveBuff" buff="buffEleArmSpellsElectricShockLv1"/>
+				<triggered_effect trigger="onSelfEnteredGame" action="RemoveBuff" buff="buffEleArmSpellsElectricShockLv1"/>
+				<triggered_effect trigger="onSelfBuffStart" action="AttachParticleEffectToEntity" particle="#@modfolder:Resources/elearmspells?Electric" parent_transform="Hips"/>
+				<triggered_effect trigger="onSelfEnteredGame" action="AttachParticleEffectToEntity" particle="#@modfolder:Resources/elearmspells?Electric" parent_transform="Hips"/>
+				<triggered_effect trigger="onSelfBuffRemove" action="RemoveParticleEffectFromEntity" particle="Electric"/>
+				<triggered_effect trigger="onSelfDied" action="RemoveParticleEffectFromEntity" particle="Electric"/>
+			</effect_group>
+		</buff>
+		<buff name="buffEleArmSpellsElectricShockLv2">
+			<damage_type value="electrical"/>
+			<stack_type value="duration"/>
+			<duration value="6"/>
+			<effect_group>
+				<triggered_effect trigger="onSelfBuffStart" action="AddBuff" buff="buffMarksExistingPropertyElectric"/>
+			</effect_group>
+			<effect_group>
+				<requirement name="EntityTagCompare" target="self" tags="ezToxic"/>
+				<passive_effect name="HealthChangeOT" operation="base_subtract" value="22"/>
+			</effect_group>
+			<effect_group>
+				<passive_effect name="HealthChangeOT" operation="base_subtract" value="11"/>
+				<passive_effect name="WalkSpeed" operation="perc_subtract" value=".7,.01" duration="0,6"/>
+				<passive_effect name="RunSpeed" operation="perc_subtract" value=".7,.01" duration="0,6"/>
+				<passive_effect name="JumpStrength" operation="perc_subtract" value=".7,.01" duration="0,6"/>
+				<passive_effect name="Mobility" operation="perc_subtract" value=".7" tags="falling,climbing,swimming"/>
+
+				<passive_effect name="HealthChangeOT" operation="base_subtract" value="6.1">
+					<requirement name="EntityTagCompare" target="self" tags="feral"/>
+				</passive_effect>
+				<passive_effect name="HealthChangeOT" operation="base_subtract" value="6.9">
+					<requirement name="EntityTagCompare" target="self" tags="radiated"/>
+				</passive_effect>
+
+				<triggered_effect trigger="onSelfDied" action="RemoveBuff" buff="buffEleArmSpellsElectricShockLv2"/>
+				<triggered_effect trigger="onSelfEnteredGame" action="RemoveBuff" buff="buffEleArmSpellsElectricShockLv2"/>
+				<triggered_effect trigger="onSelfBuffStart" action="AttachParticleEffectToEntity" particle="#@modfolder:Resources/elearmspells?Electric02"/>
+				<triggered_effect trigger="onSelfEnteredGame" action="AttachParticleEffectToEntity" particle="#@modfolder:Resources/elearmspells?Electric02"/>
+				<triggered_effect trigger="onSelfBuffRemove" action="RemoveParticleEffectFromEntity" particle="Electric02"/>
+				<triggered_effect trigger="onSelfDied" action="RemoveParticleEffectFromEntity" particle="Electric02"/>
+
+				<triggered_effect trigger="onSelfBuffUpdate" action="AddBuff" target="selfAOE" range="2" target_tags="zombie,animal" buff="buffEleArmSpellsElectricShockLv2Spread"/>
+			</effect_group>
+		</buff>
+		<buff name="buffEleArmSpellsElectricShockLv2Spread">
+			<damage_type value="electrical"/>
+			<stack_type value="replace"/>
+			<duration value="3"/>
+			<effect_group>
+				<triggered_effect trigger="onSelfBuffStart" action="AddBuff" buff="buffMarksExistingPropertyElectric"/>
+			</effect_group>
+			<effect_group>
+				<requirement name="EntityTagCompare" target="self" tags="ezToxic"/>
+				<passive_effect name="HealthChangeOT" operation="base_subtract" value="22"/>
+			</effect_group>
+			<effect_group>
+				<passive_effect name="HealthChangeOT" operation="base_subtract" value="11"/>
+				<passive_effect name="WalkSpeed" operation="perc_subtract" value=".7,.01" duration="0,4"/>
+				<passive_effect name="RunSpeed" operation="perc_subtract" value=".7,.01" duration="0,4"/>
+				<passive_effect name="JumpStrength" operation="perc_subtract" value=".7,.01" duration="0,4"/>
+				<passive_effect name="Mobility" operation="perc_subtract" value=".7" tags="falling,climbing,swimming"/>
+
+				<passive_effect name="HealthChangeOT" operation="base_subtract" value="6.1">
+					<requirement name="EntityTagCompare" target="self" tags="feral"/>
+				</passive_effect>
+				<passive_effect name="HealthChangeOT" operation="base_subtract" value="6.9">
+					<requirement name="EntityTagCompare" target="self" tags="radiated"/>
+				</passive_effect>
+
+				<triggered_effect trigger="onSelfDied" action="RemoveBuff" buff="buffEleArmSpellsElectricShockLv2Spread"/>
+				<triggered_effect trigger="onSelfEnteredGame" action="RemoveBuff" buff="buffEleArmSpellsElectricShockLv2Spread"/>
+				<triggered_effect trigger="onSelfBuffStart" action="AttachParticleEffectToEntity" particle="#@modfolder:Resources/elearmspells?Electric02"/>
+				<triggered_effect trigger="onSelfEnteredGame" action="AttachParticleEffectToEntity" particle="#@modfolder:Resources/elearmspells?Electric02"/>
+				<triggered_effect trigger="onSelfBuffRemove" action="RemoveParticleEffectFromEntity" particle="Electric02"/>
+				<triggered_effect trigger="onSelfDied" action="RemoveParticleEffectFromEntity" particle="Electric02"/>
+
+				<triggered_effect trigger="onSelfBuffUpdate" action="AddBuff" target="selfAOE" range="2" target_tags="zombie,animal" buff="buffEleArmSpellsElectricShockLv2Spread">
+					<requirement name="NotHasBuff" target="other" buff="buffEleArmSpellsElectricShockLv2"/>
+				</triggered_effect>
+			</effect_group>
+		</buff>
+		<buff name="buffEleArmSpellsElectricShockLv3">
+			<damage_type value="electrical"/>
+			<stack_type value="duration"/>
+			<duration value="8"/>
+			<effect_group>
+				<triggered_effect trigger="onSelfBuffStart" action="AddBuff" buff="buffMarksExistingPropertyElectric"/>
+			</effect_group>
+			<effect_group>
+				<requirement name="EntityTagCompare" target="self" tags="ezToxic"/>
+				<passive_effect name="HealthChangeOT" operation="base_subtract" value="25.2"/>
+			</effect_group>
+			<effect_group>
+				<passive_effect name="HealthChangeOT" operation="base_subtract" value="12.6"/>
+
+				<passive_effect name="WalkSpeed" operation="perc_subtract" value=".9,.01" duration="0,8"/>
+				<passive_effect name="RunSpeed" operation="perc_subtract" value=".9,.01" duration="0,8"/>
+				<passive_effect name="JumpStrength" operation="perc_subtract" value=".9,.01" duration="0,8"/>
+				<passive_effect name="Mobility" operation="perc_subtract" value=".9" tags="falling,climbing,swimming"/>
+
+				<passive_effect name="HealthChangeOT" operation="base_subtract" value="7">
+					<requirement name="EntityTagCompare" target="self" tags="feral"/>
+				</passive_effect>
+				<passive_effect name="HealthChangeOT" operation="base_subtract" value="7.9">
+					<requirement name="EntityTagCompare" target="self" tags="radiated"/>
+				</passive_effect>
+
+				<triggered_effect trigger="onSelfDied" action="RemoveBuff" buff="buffEleArmSpellsElectricShockLv3"/>
+				<triggered_effect trigger="onSelfEnteredGame" action="RemoveBuff" buff="buffEleArmSpellsElectricShockLv3"/>
+				<triggered_effect trigger="onSelfBuffStart" action="AttachParticleEffectToEntity" particle="#@modfolder:Resources/elearmspells?Electric03"/>
+				<triggered_effect trigger="onSelfEnteredGame" action="AttachParticleEffectToEntity" particle="#@modfolder:Resources/elearmspells?Electric03"/>
+				<triggered_effect trigger="onSelfBuffRemove" action="RemoveParticleEffectFromEntity" particle="Electric03"/>
+				<triggered_effect trigger="onSelfDied" action="RemoveParticleEffectFromEntity" particle="Electric03"/>
+
+				<triggered_effect trigger="onSelfBuffUpdate" action="AddBuff" target="selfAOE" range="3" target_tags="zombie,animal" buff="buffEleArmSpellsElectricShockLv3Spread"/>
+			</effect_group>
+		</buff>
+		<buff name="buffEleArmSpellsElectricShockLv3Spread">
+			<damage_type value="electrical"/>
+			<stack_type value="replace"/>
+			<duration value="4"/>
+			<effect_group>
+				<triggered_effect trigger="onSelfBuffStart" action="AddBuff" buff="buffMarksExistingPropertyElectric"/>
+			</effect_group>
+			<effect_group>
+				<requirement name="EntityTagCompare" target="self" tags="ezToxic"/>
+				<passive_effect name="HealthChangeOT" operation="base_subtract" value="25.2"/>
+			</effect_group>
+			<effect_group>
+				<passive_effect name="HealthChangeOT" operation="base_subtract" value="12.6"/>
+				
+				<passive_effect name="WalkSpeed" operation="perc_subtract" value=".9,.01" duration="0,4"/>
+				<passive_effect name="RunSpeed" operation="perc_subtract" value=".9,.01" duration="0,4"/>
+				<passive_effect name="JumpStrength" operation="perc_subtract" value=".9,.01" duration="0,4"/>
+				<passive_effect name="Mobility" operation="perc_subtract" value=".9" tags="falling,climbing,swimming"/>
+
+				<passive_effect name="HealthChangeOT" operation="base_subtract" value="7">
+					<requirement name="EntityTagCompare" target="self" tags="feral"/>
+				</passive_effect>
+				<passive_effect name="HealthChangeOT" operation="base_subtract" value="7.9">
+					<requirement name="EntityTagCompare" target="self" tags="radiated"/>
+				</passive_effect>
+
+				<triggered_effect trigger="onSelfDied" action="RemoveBuff" buff="buffEleArmSpellsElectricShockLv3Spread"/>
+				<triggered_effect trigger="onSelfEnteredGame" action="RemoveBuff" buff="buffEleArmSpellsElectricShockLv3Spread"/>
+				<triggered_effect trigger="onSelfBuffStart" action="AttachParticleEffectToEntity" particle="#@modfolder:Resources/elearmspells?Electric03"/>
+				<triggered_effect trigger="onSelfEnteredGame" action="AttachParticleEffectToEntity" particle="#@modfolder:Resources/elearmspells?Electric03"/>
+				<triggered_effect trigger="onSelfBuffRemove" action="RemoveParticleEffectFromEntity" particle="Electric03"/>
+				<triggered_effect trigger="onSelfDied" action="RemoveParticleEffectFromEntity" particle="Electric03"/>
+
+				<triggered_effect trigger="onSelfBuffUpdate" action="AddBuff" target="selfAOE" range="3" target_tags="zombie,animal" buff="buffEleArmSpellsElectricShockLv3Spread">
+					<requirement name="NotHasBuff" target="other" buff="buffEleArmSpellsElectricShockLv3"/>
+				</triggered_effect>
+			</effect_group>
+		</buff>
+	</append>
+
+	<!-- 弓與十字弓專用四元素 -->
+	<append xpath="/buffs">
+		<buff name="buffEleArmSpellsArrowFire">
+			<damage_type value="heat"/>
+			<stack_type value="replace"/>
+			<duration value="8"/>
+			<effect_group>
+				<triggered_effect trigger="onSelfBuffStart" action="AddBuff" buff="buffMarksExistingPropertyFire"/>
+			</effect_group>
+			<effect_group>
+				<requirement name="EntityTagCompare" target="self" tags="ezFrost"/>
+				<passive_effect name="HealthChangeOT" operation="base_subtract" value="50"/>
+			</effect_group>
+			<effect_group>
+				<passive_effect name="HealthChangeOT" operation="base_subtract" value="12.5,14,15.5" duration="0,3,6"/>
+
+				<passive_effect name="HealthChangeOT" operation="base_subtract" value="2.1">
+					<requirement name="EntityTagCompare" target="self" tags="feral"/>
+				</passive_effect>
+				<passive_effect name="HealthChangeOT" operation="base_subtract" value="3.5">
+					<requirement name="EntityTagCompare" target="self" tags="radiated"/>
+				</passive_effect>
+
+				<triggered_effect trigger="onSelfDied" action="RemoveBuff" buff="buffEleArmSpellsArrowFire"/>
+				<triggered_effect trigger="onSelfEnteredGame" action="RemoveBuff" buff="buffEleArmSpellsArrowFire"/>
+
+				<triggered_effect trigger="onSelfBuffStart" action="AttachParticleEffectToEntity" particle="#@modfolder:Resources/elearmspells?Fire" parent_transform="Hips" shape_mesh="true"/>
+				<triggered_effect trigger="onSelfEnteredGame" action="AttachParticleEffectToEntity" particle="#@modfolder:Resources/elearmspells?Fire" parent_transform="Hips" shape_mesh="true"/>
+				<triggered_effect trigger="onSelfBuffRemove" action="RemoveParticleEffectFromEntity" particle="Fire"/>
+				<triggered_effect trigger="onSelfDied" action="RemoveParticleEffectFromEntity" particle="Fire"/>
+			</effect_group>
+		</buff>
+		<buff name="buffEleArmSpellsArrowIce">
+			<damage_type value="Cold"/>
+			<stack_type value="replace"/>
+			<duration value="8"/>
+			<effect_group>
+				<triggered_effect trigger="onSelfBuffStart" action="AddBuff" buff="buffMarksExistingPropertyIce"/>
+			</effect_group>
+			<effect_group>
+				<requirement name="EntityTagCompare" target="self" tags="ezFire"/>
+				<passive_effect name="HealthChangeOT" operation="base_subtract" value="25.2"/>
+			</effect_group>
+			<effect_group>
+				<passive_effect name="HealthChangeOT" operation="base_subtract" value="6.3,7.8,9.3" duration="0,3,6"/>
+
+				<passive_effect name="HealthChangeOT" operation="base_subtract" value="3.4">
+					<requirement name="EntityTagCompare" target="self" tags="feral"/>
+				</passive_effect>
+				<passive_effect name="HealthChangeOT" operation="base_subtract" value="3.8">
+					<requirement name="EntityTagCompare" target="self" tags="radiated"/>
+				</passive_effect>
+
+				<passive_effect name="WalkSpeed" operation="perc_subtract" value="2"/>
+				<passive_effect name="RunSpeed" operation="perc_subtract" value="2"/>
+				<passive_effect name="Mobility" operation="perc_subtract" value="2" tags="falling,climbing,swimming"/>
+				<passive_effect name="AttacksPerMinute" operation="perc_subtract" value=".5"/>
+				<passive_effect name="PhysicalDamageResist" operation="perc_subtract" value=".1"/>
+
+				<triggered_effect trigger="onSelfDied" action="RemoveBuff" buff="buffEleArmSpellsArrowIce"/>
+				<triggered_effect trigger="onSelfEnteredGame" action="RemoveBuff" buff="buffEleArmSpellsArrowIce"/>
+
+				<triggered_effect trigger="onSelfBuffStart" action="AttachParticleEffectToEntity" particle="#@modfolder:Resources/elearmspells?Ice" parent_transform="Hips" shape_mesh="true"/>
+				<triggered_effect trigger="onSelfEnteredGame" action="AttachParticleEffectToEntity" particle="#@modfolder:Resources/elearmspells?Ice" parent_transform="Hips" shape_mesh="true"/>
+				<triggered_effect trigger="onSelfBuffRemove" action="RemoveParticleEffectFromEntity" particle="Ice"/>
+				<triggered_effect trigger="onSelfDied" action="RemoveParticleEffectFromEntity" particle="Ice"/>
+			</effect_group>
+		</buff>
+		<buff name="buffEleArmSpellsArrowPoison">
+			<damage_type value="toxic"/>
+			<stack_type value="replace"/>
+			<duration value="8"/>
+			<effect_group>
+				<triggered_effect trigger="onSelfBuffStart" action="AddBuff" buff="buffMarksExistingPropertyPoison"/>
+			</effect_group>
+			<effect_group>
+				<requirement name="EntityTagCompare" target="self" tags="ezElectric"/>
+				<passive_effect name="HealthChangeOT" operation="base_subtract" value="37.6"/>
+			</effect_group>
+			<effect_group>
+				<passive_effect name="HealthChangeOT" operation="base_subtract" value="9.4,10.9,12.4" duration="0,3,6"/>
+
+				<passive_effect name="HealthChangeOT" operation="base_subtract" value="1.5">
+					<requirement name="EntityTagCompare" target="self" tags="feral"/>
+				</passive_effect>
+				<passive_effect name="HealthChangeOT" operation="base_subtract" value="2.6">
+					<requirement name="EntityTagCompare" target="self" tags="radiated"/>
+				</passive_effect>
+
+				<triggered_effect trigger="onSelfDied" action="RemoveBuff" buff="buffEleArmSpellsArrowPoison"/>
+				<triggered_effect trigger="onSelfEnteredGame" action="RemoveBuff" buff="buffEleArmSpellsArrowPoison"/>
+
+				<triggered_effect trigger="onSelfBuffStart" action="AttachParticleEffectToEntity" particle="#@modfolder:Resources/elearmspells?Poison" parent_transform="Hips" shape_mesh="true"/>
+				<triggered_effect trigger="onSelfEnteredGame" action="AttachParticleEffectToEntity" particle="#@modfolder:Resources/elearmspells?Poison" parent_transform="Hips" shape_mesh="true"/>
+				<triggered_effect trigger="onSelfBuffRemove" action="RemoveParticleEffectFromEntity" particle="Poison"/>
+				<triggered_effect trigger="onSelfDied" action="RemoveParticleEffectFromEntity" particle="Poison"/>
+			</effect_group>
+		</buff>
+		<buff name="buffEleArmSpellsArrowElectricShock">
+			<damage_type value="electrical"/>
+			<stack_type value="replace"/>
+			<duration value="8"/>
+			<effect_group>
+				<triggered_effect trigger="onSelfBuffStart" action="AddBuff" buff="buffMarksExistingPropertyElectric"/>
+			</effect_group>
+			<effect_group>
+				<requirement name="EntityTagCompare" target="self" tags="ezToxic"/>
+				<passive_effect name="HealthChangeOT" operation="base_subtract" value="37.6"/>
+			</effect_group>
+			<effect_group>
+				<passive_effect name="HealthChangeOT" operation="base_subtract" value="9.4,10.9,12.4" duration="0,3,6"/>
+				<passive_effect name="WalkSpeed" operation="perc_subtract" value=".5,.01" duration="0,6"/>
+				<passive_effect name="RunSpeed" operation="perc_subtract" value=".5,.01" duration="0,6"/>
+				<passive_effect name="JumpStrength" operation="perc_subtract" value=".5,.01" duration="0,6"/>
+				<passive_effect name="Mobility" operation="perc_subtract" value=".5" tags="falling,climbing,swimming"/>
+
+				<passive_effect name="HealthChangeOT" operation="base_subtract" value="5.2">
+					<requirement name="EntityTagCompare" target="self" tags="feral"/>
+				</passive_effect>
+				<passive_effect name="HealthChangeOT" operation="base_subtract" value="5.7">
+					<requirement name="EntityTagCompare" target="self" tags="radiated"/>
+				</passive_effect>
+
+				<triggered_effect trigger="onSelfDied" action="RemoveBuff" buff="buffEleArmSpellsArrowElectricShock"/>
+				<triggered_effect trigger="onSelfEnteredGame" action="RemoveBuff" buff="buffEleArmSpellsArrowElectricShock"/>
+
+				<triggered_effect trigger="onSelfBuffStart" action="AttachParticleEffectToEntity" particle="#@modfolder:Resources/elearmspells?Electric" parent_transform="Hips" shape_mesh="true"/>
+				<triggered_effect trigger="onSelfEnteredGame" action="AttachParticleEffectToEntity" particle="#@modfolder:Resources/elearmspells?Electric" parent_transform="Hips" shape_mesh="true"/>
+				<triggered_effect trigger="onSelfBuffRemove" action="RemoveParticleEffectFromEntity" particle="Electric"/>
+				<triggered_effect trigger="onSelfDied" action="RemoveParticleEffectFromEntity" particle="Electric"/>
+			</effect_group>
+		</buff>
+	</append>
+
+	<!-- 連鎖技 -->
+	<append xpath="/buffs">
+		<!-- 龍捲風(Tornado) -->
+		<buff name="buffEleArmSpellsTornado">
+			<damage_type value="Radiation"/>
+			<stack_type value="replace"/>
+			<duration value="8"/>
+			<effect_group>
+				<requirement name="EntityTagCompare" target="self" tags="ezSoul"/>
+				<passive_effect name="HealthChangeOT" operation="base_subtract" value="18.8"/>
+			</effect_group>
+			<effect_group>
+				<passive_effect name="HealthChangeOT" operation="base_subtract" value="9.4"/>
+
+				<passive_effect name="HealthChangeOT" operation="base_subtract" value="1.5">
+					<requirement name="EntityTagCompare" target="self" tags="feral"/>
+				</passive_effect>
+				<passive_effect name="HealthChangeOT" operation="base_subtract" value="2.6">
+					<requirement name="EntityTagCompare" target="self" tags="radiated"/>
+				</passive_effect>
+
+				<triggered_effect trigger="onSelfBuffUpdate" action="Ragdoll" duration="0.1">
+					<requirement name="RandomRoll" seed_type="Random" min_max="0,100" operation="LTE" value="50"/>
+				</triggered_effect>
+
+				<triggered_effect trigger="onSelfDied" action="RemoveBuff" buff="buffEleArmSpellsTornado"/>
+				<triggered_effect trigger="onSelfEnteredGame" action="RemoveBuff" buff="buffEleArmSpellsTornado"/>
+
+				<triggered_effect trigger="onSelfBuffStart" action="AttachParticleEffectToEntity" particle="#@modfolder:Resources/elearmspells?Tornado"/>
+				<triggered_effect trigger="onSelfEnteredGame" action="AttachParticleEffectToEntity" particle="#@modfolder:Resources/elearmspells?Tornado"/>
+				<triggered_effect trigger="onSelfBuffRemove" action="RemoveParticleEffectFromEntity" particle="Tornado"/>
+				<triggered_effect trigger="onSelfDied" action="RemoveParticleEffectFromEntity" particle="Tornado"/>
+
+				<triggered_effect trigger="onSelfBuffUpdate" action="AddBuff" target="selfAOE" range="3" target_tags="zombie,animal" buff="buffEleArmSpellsTornado"/>
+			</effect_group>
+		</buff>
+		<!-- 幽靈痕跡(Phantom Traces) -->
+		<buff name="buffEleArmSpellsPhantomTraces">
+			<damage_type value="Stun"/>
+			<stack_type value="duration"/>
+			<duration value="8"/>
+			<effect_group>
+				<requirement name="EntityTagCompare" target="self" tags="ezFire,ezFrost,ezElectric,ezToxic,ezSoul"/>
+				<passive_effect name="HealthChangeOT" operation="base_subtract" value="28"/>
+			</effect_group>
+			<effect_group>
+				<requirement name="EntityTagCompare" target="self" tags="zombie,animal"/>
+				<passive_effect name="HealthChangeOT" operation="base_subtract" value="15"/>
+
+				<triggered_effect trigger="onSelfDied" action="RemoveBuff" buff="buffEleArmSpellsPhantomTraces"/>
+				<triggered_effect trigger="onSelfEnteredGame" action="RemoveBuff" buff="buffEleArmSpellsPhantomTraces"/>
+				<triggered_effect trigger="onSelfBuffStart" action="AttachParticleEffectToEntity" particle="#@modfolder:Resources/elearmspells?FireVariants"/>
+				<triggered_effect trigger="onSelfEnteredGame" action="AttachParticleEffectToEntity" particle="#@modfolder:Resources/elearmspells?FireVariants"/>
+				<triggered_effect trigger="onSelfBuffRemove" action="RemoveParticleEffectFromEntity" particle="FireVariants"/>
+				<triggered_effect trigger="onSelfDied" action="RemoveParticleEffectFromEntity" particle="FireVariants"/>
+			</effect_group>
+		</buff>
+		<!-- 神聖裁決(Divine Judgment) -->
+		<buff name="buffEleArmSpellsDivineJudgment">
+			<damage_type value="Stun"/>
+			<stack_type value="replace"/>
+			<duration value="1"/>
+			<effect_group>
+				<requirement name="EntityTagCompare" target="self" tags="ezFire,ezFrost,ezElectric,ezToxic,ezSoul"/>
+				<passive_effect name="HealthChangeOT" operation="base_subtract" value="56"/>
+			</effect_group>
+			<effect_group>
+				<requirement name="EntityTagCompare" target="self" tags="zombie,animal"/>
+				<passive_effect name="HealthChangeOT" operation="base_subtract" value="30"/>
+
+				<triggered_effect trigger="onSelfDied" action="RemoveBuff" buff="buffEleArmSpellsDivineJudgment"/>
+				<triggered_effect trigger="onSelfEnteredGame" action="RemoveBuff" buff="buffEleArmSpellsDivineJudgment"/>
+				<triggered_effect trigger="onSelfBuffStart" action="AttachParticleEffectToEntity" particle="#@modfolder:Resources/elearmspells?HolyBloodCross"/>
+				<triggered_effect trigger="onSelfEnteredGame" action="AttachParticleEffectToEntity" particle="#@modfolder:Resources/elearmspells?HolyBloodCross"/>
+				<triggered_effect trigger="onSelfBuffRemove" action="RemoveParticleEffectFromEntity" particle="HolyBloodCross"/>
+				<triggered_effect trigger="onSelfDied" action="RemoveParticleEffectFromEntity" particle="HolyBloodCross"/>
+			</effect_group>
+		</buff>
+	</append>
+
+	<!-- 投擲型法術, 相當於四元素Lv2傷害 -->
+	<append xpath="/buffs">
+		<!-- 炎爆彈 -->
+		<buff name="buffEleArmSpellsFlameBurstBomb">
+			<damage_type value="heat"/>
+			<stack_type value="replace"/>
+			<duration value="5"/>
+			<effect_group>
+				<requirement name="EntityTagCompare" target="self" tags="ezFrost"/>
+				<passive_effect name="HealthChangeOT" operation="base_subtract" value="28.2"/>
+			</effect_group>
+			<effect_group>
+				<requirement name="EntityTagCompare" target="self" tags="zombie,animal"/>
+				<passive_effect name="HealthChangeOT" operation="base_subtract" value="14.1"/>
+
+				<passive_effect name="HealthChangeOT" operation="base_subtract" value="2.4">
+					<requirement name="EntityTagCompare" target="self" tags="feral"/>
+				</passive_effect>
+				<passive_effect name="HealthChangeOT" operation="base_subtract" value="3.9">
+					<requirement name="EntityTagCompare" target="self" tags="radiated"/>
+				</passive_effect>
+
+				<triggered_effect trigger="onSelfDied" action="RemoveBuff" buff="buffEleArmSpellsFlameBurstBomb"/>
+				<triggered_effect trigger="onSelfEnteredGame" action="RemoveBuff" buff="buffEleArmSpellsFlameBurstBomb"/>
+
+				<triggered_effect trigger="onSelfBuffStart" action="AttachParticleEffectToEntity" particle="#@modfolder:Resources/elearmspells?FlameBurstBombTarget" parent_transform="Hips"/>
+				<triggered_effect trigger="onSelfEnteredGame" action="AttachParticleEffectToEntity" particle="#@modfolder:Resources/elearmspells?FlameBurstBombTarget" parent_transform="Hips"/>
+				<triggered_effect trigger="onSelfBuffRemove" action="RemoveParticleEffectFromEntity" particle="FlameBurstBombTarget"/>
+				<triggered_effect trigger="onSelfDied" action="RemoveParticleEffectFromEntity" particle="FlameBurstBombTarget"/>
+			</effect_group>
+		</buff>
+		<!-- 冰霜彈 -->
+		<buff name="buffEleArmSpellsFrostBomb">
+			<damage_type value="Cold"/>
+			<stack_type value="replace"/>
+			<duration value="5"/>
+			<effect_group>
+				<requirement name="EntityTagCompare" target="self" tags="ezFire"/>
+				<passive_effect name="HealthChangeOT" operation="base_subtract" value="15.8"/>
+			</effect_group>
+			<effect_group>
+				<requirement name="EntityTagCompare" target="self" tags="zombie,animal"/>
+				<passive_effect name="HealthChangeOT" operation="base_subtract" value="7.9"/>
+
+				<passive_effect name="HealthChangeOT" operation="base_subtract" value="4.2">
+					<requirement name="EntityTagCompare" target="self" tags="feral"/>
+				</passive_effect>
+				<passive_effect name="HealthChangeOT" operation="base_subtract" value="4.6">
+					<requirement name="EntityTagCompare" target="self" tags="radiated"/>
+				</passive_effect>
+
+				<passive_effect name="WalkSpeed" operation="perc_subtract" value="2"/>
+				<passive_effect name="RunSpeed" operation="perc_subtract" value="2"/>
+				<passive_effect name="Mobility" operation="perc_subtract" value="2" tags="falling,climbing,swimming"/>
+				<passive_effect name="AttacksPerMinute" operation="perc_subtract" value="0.9"/>
+				<passive_effect name="PhysicalDamageResist" operation="perc_subtract" value=".1"/>
+
+				<triggered_effect trigger="onSelfDied" action="RemoveBuff" buff="buffEleArmSpellsFrostBomb"/>
+				<triggered_effect trigger="onSelfEnteredGame" action="RemoveBuff" buff="buffEleArmSpellsFrostBomb"/>
+
+				<triggered_effect trigger="onSelfBuffStart" action="AttachParticleEffectToEntity" particle="#@modfolder:Resources/elearmspells?Ice" parent_transform="Hips"/>
+				<triggered_effect trigger="onSelfEnteredGame" action="AttachParticleEffectToEntity" particle="#@modfolder:Resources/elearmspells?Ice" parent_transform="Hips"/>
+				<triggered_effect trigger="onSelfBuffRemove" action="RemoveParticleEffectFromEntity" particle="Ice"/>
+				<triggered_effect trigger="onSelfDied" action="RemoveParticleEffectFromEntity" particle="Ice"/>
+			</effect_group>
+		</buff>
+		<!-- 電衝彈 -->
+		<buff name="buffEleArmSpellsElectricArcImpactBomb">
+			<damage_type value="electrical"/>
+			<stack_type value="replace"/>
+			<duration value="5"/>
+			<effect_group>
+				<requirement name="EntityTagCompare" target="self" tags="ezToxic"/>
+				<passive_effect name="HealthChangeOT" operation="base_subtract" value="22"/>
+			</effect_group>
+			<effect_group>
+				<requirement name="EntityTagCompare" target="self" tags="zombie,animal"/>
+				<passive_effect name="HealthChangeOT" operation="base_subtract" value="11"/>
+
+				<passive_effect name="WalkSpeed" operation="perc_subtract" value=".5,.01" duration="0,4"/>
+				<passive_effect name="RunSpeed" operation="perc_subtract" value=".5,.01" duration="0,4"/>
+				<passive_effect name="JumpStrength" operation="perc_subtract" value=".5,.01" duration="0,4"/>
+				<passive_effect name="Mobility" operation="perc_subtract" value="0.5" tags="falling,climbing,swimming"/>
+
+				<triggered_effect trigger="onSelfDied" action="RemoveBuff" buff="buffEleArmSpellsElectricArcImpactBomb"/>
+				<triggered_effect trigger="onSelfEnteredGame" action="RemoveBuff" buff="buffEleArmSpellsElectricArcImpactBomb"/>
+
+				<triggered_effect trigger="onSelfBuffStart" action="AttachParticleEffectToEntity" particle="#@modfolder:Resources/elearmspells?Electric" parent_transform="Hips"/>
+				<triggered_effect trigger="onSelfEnteredGame" action="AttachParticleEffectToEntity" particle="#@modfolder:Resources/elearmspells?Electric" parent_transform="Hips"/>
+				<triggered_effect trigger="onSelfBuffRemove" action="RemoveParticleEffectFromEntity" particle="Electric"/>
+				<triggered_effect trigger="onSelfDied" action="RemoveParticleEffectFromEntity" particle="Electric"/>
+			</effect_group>
+		</buff>
+		<!-- 毒氣彈 -->
+		<buff name="buffEleArmSpellsPoisonGasBomb">
+			<damage_type value="toxic"/>
+			<stack_type value="replace"/>
+			<duration value="5"/>
+			<effect_group>
+				<requirement name="EntityTagCompare" target="self" tags="ezElectric"/>
+				<passive_effect name="HealthChangeOT" operation="base_subtract" value="22"/>
+			</effect_group>
+			<effect_group>
+				<requirement name="EntityTagCompare" target="self" tags="zombie,animal"/>
+				<passive_effect name="HealthChangeOT" operation="base_subtract" value="11"/>
+				<passive_effect name="RunSpeed" operation="perc_subtract" value=".8"/>
+
+				<passive_effect name="HealthChangeOT" operation="base_subtract" value="1.7">
+					<requirement name="EntityTagCompare" target="self" tags="feral"/>
+				</passive_effect>
+				<passive_effect name="HealthChangeOT" operation="base_subtract" value="3.1">
+					<requirement name="EntityTagCompare" target="self" tags="radiated"/>
+				</passive_effect>
+
+				<triggered_effect trigger="onSelfDied" action="RemoveBuff" buff="buffEleArmSpellsPoisonGasBomb"/>
+				<triggered_effect trigger="onSelfEnteredGame" action="RemoveBuff" buff="buffEleArmSpellsPoisonGasBomb"/>
+				<triggered_effect trigger="onSelfBuffStart" action="AttachParticleEffectToEntity" particle="#@modfolder:Resources/elearmspells?Poison" parent_transform="Hips"/>
+				<triggered_effect trigger="onSelfEnteredGame" action="AttachParticleEffectToEntity" particle="#@modfolder:Resources/elearmspells?Poison" parent_transform="Hips"/>
+				<triggered_effect trigger="onSelfBuffRemove" action="RemoveParticleEffectFromEntity" particle="Poison"/>
+				<triggered_effect trigger="onSelfDied" action="RemoveParticleEffectFromEntity" particle="Poison"/>
+			</effect_group>
+		</buff>
+		<!-- 咒殺彈, 傷害比冰凍Lv3高 -->
+		<buff name="buffEleArmSpellsCursedKillBomb">
+			<damage_type value="electrical"/>
+			<stack_type value="replace"/>
+			<duration value="5"/>
+			<effect_group>
+				<requirement name="EntityTagCompare" target="self" tags="ezSoul"/>
+				<passive_effect name="HealthChangeOT" operation="base_subtract" value="20"/>
+			</effect_group>
+			<effect_group>
+				<requirement name="EntityTagCompare" target="self" tags="zombie,animal"/>
+				<passive_effect name="HealthChangeOT" operation="base_subtract" value="10.5"/>
+
+				<passive_effect name="HealthChangeOT" operation="base_subtract" value="6">
+					<requirement name="EntityTagCompare" target="self" tags="feral"/>
+				</passive_effect>
+				<passive_effect name="HealthChangeOT" operation="base_subtract" value="6.6">
+					<requirement name="EntityTagCompare" target="self" tags="radiated"/>
+				</passive_effect>
+
+				<passive_effect name="WalkSpeed" operation="perc_subtract" value="1"/>
+				<passive_effect name="RunSpeed" operation="perc_subtract" value="1"/>
+				<passive_effect name="Mobility" operation="perc_subtract" value="1" tags="falling,climbing,swimming"/>
+				<passive_effect name="AttacksPerMinute" operation="perc_subtract" value="1"/>
+
+				<triggered_effect trigger="onSelfDied" action="RemoveBuff" buff="buffEleArmSpellsCursedKillBomb"/>
+				<triggered_effect trigger="onSelfEnteredGame" action="RemoveBuff" buff="buffEleArmSpellsCursedKillBomb"/>
+
+				<triggered_effect trigger="onSelfBuffStart" action="AttachParticleEffectToEntity" particle="#@modfolder:Resources/elearmspells?CursedKillBombTarget"/>
+				<triggered_effect trigger="onSelfEnteredGame" action="AttachParticleEffectToEntity" particle="#@modfolder:Resources/elearmspells?CursedKillBombTarget"/>
+				<triggered_effect trigger="onSelfBuffRemove" action="RemoveParticleEffectFromEntity" particle="CursedKillBombTarget"/>
+				<triggered_effect trigger="onSelfDied" action="RemoveParticleEffectFromEntity" particle="CursedKillBombTarget"/>
+			</effect_group>
+		</buff>
+		<!-- 淨化彈 -->
+		<buff name="buffEleArmSpellsPurifyBomb" name_key="buffEleArmSpellsPurifyBombName" description_key="buffEleArmSpellsPurifyBombDesc" icon="ui_game_symbol_purify" icon_color="0,200,80" icon_blink="true">
+			<damage_type value="BloodLoss"/>
+			<stack_type value="replace"/>
+			<duration value="5"/>
+			<effect_group>
+				<requirement name="EntityTagCompare" target="self" tags="player"/>
+				<passive_effect name="HealthChangeOT" operation="base_add" value="2"/>
+
+				<triggered_effect trigger="onSelfBuffUpdate" action="RemoveBuff" target="self" buff="buffInjuryBleeding"/>
+				<triggered_effect trigger="onSelfBuffUpdate" action="RemoveBuff" target="self" buff="buffLaceration"/>
+				<triggered_effect trigger="onSelfBuffUpdate" action="RemoveBuff" target="self" buff="buffLegBroken"/>
+				<triggered_effect trigger="onSelfBuffUpdate" action="RemoveBuff" target="self" buff="buffLegSprained"/>
+				<triggered_effect trigger="onSelfBuffUpdate" action="RemoveBuff" target="self" buff="buffArmSprained"/>
+				<triggered_effect trigger="onSelfBuffUpdate" action="RemoveBuff" target="self" buff="buffFatiguedTrigger"/>
+				<triggered_effect trigger="onSelfBuffUpdate" action="RemoveBuff" target="self" buff="buffInjuryConcussion"/>
+				<triggered_effect trigger="onSelfBuffUpdate" action="RemoveBuff" target="self" buff="buffDysenteryCatchFood"/>
+				<triggered_effect trigger="onSelfBuffUpdate" action="RemoveBuff" target="self" buff="buffInfectionCatch"/>
+				<triggered_effect trigger="onSelfBuffUpdate" action="RemoveBuff" target="self" buff="buffInfection01Main"/>
+				<triggered_effect trigger="onSelfBuffUpdate" action="RemoveBuff" target="self" buff="buffStayDownKO"/>
+				<!--<triggered_effect trigger="onSelfBuffUpdate" action="RemoveBuff" target="self" buff="buffNearDeathTrauma"/>-->
+				<passive_effect name="BuffResistance" operation="base_add" value="2" tags="buffInfectionCatch,buffInfection01Main,buffInjuryBleeding,buffDrowning01,buffDrowning02,buffArmorShredding,buffLegSprainedFallTrigger,buffLegBroken,buffArmSprained"/>
+				<passive_effect name="BuffResistance" operation="base_add" value="2" tags="buffArmBroken,buffInjuryStunned01,buffInjuryStunned02,buffInjuryStunned03,buffInjuryCrippled01,buffInjuryKnockdown01,buffInjuryKnockdown01,buffInjuryUnconscious,buffStayDownKO"/>
+				<passive_effect name="BuffResistance" operation="base_add" value="2" tags="buffInjuryConcussion,buffShocked,buffBurningElement,buffBurningEnvironment,buffBurningFlamingArrow,buffBurningMolotov,buffBurning"/>
+
+				<triggered_effect trigger="onSelfBuffStart" action="AttachParticleEffectToEntity" particle="#@modfolder:Resources/elearmspells?PurifyBombTargetPlayer" local_rotation="90,0,0"/>
+				<triggered_effect trigger="onSelfEnteredGame" action="AttachParticleEffectToEntity" particle="#@modfolder:Resources/elearmspells?PurifyBombTargetPlayer" local_rotation="90,0,0"/>
+				<triggered_effect trigger="onSelfBuffRemove" action="RemoveParticleEffectFromEntity" particle="PurifyBombTargetPlayer"/>
+				<triggered_effect trigger="onSelfDied" action="RemoveParticleEffectFromEntity" particle="PurifyBombTargetPlayer"/>
+			</effect_group>
+
+			<effect_group>
+				<requirement name="EntityTagCompare" target="self" tags="ezFire,ezFrost,ezElectric,ezToxic,ezSoul"/>
+				<passive_effect name="HealthChangeOT" operation="base_subtract" value="12.6"/>
+			</effect_group>
+			<effect_group>
+				<requirement name="EntityTagCompare" target="self" tags="zombie,animal"/>
+				<passive_effect name="HealthChangeOT" operation="base_subtract" value="6.3"/>
+				<passive_effect name="HealthChangeOT" operation="base_subtract" value="3.4">
+					<requirement name="EntityTagCompare" target="self" tags="feral"/>
+				</passive_effect>
+				<passive_effect name="HealthChangeOT" operation="base_subtract" value="3.8">
+					<requirement name="EntityTagCompare" target="self" tags="radiated"/>
+				</passive_effect>
+
+				<passive_effect name="WalkSpeed" operation="perc_subtract" value=".5"/>
+				<passive_effect name="RunSpeed" operation="perc_subtract" value=".5"/>
+				<passive_effect name="Mobility" operation="perc_subtract" value=".5" tags="falling,climbing,swimming"/>
+
+				<triggered_effect trigger="onSelfDied" action="RemoveBuff" buff="buffEleArmSpellsPurifyBomb"/>
+				<triggered_effect trigger="onSelfEnteredGame" action="RemoveBuff" buff="buffEleArmSpellsPurifyBomb"/>
+				<triggered_effect trigger="onSelfBuffStart" action="AttachParticleEffectToEntity" particle="#@modfolder:Resources/elearmspells?PurifyBombTargetEnemy"/>
+				<triggered_effect trigger="onSelfEnteredGame" action="AttachParticleEffectToEntity" particle="#@modfolder:Resources/elearmspells?PurifyBombTargetEnemy"/>
+				<triggered_effect trigger="onSelfBuffRemove" action="RemoveParticleEffectFromEntity" particle="PurifyBombTargetEnemy"/>
+				<triggered_effect trigger="onSelfDied" action="RemoveParticleEffectFromEntity" particle="PurifyBombTargetEnemy"/>
+			</effect_group>
+		</buff>
+		<!-- 天劍彈 ,傷害比燃燒LV3高-->
+		<buff name="buffEleArmSpellsSkySwordBomb">
+			<damage_type value="BloodLoss"/>
+			<stack_type value="replace"/>
+			<duration value="2"/>
+			<effect_group>
+				<requirement name="EntityTagCompare" target="self" tags="ezFire,ezFrost,ezElectric,ezToxic,ezSoul"/>
+				<passive_effect name="HealthChangeOT" operation="base_subtract" value="33"/>
+			</effect_group>
+			<effect_group>
+				<requirement name="EntityTagCompare" target="self" tags="zombie,animal"/>
+				<passive_effect name="HealthChangeOT" operation="base_subtract" value="17.3"/>
+
+				<passive_effect name="HealthChangeOT" operation="base_subtract" value="4.3">
+					<requirement name="EntityTagCompare" target="self" tags="feral"/>
+				</passive_effect>
+				<passive_effect name="HealthChangeOT" operation="base_subtract" value="5">
+					<requirement name="EntityTagCompare" target="self" tags="radiated"/>
+				</passive_effect>
+
+				<passive_effect name="WalkSpeed" operation="perc_subtract" value="2"/>
+				<passive_effect name="RunSpeed" operation="perc_subtract" value="2"/>
+				<triggered_effect trigger="onSelfBuffStart" action="AddBuff" target="self" buff="buffInjuryBleeding"/>
+				
+				<triggered_effect trigger="onSelfDied" action="RemoveBuff" buff="buffEleArmSpellsSkySwordBomb"/>
+				<triggered_effect trigger="onSelfEnteredGame" action="RemoveBuff" buff="buffEleArmSpellsSkySwordBomb"/>
+
+				<triggered_effect trigger="onSelfBuffStart" action="AttachParticleEffectToEntity" particle="#@modfolder:Resources/elearmspells?SkySwordBombTarget"/>
+				<triggered_effect trigger="onSelfEnteredGame" action="AttachParticleEffectToEntity" particle="#@modfolder:Resources/elearmspells?SkySwordBombTarget"/>
+				<triggered_effect trigger="onSelfBuffRemove" action="RemoveParticleEffectFromEntity" particle="SkySwordBombTarget"/>
+				<triggered_effect trigger="onSelfDied" action="RemoveParticleEffectFromEntity" particle="SkySwordBombTarget"/>
+			</effect_group>
+		</buff>
+		<!-- 強攻彈 -->
+		<buff name="buffEleArmSpellsEnhanceAttackBomb" name_key="buffEleArmSpellsEnhanceAttackBombName" description_key="buffEleArmSpellsEnhanceAttackBombDesc" icon="ui_game_symbol_enhance_attack" icon_color="0,200,80" icon_blink="true">
+			<stack_type value="replace"/>
+			<duration value="50"/>
+			<effect_group>
+				<requirement name="EntityTagCompare" target="self" tags="player"/>
+				<passive_effect name="EntityDamage" operation="perc_add" value=".3"/>
+				<passive_effect name="BlockDamage" operation="perc_add" value=".3"/>
+				<passive_effect name="AttacksPerMinute" operation="perc_add" value=".3"/>
+
+				<triggered_effect trigger="onSelfBuffStart" action="AttachParticleEffectToEntity" particle="#@modfolder:Resources/elearmspells?EnhanceStateTarget" local_rotation="90,0,0"/>
+				<triggered_effect trigger="onSelfEnteredGame" action="AttachParticleEffectToEntity" particle="#@modfolder:Resources/elearmspells?EnhanceStateTarget" local_rotation="90,0,0"/>
+				<triggered_effect trigger="onSelfBuffRemove" action="RemoveParticleEffectFromEntity" particle="EnhanceStateTarget"/>
+				<triggered_effect trigger="onSelfDied" action="RemoveParticleEffectFromEntity" particle="EnhanceStateTarget"/>
+			</effect_group>
+			<effect_group>
+				<requirement name="EntityTagCompare" target="self" tags="zombie,animal"/>
+				<passive_effect name="EntityDamage" operation="perc_subtract" value=".3"/>
+				<passive_effect name="BlockDamage" operation="perc_subtract" value=".3"/>
+				<passive_effect name="AttacksPerMinute" operation="perc_subtract" value=".3"/>
+				<triggered_effect trigger="onSelfDied" action="RemoveBuff" buff="buffEleArmSpellsEnhanceAttackBomb"/>
+				<triggered_effect trigger="onSelfEnteredGame" action="RemoveBuff" buff="buffEleArmSpellsEnhanceAttackBomb"/>
+			</effect_group>
+		</buff>
+		<!-- 固防彈 -->
+		<buff name="buffEleArmSpellsEnhanceDefenseBomb" name_key="buffEleArmSpellsEnhanceDefenseBombName" description_key="buffEleArmSpellsEnhanceDefenseBombDesc" icon="ui_game_symbol_enhance_defense" icon_color="0,200,80" icon_blink="true">
+			<stack_type value="replace"/>
+			<duration value="50"/>
+			<effect_group>
+				<requirement name="EntityTagCompare" target="self" tags="player"/>
+				<passive_effect name="PhysicalDamageResist" operation="perc_add" value=".3"/>
+				<passive_effect name="ElementalDamageResist" operation="perc_add" value=".3"/>
+				<passive_effect name="BuffResistance" operation="perc_add" value=".3" tags="buffFatiguedTrigger,buffArmSprainedCHTrigger,buffLegSprainedCHTrigger,buffLaceration,buffInfectionCatch,buffInjuryStunned01CHTrigger,buffInjuryBleedingTwo,buffInjuryBleedingBarbedWire,critResistDisplay"/>
+
+				<triggered_effect trigger="onSelfBuffStart" action="AttachParticleEffectToEntity" particle="#@modfolder:Resources/elearmspells?EnhanceStateTarget" local_rotation="90,0,0"/>
+				<triggered_effect trigger="onSelfEnteredGame" action="AttachParticleEffectToEntity" particle="#@modfolder:Resources/elearmspells?EnhanceStateTarget" local_rotation="90,0,0"/>
+				<triggered_effect trigger="onSelfBuffRemove" action="RemoveParticleEffectFromEntity" particle="EnhanceStateTarget"/>
+				<triggered_effect trigger="onSelfDied" action="RemoveParticleEffectFromEntity" particle="EnhanceStateTarget"/>
+			</effect_group>
+			<effect_group>
+				<requirement name="EntityTagCompare" target="self" tags="zombie,animal"/>
+				<passive_effect name="PhysicalDamageResist" operation="perc_subtract" value=".3"/>
+				<passive_effect name="ElementalDamageResist" operation="perc_subtract" value=".3"/>
+				<triggered_effect trigger="onSelfDied" action="RemoveBuff" buff="buffEleArmSpellsEnhanceDefenseBomb"/>
+				<triggered_effect trigger="onSelfEnteredGame" action="RemoveBuff" buff="buffEleArmSpellsEnhanceDefenseBomb"/>
+			</effect_group>
+		</buff>
+		<!-- 幻影魔刃彈 ,傷害比天劍低 -->
+		<buff name="buffEleArmSpellsPhantomDemonBladeBomb">
+			<damage_type value="BloodLoss"/>
+			<stack_type value="replace"/>
+			<duration value="5"/>
+			<effect_group>
+				<requirement name="EntityTagCompare" target="self" tags="ezFire,ezFrost,ezElectric,ezToxic,ezSoul"/>
+				<passive_effect name="HealthChangeOT" operation="base_subtract" value="30"/>
+			</effect_group>
+			<effect_group>
+				<requirement name="EntityTagCompare" target="self" tags="zombie,animal"/>
+				<passive_effect name="HealthChangeOT" operation="base_subtract" value="15"/>
+
+				<passive_effect name="HealthChangeOT" operation="base_subtract" value="3.1">
+					<requirement name="EntityTagCompare" target="self" tags="feral"/>
+				</passive_effect>
+				<passive_effect name="HealthChangeOT" operation="base_subtract" value="4.2">
+					<requirement name="EntityTagCompare" target="self" tags="radiated"/>
+				</passive_effect>
+
+				<passive_effect name="WalkSpeed" operation="perc_subtract" value="2"/>
+				<passive_effect name="RunSpeed" operation="perc_subtract" value="2"/>
+				<passive_effect name="Mobility" operation="perc_subtract" value="2" tags="falling,climbing,swimming"/>
+
+				<triggered_effect trigger="onSelfBuffUpdate" action="AddBuff" target="self" buff="buffEleArmSpellsStackBleeding"/>
+
+				<triggered_effect trigger="onSelfDied" action="RemoveBuff" buff="buffEleArmSpellsPhantomDemonBladeBomb"/>
+				<triggered_effect trigger="onSelfEnteredGame" action="RemoveBuff" buff="buffEleArmSpellsPhantomDemonBladeBomb"/>
+			</effect_group>
+		</buff>
+	</append>
+
+	<!-- 記錄目前已有的負面狀態 -->
+	<append xpath="/buffs">
+		<!-- 標記已有的狀態: 燃燒 -->
+		<buff name="buffMarksExistingPropertyFire" hidden="true">
+			<stack_type value="replace"/>
+			<duration value="8"/>
+		</buff>
+		<!-- 標記已有的狀態: 冰凍 -->
+		<buff name="buffMarksExistingPropertyIce" hidden="true">
+			<stack_type value="replace"/>
+			<duration value="8"/>
+		</buff>
+		<!-- 標記已有的狀態: 中毒 -->
+		<buff name="buffMarksExistingPropertyPoison" hidden="true">
+			<stack_type value="replace"/>
+			<duration value="8"/>
+		</buff>
+		<!-- 標記已有的狀態: 電擊 -->
+		<buff name="buffMarksExistingPropertyElectric" hidden="true">
+			<stack_type value="replace"/>
+			<duration value="8"/>
+		</buff>
+	</append>
+
+	<!-- 自訂流血狀態 -->
+	<append xpath="/buffs">
+		<buff name="buffEleArmSpellsStackBleeding" hidden="true">
+			<damage_type value="BloodLoss"/>
+			<damage_source value="External"/>
+			<stack_type value="effect"/>
+			<duration value="15"/>
+			<effect_group>
+				<passive_effect name="HealthChangeOT" operation="base_subtract" value="1"/>
+				<triggered_effect trigger="onSelfDied" action="RemoveBuff" buff="buffEleArmSpellsStackBleeding"/>
+				<triggered_effect trigger="onSelfEnteredGame" action="RemoveBuff" buff="buffEleArmSpellsStackBleeding"/>
+			</effect_group>
+		</buff>
+	</append>
+</configs>

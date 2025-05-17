@@ -1,0 +1,8 @@
+Key,File,Type,UsedInMainMenu,NoTranslate,english,Context / Alternate Text,german,latam,french,italian,japanese,koreana,polish,brazilian,russian,turkish,schinese,tchinese,spanish
+ivBirdNest,blocks,Farming,,,empty bird nest,,,,,,空の鳥の巣,,,,,,空的鸟巢,空的鳥巢,
+ivBirdNestDesc,blocks,Farming,,,"Bird's nest, the source of a large number of eggs.",,,,,,多数の卵の産地である鳥の巣。,,,,,,鸟巢，提供大量鸡蛋来源。,鳥巢，提供大量雞蛋來源。,
+ivBirdNest01,blocks,Farming,,,only a few eggs(first stage),,,,,,卵数個（第1段階）,,,,,,鸟巢（第一阶段）,鳥巢（第一階段）,
+ivBirdNest02,blocks,Farming,,,a large number of eggs(second stage),,,,,,多数の卵（第2段階）,,,,,,鸟巢（第二阶段）,鳥巢（第二階段）,
+ivBirdNest03,blocks,Farming,,,many eggs(third stage),,,,,,卵が多い（第3段階）,,,,,,鸟巢（第三阶段）,鳥巢（第三階段）,
+ivBirdNest04,blocks,Farming,,,full of eggs(final stage),,,,,,卵がいっぱい（最終段階）,,,,,,鸟巢（最终阶段）,鳥巢（最終階段）,
+ivBirdNest04Desc,blocks,Farming,,,full of eggs(final stage),,,,,,卵がいっぱい（最終段階）,,,,,,鸟巢（最终阶段）,鳥巢（最終階段）,

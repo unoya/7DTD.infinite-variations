@@ -1,0 +1,142 @@
+Key,File,Type,english,tchinese
+resourceShatteredSoulEssence,items,Item,Shattered Soul Essence,殘破魂魄
+resourceShatteredSoulEssenceDesc,items,Item,The lingering essence of departed souls after biological expiration.,生物死亡後所遺留下來的精華魂魄。
+modEleArmSpellsFireLv2Schematic,items,perk  book,Burning Lv2,燃燒Lv2
+modEleArmSpellsFireLv2SchematicDesc,items,perk  book,Learn how to craft a level 2 burning module.,學習製作二級的燃燒模組。
+modEleArmSpellsFireLv3Schematic,items,perk  book,Burning Lv3,燃燒Lv3
+modEleArmSpellsFireLv3SchematicDesc,items,perk  book,Learn how to craft a level 3 burning module.,學習製作三級的燃燒模組。
+modEleArmSpellsIceLv2Schematic,items,perk  book,Freezing Lv2,冰凍Lv2
+modEleArmSpellsIceLv2SchematicDesc,items,perk  book,Learn how to craft a level 2 freezing module.,學習製作二級的冰凍模組。
+modEleArmSpellsIceLv3Schematic,items,perk  book,Freezing Lv3,冰凍Lv3
+modEleArmSpellsIceLv3SchematicDesc,items,perk  book,Learn how to craft a level 3 freezing module.,學習製作三級的冰凍模組。
+modEleArmSpellsPoisonLv2Schematic,items,perk  book,Poison Lv2,中毒Lv2
+modEleArmSpellsPoisonLv2SchematicDesc,items,perk  book,Learn how to craft a level 2 poison module.,學習製作二級的中毒模組。
+modEleArmSpellsPoisonLv3Schematic,items,perk  book,Poison Lv3,中毒Lv3
+modEleArmSpellsPoisonLv3SchematicDesc,items,perk  book,Learn how to craft a level 3 poison module.,學習製作三級的中毒模組。
+modEleArmSpellsElectricShockLv2Schematic,items,perk  book,Electric Shock Lv2,電擊Lv2
+modEleArmSpellsElectricShockLv2SchematicDesc,items,perk  book,Learn how to craft a level 2 electric shock module.,學習製作二級的電擊模組。
+modEleArmSpellsElectricShockLv3Schematic,items,perk  book,Electric Shock Lv3,電擊Lv3
+modEleArmSpellsElectricShockLv3SchematicDesc,items,perk  book,Learn how to craft a level 3 electric shock module.,學習製作三級的電擊模組。
+thrownEleArmSpellsFlameBurstBombSchematic,items,perk  book,Flame Burst Bomb Schematic,炎爆彈製作書
+thrownEleArmSpellsFlameBurstBombSchematicDesc,items,perk  book,Learn how to craft a throwable flame burst.,學習製作投擲型的炎爆彈。
+thrownEleArmSpellsFrostBombSchematic,items,perk  book,Frost Bomb Schematic,冰霜彈製作書
+thrownEleArmSpellsFrostBombSchematicDesc,items,perk  book,Learn how to craft a throwable frost bomb.,學習製作投擲型的冰霜彈。
+thrownEleArmSpellsElectricArcImpactBombSchematic,items,perk  book,Electric Arc Impact Bomb Schematic,電衝彈製作書
+thrownEleArmSpellsElectricArcImpactBombSchematicDesc,items,perk  book,Learn how to craft a throwable electric arc impact bomb.,學習製作投擲型的電衝彈。
+thrownEleArmSpellsPoisonGasBombSchematic,items,perk  book,Poison Gas Bomb Schematic,毒氣彈製作書
+thrownEleArmSpellsPoisonGasBombSchematicDesc,items,perk  book,Learn how to craft a throwable poison gas bomb.,學習製作投擲型的毒氣彈。
+thrownEleArmSpellsPurifyBombSchematic,items,perk  book,Purification Bomb Schematic,淨化彈製作書
+thrownEleArmSpellsPurifyBombSchematicDesc,items,perk  book,Learn how to craft a throwable purify bomb.,學習製作投擲型的淨化彈。
+thrownEleArmSpellsCursedKillBombSchematic,items,perk  book,Cursed Bomb Schematic,咒殺彈製作書
+thrownEleArmSpellsCursedKillBombSchematicDesc,items,perk  book,Learn how to craft a throwable cursed kill bomb.,學習製作投擲型的咒殺彈。
+thrownEleArmSpellsSkySwordBombSchematic,items,perk  book,Sky Sword Bomb Schematic,天劍彈製作書
+thrownEleArmSpellsSkySwordBombSchematicDesc,items,perk  book,Learn how to craft a throwable sky sword bomb.,學習製作投擲型的天劍彈。
+thrownEleArmSpellsEnhanceAttackBombSchematic,items,perk  book,Power Boost Bomb Schematic,強攻彈製作書
+thrownEleArmSpellsEnhanceAttackBombSchematicDesc,items,perk  book,Learn how to craft a throwable enhance attack bomb.,學習製作投擲型的強攻彈。
+thrownEleArmSpellsEnhanceDefenseBombSchematic,items,perk  book,Defense Boost Bomb Schematic,固防彈製作書
+thrownEleArmSpellsEnhanceDefenseBombSchematicDesc,items,perk  book,Learn how to craft a throwable enhance defense bomb.,學習製作投擲型的固防彈。
+thrownEleArmSpellsPhantomDemonBladeBombSchematic,items,perk  book,Phantom Demon Blade Schematic,幻影魔刃彈製作書
+thrownEleArmSpellsPhantomDemonBladeBombSchematicDesc,items,perk  book,Learn how to craft a throwable phantom demon blade bomb.,學習製作投擲型的幻影魔刃彈。
+ammoBowEleArmSpellsFlameBurstBombSchematic,items,perk  book,Flame Burst Schematic,炎爆彈製作書
+ammoBowEleArmSpellsFlameBurstBombSchematicDesc,items,perk  book,Learn how to craft a bow exclusive flame burst. (Elemental Hunter Bow Exclusive),學習製作弓專用的炎爆彈。(元素獵手弓專用)
+ammoBowEleArmSpellsFrostBombSchematic,items,perk  book,Frost Bomb Schematic,冰霜彈製作書
+ammoBowEleArmSpellsFrostBombSchematicDesc,items,perk  book,Learn how to craft a bow exclusive frost bomb. (Elemental Hunter Bow Exclusive),學習製作弓專用的冰霜彈。(元素獵手弓專用)
+ammoBowEleArmSpellsElectricArcImpactBombSchematic,items,perk  book,Electric Arc Impact Bomb Schematic,電衝彈製作書
+ammoBowEleArmSpellsElectricArcImpactBombSchematicDesc,items,perk  book,Learn how to craft a bow exclusive electric arc impact bomb. (Elemental Hunter Bow Exclusive),學習製作弓專用的電衝彈。(元素獵手弓專用)
+ammoBowEleArmSpellsPoisonGasBombSchematic,items,perk  book,Poison Gas Bomb Schematic,毒氣彈製作書
+ammoBowEleArmSpellsPoisonGasBombSchematicDesc,items,perk  book,Learn how to craft a bow exclusive poison gas bomb. (Elemental Hunter Bow Exclusive),學習製作弓專用的毒氣彈。(元素獵手弓專用)
+ammoCrossbowEleArmSpellsFlameBurstBombSchematic,items,perk  book,Flame Burst Schematic,炎爆彈製作書
+ammoCrossbowEleArmSpellsFlameBurstBombSchematicDesc,items,perk  book,Learn how to craft a crossbow exclusive flame burst. (Elemental Hunter Crossbow Exclusive),學習製作十字弓專用的炎爆彈。(元素獵手十字弓專用)
+ammoCrossbowEleArmSpellsFrostBombSchematic,items,perk  book,Frost Bomb Schematic,冰霜彈製作書
+ammoCrossbowEleArmSpellsFrostBombSchematicDesc,items,perk  book,Learn how to craft a crossbow exclusive frost bomb. (Elemental Hunter Crossbow Exclusive),學習製作十字弓專用的冰霜彈。(元素獵手十字弓專用)
+ammoCrossbowEleArmSpellsElectricArcImpactBombSchematic,items,perk  book,Electric Arc Impact Bomb Schematic,電衝彈製作書
+ammoCrossbowEleArmSpellsElectricArcImpactBombSchematicDesc,items,perk  book,Learn how to craft a crossbow exclusive electric arc impact bomb. (Elemental Hunter Crossbow Exclusive),學習製作十字弓專用的電衝彈。(元素獵手十字弓專用)
+ammoCrossbowEleArmSpellsPoisonGasBombSchematic,items,perk  book,Poison Gas Bomb Schematic,毒氣彈製作書
+ammoCrossbowEleArmSpellsPoisonGasBombSchematicDesc,items,perk  book,Learn how to craft a crossbow exclusive toxic gas bomb. (Elemental Hunter Crossbow Exclusive),學習製作十字弓專用的毒氣彈。(元素獵手十字弓專用)
+
+modEleArmSpellsFire,item_modifiers,mod,Burning,燃燒
+modEleArmSpellsFireLv2,item_modifiers,mod,Burning Lv2,燃燒 Lv2
+modEleArmSpellsFireLv3,item_modifiers,mod,Burning Lv3,燃燒 Lv3
+modEleArmSpellsFireDesc,item_modifiers,mod,"Ignite the target, burning the enemy's life.",點燃目標，燃燒敵人的生命。
+modEleArmSpellsIce,item_modifiers,mod,Freezing,冰凍
+modEleArmSpellsIceLv2,item_modifiers,mod,Freezing Lv2,冰凍 Lv2
+modEleArmSpellsIceLv3,item_modifiers,mod,Freezing Lv3,冰凍 Lv3
+modEleArmSpellsIceDesc,item_modifiers,mod,"Freeze enemies, rendering them immobile.",凍結敵人，讓他們動彈不得。
+modEleArmSpellsPoison,item_modifiers,mod,Poison,中毒
+modEleArmSpellsPoisonLv2,item_modifiers,mod,Poison Lv2,中毒 Lv2
+modEleArmSpellsPoisonLv3,item_modifiers,mod,Poison Lv3,中毒 Lv3
+modEleArmSpellsPoisonDesc,item_modifiers,mod,"Release toxins, causing excruciating pain to enemies.",施放毒素，讓敵人痛苦不堪。
+modEleArmSpellsElectricShock,item_modifiers,mod,Electric Shock,電擊
+modEleArmSpellsElectricShockLv2,item_modifiers,mod,Electric Shock Lv2,電擊 Lv2
+modEleArmSpellsElectricShockLv3,item_modifiers,mod,Electric Shock Lv3,電擊 Lv3
+modEleArmSpellsElectricShockDesc,item_modifiers,mod,"Electrocute enemies, paralyzing them.",用電擊打擊敵人，令他們麻痺不堪。
+
+gunBowElementalHunter,items,Gun,Elemental Hunter Bow,元素獵手弓
+gunBowElementalHunterDesc,items,Gun,The use of arrows is limited to those provided by the Elemental Armaments mod.,只能使用元素武裝模組提供的箭矢.
+gunCrossbowElementalHunter,items,Gun,Elemental Hunter Crossbow,元素獵手十字弓
+gunCrossbowElementalHunterDesc,items,Gun,The use of crossbow bolts is limited to those provided by the Elemental Armaments mod.,只能使用元素武裝模組提供的十字弓箭矢.
+thrownEleArmSpellsFlameBurstBomb,items,Gun,Flame Burst Bomb,炎爆彈
+thrownEleArmSpellsFlameBurstBombDesc,items,Gun,"Explodes upon impact, causing continuous burning within the area of effect.",丟出去觸碰後立即產生作用，範圍內持續性燃燒。
+thrownEleArmSpellsFrostBomb,items,Gun,Frost Bomb,冰霜彈
+thrownEleArmSpellsFrostBombDesc,items,Gun,"Explodes upon impact, causing continuous freezing within the area of effect.",丟出去觸碰後立即產生作用，範圍內持續性冰凍。
+thrownEleArmSpellsElectricArcImpactBomb,items,Gun,Electric Arc Impact Bomb,電衝彈
+thrownEleArmSpellsElectricArcImpactBombDesc,items,Gun,"Explodes upon impact, delivering continuous electric shocks within the area of effect.",丟出去觸碰後立即產生作用，範圍內持續性施放電擊。
+thrownEleArmSpellsPoisonGasBomb,items,Gun,Poison Gas Bomb,毒氣彈
+thrownEleArmSpellsPoisonGasBombDesc,items,Gun,"Explodes upon impact, releasing continuous toxins within the area of effect.",丟出去觸碰後立即產生作用，範圍內持續性施放毒素。
+thrownEleArmSpellsPurifyBomb,items,Gun,Purification Bomb,淨化彈
+thrownEleArmSpellsPurifyBombDesc,items,Gun,"Explodes upon impact, providing various healing effects to players within the area and causing continuous damage to zombies.",丟出去觸碰後立即產生作用，範圍內，對玩家進行各種治療，對殭屍則是持續性傷害。
+thrownEleArmSpellsCursedKillBomb,items,Gun,Cursed Bomb,咒殺彈
+thrownEleArmSpellsCursedKillBombDesc,items,Gun,"Explodes upon impact, immobilizing zombies within the area and causing continuous damage.",丟出去觸碰後立即產生作用，範圍內的殭屍會被石柱壓住無法移動，並有持續性傷害。
+thrownEleArmSpellsSkySwordBomb,items,Gun,Sky Sword Bomb,天劍彈
+thrownEleArmSpellsSkySwordBombDesc,items,Gun,"Explodes upon impact, causing a rain of countless swords that damage the target within the area.",丟出去觸碰後立即產生作用，範圍內持續落下數以萬計的利劍傷害目標。
+thrownEleArmSpellsEnhanceAttackBomb,items,Gun,Power Boost Bomb,強攻彈
+thrownEleArmSpellsEnhanceAttackBombDesc,items,Gun,"Explodes upon impact, temporarily enhancing the player's attack power and reducing the zombies' attack power.",丟出去觸碰後立即產生作用，持續時間內，對玩家提升攻擊力，對殭屍則是降低攻擊力。
+thrownEleArmSpellsEnhanceDefenseBomb,items,Gun,Defense Boost Bomb,固防彈
+thrownEleArmSpellsEnhanceDefenseBombDesc,items,Gun,"Explodes upon impact, temporarily enhancing the player's defense and reducing the zombies' defense.",丟出去觸碰後立即產生作用，持續時間內，對玩家提升防禦力，對殭屍則是降低防禦力。
+thrownEleArmSpellsPhantomDemonBladeBomb,items,Gun,Phantom Demon Blade Bomb,幻影魔刃彈
+thrownEleArmSpellsPhantomDemonBladeBombDesc,items,Gun,"Swiftly generates a massive spinning shuriken upon throw, slicing nearby enemies to death, emanating an eerie phantom-like aura.",投擲後迅速生成巨型旋轉十字鏢，將接近之敵割裂至死亡，散發幻影般的邪惡氛圍。
+
+ammoBowArrowEleArmSpellsFire,items,Ammo,Burning Arrow,燃燒箭
+ammoBowArrowEleArmSpellsFireDesc,items,Ammo,"Ignite the target, burning the enemy's life. (Elemental Hunter Bow Exclusive)",點燃目標，燃燒敵人的生命。(元素獵手弓專用)
+ammoBowArrowEleArmSpellsIce,items,Ammo,Freezing Arrow,冰凍箭
+ammoBowArrowEleArmSpellsIceDesc,items,Ammo,"Freeze enemies, rendering them immobile. (Elemental Hunter Bow Exclusive)",凍結敵人，讓他們動彈不得。(元素獵手弓專用)
+ammoBowArrowEleArmSpellsPoison,items,Ammo,Poison Arrow,中毒箭
+ammoBowArrowEleArmSpellsPoisonDesc,items,Ammo,"Release toxins, causing excruciating pain to enemies. (Elemental Hunter Bow Exclusive)",施放毒素，讓敵人痛苦不堪。(元素獵手弓專用)
+ammoBowArrowEleArmSpellsElectricShock,items,Ammo,Electric Shock Arrow,電擊箭
+ammoBowArrowEleArmSpellsElectricShockDesc,items,Ammo,"Electrocute enemies, paralyzing them. (Elemental Hunter Bow Exclusive)",用電擊打擊敵人，令他們麻痺不堪。(元素獵手弓專用)
+ammoCrossbowArrowEleArmSpellsFire,items,Ammo,Bruning Crossbow Arrow,燃燒十字弓箭
+ammoCrossbowArrowEleArmSpellsFireDesc,items,Ammo,"Ignite the target, burning the enemy's life. (Elemental Hunter Crossbow Exclusive)",點燃目標，燃燒敵人的生命。(元素獵手十字弓專用)
+ammoCrossbowArrowEleArmSpellsIce,items,Ammo,Freezing Crossbow Arrow,冰凍十字弓箭
+ammoCrossbowArrowEleArmSpellsIceDesc,items,Ammo,"Freeze enemies, rendering them immobile. (Elemental Hunter Crossbow Exclusive)",凍結敵人，讓他們動彈不得。(元素獵手十字弓專用)
+ammoCrossbowArrowEleArmSpellsPoison,items,Ammo,Poison Crossbow Arrow,中毒十字弓箭
+ammoCrossbowArrowEleArmSpellsPoisonDesc,items,Ammo,"Release toxins, causing excruciating pain to enemies. (Elemental Hunter Crossbow Exclusive)",施放毒素，讓敵人痛苦不堪。(元素獵手十字弓專用)
+ammoCrossbowArrowEleArmSpellsElectricShock,items,Ammo,Electric Shock Crossbow Arrow,電擊十字弓箭
+ammoCrossbowArrowEleArmSpellsElectricShockDesc,items,Ammo,"Electrocute enemies, paralyzing them. (Elemental Hunter Crossbow Exclusive)",用電擊打擊敵人，令他們麻痺不堪。(元素獵手十字弓專用)
+
+ammoBowEleArmSpellsFlameBurstBomb,items,Ammo,Flame Burst Arrow,炎爆箭
+ammoBowEleArmSpellsFlameBurstBombDesc,items,Ammo,"Upon hitting the target, it causes continuous burning within the area. (Elemental Hunter Bow Exclusive)",擊中目標後，範圍內持續性燃燒。(元素獵手弓專用)
+ammoBowEleArmSpellsFrostBomb,items,Ammo,Frost Arrow,冰霜箭
+ammoBowEleArmSpellsFrostBombDesc,items,Ammo,"Upon hitting the target, it causes continuous freezing within the area. (Elemental Hunter Bow Exclusive)",擊中目標後，範圍內持續性冰凍。(元素獵手弓專用)
+ammoBowEleArmSpellsElectricArcImpactBomb,items,Ammo,Electric Arc Impact Arrow,電衝箭
+ammoBowEleArmSpellsElectricArcImpactBombDesc,items,Ammo,"Upon hitting the target, it causes continuous electrical shocks within the area. (Elemental Hunter Bow Exclusive)",擊中目標後，範圍內持續性放電。(元素獵手弓專用)
+ammoBowEleArmSpellsPoisonGasBomb,items,Ammo,Poison Gas Arrow,毒氣箭
+ammoBowEleArmSpellsPoisonGasBombDesc,items,Ammo,"Upon hitting the target, it causes continuous poisoning within the area. (Elemental Hunter Bow Exclusive)",擊中目標後，範圍內持續性中毒。(元素獵手弓專用)
+ammoCrossbowEleArmSpellsFlameBurstBomb,items,Ammo,Flame Burst Cross Arrow,炎爆十字弓箭
+ammoCrossbowEleArmSpellsFlameBurstBombDesc,items,Ammo,"Upon hitting the target, it causes continuous burning within the area. (Elemental Hunter Crossbow Exclusive)",擊中目標後，範圍內持續性燃燒。(元素獵手十字弓專用)
+ammoCrossbowEleArmSpellsFrostBomb,items,Ammo,Frost Cross Arrow,冰霜十字弓箭
+ammoCrossbowEleArmSpellsFrostBombDesc,items,Ammo,"Upon hitting the target, it causes continuous freezing within the area. (Elemental Hunter Crossbow Exclusive)",擊中目標後，範圍內持續性冰凍。(元素獵手十字弓專用)
+ammoCrossbowEleArmSpellsElectricArcImpactBomb,items,Ammo,Electric Arc Impact Cross Arrow,電衝十字弓箭
+ammoCrossbowEleArmSpellsElectricArcImpactBombDesc,items,Ammo,"Upon hitting the target, it causes continuous electrical shocks within the area. (Elemental Hunter Crossbow Exclusive)",擊中目標後，範圍內持續性放電。(元素獵手十字弓專用)
+ammoCrossbowEleArmSpellsPoisonGasBomb,items,Ammo,Poison Gas Cross Arrow,毒氣十字弓箭
+ammoCrossbowEleArmSpellsPoisonGasBombDesc,items,Ammo,"Upon hitting the target, it causes continuous poisoning within the area. (Elemental Hunter Crossbow Exclusive)",擊中目標後，範圍內持續性中毒。(元素獵手十字弓專用)
+meleeEleArmClubMorningStar,items,Melee,Ethereal Dawn Mace,幽晨戰錘
+meleeEleArmClubMorningStarDesc,items,Melee,"Bringing together gore and violence, a mace infused with ancient incantations, carrying the might of primordial sorcery.",蘊含鮮血與暴力，淬鍊古老咒語的戰錘，充盈著遠古魔法的神秘力量。
+meleeEleArmKnifeShadowBlade,items,Melee,Shadow Blade,影刃
+meleeEleArmKnifeShadowBladeDesc,items,Melee,"A razor-sharp blade that effortlessly cuts through any obstacle. It amplifies its wielder's threat at night by enhancing attack power. Handle with caution, as great power demands careful control.",一把無比鋒利的武器，可以輕鬆斬斷任何障礙。夜晚它會提升攻擊力，讓持有者更具威脅性。
+
+buffEleArmSpellsPurifyBombName,buffs,Buff,Power of Purification,淨化之力
+buffEleArmSpellsPurifyBombDesc,buffs,Buff,Continuously restores health and removes negative effects for the duration.,持續時間內不斷恢復生命力，並移除不良狀態。
+buffEleArmSpellsEnhanceAttackBombName,buffs,Buff,Enhanced Attack Power,強化攻擊力
+buffEleArmSpellsEnhanceAttackBombDesc,buffs,Buff,Increases attack power and speed by 30% for the duration.,持續時間內，攻擊力+30%，攻擊速度+30%。
+buffEleArmSpellsEnhanceDefenseBombName,buffs,Buff,Enhanced Defense Power,強化防禦力
+buffEleArmSpellsEnhanceDefenseBombDesc,buffs,Buff,Increases physical and elemental resistance by 30% and improves resistance to certain negative effects for the duration.,持續時間內，物理抗性+30%，元素抗性+30%，抵抗部分不良狀態+30%。

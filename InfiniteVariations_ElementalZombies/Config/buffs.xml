@@ -1,0 +1,1037 @@
+<configs>
+	<!-- 限殭屍使用 -->
+	<append xpath="/buffs">
+		<!-- 火焰殭屍外觀要用的效果 -->
+		<buff name="buffIVzombieBurnEffect">
+			<stack_type value="replace"/>
+			<duration value="60"/>
+			<effect_group>
+				<triggered_effect trigger="onSelfBuffStart" action="AttachParticleEffectToEntity" particle="#@modfolder:Resources/elementzombie?ezBurn" parent_transform="RightHand"/>
+				<triggered_effect trigger="onSelfEnteredGame" action="AttachParticleEffectToEntity" particle="#@modfolder:Resources/elementzombie?ezBurn" parent_transform="RightHand"/>
+				<triggered_effect trigger="onSelfBuffStart" action="AttachParticleEffectToEntity" particle="#@modfolder:Resources/elementzombie?ezBurn2" parent_transform="LeftHand"/>
+				<triggered_effect trigger="onSelfEnteredGame" action="AttachParticleEffectToEntity" particle="#@modfolder:Resources/elementzombie?ezBurn2" parent_transform="LeftHand"/>
+				<triggered_effect trigger="onSelfBuffRemove" action="RemoveParticleEffectFromEntity" particle="ezBurn"/>
+				<triggered_effect trigger="onSelfDied" action="RemoveParticleEffectFromEntity" particle="ezBurn"/>
+				<triggered_effect trigger="onSelfBuffFinish" action="RemoveParticleEffectFromEntity" particle="ezBurn"/>
+				<triggered_effect trigger="onSelfBuffRemove" action="RemoveParticleEffectFromEntity" particle="ezBurn2"/>
+				<triggered_effect trigger="onSelfDied" action="RemoveParticleEffectFromEntity" particle="ezBurn2"/>
+				<triggered_effect trigger="onSelfBuffFinish" action="RemoveParticleEffectFromEntity" particle="ezBurn2"/>
+			</effect_group>
+		</buff>
+		<!-- 電擊殭屍外觀要用的效果 -->
+		<buff name="buffIVzombieShockEffect">
+			<stack_type value="replace"/>
+			<duration value="60"/>
+			<effect_group>
+				<triggered_effect trigger="onSelfBuffStart" action="AttachParticleEffectToEntity" particle="#@modfolder:Resources/elementzombie?ezElectric" parent_transform="RightHand"/>
+				<triggered_effect trigger="onSelfEnteredGame" action="AttachParticleEffectToEntity" particle="#@modfolder:Resources/elementzombie?ezElectric" parent_transform="RightHand"/>
+				<triggered_effect trigger="onSelfBuffStart" action="AttachParticleEffectToEntity" particle="#@modfolder:Resources/elementzombie?ezElectric2" parent_transform="LeftHand"/>
+				<triggered_effect trigger="onSelfEnteredGame" action="AttachParticleEffectToEntity" particle="#@modfolder:Resources/elementzombie?ezElectric2" parent_transform="LeftHand"/>
+				<triggered_effect trigger="onSelfBuffRemove" action="RemoveParticleEffectFromEntity" particle="ezElectric"/>
+				<triggered_effect trigger="onSelfDied" action="RemoveParticleEffectFromEntity" particle="ezElectric"/>
+				<triggered_effect trigger="onSelfBuffFinish" action="RemoveParticleEffectFromEntity" particle="ezElectric"/>
+				<triggered_effect trigger="onSelfBuffRemove" action="RemoveParticleEffectFromEntity" particle="ezElectric2"/>
+				<triggered_effect trigger="onSelfDied" action="RemoveParticleEffectFromEntity" particle="ezElectric2"/>
+				<triggered_effect trigger="onSelfBuffFinish" action="RemoveParticleEffectFromEntity" particle="ezElectric2"/>
+			</effect_group>
+		</buff>
+		<!-- 劇毒殭屍外觀要用的效果 -->
+		<buff name="buffIVzombiePoisonEffect">
+			<stack_type value="replace"/>
+			<duration value="60"/>
+			<effect_group>
+				<triggered_effect trigger="onSelfBuffStart" action="AttachParticleEffectToEntity" particle="#@modfolder:Resources/elementzombie?ezToxic" parent_transform="RightHand"/>
+				<triggered_effect trigger="onSelfEnteredGame" action="AttachParticleEffectToEntity" particle="#@modfolder:Resources/elementzombie?ezToxic" parent_transform="RightHand"/>
+				<triggered_effect trigger="onSelfBuffStart" action="AttachParticleEffectToEntity" particle="#@modfolder:Resources/elementzombie?ezToxic2" parent_transform="LeftHand"/>
+				<triggered_effect trigger="onSelfEnteredGame" action="AttachParticleEffectToEntity" particle="#@modfolder:Resources/elementzombie?ezToxic2" parent_transform="LeftHand"/>
+				<triggered_effect trigger="onSelfBuffRemove" action="RemoveParticleEffectFromEntity" particle="ezToxic"/>
+				<triggered_effect trigger="onSelfDied" action="RemoveParticleEffectFromEntity" particle="ezToxic"/>
+				<triggered_effect trigger="onSelfBuffFinish" action="RemoveParticleEffectFromEntity" particle="ezToxic"/>
+				<triggered_effect trigger="onSelfBuffRemove" action="RemoveParticleEffectFromEntity" particle="ezToxic2"/>
+				<triggered_effect trigger="onSelfDied" action="RemoveParticleEffectFromEntity" particle="ezToxic2"/>
+				<triggered_effect trigger="onSelfBuffFinish" action="RemoveParticleEffectFromEntity" particle="ezToxic2"/>
+			</effect_group>
+		</buff>
+		<!-- 冰凍殭屍外觀要用的效果 -->
+		<buff name="buffIVzombieFrostEffect">
+			<stack_type value="replace"/>
+			<duration value="60"/>
+			<effect_group>
+				<triggered_effect trigger="onSelfBuffStart" action="AttachParticleEffectToEntity" particle="#@modfolder:Resources/elementzombie?ezFrost" parent_transform="RightHand"/>
+				<triggered_effect trigger="onSelfEnteredGame" action="AttachParticleEffectToEntity" particle="#@modfolder:Resources/elementzombie?ezFrost" parent_transform="RightHand"/>
+				<triggered_effect trigger="onSelfBuffStart" action="AttachParticleEffectToEntity" particle="#@modfolder:Resources/elementzombie?ezFrost2" parent_transform="LeftHand"/>
+				<triggered_effect trigger="onSelfEnteredGame" action="AttachParticleEffectToEntity" particle="#@modfolder:Resources/elementzombie?ezFrost2" parent_transform="LeftHand"/>
+				<triggered_effect trigger="onSelfBuffRemove" action="RemoveParticleEffectFromEntity" particle="ezFrost"/>
+				<triggered_effect trigger="onSelfDied" action="RemoveParticleEffectFromEntity" particle="ezFrost"/>
+				<triggered_effect trigger="onSelfBuffFinish" action="RemoveParticleEffectFromEntity" particle="ezFrost"/>
+				<triggered_effect trigger="onSelfBuffRemove" action="RemoveParticleEffectFromEntity" particle="ezFrost2"/>
+				<triggered_effect trigger="onSelfDied" action="RemoveParticleEffectFromEntity" particle="ezFrost2"/>
+				<triggered_effect trigger="onSelfBuffFinish" action="RemoveParticleEffectFromEntity" particle="ezFrost2"/>
+			</effect_group>
+		</buff>
+		<!-- 蝕魂殭屍外觀要用的效果 -->
+		<buff name="buffIVzombieSoulEaterEffect">
+			<stack_type value="replace"/>
+			<duration value="60"/>
+			<effect_group>
+				<triggered_effect trigger="onSelfBuffStart" action="AttachParticleEffectToEntity" particle="#@modfolder:Resources/elementzombie?ezSoulEaterBackground" parent_transform="Hips"/>
+				<triggered_effect trigger="onSelfEnteredGame" action="AttachParticleEffectToEntity" particle="#@modfolder:Resources/elementzombie?ezSoulEaterBackground" parent_transform="Hips"/>
+				<triggered_effect trigger="onSelfBuffStart" action="AttachParticleEffectToEntity" particle="#@modfolder:Resources/elementzombie?ezSoulEaterHand" parent_transform="RightHand"/>
+				<triggered_effect trigger="onSelfEnteredGame" action="AttachParticleEffectToEntity" particle="#@modfolder:Resources/elementzombie?ezSoulEaterHand" parent_transform="RightHand"/>
+				<triggered_effect trigger="onSelfBuffStart" action="AttachParticleEffectToEntity" particle="#@modfolder:Resources/elementzombie?ezSoulEaterHand2" parent_transform="LeftHand"/>
+				<triggered_effect trigger="onSelfEnteredGame" action="AttachParticleEffectToEntity" particle="#@modfolder:Resources/elementzombie?ezSoulEaterHand2" parent_transform="LeftHand"/>
+				<triggered_effect trigger="onSelfBuffRemove" action="RemoveParticleEffectFromEntity" particle="ezSoulEaterHand"/>
+				<triggered_effect trigger="onSelfDied" action="RemoveParticleEffectFromEntity" particle="ezSoulEaterHand"/>
+				<triggered_effect trigger="onSelfBuffFinish" action="RemoveParticleEffectFromEntity" particle="ezSoulEaterHand"/>
+				<triggered_effect trigger="onSelfBuffRemove" action="RemoveParticleEffectFromEntity" particle="ezSoulEaterHand2"/>
+				<triggered_effect trigger="onSelfDied" action="RemoveParticleEffectFromEntity" particle="ezSoulEaterHand2"/>
+				<triggered_effect trigger="onSelfBuffFinish" action="RemoveParticleEffectFromEntity" particle="ezSoulEaterHand2"/>
+				<triggered_effect trigger="onSelfBuffRemove" action="RemoveParticleEffectFromEntity" particle="ezSoulEaterBackground"/>
+				<triggered_effect trigger="onSelfDied" action="RemoveParticleEffectFromEntity" particle="ezSoulEaterBackground"/>
+				<triggered_effect trigger="onSelfBuffFinish" action="RemoveParticleEffectFromEntity" particle="ezSoulEaterBackground"/>
+			</effect_group>
+		</buff>
+		<!-- 火焰殭屍(特殊型)外觀要用的效果 -->
+		<buff name="buffIVzombieBurnSpecialEffect">
+			<stack_type value="replace"/>
+			<duration value="0"/>
+			<effect_group>
+				<triggered_effect trigger="onSelfBuffStart" action="AttachParticleEffectToEntity" particle="#@modfolder:Resources/elementzombie?ezBurnSpecial"/>
+				<triggered_effect trigger="onSelfEnteredGame" action="AttachParticleEffectToEntity" particle="#@modfolder:Resources/elementzombie?ezBurnSpecial"/>
+				<triggered_effect trigger="onSelfBuffRemove" action="RemoveParticleEffectFromEntity" particle="ezBurnSpecial"/>
+				<triggered_effect trigger="onSelfDied" action="RemoveParticleEffectFromEntity" particle="ezBurnSpecial"/>
+			</effect_group>
+		</buff>
+		<buff name="buffIVzombieBurnTimeProc">
+			<stack_type value="replace"/>
+			<duration value="30"/>
+			<effect_group>
+				<triggered_effect trigger="onSelfBuffUpdate" action="AddBuff" target="selfAOE" range="2.5" target_tags="player" buff="buffIVcustomBurningSpecial"/>
+
+				<triggered_effect trigger="onSelfBuffStart" action="AttachParticleEffectToEntity" particle="#@modfolder:Resources/elementzombie?ezBurn" parent_transform="RightHand"/>
+				<triggered_effect trigger="onSelfEnteredGame" action="AttachParticleEffectToEntity" particle="#@modfolder:Resources/elementzombie?ezBurn" parent_transform="RightHand"/>
+				<triggered_effect trigger="onSelfBuffStart" action="AttachParticleEffectToEntity" particle="#@modfolder:Resources/elementzombie?ezBurn2" parent_transform="LeftHand"/>
+				<triggered_effect trigger="onSelfEnteredGame" action="AttachParticleEffectToEntity" particle="#@modfolder:Resources/elementzombie?ezBurn2" parent_transform="LeftHand"/>
+				<triggered_effect trigger="onSelfBuffRemove" action="RemoveParticleEffectFromEntity" particle="ezBurn"/>
+				<triggered_effect trigger="onSelfDied" action="RemoveParticleEffectFromEntity" particle="ezBurn"/>
+				<triggered_effect trigger="onSelfBuffFinish" action="RemoveParticleEffectFromEntity" particle="ezBurn"/>
+				<triggered_effect trigger="onSelfBuffRemove" action="RemoveParticleEffectFromEntity" particle="ezBurn2"/>
+				<triggered_effect trigger="onSelfDied" action="RemoveParticleEffectFromEntity" particle="ezBurn2"/>
+				<triggered_effect trigger="onSelfBuffFinish" action="RemoveParticleEffectFromEntity" particle="ezBurn2"/>
+
+				<triggered_effect trigger="onSelfBuffStart" action="AttachParticleEffectToEntity" particle="#@modfolder:Resources/elementzombie?SpellRangeBurn"/>
+				<triggered_effect trigger="onSelfEnteredGame" action="AttachParticleEffectToEntity" particle="#@modfolder:Resources/elementzombie?SpellRangeBurn"/>
+				<triggered_effect trigger="onSelfBuffRemove" action="RemoveParticleEffectFromEntity" particle="SpellRangeBurn"/>
+				<triggered_effect trigger="onSelfDied" action="RemoveParticleEffectFromEntity" particle="SpellRangeBurn"/>
+				<triggered_effect trigger="onSelfBuffFinish" action="RemoveParticleEffectFromEntity" particle="SpellRangeBurn"/>
+			</effect_group>
+		</buff>
+		<!-- 電擊殭屍(特殊型)外觀要用的效果 -->
+		<buff name="buffIVzombieShockSpecialEffect">
+			<stack_type value="replace"/>
+			<duration value="0"/>
+			<effect_group>
+				<triggered_effect trigger="onSelfBuffStart" action="AttachParticleEffectToEntity" particle="#@modfolder:Resources/elementzombie?ezElectricSpecial"/>
+				<triggered_effect trigger="onSelfEnteredGame" action="AttachParticleEffectToEntity" particle="#@modfolder:Resources/elementzombie?ezElectricSpecial"/>
+				<triggered_effect trigger="onSelfBuffRemove" action="RemoveParticleEffectFromEntity" particle="ezElectricSpecial"/>
+				<triggered_effect trigger="onSelfDied" action="RemoveParticleEffectFromEntity" particle="ezElectricSpecial"/>
+			</effect_group>
+		</buff>
+		<buff name="buffIVzombieShockTimeProc">
+			<stack_type value="replace"/>
+			<duration value="30"/>
+			<effect_group>
+				<triggered_effect trigger="onSelfBuffUpdate" action="AddBuff" target="selfAOE" range="2.5" target_tags="player" buff="buffIVcustomShockSpecial"/>
+
+				<triggered_effect trigger="onSelfBuffStart" action="AttachParticleEffectToEntity" particle="#@modfolder:Resources/elementzombie?ezElectric" parent_transform="RightHand"/>
+				<triggered_effect trigger="onSelfEnteredGame" action="AttachParticleEffectToEntity" particle="#@modfolder:Resources/elementzombie?ezElectric" parent_transform="RightHand"/>
+				<triggered_effect trigger="onSelfBuffStart" action="AttachParticleEffectToEntity" particle="#@modfolder:Resources/elementzombie?ezElectric2" parent_transform="LeftHand"/>
+				<triggered_effect trigger="onSelfEnteredGame" action="AttachParticleEffectToEntity" particle="#@modfolder:Resources/elementzombie?ezElectric2" parent_transform="LeftHand"/>
+				<triggered_effect trigger="onSelfBuffRemove" action="RemoveParticleEffectFromEntity" particle="ezElectric"/>
+				<triggered_effect trigger="onSelfDied" action="RemoveParticleEffectFromEntity" particle="ezElectric"/>
+				<triggered_effect trigger="onSelfBuffFinish" action="RemoveParticleEffectFromEntity" particle="ezElectric"/>
+				<triggered_effect trigger="onSelfBuffRemove" action="RemoveParticleEffectFromEntity" particle="ezElectric2"/>
+				<triggered_effect trigger="onSelfDied" action="RemoveParticleEffectFromEntity" particle="ezElectric2"/>
+				<triggered_effect trigger="onSelfBuffFinish" action="RemoveParticleEffectFromEntity" particle="ezElectric2"/>
+
+				<triggered_effect trigger="onSelfBuffStart" action="AttachParticleEffectToEntity" particle="#@modfolder:Resources/elementzombie?SpellRangeEelectric"/>
+				<triggered_effect trigger="onSelfEnteredGame" action="AttachParticleEffectToEntity" particle="#@modfolder:Resources/elementzombie?SpellRangeEelectric"/>
+				<triggered_effect trigger="onSelfBuffRemove" action="RemoveParticleEffectFromEntity" particle="SpellRangeEelectric"/>
+				<triggered_effect trigger="onSelfDied" action="RemoveParticleEffectFromEntity" particle="SpellRangeEelectric"/>
+				<triggered_effect trigger="onSelfBuffFinish" action="RemoveParticleEffectFromEntity" particle="SpellRangeEelectric"/>
+			</effect_group>
+		</buff>
+		<!-- 劇毒殭屍(特殊型)外觀要用的效果 -->
+		<buff name="buffIVzombiePoisonSpecialEffect">
+			<stack_type value="replace"/>
+			<duration value="0"/>
+			<effect_group>
+				<triggered_effect trigger="onSelfBuffStart" action="AttachParticleEffectToEntity" particle="#@modfolder:Resources/elementzombie?ezToxicSpecial"/>
+				<triggered_effect trigger="onSelfEnteredGame" action="AttachParticleEffectToEntity" particle="#@modfolder:Resources/elementzombie?ezToxicSpecial"/>
+				<triggered_effect trigger="onSelfBuffRemove" action="RemoveParticleEffectFromEntity" particle="ezToxicSpecial"/>
+				<triggered_effect trigger="onSelfDied" action="RemoveParticleEffectFromEntity" particle="ezToxicSpecial"/>
+			</effect_group>
+		</buff>
+		<buff name="buffIVzombiePoisonTimeProc">
+			<stack_type value="replace"/>
+			<duration value="30"/>
+			<effect_group>
+				<triggered_effect trigger="onSelfBuffUpdate" action="AddBuff" target="selfAOE" range="2.5" target_tags="player" buff="buffIVcustomPoisonSpecial"/>
+
+				<triggered_effect trigger="onSelfBuffStart" action="AttachParticleEffectToEntity" particle="#@modfolder:Resources/elementzombie?ezToxic" parent_transform="RightHand"/>
+				<triggered_effect trigger="onSelfEnteredGame" action="AttachParticleEffectToEntity" particle="#@modfolder:Resources/elementzombie?ezToxic" parent_transform="RightHand"/>
+				<triggered_effect trigger="onSelfBuffStart" action="AttachParticleEffectToEntity" particle="#@modfolder:Resources/elementzombie?ezToxic2" parent_transform="LeftHand"/>
+				<triggered_effect trigger="onSelfEnteredGame" action="AttachParticleEffectToEntity" particle="#@modfolder:Resources/elementzombie?ezToxic2" parent_transform="LeftHand"/>
+				<triggered_effect trigger="onSelfBuffRemove" action="RemoveParticleEffectFromEntity" particle="ezToxic"/>
+				<triggered_effect trigger="onSelfDied" action="RemoveParticleEffectFromEntity" particle="ezToxic"/>
+				<triggered_effect trigger="onSelfBuffFinish" action="RemoveParticleEffectFromEntity" particle="ezToxic"/>
+				<triggered_effect trigger="onSelfBuffRemove" action="RemoveParticleEffectFromEntity" particle="ezToxic2"/>
+				<triggered_effect trigger="onSelfDied" action="RemoveParticleEffectFromEntity" particle="ezToxic2"/>
+				<triggered_effect trigger="onSelfBuffFinish" action="RemoveParticleEffectFromEntity" particle="ezToxic2"/>
+
+				<triggered_effect trigger="onSelfBuffStart" action="AttachParticleEffectToEntity" particle="#@modfolder:Resources/elementzombie?SpellRangeToxic"/>
+				<triggered_effect trigger="onSelfEnteredGame" action="AttachParticleEffectToEntity" particle="#@modfolder:Resources/elementzombie?SpellRangeToxic"/>
+				<triggered_effect trigger="onSelfBuffRemove" action="RemoveParticleEffectFromEntity" particle="SpellRangeToxic"/>
+				<triggered_effect trigger="onSelfDied" action="RemoveParticleEffectFromEntity" particle="SpellRangeToxic"/>
+				<triggered_effect trigger="onSelfBuffFinish" action="RemoveParticleEffectFromEntity" particle="SpellRangeToxic"/>
+			</effect_group>
+		</buff>
+		<!-- 冰凍殭屍(特殊型)外觀要用的效果 -->
+		<buff name="buffIVzombieFrostSpecialEffect">
+			<stack_type value="replace"/>
+			<duration value="0"/>
+			<effect_group>
+				<triggered_effect trigger="onSelfBuffStart" action="AttachParticleEffectToEntity" particle="#@modfolder:Resources/elementzombie?ezFrostSpecial"/>
+				<triggered_effect trigger="onSelfEnteredGame" action="AttachParticleEffectToEntity" particle="#@modfolder:Resources/elementzombie?ezFrostSpecial"/>
+				<triggered_effect trigger="onSelfBuffRemove" action="RemoveParticleEffectFromEntity" particle="ezFrostSpecial"/>
+				<triggered_effect trigger="onSelfDied" action="RemoveParticleEffectFromEntity" particle="ezFrostSpecial"/>
+			</effect_group>
+		</buff>
+		<buff name="buffIVzombieFrostTimeProc">
+			<stack_type value="replace"/>
+			<duration value="30"/>
+			<effect_group>
+				<triggered_effect trigger="onSelfBuffUpdate" action="AddBuff" target="selfAOE" range="2.5" target_tags="player" buff="buffIVcustomFrostSpecial"/>
+
+				<triggered_effect trigger="onSelfBuffStart" action="AttachParticleEffectToEntity" particle="#@modfolder:Resources/elementzombie?ezFrost" parent_transform="RightHand"/>
+				<triggered_effect trigger="onSelfEnteredGame" action="AttachParticleEffectToEntity" particle="#@modfolder:Resources/elementzombie?ezFrost" parent_transform="RightHand"/>
+				<triggered_effect trigger="onSelfBuffStart" action="AttachParticleEffectToEntity" particle="#@modfolder:Resources/elementzombie?ezFrost2" parent_transform="LeftHand"/>
+				<triggered_effect trigger="onSelfEnteredGame" action="AttachParticleEffectToEntity" particle="#@modfolder:Resources/elementzombie?ezFrost2" parent_transform="LeftHand"/>
+				<triggered_effect trigger="onSelfBuffRemove" action="RemoveParticleEffectFromEntity" particle="ezFrost"/>
+				<triggered_effect trigger="onSelfDied" action="RemoveParticleEffectFromEntity" particle="ezFrost"/>
+				<triggered_effect trigger="onSelfBuffFinish" action="RemoveParticleEffectFromEntity" particle="ezFrost"/>
+				<triggered_effect trigger="onSelfBuffRemove" action="RemoveParticleEffectFromEntity" particle="ezFrost2"/>
+				<triggered_effect trigger="onSelfDied" action="RemoveParticleEffectFromEntity" particle="ezFrost2"/>
+				<triggered_effect trigger="onSelfBuffFinish" action="RemoveParticleEffectFromEntity" particle="ezFrost2"/>
+
+				<triggered_effect trigger="onSelfBuffStart" action="AttachParticleEffectToEntity" particle="#@modfolder:Resources/elementzombie?SpellRangeFrost"/>
+				<triggered_effect trigger="onSelfEnteredGame" action="AttachParticleEffectToEntity" particle="#@modfolder:Resources/elementzombie?SpellRangeFrost"/>
+				<triggered_effect trigger="onSelfBuffRemove" action="RemoveParticleEffectFromEntity" particle="SpellRangeFrost"/>
+				<triggered_effect trigger="onSelfDied" action="RemoveParticleEffectFromEntity" particle="SpellRangeFrost"/>
+				<triggered_effect trigger="onSelfBuffFinish" action="RemoveParticleEffectFromEntity" particle="SpellRangeFrost"/>
+			</effect_group>
+		</buff>
+		<!-- 蝕魂殭屍(特殊型)外觀要用的效果 -->
+		<buff name="buffIVzombieSoulEaterSpecialEffect">
+			<stack_type value="replace"/>
+			<duration value="0"/>
+			<effect_group>
+				<triggered_effect trigger="onSelfBuffStart" action="AttachParticleEffectToEntity" particle="#@modfolder:Resources/elementzombie?ezSoulEaterSpecial"/>
+				<triggered_effect trigger="onSelfEnteredGame" action="AttachParticleEffectToEntity" particle="#@modfolder:Resources/elementzombie?ezSoulEaterSpecial"/>
+				<triggered_effect trigger="onSelfBuffRemove" action="RemoveParticleEffectFromEntity" particle="ezSoulEaterSpecial"/>
+				<triggered_effect trigger="onSelfDied" action="RemoveParticleEffectFromEntity" particle="ezSoulEaterSpecial"/>
+			</effect_group>
+		</buff>
+		<buff name="buffIVzombieSoulEaterTimeProc">
+			<stack_type value="replace"/>
+			<duration value="30"/>
+			<effect_group>
+				<triggered_effect trigger="onSelfBuffUpdate" action="AddBuff" target="selfAOE" range="2.5" target_tags="player" buff="buffIVcustomAbsorbEnergy"/>
+
+				<triggered_effect trigger="onSelfBuffStart" action="AttachParticleEffectToEntity" particle="#@modfolder:Resources/elementzombie?ezSoulEaterHand" parent_transform="RightHand"/>
+				<triggered_effect trigger="onSelfEnteredGame" action="AttachParticleEffectToEntity" particle="#@modfolder:Resources/elementzombie?ezSoulEaterHand" parent_transform="RightHand"/>
+				<triggered_effect trigger="onSelfBuffStart" action="AttachParticleEffectToEntity" particle="#@modfolder:Resources/elementzombie?ezSoulEaterHand2" parent_transform="LeftHand"/>
+				<triggered_effect trigger="onSelfEnteredGame" action="AttachParticleEffectToEntity" particle="#@modfolder:Resources/elementzombie?ezSoulEaterHand2" parent_transform="LeftHand"/>
+				<triggered_effect trigger="onSelfBuffRemove" action="RemoveParticleEffectFromEntity" particle="ezSoulEaterHand"/>
+				<triggered_effect trigger="onSelfDied" action="RemoveParticleEffectFromEntity" particle="ezSoulEaterHand"/>
+				<triggered_effect trigger="onSelfBuffFinish" action="RemoveParticleEffectFromEntity" particle="ezSoulEaterHand"/>
+				<triggered_effect trigger="onSelfBuffRemove" action="RemoveParticleEffectFromEntity" particle="ezSoulEaterHand2"/>
+				<triggered_effect trigger="onSelfDied" action="RemoveParticleEffectFromEntity" particle="ezSoulEaterHand2"/>
+				<triggered_effect trigger="onSelfBuffFinish" action="RemoveParticleEffectFromEntity" particle="ezSoulEaterHand2"/>
+
+				<triggered_effect trigger="onSelfBuffStart" action="AttachParticleEffectToEntity" particle="#@modfolder:Resources/elementzombie?SpellRangeSoul"/>
+				<triggered_effect trigger="onSelfEnteredGame" action="AttachParticleEffectToEntity" particle="#@modfolder:Resources/elementzombie?SpellRangeSoul"/>
+				<triggered_effect trigger="onSelfBuffRemove" action="RemoveParticleEffectFromEntity" particle="SpellRangeSoul"/>
+				<triggered_effect trigger="onSelfDied" action="RemoveParticleEffectFromEntity" particle="SpellRangeSoul"/>
+				<triggered_effect trigger="onSelfBuffFinish" action="RemoveParticleEffectFromEntity" particle="SpellRangeSoul"/>
+			</effect_group>
+		</buff>
+
+		<!-- 殭屍被激怒後外觀的效果以及傷害設定 (稀有型專用) -->
+		<buff name="buffIVzombieRallyingFuryEffect">
+			<stack_type value="replace"/>
+			<duration value="10"/>
+			<effect_group>
+				<passive_effect name="EntityDamage" operation="perc_add" value=".2"/>
+				<passive_effect name="BlockDamage" operation="perc_add" value=".2"/>
+
+				<triggered_effect trigger="onSelfBuffStart" action="AttachParticleEffectToEntity" particle="#@modfolder:Resources/elementzombie?ezRallyingFury" parent_transform="Head"/>
+				<triggered_effect trigger="onSelfEnteredGame" action="AttachParticleEffectToEntity" particle="#@modfolder:Resources/elementzombie?ezRallyingFury" parent_transform="Head"/>
+				<triggered_effect trigger="onSelfBuffRemove" action="RemoveParticleEffectFromEntity" particle="ezRallyingFury"/>
+				<triggered_effect trigger="onSelfDied" action="RemoveParticleEffectFromEntity" particle="ezRallyingFury"/>
+			</effect_group>
+		</buff>
+	</append>
+	<!-- Debuff, 應用在殭屍或動物或玩家身上 -->
+	<append xpath="/buffs">
+		<!-- 燃燒 -->
+		<buff name="buffIVcustomBurning" name_key="buffIVcustomBurningName" description_key="buffIVcustomBurningDesc" tooltip_key="buffIVcustomBurningTooltip" icon="iv_ui_symbol_fire" icon_color="255,64,0">
+			<damage_type value="heat"/>
+			<stack_type value="replace"/>
+			<duration value="5"/>
+			<effect_group name="for player">
+				<requirement name="EntityTagCompare" tags="player"/>
+				<passive_effect name="BuffBlink" operation="base_set" value="2" duration="0,3" tags="buffIVcustomBurning"/>
+				<passive_effect name="ElementalDamageResist" operation="base_subtract" value="1" tags="heat"/>
+				<passive_effect name="HealthChangeOT" operation="base_subtract" value="2"/>
+				<passive_effect name="WaterChangeOT" operation="base_subtract" value="2"/>
+
+				<passive_effect name="HealthChangeOT" operation="base_subtract" value="2">
+					<requirement name="InBiome" biome="9"/><!-- 焚燒森林 -->
+				</passive_effect>
+
+				<triggered_effect trigger="onSelfBuffStart" action="PlaySound" sound="buff_burn_lp" play_in_head="true"/>
+				<triggered_effect trigger="onSelfBuffUpdate" action="PlaySound" sound="buff_burn_lp" play_in_head="true"/>
+				<triggered_effect trigger="onSelfBuffRemove" action="FadeOutSound" sound="buff_burn_lp"/>
+				<triggered_effect trigger="onSelfLeaveGame" action="StopSound" sound="buff_burn_lp"/>
+
+				<triggered_effect trigger="onSelfBuffUpdate" action="ModifyScreenEffect" effect_name="Hot2" intensity="1" fade="3"/>
+				<triggered_effect trigger="onSelfEnteredGame" action="ModifyScreenEffect" effect_name="Hot2" intensity="1" fade="3"/>
+				<triggered_effect trigger="onSelfBuffRemove" action="ModifyScreenEffect" effect_name="Hot2" intensity="0" fade="0"/>
+				<triggered_effect trigger="onSelfDied" action="ModifyScreenEffect" effect_name="Hot2" intensity="0" fade="0"/>
+
+			</effect_group>
+			<effect_group name="for zombie">
+				<requirement name="EntityTagCompare" tags="zombie"/>
+				<passive_effect name="HealthChangeOT" operation="base_subtract" value="2"/>
+				<triggered_effect trigger="onSelfBuffStart" action="AttachParticleEffectToEntity" particle="#@modfolder:Resources/elementzombie?ezBurnEnemy" local_offset="0,0.2,0"/>
+				<triggered_effect trigger="onSelfEnteredGame" action="AttachParticleEffectToEntity" particle="#@modfolder:Resources/elementzombie?ezBurnEnemy" local_offset="0,0.2,0"/>
+				<triggered_effect trigger="onSelfBuffRemove" action="RemoveParticleEffectFromEntity" particle="ezBurnEnemy"/>
+				<triggered_effect trigger="onSelfDied" action="RemoveParticleEffectFromEntity" particle="ezBurnEnemy"/>
+			</effect_group>
+			<effect_group name="for animal">
+				<requirement name="EntityTagCompare" tags="animal"/>
+				<passive_effect name="HealthChangeOT" operation="base_subtract" value="2"/>
+				<triggered_effect trigger="onSelfBuffStart" action="AttachParticleEffectToEntity" particle="#@modfolder:Resources/elementzombie?ezBurnEnemy" local_offset="0,0,0"/>
+				<triggered_effect trigger="onSelfEnteredGame" action="AttachParticleEffectToEntity" particle="#@modfolder:Resources/elementzombie?ezBurnEnemy" local_offset="0,0,0"/>
+				<triggered_effect trigger="onSelfBuffRemove" action="RemoveParticleEffectFromEntity" particle="ezBurnEnemy"/>
+				<triggered_effect trigger="onSelfDied" action="RemoveParticleEffectFromEntity" particle="ezBurnEnemy"/>
+			</effect_group>
+		</buff>
+		<!-- 電擊 -->
+		<buff name="buffIVcustomShock" name_key="buffIVcustomShockName" description_key="buffIVcustomShockDesc" tooltip_key="buffIVcustomShockTooltip" icon="iv_ui_symbol_shock" icon_color="255,64,0">
+			<damage_type value="electrical"/>
+			<stack_type value="replace"/>
+			<duration value="5"/>
+			<effect_group name="for player">
+				<requirement name="EntityTagCompare" tags="player"/>
+				<passive_effect name="BuffBlink" operation="base_set" value="2" duration="0,3" tags="buffIVcustomShock"/>
+				<passive_effect name="ElementalDamageResist" operation="base_subtract" value="1" tags="Electrical"/>
+				<passive_effect name="HealthChangeOT" operation="base_subtract" value="2"/>
+				<passive_effect name="StaminaChangeOT" operation="base_subtract" value="2"/>
+				<passive_effect name="RunSpeed" operation="perc_subtract" value=".9,.05" duration="0,3"/>
+				<passive_effect name="WalkSpeed" operation="perc_subtract" value=".9,.05" duration="0,3"/>
+				<passive_effect name="CrouchSpeed" operation="perc_subtract" value=".9,.05" duration="0,3"/>
+				<passive_effect name="JumpStrength" operation="perc_subtract" value=".9,.05" duration="0,3"/>
+
+				<passive_effect name="HealthChangeOT" operation="base_subtract" value="2">
+					<requirement name="CVarCompare" cvar="_wetness" operation="GT" value=".1"/>
+				</passive_effect>
+				
+				<triggered_effect trigger="onSelfBuffStart" action="AttachParticleEffectToEntity" particle="#@modfolder:Resources/elementzombie?ezElectricDebuff" local_offset="0,0,0" parent_transform="Spine1"/>
+				<triggered_effect trigger="onSelfEnteredGame" action="AttachParticleEffectToEntity" particle="#@modfolder:Resources/elementzombie?ezElectricDebuff" local_offset="0,0,0" parent_transform="Spine1"/>
+				<triggered_effect trigger="onSelfBuffRemove" action="RemoveParticleEffectFromEntity" particle="ezElectricDebuff"/>
+				<triggered_effect trigger="onSelfDied" action="RemoveParticleEffectFromEntity" particle="ezElectricDebuff"/>
+				<triggered_effect trigger="onSelfBuffFinish" action="RemoveParticleEffectFromEntity" particle="ezElectricDebuff"/>
+
+				<triggered_effect trigger="onSelfBuffStart" action="PlaySound" sound="electric_fence_impact" play_in_head="true"/>
+				<triggered_effect trigger="onSelfBuffUpdate" action="PlaySound" sound="electric_fence_impact" play_in_head="true"/>
+				<triggered_effect trigger="onSelfBuffRemove" action="FadeOutSound" sound="electric_fence_impact"/>
+				<triggered_effect trigger="onSelfLeaveGame" action="StopSound" sound="electric_fence_impact"/>
+			</effect_group>
+			<effect_group name="for zombie">
+				<requirement name="EntityTagCompare" tags="zombie"/>
+				<passive_effect name="HealthChangeOT" operation="base_subtract" value="2"/>
+				<passive_effect name="RunSpeed" operation="perc_subtract" value=".9,.05" duration="0,3"/>
+				<passive_effect name="WalkSpeed" operation="perc_subtract" value=".9,.05" duration="0,3"/>
+				<passive_effect name="CrouchSpeed" operation="perc_subtract" value=".9,.05" duration="0,3"/>
+				<passive_effect name="JumpStrength" operation="perc_subtract" value=".9,.05" duration="0,3"/>
+				<triggered_effect trigger="onSelfBuffStart" action="AttachParticleEffectToEntity" particle="#@modfolder:Resources/elementzombie?ezElectricEnemy" local_offset="0,0,0"/>
+				<triggered_effect trigger="onSelfEnteredGame" action="AttachParticleEffectToEntity" particle="#@modfolder:Resources/elementzombie?ezElectricEnemy" local_offset="0,0,0"/>
+				<triggered_effect trigger="onSelfBuffRemove" action="RemoveParticleEffectFromEntity" particle="ezElectricEnemy"/>
+				<triggered_effect trigger="onSelfDied" action="RemoveParticleEffectFromEntity" particle="ezElectricEnemy"/>
+				<triggered_effect trigger="onSelfBuffFinish" action="RemoveParticleEffectFromEntity" particle="ezElectricEnemy"/>
+			</effect_group>
+			<effect_group name="for animal">
+				<requirement name="EntityTagCompare" tags="animal"/>
+				<passive_effect name="HealthChangeOT" operation="base_subtract" value="2"/>
+				<passive_effect name="RunSpeed" operation="perc_subtract" value=".9,.05" duration="0,3"/>
+				<passive_effect name="WalkSpeed" operation="perc_subtract" value=".9,.05" duration="0,3"/>
+				<passive_effect name="CrouchSpeed" operation="perc_subtract" value=".9,.05" duration="0,3"/>
+				<passive_effect name="JumpStrength" operation="perc_subtract" value=".9,.05" duration="0,3"/>
+				<triggered_effect trigger="onSelfBuffStart" action="AttachParticleEffectToEntity" particle="#@modfolder:Resources/elementzombie?ezElectricEnemy" local_offset="0,1,0"/>
+				<triggered_effect trigger="onSelfEnteredGame" action="AttachParticleEffectToEntity" particle="#@modfolder:Resources/elementzombie?ezElectricEnemy" local_offset="0,1,0"/>
+				<triggered_effect trigger="onSelfBuffRemove" action="RemoveParticleEffectFromEntity" particle="ezElectricEnemy"/>
+				<triggered_effect trigger="onSelfDied" action="RemoveParticleEffectFromEntity" particle="ezElectricEnemy"/>
+				<triggered_effect trigger="onSelfBuffFinish" action="RemoveParticleEffectFromEntity" particle="ezElectricEnemy"/>
+			</effect_group>
+		</buff>
+		<!-- 劇毒 -->
+		<buff name="buffIVcustomPoison" name_key="buffIVcustomPoisonName" description_key="buffIVcustomPoisonDesc" tooltip_key="buffIVcustomPoisonTooltip" icon="iv_ui_symbol_poison" icon_color="255,64,0">
+			<damage_type value="toxic"/>
+			<stack_type value="replace"/>
+			<duration value="5"/>
+			<effect_group name="for player">
+				<requirement name="EntityTagCompare" tags="player"/>
+				<passive_effect name="BuffBlink" operation="base_set" value="2" duration="0,3" tags="buffIVcustomPoison"/>
+				<passive_effect name="ElementalDamageResist" operation="base_subtract" value="1" tags="Toxic"/>
+				<passive_effect name="HealthChangeOT" operation="base_subtract" value="2"/>
+				<passive_effect name="WaterChangeOT" operation="base_subtract" value="2"/>
+				<passive_effect name="StaminaChangeOT" operation="base_subtract" value="5"/>
+
+				<passive_effect name="HealthChangeOT" operation="base_subtract" value="2">
+					<requirement name="CVarCompare" cvar="_wetness" operation="GT" value=".1"/><!-- 全身潮濕,1等於100% -->
+				</passive_effect>
+
+				<triggered_effect trigger="onSelfBuffStart" action="AttachParticleEffectToEntity" particle="#@modfolder:Resources/elementzombie?ezToxicDebuff" local_offset="0,0,0" parent_transform="Head"/>
+				<triggered_effect trigger="onSelfEnteredGame" action="AttachParticleEffectToEntity" particle="#@modfolder:Resources/elementzombie?ezToxicDebuff" local_offset="0,0,0" parent_transform="Head"/>
+				<triggered_effect trigger="onSelfBuffRemove" action="RemoveParticleEffectFromEntity" particle="ezToxicDebuff"/>
+				<triggered_effect trigger="onSelfDied" action="RemoveParticleEffectFromEntity" particle="ezToxicDebuff"/>
+				<triggered_effect trigger="onSelfBuffFinish" action="RemoveParticleEffectFromEntity" particle="ezToxicDebuff"/>
+			</effect_group>
+			<effect_group name="for zombie">
+				<requirement name="EntityTagCompare" tags="zombie"/>
+				<passive_effect name="HealthChangeOT" operation="base_subtract" value="2"/>
+				<triggered_effect trigger="onSelfBuffStart" action="AttachParticleEffectToEntity" particle="#@modfolder:Resources/elementzombie?ezToxicEnemy" local_offset="0,0,0" parent_transform="Hips"/>
+				<triggered_effect trigger="onSelfEnteredGame" action="AttachParticleEffectToEntity" particle="#@modfolder:Resources/elementzombie?ezToxicEnemy" local_offset="0,0,0" parent_transform="Hips"/>
+				<triggered_effect trigger="onSelfBuffRemove" action="RemoveParticleEffectFromEntity" particle="ezToxicEnemy"/>
+				<triggered_effect trigger="onSelfDied" action="RemoveParticleEffectFromEntity" particle="ezToxicEnemy"/>
+				<triggered_effect trigger="onSelfBuffFinish" action="RemoveParticleEffectFromEntity" particle="ezToxicEnemy"/>
+			</effect_group>
+			<effect_group name="for animal">
+				<requirement name="EntityTagCompare" tags="animal"/>
+				<passive_effect name="HealthChangeOT" operation="base_subtract" value="2"/>
+				<triggered_effect trigger="onSelfBuffStart" action="AttachParticleEffectToEntity" particle="#@modfolder:Resources/elementzombie?ezToxicEnemy" local_offset="0,0,0"/>
+				<triggered_effect trigger="onSelfEnteredGame" action="AttachParticleEffectToEntity" particle="#@modfolder:Resources/elementzombie?ezToxicEnemy" local_offset="0,0,0"/>
+				<triggered_effect trigger="onSelfBuffRemove" action="RemoveParticleEffectFromEntity" particle="ezToxicEnemy"/>
+				<triggered_effect trigger="onSelfDied" action="RemoveParticleEffectFromEntity" particle="ezToxicEnemy"/>
+				<triggered_effect trigger="onSelfBuffFinish" action="RemoveParticleEffectFromEntity" particle="ezToxicEnemy"/>
+			</effect_group>
+		</buff>
+		<!-- 冰凍 -->
+		<buff name="buffIVcustomFrost" name_key="buffIVcustomFrostName" description_key="buffIVcustomFrostDesc" tooltip_key="buffIVcustomFrostTooltip" icon="iv_ui_symbol_frost" icon_color="255,64,0">
+			<damage_type value="cold"/>
+			<stack_type value="replace"/>
+			<duration value="5"/>
+			<effect_group name="for player">
+				<requirement name="EntityTagCompare" tags="player"/>
+				<passive_effect name="BuffBlink" operation="base_set" value="2" duration="0,3" tags="buffIVcustomFrost"/>
+				<passive_effect name="ElementalDamageResist" operation="base_subtract" value="1" tags="Cold"/>
+				<passive_effect name="FoodChangeOT" operation="base_subtract" value="4"/>
+				<passive_effect name="WalkSpeed" operation="perc_subtract" value="0.5"/>
+				<passive_effect name="RunSpeed" operation="perc_subtract" value="0.5"/>
+				<passive_effect name="Mobility" operation="perc_subtract" value="0.5" tags="falling,climbing,swimming"/>
+				<passive_effect name="AttacksPerMinute" operation="perc_subtract" value="0.5"/>
+				
+				<triggered_effect trigger="onSelfBuffUpdate" action="ModifyScreenEffect" effect_name="Cold2" intensity="1" fade=".5"/>
+				<triggered_effect trigger="onSelfEnteredGame" action="ModifyScreenEffect" effect_name="Cold2" intensity="1" fade=".5"/>
+				<triggered_effect trigger="onSelfBuffRemove" action="ModifyScreenEffect" effect_name="Cold2" intensity="0" fade="0"/>
+				<triggered_effect trigger="onSelfDied" action="ModifyScreenEffect" effect_name="Cold2" intensity="0" fade="0"/>
+			</effect_group>
+			<effect_group name="for player in the snow">
+				<requirement name="EntityTagCompare" tags="player"/>
+				<requirement name="InBiome" biome="1"/>
+				<passive_effect name="WalkSpeed" operation="perc_subtract" value="0.2"/>
+				<passive_effect name="RunSpeed" operation="perc_subtract" value="0.2"/>
+				<passive_effect name="Mobility" operation="perc_subtract" value="0.2" tags="falling,climbing,swimming"/>
+				<passive_effect name="AttacksPerMinute" operation="perc_subtract" value="0.2"/>
+			</effect_group>
+			<effect_group name="for zombie">
+				<requirement name="EntityTagCompare" tags="zombie"/>
+				<passive_effect name="WalkSpeed" operation="perc_subtract" value="2"/>
+				<passive_effect name="RunSpeed" operation="perc_subtract" value="2"/>
+				<passive_effect name="AttacksPerMinute" operation="perc_subtract" value="2"/>
+				<triggered_effect trigger="onSelfBuffStart" action="AttachParticleEffectToEntity" particle="#@modfolder:Resources/elementzombie?ezFrostEnemy"/>
+				<triggered_effect trigger="onSelfEnteredGame" action="AttachParticleEffectToEntity" particle="#@modfolder:Resources/elementzombie?ezFrostEnemy"/>
+				<triggered_effect trigger="onSelfBuffRemove" action="RemoveParticleEffectFromEntity" particle="ezFrostEnemy"/>
+				<triggered_effect trigger="onSelfDied" action="RemoveParticleEffectFromEntity" particle="ezFrostEnemy"/>
+				<triggered_effect trigger="onSelfBuffFinish" action="RemoveParticleEffectFromEntity" particle="ezFrostEnemy"/>
+			</effect_group>
+			<effect_group name="for animal">
+				<requirement name="EntityTagCompare" tags="animal"/>
+				<passive_effect name="WalkSpeed" operation="perc_subtract" value="2"/>
+				<passive_effect name="RunSpeed" operation="perc_subtract" value="2"/>
+				<passive_effect name="AttacksPerMinute" operation="perc_subtract" value="2"/>
+				<triggered_effect trigger="onSelfBuffStart" action="AttachParticleEffectToEntity" particle="#@modfolder:Resources/elementzombie?ezFrostEnemy"/>
+				<triggered_effect trigger="onSelfEnteredGame" action="AttachParticleEffectToEntity" particle="#@modfolder:Resources/elementzombie?ezFrostEnemy"/>
+				<triggered_effect trigger="onSelfBuffRemove" action="RemoveParticleEffectFromEntity" particle="ezFrostEnemy"/>
+				<triggered_effect trigger="onSelfDied" action="RemoveParticleEffectFromEntity" particle="ezFrostEnemy"/>
+				<triggered_effect trigger="onSelfBuffFinish" action="RemoveParticleEffectFromEntity" particle="ezFrostEnemy"/>
+			</effect_group>
+		</buff>
+		<!-- 死亡宣告 -->
+		<buff name="buffIVcustomDeathDeclare" name_key="buffIVcustomDeathDeclareName" description_key="buffIVcustomDeathDeclareDesc" tooltip_key="buffIVcustomDeathDeclareTooltip" icon="iv_ui_symbol_death_declare" icon_color="255,64,0" icon_blink="true">
+			<stack_type value="ignore"/>
+			<duration value="180"/>
+			<effect_group name="for player">
+				<requirement name="EntityTagCompare" tags="player"/>
+				<passive_effect name="BuffBlink" operation="base_set" value="2" duration="0,3" tags="buffIVcustomDeathDeclare"/>
+				<passive_effect name="RunSpeed" operation="perc_subtract" value=".2"/>
+
+				<passive_effect name="RunSpeed" operation="perc_subtract" value=".2">
+					<requirement name="IsNight"/>
+				</passive_effect>
+
+				<triggered_effect trigger="onSelfBuffUpdate" action="ModifyScreenEffect" effect_name="Dying" intensity="1" fade=".5"/>
+				<triggered_effect trigger="onSelfEnteredGame" action="ModifyScreenEffect" effect_name="Dying" intensity="1" fade=".5"/>
+				<triggered_effect trigger="onSelfBuffRemove" action="ModifyScreenEffect" effect_name="Dying" intensity="0" fade="0"/>
+				<triggered_effect trigger="onSelfDied" action="ModifyScreenEffect" effect_name="Dying" intensity="0" fade="0"/>
+				<triggered_effect trigger="onSelfBuffRemove" action="RemoveBuff" buff="buffIVcustomDeathDeclare"/>
+				<triggered_effect trigger="onSelfDied" action="RemoveBuff" buff="buffIVcustomDeathDeclare"/>
+				<triggered_effect trigger="onSelfBuffFinish" action="ModifyStats" stat="Health" operation="subtract" value="999999999"/>
+			</effect_group>
+			<effect_group name="for zombie">
+				<requirement name="EntityTagCompare" tags="zombie"/>
+				<passive_effect name="RunSpeed" operation="perc_subtract" value="2"/>
+				<triggered_effect trigger="onSelfBuffStart" action="AttachParticleEffectToEntity" particle="#@modfolder:Resources/elementzombie?ezSoulEaterEnemy" local_rotation="0,0,0" local_offset="0,-0.4,0" parent_transform="Head"/>
+				<triggered_effect trigger="onSelfEnteredGame" action="AttachParticleEffectToEntity" particle="#@modfolder:Resources/elementzombie?ezSoulEaterEnemy" local_rotation="0,0,0" local_offset="0,-0.4,0" parent_transform="Head"/>
+				<triggered_effect trigger="onSelfBuffRemove" action="RemoveParticleEffectFromEntity" particle="ezSoulEaterEnemy"/>
+				<triggered_effect trigger="onSelfDied" action="RemoveParticleEffectFromEntity" particle="ezSoulEaterEnemy"/>
+				<triggered_effect trigger="onSelfBuffFinish" action="RemoveParticleEffectFromEntity" particle="ezSoulEaterEnemy"/>
+				<triggered_effect trigger="onSelfBuffRemove" action="RemoveBuff" buff="buffIVcustomDeathDeclare"/>
+				<triggered_effect trigger="onSelfDied" action="RemoveBuff" buff="buffIVcustomDeathDeclare"/>
+				<triggered_effect trigger="onSelfBuffFinish" action="ModifyStats" stat="Health" operation="subtract" value="999999999"/>
+			</effect_group>
+			<effect_group name="for animal">
+				<requirement name="EntityTagCompare" tags="animal"/>
+				<passive_effect name="RunSpeed" operation="perc_subtract" value="2"/>
+				<triggered_effect trigger="onSelfBuffStart" action="AttachParticleEffectToEntity" particle="#@modfolder:Resources/elementzombie?ezSoulEaterEnemy" local_rotation="0,0,0" local_offset="0,0,0"/>
+				<triggered_effect trigger="onSelfEnteredGame" action="AttachParticleEffectToEntity" particle="#@modfolder:Resources/elementzombie?ezSoulEaterEnemy" local_rotation="0,0,0" local_offset="0,0,0"/>
+				<triggered_effect trigger="onSelfBuffRemove" action="RemoveParticleEffectFromEntity" particle="ezSoulEaterEnemy"/>
+				<triggered_effect trigger="onSelfDied" action="RemoveParticleEffectFromEntity" particle="ezSoulEaterEnemy"/>
+				<triggered_effect trigger="onSelfBuffFinish" action="RemoveParticleEffectFromEntity" particle="ezSoulEaterEnemy"/>
+				<triggered_effect trigger="onSelfBuffRemove" action="RemoveBuff" buff="buffIVcustomDeathDeclare"/>
+				<triggered_effect trigger="onSelfDied" action="RemoveBuff" buff="buffIVcustomDeathDeclare"/>
+				<triggered_effect trigger="onSelfBuffFinish" action="ModifyStats" stat="Health" operation="subtract" value="999999999"/>
+			</effect_group>
+		</buff>
+		<!-- 阻止回血, 護士殭屍專用 -->
+		<buff name="buffIVstopRecoverHP" name_key="buffIVstopRecoverHPName" description_key="buffIVstopRecoverHPDesc" tooltip_key="buffIVstopRecoverHPTooltip" icon="iv_ui_game_symbol_stop_recover_hp" icon_color="255,64,0">
+			<stack_type value="replace"/>
+			<duration value="5"/>
+			<effect_group name="for player">
+				<requirement name="EntityTagCompare" tags="player"/>
+				<passive_effect name="BuffBlink" operation="base_set" value="2" duration="0,3" tags="buffIVstopRecoverHP"/>
+					<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="medicalRegHealthAmount" operation="set" value="0"/>
+					<triggered_effect trigger="onSelfBuffUpdate" action="ModifyCVar" cvar="medicalRegHealthAmount" operation="set" value="0"/>
+			</effect_group>
+		</buff>
+		<!-- 降低跑步速度, 暴徒專用 -->
+		<buff name="buffIVslowDownRunningSpeed" name_key="buffIVslowDownRunningSpeedName" description_key="buffIVslowDownRunningSpeedDesc" tooltip_key="buffIVslowDownRunningSpeedTooltip" icon="iv_ui_symbol_slowdown_speed" icon_color="255,64,0">
+			<stack_type value="replace"/>
+			<duration value="180"/>
+			<effect_group name="for player">
+				<requirement name="EntityTagCompare" tags="player"/>
+				<passive_effect name="BuffBlink" operation="base_set" value="2" duration="0,3" tags="buffIVslowDownRunningSpeed"/>
+				<passive_effect name="RunSpeed" operation="perc_subtract" value=".3"/>
+			</effect_group>
+		</buff>
+		<!-- 燃燒, 特殊型專用, 範圍, 持續時間 -->
+		<buff name="buffIVcustomBurningSpecial" name_key="buffIVcustomBurningSpecialName" description_key="buffIVcustomBurningSpecialDesc" tooltip_key="buffIVcustomBurningSpecialTooltip" icon="iv_ui_symbol_fire" icon_color="255,64,0">
+			<damage_type value="heat"/>
+			<stack_type value="replace"/>
+			<duration value="3"/>
+			<effect_group name="for player">
+				<requirement name="EntityTagCompare" tags="player"/>
+				<passive_effect name="BuffBlink" operation="base_set" value="2" duration="0,3" tags="buffIVcustomBurningSpecial"/>
+				<passive_effect name="ElementalDamageResist" operation="base_subtract" value="1" tags="heat"/>
+				<passive_effect name="HealthChangeOT" operation="base_subtract" value="1"/>
+				<passive_effect name="WaterChangeOT" operation="base_subtract" value="1"/>
+
+				<passive_effect name="HealthChangeOT" operation="base_subtract" value="2">
+					<requirement name="InBiome" biome="9"/><!-- 焚燒森林 -->
+				</passive_effect>
+
+				<triggered_effect trigger="onSelfBuffStart" action="PlaySound" sound="buff_burn_lp" play_in_head="true"/>
+				<triggered_effect trigger="onSelfBuffUpdate" action="PlaySound" sound="buff_burn_lp" play_in_head="true"/>
+				<triggered_effect trigger="onSelfBuffRemove" action="FadeOutSound" sound="buff_burn_lp"/>
+				<triggered_effect trigger="onSelfLeaveGame" action="StopSound" sound="buff_burn_lp"/>
+
+				<triggered_effect trigger="onSelfBuffUpdate" action="ModifyScreenEffect" effect_name="Hot2" intensity="1" fade="3"/>
+				<triggered_effect trigger="onSelfEnteredGame" action="ModifyScreenEffect" effect_name="Hot2" intensity="1" fade="3"/>
+				<triggered_effect trigger="onSelfBuffRemove" action="ModifyScreenEffect" effect_name="Hot2" intensity="0" fade="0"/>
+				<triggered_effect trigger="onSelfDied" action="ModifyScreenEffect" effect_name="Hot2" intensity="0" fade="0"/>
+			</effect_group>
+		</buff>
+		<!-- 電擊, 特殊型專用, 範圍, 持續時間 -->
+		<buff name="buffIVcustomShockSpecial" name_key="buffIVcustomShockSpecialName" description_key="buffIVcustomShockSpecialDesc" tooltip_key="buffIVcustomShockSpecialTooltip" icon="iv_ui_symbol_shock" icon_color="255,64,0">
+			<damage_type value="electrical"/>
+			<stack_type value="replace"/>
+			<duration value="3"/>
+			<effect_group name="for player">
+				<requirement name="EntityTagCompare" tags="player"/>
+				<passive_effect name="BuffBlink" operation="base_set" value="2" duration="0,3" tags="buffIVcustomShockSpecial"/>
+				<passive_effect name="ElementalDamageResist" operation="base_subtract" value="1" tags="Electrical"/>
+				<passive_effect name="HealthChangeOT" operation="base_subtract" value="1"/>
+				<passive_effect name="StaminaChangeOT" operation="base_subtract" value="4"/>
+				<passive_effect name="RunSpeed" operation="perc_subtract" value=".9,.05" duration="0,3"/>
+				<passive_effect name="WalkSpeed" operation="perc_subtract" value=".9,.05" duration="0,3"/>
+				<passive_effect name="CrouchSpeed" operation="perc_subtract" value=".9,.05" duration="0,3"/>
+				<passive_effect name="JumpStrength" operation="perc_subtract" value=".9,.05" duration="0,3"/>
+
+				<passive_effect name="HealthChangeOT" operation="base_subtract" value="1">
+					<requirement name="CVarCompare" cvar="_wetness" operation="GT" value=".1"/>
+				</passive_effect>
+
+				<triggered_effect trigger="onSelfBuffStart" action="AttachParticleEffectToEntity" particle="#@modfolder:Resources/elementzombie?ezElectricDebuff" local_offset="0,0,0" parent_transform="Spine1"/>
+				<triggered_effect trigger="onSelfEnteredGame" action="AttachParticleEffectToEntity" particle="#@modfolder:Resources/elementzombie?ezElectricDebuff" local_offset="0,0,0" parent_transform="Spine1"/>
+				<triggered_effect trigger="onSelfBuffRemove" action="RemoveParticleEffectFromEntity" particle="ezElectricDebuff"/>
+				<triggered_effect trigger="onSelfDied" action="RemoveParticleEffectFromEntity" particle="ezElectricDebuff"/>
+				<triggered_effect trigger="onSelfBuffFinish" action="RemoveParticleEffectFromEntity" particle="ezElectricDebuff"/>
+
+				<triggered_effect trigger="onSelfBuffStart" action="PlaySound" sound="electric_fence_impact" play_in_head="true"/>
+				<triggered_effect trigger="onSelfBuffUpdate" action="PlaySound" sound="electric_fence_impact" play_in_head="true"/>
+				<triggered_effect trigger="onSelfBuffRemove" action="FadeOutSound" sound="electric_fence_impact"/>
+				<triggered_effect trigger="onSelfLeaveGame" action="StopSound" sound="electric_fence_impact"/>
+			</effect_group>
+		</buff>
+		<!-- 劇毒, 特殊型專用, 範圍, 持續時間 -->
+		<buff name="buffIVcustomPoisonSpecial" name_key="buffIVcustomPoisonSpecialName" description_key="buffIVcustomPoisonSpecialDesc" tooltip_key="buffIVcustomPoisonSpecialTooltip" icon="iv_ui_symbol_poison" icon_color="255,64,0">
+			<damage_type value="toxic"/>
+			<stack_type value="replace"/>
+			<duration value="3"/>
+			<effect_group name="for player">
+				<requirement name="EntityTagCompare" tags="player"/>
+				<passive_effect name="BuffBlink" operation="base_set" value="2" duration="0,3" tags="buffIVcustomPoisonSpecial"/>
+				<passive_effect name="ElementalDamageResist" operation="base_subtract" value="1" tags="Toxic"/>
+				<passive_effect name="HealthChangeOT" operation="base_subtract" value="1"/>
+				<passive_effect name="WaterChangeOT" operation="base_subtract" value="1"/>
+				<passive_effect name="StaminaChangeOT" operation="base_subtract" value="3"/>
+
+				<passive_effect name="HealthChangeOT" operation="base_subtract" value="1">
+					<requirement name="CVarCompare" cvar="_wetness" operation="GT" value=".1"/>
+				</passive_effect>
+
+				<triggered_effect trigger="onSelfBuffStart" action="AttachParticleEffectToEntity" particle="#@modfolder:Resources/elementzombie?ezToxicDebuff" local_offset="0,0,0" parent_transform="Head"/>
+				<triggered_effect trigger="onSelfEnteredGame" action="AttachParticleEffectToEntity" particle="#@modfolder:Resources/elementzombie?ezToxicDebuff" local_offset="0,0,0" parent_transform="Head"/>
+				<triggered_effect trigger="onSelfBuffRemove" action="RemoveParticleEffectFromEntity" particle="ezToxicDebuff"/>
+				<triggered_effect trigger="onSelfDied" action="RemoveParticleEffectFromEntity" particle="ezToxicDebuff"/>
+				<triggered_effect trigger="onSelfBuffFinish" action="RemoveParticleEffectFromEntity" particle="ezToxicDebuff"/>
+			</effect_group>
+		</buff>
+		<!-- 冰凍, 特殊型專用, 範圍, 持續時間 -->
+		<buff name="buffIVcustomFrostSpecial" name_key="buffIVcustomFrostSpecialName" description_key="buffIVcustomFrostSpecialDesc" tooltip_key="buffIVcustomFrostSpecialTooltip" icon="iv_ui_symbol_frost" icon_color="255,64,0">
+			<damage_type value="Cold"/>
+			<stack_type value="replace"/>
+			<duration value="3"/>
+			<effect_group name="for player">
+				<requirement name="EntityTagCompare" tags="player"/>
+				<passive_effect name="BuffBlink" operation="base_set" value="2" duration="0,3" tags="buffIVcustomFrostSpecial"/>
+				<passive_effect name="ElementalDamageResist" operation="base_subtract" value="1" tags="Cold"/>
+				<passive_effect name="FoodChangeOT" operation="base_subtract" value="1"/>
+				<passive_effect name="WalkSpeed" operation="perc_subtract" value="0.6"/>
+				<passive_effect name="RunSpeed" operation="perc_subtract" value="0.6"/>
+				<passive_effect name="Mobility" operation="perc_subtract" value="0.6" tags="falling,climbing,swimming"/>
+				<passive_effect name="AttacksPerMinute" operation="perc_subtract" value="0.6"/>
+
+				<triggered_effect trigger="onSelfBuffUpdate" action="ModifyScreenEffect" effect_name="Cold2" intensity="1" fade=".5"/>
+				<triggered_effect trigger="onSelfEnteredGame" action="ModifyScreenEffect" effect_name="Cold2" intensity="1" fade=".5"/>
+				<triggered_effect trigger="onSelfBuffRemove" action="ModifyScreenEffect" effect_name="Cold2" intensity="0" fade="0"/>
+				<triggered_effect trigger="onSelfDied" action="ModifyScreenEffect" effect_name="Cold2" intensity="0" fade="0"/>
+			</effect_group>
+			<effect_group name="for player in the snow">
+				<requirement name="EntityTagCompare" tags="player"/>
+				<requirement name="InBiome" biome="1"/>
+				<passive_effect name="WalkSpeed" operation="perc_subtract" value="0.1"/>
+				<passive_effect name="RunSpeed" operation="perc_subtract" value="0.1"/>
+				<passive_effect name="Mobility" operation="perc_subtract" value="0.1" tags="falling,climbing,swimming"/>
+				<passive_effect name="AttacksPerMinute" operation="perc_subtract" value="0.1"/>
+			</effect_group>
+		</buff>
+		<!-- 蝕魂, 特殊型專用, 範圍, 持續時間 -->
+		<buff name="buffIVcustomAbsorbEnergy" name_key="buffIVcustomAbsorbEnergyName" description_key="buffIVcustomAbsorbEnergyDesc" tooltip_key="buffIVcustomAbsorbEnergyTooltip" icon="iv_ui_symbol_absorb_energy" icon_color="255,64,0">
+			<stack_type value="replace"/>
+			<duration value="3"/>
+			<effect_group name="for player">
+				<requirement name="EntityTagCompare" tags="player"/>
+				<passive_effect name="BuffBlink" operation="base_set" value="2" duration="0,3" tags="buffIVcustomAbsorbEnergy"/>
+				<passive_effect name="FoodChangeOT" operation="base_subtract" value="1"/>
+				<passive_effect name="WaterChangeOT" operation="base_subtract" value="1"/>
+				<passive_effect name="StaminaLoss" operation="perc_add"  value="0.1"/>
+				<passive_effect name="WalkSpeed" operation="perc_subtract" value="0.1"/>
+				<passive_effect name="Mobility" operation="perc_subtract" value="0.1" tags="falling,climbing,swimming"/>
+				<passive_effect name="RunSpeed" operation="perc_subtract" value="0.1"/>
+
+				<passive_effect name="AttributeLevel" tags="attPerception" operation="base_subtract" value="1"/>
+				<passive_effect name="AttributeLevel" tags="attStrength" operation="base_subtract" value="1"/>
+				<passive_effect name="AttributeLevel" tags="attFortitude" operation="base_subtract" value="1"/>
+				<passive_effect name="AttributeLevel" tags="attAgility" operation="base_subtract" value="1"/>
+				<passive_effect name="AttributeLevel" tags="attIntellect" operation="base_subtract" value="1"/>
+			</effect_group>
+			<effect_group name="for player at night">
+				<requirement name="EntityTagCompare" tags="player"/>
+				<requirement name="IsNight"/>
+				<passive_effect name="FoodChangeOT" operation="base_subtract" value="1"/>
+				<passive_effect name="WaterChangeOT" operation="base_subtract" value="1"/>
+				<passive_effect name="StaminaLoss" operation="perc_add"  value="0.1"/>
+				<passive_effect name="WalkSpeed" operation="perc_subtract" value="0.1"/>
+				<passive_effect name="Mobility" operation="perc_subtract" value="0.1" tags="falling,climbing,swimming"/>
+				<passive_effect name="RunSpeed" operation="perc_subtract" value="0.1"/>
+			</effect_group>
+		</buff>
+	</append>
+	<!-- 藥水產生的抵抗效果 -->
+	<append xpath="/buffs">
+	<!-- 燃燒抵抗 -->
+		<buff name="buffIvRemoveFirePotion" name_key="buffIvRemoveFirePotionName" description_key="buffIvRemoveFirePotionDesc" tooltip_key="buffIvRemoveFirePotionTooltip" icon="iv_ui_symbol_fire" icon_color="16,255,16">
+			<stack_type value="replace"/>
+			<update_rate value="1"/>
+			<display_value value="IV_EZresistanceOtherworldlyFireTime"/>
+			<effect_group>
+				<triggered_effect trigger="onSelfBuffUpdate" action="ModifyCVar" cvar="IV_EZresistanceOtherworldlyFireTime" operation="subtract" value="1">
+					<requirement name="CVarCompare" cvar="IV_EZresistanceOtherworldlyFireTime" operation="GT" value="0"/>
+				</triggered_effect>
+			
+				<passive_effect name="BuffBlink" operation="base_set" value="2" duration="0,3" tags="buffIvRemoveFirePotion"/>
+				<triggered_effect trigger="onSelfDied" action="ModifyCVar" cvar="IV_EZresistanceOtherworldlyFireTime" operation="set" value="0"/>
+				<triggered_effect trigger="onSelfDied" action="RemoveBuff" buff="buffIvRemoveFirePotion"/>
+				<passive_effect name="BuffResistance" operation="base_add" value="2" tags="buffIVcustomBurning,buffIVcustomBurningSpecial"/>
+
+				<triggered_effect trigger="onSelfBuffUpdate" action="RemoveBuff" buff="buffIvRemoveFirePotion">
+					<requirement name="CVarCompare" cvar="IV_EZresistanceOtherworldlyFireTime" operation="LTE" value="0"/>
+				</triggered_effect>
+			</effect_group>
+			<effect_group name="Chance to increase duration">
+				<requirement name="EntityTagCompare" target="other" tags="ezFire"/>
+				<requirement name="IsAlive" target="other"/>
+				<triggered_effect trigger="onSelfAttackedOther" action="ModifyCVar" cvar="IV_EZresistanceOtherworldlyFireTime" operation="add" value="20">
+					<requirement name="ProgressionLevel" progression_name="perkPhysician" operation="Equals" value="1"/>
+					<requirement name="RandomRoll" seed_type="Random" min_max="0,100" operation="LTE" value="3"/>
+				</triggered_effect>
+				<triggered_effect trigger="onSelfAttackedOther" action="ModifyCVar" cvar="IV_EZresistanceOtherworldlyFireTime" operation="add" value="23">
+					<requirement name="ProgressionLevel" progression_name="perkPhysician" operation="Equals" value="2"/>
+					<requirement name="RandomRoll" seed_type="Random" min_max="0,100" operation="LTE" value="4"/>
+				</triggered_effect>
+				<triggered_effect trigger="onSelfAttackedOther" action="ModifyCVar" cvar="IV_EZresistanceOtherworldlyFireTime" operation="add" value="27">
+					<requirement name="ProgressionLevel" progression_name="perkPhysician" operation="Equals" value="3"/>
+					<requirement name="RandomRoll" seed_type="Random" min_max="0,100" operation="LTE" value="5"/>
+				</triggered_effect>
+				<triggered_effect trigger="onSelfAttackedOther" action="ModifyCVar" cvar="IV_EZresistanceOtherworldlyFireTime" operation="add" value="32">
+					<requirement name="ProgressionLevel" progression_name="perkPhysician" operation="Equals" value="4"/>
+					<requirement name="RandomRoll" seed_type="Random" min_max="0,100" operation="LTE" value="6"/>
+				</triggered_effect>
+				<triggered_effect trigger="onSelfAttackedOther" action="ModifyCVar" cvar="IV_EZresistanceOtherworldlyFireTime" operation="add" value="38">
+					<requirement name="ProgressionLevel" progression_name="perkPhysician" operation="Equals" value="5"/>
+					<requirement name="RandomRoll" seed_type="Random" min_max="0,100" operation="LTE" value="7"/>
+				</triggered_effect>
+			</effect_group>
+		</buff>
+	<!-- 電擊抵抗 -->
+		<buff name="buffIvRemoveShockPotion" name_key="buffIvRemoveShockPotionName" description_key="buffIvRemoveShockPotionDesc" tooltip_key="buffIvRemoveShockPotionTooltip" icon="iv_ui_symbol_shock" icon_color="16,255,16">
+			<stack_type value="replace"/>
+			<update_rate value="1"/>
+			<display_value value="IV_EZresistanceOtherworldlyShockTime"/>
+			<effect_group>
+				<triggered_effect trigger="onSelfBuffUpdate" action="ModifyCVar" cvar="IV_EZresistanceOtherworldlyShockTime" operation="subtract" value="1">
+					<requirement name="CVarCompare" cvar="IV_EZresistanceOtherworldlyShockTime" operation="GT" value="0"/>
+				</triggered_effect>
+
+				<passive_effect name="BuffBlink" operation="base_set" value="2" duration="0,3" tags="buffIvRemoveShockPotion"/>
+				<triggered_effect trigger="onSelfDied" action="ModifyCVar" cvar="IV_EZresistanceOtherworldlyShockTime" operation="set" value="0"/>
+				<triggered_effect trigger="onSelfDied" action="RemoveBuff" buff="buffIvRemoveShockPotion"/>
+				<passive_effect name="BuffResistance" operation="base_add" value="2" tags="buffIVcustomShock,buffIVcustomShockSpecial"/>
+
+				<triggered_effect trigger="onSelfBuffUpdate" action="RemoveBuff" buff="buffIvRemoveShockPotion">
+					<requirement name="CVarCompare" cvar="IV_EZresistanceOtherworldlyShockTime" operation="LTE" value="0"/>
+				</triggered_effect>
+			</effect_group>
+			<effect_group name="Chance to increase duration">
+				<requirement name="EntityTagCompare" target="other" tags="ezElectric"/>
+				<requirement name="IsAlive" target="other"/>
+				<triggered_effect trigger="onSelfAttackedOther" action="ModifyCVar" cvar="IV_EZresistanceOtherworldlyShockTime" operation="add" value="20">
+					<requirement name="ProgressionLevel" progression_name="perkPhysician" operation="Equals" value="1"/>
+					<requirement name="RandomRoll" seed_type="Random" min_max="0,100" operation="LTE" value="3"/>
+				</triggered_effect>
+				<triggered_effect trigger="onSelfAttackedOther" action="ModifyCVar" cvar="IV_EZresistanceOtherworldlyShockTime" operation="add" value="23">
+					<requirement name="ProgressionLevel" progression_name="perkPhysician" operation="Equals" value="2"/>
+					<requirement name="RandomRoll" seed_type="Random" min_max="0,100" operation="LTE" value="4"/>
+				</triggered_effect>
+				<triggered_effect trigger="onSelfAttackedOther" action="ModifyCVar" cvar="IV_EZresistanceOtherworldlyShockTime" operation="add" value="27">
+					<requirement name="ProgressionLevel" progression_name="perkPhysician" operation="Equals" value="3"/>
+					<requirement name="RandomRoll" seed_type="Random" min_max="0,100" operation="LTE" value="5"/>
+				</triggered_effect>
+				<triggered_effect trigger="onSelfAttackedOther" action="ModifyCVar" cvar="IV_EZresistanceOtherworldlyShockTime" operation="add" value="32">
+					<requirement name="ProgressionLevel" progression_name="perkPhysician" operation="Equals" value="4"/>
+					<requirement name="RandomRoll" seed_type="Random" min_max="0,100" operation="LTE" value="6"/>
+				</triggered_effect>
+				<triggered_effect trigger="onSelfAttackedOther" action="ModifyCVar" cvar="IV_EZresistanceOtherworldlyShockTime" operation="add" value="38">
+					<requirement name="ProgressionLevel" progression_name="perkPhysician" operation="Equals" value="5"/>
+					<requirement name="RandomRoll" seed_type="Random" min_max="0,100" operation="LTE" value="7"/>
+				</triggered_effect>
+			</effect_group>
+		</buff>
+	<!-- 劇毒抵抗 -->
+		<buff name="buffIvRemovePoisonPotion" name_key="buffIvRemovePoisonPotionName" description_key="buffIvRemovePoisonPotionDesc" tooltip_key="buffIvRemovePoisonPotionTooltip" icon="iv_ui_symbol_poison" icon_color="16,255,16">
+			<stack_type value="replace"/>
+			<update_rate value="1"/>
+			<display_value value="IV_EZresistanceOtherworldlyPoisonTime"/>
+			<effect_group>
+				<triggered_effect trigger="onSelfBuffUpdate" action="ModifyCVar" cvar="IV_EZresistanceOtherworldlyPoisonTime" operation="subtract" value="1">
+					<requirement name="CVarCompare" cvar="IV_EZresistanceOtherworldlyPoisonTime" operation="GT" value="0"/>
+				</triggered_effect>
+
+				<passive_effect name="BuffBlink" operation="base_set" value="2" duration="0,3" tags="buffIvRemovePoisonPotion"/>
+				<triggered_effect trigger="onSelfDied" action="ModifyCVar" cvar="IV_EZresistanceOtherworldlyPoisonTime" operation="set" value="0"/>
+				<triggered_effect trigger="onSelfDied" action="RemoveBuff" buff="buffIvRemovePoisonPotion"/>
+				<passive_effect name="BuffResistance" operation="base_add" value="2" tags="buffIVcustomPoison,buffIVcustomPoisonSpecial"/>
+
+				<triggered_effect trigger="onSelfBuffUpdate" action="RemoveBuff" buff="buffIvRemovePoisonPotion">
+					<requirement name="CVarCompare" cvar="IV_EZresistanceOtherworldlyPoisonTime" operation="LTE" value="0"/>
+				</triggered_effect>
+			</effect_group>
+			<effect_group name="Chance to increase duration">
+				<requirement name="EntityTagCompare" target="other" tags="ezToxic"/>
+				<requirement name="IsAlive" target="other"/>
+				<triggered_effect trigger="onSelfAttackedOther" action="ModifyCVar" cvar="IV_EZresistanceOtherworldlyPoisonTime" operation="add" value="20">
+					<requirement name="ProgressionLevel" progression_name="perkPhysician" operation="Equals" value="1"/>
+					<requirement name="RandomRoll" seed_type="Random" min_max="0,100" operation="LTE" value="3"/>
+				</triggered_effect>
+				<triggered_effect trigger="onSelfAttackedOther" action="ModifyCVar" cvar="IV_EZresistanceOtherworldlyPoisonTime" operation="add" value="23">
+					<requirement name="ProgressionLevel" progression_name="perkPhysician" operation="Equals" value="2"/>
+					<requirement name="RandomRoll" seed_type="Random" min_max="0,100" operation="LTE" value="4"/>
+				</triggered_effect>
+				<triggered_effect trigger="onSelfAttackedOther" action="ModifyCVar" cvar="IV_EZresistanceOtherworldlyPoisonTime" operation="add" value="27">
+					<requirement name="ProgressionLevel" progression_name="perkPhysician" operation="Equals" value="3"/>
+					<requirement name="RandomRoll" seed_type="Random" min_max="0,100" operation="LTE" value="5"/>
+				</triggered_effect>
+				<triggered_effect trigger="onSelfAttackedOther" action="ModifyCVar" cvar="IV_EZresistanceOtherworldlyPoisonTime" operation="add" value="32">
+					<requirement name="ProgressionLevel" progression_name="perkPhysician" operation="Equals" value="4"/>
+					<requirement name="RandomRoll" seed_type="Random" min_max="0,100" operation="LTE" value="6"/>
+				</triggered_effect>
+				<triggered_effect trigger="onSelfAttackedOther" action="ModifyCVar" cvar="IV_EZresistanceOtherworldlyPoisonTime" operation="add" value="38">
+					<requirement name="ProgressionLevel" progression_name="perkPhysician" operation="Equals" value="5"/>
+					<requirement name="RandomRoll" seed_type="Random" min_max="0,100" operation="LTE" value="7"/>
+				</triggered_effect>
+			</effect_group>
+		</buff>
+	<!-- 冰凍抵抗 -->
+		<buff name="buffIvRemoveFrostPotion" name_key="buffIvRemoveFrostPotionName" description_key="buffIvRemoveFrostPotionDesc" tooltip_key="buffIvRemoveFrostPotionTooltip" icon="iv_ui_symbol_frost" icon_color="16,255,16">
+			<stack_type value="replace"/>
+			<update_rate value="1"/>
+			<display_value value="IV_EZresistanceOtherworldlyFrostTime"/>
+			<effect_group>
+				<triggered_effect trigger="onSelfBuffUpdate" action="ModifyCVar" cvar="IV_EZresistanceOtherworldlyFrostTime" operation="subtract" value="1">
+					<requirement name="CVarCompare" cvar="IV_EZresistanceOtherworldlyFrostTime" operation="GT" value="0"/>
+				</triggered_effect>
+
+				<passive_effect name="BuffBlink" operation="base_set" value="2" duration="0,3" tags="buffIvRemoveFrostPotion"/>
+				<triggered_effect trigger="onSelfDied" action="ModifyCVar" cvar="IV_EZresistanceOtherworldlyFrostTime" operation="set" value="0"/>
+				<triggered_effect trigger="onSelfDied" action="RemoveBuff" buff="buffIvRemoveFrostPotion"/>
+				<passive_effect name="BuffResistance" operation="base_add" value="2" tags="buffIVcustomFrost,buffIVcustomFrostSpecial"/>
+
+				<triggered_effect trigger="onSelfBuffUpdate" action="RemoveBuff" buff="buffIvRemoveFrostPotion">
+					<requirement name="CVarCompare" cvar="IV_EZresistanceOtherworldlyFrostTime" operation="LTE" value="0"/>
+				</triggered_effect>
+			</effect_group>
+			<effect_group name="Chance to increase duration">
+				<requirement name="EntityTagCompare" target="other" tags="ezFrost"/>
+				<requirement name="IsAlive" target="other"/>
+				<triggered_effect trigger="onSelfAttackedOther" action="ModifyCVar" cvar="IV_EZresistanceOtherworldlyFrostTime" operation="add" value="20">
+					<requirement name="ProgressionLevel" progression_name="perkPhysician" operation="Equals" value="1"/>
+					<requirement name="RandomRoll" seed_type="Random" min_max="0,100" operation="LTE" value="3"/>
+				</triggered_effect>
+				<triggered_effect trigger="onSelfAttackedOther" action="ModifyCVar" cvar="IV_EZresistanceOtherworldlyFrostTime" operation="add" value="23">
+					<requirement name="ProgressionLevel" progression_name="perkPhysician" operation="Equals" value="2"/>
+					<requirement name="RandomRoll" seed_type="Random" min_max="0,100" operation="LTE" value="4"/>
+				</triggered_effect>
+				<triggered_effect trigger="onSelfAttackedOther" action="ModifyCVar" cvar="IV_EZresistanceOtherworldlyFrostTime" operation="add" value="27">
+					<requirement name="ProgressionLevel" progression_name="perkPhysician" operation="Equals" value="3"/>
+					<requirement name="RandomRoll" seed_type="Random" min_max="0,100" operation="LTE" value="5"/>
+				</triggered_effect>
+				<triggered_effect trigger="onSelfAttackedOther" action="ModifyCVar" cvar="IV_EZresistanceOtherworldlyFrostTime" operation="add" value="32">
+					<requirement name="ProgressionLevel" progression_name="perkPhysician" operation="Equals" value="4"/>
+					<requirement name="RandomRoll" seed_type="Random" min_max="0,100" operation="LTE" value="6"/>
+				</triggered_effect>
+				<triggered_effect trigger="onSelfAttackedOther" action="ModifyCVar" cvar="IV_EZresistanceOtherworldlyFrostTime" operation="add" value="38">
+					<requirement name="ProgressionLevel" progression_name="perkPhysician" operation="Equals" value="5"/>
+					<requirement name="RandomRoll" seed_type="Random" min_max="0,100" operation="LTE" value="7"/>
+				</triggered_effect>
+			</effect_group>
+		</buff>
+	<!-- 死亡宣告抵抗 -->
+		<buff name="buffIvRemoveDeathDeclarePotion" name_key="buffIvRemoveDeathDeclarePotionName" description_key="buffIvRemoveDeathDeclarePotionDesc" tooltip_key="buffIvRemoveDeathDeclarePotionTooltip" icon="iv_ui_symbol_death_declare" icon_color="16,255,16">
+			<stack_type value="replace"/>
+			<update_rate value="1"/>
+			<display_value value="IV_EZresistanceOtherworldlyDeathDeclareTime"/>
+			<effect_group>
+				<triggered_effect trigger="onSelfBuffUpdate" action="ModifyCVar" cvar="IV_EZresistanceOtherworldlyDeathDeclareTime" operation="subtract" value="1">
+					<requirement name="CVarCompare" cvar="IV_EZresistanceOtherworldlyDeathDeclareTime" operation="GT" value="0"/>
+				</triggered_effect>
+
+				<passive_effect name="BuffBlink" operation="base_set" value="2" duration="0,3" tags="buffIvRemoveDeathDeclarePotion"/>
+				<triggered_effect trigger="onSelfDied" action="ModifyCVar" cvar="IV_EZresistanceOtherworldlyDeathDeclareTime" operation="set" value="0"/>
+				<triggered_effect trigger="onSelfDied" action="RemoveBuff" buff="buffIvRemoveDeathDeclarePotion"/>
+				<passive_effect name="BuffResistance" operation="base_add" value="2" tags="buffIVcustomDeathDeclare,buffIVcustomAbsorbEnergy"/>
+
+				<triggered_effect trigger="onSelfBuffUpdate" action="RemoveBuff" buff="buffIvRemoveDeathDeclarePotion">
+					<requirement name="CVarCompare" cvar="IV_EZresistanceOtherworldlyDeathDeclareTime" operation="LTE" value="0"/>
+				</triggered_effect>
+			</effect_group>
+			<effect_group name="Chance to increase duration">
+				<requirement name="EntityTagCompare" target="other" tags="ezSoul"/>
+				<requirement name="IsAlive" target="other"/>
+				<triggered_effect trigger="onSelfAttackedOther" action="ModifyCVar" cvar="IV_EZresistanceOtherworldlyDeathDeclareTime" operation="add" value="20">
+					<requirement name="ProgressionLevel" progression_name="perkPhysician" operation="Equals" value="1"/>
+					<requirement name="RandomRoll" seed_type="Random" min_max="0,100" operation="LTE" value="3"/>
+				</triggered_effect>
+				<triggered_effect trigger="onSelfAttackedOther" action="ModifyCVar" cvar="IV_EZresistanceOtherworldlyDeathDeclareTime" operation="add" value="23">
+					<requirement name="ProgressionLevel" progression_name="perkPhysician" operation="Equals" value="2"/>
+					<requirement name="RandomRoll" seed_type="Random" min_max="0,100" operation="LTE" value="4"/>
+				</triggered_effect>
+				<triggered_effect trigger="onSelfAttackedOther" action="ModifyCVar" cvar="IV_EZresistanceOtherworldlyDeathDeclareTime" operation="add" value="27">
+					<requirement name="ProgressionLevel" progression_name="perkPhysician" operation="Equals" value="3"/>
+					<requirement name="RandomRoll" seed_type="Random" min_max="0,100" operation="LTE" value="5"/>
+				</triggered_effect>
+				<triggered_effect trigger="onSelfAttackedOther" action="ModifyCVar" cvar="IV_EZresistanceOtherworldlyDeathDeclareTime" operation="add" value="32">
+					<requirement name="ProgressionLevel" progression_name="perkPhysician" operation="Equals" value="4"/>
+					<requirement name="RandomRoll" seed_type="Random" min_max="0,100" operation="LTE" value="6"/>
+				</triggered_effect>
+				<triggered_effect trigger="onSelfAttackedOther" action="ModifyCVar" cvar="IV_EZresistanceOtherworldlyDeathDeclareTime" operation="add" value="38">
+					<requirement name="ProgressionLevel" progression_name="perkPhysician" operation="Equals" value="5"/>
+					<requirement name="RandomRoll" seed_type="Random" min_max="0,100" operation="LTE" value="7"/>
+				</triggered_effect>
+			</effect_group>
+		</buff>
+	<!-- 偵測敵人 -->
+		<buff name="buffIvDetectEnemiesPotion" hidden="true">
+			<stack_type value="replace"/>
+			<duration value="1.5"/>
+			<effect_group>
+				<triggered_effect trigger="onSelfBuffStart" action="AttachParticleEffectToEntity" particle="#@modfolder:Resources/elementzombie?ezDetectEnemiesSpell" parent_transform="LOD0"/>
+				<triggered_effect trigger="onSelfEnteredGame" action="AttachParticleEffectToEntity" particle="#@modfolder:Resources/elementzombie?ezDetectEnemiesSpell" parent_transform="LOD0"/>
+				<triggered_effect trigger="onSelfBuffRemove" action="RemoveParticleEffectFromEntity" particle="ezDetectEnemiesSpell"/>
+				<triggered_effect trigger="onSelfDied" action="RemoveParticleEffectFromEntity" particle="ezDetectEnemiesSpell"/>
+				<triggered_effect trigger="onSelfBuffFinish" action="RemoveParticleEffectFromEntity" particle="ezDetectEnemiesSpell"/>
+
+				<triggered_effect trigger="onSelfBuffFinish" action="AddBuff" target="selfAOE" range="48" target_tags="zombie" buff="buffIvTargetEnemiesBeam"/>
+			</effect_group>
+		</buff>
+	<!-- 在敵人的身上放置光標 -->
+		<buff name="buffIvTargetEnemiesBeam" hidden="true">
+			<stack_type value="duration"/>
+			<duration value="300"/>
+			<effect_group name="for other zombie">
+				<requirement name="!EntityTagCompare" tags="ezFire,ezFrost,ezElectric,ezToxic,ezSoul"/>
+				<triggered_effect trigger="onSelfBuffStart" action="AttachParticleEffectToEntity" particle="#@modfolder:Resources/elementzombie?ezLightBeamDefault"/>
+				<triggered_effect trigger="onSelfEnteredGame" action="AttachParticleEffectToEntity" particle="#@modfolder:Resources/elementzombie?ezLightBeamDefault"/>
+				<triggered_effect trigger="onSelfBuffRemove" action="RemoveParticleEffectFromEntity" particle="ezLightBeamDefault"/>
+				<triggered_effect trigger="onSelfDied" action="RemoveParticleEffectFromEntity" particle="ezLightBeamDefault"/>
+				<triggered_effect trigger="onSelfBuffFinish" action="RemoveParticleEffectFromEntity" particle="ezLightBeamDefault"/>
+			</effect_group>
+
+			<effect_group name="for fire zombie">
+				<requirement name="EntityTagCompare" tags="ezFire"/>
+				<triggered_effect trigger="onSelfBuffStart" action="AttachParticleEffectToEntity" particle="#@modfolder:Resources/elementzombie?ezLightBeamFire"/>
+				<triggered_effect trigger="onSelfEnteredGame" action="AttachParticleEffectToEntity" particle="#@modfolder:Resources/elementzombie?ezLightBeamFire"/>
+				<triggered_effect trigger="onSelfBuffRemove" action="RemoveParticleEffectFromEntity" particle="ezLightBeamFire"/>
+				<triggered_effect trigger="onSelfDied" action="RemoveParticleEffectFromEntity" particle="ezLightBeamFire"/>
+				<triggered_effect trigger="onSelfBuffFinish" action="RemoveParticleEffectFromEntity" particle="ezLightBeamFire"/>
+			</effect_group>
+			<effect_group name="for frost zombie">
+				<requirement name="EntityTagCompare" tags="ezFrost"/>
+				<triggered_effect trigger="onSelfBuffStart" action="AttachParticleEffectToEntity" particle="#@modfolder:Resources/elementzombie?ezLightBeamFrost"/>
+				<triggered_effect trigger="onSelfEnteredGame" action="AttachParticleEffectToEntity" particle="#@modfolder:Resources/elementzombie?ezLightBeamFrost"/>
+				<triggered_effect trigger="onSelfBuffRemove" action="RemoveParticleEffectFromEntity" particle="ezLightBeamFrost"/>
+				<triggered_effect trigger="onSelfDied" action="RemoveParticleEffectFromEntity" particle="ezLightBeamFrost"/>
+				<triggered_effect trigger="onSelfBuffFinish" action="RemoveParticleEffectFromEntity" particle="ezLightBeamFrost"/>
+			</effect_group>
+			<effect_group name="for electric zombie">
+				<requirement name="EntityTagCompare" tags="ezElectric"/>
+				<triggered_effect trigger="onSelfBuffStart" action="AttachParticleEffectToEntity" particle="#@modfolder:Resources/elementzombie?ezLightBeamElectric"/>
+				<triggered_effect trigger="onSelfEnteredGame" action="AttachParticleEffectToEntity" particle="#@modfolder:Resources/elementzombie?ezLightBeamElectric"/>
+				<triggered_effect trigger="onSelfBuffRemove" action="RemoveParticleEffectFromEntity" particle="ezLightBeamElectric"/>
+				<triggered_effect trigger="onSelfDied" action="RemoveParticleEffectFromEntity" particle="ezLightBeamElectric"/>
+				<triggered_effect trigger="onSelfBuffFinish" action="RemoveParticleEffectFromEntity" particle="ezLightBeamElectric"/>
+			</effect_group>
+			<effect_group name="for toxic zombie">
+				<requirement name="EntityTagCompare" tags="ezToxic"/>
+				<triggered_effect trigger="onSelfBuffStart" action="AttachParticleEffectToEntity" particle="#@modfolder:Resources/elementzombie?ezLightBeamPoison"/>
+				<triggered_effect trigger="onSelfEnteredGame" action="AttachParticleEffectToEntity" particle="#@modfolder:Resources/elementzombie?ezLightBeamPoison"/>
+				<triggered_effect trigger="onSelfBuffRemove" action="RemoveParticleEffectFromEntity" particle="ezLightBeamPoison"/>
+				<triggered_effect trigger="onSelfDied" action="RemoveParticleEffectFromEntity" particle="ezLightBeamPoison"/>
+				<triggered_effect trigger="onSelfBuffFinish" action="RemoveParticleEffectFromEntity" particle="ezLightBeamPoison"/>
+			</effect_group>
+
+			<effect_group name="for souleaster zombie">
+				<requirement name="EntityTagCompare" tags="ezSoul"/>
+				<triggered_effect trigger="onSelfBuffStart" action="AttachParticleEffectToEntity" particle="#@modfolder:Resources/elementzombie?ezLightBeamSoulEaster"/>
+				<triggered_effect trigger="onSelfEnteredGame" action="AttachParticleEffectToEntity" particle="#@modfolder:Resources/elementzombie?ezLightBeamSoulEaster"/>
+				<triggered_effect trigger="onSelfBuffRemove" action="RemoveParticleEffectFromEntity" particle="ezLightBeamSoulEaster"/>
+				<triggered_effect trigger="onSelfDied" action="RemoveParticleEffectFromEntity" particle="ezLightBeamSoulEaster"/>
+				<triggered_effect trigger="onSelfBuffFinish" action="RemoveParticleEffectFromEntity" particle="ezLightBeamSoulEaster"/>
+			</effect_group>
+		</buff>
+	<!-- 夜視效果 -->
+		<buff name="buffIvNightVisionPotion" name_key="buffIvNightVisionPotionName" description_key="buffIvNightVisionPotionDesc" tooltip_key="buffIvNightVisionPotionTooltip" icon="iv_ui_symbol_night_vision" icon_color="16,255,16">
+			<stack_type value="replace"/>
+			<update_rate value="1"/>
+			<display_value value="IV_EZnightVisionTime"/>
+			<effect_group>
+				<triggered_effect trigger="onSelfBuffUpdate" action="ModifyCVar" cvar="IV_EZnightVisionTime" operation="subtract" value="1">
+					<requirement name="CVarCompare" cvar="IV_EZnightVisionTime" operation="GT" value="0"/>
+				</triggered_effect>
+
+				<triggered_effect trigger="onSelfBuffStart" action="AttachParticleEffectToEntity" particle="#@modfolder:Resources/elementzombie?ezNightVision" parent_transform="LOD0"/>
+				<triggered_effect trigger="onSelfEnteredGame" action="AttachParticleEffectToEntity" particle="#@modfolder:Resources/elementzombie?ezNightVision" parent_transform="LOD0"/>
+				<triggered_effect trigger="onSelfBuffRemove" action="RemoveParticleEffectFromEntity" particle="ezNightVision"/>
+				<triggered_effect trigger="onSelfDied" action="RemoveParticleEffectFromEntity" particle="ezNightVision"/>
+				<triggered_effect trigger="onSelfBuffFinish" action="RemoveParticleEffectFromEntity" particle="ezNightVision"/>
+
+				<triggered_effect trigger="onSelfDied" action="ModifyCVar" cvar="IV_EZnightVisionTime" operation="set" value="0"/>
+				<triggered_effect trigger="onSelfDied" action="RemoveBuff" buff="buffIvNightVisionPotion"/>
+				<triggered_effect trigger="onSelfBuffUpdate" action="RemoveBuff" buff="buffIvNightVisionPotion">
+					<requirement name="CVarCompare" cvar="IV_EZnightVisionTime" operation="LTE" value="0"/>
+				</triggered_effect>
+			</effect_group>
+		</buff>
+	</append>
+	<!-- 重新啟動遊戲時,檢查曾經是否有啟動過異質藥水,如果有就載入 -->
+	<append xpath="/buffs/buff[@name='buffStatusCheck01']">
+		<effect_group name="Check if there is a startup otherworldly potion">
+			<!-- 燃燒抵抗 -->
+			<triggered_effect trigger="onSelfEnteredGame" action="AddBuff" buff="buffIvRemoveFirePotion">
+				<requirement name="CVarCompare" cvar="IV_EZresistanceOtherworldlyFireTime" operation="GT" value="0"/>
+			</triggered_effect>
+			<!-- 電擊抵抗 -->
+			<triggered_effect trigger="onSelfEnteredGame" action="AddBuff" buff="buffIvRemoveShockPotion">
+				<requirement name="CVarCompare" cvar="IV_EZresistanceOtherworldlyShockTime" operation="GT" value="0"/>
+			</triggered_effect>
+			<!-- 劇毒抵抗 -->
+			<triggered_effect trigger="onSelfEnteredGame" action="AddBuff" buff="buffIvRemovePoisonPotion">
+				<requirement name="CVarCompare" cvar="IV_EZresistanceOtherworldlyPoisonTime" operation="GT" value="0"/>
+			</triggered_effect>
+			<!-- 冰凍抵抗 -->
+			<triggered_effect trigger="onSelfEnteredGame" action="AddBuff" buff="buffIvRemoveFrostPotion">
+				<requirement name="CVarCompare" cvar="IV_EZresistanceOtherworldlyFrostTime" operation="GT" value="0"/>
+			</triggered_effect>
+			<!-- 死亡宣告抵抗 -->
+			<triggered_effect trigger="onSelfEnteredGame" action="AddBuff" buff="buffIvRemoveDeathDeclarePotion">
+				<requirement name="CVarCompare" cvar="IV_EZresistanceOtherworldlyDeathDeclareTime" operation="GT" value="0"/>
+			</triggered_effect>
+			<!-- 夜視效果 -->
+			<triggered_effect trigger="onSelfEnteredGame" action="AddBuff" buff="buffIvNightVisionPotion">
+				<requirement name="CVarCompare" cvar="IV_EZnightVisionTime" operation="GT" value="0"/>
+			</triggered_effect>
+		</effect_group>
+	</append>
+</configs>

@@ -1,3 +1,0 @@
-Key,File,Type,UsedInMainMenu,NoTranslate,english,Context / Alternate Text,german,latam,french,italian,japanese,koreana,polish,brazilian,russian,turkish,schinese,tchinese,spanish
-ivCasinoCoinBundle,items,Item,,,Duke's Casino Token Bundle,,,,,,デュークのカジノトークン一束,,,,,,公爵赌场币组,公爵賭場幣組,
-ivCasinoCoinBundleDesc,items,Item,,,Bundles of Duke Casino Coins,,,,,,デュークのカジノトークンのバンドル,,,,,,公爵赌场币的捆包组,公爵賭場幣的捆包組,

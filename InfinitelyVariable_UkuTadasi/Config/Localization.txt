@@ -1,0 +1,96 @@
+Key,File,Type,english,tchinese
+ivResourceBrokenSoul,items,Item,Broken Soul,殘破魂魄
+ivResourceBrokenSoulDesc,items,Item,The soul left behind after death.,生物死亡後所遺留下來的魂魄。
+ivSoulEssenceFire,items,Tools,Soul Essence : Fire,魂魄精華 : 燃燒
+ivSoulEssenceFireDesc,items,Tools,"The deep consciousness that reads the essence seems to be able to learn the true meaning of ""fire"".",讀取精華的深層意識似乎可以學習到「燃燒」的真正意義。
+ivSoulEssenceIce,items,Tools,Soul Essence : Frozen,魂魄精華 : 冰凍
+ivSoulEssenceIceDesc,items,Tools,"The deep consciousness that reads the essence seems to be able to learn the true meaning of ""water"".",讀取精華的深層意識似乎可以學習到「冰凍」的真正意義。
+ivSoulEssencePoison,items,Tools,Soul Essence : Poison,魂魄精華 : 毒素
+ivSoulEssencePoisonDesc,items,Tools,"The deep consciousness that reads the essence seems to be able to learn the true meaning of ""poison"".",讀取精華的深層意識似乎可以學習到「毒素」的真正意義。
+ivSoulEssenceElectricShock,items,Tools,Soul Essence : Electric Shock,魂魄精華 : 感電
+ivSoulEssenceElectricShockDesc,items,Tools,"The deep consciousness that reads the essence seems to be able to learn the true meaning of ""electric"".",讀取精華的深層意識似乎可以學習到「感電」的真正意義。
+ivSoulEssenceFlammables,items,Tools,Soul Essence : Flammables,魂魄精華 : 易燃物
+ivSoulEssenceFlammablesDesc,items,Tools,"The deep consciousness that reads the essence seems to be able to learn the true meaning of ""flammables"".",讀取精華的深層意識似乎可以學習到「易燃物」的真正意義。
+ivSoulEssenceCrystals,items,Tools,Soul Essence : Crystals,魂魄精華 : 結晶體
+ivSoulEssenceCrystalsDesc,items,Tools,"The deep consciousness that reads the essence seems to be able to learn the true meaning of ""crystals"".",讀取精華的深層意識似乎可以學習到「結晶體」的真正意義。
+ivSoulEssenceInfectiousDisease,items,Tools,Soul Essence : Infectious Disease,魂魄精華 : 傳染病
+ivSoulEssenceInfectiousDiseaseDesc,items,Tools,"The deep consciousness that reads the essence seems to be able to learn the true meaning of ""infectious disease"".",讀取精華的深層意識似乎可以學習到「傳染病」的真正意義。
+ivSoulEssenceElectricalConductor,items,Tools,Soul Essence : Electrical Conductor,魂魄精華 : 導電體
+ivSoulEssenceElectricalConductorDesc,items,Tools,"The deep consciousness that reads the essence seems to be able to learn the true meaning of ""electrical conductor"".",讀取精華的深層意識似乎可以學習到「導電體」的真正意義。
+
+ukutadasiFireName,progression,Attribute,Mystery: Fire,奧義：燃燒
+ukutadasiFireDesc,progression,Attribute,"Learning the relevant knowledge of ""fire"" can increase the amount of damage caused by burning.\nThere are 5 stages in total, the first stage is 2~19, the second stage is 20~29, the third stage is 30~39, the fourth stage is 40~49, and the fifth stage is 50.\nStarting from level 51, the damage per second increases every 10 levels.",學習燃燒的相關知識，可提升燃燒的傷害量。\n總共5個階段，第一階2~19，第二階20~29，第三階30~39，第四階40~49，第五階50。\n從51級開始每提升10級增加每秒傷害量。
+ukutadasiIceName,progression,Attribute,Mystery: Frozen,奧義：冰凍
+ukutadasiIceDesc,progression,Attribute,"Learning the relevant knowledge of ""frozen"" can improve the degree of freezing.\nThere are 5 stages in total, the first stage is 2~19, the second stage is 20~29, the third stage is 30~39, the fourth stage is 40~49, and the fifth stage is 50.\nStarting from level 51, the damage per second increases every 10 levels.",學習冰凍的相關知識，可提升冰凍的程度。\n總共5個階段，第一階2~19，第二階20~29，第三階30~39，第四階40~49，第五階50。\n從51級開始每提升10級增加每秒傷害量。
+ukutadasiPoisonName,progression,Attribute,Mystery: Poison,奧義：毒素
+ukutadasiPoisonDesc,progression,Attribute,"Learning the relevant knowledge of ""poison"" can increase the toxicity of toxins.\nThere are 5 stages in total, the first stage is 2~19, the second stage is 20~29, the third stage is 30~39, the fourth stage is 40~49, and the fifth stage is 50.\nStarting from level 51, the damage per second increases every 10 levels.\nThe fifth-order effect has a low chance of killing the target instantly.",學習毒素的相關知識，可提升毒素的毒性。\n總共5個階段，第一階2~19，第二階20~29，第三階30~39，第四階40~49，第五階50。\n從51級開始每提升10級增加每秒傷害量。\n第五階的效果有低機率會使目標即死。
+ukutadasiElectricShockName,progression,Attribute,Mystery: Electric Shock,奧義：感電
+ukutadasiElectricShockDesc,progression,Attribute,"Learning the relevant knowledge of ""electric shock"" can improve the dependence of electronics.\nThere are 5 stages in total, the first stage is 2~19, the second stage is 20~29, the third stage is 30~39, the fourth stage is 40~49, and the fifth stage is 50.\nStarting from level 51, the damage per second increases every 10 levels.",學習感電的相關知識，可提升電子的相依性。\n總共5個階段，第一階2~19，第二階20~29，第三階30~39，第四階40~49，第五階50。\n從51級開始每提升10級增加每秒傷害量。
+ukutadasiFlammablesName,progression,Attribute,Mystery: Flammables,奧義：易燃物
+ukutadasiFlammablesDesc,progression,Attribute,"Learn the relevant knowledge of ""flammables"" and strengthen the ability to spread combustion.\nThere are 5 stages in total, the first stage is 2~19, the second stage is 20~29, the third stage is 30~39, the fourth stage is 40~49, and the fifth stage is 50.",學習易燃物的相關知識，強化燃燒的擴散能力。\n總共5個階段，第一階2~19，第二階20~29，第三階30~39，第四階40~49，第五階50。
+ukutadasiCrystalsName,progression,Attribute,Mystery: Crystals,奧義：結晶體
+ukutadasiCrystalsDesc,progression,Attribute,"Learn about ""crystals"" and strengthen the ability to spread ice.\nThere are 5 stages in total, the first stage is 2~19, the second stage is 20~29, the third stage is 30~39, the fourth stage is 40~49, and the fifth stage is 50.",學習結晶體的相關知識，強化冰凍的擴散能力。\n總共5個階段，第一階2~19，第二階20~29，第三階30~39，第四階40~49，第五階50。
+ukutadasiInfectiousDiseaseName,progression,Attribute,Mystery: Infectious Disease,奧義：傳染病
+ukutadasiInfectiousDiseaseDesc,progression,Attribute,"Learn about ""infectious diseases"" and strengthen the ability to spread toxins.\nThere are 5 stages in total, the first stage is 2~19, the second stage is 20~29, the third stage is 30~39, the fourth stage is 40~49, and the fifth stage is 50.\nThe fifth-order effect has a low chance of killing the target instantly.",學習傳染病的相關知識，強化毒素的擴散能力。\n總共5個階段，第一階2~19，第二階20~29，第三階30~39，第四階40~49，第五階50。\n第五階的效果有低機率會使目標即死。
+ukutadasiElectricalConductorName,progression,Attribute,Mystery: Electrical Conductor,奧義：導電體
+ukutadasiElectricalConductorDesc,progression,Attribute,"Learn the relevant knowledge of ""electrical conductors"" and strengthen the diffusion ability of induction.\nThere are 5 stages in total, the first stage is 2~19, the second stage is 20~29, the third stage is 30~39, the fourth stage is 40~49, and the fifth stage is 50.",學習導電體的相關知識，強化感電的擴散能力。\n總共5個階段，第一階2~19，第二階20~29，第三階30~39，第四階40~49，第五階50。
+
+modUkuTadasiSpellsFire,item_modifiers,mod,Mystery: Fire,奧義 : 燃燒
+modUkuTadasiSpellsFireDesc,item_modifiers,mod,Spontaneous combustion occurs immediately.,目標立即產生自燃作用。
+modUkuTadasiSpellsIce,item_modifiers,mod,Mystery: Frozen,奧義 : 冰凍
+modUkuTadasiSpellsIceDesc,item_modifiers,mod,"Impedes the flow of fluid in the body, producing a slowing effect.",阻止目標體內的流體流動，產生動作遲緩的作用。
+modUkuTadasiSpellsPoison,item_modifiers,mod,Mystery: Poison,奧義 : 落毒
+modUkuTadasiSpellsPoisonDesc,item_modifiers,mod,Releases extremely high concentrations of poison.,對目標施放濃度極高的毒素。
+modUkuTadasiSpellsElectricShock,item_modifiers,mod,Mystery: Electric Shock,奧義 : 電擊
+modUkuTadasiSpellsElectricShockDesc,item_modifiers,mod,Rapidly condenses the surrounding charged particles to enhance the effect.,迅速凝聚目標周圍的帶電粒子強化效應。
+modUkuTadasiSpellsFlammables,item_modifiers,mod,Mystery: Flammables,奧義 : 易燃物
+modUkuTadasiSpellsFlammablesDesc,item_modifiers,mod,"Modification effect and enhanced spread ability. The more concentrated the target, the longer the duration.",改造燃燒效果，增強擴散能力。多數目標越集中時，持續時間越久。
+modUkuTadasiSpellsCrystals,item_modifiers,mod,Mystery: Crystals,奧義 : 結晶體
+modUkuTadasiSpellsCrystalsDesc,item_modifiers,mod,"Modification effect and enhanced spread ability. The more concentrated the target, the longer the duration.",改造冰凍效果，增強擴散能力。多數目標越集中時，持續時間越久。
+modUkuTadasiSpellsInfectiousDisease,item_modifiers,mod,Mystery: Infectious Disease,奧義 : 傳染病
+modUkuTadasiSpellsInfectiousDiseaseDesc,item_modifiers,mod,"Modification effect and enhanced spread ability. The more concentrated the target, the longer the duration.",改造落毒效果，增強擴散能力。多數目標越集中時，持續時間越久。\n第五階時，有低機率即死目標。
+modUkuTadasiSpellsElectricalConductor,item_modifiers,mod,Mystery: Electrical Conductor,奧義 : 導電體
+modUkuTadasiSpellsElectricalConductorDesc,item_modifiers,mod,"Modification effect and enhanced spread ability. The more concentrated the target, the longer the duration.",改造電擊效果，增強擴散能力。多數目標越集中時，持續時間越久。
+
+thrownUkuTadasiSpellsFlameBurstBomb,items,Gun,Flame Burst Bomb,炎爆彈
+thrownUkuTadasiSpellsFlameBurstBombDesc,items,Gun,"It will take effect after being thrown out and touched, and the area will continue to burn.",丟出去觸碰後立即產生作用，範圍內持續性燃燒。
+thrownUkuTadasiSpellsFrostBomb,items,Gun,Frost Bomb,冰霜彈
+thrownUkuTadasiSpellsFrostBombDesc,items,Gun,"It will take effect after being thrown out and touched, and the area will continue to frozen.",丟出去觸碰後立即產生作用，範圍內持續性冰凍。
+thrownUkuTadasiSpellsElectricArcImpactBomb,items,Gun,E.A.I Bomb,電衝彈
+thrownUkuTadasiSpellsElectricArcImpactBombDesc,items,Gun,"It will take effect after being thrown out and touched, and the area will continue to electric shock.",丟出去觸碰後立即產生作用，範圍內持續性施放電擊。
+thrownUkuTadasiSpellsPoisonGasBomb,items,Gun,Poison Gas Bomb,毒氣彈
+thrownUkuTadasiSpellsPoisonGasBombDesc,items,Gun,"It will take effect after being thrown out and touched, and the area will continue to poisoned.",丟出去觸碰後立即產生作用，範圍內持續性施放毒素。
+thrownUkuTadasiSpellsPurifyBomb,items,Gun,Purify Bomb,淨化彈
+thrownUkuTadasiSpellsPurifyBombDesc,items,Gun,It will take effect after being thrown out and touched. It will perform various treatments on players within the range and cause continuous damage to zombies.,丟出去觸碰後立即產生作用，範圍內，對玩家進行各種治療，對殭屍則是持續性傷害。
+thrownUkuTadasiSpellsCursedKillBomb,items,Gun,Curse Bomb,咒殺彈
+thrownUkuTadasiSpellsCursedKillBombDesc,items,Gun,"It will take effect immediately after being thrown out and touched. Zombies within the range will be restrained by stone pillars and unable to move, and will suffer continuous damage.",丟出去觸碰後立即產生作用，範圍內的殭屍會被石柱壓住無法移動，並有持續性傷害。
+thrownUkuTadasiSpellsSkySwordBomb,items,Gun,Sky Sword Bomb,天劍彈
+thrownUkuTadasiSpellsSkySwordBombDesc,items,Gun,"It will take effect after being thrown out, and tens of thousands of sharp blades will continue to fall within the range to damage the target.",丟出去觸碰後立即產生作用，範圍內持續落下數以萬計的利劍傷害目標。
+thrownUkuTadasiSpellsEnhanceAttackBomb,items,Gun,Enhance attack Bomb,強攻彈
+thrownUkuTadasiSpellsEnhanceAttackBombDesc,items,Gun,"It will take effect after being thrown out and touched. Within the duration, the attack power of players will be increased, while the attack power of zombies will be reduced.",丟出去觸碰後立即產生作用，持續時間內，對玩家提升攻擊力，對殭屍則是降低攻擊力。
+thrownUkuTadasiSpellsEnhanceDefenseBomb,items,Gun,Enhance defense Bomb,固防彈
+thrownUkuTadasiSpellsEnhanceDefenseBombDesc,items,Gun,"It will take effect after being thrown out and touched. Within the duration, the defense of players will be increased, while the defense of zombies will be reduced.",丟出去觸碰後立即產生作用，持續時間內，對玩家提升防禦力，對殭屍則是降低防禦力。
+
+ammoBowUkuTadasiSpellsFlameBurstBomb,items,Ammo,Flame Burst Arrow,炎爆箭
+ammoBowUkuTadasiSpellsFlameBurstBombDesc,items,Ammo,"After hitting the target, the area will continue to burn.",擊中目標後，範圍內持續性燃燒。
+ammoBowUkuTadasiSpellsFrostBomb,items,Ammo,Frost Arrow,冰霜箭
+ammoBowUkuTadasiSpellsFrostBombDesc,items,Ammo,"After hitting the target, the area will continue to freeze.",擊中目標後，範圍內持續性冰凍。
+ammoBowUkuTadasiSpellsElectricArcImpactBomb,items,Ammo,E.A.I Arrow,電衝箭
+ammoBowUkuTadasiSpellsElectricArcImpactBombDesc,items,Ammo,"After hitting the target, there will be continuous electric shock within the range.",擊中目標後，範圍內持續性放電。
+ammoBowUkuTadasiSpellsPoisonGasBomb,items,Ammo,Poison Gas Arrow,毒氣箭
+ammoBowUkuTadasiSpellsPoisonGasBombDesc,items,Ammo,"After hitting the target, the area will be continuously poisoned.",擊中目標後，範圍內持續性中毒。
+ammoCrossbowUkuTadasiSpellsFlameBurstBomb,items,Ammo,Flame Burst Cross Arrow,炎爆十字箭
+ammoCrossbowUkuTadasiSpellsFlameBurstBombDesc,items,Ammo,"After hitting the target, the area will continue to burn.",擊中目標後，範圍內持續性燃燒。
+ammoCrossbowUkuTadasiSpellsFrostBomb,items,Ammo,Frost Cross Arrow,冰霜十字箭
+ammoCrossbowUkuTadasiSpellsFrostBombDesc,items,Ammo,"After hitting the target, the area will continue to freeze.",擊中目標後，範圍內持續性冰凍。
+ammoCrossbowUkuTadasiSpellsElectricArcImpactBomb,items,Ammo,E.A.I Cross Arrow,電衝十字箭
+ammoCrossbowUkuTadasiSpellsElectricArcImpactBombDesc,items,Ammo,"After hitting the target, there will be continuous electric shock within the range.",擊中目標後，範圍內持續性放電。
+ammoCrossbowUkuTadasiSpellsPoisonGasBomb,items,Ammo,Poison Gas Cross Arrow,毒氣十字箭
+ammoCrossbowUkuTadasiSpellsPoisonGasBombDesc,items,Ammo,"After hitting the target, the area will be continuously poisoned.",擊中目標後，範圍內持續性中毒。
+
+buffUkuTadasiSpellsPurifyBombName,buffs,Buff,The power of purification,淨化之力
+buffUkuTadasiSpellsPurifyBombDesc,buffs,Buff,Continuously restore health and remove bad status within the duration.,持續時間內不斷恢復生命力，並移除不良狀態。
+buffUkuTadasiSpellsEnhanceAttackBombName,buffs,Buff,Strengthen attack power,強化攻擊力
+buffUkuTadasiSpellsEnhanceAttackBombDesc,buffs,Buff,"Within the duration, attack power +30%, attack speed +30%.",持續時間內，攻擊力+30%，攻擊速度+30%。
+buffUkuTadasiSpellsEnhanceDefenseBombName,buffs,Buff,Strengthen defense,強化防禦力
+buffUkuTadasiSpellsEnhanceDefenseBombDesc,buffs,Buff,"Within the duration, physical resistance +30%, elemental resistance +30%, resistance to some debuff +30%.",持續時間內，物理抗性+30%，元素抗性+30%，抵抗部分不良狀態+30%。

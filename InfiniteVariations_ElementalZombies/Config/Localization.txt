@@ -1,0 +1,325 @@
+Key,File,Type,english,tchinese
+resourceElementZombieMutatedGene,items,Item,Elemental Zombie Mutant Gene,元素殭屍的突變基因
+resourceElementZombieMutatedGeneDesc,items,Item,Mutated genes can be sold or made into resistance potions.,突變基因可販賣或製作抗性藥水。
+drinkIvRemoveFirePotion,items,Medical,Weird Burn Resistance Potion,異質燃燒抗性藥水
+drinkIvRemoveFirePotionDesc,items,Medical,It can resist the burning attack of fire zombies within the effective time and remove the current bad status.,有效時間內可抵抗火焰殭屍的燃燒攻擊，並移除目前的不良狀態。
+drinkIvRemoveShockPotion,items,Medical,Weird Electric Shock Resistance Potion,異質電擊抗性藥水
+drinkIvRemoveShockPotionDesc,items,Medical,It can resist the shock attack of shock zombies within the effective time and remove the current bad status.,有效時間內可抵抗電擊殭屍的電擊攻擊，並移除目前的不良狀態。
+drinkIvRemovePoisonPotion,items,Medical,Weird Poison Resistance Potion,異質劇毒抗性藥水
+drinkIvRemovePoisonPotionDesc,items,Medical,It can resist the poison attack of toxic zombies within the effective time and remove the current bad status.,有效時間內可抵抗劇毒殭屍的放毒攻擊，並移除目前的不良狀態。
+drinkIvRemoveFrostPotion,items,Medical,Weird Freeze Resistance Potion,異質冰凍抗性藥水
+drinkIvRemoveFrostPotionDesc,items,Medical,It can resist the freezing attack of frozen zombies within the effective time and remove the current bad status.,有效時間內可抵抗冰凍殭屍的冰凍攻擊，並移除目前的不良狀態。
+drinkIvRemoveDeathDeclarePotion,items,Medical,Weird Death Declare Resistance Potion,異質死亡宣告抗性藥水
+drinkIvRemoveDeathDeclarePotionDesc,items,Medical,"Within the effective time, it can resist the attacks of soul-eating zombies announcing their death and remove the current bad status.",有效時間內可抵抗蝕魂殭屍的死亡宣告攻擊，並移除目前的不良狀態。
+drinkIvDetectEnemiesPotion,items,Medical,Detect Enemies Potion,偵查殭屍藥水
+drinkIvDetectEnemiesPotionDesc,items,Medical,It will reveal the presence of nearby existing zombies.,飲用後將標示出附近已經存在的殭屍。
+drinkIvNightVisionPotion,items,Medical,Night Vision Potion,夜視藥水
+drinkIvNightVisionPotionDesc,items,Medical,Improved visibility during the night.,飲用後在夜晚可以看得更清楚。
+
+buffIVcustomBurningName,buffs,Buff,weird burning,異質燃燒
+buffIVcustomBurningDesc,buffs,Buff,Fire zombie burning attack\nFire resistance decreased\nWater decreased,火焰型殭屍的燃燒攻擊\n火焰抗性下降\n水份下降
+buffIVcustomBurningTooltip,buffs,Buff,Fire zombies burning attack,火焰型殭屍的燃燒攻擊
+buffIVcustomShockName,buffs,Buff,weird electric shock,異質電擊
+buffIVcustomShockDesc,buffs,Buff,Shock zombie shock attack\nShock resistance decreased\nStamina decreased\nDecreased mobility,電擊型殭屍的電擊攻擊\n電擊抗性下降\n耐力下降\n移動能力下降
+buffIVcustomShockTooltip,buffs,Buff,Shock zombies shock attack,電擊型殭屍的電擊攻擊
+buffIVcustomPoisonName,buffs,Buff,weird poisoning,異質劇毒
+buffIVcustomPoisonDesc,buffs,Buff,Poison attack of highly poisonous zombies\nStamina decreases\nWater decreased,劇毒型殭屍的劇毒攻擊\n耐力下降\n水份下降
+buffIVcustomPoisonTooltip,buffs,Buff,Poisonous zombies poisoning attack,劇毒型殭屍的劇毒攻擊
+buffIVcustomFrostName,buffs,Buff,weird frozen,異質冰凍
+buffIVcustomFrostDesc,buffs,Buff,Frozen zombie's freezing attack\nSatisfaction decreased\nMobility decreased\nAttack speed decreased,冰凍型殭屍的冰凍攻擊\n飽食度下降\n行動力下降\n攻擊速度下降
+buffIVcustomFrostTooltip,buffs,Buff,Frozen zombies freeze attack,冰凍型殭屍的冰凍攻擊
+buffIVcustomDeathDeclareName,buffs,Buff,death declaration,死亡宣告
+buffIVcustomDeathDeclareDesc,buffs,Buff,Soul eater zombie's death declare attack\nRunning speed decreased\nDeath immediately after 3 minutes,蝕魂型殭屍的死亡宣告攻擊\n衝刺速度下降\n三分鐘後立即死亡
+buffIVcustomDeathDeclareTooltip,buffs,Buff,Soul eater zombie death declare attack,蝕魂型殭屍的死亡宣告攻擊
+buffIVstopRecoverHPName,buffs,Buff,Ineffective treatment,治療無效
+buffIVstopRecoverHPDesc,buffs,Buff,"The mutated effects of the mutated nurse zombie, all built-in healing effects do not work.",突變的護士殭屍所產生的變異效果，所有的內建治療效果無法產生作用。
+buffIVstopRecoverHPTooltip,buffs,Buff,Mutant nurse zombies block your healing!,突變的護士殭屍阻斷了你的治療作用！
+buffIVslowDownRunningSpeedName,buffs,Buff,Running speed decreased,奔跑速度下降
+buffIVslowDownRunningSpeedDesc,buffs,Buff,"The mutation effect produced by the mutant skateboarder zombies, the running speed decreased.",突變的暴徒殭屍所產生的變異效果，衝刺速度急速下降。
+buffIVslowDownRunningSpeedTooltip,buffs,Buff,Mutant skateboarder zombies block your running speed!,突變的暴徒殭屍阻斷了你的衝刺速度！
+buffIVcustomBurningSpecialName,buffs,Buff,weird burning(mutant evolution),異質燃燒(突變進化型)
+buffIVcustomBurningSpecialDesc,buffs,Buff,Mutant evolution fire zombie burning attack\nFire resistance decreased\nWater decreased,突變進化型火焰殭屍的燃燒攻擊\n火焰抗性下降\n水份下降
+buffIVcustomBurningSpecialTooltip,buffs,Buff,The burning attack of the mutant evolved fire zombie.,突變進化型火焰殭屍的燃燒攻擊
+buffIVcustomShockSpecialName,buffs,Buff,weird electric shock(mutant evolution),異質電擊(突變進化型)
+buffIVcustomShockSpecialDesc,buffs,Buff,Mutant evolution shock zombie shock attack\nShock resistance decreased\nStamina decreased\nDecreased mobility,突變進化型電擊殭屍的電擊攻擊\n電擊抗性下降\n耐力下降\n移動能力下降
+buffIVcustomShockSpecialTooltip,buffs,Buff,The shock attack of the mutant evolved shock zombie.,突變進化型電擊殭屍的電擊攻擊
+buffIVcustomPoisonSpecialName,buffs,Buff,weird poisoning(mutant evolution),異質劇毒(突變進化型)
+buffIVcustomPoisonSpecialDesc,buffs,Buff,Mutant evolution poison attack of highly poisonous zombies\nStamina decreases\nWater decreased,突變進化型劇毒殭屍的劇毒攻擊\n耐力下降\n水份下降
+buffIVcustomPoisonSpecialTooltip,buffs,Buff,The poisoning attack of the mutant evolved poisonous zombie.,突變進化型劇毒殭屍的劇毒攻擊
+buffIVcustomFrostSpecialName,buffs,Buff,weird frozen(mutant evolution),異質冰凍(突變進化型)
+buffIVcustomFrostSpecialDesc,buffs,Buff,Mutant evolution frozen zombie's freezing attack\nSatisfaction decreased\nMobility decreased\nAttack speed decreased,突變進化型冰凍殭屍的冰凍攻擊\n飽食度下降\n行動力下降\n攻擊速度下降
+buffIVcustomFrostSpecialTooltip,buffs,Buff,The freeze attack of the mutant evolved frozen zombie.,突變進化型冰凍殭屍的冰凍攻擊
+buffIVcustomAbsorbEnergyName,buffs,Buff,absorb energy (mutant evolution),吸取能量(突變進化型)
+buffIVcustomAbsorbEnergyDesc,buffs,Buff,Mutant Evolved Soul Eater's absorb energy attack.\nDecreased satiety\nWater drop\nDecreased mobility\nStamina consumption increased\nPerception-1\nStrength-1\nFortitude-1\nAgility-1\nIntellect-1,突變進化型蝕魂殭屍的能量吸取攻擊\n飽食度下降\n水分下降\n移動能力下降\n耐力消耗增加\n感知-1\n力量-1\n堅忍-1\n敏捷-1\n智慧-1
+buffIVcustomAbsorbEnergyTooltip,buffs,Buff,Mutant evolved Soul Eater's absorb energy attack,突變進化型蝕魂殭屍的能量吸取攻擊
+
+buffIvRemoveFirePotionName,buffs,Buff,Weird Burn Resistance Potion,異質燃燒抗性藥水
+buffIvRemoveFirePotionDesc,buffs,Buff,Resist the flaming attacks of Flame Zombies,抵抗火焰型殭屍的燃燒攻擊
+buffIvRemoveFirePotionTooltip,buffs,Buff,The neutralizing effect of the potion has been activated.,燃燒中和作用已啟動
+buffIvRemoveShockPotionName,buffs,Buff,Weird Electric Shock Resistance Potion,異質電擊抗性藥水
+buffIvRemoveShockPotionDesc,buffs,Buff,Resist the shock attack of the Shock Zombies,抵抗電擊型殭屍的電擊攻擊
+buffIvRemoveShockPotionTooltip,buffs,Buff,The neutralizing effect of the potion has been activated.,電擊中和作用已啟動
+buffIvRemovePoisonPotionName,buffs,Buff,Weird Poison Resistance Potion,異質劇毒抗性藥水
+buffIvRemovePoisonPotionDesc,buffs,Buff,Resist the poisoning attack of Poisonous Zombies,抵抗劇毒型殭屍的中毒攻擊
+buffIvRemovePoisonPotionTooltip,buffs,Buff,The neutralizing effect of the potion has been activated.,劇毒中和作用已啟動
+buffIvRemoveFrostPotionName,buffs,Buff,Weird Freeze Resistance Potion,異質冰凍抗性藥水
+buffIvRemoveFrostPotionDesc,buffs,Buff,Resist the freezing attacks of Frozen Zombies,抵抗冰凍型殭屍的冰凍攻擊
+buffIvRemoveFrostPotionTooltip,buffs,Buff,The neutralizing effect of the potion has been activated.,冰凍中和作用已啟動
+buffIvRemoveDeathDeclarePotionName,buffs,Buff,Weird Death Declare Resistance Potion,異質死亡宣告抗性藥水
+buffIvRemoveDeathDeclarePotionDesc,buffs,Buff,Resist the death-declaring attack of the Soul Eater Zombie,抵抗蝕魂型殭屍的死亡宣告攻擊
+buffIvRemoveDeathDeclarePotionTooltip,buffs,Buff,The neutralizing effect of the potion has been activated.,死亡宣告能力抵抗已增強
+buffIvNightVisionPotionName,buffs,Buff,Night Vision Potion,夜視藥水
+buffIvNightVisionPotionDesc,buffs,Buff,Enhanced visibility at night.,在夜晚增強能見度
+buffIvNightVisionPotionTooltip,buffs,Buff,Under the effect of night vision potion.,夜視藥水作用中
+statCustomStackTime,ui_display,Item stat,Time stackable,疊加持續時間
+
+IvElementFireArlene,entityclasses,Entity,Mutated Flame Arlene,突變火焰型的艾琳
+IvElementElectricArlene,entityclasses,Entity,Mutated Shock Arlene,突變電擊型的艾琳
+IvElementToxicArlene,entityclasses,Entity,Mutated Toxic Arlene,突變劇毒型的艾琳
+IvElementFrostArlene,entityclasses,Entity,Mutated Frozen Arlene,突變冰凍型的艾琳
+IvElementSoulArlene,entityclasses,Entity,Mutated Soul Eater Arlene,突變蝕魂型的艾琳
+IvElementFireMarlene,entityclasses,Entity,Mutated Flame Marlene,突變火焰型的瑪琳
+IvElementElectricMarlene,entityclasses,Entity,Mutated Shock Marlene,突變電擊型的瑪琳
+IvElementToxicMarlene,entityclasses,Entity,Mutated Toxic Marlene,突變劇毒型的瑪琳
+IvElementFrostMarlene,entityclasses,Entity,Mutated Frozen Marlene,突變冰凍型的瑪琳
+IvElementSoulMarlene,entityclasses,Entity,Mutated Soul Eater Marlene,突變蝕魂型的瑪琳
+IvElementFirePartyGirl,entityclasses,Entity,Mutated Flame Party Girl,突變火焰型的派對女孩
+IvElementElectricPartyGirl,entityclasses,Entity,Mutated Shock Party Girl,突變電擊型的派對女孩
+IvElementToxicPartyGirl,entityclasses,Entity,Mutated Toxic Party Girl,突變劇毒型的派對女孩
+IvElementFrostPartyGirl,entityclasses,Entity,Mutated Frozen Party Girl,突變冰凍型的派對女孩
+IvElementSoulPartyGirl,entityclasses,Entity,Mutated Soul Eater Party Girl,突變蝕魂型的派對女孩
+IvElementFireNurse,entityclasses,Entity,Mutated Flame Nurse,突變火焰型的護士
+IvElementElectricNurse,entityclasses,Entity,Mutated Shock Nurse,突變電擊型的護士
+IvElementToxicNurse,entityclasses,Entity,Mutated Toxic Nurse,突變劇毒型的護士
+IvElementFrostNurse,entityclasses,Entity,Mutated Frozen Nurse,突變冰凍型的護士
+IvElementSoulNurse,entityclasses,Entity,Mutated Soul Eater Nurse,突變蝕魂型的護士
+IvElementFireJoe,entityclasses,Entity,Mutated Flame Joe,突變火焰型的喬伊
+IvElementElectricJoe,entityclasses,Entity,Mutated Shock Joe,突變電擊型的喬伊
+IvElementToxicJoe,entityclasses,Entity,Mutated Toxic Joe,突變劇毒型的喬伊
+IvElementFrostJoe,entityclasses,Entity,Mutated Frozen Joe,突變冰凍型的喬伊
+IvElementSoulJoe,entityclasses,Entity,Mutated Soul Eater Joe,突變蝕魂型的喬伊
+IvElementFireSteve,entityclasses,Entity,Mutated Flame Steve,突變火焰型的史蒂夫
+IvElementElectricSteve,entityclasses,Entity,Mutated Shock Steve,突變電擊型的史蒂夫
+IvElementToxicSteve,entityclasses,Entity,Mutated Toxic Steve,突變劇毒型的史蒂夫
+IvElementFrostSteve,entityclasses,Entity,Mutated Frozen Steve,突變冰凍型的史蒂夫
+IvElementSoulSteve,entityclasses,Entity,Mutated Soul Eater Steve,突變蝕魂型的史蒂夫
+IvElementFireTomClark,entityclasses,Entity,Mutated Flame Tom Clark,突變火焰型的湯姆克拉克
+IvElementElectricTomClark,entityclasses,Entity,Mutated Shock Tom Clark,突變電擊型的湯姆克拉克
+IvElementToxicTomClark,entityclasses,Entity,Mutated Toxic Tom Clark,突變劇毒型的湯姆克拉克
+IvElementFrostTomClark,entityclasses,Entity,Mutated Frozen Tom Clark,突變冰凍型的湯姆克拉克
+IvElementSoulTomClark,entityclasses,Entity,Mutated Soul Eater Tom Clark,突變蝕魂型的湯姆克拉克
+IvElementFireBusinessMan,entityclasses,Entity,Mutated Flame Businessman,突變火焰型的商人
+IvElementElectricBusinessMan,entityclasses,Entity,Mutated Shock Businessman,突變電擊型的商人
+IvElementToxicBusinessMan,entityclasses,Entity,Mutated Toxic Businessman,突變劇毒型的商人
+IvElementFrostBusinessMan,entityclasses,Entity,Mutated Frozen Businessman,突變冰凍型的商人
+IvElementSoulBusinessMan,entityclasses,Entity,Mutated Soul Eater Businessman,突變蝕魂型的商人
+IvElementFireBurnt,entityclasses,Entity,Mutated Flame Burnt,突變火焰型的灼燒者
+IvElementElectricBurnt,entityclasses,Entity,Mutated Shock Burnt,突變電擊型的灼燒者
+IvElementToxicBurnt,entityclasses,Entity,Mutated Toxic Burnt,突變劇毒型的灼燒者
+IvElementFrostBurnt,entityclasses,Entity,Mutated Frozen Burnt,突變冰凍型的灼燒者
+IvElementSoulBurnt,entityclasses,Entity,Mutated Soul Eater Burnt,突變蝕魂型的灼燒者
+IvElementFireBoe,entityclasses,Entity,Mutated Flame Boe,突變火焰型的Boe
+IvElementElectricBoe,entityclasses,Entity,Mutated Shock Boe,突變電擊型的Boe
+IvElementToxicBoe,entityclasses,Entity,Mutated Toxic Boe,突變劇毒型的Boe
+IvElementFrostBoe,entityclasses,Entity,Mutated Frozen Boe,突變冰凍型的Boe
+IvElementSoulBoe,entityclasses,Entity,Mutated Soul Eater Boe,突變蝕魂型的Boe
+IvElementFireJanitor,entityclasses,Entity,Mutated Flame Janitor,突變火焰型的守衛
+IvElementElectricJanitor,entityclasses,Entity,Mutated Shock Janitor,突變電擊型的守衛
+IvElementToxicJanitor,entityclasses,Entity,Mutated Toxic Janitor,突變劇毒型的守衛
+IvElementFrostJanitor,entityclasses,Entity,Mutated Frozen Janitor,突變冰凍型的守衛
+IvElementSoulJanitor,entityclasses,Entity,Mutated Soul Eater Janitor,突變蝕魂型的守衛
+IvElementFireMoe,entityclasses,Entity,Mutated Flame Moe,突變火焰型的Moe
+IvElementElectricMoe,entityclasses,Entity,Mutated Shock Moe,突變電擊型的Moe
+IvElementToxicMoe,entityclasses,Entity,Mutated Toxic Moe,突變劇毒型的Moe
+IvElementFrostMoe,entityclasses,Entity,Mutated Frozen Moe,突變冰凍型的Moe
+IvElementSoulMoe,entityclasses,Entity,Mutated Soul Eater Moe,突變蝕魂型的Moe
+IvElementFireLab,entityclasses,Entity,Mutated Flame Lab Worker,突變火焰型的研究員
+IvElementElectricLab,entityclasses,Entity,Mutated Shock Lab Worker,突變電擊型的研究員
+IvElementToxicLab,entityclasses,Entity,Mutated Toxic Lab Worker,突變劇毒型的研究員
+IvElementFrostLab,entityclasses,Entity,Mutated Frozen Lab Worker,突變冰凍型的研究員
+IvElementSoulLab,entityclasses,Entity,Mutated Soul Eater Lab Worker,突變蝕魂型的研究員
+IvElementFireDarlene,entityclasses,Entity,Mutated Flame Darlene,突變火焰型的達琳
+IvElementElectricDarlene,entityclasses,Entity,Mutated Shock Darlene,突變電擊型的達琳
+IvElementToxicDarlene,entityclasses,Entity,Mutated Toxic Darlene,突變劇毒型的達琳
+IvElementFrostDarlene,entityclasses,Entity,Mutated Frozen Darlene,突變冰凍型的達琳
+IvElementSoulDarlene,entityclasses,Entity,Mutated Soul Eater Darlene,突變蝕魂型的達琳
+IvElementFireYo,entityclasses,Entity,Mutated Flame Yo,突變火焰型的Yo
+IvElementElectricYo,entityclasses,Entity,Mutated Shock Yo,突變電擊型的Yo
+IvElementToxicYo,entityclasses,Entity,Mutated Toxic Yo,突變劇毒型的Yo
+IvElementFrostYo,entityclasses,Entity,Mutated Frozen Yo,突變冰凍型的Yo
+IvElementSoulYo,entityclasses,Entity,Mutated Soul Eater Yo,突變蝕魂型的Yo
+IvElementFireUtilityWorker,entityclasses,Entity,Mutated Flame Utility Worker,突變火焰型的作業員
+IvElementElectricUtilityWorker,entityclasses,Entity,Mutated Shock Utility Worker,突變電擊型的作業員
+IvElementToxicUtilityWorker,entityclasses,Entity,Mutated Toxic Utility Worker,突變劇毒型的作業員
+IvElementFrostUtilityWorker,entityclasses,Entity,Mutated Frozen Utility Worker,突變冰凍型的作業員
+IvElementSoulUtilityWorker,entityclasses,Entity,Mutated Soul Eater Utility Worker,突變蝕魂型的作業員
+IvElementFireMaleHazmat,entityclasses,Entity,Mutated Flame Hazmat,突變火焰型的危機物處理員
+IvElementElectricMaleHazmat,entityclasses,Entity,Mutated Shock Hazmat,突變電擊型的危機物處理員
+IvElementToxicMaleHazmat,entityclasses,Entity,Mutated Toxic Hazmat,突變劇毒型的危機物處理員
+IvElementFrostMaleHazmat,entityclasses,Entity,Mutated Frozen Hazmat,突變冰凍型的危機物處理員
+IvElementSoulMaleHazmat,entityclasses,Entity,Mutated Soul Eater Hazmat,突變蝕魂型的危機物處理員
+IvElementFireBiker,entityclasses,Entity,Mutated Flame Biker,突變火焰型的摩托車手
+IvElementElectricBiker,entityclasses,Entity,Mutated Shock Biker,突變電擊型的摩托車手
+IvElementToxicBiker,entityclasses,Entity,Mutated Toxic Biker,突變劇毒型的摩托車手
+IvElementFrostBiker,entityclasses,Entity,Mutated Frozen Biker,突變冰凍型的摩托車手
+IvElementSoulBiker,entityclasses,Entity,Mutated Soul Eater Biker,突變蝕魂型的摩托車手
+IvElementFireLumberjack,entityclasses,Entity,Mutated Flame Lumberjack,突變火焰型的伐木工
+IvElementElectricLumberjack,entityclasses,Entity,Mutated Shock Lumberjack,突變電擊型的伐木工
+IvElementToxicLumberjack,entityclasses,Entity,Mutated Toxic Lumberjack,突變劇毒型的伐木工
+IvElementFrostLumberjack,entityclasses,Entity,Mutated Frozen Lumberjack,突變冰凍型的伐木工
+IvElementSoulLumberjack,entityclasses,Entity,Mutated Soul Eater Lumberjack,突變蝕魂型的伐木工
+IvElementFireFemaleFat,entityclasses,Entity,Mutated Flame Big Momma,突變火焰型的大媽
+IvElementElectricFemaleFat,entityclasses,Entity,Mutated Shock Big Momma,突變電擊型的大媽
+IvElementToxicFemaleFat,entityclasses,Entity,Mutated Toxic Big Momma,突變劇毒型的大媽
+IvElementFrostFemaleFat,entityclasses,Entity,Mutated Frozen Big Momma,突變冰凍型的大媽
+IvElementSoulFemaleFat,entityclasses,Entity,Mutated Soul Eater Big Momma,突變蝕魂型的大媽
+IvElementFireFatHawaiian,entityclasses,Entity,Mutated Flame Tourist,突變火焰型的觀光客
+IvElementElectricFatHawaiian,entityclasses,Entity,Mutated Shock Tourist,突變電擊型的觀光客
+IvElementToxicFatHawaiian,entityclasses,Entity,Mutated Toxic Tourist,突變劇毒型的觀光客
+IvElementFrostFatHawaiian,entityclasses,Entity,Mutated Frozen Tourist,突變冰凍型的觀光客
+IvElementSoulFatHawaiian,entityclasses,Entity,Mutated Soul Eater Tourist,突變蝕魂型的觀光客
+IvElementFireSkateboarder,entityclasses,Entity,Mutated Flame Thug,突變火焰型的暴徒
+IvElementElectricSkateboarder,entityclasses,Entity,Mutated Shock Thug,突變電擊型的暴徒
+IvElementToxicSkateboarder,entityclasses,Entity,Mutated Toxic Thug,突變劇毒型的暴徒
+IvElementFrostSkateboarder,entityclasses,Entity,Mutated Frozen Thug,突變冰凍型的暴徒
+IvElementSoulSkateboarder,entityclasses,Entity,Mutated Soul Eater Thug,突變蝕魂型的暴徒
+IvElementFireSoldier,entityclasses,Entity,Mutated Flame Soldier,突變火焰型的士兵
+IvElementElectricSoldier,entityclasses,Entity,Mutated Shock Soldier,突變電擊型的士兵
+IvElementToxicSoldier,entityclasses,Entity,Mutated Toxic Soldier,突變劇毒型的士兵
+IvElementFrostSoldier,entityclasses,Entity,Mutated Frozen Soldier,突變冰凍型的士兵
+IvElementSoulSoldier,entityclasses,Entity,Mutated Soul Eater Soldier,突變蝕魂型的士兵
+IvElementFireWight,entityclasses,Entity,Mutated Flame Wight,突變火焰型的惡靈
+IvElementElectricWight,entityclasses,Entity,Mutated Shock Wight,突變電擊型的惡靈
+IvElementToxicWight,entityclasses,Entity,Mutated Toxic Wight,突變劇毒型的惡靈
+IvElementFrostWight,entityclasses,Entity,Mutated Frozen Wight,突變冰凍型的惡靈
+IvElementSoulWight,entityclasses,Entity,Mutated Soul Eater Wight,突變蝕魂型的惡靈
+IvElementFireFatPolice,entityclasses,Entity,Mutated Flame Police,突變火焰型的胖警察
+IvElementElectricFatPolice,entityclasses,Entity,Mutated Shock Police,突變電擊型的胖警察
+IvElementToxicFatPolice,entityclasses,Entity,Mutated Toxic Police,突變劇毒型的胖警察
+IvElementFrostFatPolice,entityclasses,Entity,Mutated Frozen Police,突變冰凍型的胖警察
+IvElementSoulFatPolice,entityclasses,Entity,Mutated Soul Eater Police,突變蝕魂型的胖警察
+IvElementFireArleneSpecial,entityclasses,Entity,Mutated Evolution Flame Arlene,突變進化火焰型的艾琳
+IvElementElectricArleneSpecial,entityclasses,Entity,Mutated Evolution Shock Arlene,突變進化電擊型的艾琳
+IvElementToxicArleneSpecial,entityclasses,Entity,Mutated Evolution Toxic Arlene,突變進化劇毒型的艾琳
+IvElementFrostArleneSpecial,entityclasses,Entity,Mutated Evolution Frozen Arlene,突變進化冰凍型的艾琳
+IvElementSoulArleneSpecial,entityclasses,Entity,Mutated Evolution Soul Eater Arlene,突變進化蝕魂型的艾琳
+IvElementFireMarleneSpecial,entityclasses,Entity,Mutated Evolution Flame Marlene,突變進化火焰型的瑪琳
+IvElementElectricMarleneSpecial,entityclasses,Entity,Mutated Evolution Shock Marlene,突變進化電擊型的瑪琳
+IvElementToxicMarleneSpecial,entityclasses,Entity,Mutated Evolution Toxic Marlene,突變進化劇毒型的瑪琳
+IvElementFrostMarleneSpecial,entityclasses,Entity,Mutated Evolution Frozen Marlene,突變進化冰凍型的瑪琳
+IvElementSoulMarleneSpecial,entityclasses,Entity,Mutated Evolution Soul Eater Marlene,突變進化蝕魂型的瑪琳
+IvElementFirePartyGirlSpecial,entityclasses,Entity,Mutated Evolution Flame Party Girl,突變進化火焰型的派對女孩
+IvElementElectricPartyGirlSpecial,entityclasses,Entity,Mutated Evolution Shock Party Girl,突變進化電擊型的派對女孩
+IvElementToxicPartyGirlSpecial,entityclasses,Entity,Mutated Evolution Toxic Party Girl,突變進化劇毒型的派對女孩
+IvElementFrostPartyGirlSpecial,entityclasses,Entity,Mutated Evolution Frozen Party Girl,突變進化冰凍型的派對女孩
+IvElementSoulPartyGirlSpecial,entityclasses,Entity,Mutated Evolution Soul Eater Party Girl,突變進化蝕魂型的派對女孩
+IvElementFireNurseSpecial,entityclasses,Entity,Mutated Evolution Flame Nurse,突變進化火焰型的護士
+IvElementElectricNurseSpecial,entityclasses,Entity,Mutated Evolution Shock Nurse,突變進化電擊型的護士
+IvElementToxicNurseSpecial,entityclasses,Entity,Mutated Evolution Toxic Nurse,突變進化劇毒型的護士
+IvElementFrostNurseSpecial,entityclasses,Entity,Mutated Evolution Frozen Nurse,突變進化冰凍型的護士
+IvElementSoulNurseSpecial,entityclasses,Entity,Mutated Evolution Soul Eater Nurse,突變進化蝕魂型的護士
+IvElementFireJoeSpecial,entityclasses,Entity,Mutated Evolution Flame Joe,突變進化火焰型的喬伊
+IvElementElectricJoeSpecial,entityclasses,Entity,Mutated Evolution Shock Joe,突變進化電擊型的喬伊
+IvElementToxicJoeSpecial,entityclasses,Entity,Mutated Evolution Toxic Joe,突變進化劇毒型的喬伊
+IvElementFrostJoeSpecial,entityclasses,Entity,Mutated Evolution Frozen Joe,突變進化冰凍型的喬伊
+IvElementSoulJoeSpecial,entityclasses,Entity,Mutated Evolution Soul Eater Joe,突變進化蝕魂型的喬伊
+IvElementFireSteveSpecial,entityclasses,Entity,Mutated Evolution Flame Steve,突變進化火焰型的史蒂夫
+IvElementElectricSteveSpecial,entityclasses,Entity,Mutated Evolution Shock Steve,突變進化電擊型的史蒂夫
+IvElementToxicSteveSpecial,entityclasses,Entity,Mutated Evolution Toxic Steve,突變進化劇毒型的史蒂夫
+IvElementFrostSteveSpecial,entityclasses,Entity,Mutated Evolution Frozen Steve,突變進化冰凍型的史蒂夫
+IvElementSoulSteveSpecial,entityclasses,Entity,Mutated Evolution Soul Eater Steve,突變進化蝕魂型的史蒂夫
+IvElementFireTomClarkSpecial,entityclasses,Entity,Mutated Evolution Flame Tom Clark,突變進化火焰型的湯姆克拉克
+IvElementElectricTomClarkSpecial,entityclasses,Entity,Mutated Evolution Shock Tom Clark,突變進化電擊型的湯姆克拉克
+IvElementToxicTomClarkSpecial,entityclasses,Entity,Mutated Evolution Toxic Tom Clark,突變進化劇毒型的湯姆克拉克
+IvElementFrostTomClarkSpecial,entityclasses,Entity,Mutated Evolution Frozen Tom Clark,突變進化冰凍型的湯姆克拉克
+IvElementSoulTomClarkSpecial,entityclasses,Entity,Mutated Evolution Soul Eater Tom Clark,突變進化蝕魂型的湯姆克拉克
+IvElementFireBusinessManSpecial,entityclasses,Entity,Mutated Evolution Flame Businessman,突變進化火焰型的商人
+IvElementElectricBusinessManSpecial,entityclasses,Entity,Mutated Evolution Shock Businessman,突變進化電擊型的商人
+IvElementToxicBusinessManSpecial,entityclasses,Entity,Mutated Evolution Toxic Businessman,突變進化劇毒型的商人
+IvElementFrostBusinessManSpecial,entityclasses,Entity,Mutated Evolution Frozen Businessman,突變進化冰凍型的商人
+IvElementSoulBusinessManSpecial,entityclasses,Entity,Mutated Evolution Soul Eater Businessman,突變進化蝕魂型的商人
+IvElementFireBurntSpecial,entityclasses,Entity,Mutated Evolution Flame Burnt,突變進化火焰型的灼燒者
+IvElementElectricBurntSpecial,entityclasses,Entity,Mutated Evolution Shock Burnt,突變進化電擊型的灼燒者
+IvElementToxicBurntSpecial,entityclasses,Entity,Mutated Evolution Toxic Burnt,突變進化劇毒型的灼燒者
+IvElementFrostBurntSpecial,entityclasses,Entity,Mutated Evolution Frozen Burnt,突變進化冰凍型的灼燒者
+IvElementSoulBurntSpecial,entityclasses,Entity,Mutated Evolution Soul Eater Burnt,突變進化蝕魂型的灼燒者
+IvElementFireBoeSpecial,entityclasses,Entity,Mutated Evolution Flame Boe,突變進化火焰型的Boe
+IvElementElectricBoeSpecial,entityclasses,Entity,Mutated Evolution Shock Boe,突變進化電擊型的Boe
+IvElementToxicBoeSpecial,entityclasses,Entity,Mutated Evolution Toxic Boe,突變進化劇毒型的Boe
+IvElementFrostBoeSpecial,entityclasses,Entity,Mutated Evolution Frozen Boe,突變進化冰凍型的Boe
+IvElementSoulBoeSpecial,entityclasses,Entity,Mutated Evolution Soul Eater Boe,突變進化蝕魂型的Boe
+IvElementFireJanitorSpecial,entityclasses,Entity,Mutated Evolution Flame Janitor,突變進化火焰型的守衛
+IvElementElectricJanitorSpecial,entityclasses,Entity,Mutated Evolution Shock Janitor,突變進化電擊型的守衛
+IvElementToxicJanitorSpecial,entityclasses,Entity,Mutated Evolution Toxic Janitor,突變進化劇毒型的守衛
+IvElementFrostJanitorSpecial,entityclasses,Entity,Mutated Evolution Frozen Janitor,突變進化冰凍型的守衛
+IvElementSoulJanitorSpecial,entityclasses,Entity,Mutated Evolution Soul Eater Janitor,突變進化蝕魂型的守衛
+IvElementFireMoeSpecial,entityclasses,Entity,Mutated Evolution Flame Moe,突變進化火焰型的Moe
+IvElementElectricMoeSpecial,entityclasses,Entity,Mutated Evolution Shock Moe,突變進化電擊型的Moe
+IvElementToxicMoeSpecial,entityclasses,Entity,Mutated Evolution Toxic Moe,突變進化劇毒型的Moe
+IvElementFrostMoeSpecial,entityclasses,Entity,Mutated Evolution Frozen Moe,突變進化冰凍型的Moe
+IvElementSoulMoeSpecial,entityclasses,Entity,Mutated Evolution Soul Eater Moe,突變進化蝕魂型的Moe
+IvElementFireLabSpecial,entityclasses,Entity,Mutated Evolution Flame Lab Worker,突變進化火焰型的研究員
+IvElementElectricLabSpecial,entityclasses,Entity,Mutated Evolution Shock Lab Worker,突變進化電擊型的研究員
+IvElementToxicLabSpecial,entityclasses,Entity,Mutated Evolution Toxic Lab Worker,突變進化劇毒型的研究員
+IvElementFrostLabSpecial,entityclasses,Entity,Mutated Evolution Frozen Lab Worker,突變進化冰凍型的研究員
+IvElementSoulLabSpecial,entityclasses,Entity,Mutated Evolution Soul Eater Lab Worker,突變進化蝕魂型的研究員
+IvElementFireDarleneSpecial,entityclasses,Entity,Mutated Evolution Flame Darlene,突變進化火焰型的達琳
+IvElementElectricDarleneSpecial,entityclasses,Entity,Mutated Evolution Shock Darlene,突變進化電擊型的達琳
+IvElementToxicDarleneSpecial,entityclasses,Entity,Mutated Evolution Toxic Darlene,突變進化劇毒型的達琳
+IvElementFrostDarleneSpecial,entityclasses,Entity,Mutated Evolution Frozen Darlene,突變進化冰凍型的達琳
+IvElementSoulDarleneSpecial,entityclasses,Entity,Mutated Evolution Soul Eater Darlene,突變進化蝕魂型的達琳
+IvElementFireYoSpecial,entityclasses,Entity,Mutated Evolution Flame Yo,突變進化火焰型的Yo
+IvElementElectricYoSpecial,entityclasses,Entity,Mutated Evolution Shock Yo,突變進化電擊型的Yo
+IvElementToxicYoSpecial,entityclasses,Entity,Mutated Evolution Toxic Yo,突變進化劇毒型的Yo
+IvElementFrostYoSpecial,entityclasses,Entity,Mutated Evolution Frozen Yo,突變進化冰凍型的Yo
+IvElementSoulYoSpecial,entityclasses,Entity,Mutated Evolution Soul Eater Yo,突變進化蝕魂型的Yo
+IvElementFireUtilityWorkerSpecial,entityclasses,Entity,Mutated Evolution Flame Utility Worker,突變進化火焰型的作業員
+IvElementElectricUtilityWorkerSpecial,entityclasses,Entity,Mutated Evolution Shock Utility Worker,突變進化電擊型的作業員
+IvElementToxicUtilityWorkerSpecial,entityclasses,Entity,Mutated Evolution Toxic Utility Worker,突變進化劇毒型的作業員
+IvElementFrostUtilityWorkerSpecial,entityclasses,Entity,Mutated Evolution Frozen Utility Worker,突變進化冰凍型的作業員
+IvElementSoulUtilityWorkerSpecial,entityclasses,Entity,Mutated Evolution Soul Eater Utility Worker,突變進化蝕魂型的作業員
+IvElementFireMaleHazmatSpecial,entityclasses,Entity,Mutated Evolution Flame Hazmat,突變進化火焰型的危機物處理員
+IvElementElectricMaleHazmatSpecial,entityclasses,Entity,Mutated Evolution Shock Hazmat,突變進化電擊型的危機物處理員
+IvElementToxicMaleHazmatSpecial,entityclasses,Entity,Mutated Evolution Toxic Hazmat,突變進化劇毒型的危機物處理員
+IvElementFrostMaleHazmatSpecial,entityclasses,Entity,Mutated Evolution Frozen Hazmat,突變進化冰凍型的危機物處理員
+IvElementSoulMaleHazmatSpecial,entityclasses,Entity,Mutated Evolution Soul Eater Hazmat,突變進化蝕魂型的危機物處理員
+IvElementFireBikerSpecial,entityclasses,Entity,Mutated Evolution Flame Biker,突變進化火焰型的摩托車手
+IvElementElectricBikerSpecial,entityclasses,Entity,Mutated Evolution Shock Biker,突變進化電擊型的摩托車手
+IvElementToxicBikerSpecial,entityclasses,Entity,Mutated Evolution Toxic Biker,突變進化劇毒型的摩托車手
+IvElementFrostBikerSpecial,entityclasses,Entity,Mutated Evolution Frozen Biker,突變進化冰凍型的摩托車手
+IvElementSoulBikerSpecial,entityclasses,Entity,Mutated Evolution Soul Eater Biker,突變進化蝕魂型的摩托車手
+IvElementFireLumberjackSpecial,entityclasses,Entity,Mutated Evolution Flame Lumberjack,突變進化火焰型的伐木工
+IvElementElectricLumberjackSpecial,entityclasses,Entity,Mutated Evolution Shock Lumberjack,突變進化電擊型的伐木工
+IvElementToxicLumberjackSpecial,entityclasses,Entity,Mutated Evolution Toxic Lumberjack,突變進化劇毒型的伐木工
+IvElementFrostLumberjackSpecial,entityclasses,Entity,Mutated Evolution Frozen Lumberjack,突變進化冰凍型的伐木工
+IvElementSoulLumberjackSpecial,entityclasses,Entity,Mutated Evolution Soul Eater Lumberjack,突變進化蝕魂型的伐木工
+IvElementFireFemaleFatSpecial,entityclasses,Entity,Mutated Evolution Flame Big Momma,突變進化火焰型的大媽
+IvElementElectricFemaleFatSpecial,entityclasses,Entity,Mutated Evolution Shock Big Momma,突變進化電擊型的大媽
+IvElementToxicFemaleFatSpecial,entityclasses,Entity,Mutated Evolution Toxic Big Momma,突變進化劇毒型的大媽
+IvElementFrostFemaleFatSpecial,entityclasses,Entity,Mutated Evolution Frozen Big Momma,突變進化冰凍型的大媽
+IvElementSoulFemaleFatSpecial,entityclasses,Entity,Mutated Evolution Soul Eater Big Momma,突變進化蝕魂型的大媽
+IvElementFireFatHawaiianSpecial,entityclasses,Entity,Mutated Evolution Flame Tourist,突變進化火焰型的觀光客
+IvElementElectricFatHawaiianSpecial,entityclasses,Entity,Mutated Evolution Shock Tourist,突變進化電擊型的觀光客
+IvElementToxicFatHawaiianSpecial,entityclasses,Entity,Mutated Evolution Toxic Tourist,突變進化劇毒型的觀光客
+IvElementFrostFatHawaiianSpecial,entityclasses,Entity,Mutated Evolution Frozen Tourist,突變進化冰凍型的觀光客
+IvElementSoulFatHawaiianSpecial,entityclasses,Entity,Mutated Evolution Soul Eater Tourist,突變進化蝕魂型的觀光客
+IvElementFireSkateboarderSpecial,entityclasses,Entity,Mutated Evolution Flame Thug,突變進化火焰型的暴徒
+IvElementElectricSkateboarderSpecial,entityclasses,Entity,Mutated Evolution Shock Thug,突變進化電擊型的暴徒
+IvElementToxicSkateboarderSpecial,entityclasses,Entity,Mutated Evolution Toxic Thug,突變進化劇毒型的暴徒
+IvElementFrostSkateboarderSpecial,entityclasses,Entity,Mutated Evolution Frozen Thug,突變進化冰凍型的暴徒
+IvElementSoulSkateboarderSpecial,entityclasses,Entity,Mutated Evolution Soul Eater Thug,突變進化蝕魂型的暴徒
+IvElementFireWightSpecial,entityclasses,Entity,Mutated Evolution Flame Wight,突變進化火焰型的惡靈
+IvElementElectricWightSpecial,entityclasses,Entity,Mutated Evolution Shock Wight,突變進化電擊型的惡靈
+IvElementToxicWightSpecial,entityclasses,Entity,Mutated Evolution Toxic Wight,突變進化劇毒型的惡靈
+IvElementFrostWightSpecial,entityclasses,Entity,Mutated Evolution Frozen Wight,突變進化冰凍型的惡靈
+IvElementSoulWightSpecial,entityclasses,Entity,Mutated Evolution Soul Eater Wight,突變進化蝕魂型的惡靈
+IvElementFireDemolitionRare,entityclasses,Entity,Rare Flame Demolition,稀有火焰型的破壞王
+IvElementElectricDemolitionRare,entityclasses,Entity,Rare Shock Demolition,稀有電擊型的破壞王
+IvElementToxicDemolitionRare,entityclasses,Entity,Rare Toxic Demolition,稀有劇毒型的破壞王
+IvElementFrostDemolitionRare,entityclasses,Entity,Rare Frozen Demolition,稀有冰凍型的破壞王
+IvElementSoulDemolitionRare,entityclasses,Entity,Rare Soul Eater Demolition,稀有蝕魂型的破壞王
+IvElementFireBurntRare,entityclasses,Entity,Rare Flame Burnt victim,稀有火焰型的燒傷受難者
+IvElementElectricBurntRare,entityclasses,Entity,Rare Shock Burnt victim,稀有電擊型的燒傷受難者
+IvElementToxicBurntRare,entityclasses,Entity,Rare Toxic Burnt victim,稀有劇毒型的燒傷受難者
+IvElementFrostBurntRare,entityclasses,Entity,Rare Frozen Burnt victim,稀有冰凍型的燒傷受難者
+IvElementSoulBurntRare,entityclasses,Entity,Rare Soul Burnt victim,稀有蝕魂型的燒傷受難者

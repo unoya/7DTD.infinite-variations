@@ -1,0 +1,1253 @@
+<config>
+	<!-- 基因 -->
+	<append xpath="/items">
+		<item name="resourceElementZombieMutatedGene">
+			<property name="HoldType" value="45"/>
+			<property name="CustomIcon" value="resourceElementZombieMutatedGene"/>
+			<property name="DescriptionKey" value="resourceElementZombieMutatedGeneDesc"/>
+			<property name="Meshfile" value="#@modfolder:Resources/elementzombie?MutatedDNA"/>
+			<property name="DropMeshfile" value="#@modfolder:Resources/elementzombie?MutatedDNA"/>
+			<property name="DropScale" value="3"/>
+			<property name="Material" value="MresourceCrushedSand"/>
+			<property name="Weight" value="4"/>
+			<property name="NoScrapping" value="true"/>
+			<property name="Stacknumber" value="5000"/>
+			<property name="EconomicValue" value="10"/>
+			<property name="Group" value="Resources"/>
+		</item>
+	</append>
+	<!-- 殭屍用的武器 -->
+	<append xpath="/items">
+		<!-- 普通型專用 -->
+		<!-- DamageEntity +30%, DamageBlock -20% -->
+		<item name="handElementZombieFire">
+			<property name="Extends" value="meleeHandMaster"/>
+			<property name="CreativeMode" value="None"/>
+			<property class="Action0">
+				<property name="DamageEntity" value="26"/>
+				<property name="DamageBlock" value="6.4"/>
+				<property name="Range" value="1.6"/>
+			</property>
+			<effect_group name="handElementZombieFire" tiered="false">
+				<passive_effect name="EntityDamage" operation="perc_subtract" value=".1">
+					<requirement name="CVarCompare" cvar="_difficulty" operation="LTE" value="1"/>
+				</passive_effect>
+				<passive_effect name="EntityDamage" operation="perc_add" value=".3">
+					<requirement name="CVarCompare" cvar="_difficulty" operation="GTE" value="3"/>
+				</passive_effect>
+				<passive_effect name="BlockDamage" operation="perc_subtract" value=".1">
+					<requirement name="CVarCompare" cvar="_difficulty" operation="LTE" value="1"/>
+				</passive_effect>
+				<passive_effect name="BlockDamage" operation="perc_add" value=".3">
+					<requirement name="CVarCompare" cvar="_difficulty" operation="GTE" value="3"/>
+				</passive_effect>
+
+				<passive_effect name="ModSlots" operation="base_set" value="0"/>
+				<triggered_effect trigger="onSelfAttackedOther" action="AddBuff" target="other" buff="buffIVcustomBurning">
+					<requirement name="RandomRoll" seed_type="Random" min_max="0,100" operation="LTE" value="50"/>
+				</triggered_effect>
+			</effect_group>
+			<effect_group name="handElementZombie_zombieNurse" tiered="false">
+				<requirement name="EntityTagCompare" target="self" tags="zombieNurse"/>
+				<triggered_effect trigger="onSelfAttackedOther" action="AddBuff" target="other" buff="buffIVstopRecoverHP"/>
+			</effect_group>
+			<effect_group name="handElementZombie_zombieSkateboarder" tiered="false">
+				<requirement name="EntityTagCompare" target="self" tags="zombieSkateboarder"/>
+				<triggered_effect trigger="onSelfAttackedOther" action="AddBuff" target="other" buff="buffIVslowDownRunningSpeed"/>
+			</effect_group>
+		</item>
+		<item name="handElementZombieElectric">
+			<property name="Extends" value="meleeHandMaster"/>
+			<property name="CreativeMode" value="None"/>
+			<property class="Action0">
+				<property name="DamageEntity" value="26"/>
+				<property name="DamageBlock" value="6.4"/>
+			</property>
+			<effect_group name="handElementZombieElectric" tiered="false">
+				<passive_effect name="EntityDamage" operation="perc_subtract" value=".1">
+					<requirement name="CVarCompare" cvar="_difficulty" operation="LTE" value="1"/>
+				</passive_effect>
+				<passive_effect name="EntityDamage" operation="perc_add" value=".3">
+					<requirement name="CVarCompare" cvar="_difficulty" operation="GTE" value="3"/>
+				</passive_effect>
+				<passive_effect name="BlockDamage" operation="perc_subtract" value=".1">
+					<requirement name="CVarCompare" cvar="_difficulty" operation="LTE" value="1"/>
+				</passive_effect>
+				<passive_effect name="BlockDamage" operation="perc_add" value=".3">
+					<requirement name="CVarCompare" cvar="_difficulty" operation="GTE" value="3"/>
+				</passive_effect>
+
+				<passive_effect name="ModSlots" operation="base_set" value="0"/>
+				<triggered_effect trigger="onSelfAttackedOther" action="AddBuff" target="other" buff="buffIVcustomShock">
+					<requirement name="RandomRoll" seed_type="Random" min_max="0,100" operation="LTE" value="50"/>
+				</triggered_effect>
+			</effect_group>
+			<effect_group name="handElementZombie_zombieNurse" tiered="false">
+				<requirement name="EntityTagCompare" tags="zombieNurse"/>
+				<triggered_effect trigger="onSelfAttackedOther" action="AddBuff" target="other" buff="buffIVstopRecoverHP"/>
+			</effect_group>
+			<effect_group name="handElementZombie_zombieSkateboarder" tiered="false">
+				<requirement name="EntityTagCompare" tags="zombieSkateboarder"/>
+				<triggered_effect trigger="onSelfAttackedOther" action="AddBuff" target="other" buff="buffIVslowDownRunningSpeed"/>
+			</effect_group>
+		</item>
+		<item name="handElementZombieToxic">
+			<property name="Extends" value="meleeHandMaster"/>
+			<property name="CreativeMode" value="None"/>
+			<property class="Action0">
+				<property name="DamageEntity" value="26"/>
+				<property name="DamageBlock" value="6.4"/>
+			</property>
+			<effect_group name="handElementZombieToxic" tiered="false">
+				<passive_effect name="EntityDamage" operation="perc_subtract" value=".1">
+					<requirement name="CVarCompare" cvar="_difficulty" operation="LTE" value="1"/>
+				</passive_effect>
+				<passive_effect name="EntityDamage" operation="perc_add" value=".3">
+					<requirement name="CVarCompare" cvar="_difficulty" operation="GTE" value="3"/>
+				</passive_effect>
+				<passive_effect name="BlockDamage" operation="perc_subtract" value=".1">
+					<requirement name="CVarCompare" cvar="_difficulty" operation="LTE" value="1"/>
+				</passive_effect>
+				<passive_effect name="BlockDamage" operation="perc_add" value=".3">
+					<requirement name="CVarCompare" cvar="_difficulty" operation="GTE" value="3"/>
+				</passive_effect>
+
+				<passive_effect name="ModSlots" operation="base_set" value="0"/>
+				<triggered_effect trigger="onSelfAttackedOther" action="AddBuff" target="other" buff="buffIVcustomPoison">
+					<requirement name="RandomRoll" seed_type="Random" min_max="0,100" operation="LTE" value="50"/>
+				</triggered_effect>
+			</effect_group>
+			<effect_group name="handElementZombie_zombieNurse" tiered="false">
+				<requirement name="EntityTagCompare" tags="zombieNurse"/>
+				<triggered_effect trigger="onSelfAttackedOther" action="AddBuff" target="other" buff="buffIVstopRecoverHP"/>
+			</effect_group>
+			<effect_group name="handElementZombie_zombieSkateboarder" tiered="false">
+				<requirement name="EntityTagCompare" tags="zombieSkateboarder"/>
+				<triggered_effect trigger="onSelfAttackedOther" action="AddBuff" target="other" buff="buffIVslowDownRunningSpeed"/>
+			</effect_group>
+		</item>
+		<item name="handElementZombieFrost">
+			<property name="Extends" value="meleeHandMaster"/>
+			<property name="CreativeMode" value="None"/>
+			<property class="Action0">
+				<property name="DamageEntity" value="26"/>
+				<property name="DamageBlock" value="6.4"/>
+			</property>
+			<effect_group name="handElementZombieFrost" tiered="false">
+				<passive_effect name="EntityDamage" operation="perc_subtract" value=".1">
+					<requirement name="CVarCompare" cvar="_difficulty" operation="LTE" value="1"/>
+				</passive_effect>
+				<passive_effect name="EntityDamage" operation="perc_add" value=".3">
+					<requirement name="CVarCompare" cvar="_difficulty" operation="GTE" value="3"/>
+				</passive_effect>
+				<passive_effect name="BlockDamage" operation="perc_subtract" value=".1">
+					<requirement name="CVarCompare" cvar="_difficulty" operation="LTE" value="1"/>
+				</passive_effect>
+				<passive_effect name="BlockDamage" operation="perc_add" value=".3">
+					<requirement name="CVarCompare" cvar="_difficulty" operation="GTE" value="3"/>
+				</passive_effect>
+
+				<passive_effect name="ModSlots" operation="base_set" value="0"/>
+				<triggered_effect trigger="onSelfAttackedOther" action="AddBuff" target="other" buff="buffIVcustomFrost">
+					<requirement name="RandomRoll" seed_type="Random" min_max="0,100" operation="LTE" value="50"/>
+				</triggered_effect>
+			</effect_group>
+			<effect_group name="handElementZombie_zombieNurse" tiered="false">
+				<requirement name="EntityTagCompare" tags="zombieNurse"/>
+				<triggered_effect trigger="onSelfAttackedOther" action="AddBuff" target="other" buff="buffIVstopRecoverHP"/>
+			</effect_group>
+			<effect_group name="handElementZombie_zombieSkateboarder" tiered="false">
+				<requirement name="EntityTagCompare" tags="zombieSkateboarder"/>
+				<triggered_effect trigger="onSelfAttackedOther" action="AddBuff" target="other" buff="buffIVslowDownRunningSpeed"/>
+			</effect_group>
+		</item>
+		<item name="handElementZombieSoul">
+			<property name="Extends" value="meleeHandMaster"/>
+			<property name="CreativeMode" value="None"/>
+			<property class="Action0">
+				<property name="DamageEntity" value="26"/>
+				<property name="DamageBlock" value="6.4"/>
+			</property>
+			<effect_group name="handElementZombieSoul" tiered="false">
+				<passive_effect name="EntityDamage" operation="perc_subtract" value=".1">
+					<requirement name="CVarCompare" cvar="_difficulty" operation="LTE" value="1"/>
+				</passive_effect>
+				<passive_effect name="EntityDamage" operation="perc_add" value=".3">
+					<requirement name="CVarCompare" cvar="_difficulty" operation="GTE" value="3"/>
+				</passive_effect>
+				<passive_effect name="BlockDamage" operation="perc_subtract" value=".1">
+					<requirement name="CVarCompare" cvar="_difficulty" operation="LTE" value="1"/>
+				</passive_effect>
+				<passive_effect name="BlockDamage" operation="perc_add" value=".3">
+					<requirement name="CVarCompare" cvar="_difficulty" operation="GTE" value="3"/>
+				</passive_effect>
+
+				<passive_effect name="ModSlots" operation="base_set" value="0"/>
+				<triggered_effect trigger="onSelfAttackedOther" action="AddBuff" target="other" buff="buffIVcustomDeathDeclare">
+					<requirement name="RandomRoll" seed_type="Random" min_max="0,100" operation="LTE" value="50"/>
+				</triggered_effect>
+			</effect_group>
+			<effect_group name="handElementZombieSoul_Night" tiered="false">
+				<requirement name="IsNight"/>
+				<passive_effect name="EntityDamage" operation="perc_add" value=".1"/>
+				<passive_effect name="PhysicalDamageResist" operation="perc_subtract" value=".1"/>
+			</effect_group>
+			<effect_group name="handElementZombie_zombieNurse" tiered="false">
+				<requirement name="EntityTagCompare" tags="zombieNurse"/>
+				<triggered_effect trigger="onSelfAttackedOther" action="AddBuff" target="other" buff="buffIVstopRecoverHP"/>
+			</effect_group>
+			<effect_group name="handElementZombie_zombieSkateboarder" tiered="false">
+				<requirement name="EntityTagCompare" tags="zombieSkateboarder"/>
+				<triggered_effect trigger="onSelfAttackedOther" action="AddBuff" target="other" buff="buffIVslowDownRunningSpeed"/>
+			</effect_group>
+		</item>
+		<!-- 自爆兵專用 -->
+		<!-- DamageEntity +50%, DamageBlock -20% -->
+		<item name="handElementZombieDemolitionFire">
+			<property name="Extends" value="meleeHandMaster"/>
+			<property name="CreativeMode" value="None"/>
+			<property class="Action0">
+				<property name="DamageEntity" value="30"/>
+				<property name="DamageBlock" value="400"/>
+			</property>
+			<effect_group name="handElementZombieDemolitionFire" tiered="false">
+				<passive_effect name="EntityDamage" operation="perc_subtract" value=".1">
+					<requirement name="CVarCompare" cvar="_difficulty" operation="LTE" value="1"/>
+				</passive_effect>
+				<passive_effect name="EntityDamage" operation="perc_add" value=".3">
+					<requirement name="CVarCompare" cvar="_difficulty" operation="GTE" value="3"/>
+				</passive_effect>
+				<passive_effect name="BlockDamage" operation="perc_subtract" value=".1">
+					<requirement name="CVarCompare" cvar="_difficulty" operation="LTE" value="1"/>
+				</passive_effect>
+				<passive_effect name="BlockDamage" operation="perc_add" value=".3">
+					<requirement name="CVarCompare" cvar="_difficulty" operation="GTE" value="3"/>
+				</passive_effect>
+
+				<passive_effect name="ModSlots" operation="base_set" value="0"/>
+				<triggered_effect trigger="onSelfAttackedOther" action="AddBuff" target="other" fireOneBuff="true" buff="buffIVcustomBurning,buffInjuryStunned01CHTrigger,buffArmSprainedCHTrigger,buffLegSprainedCHTrigger" weights="0.3,0.36,0.07,0.05"/>
+			</effect_group>
+		</item>
+		<item name="handElementZombieDemolitionElectric">
+			<property name="Extends" value="meleeHandMaster"/>
+			<property name="CreativeMode" value="None"/>
+			<property class="Action0">
+				<property name="DamageEntity" value="30"/>
+				<property name="DamageBlock" value="400"/>
+			</property>
+			<effect_group name="handElementZombieDemolitionElectric" tiered="false">
+				<passive_effect name="EntityDamage" operation="perc_subtract" value=".1">
+					<requirement name="CVarCompare" cvar="_difficulty" operation="LTE" value="1"/>
+				</passive_effect>
+				<passive_effect name="EntityDamage" operation="perc_add" value=".3">
+					<requirement name="CVarCompare" cvar="_difficulty" operation="GTE" value="3"/>
+				</passive_effect>
+				<passive_effect name="BlockDamage" operation="perc_subtract" value=".1">
+					<requirement name="CVarCompare" cvar="_difficulty" operation="LTE" value="1"/>
+				</passive_effect>
+				<passive_effect name="BlockDamage" operation="perc_add" value=".3">
+					<requirement name="CVarCompare" cvar="_difficulty" operation="GTE" value="3"/>
+				</passive_effect>
+
+				<passive_effect name="ModSlots" operation="base_set" value="0"/>
+				<triggered_effect trigger="onSelfAttackedOther" action="AddBuff" target="other" fireOneBuff="true" buff="buffIVcustomShock,buffInjuryStunned01CHTrigger,buffArmSprainedCHTrigger,buffLegSprainedCHTrigger" weights="0.3,0.36,0.07,0.05"/>
+			</effect_group>
+		</item>
+		<item name="handElementZombieDemolitionToxic">
+			<property name="Extends" value="meleeHandMaster"/>
+			<property name="CreativeMode" value="None"/>
+			<property class="Action0">
+				<property name="DamageEntity" value="30"/>
+				<property name="DamageBlock" value="400"/>
+			</property>
+			<effect_group name="handElementZombieDemolitionToxic" tiered="false">
+				<passive_effect name="EntityDamage" operation="perc_subtract" value=".1">
+					<requirement name="CVarCompare" cvar="_difficulty" operation="LTE" value="1"/>
+				</passive_effect>
+				<passive_effect name="EntityDamage" operation="perc_add" value=".3">
+					<requirement name="CVarCompare" cvar="_difficulty" operation="GTE" value="3"/>
+				</passive_effect>
+				<passive_effect name="BlockDamage" operation="perc_subtract" value=".1">
+					<requirement name="CVarCompare" cvar="_difficulty" operation="LTE" value="1"/>
+				</passive_effect>
+				<passive_effect name="BlockDamage" operation="perc_add" value=".3">
+					<requirement name="CVarCompare" cvar="_difficulty" operation="GTE" value="3"/>
+				</passive_effect>
+
+				<passive_effect name="ModSlots" operation="base_set" value="0"/>
+				<triggered_effect trigger="onSelfAttackedOther" action="AddBuff" target="other" fireOneBuff="true" buff="buffIVcustomPoison,buffInjuryStunned01CHTrigger,buffArmSprainedCHTrigger,buffLegSprainedCHTrigger" weights="0.3,0.36,0.07,0.05"/>
+			</effect_group>
+		</item>
+		<item name="handElementZombieDemolitionFrost">
+			<property name="Extends" value="meleeHandMaster"/>
+			<property name="CreativeMode" value="None"/>
+			<property class="Action0">
+				<property name="DamageEntity" value="30"/>
+				<property name="DamageBlock" value="400"/>
+			</property>
+			<effect_group name="handElementZombieDemolitionFrost" tiered="false">
+				<passive_effect name="EntityDamage" operation="perc_subtract" value=".1">
+					<requirement name="CVarCompare" cvar="_difficulty" operation="LTE" value="1"/>
+				</passive_effect>
+				<passive_effect name="EntityDamage" operation="perc_add" value=".3">
+					<requirement name="CVarCompare" cvar="_difficulty" operation="GTE" value="3"/>
+				</passive_effect>
+				<passive_effect name="BlockDamage" operation="perc_subtract" value=".1">
+					<requirement name="CVarCompare" cvar="_difficulty" operation="LTE" value="1"/>
+				</passive_effect>
+				<passive_effect name="BlockDamage" operation="perc_add" value=".3">
+					<requirement name="CVarCompare" cvar="_difficulty" operation="GTE" value="3"/>
+				</passive_effect>
+
+				<passive_effect name="ModSlots" operation="base_set" value="0"/>
+				<triggered_effect trigger="onSelfAttackedOther" action="AddBuff" target="other" fireOneBuff="true" buff="buffIVcustomFrost,buffInjuryStunned01CHTrigger,buffArmSprainedCHTrigger,buffLegSprainedCHTrigger" weights="0.3,0.36,0.07,0.05"/>
+			</effect_group>
+		</item>
+		<item name="handElementZombieDemolitionSoul">
+			<property name="Extends" value="meleeHandMaster"/>
+			<property name="CreativeMode" value="None"/>
+			<property class="Action0">
+				<property name="DamageEntity" value="30"/>
+				<property name="DamageBlock" value="400"/>
+			</property>
+			<effect_group name="handElementZombieDemolitionSoul" tiered="false">
+				<passive_effect name="EntityDamage" operation="perc_subtract" value=".1">
+					<requirement name="CVarCompare" cvar="_difficulty" operation="LTE" value="1"/>
+				</passive_effect>
+				<passive_effect name="EntityDamage" operation="perc_add" value=".3">
+					<requirement name="CVarCompare" cvar="_difficulty" operation="GTE" value="3"/>
+				</passive_effect>
+				<passive_effect name="BlockDamage" operation="perc_subtract" value=".1">
+					<requirement name="CVarCompare" cvar="_difficulty" operation="LTE" value="1"/>
+				</passive_effect>
+				<passive_effect name="BlockDamage" operation="perc_add" value=".3">
+					<requirement name="CVarCompare" cvar="_difficulty" operation="GTE" value="3"/>
+				</passive_effect>
+
+				<passive_effect name="ModSlots" operation="base_set" value="0"/>
+				<triggered_effect trigger="onSelfAttackedOther" action="AddBuff" target="other" fireOneBuff="true" buff="buffIVcustomDeathDeclare,buffInjuryStunned01CHTrigger,buffArmSprainedCHTrigger,buffLegSprainedCHTrigger" weights="0.3,0.36,0.07,0.05"/>
+			</effect_group>
+			<effect_group name="handElementZombieDemolitionSoul_Night" tiered="false">
+				<requirement name="IsNight"/>
+				<passive_effect name="EntityDamage" operation="perc_add" value=".1"/>
+				<passive_effect name="PhysicalDamageResist" operation="perc_subtract" value=".1"/>
+			</effect_group>
+		</item>
+		<!-- 警察專用 -->
+		<!-- DamageEntity +20%, DamageBlock -30% -->
+		<item name="handElementZombieFatPoliceFire">
+			<property name="Extends" value="meleeHandMaster"/>
+			<property name="CreativeMode" value="None"/>
+			<property name="Degradation" value="99999" param1="true"/>
+			<property class="Action0">
+				<property name="Range" value="1.75"/>
+				<property name="DamageEntity" value="24"/>
+				<property name="DamageBlock" value="80"/>
+			</property>
+			<property class="Action1">
+				<property name="Class" value="Vomit"/>
+				<property name="Hitmask_override" value="Arrow"/>
+				<property name="Delay" value=".3"/>
+				<property name="Range" value="200"/>
+				<property name="Infinite_ammo" value="true"/>
+				<property name="Magazine_items" value="elementZombieVomitFire"/>
+				<property name="Sound_warning" value="hulkvomitwarning"/>
+				<property name="Sound_start" value="hulkvomitattack"/>
+				<property name="Sound_repeat" value=""/>
+				<property name="Sound_end" value=""/>
+				<property name="Sound_empty" value=""/>
+				<property name="Sound_reload" value=""/>
+			</property>
+			<effect_group name="handElementZombieFatPoliceFire" tiered="false">
+				<passive_effect name="ModSlots" operation="base_set" value="0"/>
+				<passive_effect name="DamageFalloffRange" operation="base_set" value="50"/>
+				<passive_effect name="MaxRange" operation="base_set" value="100"/>
+				<passive_effect name="MagazineSize" operation="base_set" value="1"/>
+				<passive_effect name="BurstRoundCount" operation="base_set" value="1"/>
+				<passive_effect name="SpreadDegreesVertical" operation="base_set" value="2"/>
+				<passive_effect name="SpreadDegreesHorizontal" operation="base_set" value="4"/>
+				<passive_effect name="SpreadMultiplierIdle" operation="base_set" value="1"/>
+				<triggered_effect trigger="onSelfAttackedOther" action="AddBuff" target="other" buff="buffIVcustomBurning">
+					<requirement name="RandomRoll" seed_type="Random" min_max="0,100" operation="LTE" value="50"/>
+				</triggered_effect>
+			</effect_group>
+		</item>
+		<item name="elementZombieVomitFire">
+			<property name="Meshfile" value="@:Other/Items/Weapons/Ranged/Vomit/vomitBulbPrefab.prefab"/>
+			<property name="Material" value="Morganic"/>
+			<property name="CreativeMode" value="None"/>
+			<property name="CustomIcon" value="missingIcon"/>
+			<property class="Action1">
+				<property name="Class" value="Projectile"/>
+				<property name="DamageEntity" value="12"/>
+				<property name="DamageBlock" value="84"/>
+				<property name="Explosion.ParticleIndex" value="7"/>
+				<property name="Velocity" value="18"/>
+				<property name="FlyTime" value="2"/>
+				<property name="LifeTime" value="4"/>
+				<property name="CollisionRadius" value=".5"/>
+				<property name="DamageBonus.earth" value="0"/>
+				<property name="Buff" value="buffIVcustomBurning"/>
+			</property>
+			<effect_group name="elementZombieVomitFire" tiered="false">
+				<passive_effect name="EntityDamage" operation="perc_subtract" value=".1">
+					<requirement name="CVarCompare" cvar="_difficulty" operation="LTE" value="1"/>
+				</passive_effect>
+				<passive_effect name="EntityDamage" operation="perc_add" value=".3">
+					<requirement name="CVarCompare" cvar="_difficulty" operation="GTE" value="3"/>
+				</passive_effect>
+				<passive_effect name="BlockDamage" operation="perc_subtract" value=".1">
+					<requirement name="CVarCompare" cvar="_difficulty" operation="LTE" value="1"/>
+				</passive_effect>
+				<passive_effect name="BlockDamage" operation="perc_add" value=".3">
+					<requirement name="CVarCompare" cvar="_difficulty" operation="GTE" value="3"/>
+				</passive_effect>
+
+				<passive_effect name="ModSlots" operation="base_set" value="0"/>
+				<passive_effect name="DamageModifier" operation="perc_set" value="0" tags="earth"/>
+				<passive_effect name="DamageModifier" operation="perc_set" value="0.5" tags="stone"/>
+				<passive_effect name="DamageModifier" operation="perc_add" value="1.2" tags="metal"/>
+				<passive_effect name="BuffProcChance" operation="base_set" value=".30" tags="buffInfectionCatch"/>
+			</effect_group>
+		</item>
+		<item name="handElementZombieFatPoliceElectric">
+			<property name="Extends" value="meleeHandMaster"/>
+			<property name="CreativeMode" value="None"/>
+			<property name="Degradation" value="99999" param1="true"/>
+			<property class="Action0">
+				<property name="Range" value="1.75"/>
+				<property name="DamageEntity" value="24"/>
+				<property name="DamageBlock" value="80"/>
+			</property>
+			<property class="Action1">
+				<property name="Class" value="Vomit"/>
+				<property name="Hitmask_override" value="Arrow"/>
+				<property name="Delay" value=".3"/>
+				<property name="Range" value="200"/>
+				<property name="Infinite_ammo" value="true"/>
+				<property name="Magazine_items" value="elementZombieVomitElectric"/>
+				<property name="Sound_warning" value="hulkvomitwarning"/>
+				<property name="Sound_start" value="hulkvomitattack"/>
+				<property name="Sound_repeat" value=""/>
+				<property name="Sound_end" value=""/>
+				<property name="Sound_empty" value=""/>
+				<property name="Sound_reload" value=""/>
+			</property>
+			<effect_group name="handElementZombieFatPoliceElectric" tiered="false">
+				<passive_effect name="ModSlots" operation="base_set" value="0"/>
+				<passive_effect name="DamageFalloffRange" operation="base_set" value="50"/>
+				<passive_effect name="MaxRange" operation="base_set" value="100"/>
+				<passive_effect name="MagazineSize" operation="base_set" value="1"/>
+				<passive_effect name="BurstRoundCount" operation="base_set" value="1"/>
+				<passive_effect name="SpreadDegreesVertical" operation="base_set" value="2"/>
+				<passive_effect name="SpreadDegreesHorizontal" operation="base_set" value="4"/>
+				<passive_effect name="SpreadMultiplierIdle" operation="base_set" value="1"/>
+				<triggered_effect trigger="onSelfAttackedOther" action="AddBuff" target="other" buff="buffIVcustomShock">
+					<requirement name="RandomRoll" seed_type="Random" min_max="0,100" operation="LTE" value="50"/>
+				</triggered_effect>
+			</effect_group>
+		</item>
+		<item name="elementZombieVomitElectric">
+			<property name="Meshfile" value="@:Other/Items/Weapons/Ranged/Vomit/vomitBulbPrefab.prefab"/>
+			<property name="Material" value="Morganic"/>
+			<property name="CreativeMode" value="None"/>
+			<property class="Action1">
+				<property name="Class" value="Projectile"/>
+				<property name="DamageEntity" value="12"/>
+				<property name="DamageBlock" value="84"/>
+				<property name="Explosion.ParticleIndex" value="7"/>
+				<property name="Velocity" value="18"/>
+				<property name="FlyTime" value="2"/>
+				<property name="LifeTime" value="4"/>
+				<property name="CollisionRadius" value=".5"/>
+				<property name="DamageBonus.earth" value="0"/>
+				<property name="Buff" value="buffIVcustomShock"/>
+			</property>
+			<effect_group name="elementZombieVomitElectric" tiered="false">
+				<passive_effect name="EntityDamage" operation="perc_subtract" value=".1">
+					<requirement name="CVarCompare" cvar="_difficulty" operation="LTE" value="1"/>
+				</passive_effect>
+				<passive_effect name="EntityDamage" operation="perc_add" value=".3">
+					<requirement name="CVarCompare" cvar="_difficulty" operation="GTE" value="3"/>
+				</passive_effect>
+				<passive_effect name="BlockDamage" operation="perc_subtract" value=".1">
+					<requirement name="CVarCompare" cvar="_difficulty" operation="LTE" value="1"/>
+				</passive_effect>
+				<passive_effect name="BlockDamage" operation="perc_add" value=".3">
+					<requirement name="CVarCompare" cvar="_difficulty" operation="GTE" value="3"/>
+				</passive_effect>
+
+				<passive_effect name="ModSlots" operation="base_set" value="0"/>
+				<passive_effect name="DamageModifier" operation="perc_set" value="0" tags="earth"/>
+				<passive_effect name="DamageModifier" operation="perc_set" value="0.5" tags="stone"/>
+				<passive_effect name="DamageModifier" operation="perc_add" value="1.2" tags="metal"/>
+				<passive_effect name="BuffProcChance" operation="base_set" value=".30" tags="buffInfectionCatch"/>
+			</effect_group>
+		</item>
+		<item name="handElementZombieFatPoliceToxic">
+			<property name="Extends" value="meleeHandMaster"/>
+			<property name="CreativeMode" value="None"/>
+			<property name="Degradation" value="99999" param1="true"/>
+			<property class="Action0">
+				<property name="Range" value="1.75"/>
+				<property name="DamageEntity" value="24"/>
+				<property name="DamageBlock" value="80"/>
+			</property>
+			<property class="Action1">
+				<property name="Class" value="Vomit"/>
+				<property name="Hitmask_override" value="Arrow"/>
+				<property name="Delay" value=".3"/>
+				<property name="Range" value="200"/>
+				<property name="Infinite_ammo" value="true"/>
+				<property name="Magazine_items" value="elementZombieVomitToxic"/>
+				<property name="Sound_warning" value="hulkvomitwarning"/>
+				<property name="Sound_start" value="hulkvomitattack"/>
+				<property name="Sound_repeat" value=""/>
+				<property name="Sound_end" value=""/>
+				<property name="Sound_empty" value=""/>
+				<property name="Sound_reload" value=""/>
+			</property>
+			<effect_group name="handElementZombieFatPoliceToxic" tiered="false">
+				<passive_effect name="ModSlots" operation="base_set" value="0"/>
+				<passive_effect name="DamageFalloffRange" operation="base_set" value="50"/>
+				<passive_effect name="MaxRange" operation="base_set" value="100"/>
+				<passive_effect name="MagazineSize" operation="base_set" value="1"/>
+				<passive_effect name="BurstRoundCount" operation="base_set" value="1"/>
+				<passive_effect name="SpreadDegreesVertical" operation="base_set" value="2"/>
+				<passive_effect name="SpreadDegreesHorizontal" operation="base_set" value="4"/>
+				<passive_effect name="SpreadMultiplierIdle" operation="base_set" value="1"/>
+				<triggered_effect trigger="onSelfAttackedOther" action="AddBuff" target="other" buff="buffIVcustomPoison">
+					<requirement name="RandomRoll" seed_type="Random" min_max="0,100" operation="LTE" value="50"/>
+				</triggered_effect>
+			</effect_group>
+		</item>
+		<item name="elementZombieVomitToxic">
+			<property name="Meshfile" value="@:Other/Items/Weapons/Ranged/Vomit/vomitBulbPrefab.prefab"/>
+			<property name="Material" value="Morganic"/>
+			<property name="CreativeMode" value="None"/>
+			<property class="Action1">
+				<property name="Class" value="Projectile"/>
+				<property name="DamageEntity" value="12"/>
+				<property name="DamageBlock" value="84"/>
+				<property name="Explosion.ParticleIndex" value="7"/>
+				<property name="Velocity" value="18"/>
+				<property name="FlyTime" value="2"/>
+				<property name="LifeTime" value="4"/>
+				<property name="CollisionRadius" value=".5"/>
+				<property name="DamageBonus.earth" value="0"/>
+				<property name="Buff" value="buffIVcustomPoison"/>
+			</property>
+			<effect_group name="elementZombieVomitToxic" tiered="false">
+				<passive_effect name="EntityDamage" operation="perc_subtract" value=".1">
+					<requirement name="CVarCompare" cvar="_difficulty" operation="LTE" value="1"/>
+				</passive_effect>
+				<passive_effect name="EntityDamage" operation="perc_add" value=".3">
+					<requirement name="CVarCompare" cvar="_difficulty" operation="GTE" value="3"/>
+				</passive_effect>
+				<passive_effect name="BlockDamage" operation="perc_subtract" value=".1">
+					<requirement name="CVarCompare" cvar="_difficulty" operation="LTE" value="1"/>
+				</passive_effect>
+				<passive_effect name="BlockDamage" operation="perc_add" value=".3">
+					<requirement name="CVarCompare" cvar="_difficulty" operation="GTE" value="3"/>
+				</passive_effect>
+
+				<passive_effect name="ModSlots" operation="base_set" value="0"/>
+				<passive_effect name="DamageModifier" operation="perc_set" value="0" tags="earth"/>
+				<passive_effect name="DamageModifier" operation="perc_set" value="0.5" tags="stone"/>
+				<passive_effect name="DamageModifier" operation="perc_add" value="1.2" tags="metal"/>
+				<passive_effect name="BuffProcChance" operation="base_set" value=".30" tags="buffInfectionCatch"/>
+			</effect_group>
+		</item>
+		<item name="handElementZombieFatPoliceFrost">
+			<property name="Extends" value="meleeHandMaster"/>
+			<property name="CreativeMode" value="None"/>
+			<property name="Degradation" value="99999" param1="true"/>
+			<property class="Action0">
+				<property name="Range" value="1.75"/>
+				<property name="DamageEntity" value="24"/>
+				<property name="DamageBlock" value="80"/>
+			</property>
+			<property class="Action1">
+				<property name="Class" value="Vomit"/>
+				<property name="Hitmask_override" value="Arrow"/>
+				<property name="Delay" value=".3"/>
+				<property name="Range" value="200"/>
+				<property name="Infinite_ammo" value="true"/>
+				<property name="Magazine_items" value="elementZombieVomitFrost"/>
+				<property name="Sound_warning" value="hulkvomitwarning"/>
+				<property name="Sound_start" value="hulkvomitattack"/>
+				<property name="Sound_repeat" value=""/>
+				<property name="Sound_end" value=""/>
+				<property name="Sound_empty" value=""/>
+				<property name="Sound_reload" value=""/>
+			</property>
+			<effect_group name="handElementZombieFatPoliceFrost" tiered="false">
+				<passive_effect name="ModSlots" operation="base_set" value="0"/>
+				<passive_effect name="DamageFalloffRange" operation="base_set" value="50"/>
+				<passive_effect name="MaxRange" operation="base_set" value="100"/>
+				<passive_effect name="MagazineSize" operation="base_set" value="1"/>
+				<passive_effect name="BurstRoundCount" operation="base_set" value="1"/>
+				<passive_effect name="SpreadDegreesVertical" operation="base_set" value="2"/>
+				<passive_effect name="SpreadDegreesHorizontal" operation="base_set" value="4"/>
+				<passive_effect name="SpreadMultiplierIdle" operation="base_set" value="1"/>
+				<triggered_effect trigger="onSelfAttackedOther" action="AddBuff" target="other" buff="buffIVcustomFrost">
+					<requirement name="RandomRoll" seed_type="Random" min_max="0,100" operation="LTE" value="50"/>
+				</triggered_effect>
+			</effect_group>
+		</item>
+		<item name="elementZombieVomitFrost">
+			<property name="Meshfile" value="@:Other/Items/Weapons/Ranged/Vomit/vomitBulbPrefab.prefab"/>
+			<property name="Material" value="Morganic"/>
+			<property name="CreativeMode" value="None"/>
+			<property class="Action1">
+				<property name="Class" value="Projectile"/>
+				<property name="DamageEntity" value="12"/>
+				<property name="DamageBlock" value="84"/>
+				<property name="Explosion.ParticleIndex" value="7"/>
+				<property name="Velocity" value="18"/>
+				<property name="FlyTime" value="2"/>
+				<property name="LifeTime" value="4"/>
+				<property name="CollisionRadius" value=".5"/>
+				<property name="DamageBonus.earth" value="0"/>
+				<property name="Buff" value="buffIVcustomFrost"/>
+			</property>
+			<effect_group name="elementZombieVomitFrost" tiered="false">
+				<passive_effect name="EntityDamage" operation="perc_subtract" value=".1">
+					<requirement name="CVarCompare" cvar="_difficulty" operation="LTE" value="1"/>
+				</passive_effect>
+				<passive_effect name="EntityDamage" operation="perc_add" value=".3">
+					<requirement name="CVarCompare" cvar="_difficulty" operation="GTE" value="3"/>
+				</passive_effect>
+				<passive_effect name="BlockDamage" operation="perc_subtract" value=".1">
+					<requirement name="CVarCompare" cvar="_difficulty" operation="LTE" value="1"/>
+				</passive_effect>
+				<passive_effect name="BlockDamage" operation="perc_add" value=".3">
+					<requirement name="CVarCompare" cvar="_difficulty" operation="GTE" value="3"/>
+				</passive_effect>
+
+				<passive_effect name="ModSlots" operation="base_set" value="0"/>
+				<passive_effect name="DamageModifier" operation="perc_set" value="0" tags="earth"/>
+				<passive_effect name="DamageModifier" operation="perc_set" value="0.5" tags="stone"/>
+				<passive_effect name="DamageModifier" operation="perc_add" value="1.2" tags="metal"/>
+				<passive_effect name="BuffProcChance" operation="base_set" value=".30" tags="buffInfectionCatch"/>
+			</effect_group>
+		</item>
+		<item name="handElementZombieFatPoliceSoul">
+			<property name="Extends" value="meleeHandMaster"/>
+			<property name="CreativeMode" value="None"/>
+			<property name="Degradation" value="99999" param1="true"/>
+			<property class="Action0">
+				<property name="Range" value="1.75"/>
+				<property name="DamageEntity" value="24"/>
+				<property name="DamageBlock" value="80"/>
+			</property>
+			<property class="Action1">
+				<property name="Class" value="Vomit"/>
+				<property name="Hitmask_override" value="Arrow"/>
+				<property name="Delay" value=".3"/>
+				<property name="Range" value="200"/>
+				<property name="Infinite_ammo" value="true"/>
+				<property name="Magazine_items" value="elementZombieVomitSoul"/>
+				<property name="Sound_warning" value="hulkvomitwarning"/>
+				<property name="Sound_start" value="hulkvomitattack"/>
+				<property name="Sound_repeat" value=""/>
+				<property name="Sound_end" value=""/>
+				<property name="Sound_empty" value=""/>
+				<property name="Sound_reload" value=""/>
+			</property>
+			<effect_group name="handElementZombieFatPoliceSoul" tiered="false">
+				<passive_effect name="ModSlots" operation="base_set" value="0"/>
+				<passive_effect name="DamageFalloffRange" operation="base_set" value="50"/>
+				<passive_effect name="MaxRange" operation="base_set" value="100"/>
+				<passive_effect name="MagazineSize" operation="base_set" value="1"/>
+				<passive_effect name="BurstRoundCount" operation="base_set" value="1"/>
+				<passive_effect name="SpreadDegreesVertical" operation="base_set" value="2"/>
+				<passive_effect name="SpreadDegreesHorizontal" operation="base_set" value="4"/>
+				<passive_effect name="SpreadMultiplierIdle" operation="base_set" value="1"/>
+				<triggered_effect trigger="onSelfAttackedOther" action="AddBuff" target="other" buff="buffIVcustomDeathDeclare">
+					<requirement name="RandomRoll" seed_type="Random" min_max="0,100" operation="LTE" value="50"/>
+				</triggered_effect>
+			</effect_group>
+		</item>
+		<item name="elementZombieVomitSoul">
+			<property name="Meshfile" value="@:Other/Items/Weapons/Ranged/Vomit/vomitBulbPrefab.prefab"/>
+			<property name="Material" value="Morganic"/>
+			<property name="CreativeMode" value="None"/>
+			<property class="Action1">
+				<property name="Class" value="Projectile"/>
+				<property name="DamageEntity" value="12"/>
+				<property name="DamageBlock" value="84"/>
+				<property name="Explosion.ParticleIndex" value="7"/>
+				<property name="Velocity" value="18"/>
+				<property name="FlyTime" value="2"/>
+				<property name="LifeTime" value="4"/>
+				<property name="CollisionRadius" value=".5"/>
+				<property name="DamageBonus.earth" value="0"/>
+				<property name="Buff" value="buffIVcustomDeathDeclare"/>
+			</property>
+			<effect_group name="elementZombieVomitSoul" tiered="false">
+				<passive_effect name="EntityDamage" operation="perc_subtract" value=".1">
+					<requirement name="CVarCompare" cvar="_difficulty" operation="LTE" value="1"/>
+				</passive_effect>
+				<passive_effect name="EntityDamage" operation="perc_add" value=".3">
+					<requirement name="CVarCompare" cvar="_difficulty" operation="GTE" value="3"/>
+				</passive_effect>
+				<passive_effect name="BlockDamage" operation="perc_subtract" value=".1">
+					<requirement name="CVarCompare" cvar="_difficulty" operation="LTE" value="1"/>
+				</passive_effect>
+				<passive_effect name="BlockDamage" operation="perc_add" value=".3">
+					<requirement name="CVarCompare" cvar="_difficulty" operation="GTE" value="3"/>
+				</passive_effect>
+
+				<passive_effect name="ModSlots" operation="base_set" value="0"/>
+				<passive_effect name="DamageModifier" operation="perc_set" value="0" tags="earth"/>
+				<passive_effect name="DamageModifier" operation="perc_set" value="0.5" tags="stone"/>
+				<passive_effect name="DamageModifier" operation="perc_add" value="1.2" tags="metal"/>
+				<passive_effect name="BuffProcChance" operation="base_set" value=".30" tags="buffInfectionCatch"/>
+			</effect_group>
+		</item>
+		<!-- 特殊型專用 -->
+		<!-- DamageEntity +40%, DamageBlock -10% -->
+		<item name="handElementZombieFireSpecial">
+			<property name="Extends" value="meleeHandMaster"/>
+			<property name="CreativeMode" value="None"/>
+			<property class="Action0">
+				<property name="DamageEntity" value="28"/>
+				<property name="DamageBlock" value="18"/>
+			</property>
+			<effect_group name="handElementZombieFireSpecial" tiered="false">
+				<passive_effect name="EntityDamage" operation="perc_subtract" value=".08">
+					<requirement name="CVarCompare" cvar="_difficulty" operation="LTE" value="1"/>
+				</passive_effect>
+				<passive_effect name="EntityDamage" operation="perc_add" value=".4">
+					<requirement name="CVarCompare" cvar="_difficulty" operation="GTE" value="3"/>
+				</passive_effect>
+				<passive_effect name="BlockDamage" operation="perc_subtract" value=".08">
+					<requirement name="CVarCompare" cvar="_difficulty" operation="LTE" value="1"/>
+				</passive_effect>
+				<passive_effect name="BlockDamage" operation="perc_add" value=".4">
+					<requirement name="CVarCompare" cvar="_difficulty" operation="GTE" value="3"/>
+				</passive_effect>
+
+				<passive_effect name="ModSlots" operation="base_set" value="0"/>
+				<triggered_effect trigger="onSelfAttackedOther" action="AddBuff" target="other" buff="buffIVcustomBurning">
+					<requirement name="RandomRoll" seed_type="Random" min_max="0,100" operation="LTE" value="50"/>
+				</triggered_effect>
+			</effect_group>
+			<effect_group name="handElementZombie_zombieNurse" tiered="false">
+				<requirement name="EntityTagCompare" tags="zombieNurse"/>
+				<triggered_effect trigger="onSelfAttackedOther" action="AddBuff" target="other" buff="buffIVstopRecoverHP"/>
+			</effect_group>
+			<effect_group name="handElementZombie_zombieSkateboarder" tiered="false">
+				<requirement name="EntityTagCompare" tags="zombieSkateboarder"/>
+				<triggered_effect trigger="onSelfAttackedOther" action="AddBuff" target="other" buff="buffIVslowDownRunningSpeed"/>
+			</effect_group>
+		</item>
+		<item name="handElementZombieElectricSpecial">
+			<property name="Extends" value="meleeHandMaster"/>
+			<property name="CreativeMode" value="None"/>
+			<property class="Action0">
+				<property name="DamageEntity" value="28"/>
+				<property name="DamageBlock" value="18"/>
+			</property>
+			<effect_group name="handElementZombieElectricSpecial" tiered="false">
+				<passive_effect name="EntityDamage" operation="perc_subtract" value=".08">
+					<requirement name="CVarCompare" cvar="_difficulty" operation="LTE" value="1"/>
+				</passive_effect>
+				<passive_effect name="EntityDamage" operation="perc_add" value=".4">
+					<requirement name="CVarCompare" cvar="_difficulty" operation="GTE" value="3"/>
+				</passive_effect>
+				<passive_effect name="BlockDamage" operation="perc_subtract" value=".08">
+					<requirement name="CVarCompare" cvar="_difficulty" operation="LTE" value="1"/>
+				</passive_effect>
+				<passive_effect name="BlockDamage" operation="perc_add" value=".4">
+					<requirement name="CVarCompare" cvar="_difficulty" operation="GTE" value="3"/>
+				</passive_effect>
+
+				<passive_effect name="ModSlots" operation="base_set" value="0"/>
+				<triggered_effect trigger="onSelfAttackedOther" action="AddBuff" target="other" buff="buffIVcustomShock">
+					<requirement name="RandomRoll" seed_type="Random" min_max="0,100" operation="LTE" value="50"/>
+				</triggered_effect>
+			</effect_group>
+			<effect_group name="handElementZombie_zombieNurse" tiered="false">
+				<requirement name="EntityTagCompare" tags="zombieNurse"/>
+				<triggered_effect trigger="onSelfAttackedOther" action="AddBuff" target="other" buff="buffIVstopRecoverHP"/>
+			</effect_group>
+			<effect_group name="handElementZombie_zombieSkateboarder" tiered="false">
+				<requirement name="EntityTagCompare" tags="zombieSkateboarder"/>
+				<triggered_effect trigger="onSelfAttackedOther" action="AddBuff" target="other" buff="buffIVslowDownRunningSpeed"/>
+			</effect_group>
+		</item>
+		<item name="handElementZombieToxicSpecial">
+			<property name="Extends" value="meleeHandMaster"/>
+			<property name="CreativeMode" value="None"/>
+			<property class="Action0">
+				<property name="DamageEntity" value="28"/>
+				<property name="DamageBlock" value="18"/>
+			</property>
+			<effect_group name="handElementZombieToxicSpecial" tiered="false">
+				<passive_effect name="EntityDamage" operation="perc_subtract" value=".08">
+					<requirement name="CVarCompare" cvar="_difficulty" operation="LTE" value="1"/>
+				</passive_effect>
+				<passive_effect name="EntityDamage" operation="perc_add" value=".4">
+					<requirement name="CVarCompare" cvar="_difficulty" operation="GTE" value="3"/>
+				</passive_effect>
+				<passive_effect name="BlockDamage" operation="perc_subtract" value=".08">
+					<requirement name="CVarCompare" cvar="_difficulty" operation="LTE" value="1"/>
+				</passive_effect>
+				<passive_effect name="BlockDamage" operation="perc_add" value=".4">
+					<requirement name="CVarCompare" cvar="_difficulty" operation="GTE" value="3"/>
+				</passive_effect>
+
+				<passive_effect name="ModSlots" operation="base_set" value="0"/>
+				<triggered_effect trigger="onSelfAttackedOther" action="AddBuff" target="other" buff="buffIVcustomPoison">
+					<requirement name="RandomRoll" seed_type="Random" min_max="0,100" operation="LTE" value="50"/>
+				</triggered_effect>
+			</effect_group>
+			<effect_group name="handElementZombie_zombieNurse" tiered="false">
+				<requirement name="EntityTagCompare" tags="zombieNurse"/>
+				<triggered_effect trigger="onSelfAttackedOther" action="AddBuff" target="other" buff="buffIVstopRecoverHP"/>
+			</effect_group>
+			<effect_group name="handElementZombie_zombieSkateboarder" tiered="false">
+				<requirement name="EntityTagCompare" tags="zombieSkateboarder"/>
+				<triggered_effect trigger="onSelfAttackedOther" action="AddBuff" target="other" buff="buffIVslowDownRunningSpeed"/>
+			</effect_group>
+		</item>
+		<item name="handElementZombieFrostSpecial">
+			<property name="Extends" value="meleeHandMaster"/>
+			<property name="CreativeMode" value="None"/>
+			<property class="Action0">
+				<property name="DamageEntity" value="28"/>
+				<property name="DamageBlock" value="18"/>
+			</property>
+			<effect_group name="handElementZombieFrostSpecial" tiered="false">
+				<passive_effect name="EntityDamage" operation="perc_subtract" value=".08">
+					<requirement name="CVarCompare" cvar="_difficulty" operation="LTE" value="1"/>
+				</passive_effect>
+				<passive_effect name="EntityDamage" operation="perc_add" value=".4">
+					<requirement name="CVarCompare" cvar="_difficulty" operation="GTE" value="3"/>
+				</passive_effect>
+				<passive_effect name="BlockDamage" operation="perc_subtract" value=".08">
+					<requirement name="CVarCompare" cvar="_difficulty" operation="LTE" value="1"/>
+				</passive_effect>
+				<passive_effect name="BlockDamage" operation="perc_add" value=".4">
+					<requirement name="CVarCompare" cvar="_difficulty" operation="GTE" value="3"/>
+				</passive_effect>
+
+				<passive_effect name="ModSlots" operation="base_set" value="0"/>
+				<triggered_effect trigger="onSelfAttackedOther" action="AddBuff" target="other" buff="buffIVcustomFrost">
+					<requirement name="RandomRoll" seed_type="Random" min_max="0,100" operation="LTE" value="50"/>
+				</triggered_effect>
+			</effect_group>
+			<effect_group name="handElementZombie_zombieNurse" tiered="false">
+				<requirement name="EntityTagCompare" tags="zombieNurse"/>
+				<triggered_effect trigger="onSelfAttackedOther" action="AddBuff" target="other" buff="buffIVstopRecoverHP"/>
+			</effect_group>
+			<effect_group name="handElementZombie_zombieSkateboarder" tiered="false">
+				<requirement name="EntityTagCompare" tags="zombieSkateboarder"/>
+				<triggered_effect trigger="onSelfAttackedOther" action="AddBuff" target="other" buff="buffIVslowDownRunningSpeed"/>
+			</effect_group>
+		</item>
+		<item name="handElementZombieSoulSpecial">
+			<property name="Extends" value="meleeHandMaster"/>
+			<property name="CreativeMode" value="None"/>
+			<property class="Action0">
+				<property name="DamageEntity" value="28"/>
+				<property name="DamageBlock" value="18"/>
+			</property>
+			<effect_group name="handElementZombieSoulSpecial" tiered="false">
+				<passive_effect name="EntityDamage" operation="perc_subtract" value=".08">
+					<requirement name="CVarCompare" cvar="_difficulty" operation="LTE" value="1"/>
+				</passive_effect>
+				<passive_effect name="EntityDamage" operation="perc_add" value=".4">
+					<requirement name="CVarCompare" cvar="_difficulty" operation="GTE" value="3"/>
+				</passive_effect>
+				<passive_effect name="BlockDamage" operation="perc_subtract" value=".08">
+					<requirement name="CVarCompare" cvar="_difficulty" operation="LTE" value="1"/>
+				</passive_effect>
+				<passive_effect name="BlockDamage" operation="perc_add" value=".4">
+					<requirement name="CVarCompare" cvar="_difficulty" operation="GTE" value="3"/>
+				</passive_effect>
+
+				<passive_effect name="ModSlots" operation="base_set" value="0"/>
+				<triggered_effect trigger="onSelfAttackedOther" action="AddBuff" target="other" buff="buffIVcustomDeathDeclare">
+					<requirement name="RandomRoll" seed_type="Random" min_max="0,100" operation="LTE" value="50"/>
+				</triggered_effect>
+			</effect_group>
+			<effect_group name="handElementZombieSoulSpecial_Night" tiered="false">
+				<requirement name="IsNight"/>
+				<passive_effect name="EntityDamage" operation="perc_add" value=".2"/>
+				<passive_effect name="PhysicalDamageResist" operation="perc_subtract" value=".1"/>
+			</effect_group>
+			<effect_group name="handElementZombie_zombieNurse" tiered="false">
+				<requirement name="EntityTagCompare" tags="zombieNurse"/>
+				<triggered_effect trigger="onSelfAttackedOther" action="AddBuff" target="other" buff="buffIVstopRecoverHP"/>
+			</effect_group>
+			<effect_group name="handElementZombie_zombieSkateboarder" tiered="false">
+				<requirement name="EntityTagCompare" tags="zombieSkateboarder"/>
+				<triggered_effect trigger="onSelfAttackedOther" action="AddBuff" target="other" buff="buffIVslowDownRunningSpeed"/>
+			</effect_group>
+		</item>
+		<!-- 稀有型專用 -->
+		<!-- DamageEntity +50%, DamageBlock -5% -->
+		<item name="handElementZombieFireRare">
+			<property name="Extends" value="meleeHandMaster"/>
+			<property name="CreativeMode" value="None"/>
+			<property class="Action0">
+				<property name="DamageEntity" value="60"/>
+				<property name="DamageBlock" value="57"/>
+			</property>
+			<effect_group name="handElementZombieFireRare" tiered="false">
+				<passive_effect name="EntityDamage" operation="perc_subtract" value=".1">
+					<requirement name="CVarCompare" cvar="_difficulty" operation="LTE" value="1"/>
+				</passive_effect>
+				<passive_effect name="EntityDamage" operation="perc_add" value=".3">
+					<requirement name="CVarCompare" cvar="_difficulty" operation="GTE" value="3"/>
+				</passive_effect>
+				<passive_effect name="BlockDamage" operation="perc_subtract" value=".1">
+					<requirement name="CVarCompare" cvar="_difficulty" operation="LTE" value="1"/>
+				</passive_effect>
+				<passive_effect name="BlockDamage" operation="perc_add" value=".3">
+					<requirement name="CVarCompare" cvar="_difficulty" operation="GTE" value="3"/>
+				</passive_effect>
+
+				<passive_effect name="ModSlots" operation="base_set" value="0"/>
+				<triggered_effect trigger="onSelfAttackedOther" action="AddBuff" target="other" buff="buffIVcustomBurning"/>
+			</effect_group>
+		</item>
+		<item name="handElementZombieElectricRare">
+			<property name="Extends" value="meleeHandMaster"/>
+			<property name="CreativeMode" value="None"/>
+			<property class="Action0">
+				<property name="DamageEntity" value="60"/>
+				<property name="DamageBlock" value="57"/>
+			</property>
+			<effect_group name="handElementZombieElectricRare" tiered="false">
+				<passive_effect name="EntityDamage" operation="perc_subtract" value=".1">
+					<requirement name="CVarCompare" cvar="_difficulty" operation="LTE" value="1"/>
+				</passive_effect>
+				<passive_effect name="EntityDamage" operation="perc_add" value=".3">
+					<requirement name="CVarCompare" cvar="_difficulty" operation="GTE" value="3"/>
+				</passive_effect>
+				<passive_effect name="BlockDamage" operation="perc_subtract" value=".1">
+					<requirement name="CVarCompare" cvar="_difficulty" operation="LTE" value="1"/>
+				</passive_effect>
+				<passive_effect name="BlockDamage" operation="perc_add" value=".3">
+					<requirement name="CVarCompare" cvar="_difficulty" operation="GTE" value="3"/>
+				</passive_effect>
+
+				<passive_effect name="ModSlots" operation="base_set" value="0"/>
+				<triggered_effect trigger="onSelfAttackedOther" action="AddBuff" target="other" buff="buffIVcustomShock"/>
+			</effect_group>
+		</item>
+		<item name="handElementZombieToxicRare">
+			<property name="Extends" value="meleeHandMaster"/>
+			<property name="CreativeMode" value="None"/>
+			<property class="Action0">
+				<property name="DamageEntity" value="60"/>
+				<property name="DamageBlock" value="57"/>
+			</property>
+			<effect_group name="handElementZombieToxicRare" tiered="false">
+				<passive_effect name="EntityDamage" operation="perc_subtract" value=".1">
+					<requirement name="CVarCompare" cvar="_difficulty" operation="LTE" value="1"/>
+				</passive_effect>
+				<passive_effect name="EntityDamage" operation="perc_add" value=".3">
+					<requirement name="CVarCompare" cvar="_difficulty" operation="GTE" value="3"/>
+				</passive_effect>
+				<passive_effect name="BlockDamage" operation="perc_subtract" value=".1">
+					<requirement name="CVarCompare" cvar="_difficulty" operation="LTE" value="1"/>
+				</passive_effect>
+				<passive_effect name="BlockDamage" operation="perc_add" value=".3">
+					<requirement name="CVarCompare" cvar="_difficulty" operation="GTE" value="3"/>
+				</passive_effect>
+
+				<passive_effect name="ModSlots" operation="base_set" value="0"/>
+				<triggered_effect trigger="onSelfAttackedOther" action="AddBuff" target="other" buff="buffIVcustomPoison"/>
+			</effect_group>
+		</item>
+		<item name="handElementZombieFrostRare">
+			<property name="Extends" value="meleeHandMaster"/>
+			<property name="CreativeMode" value="None"/>
+			<property class="Action0">
+				<property name="DamageEntity" value="60"/>
+				<property name="DamageBlock" value="57"/>
+			</property>
+			<effect_group name="handElementZombieFrostRare" tiered="false">
+				<passive_effect name="EntityDamage" operation="perc_subtract" value=".1">
+					<requirement name="CVarCompare" cvar="_difficulty" operation="LTE" value="1"/>
+				</passive_effect>
+				<passive_effect name="EntityDamage" operation="perc_add" value=".3">
+					<requirement name="CVarCompare" cvar="_difficulty" operation="GTE" value="3"/>
+				</passive_effect>
+				<passive_effect name="BlockDamage" operation="perc_subtract" value=".1">
+					<requirement name="CVarCompare" cvar="_difficulty" operation="LTE" value="1"/>
+				</passive_effect>
+				<passive_effect name="BlockDamage" operation="perc_add" value=".3">
+					<requirement name="CVarCompare" cvar="_difficulty" operation="GTE" value="3"/>
+				</passive_effect>
+
+				<passive_effect name="ModSlots" operation="base_set" value="0"/>
+				<triggered_effect trigger="onSelfAttackedOther" action="AddBuff" target="other" buff="buffIVcustomFrost"/>
+			</effect_group>
+		</item>
+		<item name="handElementZombieSoulRare">
+			<property name="Extends" value="meleeHandMaster"/>
+			<property name="CreativeMode" value="None"/>
+			<property class="Action0">
+				<property name="DamageEntity" value="60"/>
+				<property name="DamageBlock" value="57"/>
+			</property>
+			<effect_group name="handElementZombieSoulRare" tiered="false">
+				<passive_effect name="EntityDamage" operation="perc_subtract" value=".1">
+					<requirement name="CVarCompare" cvar="_difficulty" operation="LTE" value="1"/>
+				</passive_effect>
+				<passive_effect name="EntityDamage" operation="perc_add" value=".3">
+					<requirement name="CVarCompare" cvar="_difficulty" operation="GTE" value="3"/>
+				</passive_effect>
+				<passive_effect name="BlockDamage" operation="perc_subtract" value=".1">
+					<requirement name="CVarCompare" cvar="_difficulty" operation="LTE" value="1"/>
+				</passive_effect>
+				<passive_effect name="BlockDamage" operation="perc_add" value=".3">
+					<requirement name="CVarCompare" cvar="_difficulty" operation="GTE" value="3"/>
+				</passive_effect>
+
+				<passive_effect name="ModSlots" operation="base_set" value="0"/>
+				<triggered_effect trigger="onSelfAttackedOther" action="AddBuff" target="other" buff="buffIVcustomDeathDeclare"/>
+			</effect_group>
+		</item>
+	</append>
+	<!-- 藥品 -->
+	<append xpath="/items">
+		<!-- 消除異質火焰 -->
+		<item name="drinkIvRemoveFirePotion">
+			<property name="CustomIcon" value="potionRemoveFire"/>
+			<property name="DescriptionKey" value="drinkIvRemoveFirePotionDesc"/>
+			<property name="HoldType" value="3"/>
+			<property name="DisplayType" value="RemoveHeterogeneousStatePotion"/>
+			<property name="Meshfile" value="#@modfolder:Resources/elementzombie?potion_no_fire"/>
+			<property name="DropMeshfile" value="#@modfolder:Resources/elementzombie?potion_no_fire"/>
+			<property name="DropScale" value="2.5"/>
+			<property name="Material" value="Mglass"/>
+			<property name="Weight" value="10"/>
+			<property name="Stacknumber" value="1000"/>
+			<property name="EconomicValue" value="100"/>
+			<property name="Group" value="Science,CFChemicals,Medical"/>
+			<property class="Action0">
+				<property name="Class" value="Eat"/>
+				<property name="Delay" value=".5"/>
+				<property name="Sound_start" value="player_drinking"/>
+			</property>
+			<effect_group tiered="false">
+					<display_value name="dDuration" value="30"/>
+					<display_value name="dStackTime" value="1"/>
+					<triggered_effect trigger="onSelfPrimaryActionEnd" action="AddBuff" target="self" buff="buffIvRemoveFirePotion"/>
+					<triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="IV_EZresistanceOtherworldlyFireTime" operation="set" value="0">
+						<requirement name="CVarCompare" cvar="IV_EZresistanceOtherworldlyFireTime" operation="LTE" value="0"/>
+					</triggered_effect>
+					<triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="IV_EZresistanceOtherworldlyFireTime" operation="add" value="30">
+						<requirement name="CVarCompare" cvar="IV_EZresistanceOtherworldlyFireTime" operation="GTE" value="0"/>
+					</triggered_effect>
+			</effect_group>
+			<effect_group name="first remove" tiered="false">
+				<triggered_effect trigger="onSelfPrimaryActionStart" action="RemoveBuff" target="self" buff="buffIVcustomBurning"/>
+				<triggered_effect trigger="onSelfPrimaryActionStart" action="RemoveBuff" target="self" buff="buffIVcustomBurningSpecial"/>
+			</effect_group>
+		</item>
+		<!-- 消除異質電擊 -->
+		<item name="drinkIvRemoveShockPotion">
+			<property name="CustomIcon" value="potionRemoveShock"/>
+			<property name="DescriptionKey" value="drinkIvRemoveShockPotionDesc"/>
+			<property name="HoldType" value="3"/>
+			<property name="DisplayType" value="RemoveHeterogeneousStatePotion"/>
+			<property name="Meshfile" value="#@modfolder:Resources/elementzombie?potion_no_electricshock"/>
+			<property name="DropMeshfile" value="#@modfolder:Resources/elementzombie?potion_no_electricshock"/>
+			<property name="DropScale" value="2.5"/>
+			<property name="Material" value="Mglass"/>
+			<property name="Weight" value="10"/>
+			<property name="Stacknumber" value="1000"/>
+			<property name="EconomicValue" value="100"/>
+			<property name="Group" value="Science,CFChemicals,Medical"/>
+			<property class="Action0">
+				<property name="Class" value="Eat"/>
+				<property name="Delay" value=".5"/>
+				<property name="Sound_start" value="player_drinking"/>
+			</property>
+			<effect_group tiered="false">
+					<display_value name="dDuration" value="30"/>
+					<display_value name="dStackTime" value="1"/>
+					<triggered_effect trigger="onSelfPrimaryActionEnd" action="AddBuff" target="self" buff="buffIvRemoveShockPotion"/>
+					<triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="IV_EZresistanceOtherworldlyShockTime" operation="set" value="0">
+						<requirement name="CVarCompare" cvar="IV_EZresistanceOtherworldlyShockTime" operation="LTE" value="0"/>
+					</triggered_effect>
+					<triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="IV_EZresistanceOtherworldlyShockTime" operation="add" value="30">
+						<requirement name="CVarCompare" cvar="IV_EZresistanceOtherworldlyShockTime" operation="GTE" value="0"/>
+					</triggered_effect>
+			</effect_group>
+			<effect_group name="first remove" tiered="false">
+				<triggered_effect trigger="onSelfPrimaryActionStart" action="RemoveBuff" target="self" buff="buffIVcustomShock"/>
+				<triggered_effect trigger="onSelfPrimaryActionStart" action="RemoveBuff" target="self" buff="buffIVcustomShockSpecial"/>
+			</effect_group>
+		</item>
+		<!-- 消除異質劇毒 -->
+		<item name="drinkIvRemovePoisonPotion">
+			<property name="CustomIcon" value="potionRemovePoison"/>
+			<property name="DescriptionKey" value="drinkIvRemovePoisonPotionDesc"/>
+			<property name="HoldType" value="3"/>
+			<property name="DisplayType" value="RemoveHeterogeneousStatePotion"/>
+			<property name="Meshfile" value="#@modfolder:Resources/elementzombie?potion_no_poison"/>
+			<property name="DropMeshfile" value="#@modfolder:Resources/elementzombie?potion_no_poison"/>
+			<property name="DropScale" value="2.5"/>
+			<property name="Material" value="Mglass"/>
+			<property name="Weight" value="10"/>
+			<property name="Stacknumber" value="1000"/>
+			<property name="EconomicValue" value="100"/>
+			<property name="Group" value="Science,CFChemicals,Medical"/>
+			<property class="Action0">
+				<property name="Class" value="Eat"/>
+				<property name="Delay" value=".5"/>
+				<property name="Sound_start" value="player_drinking"/>
+			</property>
+			<effect_group tiered="false">
+					<display_value name="dDuration" value="30"/>
+					<display_value name="dStackTime" value="1"/>
+					<triggered_effect trigger="onSelfPrimaryActionEnd" action="AddBuff" target="self" buff="buffIvRemovePoisonPotion"/>
+					<triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="IV_EZresistanceOtherworldlyPoisonTime" operation="set" value="0">
+						<requirement name="CVarCompare" cvar="IV_EZresistanceOtherworldlyPoisonTime" operation="LTE" value="0"/>
+					</triggered_effect>
+					<triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="IV_EZresistanceOtherworldlyPoisonTime" operation="add" value="30">
+						<requirement name="CVarCompare" cvar="IV_EZresistanceOtherworldlyPoisonTime" operation="GTE" value="0"/>
+					</triggered_effect>
+			</effect_group>
+			<effect_group name="first remove" tiered="false">
+				<triggered_effect trigger="onSelfPrimaryActionStart" action="RemoveBuff" target="self" buff="buffIVcustomPoison"/>
+				<triggered_effect trigger="onSelfPrimaryActionStart" action="RemoveBuff" target="self" buff="buffIVcustomPoisonSpecial"/>
+			</effect_group>
+		</item>
+		<!-- 消除異質冰凍 -->
+		<item name="drinkIvRemoveFrostPotion">
+			<property name="CustomIcon" value="potionRemoveFrost"/>
+			<property name="DescriptionKey" value="drinkIvRemoveFrostPotionDesc"/>
+			<property name="HoldType" value="3"/>
+			<property name="DisplayType" value="RemoveHeterogeneousStatePotion"/>
+			<property name="Meshfile" value="#@modfolder:Resources/elementzombie?potion_no_frozen"/>
+			<property name="DropMeshfile" value="#@modfolder:Resources/elementzombie?potion_no_frozen"/>
+			<property name="DropScale" value="2.5"/>
+			<property name="Material" value="Mglass"/>
+			<property name="Weight" value="10"/>
+			<property name="Stacknumber" value="1000"/>
+			<property name="EconomicValue" value="100"/>
+			<property name="Group" value="Science,CFChemicals,Medical"/>
+			<property class="Action0">
+				<property name="Class" value="Eat"/>
+				<property name="Delay" value=".5"/>
+				<property name="Sound_start" value="player_drinking"/>
+			</property>
+			<effect_group tiered="false">
+					<display_value name="dDuration" value="30"/>
+					<display_value name="dStackTime" value="1"/>
+					<triggered_effect trigger="onSelfPrimaryActionEnd" action="AddBuff" target="self" buff="buffIvRemoveFrostPotion"/>
+					<triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="IV_EZresistanceOtherworldlyFrostTime" operation="set" value="0">
+						<requirement name="CVarCompare" cvar="IV_EZresistanceOtherworldlyFrostTime" operation="LTE" value="0"/>
+					</triggered_effect>
+					<triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="IV_EZresistanceOtherworldlyFrostTime" operation="add" value="30">
+						<requirement name="CVarCompare" cvar="IV_EZresistanceOtherworldlyFrostTime" operation="GTE" value="0"/>
+					</triggered_effect>
+			</effect_group>
+			<effect_group name="first remove" tiered="false">
+				<triggered_effect trigger="onSelfPrimaryActionStart" action="RemoveBuff" target="self" buff="buffIVcustomFrost"/>
+				<triggered_effect trigger="onSelfPrimaryActionStart" action="RemoveBuff" target="self" buff="buffIVcustomFrostSpecial"/>
+			</effect_group>
+		</item>
+		<!-- 消除死亡宣告 -->
+		<item name="drinkIvRemoveDeathDeclarePotion">
+			<property name="CustomIcon" value="potionRemoveDeathDeclare"/>
+			<property name="DescriptionKey" value="drinkIvRemoveDeathDeclarePotionDesc"/>
+			<property name="HoldType" value="3"/>
+			<property name="DisplayType" value="RemoveHeterogeneousStatePotion"/>
+			<property name="Meshfile" value="#@modfolder:Resources/elementzombie?potion_no_death"/>
+			<property name="DropMeshfile" value="#@modfolder:Resources/elementzombie?potion_no_death"/>
+			<property name="DropScale" value="2.5"/>
+			<property name="Material" value="Mglass"/>
+			<property name="Weight" value="10"/>
+			<property name="Stacknumber" value="1000"/>
+			<property name="EconomicValue" value="100"/>
+			<property name="Group" value="Science,CFChemicals,Medical"/>
+			<property class="Action0">
+				<property name="Class" value="Eat"/>
+				<property name="Delay" value=".5"/>
+				<property name="Sound_start" value="player_drinking"/>
+			</property>
+			<effect_group tiered="false">
+					<display_value name="dDuration" value="30"/>
+					<display_value name="dStackTime" value="1"/>
+					<triggered_effect trigger="onSelfPrimaryActionEnd" action="AddBuff" target="self" buff="buffIvRemoveDeathDeclarePotion"/>
+					<triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="IV_EZresistanceOtherworldlyDeathDeclareTime" operation="set" value="0">
+						<requirement name="CVarCompare" cvar="IV_EZresistanceOtherworldlyDeathDeclareTime" operation="LTE" value="0"/>
+					</triggered_effect>
+					<triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="IV_EZresistanceOtherworldlyDeathDeclareTime" operation="add" value="30">
+						<requirement name="CVarCompare" cvar="IV_EZresistanceOtherworldlyDeathDeclareTime" operation="GTE" value="0"/>
+					</triggered_effect>
+			</effect_group>
+			<effect_group name="first remove" tiered="false">
+				<triggered_effect trigger="onSelfPrimaryActionStart" action="RemoveBuff" target="self" buff="buffIVcustomDeathDeclare"/>
+				<triggered_effect trigger="onSelfPrimaryActionStart" action="RemoveBuff" target="self" buff="buffIVcustomAbsorbEnergy"/>
+			</effect_group>
+		</item>
+		<!-- 偵查殭屍藥水 -->
+		<item name="drinkIvDetectEnemiesPotion">
+			<property name="CustomIcon" value="potionDetectEnemies"/>
+			<property name="DescriptionKey" value="drinkIvDetectEnemiesPotionDesc"/>
+			<property name="HoldType" value="3"/>
+			<property name="DisplayType" value="RemoveHeterogeneousStatePotion"/>
+			<property name="Meshfile" value="#@modfolder:Resources/elementzombie?potion_detect_enemies"/>
+			<property name="DropMeshfile" value="#@modfolder:Resources/elementzombie?potion_detect_enemies"/>
+			<property name="DropScale" value="2.5"/>
+			<property name="Material" value="Mglass"/>
+			<property name="Weight" value="10"/>
+			<property name="Stacknumber" value="1000"/>
+			<property name="EconomicValue" value="100"/>
+			<property name="Group" value="Science,CFChemicals,Medical"/>
+			<property class="Action0">
+				<property name="Class" value="Eat"/>
+				<property name="Delay" value="1"/>
+				<property name="Sound_start" value="player_drinking"/>
+			</property>
+			<effect_group tiered="false">
+					<display_value name="dDuration" value="300"/>
+					<display_value name="dStackTime" value="0"/>
+					<triggered_effect trigger="onSelfPrimaryActionEnd" action="AddBuff" target="self" buff="buffIvDetectEnemiesPotion"/>
+			</effect_group>
+		</item>
+		<!-- 夜視藥水 -->
+		<item name="drinkIvNightVisionPotion">
+			<property name="CustomIcon" value="potionNightVision"/>
+			<property name="DescriptionKey" value="drinkIvNightVisionPotionDesc"/>
+			<property name="HoldType" value="3"/>
+			<property name="DisplayType" value="RemoveHeterogeneousStatePotion"/>
+			<property name="Meshfile" value="#@modfolder:Resources/elementzombie?potion_night_vision"/>
+			<property name="DropMeshfile" value="#@modfolder:Resources/elementzombie?potion_night_vision"/>
+			<property name="DropScale" value="2.5"/>
+			<property name="Material" value="Mglass"/>
+			<property name="Weight" value="10"/>
+			<property name="Stacknumber" value="1000"/>
+			<property name="EconomicValue" value="100"/>
+			<property name="Group" value="Science,CFChemicals,Medical"/>
+			<property class="Action0">
+				<property name="Class" value="Eat"/>
+				<property name="Delay" value="1"/>
+				<property name="Sound_start" value="player_drinking"/>
+			</property>
+			<effect_group tiered="false">
+					<display_value name="dDuration" value="180"/>
+					<display_value name="dStackTime" value="1"/>
+					<triggered_effect trigger="onSelfPrimaryActionEnd" action="AddBuff" target="self" buff="buffIvNightVisionPotion"/>
+					<triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="IV_EZnightVisionTime" operation="set" value="0">
+						<requirement name="CVarCompare" cvar="IV_EZnightVisionTime" operation="LTE" value="0"/>
+					</triggered_effect>
+					<triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="IV_EZnightVisionTime" operation="add" value="300">
+						<requirement name="CVarCompare" cvar="IV_EZnightVisionTime" operation="GTE" value="0"/>
+					</triggered_effect>
+			</effect_group>
+		</item>
+	</append>
+</config>
